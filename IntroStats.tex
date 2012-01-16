@@ -33,8 +33,8 @@
 \newcommand{\rp}{\right)}
 
 
-\includeonlylecture{Introduction}
-\includeonly{week1-Day1}
+\includeonlylecture{more-frequencies}
+\includeonly{week1-Day2}
 
 
 \begin{document}
@@ -77,113 +77,6 @@
 
 
 
-\newcommand{\arrayTwo}[4]{
-  \left[
-  \begin{array}{rr}
-    #1 & #2 \\
-    #3 & #4
-  \end{array}
-  \right]
-}
-
-\newcommand{\vecTwo}[2]{
-  \left[
-  \begin{array}{r}
-    #1 \\  #2
-  \end{array}
-  \right]
-}
-
-
-\newcommand{\stateTwo}[2]{
-  \begin{array}{rr}
-    \mbox{\fontsize{6}{6}\selectfont $#1$} \\  \mbox{\fontsize{6}{6}\selectfont $#2$}
-  \end{array}
-}
-
-
-\newcommand{\arrayThree}[9]{
-  \left[
-    \begin{array}{rrr}
-      #1 & #2 & #3 \\
-      #4 & #5 & #6 \\
-      #7 & #8 & #9
-    \end{array}
-  \right]
-}
-
-\newcommand{\startRowOps}{
-  \left[
-    \begin{array}{rrr|r}
-}
-
-\newcommand{\oneRowOps}[4] {
-      #1 & #2 & #3 & #4 \\
-}
-
-\newcommand{\stopRowOps}{
-    \end{array}
-  \right]
-}
-
-
-\newcommand{\vecThree}[3]{
-  \left[
-  \begin{array}{r}
-    #1 \\  #2 \\ #3
-  \end{array}
-  \right]
-}
-
-
-\newcommand{\stateThree}[3]{
-  \begin{array}{r}
-    \mbox{\fontsize{6}{6}\selectfont $#1$} \\  
-    \mbox{\fontsize{6}{6}\selectfont $#2$} \\ 
-    \mbox{\fontsize{6}{6}\selectfont $#3$}
-  \end{array}
-}
-
-
-
-
-
-\newcommand{\detTwo}[4]{
-  \left|
-  \begin{array}{rr}
-    #1 & #2 \\
-    #3 & #4
-  \end{array}
-  \right|
-}
-
-
-
-\newcommand{\detThree}[9]{
-  \left|
-    \begin{array}{rrr}
-      #1 & #2 & #3 \\
-      #4 & #5 & #6 \\
-      #7 & #8 & #9
-    \end{array}
-  \right|
-}
-
-
-
-
-\newcommand{\startRowFour}{
-  \left[
-    \begin{array}{rrrr}
-}
-
-\newcommand{\oneRowFour}[4] {
-      #1 & #2 & #3 & #4 \\
-}
-
-
-
-
 \include{week5-Day2}
 
 \include{week5-Day3}
@@ -191,26 +84,6 @@
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\newcommand{\startRowOpsTwo}{
-  \left[
-    \begin{array}{rr|rr}
-}
-
-\newcommand{\oneRowOpsTwo}[4] {
-      #1 & #2 & #3 & #4 \\
-}
-
-
-\newcommand{\startRowOpsThree}{
-  \left[
-    \begin{array}{rrr|rrr}
-}
-
-\newcommand{\oneRowOpsThree}[6] {
-      #1 & #2 & #3 & #4 & #5 & #6 \\
-}
 
 
 
@@ -266,14 +139,15 @@
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\laplace}[1]{\makebox{$ {\cal L} \{ #1 \}$}}
-\newcommand{\invlaplace}[1]{\makebox{$ {\cal L}^{-1} \left\{ #1 \right\}$}}
-
 \include{week12-Day2}
 
 \include{week12-Day3}
 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \include{week13-Day1}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \include{week14-Day1}
 
