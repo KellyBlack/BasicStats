@@ -1,13 +1,13 @@
 %\part{}
-\lecture{The Lecture}{the-lecture}
+\lecture{Central Tendencies}{central-tendencies}
 
 
-\title{the title}
-\subtitle{Stat 282 - Week 1, Day 2}
+\title{Center and Spread of Data}
+\subtitle{Sections 2.3 and 2.4}
 
 \author{Kelly Black}
 \institute{Clarkson University}
-\date{the date}
+\date{18 January 2012}
 
 \begin{frame}
   \titlepage
@@ -19,41 +19,115 @@
 \end{frame}
 
 
-\section{The sections}
+\section{Clicker Question}
 
 
 \begin{frame}
-  \frametitle{}
+  \frametitle{Find The Average}
+  (Use channel 42)
 
-  \uncover<2->{
-  }
+  \vfill 
+
+  \begin{tabular}{lll}
+    3, & 5, & -2
+  \end{tabular}
+
+  \vfill
+
+  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
+    a: 2 & b: -2 & c: 5
+  \end{tabular}
+
+  \vfill
+
 
 \end{frame}
 
 
-
-
-\section{Another Sections}
-
-\begin{frame}
-  \frametitle{}
-
-  \only<1>{\centerline{\includegraphics[width=11cm]{beats}}}
-  \only<2>{\centerline{\includegraphics[width=11cm]{beatsLong}}}
-  \only<3>{\centerline{\includegraphics[width=11cm]{beatsShort}}}
-
-
-\end{frame}
+\section{Center of Data}
 
 
 \begin{frame}
-  \frametitle{}
+  \frametitle{Center of Data}
+
+  Given data:
+  \begin{eqnarray*}
+    x_1, ~ x_2, ~ x_3, ~ \ldots ~,x_n.
+  \end{eqnarray*}
 
   \begin{definition}
-    
+    The sample mean of the data is 
+    \begin{eqnarray*}
+      \bar{x} & = & \frac{x_1+x_2+\cdots+x_n}{n}.
+    \end{eqnarray*}
   \end{definition}
 
+  \begin{definition}
+    The median is the number for which half the data is smaller than
+    it and half is larger that it.
+  \end{definition}
+  
+
 \end{frame}
+
+
+\section{Spread of Data}
+
+
+\begin{frame}
+  \frametitle{Spread of Data}
+
+  Given data:
+  \begin{eqnarray*}
+    x_1, ~ x_2, ~ x_3, ~ \ldots ~,x_n.
+  \end{eqnarray*}
+
+  \begin{definition}
+    The range is the biggest number minus the smallest number.
+  \end{definition}
+
+
+  \begin{definition}
+    The sample variation of the data is 
+    \begin{eqnarray*}
+      s^2 & = & \frac{(x_1-\bar{x})^2+(x_2-\bar{x})^2+\cdots+(x_n-\bar{x})^2}{n-1}.
+    \end{eqnarray*}
+  \end{definition}
+
+  \begin{definition}
+    The sample standard deviation of the data is the square root of
+    the sample variation.
+  \end{definition}
+
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Clicker Quiz}
+  (Use channel 42)
+
+  Find the standard deviation of the following data set:
+  \vfill 
+
+  \begin{tabular}{llll}
+    3, & 5, & 2, & 4
+  \end{tabular}
+
+  \vfill
+
+  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
+    a: 1.667 & b: 1.180 & c: 1.291
+  \end{tabular}
+
+  \vfill
+
+  
+
+\end{frame}
+
+
+
 
 
 % LocalWords:  Clarkson pausesection hideallsubsections
