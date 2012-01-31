@@ -1,13 +1,13 @@
 %\part{}
-\lecture{The Lecture}{the-lecture}
+\lecture{Conditional Probability}{conditional-probability}
 
 
-\title{the title}
-\subtitle{Stat 282 - Week 1, Day 2}
+\title{Conditional Probability}
+\subtitle{What do you know?}
 
 \author{Kelly Black}
 \institute{Clarkson University}
-\date{the date}
+\date{30 January 2012}
 
 \begin{frame}
   \titlepage
@@ -19,41 +19,124 @@
 \end{frame}
 
 
-\section{The sections}
+\section{Clicker Quiz}
 
 
 \begin{frame}
-  \frametitle{}
+  \frametitle{Clicker Quiz}
 
-  \uncover<2->{
+  I have a bag with eight marbles. Five marbles are red and three are
+  blue. I pull one marble out at random. What is the probability that
+  it is red?
+
+  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+    A: 3/8 & B: 5/8 & C: 1
+  \end{tabular}
+
+
+\end{frame}
+
+
+
+
+\section{Conditional Probability}
+
+\begin{frame}
+  \frametitle{Example 1 (from 4.10 in the book)}
+
+  1000 voters are polled in the 2008 election. We get the following
+  information: \\
+  \only<1>
+  {
+    \begin{tabular}{l|l|l|l}
+      Education & Obama & McCain & Others  \\ \hline
+      No H.S. Diploma & 19 & 20 & 1   \\
+      H.S. Diploma only & 114 & 103 & 3 
+    \end{tabular}
+  }
+  \only<2->
+  {
+    \begin{tabular}{l|l|l|l|l}
+      Education & Obama & McCain & Others & Total \\ \hline
+      No H.S. Diploma & 19 & 20 & 1 & 40 \\
+      H.S. Diploma only & 114 & 103 & 3 & 220 \\ \hline
+      Total & 133 & 123 & 4 & 260
+    \end{tabular}
   }
 
-\end{frame}
-
-
-
-
-\section{Another Sections}
-
-\begin{frame}
-  \frametitle{}
-
-  \only<1>{\centerline{\includegraphics[width=11cm]{beats}}}
-  \only<2>{\centerline{\includegraphics[width=11cm]{beatsLong}}}
-  \only<3>{\centerline{\includegraphics[width=11cm]{beatsShort}}}
 
 
 \end{frame}
 
 
+\begin{frame}{Clicker Quiz}
+
+
+  A bowl has candy. Eight of the candies are chocolate, and of the
+  chocolates three have red wrappers while the rest have silver
+  wrappers. Twelve of the candies are hard candy, and of the hard
+  candies four have red wrappers while the rest have silver
+  wrappers. I pull out one candy at random, and it is a
+  chocolate. What is the probability that it has a red wrapper?
+
+  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+    A: 4/12 & B: 3/8 & C: 5/8 & D: 8/12
+  \end{tabular}
+
+  
+\end{frame}
+
+
 \begin{frame}
-  \frametitle{}
+  \frametitle{Conditional Probability}
 
   \begin{definition}
-    
+    The probability that A occurs given that I know that B occured is
+    defined to be 
+    \begin{eqnarray*}
+      p(A|B) & = & \frac{p(A \mathrm{~and~} B)}{p(B)}, \\
+      \mathrm{or~} 
+      p(B) p(A|B)  &  =  & p(A \mathrm{~and~} B).
+    \end{eqnarray*}
   \end{definition}
 
 \end{frame}
 
 
-% LocalWords:  Clarkson pausesection hideallsubsections
+\begin{frame}{Example 2}
+
+  I have a bag with eight marbles. Five marbles are red and three are
+  blue. I pick two, one after the other without replacing them. What
+  is the probability that I pull out a red and then a blue marble?
+  
+\end{frame}
+
+\section{Compliment}
+
+\begin{frame}{Compliment}
+
+  \begin{definition}
+    Suppose $A$ is an event. Then all of the events not in A are denoted
+    by $\bar{A}$. 
+
+    Other notations:
+    \begin{eqnarray*}
+      \bar{A},~A',~A^c
+    \end{eqnarray*}
+  \end{definition}
+
+
+\end{frame}
+
+
+\begin{frame}{Probabilities of Compliments}
+  
+  \begin{eqnarray*}
+    1 & = & p(A) + p(\bar{A}), \\
+    p(A) & = & 1 - p(\bar{A}).
+  \end{eqnarray*}
+
+\end{frame}
+
+
+% LocalWords:  Clarkson pausesection hideallsubsections Obama
