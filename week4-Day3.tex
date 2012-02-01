@@ -1,13 +1,13 @@
 %\part{}
-\lecture{The Lecture}{the-lecture}
+\lecture{Probability Rules}{probability-rules}
 
 
-\title{the title}
-\subtitle{Stat 282 - Week 1, Day 2}
+\title{Probability Rules}
+\subtitle{Putting it All Together}
 
 \author{Kelly Black}
 \institute{Clarkson University}
-\date{the date}
+\date{1 February 2012}
 
 \begin{frame}
   \titlepage
@@ -19,41 +19,127 @@
 \end{frame}
 
 
-\section{The sections}
+\section{Clicker Quiz}
 
 
 \begin{frame}
-  \frametitle{}
+  \frametitle{Clicker Quiz}
 
-  \uncover<2->{
-  }
+  I have a bag with ten blue marbles and four red marbles. I remove
+  two marbles without replacement. What is the probability that I pull
+  out a red marble first and then a blue marble?
+
+  \vspace{2em}
+
+  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
+    A: $\frac{40}{196}$ & B: $\frac{40}{182}$ & C: $\frac{14}{140}$
+  \end{tabular}
+
+  \vfill
 
 \end{frame}
 
+\section{Probability Rules}
 
-
-
-\section{Another Sections}
-
-\begin{frame}
-  \frametitle{}
-
-  \only<1>{\centerline{\includegraphics[width=11cm]{beats}}}
-  \only<2>{\centerline{\includegraphics[width=11cm]{beatsLong}}}
-  \only<3>{\centerline{\includegraphics[width=11cm]{beatsShort}}}
-
-
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{}
+\begin{frame}{Probability Rules}
 
   \begin{definition}
-    
+    The multiplication rule:
+    \begin{eqnarray*}
+      p(A)\cdot p(B|A) & = & p(A \mathrm{~and~} B), \\
+      p(B)\cdot p(A|B) & = & p(A \mathrm{~and~} B).
+    \end{eqnarray*}
+
+    The addition rule:
+    \begin{eqnarray*}
+      p(A \mathrm{~or~} B) & = & p(A) + p(B) - p(A \mathrm{~and~} B).
+    \end{eqnarray*}
+
+    The compliment rule:
+    \begin{eqnarray*}
+      p(\bar{A}) & = & 1 - p(A).
+    \end{eqnarray*}
+
   \end{definition}
 
+  \vfill
+  
 \end{frame}
+
+
+\section{Examples}
+
+\begin{frame}
+  \frametitle{Example 1}
+
+  \vfill
+
+  A ball is hidden under one of three cups. You pay \$5.00 to find the
+  ball. You get \$10.00 if you find it on your first guess. You get
+  \$2.00 if you get it on your second guess. Otherwise you get
+  nothing.
+
+  \vfill
+
+  What is the probability of getting some money back?
+
+  \vfill
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Clicker Quiz}
+  
+  \vfill
+
+  A store sells skates. Thirty percent of the skates are used. Five
+  percent of the new skates are defective. Twenty percent of the used
+  skates are defective. You pick one set of skates out at random. What
+  is the probability that the set is defective?
+
+  \vfill
+
+  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+    A: 0.050  & B: .095  & C: .110 & D: .250
+  \end{tabular}
+
+  \vfill
+
+\end{frame}
+
+
+\begin{frame}{Example}
+
+  \vfill
+
+  A test can detect the presence of an abnormal gene that causes cystic
+  fibrosis (CF). It is estimated that about 5\% of all people have the
+  abnormal gene. The test is correct 90\% of the time for people who
+  have the abnormal gene. About 2\% of the time it is positive for
+  people who do not have the abnormal gene.
+
+  \vfill
+
+  If someone tests positive for the abnormal gene what is the
+  probability that they have the abnormal gene?
+
+  \vfill
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Example}
+
+  I have a bag with ten blue marbles and four red marbles. I remove
+  two marbles without replacement. What is the probability that I pull
+  out at least one blue marble?
+
+
+  \vfill
+
+\end{frame}
+
 
 
 % LocalWords:  Clarkson pausesection hideallsubsections
