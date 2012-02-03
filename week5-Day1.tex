@@ -1,13 +1,13 @@
 %\part{}
-\lecture{The Lecture}{the-lecture}
+\lecture{Independence And Mutual Exclusion}{indepence-and-mutual-exclusion}
 
 
-\title{the title}
-\subtitle{Stat 282 - Week 1, Day 2}
+\title{Independence And Mutual Exclusion}
+\subtitle{Stuff We Already Did}
 
 \author{Kelly Black}
 \institute{Clarkson University}
-\date{the date}
+\date{3 Feb 2012}
 
 \begin{frame}
   \titlepage
@@ -19,41 +19,146 @@
 \end{frame}
 
 
-\section{The sections}
+\section{Clicker Quiz}
 
 
 \begin{frame}
-  \frametitle{}
+  \frametitle{Clicker Quiz}
 
-  \uncover<2->{
-  }
+  If $p(A)=0.3$, $p(B)=0.4$, and $p(A\mathrm{~or~}B)=.37$ what is
+  $p(A\mathrm{~and~}B)$?
+
+  \vfill
+
+  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
+    A: .11 & B: 12 & C: .33
+  \end{tabular}
+
+  \vfill
+  \vfill
+  \vfill
 
 \end{frame}
 
 
 
 
-\section{Another Sections}
+\section{Example}
 
 \begin{frame}
-  \frametitle{}
+  \frametitle{Example 1}
 
-  \only<1>{\centerline{\includegraphics[width=11cm]{beats}}}
-  \only<2>{\centerline{\includegraphics[width=11cm]{beatsLong}}}
-  \only<3>{\centerline{\includegraphics[width=11cm]{beatsShort}}}
+  I flip a coin two times. What is the probability that I get a tails
+  on the second flip?
+
+  \vfill
 
 
 \end{frame}
 
 
+\section{Mutually Exclusive Events}
+
 \begin{frame}
-  \frametitle{}
+  \frametitle{Mutual Exclusion}
 
   \begin{definition}
-    
+    Two sets are \textit{mutually exclusive} if they have nothing in
+    common.
   \end{definition}
 
 \end{frame}
+
+
+\begin{frame}{Example 2}
+  
+  I have a bag with six red marbles and two blue marbles. I draw two
+  without replacement. What is the probability that the second marble
+  is red?
+
+  \vfill
+
+\end{frame}
+
+\section{Independent Events}
+
+\begin{frame}
+  \frametitle{Independence}
+
+  \begin{definition}
+    Two events are independent if 
+    \begin{eqnarray*}
+      p(A|B) & = & p(A).
+    \end{eqnarray*}
+
+    This is equivalent to requiring that
+    \begin{eqnarray*}
+      p(B|A) & = & p(B).
+    \end{eqnarray*}
+
+  \end{definition}
+
+\end{frame}
+
+
+
+\begin{frame}{Example 3}
+
+  Suppose that $p(A)=0.6$, $p(B)=0.3$, and $p(A\mathrm{~and~}B)=.2$
+  Are they independent?
+
+  \vfill
+
+  
+\end{frame}
+
+
+
+\begin{frame}{Example 4}
+
+  Suppose that $p(A)=0.6$, $p(B)=0.3$, and $p(A\mathrm{~and~}B)=.18$
+  Are they independent?
+
+  \vfill
+
+  
+\end{frame}
+
+
+\begin{frame}{Example 5}
+  An industrial process is established to produce items. About five
+  percent of the items are defective under this process. Each item is
+  inspected, and fifteen percent of the defective items are not caught
+  in the inspection. About three percent of the good items are
+  classified as defective.
+
+  \begin{itemize}
+  \item What percentage of the items that are sold are defective?
+  \item I pick a part at random. That part is classified as
+    defective. What is the probability that it is actually defective?
+  \end{itemize}
+
+  \vfill
+
+\end{frame}
+
+
+\begin{frame}{Example 6}
+
+  A brokerage firm has a system that can execute a sell request in
+  within 0.08 seconds about 85\% of the time. Of the requests that
+  occur within 0.08 seconds about 75\% meet the projected cost
+  level. Of the requests that do not occur within 0.08 seconds about
+  65\% meet the projected cost level.
+
+  What is the proportion of requests that will meet the projected cost
+  levels?
+
+  \vfill
+  
+\end{frame}
+
+
 
 
 % LocalWords:  Clarkson pausesection hideallsubsections
