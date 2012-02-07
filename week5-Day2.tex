@@ -1,13 +1,13 @@
 %\part{}
-\lecture{The Lecture}{the-lecture}
+\lecture{Probability Examples}{probability-examples}
 
 
-\title{the title}
-\subtitle{Stat 282 - Week 1, Day 2}
+\title{Probability Examples}
+\subtitle{Try These}
 
 \author{Kelly Black}
 \institute{Clarkson University}
-\date{the date}
+\date{6 February 2012}
 
 \begin{frame}
   \titlepage
@@ -19,41 +19,243 @@
 \end{frame}
 
 
-\section{The sections}
+\section{Examples}
 
 
 \begin{frame}
-  \frametitle{}
+  \frametitle{Example}
 
-  \uncover<2->{
-  }
+
+  $p(A)=.5$, $p(B)=.3$, $p(A\mathrm{~and~}B)=.2$. What is $p(A|B)$?
+
+  \vfill
+
+  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
+    A: .33 & B: .40 & C: .67
+  \end{tabular}
+
+  \vfill
+  \vfill
+  \vfill
+
 
 \end{frame}
 
 
 
 
-\section{Another Sections}
+
 
 \begin{frame}
-  \frametitle{}
+  \frametitle{Example}
 
-  \only<1>{\centerline{\includegraphics[width=11cm]{beats}}}
-  \only<2>{\centerline{\includegraphics[width=11cm]{beatsLong}}}
-  \only<3>{\centerline{\includegraphics[width=11cm]{beatsShort}}}
+  A survey is conducted. Two of the questions resulted in the
+  following two way table:
 
+  \vfill
+
+  \begin{tabular}{lllllll}
+      & Very Bad & Bad  & Good & Very Good & No Opinion & \\
+    A &  46 & 137 & 345 & 68 & 6 & \\
+    B & 141 & 178 & 48  &  2 & 4 & \\
+    No Opinion & 2 & 13 & 4 & 0 & 1 
+  \end{tabular}
+
+  \vfill
+
+  Determine the value of $p(\mathrm{Bad}|A$)?
+
+  \vfill
+
+  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
+    A: 137/328  & B: 137/602 & C: 328/602
+  \end{tabular}
+
+  \vfill
+  \vfill
+  \vfill
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Example}
+
+  A survey is conducted. Two of the questions resulted in the
+  following two way table:
+
+  \vfill
+
+  \begin{tabular}{lllllll}
+      & Very Bad & Bad  & Good & Very Good & No Opinion & \\
+    A &  46 & 137 & 345 & 68 & 6 & \\
+    B & 141 & 178 & 48  &  2 & 4 & \\
+    No Opinion & 2 & 13 & 4 & 0 & 1 
+  \end{tabular}
+
+  \vfill
+
+  Determine the value of $p(\mathrm{good}|B$)?
+
+  \vfill
+
+  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
+    A: 373/393  & B: 48/373 & C: 48/397
+  \end{tabular}
+
+  \vfill
+  \vfill
+  \vfill
+
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Example}
+
+  A survey is conducted. Two of the questions resulted in the
+  following two way table:
+
+  \vfill
+
+  \begin{tabular}{llllll|l}
+      & Very Bad & Bad  & Good & Very Good & N.O. & Total \\ \hline
+    A &  46 & 137 & 345 & 68 & 6 & 602 \\
+    B & 141 & 178 & 48  &  2 & 4 & 373 \\
+    N.O. & 2 & 13 & 4 & 0 & 1 & 20 \\ \hline
+    Totals & 189 & 328 & 397 & 70 & 11 & 995  
+  \end{tabular}
+
+
+  \vfill
+  \vfill
+  \vfill
 
 \end{frame}
 
 
 \begin{frame}
-  \frametitle{}
+  \frametitle{Example}
 
-  \begin{definition}
-    
-  \end{definition}
+  Flip a coin, and then roll a fair, six-sided die. If the coin comes
+  up heads then take the number on the die. If the coin comes up tails
+  then take two times the die.
+
+  What is the probability that you get a 6?
+
+  \vfill
+
+  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
+    A: 1/12 & B: 1/6 & C: 1/2
+  \end{tabular}
+
+  \vfill
+  \vfill
+  \vfill
 
 \end{frame}
+
+
+\begin{frame}
+  \frametitle{Example}
+
+  Flip a coin, and then roll a fair, six-sided die. If the coin comes
+  up heads then take the number on the die. If the coin comes up tails
+  then take two times the die.
+
+  Let A be the events that you get a tails on the coin. Let B be the
+  event that you get a six. Are the events independent?
+
+  \vfill
+
+  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
+    A: Yes & B: No & C: Maybe
+  \end{tabular}
+
+  \vfill
+  \vfill
+  \vfill
+
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Example}
+
+  Flip a coin, and then roll a fair, six-sided die. If the coin comes
+  up heads then take the number on the die. If the coin comes up tails
+  then take two times the die.
+
+  Let A be the events that you get a tails on the coin. Let B be the
+  event that you get a ten. Are the events independent?
+
+  \vfill
+
+  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
+    A: Yes & B: No & C: Maybe
+  \end{tabular}
+
+  \vfill
+  \vfill
+  \vfill
+
+\end{frame}
+
+
+
+
+\begin{frame}
+  \frametitle{Example}
+
+  There are two urns. The first urn has three red marbles and five
+  blue marbles. The second urn has five red marbles and four blue
+  marbles. You flip a fair coin. If it is heads then you pull a marble
+  from the first urn, and otherwise you pull a marble from the second
+  urn.
+
+  What is the probability that you get a red marble?
+
+  \vfill
+
+  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
+    A: 1/2 & B: 67/144 & C: 77/144
+  \end{tabular}
+
+  \vfill
+  \vfill
+  \vfill
+
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Example}
+
+  There are two urns. The first urn has three red marbles and five
+  blue marbles. The second urn has five red marbles and four blue
+  marbles. You flip a fair coin. If it is heads then you pull a marble
+  from the first urn, and otherwise you pull a marble from the second
+  urn.
+
+  You know that a blue marble was drawn. What is the probability that
+  it was drawn from the first urn?
+
+  \vfill
+
+  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
+    A: 1/2 & B:  27/67  & C: 45/77
+  \end{tabular}
+
+  \vfill
+  \vfill
+  \vfill
+
+\end{frame}
+
+
+
 
 
 % LocalWords:  Clarkson pausesection hideallsubsections
