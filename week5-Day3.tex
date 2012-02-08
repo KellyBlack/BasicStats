@@ -1,13 +1,13 @@
 %\part{}
-\lecture{The Lecture}{the-lecture}
+\lecture{Random Variables}{random-variables}
 
 
-\title{the title}
-\subtitle{Stat 282 - Week 1, Day 2}
+\title{Random Variables}
+\subtitle{Quantifying Outcomes}
 
 \author{Kelly Black}
 \institute{Clarkson University}
-\date{the date}
+\date{8 February 2012}
 
 \begin{frame}
   \titlepage
@@ -19,41 +19,266 @@
 \end{frame}
 
 
-\section{The sections}
+\section{Clicker Quiz}
 
 
 \begin{frame}
-  \frametitle{}
+  \frametitle{Clicker Quiz}
 
-  \uncover<2->{
+  I flip a coin three times. What is the probability that I get two tails?
+
+  \vfill
+
+  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
+    A: 1/8 & B: 3/8 & C: 1/2
+  \end{tabular}
+
+  \vfill
+  \vfill
+  \vfill
+
+\end{frame}
+
+
+\section{Random Variables}
+
+\begin{frame}
+  \frametitle{Random Variables}
+
+  \begin{definition}
+    A \textbf{random variable} is a variable whose outcome is a number
+    and has a random component.
+  \end{definition}
+
+  \uncover<2->
+  {
+    \begin{definition}
+      A \textbf{discrete random variable} is a random variable whose
+      outcome is one of a countable number of outcomes.
+    \end{definition}
+  }
+
+  \uncover<3->
+  {
+    \begin{definition}
+      A \textbf{continuous random variable} is a random variable whose
+      outcome come from a range of values.
+    \end{definition}
+  }
+
+  \uncover<4->
+  {
+    \begin{definition}
+      A \textbf{probability distribution} is a list of probabilities of
+      \textit{all possible outcomes} of a random variable.
+    \end{definition}
   }
 
 \end{frame}
 
 
 
+\begin{frame}{Discrete Random Variables}
 
-\section{Another Sections}
+  \begin{columns}
+    \column{.40\textwidth}
 
-\begin{frame}
-  \frametitle{}
+    \begin{eqnarray*}
+      \begin{array}{l|l}
+        \mathrm{X} & p \\ \hline
+        x_1 & p_1 \\
+        x_2 & p_2 \\
+        x_3 & p_3 \\
+        \vdots & \vdots \\
+        x_n & p_n
+      \end{array}
+    \end{eqnarray*}
 
-  \only<1>{\centerline{\includegraphics[width=11cm]{beats}}}
-  \only<2>{\centerline{\includegraphics[width=11cm]{beatsLong}}}
-  \only<3>{\centerline{\includegraphics[width=11cm]{beatsShort}}}
+    \column{.60\textwidth}
+    Properties:
+    \begin{eqnarray*}
+      \begin{array}{rcccl}
+        0 & \leq & p_i & \leq 1
+      \end{array}
+      \\
+      p_1 + p_2 + p_3 + \cdots + p_n & = & 1.
+    \end{eqnarray*}
 
-
+  \end{columns}
+  
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{}
+\begin{frame}{Discrete Random Variables}
 
-  \begin{definition}
+  \begin{columns}
+    \column{.10\textwidth}
+    \begin{eqnarray*}
+      \begin{array}{l|l}
+        \mathrm{X} & p \\ \hline
+        x_1 & p_1 \\
+        x_2 & p_2 \\
+        x_3 & p_3 \\
+        \vdots & \vdots \\
+        x_n & p_n
+      \end{array}
+    \end{eqnarray*}
+    \vfill
+
+    \column{.90\textwidth}
+    \uncover<2->
+    {
+      \begin{definition}
+        The \textbf{mean} of a random variable is
+        \begin{eqnarray*}
+          \mu_X & = & x_1 p_1 + x_2 p_2 + \cdots + x_n p_n.
+        \end{eqnarray*}
+      \end{definition}
+    }
+
+    \uncover<3->
+    {
+      \begin{definition}
+        The \textbf{variation} of a random variable is
+        \begin{eqnarray*}
+          \sigma^2_X & = & (x_1-\mu_X)^2 p_1 + (x_2-\mu_X)^2 p_2 + \cdots + (x_n-\mu_X)^2 p_n.
+        \end{eqnarray*}
+      \end{definition}
+    }
+
+    \uncover<4->
+    {
+      \begin{definition}
+        The \textbf{standard deviation} of a random variable is the
+        square root of the variance.
+      \end{definition}
+    }
+
     
-  \end{definition}
+  \end{columns}
+  
+\end{frame}
+
+
+\section{Examples}
+
+\begin{frame}{Example}
+  \begin{columns}
+    \column{.15\textwidth}
+    \begin{eqnarray*}
+      \begin{array}{r|l}
+        \mathrm{X} & p \\ \hline
+        -2 & \frac{1}{6} \\ [5pt]
+         0 & \frac{3}{6} \\ [5pt]
+         2 & \frac{2}{6}
+      \end{array}
+    \end{eqnarray*}
+
+    \column{.90\textwidth}
+    \uncover<2->
+    {
+      \begin{eqnarray*}
+        \mu_X & = & -2 \cdot \frac{1}{6} + 0 \cdot \frac{3}{6} + 2 \cdot \frac{2}{6}, \\
+        & = & \frac{1}{3}.
+      \end{eqnarray*}
+    }
+
+  \end{columns}
+
+    \uncover<3->
+    {
+        \begin{eqnarray*}
+          \sigma^2_X & = & \lp -2-\frac{1}{3}\rp^2 \frac{1}{6} + 
+          \lp 0-\frac{1}{3}\rp^2 \frac{3}{6} + \lp 2-\frac{1}{3}\rp^2 \frac{2}{6}, \\
+          & = & \frac{17}{9}.
+        \end{eqnarray*}
+    }
+
+    \uncover<4->
+    {
+      \begin{eqnarray*}
+        \sigma_X & = & \sqrt{\frac{17}{9}}.
+      \end{eqnarray*}
+      \vfill
+    }
+
+    
 
 \end{frame}
+
+
+
+\begin{frame}{Clicker Quiz}
+
+  What is the mean for the following probability distribution?
+    \begin{eqnarray*}
+      \begin{array}{r|l}
+        \mathrm{X} & p \\ \hline
+         0 & \frac{1}{8} \\ [5pt]
+         1 & \frac{1}{8} \\ [5pt]
+         2 & \frac{4}{8} \\ [5pt]
+         3 & \frac{2}{8}
+      \end{array}
+    \end{eqnarray*}
+
+    \vfill
+
+  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
+    A: 15/8  & B: 2 & C: 17/8
+  \end{tabular}
+
+  \vfill
+  \vfill
+  \vfill
+
+\end{frame}
+
+\begin{frame}{Example}
+  \begin{columns}
+    \column{.15\textwidth}
+    \begin{eqnarray*}
+      \begin{array}{r|l}
+        \mathrm{X} & p \\ \hline
+         0 & \frac{1}{8} \\ [5pt]
+         1 & \frac{1}{8} \\ [5pt]
+         2 & \frac{4}{8} \\ [5pt]
+         3 & \frac{2}{8}
+      \end{array}
+    \end{eqnarray*}
+
+    \column{.90\textwidth}
+    \uncover<2->
+    {
+      \begin{eqnarray*}
+        \mu_X & = & 0 \cdot \frac{1}{8} + 1 \cdot \frac{1}{8} + 2 \cdot \frac{4}{8} + 3 \frac{2}{8}, \\
+        & = & \frac{15}{8}.
+      \end{eqnarray*}
+    }
+
+  \end{columns}
+
+    \uncover<3->
+    {
+        \begin{eqnarray*}
+          \sigma^2_X & = & \lp 0-\frac{15}{8}\rp^2 \frac{1}{8} + 
+          \lp 1-\frac{15}{8}\rp^2 \frac{1}{8} + \lp 2-\frac{15}{8}\rp^2 \frac{4}{8} + 
+          \lp 3-\frac{15}{8}\rp^2 \frac{2}{8}, \\
+          & = & \frac{55}{64}.
+        \end{eqnarray*}
+    }
+
+    \uncover<4->
+    {
+      \begin{eqnarray*}
+        \sigma_X & = & \sqrt{\frac{55}{64}}.
+      \end{eqnarray*}
+      \vfill
+    }
+
+    
+
+\end{frame}
+
 
 
 % LocalWords:  Clarkson pausesection hideallsubsections
