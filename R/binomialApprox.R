@@ -22,6 +22,6 @@ plot(N*p,0,xlim=c(1,N),ylim=c(0,max(normal)+0.02),xlab="Number of Successes",
      ylab="Probability",main="Approximation of the Binomial Distribution",sub="N=40,p=0.25")
 #bpoints = barplot(D,xlim=c(1,N),ylim=c(0,max(normal)+0.02),add=TRUE,axisnames=FALSE)
 rect(coarse-0.5,coarse*0,coarse+0.5,D)
-lines(fine,normal,type="l",xlim=c(1,N),ylim=c(0,max(normal)+0.02))
+lines(fine,normal,type="l",xlim=c(1,N),ylim=c(0,max(normal)+0.02),col=2)
 text(14,0.14,"Binomial and Normal distributions",adj=c(0,0))
 dev.off()
