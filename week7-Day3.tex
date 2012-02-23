@@ -1,13 +1,13 @@
 %\part{}
-\lecture{The Lecture}{the-lecture}
+\lecture{Sample Distributions}{sample-distributions}
 
 
-\title{the title}
-\subtitle{Stat 282 - Week 1, Day 2}
+\title{Sample Distributions}
+\subtitle{The Sample Mean Varies}
 
 \author{Kelly Black}
 \institute{Clarkson University}
-\date{the date}
+\date{24 Feb 2012}
 
 \begin{frame}
   \titlepage
@@ -19,41 +19,151 @@
 \end{frame}
 
 
-\section{The sections}
+\section{Clicker Quiz}
 
+
+\begin{frame}{Clicker Quiz}
+
+  Clarkson University claims that over eighty percent of all students
+  take part in intramural sports. You choose three hundred students at
+  random. What is the probability that more than two-hundred and fifty will say
+  that they take part in intramural sports?
+
+  \vfill
+
+  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
+    A: 0.0643  & B: 0.4679 & C: 0.9375
+  \end{tabular}
+
+  \vfill
+  \vfill
+  \vfill
+
+\end{frame}
+
+
+
+
+\section{Coin Flip}
 
 \begin{frame}
-  \frametitle{}
+  \frametitle{Coin Flip}
 
-  \uncover<2->{
+  Flip a Coin
+
+  \only<2->{How many tails?}
+
+  \only<3->{Divide by the number of people.}
+
+  \only<4->{Do it again.}
+
+  \only<5->{Do it again.}
+
+\end{frame}
+
+\section{The Sample Mean}
+
+\begin{frame}
+  \frametitle{Sample Mean}
+
+  We have a bunch of measurements:
+  \begin{eqnarray*}
+    \bar{x} & = & x_1,~x_2,~x_3,\cdots,~x_n.
+  \end{eqnarray*}
+  Each measurement has a mean, $\mu$, and a standard deviation of
+  $\sigma$. We assume that they are all independent of one another.
+  
+  \only<1-2>
+  {
+    \begin{definition}
+      Given measurements the sample mean is 
+      \begin{eqnarray*}
+        \bar{x} & = & \frac{x_1+x_2+x_3+\cdots+x_n}{n}.
+      \end{eqnarray*}
+    \end{definition}
+  }
+
+  \only<3->
+  {
+    \begin{definition}
+      Given measurements the sample mean is 
+      \begin{eqnarray*}
+        \bar{x} & = & \frac{x_1+x_2+x_3+\cdots+x_n}{n}.
+      \end{eqnarray*}
+      The sample mean, $\bar{x}$,  has a mean of $\mu$, and it has a
+      standard deviation of $\frac{\sigma}{\sqrt{n}}$.
+    \end{definition}
+  }
+
+
+  \only<2->
+  {
+    The sample mean is a random variable!
   }
 
 \end{frame}
 
 
+\begin{frame}
+  (central limit theorem example)
+\end{frame}
 
-
-\section{Another Sections}
+\section{Examples}
 
 \begin{frame}
   \frametitle{}
 
-  \only<1>{\centerline{\includegraphics[width=11cm]{beats}}}
-  \only<2>{\centerline{\includegraphics[width=11cm]{beatsLong}}}
-  \only<3>{\centerline{\includegraphics[width=11cm]{beatsShort}}}
+  A random variable has a mean of 3.0 and a standard deviation of
+  4.5. If I take one sample what is the probability that it is less
+  than zero?
 
+  \vfill
+
+  \only<2->
+  {
+    If I take four samples what is the probability that it is less
+    than zero?
+  }
+
+  \vfill
 
 \end{frame}
 
 
 \begin{frame}
-  \frametitle{}
+  \frametitle{Clicker Quiz}
 
-  \begin{definition}
-    
-  \end{definition}
+  The total change in a stock's price on one particular day has a mean
+  of -.35\$ with a standard deviation of .86\$. A sample of 16 stocks
+  is taken. What is the probability that the mean will be more than
+  zero?
+
+  \vfill
+
+  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+    A: 0.0516  & B: 0.0.3420 & C: 0.6580 & D: 0.9484
+  \end{tabular}
+
+  \vfill
+  \vfill
+  \vfill
 
 \end{frame}
+
+
+\begin{frame}
+  \frametitle{Example}
+
+  I have a random variable. It is normally distributed with a mean of
+  0.5 and a standard deviation of 2.0. How many samples should I take
+  so that
+  \begin{eqnarray*}
+    p(\bar{x} < 0.25) & = & 0.05?
+  \end{eqnarray*}
+
+\end{frame}
+
+
 
 
 % LocalWords:  Clarkson pausesection hideallsubsections
