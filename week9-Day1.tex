@@ -1,13 +1,13 @@
 %\part{}
-\lecture{The Lecture}{the-lecture}
+\lecture{Introduction to Hypothesis Testing}{intro-to-hypothesis-testing}
 
 
-\title{the title}
-\subtitle{Stat 282 - Week 1, Day 2}
+\title{Introduction to Hypothesis Testing}
+\subtitle{Is there a difference? (yes/no)}
 
 \author{Kelly Black}
 \institute{Clarkson University}
-\date{the date}
+\date{9 March 2012}
 
 \begin{frame}
   \titlepage
@@ -19,41 +19,352 @@
 \end{frame}
 
 
-\section{The sections}
+\section{Clicker Quiz}
 
 
 \begin{frame}
-  \frametitle{}
+  \frametitle{Clicker Quiz}
 
-  \uncover<2->{
+  A random variable has a mean of 3.7 and a standard deviation of
+  1.2. What is the probability that a sample mean using six samples is
+  more than 4.1?
+
+  \vfill
+
+  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+    A: 0.2061  & B: 0.7939  & C: 0.8165
+  \end{tabular}
+
+  \vfill
+  \vfill
+  \vfill
+
+
+\end{frame}
+
+
+
+
+\section{Introduction To Hypothesis Testing}
+
+\begin{frame}
+  \frametitle{Introduction To Hypothesis Testing}
+
+  I \textbf{\underline{think}} that a random variable has a mean of 3.7
+  and a standard deviation of 1.2. I take six samples and get a sample
+  mean of 4.1. Is the mean really 3.7?
+
+  \vfill
+
+  \only<2->{Maybe!}
+
+  \vfill
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{The Problem}
+
+  Situation: We think that $\mu$ is  some number.
+
+  Problem: $\bar{x}$ is a random variable.
+
+  Problem\textsuperscript{2}: $\bar{x}$ is our only way of estimating $\mu$!
+
+\end{frame}
+
+\begin{frame}{What do we do?}
+
+  \begin{enumerate}
+  \item<1-> We have some idea/belief of what to expect.
+  \item<2-> This is our hypothesis of what we \textit{think} is happening.
+  \item<3-> We want to make a case for some change in how we interpret the
+    situation.
+  \item<4-> Assume that the status quo is good or better. (Call this the
+    \textit{Null Hypothesis}, $H_0$.)
+  \item<5-> Construct a hypothesis about what we think is \textbf{think}
+    is happening. (Call this the \textit{alternate hypothesis}, $H_a$.)
+  \item<6-> Collect evidence assuming $H_0$ is true. 
+  \item<7-> If the evidence is \textit{``highly unlikely''} under the
+    assumed conditions then reject the null hypothesis, otherwise we
+    cannot reject the null hypothesis.
+  \end{enumerate}
+  
+\end{frame}
+
+\section{Examples}
+
+\begin{frame}{Example}
+
+  We think that interest rates for mortgages have decreased since last
+  quarter.
+
+  \vfill
+
+  \only<2->
+  {
+    \begin{tabular}{l@{\hspace{2em}}l}
+      $H_0$: & Interest rates are the same. \\
+      $H_a$: & Interest rates have decreased.
+    \end{tabular}
   }
 
-\end{frame}
+  \vfill
 
+  \only<3->
+  {
+    Sample fifteen banks, find the mean interest rate, and ask if
+    there is sufficient evidence to reject $H_0$.
+  }
 
-
-
-\section{Another Sections}
-
-\begin{frame}
-  \frametitle{}
-
-  \only<1>{\centerline{\includegraphics[width=11cm]{beats}}}
-  \only<2>{\centerline{\includegraphics[width=11cm]{beatsLong}}}
-  \only<3>{\centerline{\includegraphics[width=11cm]{beatsShort}}}
-
+  \vfill
 
 \end{frame}
 
+\begin{frame}{Example}
 
-\begin{frame}
-  \frametitle{}
+  We think that foreclosures have increased since last quarter.
 
-  \begin{definition}
-    
-  \end{definition}
+  \vfill
+
+  \only<2->
+  {
+    \begin{tabular}{l@{\hspace{2em}}l}
+      $H_0$: & Foreclosure rates are the same. \\
+      $H_a$: & Foreclosure rates have increased.
+    \end{tabular}
+  }
+
+  \vfill
+
+  \only<3->
+  {
+    Sample thirty properties at random, calculate a foreclosure rate, and ask if
+    there is sufficient evidence to reject $H_0$.
+  }
+
+  \vfill
 
 \end{frame}
 
+
+\begin{frame}{Example}
+
+  We think that a new commercial will change the demand for a product.
+
+  \vfill
+
+  \only<2->
+  {
+    \begin{tabular}{l@{\hspace{2em}}l}
+      $H_0$: & The commercial has no impact. \\
+      $H_a$: & The commercial has an impact.
+    \end{tabular}
+  }
+
+  \vfill
+
+  \only<3->
+  {
+    Play the commercial in ten markets. Monitor the sales in those markets, and ask if
+    there is sufficient evidence to reject $H_0$.
+  }
+
+  \vfill
+
+\end{frame}
+
+
+\begin{frame}{Three Options!}
+
+  In the proceeding examples there were three different options:
+  \begin{itemize}
+  \item Decrease,
+  \item Increase,
+  \item Change.
+  \end{itemize}
+  
+\end{frame}
+
+
+\begin{frame}{Example}
+
+  We think that interest rates for mortgages have
+  \textcolor{red}{\textbf{decreased}} since last quarter.
+
+  \vfill
+
+    \begin{tabular}{l@{\hspace{2em}}l}
+      $H_0$: & Interest rates are the same. \\
+      $H_a$: & Interest rates have \textcolor{red}{\textbf{decreased}}.
+    \end{tabular}
+
+  \vfill
+
+    Sample fifteen banks, find the mean interest rate, and ask if
+    there is sufficient evidence to reject $H_0$.
+
+  \vfill
+
+\end{frame}
+
+\begin{frame}{Example}
+
+  We think that foreclosures have \textcolor{red}{\textbf{increased}} since last quarter.
+
+  \vfill
+
+    \begin{tabular}{l@{\hspace{2em}}l}
+      $H_0$: & Foreclosure rates are the same. \\
+      $H_a$: & Foreclosure rates have \textcolor{red}{\textbf{increased}}.
+    \end{tabular}
+
+  \vfill
+
+    Sample theory properties at random, calculate a foreclosure rate, and ask if
+    there is sufficient evidence to reject $H_0$.
+
+  \vfill
+
+\end{frame}
+
+
+\begin{frame}{Example}
+
+  We think that a new commercial will \textcolor{red}{\textbf{change}} the demand for a product.
+
+  \vfill
+
+    \begin{tabular}{l@{\hspace{2em}}l}
+      $H_0$: & The commercial has no impact. \\
+      $H_a$: & The commercial has \textcolor{red}{\textbf{an impact}}.
+    \end{tabular}
+
+  \vfill
+
+    Play the commercial in ten markets. Monitor the sales in those markets, and ask if
+    there is sufficient evidence to reject $H_0$.
+
+  \vfill
+
+\end{frame}
+
+
+\begin{frame}{Problem}
+
+  \vfill
+
+  $\bar{x}$ is a random variable.
+
+  \vfill
+
+  The data can \textbf{lie}!
+
+  \vfill
+  
+\end{frame}
+
+
+\begin{frame}{The Possibilities}
+
+  \begin{eqnarray*}
+    \mathrm{Data~-} & &
+      \begin{array}{l@{\hspace{1em}}|l|l|} 
+        \multicolumn{1}{c}{~} & \multicolumn{1}{c}{H_0 \mathrm{~is~true}} & \multicolumn{1}{c}{H_0 \mathrm{~is~false}} \\ 
+               \hhline{~--}
+        \mathrm{Do~Not~Reject~}H_0 & \mathrm{good!} & \mathrm{Type~II~Error} \\ \hhline{~|-|-|}
+        \mathrm{Reject~}H_0 & \mathrm{Type~I~Error} & \mathrm{good!} \\ \hhline{~--}
+      \end{array}
+  \end{eqnarray*}
+  
+\end{frame}
+
+
+\begin{frame}{How To State Results}
+
+  How you state your conclusions matter! It is an ethical issue in
+  terms of conveying your assumptions and potential problems
+  associated with the methodology.
+
+  \begin{block}{Reject $H_0$}
+    There is sufficient evidence to reject $H_0$ at the \#
+    significance level assuming a normal distribution and a \#
+    standard deviation.
+  \end{block}
+
+  \begin{block}{Cannot Reject $H_0$}
+    There is not sufficient evidence to reject $H_0$ at the \#
+    significance level assuming a normal distribution and a \#
+    standard deviation.
+  \end{block}
+
+  
+\end{frame}
+
+\begin{frame}{The Methodology}
+
+  What do we do?
+
+  \begin{enumerate}
+  \item Assume that $H_0$ is true.
+  \item Ask, ``Are the data an unlikely result?''
+  \end{enumerate}
+
+  \only<2->
+  {
+    We want:
+    \begin{itemize}
+    \item The probability that we get our result to be ``small.''
+    \item The probability that we get our result \textit{given our
+        assumptions} is the significance level ($\alpha$). \textbf{It is
+        a conditional probability!}
+    \end{itemize}
+  }
+
+  \only<3->
+  {
+    Note: We need to define this cut-off value, $\alpha$, \textbf{in
+      advance!} i.e. before any data collection or manipulation.
+  }
+  
+\end{frame}
+
+
+\begin{frame}{Example}
+
+  I see a publication that says that the mean house value in an area
+  is \$215,000 with a standard deviation of \$35,000. I think that
+  this is too high.
+
+  \vfill
+
+  \only<2->
+  {
+
+    \begin{tabular}{l@{\hspace{2em}}l}
+      $H_0$: & The mean house price is \$215,000 or more. \\
+      $H_a$: & The mean house price is \textcolor{red}{\textbf{more than \$215,000}}.
+    \end{tabular}
+
+    I will use a 5\% significance level.
+
+  }
+
+  \vfill
+
+  \only<3->
+  {
+
+    Suppose that I take a random sample of ten homes and get a sample
+    mean of \$198,000. Is the mean house price smaller than \$215,000?
+
+  }
+
+  \vfill
+
+  
+  
+\end{frame}
 
 % LocalWords:  Clarkson pausesection hideallsubsections
