@@ -1,6 +1,9 @@
 \documentclass[svgnames,table]{beamer}
 \usepackage{hhline}
+\usepackage{etoolbox}
 \mode<presentation>
+
+
 
 
 
@@ -33,11 +36,17 @@
 \newcommand{\rp}{\right)}
 
 
+\newtoggle{clicker}
+\toggletrue{clicker}
+%\togglefalse{clicker}
+
 \includeonlylecture{hypothesis-testing}
 \includeonly{week9-Day2}
 
 
+
 \begin{document}
+
 
 
 
