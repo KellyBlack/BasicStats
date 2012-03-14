@@ -1,13 +1,13 @@
 %\part{}
-\lecture{The Lecture}{the-lecture}
+\lecture{Hypothesis Testing with the Classical Approach}{hypothesis-testing-classical}
 
 
-\title{the title}
-\subtitle{Stat 282 - Week 1, Day 2}
+\title{Hypothesis Testing Again}
+\subtitle{The ``Classical'' Approach}
 
 \author{Kelly Black}
 \institute{Clarkson University}
-\date{the date}
+\date{14 March 2012}
 
 \begin{frame}
   \titlepage
@@ -19,41 +19,145 @@
 \end{frame}
 
 
-\section{The sections}
+\section{Clicker Quiz}
 
 
 \begin{frame}
-  \frametitle{}
+  \frametitle{Clicker Quiz}
 
-  \uncover<2->{
+  \iftoggle{clicker}{%
+
+    I read in the \textit{Integrator} that the mean height of Clarkson
+    students is 180.0 cm with a standard deviation of 14.0 cm. I think
+    that this is too high and sample twenty students chosen at random
+    to find a sample mean of 175.1 cm. Are my suspicions correct? (Use
+    a 5\% significance level.)
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l}
+      A: & There is sufficient evidence to reject $H_0$.  \\
+      B: & There is not sufficient evidence to reject $H_0$.  
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+    
+
+  }
+
+
+\end{frame}
+
+\section{Classical Approach}
+
+\begin{frame}
+  \frametitle{What if....}
+
+
+  I read in the \textit{Integrator} that the mean height of Clarkson
+  students is 180.0 cm with a standard deviation of 14 cm. I think
+  that this is too high and sample twenty students chosen at random to
+  find a sample mean of \textbf{174.7} cm. Are my suspicions correct?
+  (Use a 5\% significance level.)
+
+    \vfill
+    
+
+\end{frame}
+
+
+\begin{frame}{Result}
+
+  We have sufficient evidence to reject $H_0$ at the 5\% significance
+  level using a normal distribution with twenty samples and a standard
+  deviation of 14.0cm.
+  
+\end{frame}
+
+
+
+
+
+\begin{frame}{Clicker Quiz}
+
+  \iftoggle{clicker}{%
+
+    I see a publication that says that the mean house value in an area
+    is \$215,000 with a standard deviation of \$35,000. I think that
+    this is too low.  Suppose that I take a random sample of fifteen
+    homes and get a sample mean of \$232,000.
+
+    \vfill 
+
+    What is the $z$-statistic?
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: -1.881  & B: -1.644  & C: 1.644 & D: 1.881
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
   }
 
 \end{frame}
 
+\begin{frame}{Result}
 
-
-
-\section{Another Sections}
-
-\begin{frame}
-  \frametitle{}
-
-  \only<1>{\centerline{\includegraphics[width=11cm]{beats}}}
-  \only<2>{\centerline{\includegraphics[width=11cm]{beatsLong}}}
-  \only<3>{\centerline{\includegraphics[width=11cm]{beatsShort}}}
-
-
+  We have sufficient evidence to reject $H_0$ at the 5\% significance
+  level using a normal distribution with fifteen samples and a standard
+  deviation of \$35,000.
+  
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{}
+\begin{frame}{Clicker Quiz}
 
-  \begin{definition}
-    
-  \end{definition}
+  \iftoggle{clicker}{%
+
+    \begin{eqnarray*}
+      \begin{array}{lrcl}
+        H_0: & \mu & = & 800 \\
+        H_a: & \mu & \neq & 800
+      \end{array}
+    \end{eqnarray*}
+
+    \begin{eqnarray*}
+      n & = & 30, \\
+      \bar{x} & = & 758,\\
+      \sigma & = & 118, \\
+      \alpha & = & 0.05.
+    \end{eqnarray*}
+
+    \vfill 
+
+    What is the $z$-statistic?
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: -1.960  & B: -1.950  & C: -0.065 & D: 1.960
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+  }
 
 \end{frame}
+
+\begin{frame}{Result}
+
+  We \textbf{do not} have sufficient evidence to reject $H_0$ at the
+  5\% significance level using a normal distribution with thirty
+  samples and a standard deviation of 118.
+  
+\end{frame}
+
+
 
 
 % LocalWords:  Clarkson pausesection hideallsubsections
