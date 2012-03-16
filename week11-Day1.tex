@@ -1,13 +1,13 @@
 %\part{}
-\lecture{The Lecture}{the-lecture}
+\lecture{Hypothesis Testing With The Sample Standard Deviation}{hypothesis-testing-single-sample}
 
 
-\title{the title}
-\subtitle{Stat 282 - Week 1, Day 2}
+\title{Hypothesis Testing}
+\subtitle{What if you do not know the true standard deviation?}
 
 \author{Kelly Black}
 \institute{Clarkson University}
-\date{the date}
+\date{16 March 2012}
 
 \begin{frame}
   \titlepage
@@ -19,13 +19,39 @@
 \end{frame}
 
 
-\section{The sections}
+\section{Clicker Quiz}
 
 
-\begin{frame}
-  \frametitle{}
+\begin{frame}{Clicker Quiz}
 
-  \uncover<2->{
+  \iftoggle{clicker}{%
+
+    \begin{eqnarray*}
+      \begin{array}{lrcl}
+        H_0: & \mu & = & 45.0 \\
+        H_a: & \mu & \neq & 45.0
+      \end{array}
+    \end{eqnarray*}
+
+    \begin{eqnarray*}
+      n & = & 10, \\
+      \bar{x} & = & 49.9,\\
+      \sigma & = & 8.0, \\
+      \alpha & = & 0.05.
+    \end{eqnarray*}
+
+    \vfill 
+
+    What is the \textit{critical} $z$-statistic?
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: 0.613  & B: 1.64 & C: 1.94  & D: 1.96 
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
   }
 
 \end{frame}
@@ -33,27 +59,258 @@
 
 
 
-\section{Another Sections}
+
+
+\section{Hypothesis Testing}
 
 \begin{frame}
-  \frametitle{}
+  \frametitle{Left Sided Test}
 
-  \only<1>{\centerline{\includegraphics[width=11cm]{beats}}}
-  \only<2>{\centerline{\includegraphics[width=11cm]{beatsLong}}}
-  \only<3>{\centerline{\includegraphics[width=11cm]{beatsShort}}}
+  \begin{columns}
+    \column{0.25\textwidth}
+    \begin{eqnarray*}
+      \begin{array}{lrcl}
+        H_0: & \mu & = & \# \\
+        H_a: & \mu & < & \#
+      \end{array}
+    \end{eqnarray*}
+
+    \column{0.75\textwidth}
+
+    \includegraphics[width=7cm]{img/leftSideHypothesisTest}
+
+  \end{columns}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Right Sided Test}
+
+  \begin{columns}
+    \column{0.25\textwidth}
+    \begin{eqnarray*}
+      \begin{array}{lrcl}
+        H_0: & \mu & = & \# \\
+        H_a: & \mu & > & \#
+      \end{array}
+    \end{eqnarray*}
+
+    \column{0.75\textwidth}
+
+    \includegraphics[width=7cm]{img/rightSideHypothesisTest}
+
+  \end{columns}
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Two Sided Test}
+
+  \begin{columns}
+    \column{0.25\textwidth}
+    \begin{eqnarray*}
+      \begin{array}{lrcl}
+        H_0: & \mu & = & \# \\
+        H_a: & \mu & \neq & \#
+      \end{array}
+    \end{eqnarray*}
+
+    \column{0.75\textwidth}
+
+    \includegraphics[width=7cm]{img/twoSideHypothesisTest}
+
+  \end{columns}
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Clicker Quiz}
+
+  A supermarket estimates that the mean time spent by customers in a
+  store for each visit is about 23.4 minutes with a standard deviation
+  of 11.3 minutes. They rearrange one aisle and find a sample mean of
+  27.8 minutes. Did the mean time per visit increase? (Use a 5\%
+  significance level.)
+
+  \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: Reject $H_0$  & B: Cannot reject $H_0$
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+\end{frame}
+
+
+\begin{frame}{The Possibilities}
+
+  \begin{eqnarray*}
+    \mathrm{Data~-} & &
+      \begin{array}{l@{\hspace{1em}}|l|l|} 
+        \multicolumn{1}{c}{~} & \multicolumn{1}{c}{H_0 \mathrm{~is~true}} & \multicolumn{1}{c}{H_0 \mathrm{~is~false}} \\ 
+               \hhline{~--}
+        \mathrm{Do~Not~Reject~}H_0 & \mathrm{good!} & \mathrm{Type~II~Error} \\ \hhline{~|-|-|}
+        \mathrm{Reject~}H_0 & \mathrm{Type~I~Error} & \mathrm{good!} \\ \hhline{~--}
+      \end{array}
+  \end{eqnarray*}
+  
+\end{frame}
+
+
+\section{t-Distribution}
+
+\begin{frame}
+  \frametitle{Problem!}
+
+  There is a problem.
+
+  \only<2->
+  {
+    We do not know $\sigma$!
+  }
+
+  \only<3->
+  {
+    If you \textbf{trust} your \textit{estimate} for $\sigma$ then
+    what we did is fine.
+  }
+
+  \only<4->
+  {
+    What if you only have $s$?
+  }
+
+
+  \only<5->
+  {
+    use the $t$-distribution, of course!
+  }
 
 
 \end{frame}
 
 
 \begin{frame}
-  \frametitle{}
+  \frametitle{Decisions, Decisions, Decisions...}
 
-  \begin{definition}
+  \input{img/distributionFlowChart}  % Added [thick,scale=0.6, every node/.style={scale=0.6}]
+                                     % to the \begin{tikzpicture} line
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{$t$-Distribution}
+
+  \begin{definition}[$t$-Distribution]
+
+    A $t$-distribution is the distribution associated with the expression
+    \begin{eqnarray*}
+      t &  = & \frac{\bar{x}-\mu}{\lp \frac{s}{\sqrt{n}} \rp}.
+    \end{eqnarray*}
+
+    The number of ``\textit{degrees of freedom}'' is $n-1$.
     
   \end{definition}
 
+  Because the distribution depends on $n-1$ means that we need a
+  different table for every possible value of $n$. Instead we just
+  have a table for the critical values for some values of $n$.
+  
+
 \end{frame}
 
 
-% LocalWords:  Clarkson pausesection hideallsubsections
+\begin{frame}
+  \frametitle{The $t$-Distribution}
+
+  \only<1-1>{\includegraphics[width=7cm]{img/normalCompare}}
+  \only<2-2>{\includegraphics[width=7cm]{img/tDistCompareDF3}}
+  \only<3-3>{\includegraphics[width=7cm]{img/tDistCompareDF6}}
+  \only<4-4>{\includegraphics[width=7cm]{img/tDistCompareDF12}}
+  \only<5-5>{\includegraphics[width=7cm]{img/tDistCompareDF24}}
+  
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Comparison}
+
+  \begin{columns}
+    \column{0.5\textwidth}
+    Normal Distribution:
+    \begin{eqnarray*}
+      z &  = & \frac{\bar{x}-\mu}{\lp \frac{\sigma}{\sqrt{n}} \rp}.
+    \end{eqnarray*}
+
+    \column{0.5\textwidth}
+    $t$-Distribution:
+    \begin{eqnarray*}
+      t &  = & \frac{\bar{x}-\mu}{\lp \frac{s}{\sqrt{n}} \rp}, \\
+      df & = & n-1.
+    \end{eqnarray*}
+
+  \end{columns}
+
+  \vfill
+
+    \only<2->
+    {
+
+      \begin{center}
+        The algebra and concepts are exactly the same!
+
+        The only difference is $\sigma$ vs. $s$ and $df=n-1$.
+      \end{center}
+    }
+
+    \vfill
+  
+
+\end{frame}
+
+
+\begin{frame}{Clicker Quiz}
+
+  \iftoggle{clicker}{%
+
+    \begin{eqnarray*}
+      \begin{array}{lrcl}
+        H_0: & \mu & = & 45.0 \\
+        H_a: & \mu & \neq & 45.0
+      \end{array}
+    \end{eqnarray*}
+
+    \begin{eqnarray*}
+      n & = & 10, \\
+      \bar{x} & = & 49.9,\\
+      \sigma & = & 8.0, \\
+      \alpha & = & 0.05.
+    \end{eqnarray*}
+
+    \vfill 
+
+    What is the $t$-statistic?
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: 0.613  & B: 1.64 & C: 1.94  & D: 1.96 
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+  }
+
+\end{frame}
+
+
+
+
+
+% LocalWords:  Clarkson pausesection hideallsubsections lrcl
