@@ -1,13 +1,13 @@
 %\part{}
-\lecture{The Lecture}{the-lecture}
+\lecture{Inference and Proportions}{inference-and-proportions}
 
 
-\title{the title}
-\subtitle{Stat 282 - Week 1, Day 2}
+\title{Inference and Proportions}
+\subtitle{Our Old Friend the Binomial Distribution}
 
 \author{Kelly Black}
 \institute{Clarkson University}
-\date{the date}
+\date{2 April 2012}
 
 \begin{frame}
   \titlepage
@@ -19,13 +19,39 @@
 \end{frame}
 
 
-\section{The sections}
+
+\section{Clicker Quiz}
 
 
-\begin{frame}
-  \frametitle{}
+\begin{frame}{Clicker Quiz}
 
-  \uncover<2->{
+  \iftoggle{clicker}{%
+
+    \begin{eqnarray*}
+      \begin{array}{lrcl}
+        H_0: & \mu & = & 50.0 \\
+        H_a: & \mu & > & 50.0
+      \end{array}
+    \end{eqnarray*}
+
+    \begin{eqnarray*}
+      n & = & 12, \\
+      \bar{x} & = & 56.3,\\
+      s       & = & 12.0, \\
+      \alpha  & = & 0.05.
+    \end{eqnarray*}
+
+    \vfill 
+
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: Reject $H_o$  & B: Do not reject $H_o$
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
   }
 
 \end{frame}
@@ -33,25 +59,205 @@
 
 
 
-\section{Another Sections}
+
+\section{Proportions}
 
 \begin{frame}
-  \frametitle{}
+  \frametitle{Example}
 
-  \only<1>{\centerline{\includegraphics[width=11cm]{beats}}}
-  \only<2>{\centerline{\includegraphics[width=11cm]{beatsLong}}}
-  \only<3>{\centerline{\includegraphics[width=11cm]{beatsShort}}}
+  You ask thirty people at random if they will vote for your
+  candidate. Seventeen say yes. What is the confidence interval for
+  the percentage of people who support your candidate? Use a 95\%
+  confidence level.
 
+  \vfill
+
+  \only<2->
+  {
+    Let $X$ be a binomial distribution with a probability $p$ of
+    success and $n$ trials.
+  }
+
+  \vfill
+
+  \only<3->
+  {
+    If $n\cdot p \geq 5$ \textbf{and} $n\cdot (1-p) \geq 5$ then $X$
+    is approximately normally distributed with mean $n\cdot p$ and
+    standard deviation $\sqrt{p(1-p)n}$.
+  }
 
 \end{frame}
 
 
 \begin{frame}
-  \frametitle{}
+  \frametitle{Not What We Have!}
 
-  \begin{definition}
+  We are asked about the \textit{proportion} not the total number who
+  say ``yes.''
+
+  \vfill
+
+  \begin{definition}[The sample proportion]
+
+    We take a sample from $n$ trials. Each trial has probability $p$
+    of ``success.'' We count the total number of successes from the
+    $n$ trials.  The sample proportion is defined to be
+    \begin{eqnarray*}
+      \hat{p} & = & \frac{\mathrm{number~of~successes}}{n}.
+    \end{eqnarray*}
     
   \end{definition}
+
+
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{The sample proportion}
+
+  The sample proportion has a mean of $p$, and a standard deviation of
+  $\sqrt{\frac{p(1-p)}{n}}$.
+
+  \vfill
+
+  \only<2->
+  {
+
+    If $p\cdot n \geq 5$ \textbf{and} $(1-p)\cdot n \geq 5$
+    \textbf{and} $n\geq 20$ then $\hat{p}$ is approximately normally
+    distributed with mean $p$ and standard deviation
+    $\sqrt{\frac{p(1-p)}{n}}$.
+
+  }
+
+  \vfill
+
+  \only<3->
+  {
+    If this is the case we have
+    \begin{eqnarray*}
+      z & = & \frac{\hat{p}-p}{\sqrt{\frac{p(1-p)}{n}}}.
+    \end{eqnarray*}
+  }
+
+  \vfill
+
+  \only<4->
+  {
+    Problem: We do not know $p$. That is okay just use $\hat{p}$ or
+    assume $p=\frac{1}{2}$ for the ``worst case scenario.''
+  }
+
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Example}
+
+  You ask thirty people at random if they will vote for your
+  candidate. Seventeen say yes. What is the confidence interval for
+  the percentage of people who support your candidate? Use a 95\%
+  confidence level.
+
+  \vfill
+
+  \only<2->
+  {
+
+    The 95\% confidence interval for the proportion is between .389
+    and .745 assuming a normal approximation to the sample proportion.
+
+  }
+
+\end{frame}
+
+
+\begin{frame}{Clicker Quiz}
+
+  \iftoggle{clicker}{%
+
+    A new drug is tested on one-thousand and eighteen people. Of those
+    taking the drug, seven-hundred and fifteen show adequate
+    improvement. Find the 95\% confidence interval for the proportion
+    of people who will see an adequate improvement.
+
+    \vfill 
+
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: .67 to .73  & B: .66 to .75 & C: -.19 to 1.60
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+  }
+
+\end{frame}
+
+
+\begin{frame}{In a nutshell}
+
+  \begin{eqnarray*}
+    z & = & \frac{\mathrm{error}}{\sqrt{\frac{p(1-p)}{n}}},
+  \end{eqnarray*}
+
+  \begin{tabular}{ll}
+    Given $\alpha$, $\hat{p}$, $n$ & Find the error. (*) \\
+    Given $\alpha$, error, $n$ & Find $\hat{p}$. \\
+    Given $\alpha$, error & Find $n$. (*) \\
+  \end{tabular}
+  
+\end{frame}
+
+\begin{frame}{Clicker Quiz}
+
+  \iftoggle{clicker}{%
+
+    i want to conduct a poll so the probability that the true
+    proportion will be in a 95\% confidence interval with an error of
+    $\pm 0.03$. How many people should I poll?
+
+    \vfill 
+
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: 33  & B: 267 & C: 1068 & D: 2014
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+  }
+
+\end{frame}
+
+
+\begin{frame}{Clicker Quiz}
+
+  \iftoggle{clicker}{%
+
+    An advertisement includes a claim that more than ten percent of
+    all people use a particular brand of toilet paper. I poll
+    nine-hundred and fifty-six people and ask them if they use this
+    brand of toilet paper. One-hundred and ten say yes. Is the claim
+    true? (Use a five percent significant level.)
+
+    \vfill 
+
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: Reject $H_o$.  & Do not reject $H_0$.
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+  }
 
 \end{frame}
 
