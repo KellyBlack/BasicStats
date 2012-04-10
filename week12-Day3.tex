@@ -2,12 +2,12 @@
 \lecture{The Lecture}{the-lecture}
 
 
-\title{the title}
-\subtitle{Stat 282 - Week 1, Day 2}
+\title{Independent Populations}
+\subtitle{Comparing Two Populations}
 
 \author{Kelly Black}
 \institute{Clarkson University}
-\date{the date}
+\date{11 April 2012}
 
 \begin{frame}
   \titlepage
@@ -19,13 +19,281 @@
 \end{frame}
 
 
-\section{The sections}
+\section{Clicker Quiz}
+
+\begin{frame}{Clicker Quiz}
+
+  \iftoggle{clicker}{%
+
+    A small university on a remote northern border requires that
+    incoming students who enroll in the calculus course take a
+    placement test before the start of classes. The data is to be
+    examined to see if the placement practices are working as
+    intended. The student's scores on the pretest will be compared to
+    the student's average in the class at the end of the semester. Are
+    these independent or dependent populations?
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: Independent & 
+      B: Dependent
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+  }
+
+\end{frame}
+
+\begin{frame}{Clicker Quiz}
+
+  \iftoggle{clicker}{%
+
+    A small university on a remote northern border requires that
+    incoming students who enroll in the calculus course take a
+    placement test before the start of classes. The data is to be
+    examined to see if the placement practices are working as
+    intended. The student's who come from urban areas will be compared
+    to students who come from rural areas. Are these independent or
+    dependent populations?
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: Independent & 
+      B: Dependent
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+  }
+
+\end{frame}
+
+
+\section{Independent Populations}
+
+\begin{frame}
+ \frametitle{Two Independent Samples}
+
+ We have two random variables:
+
+ \begin{columns}
+    \column{.5\textwidth}
+    \begin{eqnarray*}
+      \bar{x}
+    \end{eqnarray*}
+    \only<2->
+    {
+      This random variable has the following properties:
+      \begin{tabular}{ll}
+        Mean & $\mu_1$, \\
+        Samples & $N_1$, \\
+        Std. Dev. & $\frac{\sigma_1}{\sqrt{N_1}}$, \\
+      \end{tabular}
+    }
+    \vfill
+
+    \column{.5\textwidth}
+    \begin{eqnarray*}
+      \bar{y}
+    \end{eqnarray*}
+    \only<3->
+    {
+      This random variable has the following properties:
+      \begin{tabular}{ll}
+        Mean & $\mu_2$, \\
+        Samples & $N_2$., \\
+        Std. Dev. & $\frac{\sigma_2}{\sqrt{N_2}}$, \\
+      \end{tabular}
+    }
+
+    \vfill
+
+ \end{columns}
+
+\end{frame}
+
+\begin{frame}{Take The Difference}
+
+  Define a new random variable:
+  \begin{eqnarray*}
+    W & = & \bar{x} - \bar{y}.
+  \end{eqnarray*}
+
+  The mean of this random variable is 
+  \begin{eqnarray*}
+    \mathrm{Mean~of~}W & = & \mu_1 - \mu_2.
+  \end{eqnarray*}
+
+  \textbf{IF} the populations are independent then the variation of
+  this random variable is
+  \begin{eqnarray*}
+    \mathrm{Variance~of~}W & = & \frac{\sigma_1^2}{N_1} + \frac{\sigma_2^2}{N_2}.
+  \end{eqnarray*}
+
+  So the standard deviation is
+  \begin{eqnarray*}
+    \mathrm{standard~deviation~of~}W & = & \sqrt{\frac{\sigma_1^2}{N_1} + \frac{\sigma_2^2}{N_2}}.
+  \end{eqnarray*}
+
+  
+\end{frame}
 
 
 \begin{frame}
-  \frametitle{}
+ \frametitle{If We Have Sample Standard Deviation}
 
-  \uncover<2->{
+ We have two random variables:
+
+ \begin{columns}
+    \column{.5\textwidth}
+    \begin{eqnarray*}
+      \bar{x}
+    \end{eqnarray*}
+    {
+      \begin{tabular}{ll}
+        Mean & $\mu_1$, \\
+        Samples & $N_1$, \\
+        Sample Std. Dev. & $\frac{s_1}{\sqrt{N_1}}$, \\
+      \end{tabular}
+    }
+    \vfill
+
+    \column{.5\textwidth}
+    \begin{eqnarray*}
+      \bar{y}
+    \end{eqnarray*}
+    {
+      \begin{tabular}{ll}
+        Mean & $\mu_2$, \\
+        Samples & $N_2$., \\
+        Sample Std. Dev. & $\frac{s_2}{\sqrt{N_2}}$, \\
+      \end{tabular}
+    }
+
+ \end{columns}
+
+\vfill
+
+This defines a $t$-distribution
+\begin{eqnarray*}
+  t & = & \frac{(\bar{x}-\bar{y})-(\mu_1-\mu_2)}{\sqrt{\frac{s_1^2}{N_1} + \frac{s_2^2}{N_2}}}.
+\end{eqnarray*}
+The numbers of degrees of freedom is the smaller value of $N_1-1$ and $N_2-1$.
+ 
+
+\end{frame}
+
+\begin{frame}{Example}
+
+  I run an experiment, get a mean, standard deviation, and some number
+  of trials. I then do a hypothesis test:
+  \begin{eqnarray*}
+    \begin{array}{l@{\hspace{2em}}rcl}
+      H_0 & \mu & = & 0, \\
+      H_a & \mu & > & 0.
+    \end{array}
+  \end{eqnarray*}
+
+  \only<2->
+  {
+    Suppose I get a value for $t$ and look up the critical $t$ value
+    ($t^*$):
+    \begin{eqnarray*}
+      t   & \approx & 2.25, \\
+      t^* & \approx & 2.28.
+    \end{eqnarray*}
+
+    Can I reject $H_0$?
+
+  }
+  
+\end{frame}
+
+\begin{frame}{Example}
+
+  I compare two factories. The mean number of items manufactured per
+  day is compared. A sample of 24 days from the first factory produced
+  a sample mean of 145 items per day with a sample standard deviation
+  of 15 items per day. A sample of 28 days from the second factory
+  produced a sample mean of 152 items per day with a sample standard
+  deviation of 17 items per day. Find the 95\% confidence interval for
+  the difference.
+  
+\end{frame}
+
+\begin{frame}{Example}
+
+  I compare two factories. The mean number of items manufactured per
+  day is compared, and we suspect that the first factory is
+  under-performing. A sample of 24 days from the first factory produced
+  a sample mean of 145 items per day with a sample standard deviation
+  of 15 items per day. A sample of 28 days from the second factory
+  produced a sample mean of 152 items per day with a sample standard
+  deviation of 17 items per day. Can we confirm our suspicions?
+  
+\end{frame}
+
+
+\begin{frame}{Clicker Quiz}
+
+  \iftoggle{clicker}{%
+
+    The yield per acre of two types of seeds are examined. The first
+    seed type has fifty-one plots that yield a sample mean of 42
+    bushels per acre with a sample standard deviation of 2.6 bushels
+    per acre. The second seed type has fifty-five plots that yield a
+    sample mean of 43 bushels per acre with a sample standard
+    deviation of 3.1 bushels per acre. Find the 95\% confidence
+    interval for the difference.
+
+    \vfill 
+
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: -2.57 to .57, & 
+      B: -2.11 to .11 \\
+      C: -1.93 to -.07 &
+      D: -1.92 to -0.08
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+  }
+
+\end{frame}
+
+\begin{frame}{Clicker Quiz}
+
+  \iftoggle{clicker}{%
+
+    The yield per acre of two types of seeds are examined. The first
+    seed type has fifty-one plots that yield a sample mean of 42
+    bushels per acre with a sample standard deviation of 2.6 bushels
+    per acre. The second seed type has fifty-five plots that yield a
+    sample mean of 43 bushels per acre with a sample standard
+    deviation of 3.1 bushels per acre. Is there a difference? (Use a
+    95\% confidence level.)
+
+    \vfill 
+
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: Reject $H_o$ & Do not reject $H_o$
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
   }
 
 \end{frame}
@@ -33,27 +301,6 @@
 
 
 
-\section{Another Sections}
-
-\begin{frame}
-  \frametitle{}
-
-  \only<1>{\centerline{\includegraphics[width=11cm]{beats}}}
-  \only<2>{\centerline{\includegraphics[width=11cm]{beatsLong}}}
-  \only<3>{\centerline{\includegraphics[width=11cm]{beatsShort}}}
-
-
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{}
-
-  \begin{definition}
-    
-  \end{definition}
-
-\end{frame}
 
 
 % LocalWords:  Clarkson pausesection hideallsubsections
