@@ -1,13 +1,13 @@
 
-\lecture{The Lecture}{the-lecture}
-\part{The Lecture}
+\lecture{Regression Analysis}{regression-analysis}
+\section{Regression Analysis}
 
-\title{the title}
-\subtitle{Stat 282 - Week 1, Day 2}
+\title{Regression Analysis}
+\subtitle{Analysis Of The Slope Of The Regression Line}
 
 \author{Kelly Black}
 \institute{Clarkson University}
-\date{the date}
+\date{18 April 2012}
 
 \begin{frame}
   \titlepage
@@ -15,43 +15,318 @@
 
 \begin{frame}
   \frametitle{Outline}
-  \tableofcontents[pausesection,hideallsubsections,part=1]
+  \tableofcontents[pausesection,hideothersubsections,sectionstyle=show/hide]
 \end{frame}
 
 
-\section{The sections}
+\subsection{Clicker Quiz}
 
 
 \begin{frame}
-  \frametitle{}
+  \frametitle{Clicker Quiz}
 
-  \uncover<2->{
-  }
+    \iftoggle{clicker}{%
+
+    \begin{columns}
+      \column{.25\textwidth}
+
+      \begin{tabular}{l|l}
+        $X$ & $Y$ \\ \hline
+        1 & 2 \\
+        2 & 3  \\
+        3 & 3 \\
+        4 & 5  \\
+        5 & 4
+      \end{tabular}
+
+      \column{.75\textwidth}
+
+      Is there a relationship between the two variables? (Use a 95\%
+      confidence level.)
+
+      \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+        A: Reject $H_0$  & B: Do not reject $H_0$
+      \end{tabular}
+
+
+      \begin{eqnarray*}
+        \bar{x} & = & 3 \\
+        \bar{y} & = & 3.4
+      \end{eqnarray*}
+
+    \end{columns}
+
+      \begin{eqnarray*}
+        s_{xx} & = & \lp 1-3\rp^2 + \lp 2 - 3 \rp^2 + \lp 3 - 3 \rp^2 + \lp 4 - 3 \rp^2 + \lp 5 - 3 \rp^2 \\
+        & = & 10, \\
+        s_{yy} & = & \lp 2-3.4\rp^2 + \lp 3 - 3.4 \rp^2 + \lp 3 - 3.4 \rp^2 + \lp 5 - 3.4 \rp^2 + \lp 4 - 3.4 \rp^2 \\
+        & = & 5.2, \\
+        s_{xy} & = & \lp 1-3\rp\lp 2-3.4\rp + \lp 2 - 3 \rp\lp 3 - 3.4 \rp + \lp 3 - 3 \rp\lp 3 - 3.4 \rp + \lp 4 - 3 \rp\lp 5 - 3.4 \rp + \lp 5-4 \rp \lp 4-3.4 \rp \\
+        & = & 6
+      \end{eqnarray*}
+
+    \vfill 
+
+
+
+
+    }
 
 \end{frame}
 
 
 
 
-\section{Another Sections}
+\subsection{Linear Regression}
 
 \begin{frame}
-  \frametitle{}
+  \frametitle{Linear Regression}
 
-  \only<1>{\centerline{\includegraphics[width=11cm]{beats}}}
-  \only<2>{\centerline{\includegraphics[width=11cm]{beatsLong}}}
-  \only<3>{\centerline{\includegraphics[width=11cm]{beatsShort}}}
+    \begin{columns}
+      \column{.65\textwidth}
 
+      \centerline{\includegraphics[width=6cm]{img/regressionGeneral}}
+
+      \column{.35\textwidth}
+      
+      from section 3.3 (second week)
+      \begin{eqnarray*}
+        \hat{m} & = & \frac{s_{xy}}{s_{xx}}, \\
+        \hat{b} & = & \bar{y} - \hat{m} \bar{x}.
+      \end{eqnarray*}
+
+    \end{columns}
 
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{}
+\begin{frame}{The Residual}
 
   \begin{definition}
-    
+    The \textit{predicted value} for $y$ at $x$ is
+    \begin{eqnarray*}
+      \hat{y} & = & \hat{m} x + \hat{b}.
+    \end{eqnarray*}
+
+    The \textit{residual} at $x_i$ is 
+    \begin{eqnarray*}
+      \mathrm{Residual} & = & y_i - \lp \hat{m} x + \hat{b} \rp, \\
+      & = & y_i - \hat{y}_i.
+    \end{eqnarray*}
+
   \end{definition}
+
+  \only<2->
+  {
+
+    \begin{definition}
+      The variance of the error is 
+      \begin{eqnarray*}
+        s^2_y & = & \frac{\lp y_1 - \hat{y}_1\rp^2 + \lp y_2 - \hat{y}_2\rp^2 + \cdots + \lp y_n - \hat{y}_n\rp^2 }{n-2}.
+      \end{eqnarray*}
+    \end{definition}
+
+  }
+  
+\end{frame}
+
+\begin{frame}{Example}
+
+    \begin{columns}
+      \column{.25\textwidth}
+
+      \begin{tabular}{l|l}
+        $X$ & $Y$ \\ \hline
+        1 & 2 \\
+        2 & 3  \\
+        3 & 3 \\
+        4 & 5  \\
+        5 & 4
+      \end{tabular}
+
+      \column{.65\textwidth}
+
+      \begin{eqnarray*}
+        \bar{x} & = & 3 \\
+        \bar{y} & = & 3.4 \\
+        s_{xx} & = & 10, \\
+        s_{yy} & = & 5.2, \\
+        s_{xx} & = & 6
+      \end{eqnarray*}
+
+      \end{columns}
+
+  \only<2->
+  {
+
+    \begin{eqnarray*}
+      \hat{m} & = & \frac{s_{xy}}{s_{xx}}, \\
+      & = & 0.6, \\
+      \hat{b} & = & \bar{y} - \hat{m} \bar{x}, \\
+      & = & 1.6
+    \end{eqnarray*}
+
+  }
+
+  
+\end{frame}
+
+
+
+\begin{frame}{Example}
+
+    \begin{columns}
+      \column{.25\textwidth}
+
+      \begin{tabular}{l|l}
+        $X$ & $Y$ \\ \hline
+        1 & 2 \\
+        2 & 3  \\
+        3 & 3 \\
+        4 & 5  \\
+        5 & 4
+      \end{tabular}
+
+      \column{.65\textwidth}
+
+      \begin{eqnarray*}
+        \bar{x} & = & 3 \\
+        \bar{y} & = & 3.4 \\
+        s_{xx} & = & 10, \\
+        s_{yy} & = & 5.2, \\
+        s_{xx} & = & 6, \\
+        \hat{m} & = & 0.6, \\
+        \hat{b} & = & 1.6
+      \end{eqnarray*}
+
+      \end{columns}
+
+  \only<2->
+  {
+
+      \begin{tabular}{r|r<{\onslide<3->}|r<{\onslide<4->}|r<{\onslide}} % 
+        $X$ & $Y$ & $\hat{Y}$ & Residual \\ \hline
+        1 & 2 & 2.2 & -.2 \\
+        2 & 3 & 2.8 &  .2 \\
+        3 & 3 & 3.4 & -.4 \\
+        4 & 5 & 4.0 & 1.0  \\
+        5 & 4 & 4.6 & -.6
+      \end{tabular}
+
+
+  }
+
+  
+\end{frame}
+
+
+\begin{frame}{Example}
+
+  \begin{tabular}{r|r|r|r}
+    $X$ & $Y$ & $\hat{Y}$ & Residual \\ \hline
+    1 & 2 & 2.2 & -.2 \\
+    2 & 3 & 2.8 &  .2 \\
+    3 & 3 & 3.4 & -.4 \\
+    4 & 5 & 4.0 & 1.0  \\
+    5 & 4 & 4.6 & -.6
+  \end{tabular}
+
+  \begin{eqnarray*}
+    s^2_y & = & \frac{ (-.2)^2 + (.2)^2 + (-.4)^2 + (1.0)^2 + (-.6)^2}{5-2}, \\
+    & = & \frac{1.6}{3}, \\
+    s_y & = & \sqrt{\frac{1.6}{3}}, \\
+    & \approx & .730
+  \end{eqnarray*}
+  
+\end{frame}
+  
+
+\subsection{Inference for the Slope}
+
+\begin{frame}
+  \frametitle{Inference for the Slope}
+
+  We have the following estimate for the linear regression line:
+  \begin{eqnarray*}
+    y & = & \hat{m} x + \hat{b}.
+  \end{eqnarray*}
+
+  \begin{definition}
+    The regression estimate for the slope satisfies the $t$ distribution
+    \begin{eqnarray*}
+      t & = & \frac{\hat{m}-m}{s_y}
+    \end{eqnarray*}
+    with $n-2$ degrees of freedom.
+  \end{definition}
+
+\end{frame}
+
+
+\begin{frame}{Inference for the Slope}
+
+  \begin{columns}
+
+    \column{.5\textwidth}
+    Confidence Intervals:
+    \begin{eqnarray*}
+      t^* & = & \frac{\mathrm{error}}{s_y}
+    \end{eqnarray*}
+    with $n-2$ degrees of freedom.
+
+    \column{.5\textwidth}
+
+    Hypothesis Testing:
+    \begin{eqnarray*}
+      t & = & \frac{\hat{m}-m}{s_y}
+    \end{eqnarray*}
+    with $n-2$ degrees of freedom.
+
+    
+  \end{columns}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Clicker Quiz}
+
+    \iftoggle{clicker}{%
+
+    \begin{columns}
+      \column{.15\textwidth}
+
+      \begin{tabular}{l|l}
+        $X$ & $Y$ \\ \hline
+        1 & 2 \\
+        2 & 3  \\
+        3 & 3 \\
+        4 & 5  \\
+        5 & 4
+      \end{tabular}
+
+      \column{.25\textwidth}
+
+      \begin{eqnarray*}
+        \hat{m} & = & 0.6, \\
+        \hat{b} & = & 1.6, \\
+        s_y & = & .730
+      \end{eqnarray*}
+
+
+      \column{.6\textwidth}
+
+      Is the slope different from zero? (Use a 95\% confidence level.)
+
+    \end{columns}
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: Reject $H_0$  & B: Do not reject $H_0$
+    \end{tabular}
+
+    \vfill
+
+    }
 
 \end{frame}
 
