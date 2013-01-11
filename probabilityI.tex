@@ -22,22 +22,26 @@
 \subsection{Clicker Quiz}
 
 
-\begin{frame}
-  \frametitle{Clicker Quiz}
+\iftoggle{clicker}{%
 
-  If I flip a fair coin ten times how many tails will I get?
+  \begin{frame}
+    \frametitle{Clicker Quiz}
 
-  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-    A: 4 & B: 5 & C: 6 & D: I do not know
-  \end{tabular}
+    If I flip a fair coin ten times how many tails will I get?
 
-
-\end{frame}
-
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: 4 & B: 5 & C: 6 & D: I do not know
+    \end{tabular}
 
 
+  \end{frame}
 
-\subsection{Clicker Exercise}
+}
+
+
+
+
+\subsection{Example}
 
 \begin{frame}
   \frametitle{Clicker Exercise}
@@ -47,9 +51,62 @@
   \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
   A: 0 & B: 1 & C: 2 & D: 3
   \end{tabular}
-  
+
+  \only<2->%
+  {
+    Question: What is the probability that we get the same result if
+    we do it again?
+  }
 
 \end{frame}
+
+\begin{frame}{Recall}
+
+  Recall from last time:
+
+  \begin{definition}[Probability]
+    ``\textbf{Probability} is the measure of the likelihood of a random
+    phenomena or chance behavior. Probability describes the long-term
+    proportion with which a certain \textbf{outcome} will occur in
+    situations with short-term uncertainty.'' (Page 223)
+  \end{definition}
+
+  
+\end{frame}
+
+
+\begin{frame}{Also Recall}
+
+  \begin{description}
+  \item[Event:] Something that \textit{can} happen.
+  \item[Outcome:] Something that did happen.
+  \item[Experiment:] A structured activity that includes the
+    measurement of the outcomes of the activity after predefined and
+    intentional changes to some aspect of the events.
+  \item[Observational Study:] A structured activity that includes the
+    measurement of the outcomes of the activity without intentional
+    changes to the events.
+  \item[Expected Outcome:] The ``average'' of the possible outcomes.
+  \item[Variation:] Some measure of the spread of possible outcomes.
+  \end{description}
+  
+\end{frame}
+
+\begin{frame}{Also Also Recall}
+
+  ``Probability'' is an idealized notion. If we repeat the experiment
+  an infinite number of times we ask what \textit{will} happen.
+
+  \vfill
+
+  ``Statistics'' is the study of how to interpret data. We ask what
+  ``did'' happen and what does it imply about the underlying
+  probabilities?
+
+  \vfill
+
+\end{frame}
+
 
 \subsection{Events}
 
@@ -84,6 +141,27 @@
 
 \end{frame}
 
+\subsection{Examples}
+
+\begin{frame}{Example}
+
+  We flip a coin two times. What are the events?
+
+  \only<2->%
+  {
+
+    \begin{eqnarray*}
+      p(\mathrm{first~T}) & = & ? \\
+      p(TT) & = & ? \\
+      p(TH) & = & ? \\
+      p(\mathrm{second~H}) & = & ? \\
+      p(\mathrm{one~T}) & = & ? \\
+      p(\mathrm{two~H}) & = & ?
+    \end{eqnarray*}
+
+  }
+  
+\end{frame}
 
 \begin{frame}{Clicker Quiz}
   A couple has a child. Two years later they have another child. What
@@ -95,6 +173,13 @@
 
 
 \end{frame}
+
+\begin{frame}{Example}
+
+  I roll a die twice. What is $p(\mathrm{sum}=5)$?
+  
+\end{frame}
+
 
 \subsection{Properties of Probabilities}
 
