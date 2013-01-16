@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{1 February 2012}
+\date{18 January 2013}
 
 \begin{frame}
   \titlepage
@@ -22,23 +22,104 @@
 \subsection{Clicker Quiz}
 
 
+\iftoggle{clicker}{%
+  \begin{frame}
+    \frametitle{Clicker Quiz}
+
+    I have a bag with ten blue marbles and four red marbles. I remove
+    one marble and put it to the side. The marble was a blue
+    marble. What is the probability that I pull out a blue marble the
+    next time I draw a marble?
+
+    \vspace{2em}
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: $\frac{10}{14}$ & B: $\frac{9}{13}$ & C: $\frac{4}{14}$ & D: $\frac{4}{13}$
+    \end{tabular}
+
+    \vfill
+
+  \end{frame}
+}
+
 \begin{frame}
-  \frametitle{Clicker Quiz}
+  \frametitle{Verbiage Issues}
 
   I have a bag with ten blue marbles and four red marbles. I remove
-  two marbles without replacement. What is the probability that I pull
-  out a red marble first and then a blue marble?
+  one marble \textbf{without replacement}. The marble was a blue
+  marble. What is the probability that I pull out a blue marble the
+  next time I draw a marble?
 
-  \vspace{2em}
-
-  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
-    A: $\frac{40}{196}$ & B: $\frac{40}{182}$ & C: $\frac{14}{140}$
-  \end{tabular}
-
-  \vfill
+    \vfill
 
 \end{frame}
 
+\begin{frame}{I Know Things}
+
+  Problem: Sometimes I know something about what
+  occured. \textit{\textbf{Given}} that information how do I incorporate it
+  into the probability that some event occured?
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Example From Last Time}
+
+  1000 voters are polled in the 2008 election. We get the following
+  information: \\
+  \only<1>
+  {
+    \begin{tabular}{l|l|l|l}
+      Education & Obama & McCain & Others  \\ \hline
+      No H.S. Diploma & 19 & 20 & 1   \\
+      H.S. Diploma only & 114 & 103 & 3 
+    \end{tabular}
+  }
+  \only<2->
+  {
+    \begin{tabular}{l|l|l|l|l}
+      Education & Obama & McCain & Others & Total \\ \hline
+      No H.S. Diploma & 19 & 20 & 1 & 40 \\
+      H.S. Diploma only & 114 & 103 & 3 & 220 \\ \hline
+      Total & 133 & 123 & 4 & 260
+    \end{tabular}
+  }
+
+
+
+\end{frame}
+
+
+
+\begin{frame}{Conditional Probability}
+
+  I know that B occured. Given that information, what is the
+  probability that A occured?
+
+  \begin{definition}{Conditional Probability}
+
+    The probability that A occurs given that I know that B occured is
+    denoted by
+    \begin{eqnarray*}
+      p(A|B).
+    \end{eqnarray*}
+    
+  \end{definition}
+  
+\end{frame}
+
+
+
+
+\begin{frame}{Conditional Probability}
+
+  \includegraphics[width=5cm]{img/vennDiagram}
+
+  I know that B occured. Given that information, what is the
+  probability that A occured?
+
+  
+\end{frame}
 
 \begin{frame}
   \frametitle{Conditional Probability}
@@ -61,6 +142,16 @@
   I have a bag with eight marbles. Five marbles are red and three are
   blue. I pick two, one after the other without replacing them. What
   is the probability that I pull out a red and then a blue marble?
+
+  \vfill
+
+  \uncover<2->%
+  {
+
+    What is the probability that I get exactly one red marble?
+    \vfill
+
+  }
   
 \end{frame}
 
@@ -83,7 +174,7 @@
 
     The compliment rule:
     \begin{eqnarray*}
-      p(\bar{A}) & = & 1 - p(A).
+      p(A^c) & = & 1 - p(A).
     \end{eqnarray*}
 
   \end{definition}
@@ -168,4 +259,5 @@
 
 
 
-% LocalWords:  Clarkson pausesection hideallsubsections
+% LocalWords:  Clarkson pausesection hideallsubsections hideothersubsections
+% LocalWords:  sectionstyle Obama
