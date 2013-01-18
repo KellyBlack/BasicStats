@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{3 Feb 2012}
+\date{21 January 2013}
 
 \begin{frame}
   \titlepage
@@ -19,32 +19,310 @@
 \end{frame}
 
 
-\subsection{Clicker Quiz}
+\iftoggle{clicker}{%
+  \subsection{Clicker Quiz}
 
+
+  \begin{frame}
+    \frametitle{Clicker Quiz}
+
+    If $p(A)=0.8$, $p(B|A)=0.4$ what is $p(A\mathrm{~and~}B)$?
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: .32 & B: 0.50 & C: 2.0
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+  \end{frame}
+
+}
+
+\subsection{Multiplication Rule}
 
 \begin{frame}
-  \frametitle{Clicker Quiz}
+  \frametitle{How Many Ways?}
+  Suppose that I flip a fair coin three times. How many possible
+  outcomes are there?
 
-  If $p(A)=0.3$, $p(B)=0.4$, and $p(A\mathrm{~or~}B)=.37$ what is
-  $p(A\mathrm{~and~}B)$?
-
-  \vfill
-
-  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
-    A: .11 & B: 12 & C: .33
-  \end{tabular}
-
-  \vfill
-  \vfill
   \vfill
 
 \end{frame}
 
+\begin{frame}{Example}
+
+  I have three pairs of pants and two shirts. How many different
+  outfits do I have?
+
+  \vfill
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Multiplication Rule}
+
+  \begin{definition}[The Multiplication Rule]
+    If I have choices where I have
+    \begin{itemize}
+    \item $p_1$ choices for the first item
+    \item $p_2$ choices for the second item
+    \item $p_3$ choices for the third item \\
+      $\vdots$
+    \item $p_k$ choices for the $k$\textsuperscript{th} item \\
+    \end{itemize}
+
+    The total number of possible selections is 
+    \begin{eqnarray*}
+      p_1 \cdot p_2 \cdot p_3 \cdots ~ \cdot p_k.
+    \end{eqnarray*}
+
+  \end{definition}
+
+\end{frame}
+
+\subsection{Permutations}
+
+\begin{frame}
+  \frametitle{Example}
+  Twelve people are in a race. The first three people get an
+  award. How many different ways can we hand out the awards?
+
+  \vfill
+\end{frame}
+
+\begin{frame}
+  \frametitle{Permutations}
+  \begin{definition}[Permutations]
+    The number of permutations is the number of ways to arrange $n$
+    objects when $r$ is chosen. \textit{(The order matters.)}
+  \end{definition}
+
+  \only<2->%
+  {
+    \begin{definition}[Notation]
+      The number of permutations for $n$ objects when you choose $r$
+      is 
+      \begin{eqnarray*}
+        \prescript{~}{n}{P}_r.
+      \end{eqnarray*}
+    \end{definition}
+  }
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Previous Examples}
+
+  \begin{eqnarray*}
+    \prescript{~}{8}{P}_2 & = & 8\cdot 7, \\
+    \prescript{~}{12}{P}_3 & = & 12\cdot 11 \cdot 10. \\
+  \end{eqnarray*}
+
+
+  \only<2->%
+  {
+
+    \begin{definition}[General Formula for Permutations]
+
+      In general
+      \begin{eqnarray*}
+        \prescript{~}{n}{P}_r & = & n(n-1)(n-2)\cdots(n-r+1).
+      \end{eqnarray*}
+
+      
+    \end{definition}
+
+  }
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Notation}
+
+  \begin{definition}[Factorials]
+
+    If $n$ is an integer then
+    \begin{eqnarray}
+      n! & = & n(n-1)(n-2)\cdot 3 \cdot 2 \cdot 1.
+    \end{eqnarray}
+    
+  \end{definition}
+
+  Examples:
+  \begin{eqnarray}
+    4! & = & 4 \cdot 3  \cdot 2 \cdot 1, \\
+    5! & = & 5 \cdot 4 \cdot 3  \cdot 2 \cdot 1.
+  \end{eqnarray}
+  
+\end{frame}
 
 
 
-\subsection{Example}
+\begin{frame}
+  \frametitle{By the Way}
 
+      \begin{eqnarray*}
+        \prescript{~}{n}{P}_r & = & n(n-1)(n-2)\cdots(n-r+1), \\
+        & = & \frac{n!}{(n-r)!}.
+      \end{eqnarray*}
+
+  
+\end{frame}
+
+\iftoggle{clicker}{%
+
+
+  \begin{frame}
+    \frametitle{Clicker Quiz}
+
+    There are eight distinct marbles in a bag. I pull three out one
+    after the other and place them side by side from left to
+    right. How many different ways can this be done?
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: $8!$ & B: $\frac{8!}{3!}$  & C: $\frac{8!}{5!}$ & C: $3!$
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+  \end{frame}
+
+}
+
+
+
+\subsection{Combinations}
+
+\begin{frame}
+  \frametitle{Example}
+
+  What if I have three people on a team but only two can play at a
+  time? How many groups can play?
+
+  \vfill
+
+  \only<2->%
+  {
+
+    Notation:
+    \begin{eqnarray*}
+      \prescript{~}{6}C_2 & = & 3, \\
+      6 \choose 2  & = & 3.
+    \end{eqnarray*}
+
+  }
+  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Combinations}
+
+  In general we have 
+  \begin{eqnarray*}
+    \underbrace{
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} \ldots
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm}}_{\mathrm{n~possible~items}}
+    & \rightarrow & 
+    \underbrace{
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} \ldots
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm}}_{\mathrm{k~slots}}
+  \end{eqnarray*}
+
+  \only<2->%
+  {
+
+    There are $\prescript{~}{n}{P}_r$ permutations. Each permutation
+    can be expressed in $k!$ different ways,
+    \begin{eqnarray*}
+      \prescript{~}{n}{P}_r & = & k! \prescript{~}{n}{C}_r, \\
+      \prescript{~}{n}{C}_r & = & \frac{\prescript{~}{n}{P}_r}{k!}, \\
+      \prescript{~}{n}{C}_r & = & \frac{n!}{(n-k)!k!}.
+    \end{eqnarray*}
+  }
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Example}
+  Thirty people are on a committee. The executive committee is made up
+  of four people. How many ways are there to form the executive
+  committee?
+  
+\end{frame}
+
+\iftoggle{clicker}{%
+
+
+  \begin{frame}
+    \frametitle{Clicker Quiz}
+
+    There are eight distinct marbles in a bag. I pull three out one
+    after the other and give them to a friend. How many different
+    combinations can I give away?
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: $\frac{8!}{3!}$ & B: $\frac{8!}{5!3!}$  & C: $\frac{5!}{3!}$ & C: $3!$
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+  \end{frame}
+
+}
+
+
+\subsection{Generalized Permutations}
+
+\begin{frame}
+  \frametitle{Generalized Permutations}
+
+  I have
+  \begin{itemize}
+  \item A set of $n_1$ identical objects
+  \item Another set of $n_2$ identical objects 
+  \item Another set of $n_3$ identical objects \\
+    \vdots
+  \item Another set of $n_k$ identical objects, \\
+  \item $n=n_1+n_2+n_3+\cdots+n_k$.
+  \end{itemize}
+
+  The number of ways to arrange these objects is 
+  \begin{eqnarray*}
+    \frac{n!}{n_1! n_2! n_3! \cdots n_k!}.
+  \end{eqnarray*}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Example}
+
+  I have five blue flags and eight red flags. How many ways can I
+  arrange them on a vertical flag pole?
+
+  
+  
+\end{frame}
 
 %%% Local Variables: 
 %%% mode: latex
