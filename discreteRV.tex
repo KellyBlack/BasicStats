@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{8 February 2012}
+\date{23 January 2013}
 
 \begin{frame}
   \titlepage
@@ -25,12 +25,13 @@
 \begin{frame}
   \frametitle{Clicker Quiz}
 
-  I flip a coin three times. What is the probability that I get two tails?
+  I flip a coin two times. What is the probability that I get exactly
+  one tail?
 
   \vfill
 
-  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
-    A: 1/8 & B: 3/8 & C: 1/2
+  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+    A: 0 & B: 1/4 & C: 1/2 & D: 3/4
   \end{tabular}
 
   \vfill
@@ -41,6 +42,90 @@
 
 
 \subsection{Random Variables}
+
+\begin{frame}{Flip a Coin Three Times - Count the number of tails.}
+
+  \uncover<2->{{\color{blue} If I do this many, many, many times....}}
+
+  What is the probability I get 0 tails?
+
+  \uncover<2->{{\color{red} About 1/8 of the time I expect to get 0
+      tails.}}
+
+  \vfill
+
+  What is the probability I get 1 tail?
+
+  \uncover<3->{{\color{red} About 3/8 of the time I expect to get 1
+      tail.}}
+
+  \vfill
+
+
+  What is the probability I get 2 tails?
+
+  \uncover<4->{{\color{red} About 3/8 of the time I expect to get 2
+      tails.}}
+
+  \vfill
+
+
+  What is the probability I get 3 tails?
+
+  \uncover<5->{{\color{red} About 1/8 of the time I expect to get 3
+      tails.}}
+
+  \vfill
+
+  
+\end{frame}
+
+\begin{frame}{The Mean Number of Tails}
+  \vspace*{-1em}
+  {\footnotesize If I do this experiment (flip a coin three times and count the
+  number of tails) many, many, many times then the
+  ``\textit{average}'' number of tails for the results would be:}
+  \begin{eqnarray*}
+    \bar{x} & = & \frac{x_1 + x_2 + x_3 + \cdot + x_n}{n}, \\
+    \only<2>%
+    {
+      & = & \frac{1}{n}\lp 0 + 0 + \cdots + 0 \rp + \\
+      &   & \frac{1}{n}\lp 1 + 1 + \cdots + 1 \rp + \\
+      &   & \frac{1}{n}\lp 2 + 2 + \cdots + 2 \rp + \\
+      &   & \frac{1}{n}\lp 3 + 3 + \cdots + 3 \rp  \\
+    }
+    \only<3>%
+    {
+      & = & \frac{1}{n}\lp \underbrace{0 + 0 + \cdots +
+        0}_{\mathrm{number~of~zeroes}}  \rp + \\
+      &   & \frac{1}{n}\lp \underbrace{1 + 1 + \cdots + 1}_{\mathrm{number~of~ones}} \rp + \\
+      &   & \frac{1}{n}\lp \underbrace{2 + 2 + \cdots + 2}_{\mathrm{number~of~twos}} \rp + \\
+      &   & \frac{1}{n}\lp \underbrace{3 + 3 + \cdots + 3}_{\mathrm{number~of~threes}} \rp  \\
+    }
+    \only<4>%
+    {
+      & = & \frac{1}{n}\lp 0\cdot{\mathrm{number~of~zeroes}}  \rp + \\
+      &   & \frac{1}{n}\lp 1\cdot{\mathrm{number~of~ones}} \rp + \\
+      &   & \frac{1}{n}\lp 2\cdot{\mathrm{number~of~twos}} \rp + \\
+      &   & \frac{1}{n}\lp 3\cdot{\mathrm{number~of~threes}} \rp  \\
+    }
+    \only<5>%
+    {
+      & = & \frac{1}{n}\lp 0\cdot{n\cdot\frac{1}{8}}  \rp + \\
+      &   & \frac{1}{n}\lp 1\cdot{n\cdot\frac{3}{8}} \rp + \\
+      &   & \frac{1}{n}\lp 2\cdot{n\cdot\frac{3}{8}} \rp + \\
+      &   & \frac{1}{n}\lp 3\cdot{n\cdot\frac{1}{8}} \rp  \\
+    }
+    \only<6>%
+    {
+      & = & 0\cdot{\frac{1}{8}}  + \\
+      &   & 1\cdot{\frac{3}{8}}  + \\
+      &   & 2\cdot{\frac{3}{8}}  + \\
+      &   & 3\cdot{\frac{1}{8}}   \\
+    }
+  \end{eqnarray*}
+  
+\end{frame}
 
 \begin{frame}
   \frametitle{Random Variables}
@@ -76,6 +161,32 @@
 
 \end{frame}
 
+\begin{frame}{Previous Example}
+
+  I flip a coin three times and count the number of tails. It is a
+  discrete random variable.
+
+  \begin{columns}
+    \column{.40\textwidth}
+
+    \begin{eqnarray*}
+      \begin{array}{l|l}
+        \mathrm{X} & p \\ \hline
+        0  & 1/8 \\
+        1  & 3/8 \\
+        2  & 3/8 \\
+        3  & 1/8
+      \end{array}
+    \end{eqnarray*}
+
+    \column{.60\textwidth}
+
+    \includegraphics[width=6cm]{img/probDist3Tosses}
+
+  \end{columns}
+  
+  
+\end{frame}
 
 
 \begin{frame}{Discrete Random Variables}
@@ -215,16 +326,16 @@
       \begin{array}{r|l}
         \mathrm{X} & p \\ \hline
          0 & \frac{1}{8} \\ [5pt]
-         1 & \frac{1}{8} \\ [5pt]
+         1 & \frac{2}{8} \\ [5pt]
          2 & \frac{4}{8} \\ [5pt]
-         3 & \frac{2}{8}
+         3 & \frac{1}{8}
       \end{array}
     \end{eqnarray*}
 
     \vfill
 
   \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
-    A: 15/8  & B: 2 & C: 17/8
+    A: 6/8  & B: 6/4 & C: 13/8
   \end{tabular}
 
   \vfill
