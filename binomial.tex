@@ -3,11 +3,11 @@
 \section{Binomial Random Variables}
 
 \title{Binomial Random Variables}
-\subtitle{Counting Events}
+\subtitle{It is either one or the other}
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{10 Feb 2012}
+\date{25 January 2013}
 
 \begin{frame}
   \titlepage
@@ -22,22 +22,35 @@
 \subsection{Clicker Quiz}
 
 
+\iftoggle{clicker}{%
+  \begin{frame}
+    \frametitle{Clicker Quiz}
+
+    You are going to flip a coin three times. What is the probability of
+    getting two tails?
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: 1/8 & B: 2/8 & C: 3/8 & D: 4/8
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+
+  \end{frame}
+}
+
+
 \begin{frame}
-  \frametitle{Clicker Quiz}
+  \frametitle{Four flips}
 
   You are going to flip a coin four times. What is the probability of
   getting three tails?
 
     \vfill
-
-  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
-    A: 1/4 & B: 1/2 & C: 3/4
-  \end{tabular}
-
-  \vfill
-  \vfill
-  \vfill
-
 
 \end{frame}
 
@@ -48,6 +61,102 @@
   
 \end{frame}
 
+\subsection{Binomial Distribution}
+
+\begin{frame}{Binomial Distribution}
+
+  \begin{itemize}
+  \item I have $N$ experiments.
+  \item Each experiment has only two possible outcomes (Yes/No).
+  \item Each experiment has a probability $p$ of a ``yes'' outcome.
+  \item Each experiment is independent of the others.
+  \end{itemize}
+
+  \vfill
+
+  Question: What is the probability of $k$ ``yes'' outcomes?
+
+  \vfill
+
+  In general we have 
+  \begin{eqnarray*}
+    \underbrace{
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} \ldots
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm}}_{\mathrm{n~possible~outcomes}}
+    & \rightarrow & 
+    \underbrace{
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} \ldots
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm}}_{\mathrm{k~Yes}}
+    \bigg|
+    \underbrace{
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} \ldots
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm}}_{\mathrm{N-k~No}}
+  \end{eqnarray*}
+
+
+
+  
+\end{frame}
+
+\begin{frame}{Binomial Distribution}
+
+  In general we have 
+  \begin{eqnarray*}
+    \underbrace{
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} \ldots
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm}}_{\mathrm{n~possible~outcomes}}
+    & \rightarrow & 
+    \underbrace{
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} \ldots
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm}}_{\mathrm{k~Yes}}
+    \bigg|
+    \underbrace{
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} \ldots
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm}}_{\mathrm{N-k~No}}
+  \end{eqnarray*}
+
+  \vfill
+
+  The probability of this particular outcome is $p^k(1-p)^{N-k}$. 
+
+  \vfill
+
+  There are $\prescript{~}{n}{C}_k$ ways to get $k$ ``yes'' results.
+  
+  \vfill
+
+  \textbf{Binommial Distribution:}\\
+  {\color{red}
+    The probability of $k$ ``yes'' outcomes is 
+    $\prescript{~}{n}{C}_k \cdot p^k (1-p)^{N-k}$.} 
+
+  \vfill
+
+  
+\end{frame}
+
 
 
 \subsection{Examples}
@@ -55,7 +164,7 @@
 \begin{frame}
   \frametitle{Example}
 
-  It is estimated that in a given monthly period 55\% od all stocks
+  It is estimated that in a given monthly period 55\% of all stocks
   will rise. I pick four stocks at random (with replacement). What is
   the probability that I get exactly one stock that rises?
 
@@ -78,15 +187,15 @@
 
 \begin{frame}{Clicker Quiz}
 
-  A basketball player has a lifetime average of making 60\% of his
-  free throws. In a particular game he will attempt ten free
-  throws. What is the probability that he will make exactly six free
+  A basketball player has a lifetime average of making 70\% of her
+  free throws. In a particular game she will attempt seven free
+  throws. What is the probability that she will make exactly five free
   throws?
 
     \vfill
 
   \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-    A: .20 & B: .25 & C: .50 & D: .60
+    A: .015 & B: .105 & C: .32 & D: .64
   \end{tabular}
 
   \vfill
