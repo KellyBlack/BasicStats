@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{15 February 2012}
+\date{30 January 2013}
 
 \begin{frame}
   \titlepage
@@ -25,11 +25,11 @@
 \begin{frame}
   \frametitle{Clicker Quiz}
 
-  Calculate the value $5 \choose 3 $.
+  Calculate the value $5 \choose 2 $.
     \vfill
 
-  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
-    A: 20 & B: 15 & C: 10
+  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}ll@{\hspace{3em}}l}
+    A: 10 & B: 20 & C: 25 & D: 30 
   \end{tabular}
 
   \vfill
@@ -40,15 +40,132 @@
 \end{frame}
 
 
+\subsection{Uniform Probability Distribution}
 
+\begin{frame}{Spin A Wheel}
 
-\subsection{Another Sections}
+  I take a wheel that has a circumference of 2 and spin it. Let $X$ be
+  the distance it turns.
+
+  \includegraphics[width=3cm]{img/spinWheel}
+
+  What is the probability that $X$ is equal to $\half$? \\
+  $p\lp X=\half \rp$
+  
+\end{frame}
+
+\begin{frame}{Ask a Different Question}
+
+  I take a wheel that has a circumference of 2 and spin it. Let $X$ be
+  the distance it turns.
+
+  \includegraphics[width=3cm]{img/spinWheel}
+
+  What is the probability that $X$ is between $\frac{1}{4}$ and  $\half$? \\
+  $p\lp \frac{1}{4} \leq X \leq \half \rp$
+
+  
+\end{frame}
 
 \begin{frame}
-  \frametitle{}
+  \frametitle{Probability Distribution}
 
-  \includegraphics[width=5cm]{img/cummulativeDist}
+  \includegraphics[width=5cm]{img/uniformDist}
 
+  \begin{eqnarray*}
+    f(x) & = & \left\{
+      \begin{array}{l@{\hspace{2em}}rccccl}
+      \half & 0 & \leq & x & \leq & 2 \\
+      0 & \mathrm{otherwise}
+    \end{array}
+      \right.
+  \end{eqnarray*}
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Probability Distribution}
+
+  \includegraphics[width=5cm]{img/uniformDistArea}
+
+  \begin{eqnarray*}
+    p\lp\frac{1}{4} \leq X \leq \half \rp.
+  \end{eqnarray*}
+
+\end{frame}
+
+
+\begin{frame}{The Probability Density Function}
+
+  \begin{definition}
+    A probability density function is a function that satisfies the
+    folllowing properties:
+    \begin{enumerate}
+    \item The area under the function is one.
+    \item The function is always greater than or equal to zero.
+    \end{enumerate}
+  \end{definition}
+
+  In the previous example the probability density function was
+  \begin{eqnarray*}
+    f(x) & = & \left\{
+      \begin{array}{l@{\hspace{2em}}rccccl}
+      \half & 0 & \leq & x & \leq & 2 \\
+      0 & \mathrm{otherwise}
+    \end{array}
+      \right.
+  \end{eqnarray*}
+
+  
+\end{frame}
+
+\begin{frame}{Example}
+  A bus may show up to a stop at any time between 1:00pm and 1:15pm
+  with a uniform probability distribution. What is the probability
+  that it will show up before 1:05pm?
+\end{frame}
+
+\subsection{The Normal Distribution}
+
+\begin{frame}{The Normal Distribution}
+
+  \only<1>{\includegraphics[width=5cm]{img/standardNormal}}
+  \only<2>{\includegraphics[width=5cm]{img/standardNormalInflection}}
+
+  \begin{eqnarray*}
+    f(z) & = & \frac{1}{\sqrt{2\pi}} e^{-z^2/2}.
+  \end{eqnarray*}
+  
+\end{frame}
+
+\begin{frame}{Probability and Area}
+
+  \includegraphics[width=5cm]{img/standardNormalArea}
+
+  \begin{eqnarray*}
+    p(X \leq a) 
+  \end{eqnarray*}
+  
+\end{frame}
+
+
+\begin{frame}{Probability and Area}
+
+  \includegraphics[width=5cm]{img/standardNormalAreaBoth}
+
+  \begin{eqnarray*}
+    p(a \leq X \leq b) 
+  \end{eqnarray*}
+  
+\end{frame}
+
+\subsection{Calculating Probabilities}
+
+\begin{frame}{Calculating the Probability For the Standard Normal}
+
+  \includegraphics[width=6cm]{img/cummulativeDist}
+  
 \end{frame}
 
 \begin{frame}
@@ -160,6 +277,7 @@
 
 \end{frame}
 
+\subsection{Examples}
 
 \begin{frame}{\small Find the probability that a standard normal is less than -1.75.}
   
@@ -394,6 +512,14 @@ intersection of the row and column, 0.8078.}
 
 
 \begin{frame}
+
+  Determine $p(-1.32 \leq z \leq 2.56)$.
+
+  \hfill
+
+\end{frame}
+
+\begin{frame}
   \frametitle{Clicker Quiz}
 
   Find $p(1.46 \leq Z \leq 2.13)$.
@@ -409,6 +535,19 @@ intersection of the row and column, 0.8078.}
   \vfill
 
 
+\end{frame}
+
+
+\begin{frame}{Going Backwards}
+
+  If $p(z \leq a) \approx 0.87$ what is $a$?
+
+  \hfill
+
+   If $p(z \geq a) \approx 0.05$ what is $a$?
+
+   \hfill
+  
 \end{frame}
 
 
