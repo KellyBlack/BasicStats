@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{February 20 2012}
+\date{February 1 2013}
 
 \begin{frame}
   \titlepage
@@ -21,25 +21,26 @@
 
 \subsection{Clicker Quiz}
 
+\iftoggle{clicker}{%
+  \begin{frame}
+    \frametitle{Clicker Quiz}
 
-\begin{frame}
-  \frametitle{Clicker Quiz}
+    What is the probability that a random variable that follows a
+    standard normal distribution is less than 1.47?
 
-  What is the probability that a random variable that follows a
-  standard normal distribution is less than 1.36?
+    \vfill
 
-  \vfill
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: .9147 & B: .9292 & C: .9418 
+    \end{tabular}
 
-  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
-    A: .9032 & B: .9131 & C: .9147
-  \end{tabular}
-
-  \vfill
-  \vfill
-  \vfill
+    \vfill
+    \vfill
+    \vfill
 
 
-\end{frame}
+  \end{frame}
+}
 
 
 \begin{frame}
@@ -153,6 +154,72 @@
 \end{frame}
 
 
+\subsection{Standard Normal}
+
+\begin{frame}{The Normal Distribution}
+
+  \only<1>{\includegraphics[width=5cm]{img/standardNormal}}
+  \only<2>{\includegraphics[width=5cm]{img/standardNormalInflection}}
+
+  \begin{eqnarray*}
+    f(z) & = & \frac{1}{\sqrt{2\pi}} e^{-z^2/2}.
+  \end{eqnarray*}
+  
+\end{frame}
+
+\begin{frame}{Probability and Area}
+
+  \includegraphics[width=5cm]{img/standardNormalArea}
+
+  \begin{eqnarray*}
+    p(X \leq a) 
+  \end{eqnarray*}
+  
+\end{frame}
+
+
+\begin{frame}{Probability and Area}
+
+  \includegraphics[width=5cm]{img/standardNormalAreaBoth}
+
+  \begin{eqnarray*}
+    p(a \leq X \leq b) 
+  \end{eqnarray*}
+  
+\end{frame}
+
+
+\begin{frame}{Example}
+
+  What is the probability that a random variable that follows a
+  standard normal is between -0.45 and 0.35?
+
+  \vfill
+  
+\end{frame}
+
+
+\begin{frame}{Work it backwards}
+
+  Find the value, $z$, of a random variable that follows a standard normal
+  so that the probability that it is less than $z$ is 0.35.
+
+  \vfill
+  
+\end{frame}
+
+
+\begin{frame}{Work it backwards}
+
+  Find the value, $z$, of a random variable that follows a standard normal
+  so that the probability that it is more than $z$ is 0.35.
+
+  \vfill
+  
+\end{frame}
+
+
+
 \subsection{General Normal Distribution}
 
 \begin{frame}{General Normal Distribution}
@@ -197,55 +264,41 @@
 
 
 
-\begin{frame}
-  \frametitle{Example}
 
-  You are examining a portfolio of stocks. The total change in the
-  value of an individual stock is normally distributed with a mean of
-  0.5 and a standard deviation of 4.4. You want to decide which ones
-  are in the top 25\% in gains based solely on the price change. What
-  is the cut off?
+\iftoggle{clicker}{%
+  \begin{frame}
+    \frametitle{Clicker Quiz}
 
-  \vfill
+    A random variable, $X$, is normally distributed with a mean of 2.3
+    and a standard distribution of 3.18. What is the probability that
+    it is between -1.0 and 0.0?
+
+    (Use the closest number)
+
+    \vfill
+
+ 
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: 0.0569 & B: 0.0866  & C:   0.1073 & D: .3413 
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+
+  \end{frame}
+}
 
 
 
+\begin{frame}{Example}
+
+  A random variable, $X$, is normally distributed with mean -1.2 and a
+  standard deviation of 4.5. Find the value of $X$ for which there is
+  a probability of 0.25 to be less than that value.
+  
 \end{frame}
-
-
-
-\begin{frame}
-  \frametitle{Example}
-
-  The starting salaried for business majors is \$56,000 with a
-  standard deviation of \$5,000. What is the probability that a
-  randomly chosen business major will have an offer of more than
-  \$63,000 per year?
-
-\end{frame}
-
-
-
-\begin{frame}
-  \frametitle{Clicker Quiz}
-
-  The speeds of automobiles on a given road is normally distributed
-  with mean 57MPH. It is estimated that 25\% of the cars have a speed
-  of 52 MPH. What is the standard deviation?
-
-  \vfill
-
-  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-    A: 0.05 & B: 4.75 & C: 7.40 & D: 20
-  \end{tabular}
-
-  \vfill
-  \vfill
-  \vfill
-
-
-\end{frame}
-
 
 
 
