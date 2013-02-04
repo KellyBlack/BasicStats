@@ -1,13 +1,13 @@
 
-\lecture{Sample Distributions}{sample-distributions}
-\section{Sample Distributions}
+\lecture{Examples of the Normal Distribution}{normal-distributions-examples}
+\section{Examples of the Normal Distribution}
 
-\title{Sample Distributions}
-\subtitle{The Sample Mean Varies}
+\title{Examples of the Normal Distribution}
+\subtitle{Moar Normal!}
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{24 Feb 2012}
+\date{4 February 2013}
 
 \begin{frame}
   \titlepage
@@ -22,25 +22,27 @@
 \subsection{Clicker Quiz}
 
 
-\begin{frame}{Clicker Quiz}
+\iftoggle{clicker}{%
+  \begin{frame}{Clicker Quiz}
 
-  Clarkson University claims that over eighty percent of all students
-  take part in intramural sports. You choose three hundred students at
-  random. What is the probability that more than two-hundred and fifty will say
-  that they take part in intramural sports?
+    What is the probability that a random variable that follows a
+    standard normal will be less than -0.45?
 
-  \vfill
+    \vfill
 
-  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
-    A: 0.0643  & B: 0.4679 & C: 0.9375
-  \end{tabular}
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A:  .3264  & B: .3632  & C: .6736
+    \end{tabular}
 
-  \vfill
-  \vfill
-  \vfill
+    \vfill
+    \vfill
+    \vfill
 
-\end{frame}
+  \end{frame}
+}
 
+
+\subsection{Examples}
 
 \begin{frame}
   \frametitle{Example}
@@ -59,87 +61,10 @@
 
 
 
+
+
 \begin{frame}
   \frametitle{Example}
-
-  The starting salaried for business majors is \$56,000 with a
-  standard deviation of \$5,000. What is the probability that a
-  randomly chosen business major will have an offer of more than
-  \$63,000 per year?
-
-\end{frame}
-
-
-
-
-\subsection{Coin Flip}
-
-\begin{frame}
-  \frametitle{Coin Flip}
-
-  Flip a Coin
-
-  \only<2->{How many tails?}
-
-  \only<3->{Divide by the number of people.}
-
-  \only<4->{Do it again.}
-
-  \only<5->{Do it again.}
-
-\end{frame}
-
-\subsection{The Sample Mean}
-
-\begin{frame}
-  \frametitle{Sample Mean}
-
-  We have a bunch of measurements:
-  \begin{eqnarray*}
-    \bar{x} & = & x_1,~x_2,~x_3,\cdots,~x_n.
-  \end{eqnarray*}
-  Each measurement has a mean, $\mu$, and a standard deviation of
-  $\sigma$. We assume that they are all independent of one another.
-  
-  \only<1-2>
-  {
-    \begin{definition}
-      Given measurements the sample mean is 
-      \begin{eqnarray*}
-        \bar{x} & = & \frac{x_1+x_2+x_3+\cdots+x_n}{n}.
-      \end{eqnarray*}
-    \end{definition}
-  }
-
-  \only<3->
-  {
-    \begin{definition}
-      Given measurements the sample mean is 
-      \begin{eqnarray*}
-        \bar{x} & = & \frac{x_1+x_2+x_3+\cdots+x_n}{n}.
-      \end{eqnarray*}
-      The sample mean, $\bar{x}$,  has a mean of $\mu$, and it has a
-      standard deviation of $\frac{\sigma}{\sqrt{n}}$.
-    \end{definition}
-  }
-
-
-  \only<2->
-  {
-    The sample mean is a random variable!
-  }
-
-\end{frame}
-
-
-\begin{frame}
-  (central limit theorem example)
-\end{frame}
-
-\subsection{Examples}
-
-\begin{frame}
-  \frametitle{}
 
   A random variable has a mean of 3.0 and a standard deviation of
   4.5. If I take one sample what is the probability that it is less
@@ -147,33 +72,73 @@
 
   \vfill
 
-  \only<2->
-  {
-    If I take four samples what is the probability that it is less
-    than zero?
-  }
-
-  \vfill
+%  \only<2->
+%  {
+%    If I take four samples what is the probability that it is less
+%    than zero?
+%  }
+%
+%  \vfill
 
 \end{frame}
 
+\iftoggle{clicker}{%
+  \begin{frame}
+    \frametitle{Clicker Quiz - Starting Salaries}
+
+    The mean starting salaries for business majors is \$56,000 with a
+    standard deviation of \$5,000. What is the probability that a
+    randomly chosen business major will have an offer of more than
+    \$63,000 per year?
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A:  0.0808  & B: 0.919  & C: 1.4
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+
+
+  \end{frame}
+}
+
+
+
+
+
+\iftoggle{clicker}{%
+  \begin{frame}
+    \frametitle{Clicker Quiz}
+
+    The total change in a stock's price on one particular day has a
+    mean of -.35\$ with a standard deviation of .86\$.  What is the
+    probability that the price change in a randomly chosen stock will
+    be more than zero?
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: 0.0516  & B: 0.3420 & C: 0.6580 & D: 0.9484
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+  \end{frame}
+}
+
 
 \begin{frame}
-  \frametitle{Clicker Quiz}
+  \frametitle{Example}
 
-  The total change in a stock's price on one particular day has a mean
-  of -.35\$ with a standard deviation of .86\$. A sample of 16 stocks
-  is taken. What is the probability that the mean will be more than
-  zero?
+  A random variable has a mean of 12.0, and the probability that it is
+  less than 8.0 is approximately 0.25. What is the standard deviation?
 
-  \vfill
-
-  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-    A: 0.0516  & B: 0.3420 & C: 0.6580 & D: 0.9484
-  \end{tabular}
-
-  \vfill
-  \vfill
   \vfill
 
 \end{frame}
@@ -182,16 +147,16 @@
 \begin{frame}
   \frametitle{Example}
 
-  I have a random variable. It is normally distributed with a mean of
-  0.5 and a standard deviation of 2.0. How many samples should I take
-  so that
-  \begin{eqnarray*}
-    p(\bar{x} < 0.25) & = & 0.05?
-  \end{eqnarray*}
+  A random variable has a mean of -2.0 and a standard deviation of
+  5.0. Find the value, $x$, so that there is a probability of 0.30 that the
+  random variable is bigger than than $x$.
+
+  \vfill
 
 \end{frame}
 
 
 
 
-% LocalWords:  Clarkson pausesection hideallsubsections
+% LocalWords:  Clarkson pausesection hideallsubsections hideothersubsections
+% LocalWords:  sectionstyle
