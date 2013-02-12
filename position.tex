@@ -331,6 +331,102 @@
 \end{frame}
 
 
+\subsection{Spread of Data}
+
+\begin{frame}{Center of what?}
+
+  The sample mean and sample give us an estimate of the ``center'' of
+  the data. The question that next comes up is the center of what?
+
+  The center of the data is just as important as the spread around the
+  center.
+  
+\end{frame}
+
+\begin{frame}{Example}
+
+  You have daily sales from stores. You take ten samples from each store and
+  want to estimate the mean sales. For which store do you place a
+  greater trust in your estimate?
+
+  \begin{columns}
+    \column{.5\textwidth}
+    \includegraphics[width=4cm]{img/dailySalesStore1}
+
+    \column{.5\textwidth}
+    \includegraphics[width=4cm]{img/dailySalesStore2}
+    
+  \end{columns}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Spread of Data}
+
+  Given data:
+  \begin{eqnarray*}
+    x_1, ~ x_2, ~ x_3, ~ \ldots ~,x_n.
+  \end{eqnarray*}
+
+  \begin{definition}
+    The range is the biggest number minus the smallest number.
+  \end{definition}
+
+
+  \begin{definition}
+    The sample variation of the data is 
+    \begin{eqnarray*}
+      s^2 & = & \frac{(x_1-\bar{x})^2+(x_2-\bar{x})^2+\cdots+(x_n-\bar{x})^2}{n-1}.
+    \end{eqnarray*}
+  \end{definition}
+
+  \begin{definition}
+    The sample standard deviation of the data is the square root of
+    the sample variation.
+  \end{definition}
+
+
+\end{frame}
+
+\begin{frame}{Example}
+
+  Find the range and standard deviation of the following data: \\
+  \begin{tabular}{lll}
+    3, & 5, & -2
+  \end{tabular}
+
+  
+\end{frame}
+
+\iftoggle{clicker}{%
+  \begin{frame}
+    \frametitle{Clicker Quiz}
+    (Use channel 42)
+
+    Find the standard deviation of the following data set:
+    \vfill 
+
+    \begin{tabular}{llll}
+      3, & 3, & 2, & 4
+    \end{tabular}
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      a: 0.5  & b: 0.667  & C: 0.707 & D: 0.816
+    \end{tabular}
+
+    \vfill
+
+  
+
+  \end{frame}
+}
+
+
+
+
+
 
 
 % LocalWords:  Clarkson pausesection hideallsubsections
