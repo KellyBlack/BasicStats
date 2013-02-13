@@ -1,10 +1,10 @@
 
-\lecture{Measures Of Position}{measures-of-position}
-\section{Measures Of Position}
+\lecture{Grouped Data}{grouped-data}
+\section{Grouped Data}
 
 
-\title{More Measures Of Dispersion}
-\subtitle{How Spread Out?}
+\title{Grouped Data}
+\subtitle{Working with Grouped Data}
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
@@ -47,256 +47,461 @@
 
 
 
+\subsection{Grouped Data - Discrete Data}
 
-\subsection{Percentiles}
+\begin{frame}{Grouped Data}
 
-\begin{frame}
-  \frametitle{Percentiles}
+  \begin{itemize}
+  \item Often times you do not get raw data.
 
-  \begin{definition}
-    The P\textsuperscript{th} percentile is the data point for which P\%
-    of the numbers are smaller than it.
-  \end{definition}
+  \item What do you do when you have to react to data in a report or a
+    publication?
 
+  \item Here we assume that we are given frequencies from summaries of
+    data. We want to know how to estimate the center and spread of the
+    data.
+  \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Percentiles}
+\begin{frame}{Frequency Tables - Discrete Data}
 
-%  \begin{eqnarray*}
-%    \begin{array}{lllll}
-%      x_1 & x_2 & x_3 & \cdots & x_n \\
-%    \end{array}
-%  \end{eqnarray*}
+  Suppose we have this data:
+  \begin{eqnarray*}
+    5,~5,~3,~5,~4,~3,~4,~1,~6,~3,~2,~1
+  \end{eqnarray*}
 
-  \newcount\xnum
-  \newcount\xnumpos
-  \only<1>
+  We can count the number of occurrences and work with frequencies.
+
+  \only<2->%
   {
-    \begin{picture}(500,100)(0,0)
-      \multiput(10,90)(20, 0){15}{\line(1,0){15}}
-      \xnum=1
-      \xnumpos=12
-      \loop
-      \put(\xnumpos,95){$x_{{\the\xnum}}$}
-      \advance\xnumpos by 20
-      \ifnum\xnum < 15 \advance\xnum by 1
-      \repeat
-    \end{picture}
+    \begin{tabular}{l|l}
+      Number  & Frequency \\ \hline
+      1 & 2 \\
+      2 & 1 \\
+      3 & 3 \\
+      4 & 2 \\
+      5 & 3 \\
+      6 & 1 
+    \end{tabular}
   }
 
-  \only<2>
+  \only<3->%
   {
-    \begin{picture}(310,100)(0,0)
-      \multiput(10,90)(20, 0){15}{\line(1,0){15}}
-      \xnum=1
-      \xnumpos=12
-      \loop
-      \put(\xnumpos,95){$x_{{\the\xnum}}$}
-      \advance\xnumpos by 20
-      \ifnum\xnum < 15 \advance\xnum by 1
-      \repeat
-      \put(10,0){\line(0,1){80}}
-      \put(310,0){\line(0,1){80}}
-      \put(110,20){\vector(-1,0){100}}
-      \put(210,20){\vector( 1,0){100}}
-      \put(120,15){Width=n Items}
-    \end{picture}
+    What if we only have the table? How do we calculate the sample
+    mean?
   }
 
-  \only<3>
-  {
-    \begin{picture}(310,100)(0,0)
-      \multiput(10,90)(20, 0){15}{\line(1,0){15}}
-      \xnum=1
-      \xnumpos=12
-      \loop
-      \put(\xnumpos,95){$x_{{\the\xnum}}$}
-      \advance\xnumpos by 20
-      \ifnum\xnum < 15 \advance\xnum by 1
-      \repeat
-      \put(10,0){\line(0,1){80}}
-      \put(310,0){\line(0,1){80}}
-      \put(110,20){\vector(-1,0){100}}
-      \put(210,20){\vector( 1,0){100}}
-      \put(120,15){Width=n Items}
-
-      \put(250,50){\line(0,1){40}}
-      \put(80,60){\vector(-1,0){70}}
-      \put(180,60){\vector( 1,0){70}}
-      \put(85,55){P Percent of Width}
-
-    \end{picture}
-  }
-
-  \vfill
   
 \end{frame}
 
-\begin{frame}
-  \frametitle{Percentiles}
 
-    \begin{picture}(310,100)(0,0)
-      \multiput(10,90)(20, 0){15}{\line(1,0){15}}
-      \xnum=1
-      \xnumpos=12
-      \loop
-      \put(\xnumpos,95){$x_{{\the\xnum}}$}
-      \advance\xnumpos by 20
-      \ifnum\xnum < 15 \advance\xnum by 1
-      \repeat
-      \put(10,0){\line(0,1){80}}
-      \put(310,0){\line(0,1){80}}
-      \put(110,20){\vector(-1,0){100}}
-      \put(210,20){\vector( 1,0){100}}
-      \put(120,15){Width=n Items}
+\begin{frame}{Frequency Tables - Discrete Data}
 
-      \put(250,50){\line(0,1){40}}
-      \put(70,60){\vector(-1,0){60}}
-      \put(190,60){\vector( 1,0){60}}
-      \put(75,55){j/n items = k\textsuperscript{th} percent}
+  Suppose we have this data: \\
+    \begin{tabular}{l|l}
+      Number  & Frequency \\ \hline
+      1 & {\color{red}2} \\
+      2 & {\color{red}1} \\
+      3 & {\color{red}3} \\
+      4 & {\color{red}2} \\
+      5 & {\color{red}3} \\
+      6 & {\color{red}1}
+    \end{tabular}
 
-    \end{picture}
+    \only<2->%
+    {
 
+      There are {\color{red}2} ones, {\color{red}1} two,
+      {\color{red}3} threes, {\color{red}2} fours, {\color{red}3}
+      fives, and {\color{red}1}
+      six. The sum of the numbers is  \\
+      \begin{center}
+        {\color{red}2}*one + {\color{red}1}*two + {\color{red}3}*three
+        + {\color{red}2}*four + {\color{red}3}*five + {\color{red}1}*six.
+      \end{center}
 
-    \begin{eqnarray*}
-      P & = & \frac{k}{100}, \\
-      \frac{j}{n} & = & \frac{k}{100}, \\
-      \Rightarrow j & = & \frac{nk}{100}.
-    \end{eqnarray*}
-
+      \only<3->%
+      {
+        The sum of the data is 42.
+      }
+    }
+  
 \end{frame}
 
-\begin{frame}
-  \frametitle{Example}
 
-  \vfill 
+\begin{frame}{Frequency Tables - Discrete Data}
 
-  Find the 85\textsuperscript{th} percentile for the following data:
+  Suppose we have this data: \\
+    \begin{tabular}{l|l}
+      Number  & Frequency \\ \hline
+      1 & {\color{red}2} \\
+      2 & {\color{red}1} \\
+      3 & {\color{red}3} \\
+      4 & {\color{red}2} \\
+      5 & {\color{red}3} \\
+      6 & {\color{red}1}
+    \end{tabular}
 
-  \vfill
+    We now need to divide by the total number of data points.
 
-  \only<1>
-  {
-    89, 85, 97 106, 94, 100, 92, 120, 92, 97, 89, 90, 103, 86, 106, 112, 100, 92, 84,
-    97, 103, 91, 104, 91, 104
-  }
+    \only<2->%
+    {
 
-  \only<2>
-  {
-    Sort it: \\
-    84, 85, 86, 89, 89, 90, 91, 91, 92, 92, 92, 94, 97, 97, 97, 100,
-    100, 103, 103, 104, 104, 106, 106, 112, 120
-  }
+      There are {\color{red}2} ones, {\color{red}1} two,
+      {\color{red}3} threes, {\color{red}2} fours, {\color{red}3}
+      fives, and {\color{red}1}
+      six. The total number of data points is  \\
+      \begin{center}
+        {\color{red}2} + {\color{red}1} + {\color{red}3}
+        + {\color{red}2} + {\color{red}3} + {\color{red}1}.
+      \end{center}
 
-  \only<3>
-  {
-    Sort it: \\
-    84, 85, 86, 89, 89, 90, 91, 91, 92, 92, 92, 94, 97, 97, 97, 100,
-    100, 103, 103, 104, \underline{104}, \underline{106}, 106, 112, 120
-  }
-
-
-  \vfill
-
-  (There are 25 data points.)
-
-  \vfill
-
+      \only<3->%
+      {
+        There are 12 data points.
+      }
+    }
+  
 \end{frame}
 
-\begin{frame}
-  \frametitle{Clicker Quiz}
 
-  \vfill
+\begin{frame}{Frequency Tables - Discrete Data}
 
-  Find the 30\textsuperscript{th} percentile for the following data:
+  Suppose we have this data: \\
+    \begin{tabular}{l|l}
+      Number  & Frequency \\ \hline
+      1 & {\color{red}2} \\
+      2 & {\color{red}1} \\
+      3 & {\color{red}3} \\
+      4 & {\color{red}2} \\
+      5 & {\color{red}3} \\
+      6 & {\color{red}1}
+    \end{tabular}
 
-  185, 196, 214, 199, 199, 204
+    The sample mean is the sum of the data points divided by the total
+    number of data points.
 
-
-  \vfill
-
-  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
-    A: 198 & B: 198 $\frac{2}{5}$ & C: 199
-  \end{tabular}
-
-
-
+    \only<2->%
+    {
+      \begin{eqnarray*}
+        \bar{x} & = & \frac{42}{12}.
+      \end{eqnarray*}
+    }
+  
 \end{frame}
 
-\subsection{Box Plots}
 
-\begin{frame}
-  \frametitle{Box Plots}
+\begin{frame}{Frequency Tables - Discrete Data}
 
-  \vfill 
+  In general we have the following data:
+  \begin{eqnarray*}
+    \begin{array}{l|l}
+      \mathrm{Number}  & \mathrm{Frequency} \\ \hline
+      x_1 & {\color{red}f_1} \\
+      x_2 & {\color{red}f_2} \\
+      \vdots & \vdots \\
+      x_N & {\color{red}f_n}
+    \end{array}
+  \end{eqnarray*}
 
-  Find the five point summary for the following data:
+  The sum of the data is 
+  \begin{eqnarray*}
+    x_1\cdot {\color{red}f_1} + x_2 \cdot {\color{red}f_2} + x_3 \cdot {\color{red}f_3} + 
+    \cdots + x_N \cdot {\color{red}f_N}.
+  \end{eqnarray*}
+  The total number of data points is
+  \begin{eqnarray*}
+    {\color{red}f_1} + {\color{red}f_2} + {\color{red}f_3} + 
+    \cdots + {\color{red}f_N}.
+  \end{eqnarray*}
+  The sample mean is
+  \begin{eqnarray*}
+    \bar{x} & = & \frac{x_1\cdot {\color{red}f_1} + x_2 \cdot {\color{red}f_2} + x_3 \cdot {\color{red}f_3} + 
+    \cdots + x_N \cdot {\color{red}f_N}}{{\color{red}f_1} + {\color{red}f_2} + {\color{red}f_3} + 
+    \cdots + {\color{red}f_N}}.
+  \end{eqnarray*}
 
-  \vfill
+  
+\end{frame}
 
-  \only<1>
-  {
-    89, 85, 97 106, 94, 100, 92, 120, 92, 97, 89, 90, 103, 86, 106, 112, 100, 92, 84,
-    97, 103, 91, 104, 91, 104
+
+
+\iftoggle{clicker}{%
+  \subsection{Clicker Quiz}
+
+
+  \begin{frame}
+    \frametitle{Clicker Quiz}
 
     \vfill
-  }
+    Find the sample mean of the following data set:\\
+    \begin{eqnarray*}
+      5.1,~5.4,~3.6,~5.8,~4.1,~3.1,~4.5,~1.3,~6.0,~3.3,~2.8,~1.7
+    \end{eqnarray*}
 
-  \only<2>
+    \vfill
+    
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}ll@{\hspace{3em}}l}
+      A: 3.85 & B: 3.89 & C: 4.7 
+    \end{tabular}
+
+    \vfill
+
+  \end{frame}
+
+}
+
+
+\begin{frame}{Frequency Tables - Continuous Data}
+
+  Suppose we have this data:
+  \begin{eqnarray*}
+    5.1,~5.4,~3.6,~5.8,~4.1,~3.1,~4.5,~1.3,~6.0,~3.3,~2.8,~1.7
+  \end{eqnarray*}
+
+  Doing the calculations straight from the data we get
+  \begin{eqnarray*}
+    \bar{x} & \approx & \\ %3.89 \\
+    s       & \approx & 1.54.
+  \end{eqnarray*}
+
+  
+\end{frame}
+
+
+\begin{frame}{Frequency Tables - Continuous Data}
+
+  Suppose we have this data:
+  \begin{eqnarray*}
+    5.1,~5.4,~3.6,~5.8,~4.1,~3.1,~4.5,~1.3,~6.0,~3.3,~2.8,~1.7
+  \end{eqnarray*}
+
+  We can count the number of occurrences in certain ranges, and
+  suppose we are given this summary instead of the original data:
+    \begin{eqnarray*}
+      \begin{array}{l|l}
+        \mathrm{Range}   & \mathrm{Frequency} \\ \hline
+        1<x\leq 3 & 3 \\
+        3<x\leq 5 & 5 \\
+        5<x\leq 7 & 4 \\
+      \end{array}
+    \end{eqnarray*}
+
+  \only<2->%
   {
-    Sort it: \\
-    84, 85, 86, 89, 89, 90, 91, 91, 92, 92, 92, 94, 97, 97, 97, 100,
-    100, 103, 103, 104, 104, 106, 106, 112, 120
+    How do we approximate the sample mean and sample standard deviation?
+  }
 
-    Five point summary: \\
-    \begin{tabular}{lllll}
-     Min. & 1st Qu. & Median    & 3rd Qu. &   Max. \\
-     84   & 91      & 97        & 103     & 120
-    \end{tabular}
+  
+\end{frame}
 
+
+\begin{frame}{Frequency Tables - Continuous Data}
+
+  Suppose we have this data:
+  \begin{eqnarray*}
+    5.1,~5.4,~3.6,~5.8,~4.1,~3.1,~4.5,~1.3,~6.0,~3.3,~2.8,~1.7
+  \end{eqnarray*}
+
+  We can count the number of occurrences in certain ranges, and
+  suppose we are given this summary instead of the original data:
+    \begin{eqnarray*}
+      \begin{array}{l|l}
+        \mathrm{Range}   & \mathrm{Frequency} \\ \hline
+        1<x\leq 3 & {\color{red}3} \\
+        3<x\leq 5 & {\color{red}5} \\
+        5<x\leq 7 & {\color{red}4} \\
+      \end{array}
+    \end{eqnarray*}
+
+  \only<2->%
+  {
+    Assume that the values within each range are close to the median value of the range.
+
+    So there are {\color{red}3} values that are close to two, there
+    are {\color{red}5} values close to four, and there are
+    {\color{red}4} values close to six.
+
+    It is now just like the discrete case.
 
   }
 
-  \vfill
-
+  
 \end{frame}
 
+\begin{frame}{Frequency Tables - Continuous Data}
 
-\begin{frame}
-  \frametitle{Box Plots}
+  Suppose we have this data:
+  \begin{eqnarray*}
+    5.1,~5.4,~3.6,~5.8,~4.1,~3.1,~4.5,~1.3,~6.0,~3.3,~2.8,~1.7
+  \end{eqnarray*}
 
-    Five point summary: \\
-    \begin{tabular}{lllll}
-     Min. & 1st Qu. & Median    & 3rd Qu. &   Max. \\
-     84   & 91      & 97        & 103     & 120
-    \end{tabular}
-
-    \begin{center}
-      \includegraphics[width=6cm]{img/boxplotExample1}
-    \end{center}
-
-\end{frame}
-
-
-
-\begin{frame}
-  \frametitle{Z-Score}
-
-  \begin{definition}
-    Given a set of data,
+  We can count the number of occurrences in certain ranges, and
+  suppose we are given this summary instead of the original data:
     \begin{eqnarray*}
-      x_1,~x_2,~x_3,\ldots,x_n,
+      \begin{array}{l|l}
+        \mathrm{Range}   & \mathrm{Frequency} \\ \hline
+        1<x\leq 3 & {\color{red}3} \\
+        3<x\leq 5 & {\color{red}5} \\
+        5<x\leq 7 & {\color{red}4} \\
+      \end{array}
     \end{eqnarray*}
-    with sample mean $\bar{x}$ and standard deviation $s$ the
-    $z$-score for a number, $x$, is
-    \begin{eqnarray*}
-      z & = & \frac{x-\bar{x}}{s}.
-    \end{eqnarray*}
-  \end{definition}
 
+    \begin{eqnarray*}
+      \bar{x} & \approx & \frac{3\cdot 2 + 5 \cdot 4 + 4 \cdot 6}{3+5+4}, \\
+      & \approx & 4.17.
+    \end{eqnarray*}
+
+  
 \end{frame}
 
 
-% LocalWords:  Clarkson pausesection hideallsubsections
+\begin{frame}{Frequency Tables - Continuous Data}
+
+  Suppose we have this data:
+  \begin{eqnarray*}
+    5.1,~5.4,~3.6,~5.8,~4.1,~3.1,~4.5,~1.3,~6.0,~3.3,~2.8,~1.7
+  \end{eqnarray*}
+
+  We can count the number of occurrences in certain ranges, and
+  suppose we are given this summary instead of the original data:
+    \begin{eqnarray*}
+      \begin{array}{l|l}
+        \mathrm{Range}   & \mathrm{Frequency} \\ \hline
+        1<x\leq 3 & {\color{red}3} \\
+        3<x\leq 5 & {\color{red}5} \\
+        5<x\leq 7 & {\color{red}4} \\
+      \end{array}
+    \end{eqnarray*}
+
+    To get an approximation for the variance we approximate the
+    deviations for the median of each range, and multiply by the
+    number of deviations represented in each range:
+    \begin{eqnarray*}
+      s^2 & \approx & \frac{3\cdot (2-\bar{x})^2 + 
+                            5 \cdot (4-\bar{x})^2 + 
+                            4 \cdot (6-\bar{x})^2}{3+5+4-1}, \\
+      & \approx & 2.52, \\
+      s & \approx & 1.59.
+    \end{eqnarray*}
+
+  
+\end{frame}
+
+
+\begin{frame}{Frequency Tables - Continuous Data}
+
+  In general we have
+    \begin{eqnarray*}
+      \begin{array}{l|l}
+        \mathrm{Range}   & \mathrm{Frequency} \\ \hline
+        x_1<x\leq x_2 & {\color{red}f_1} \\
+        x_2<x\leq x_3 & {\color{red}f_2} \\
+        \vdots & \vdots \\
+        x_{n-1}<x\leq x_n & {\color{red}f_n} \\
+      \end{array}
+    \end{eqnarray*}
+
+    \begin{eqnarray*}
+      \bar{x_i} & = & \frac{x_i+x_{i+1}}{2}, \\
+      \bar{x} & \approx & \frac{\bar{x}_1\cdot f_1 +  \bar{x}_2\cdot f_2 + \cdots + \bar{x}_n \cdot f_n}{
+        f_1+f_2+\cdots+f_n}, \\
+      s^2 & \approx & \frac{(\bar{x}_1-\bar{x})^2\cdot f_1 +  (\bar{x}_2-\bar{x})^2\cdot f_2 + \cdots +
+        (\bar{x}_n-\bar{x})^2 \cdot f_n}{
+        f_1+f_2+\cdots+f_n-1}, \\
+    \end{eqnarray*}
+
+  
+\end{frame}
+
+\subsection{Weighted Means}
+
+\begin{frame}{Weighted Means}
+
+  How do we calculate the final grade in this course? \\
+  The final grades are calculated using the following distribution:
+  \begin{tabular}[t]{rl}
+    60\% & Three Exams, \\
+    17\% & Quizzes, \\
+    17\% & Webworks, \\
+    6\%  & Attendance/Clicker Response \\
+  \end{tabular}
+
+  How does that work?
+
+  
+\end{frame}
+
+
+\begin{frame}{Weighted Means}
+
+  The final grades are calculated using the following distribution:
+  \begin{tabular}[t]{rl}
+    60\% & Three Exams, \\
+    17\% & Quizzes, \\
+    17\% & Webworks, \\
+    6\%  & Attendance/Clicker Response \\
+  \end{tabular}
+
+  Suppose that your mean test score is 75\%, your mean quiz score is
+  80\%, your mean webworks score is 90\%, and your mean clicker
+  response score is 85\%, then the final grade is
+  \begin{eqnarray*}
+    \bar{x} & = & 0.60\cdot 75 + 0.17\cdot 80 + 0.17\cdot 90 + 0.06\cdot 85, \\
+    & = & 79.
+  \end{eqnarray*}
+
+  
+\end{frame}
+
+\begin{frame}{What Do I Need?}
+
+  The final grades are calculated using the following distribution:
+  \begin{tabular}[t]{rl}
+    60\% & Three Exams, \\
+    17\% & Quizzes, \\
+    17\% & Webworks, \\
+    6\%  & Attendance/Clicker Response \\
+  \end{tabular}
+
+  Suppose that your mean quiz score is 80\%, your mean webworks score
+  is 90\%, and your mean clicker response score is 85\%, and you want to achieve a 
+  final grade of 70\%. What do you need for an average test score?
+  \begin{eqnarray*}
+    70 & = & 0.60\cdot \mathrm{Exam} + 0.17\cdot 80 + 0.17\cdot 90 + 0.06\cdot 85, \\
+    70 & = &  0.60\cdot \mathrm{Exam} + 34, \\
+    36 & = &  0.60\cdot \mathrm{Exam}, \\
+    \mathrm{Exam} & = & \frac{36}{0.6}, \\
+    & = & 60.
+  \end{eqnarray*}
+
+  
+\end{frame}
+
+
+\begin{frame}{Weighted Mean in General}
+
+  \begin{eqnarray*}
+    \begin{array}{l|l}
+      \mathrm{Value}  & \mathrm{Weight} \\ \hline
+      x_1 & {\color{red}w_1} \\
+      x_2 & {\color{red}w_2} \\
+      \vdots & \vdots \\
+      x_N & {\color{red}w_n}
+    \end{array}
+  \end{eqnarray*}
+
+  The weighted mean is 
+  \begin{eqnarray*}
+    \bar{x} & = & \frac{x_1\cdot{\color{red}w_1} + x_2\cdot{\color{red}w_2} +
+      \cdots + x_n\cdot{\color{red}w_n}}{
+      {\color{red}w_1}+{\color{red}w_2}+\cdots+{\color{red}w_n}}.
+  \end{eqnarray*}
+  
+\end{frame}
+
+
+
+
+% LocalWords:  Clarkson pausesection hideallsubsections hideothersubsections
+% LocalWords:  sectionstyle Webworks webworks
