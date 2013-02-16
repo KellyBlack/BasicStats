@@ -8,7 +8,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{18 February 2013}
+\date{20 February 2013}
 
 \begin{frame}
   \titlepage
@@ -227,6 +227,244 @@
 
 \subsection{Box Plots}
 
+\begin{frame}{Quartiles}
+
+The 25\textsuperscript{th} and 75\textsuperscript{th} percentiles are
+special cases called the first quartile and third quartile
+respectively, \\
+\begin{tabular}{ll}
+  P\textsuperscript{25}: & First Quartile \\
+  P\textsuperscript{75}: & Third Quartile \\
+\end{tabular}
+  
+\end{frame}
+
+
+\begin{frame}{Calculating Quartiles}
+
+  To calculate the quartiles you can use a short cut. Divide the data
+  into smaller half and larger half. Then find the medians of the two
+  different data sets.
+
+  \vfill
+
+  \only<1>%
+  {
+    \begin{picture}(310,100)(0,0)
+      \multiput(10,90)(20, 0){15}{\line(1,0){15}}
+      \xnum=1
+      \xnumpos=12
+      \loop
+      \put(\xnumpos,95){$x_{{\the\xnum}}$}
+      \advance\xnumpos by 20
+      \ifnum\xnum < 15 \advance\xnum by 1
+      \repeat
+
+      \put(10,0){\line(0,1){80}}
+      \put(310,0){\line(0,1){80}}
+      \put(110,20){\vector(-1,0){100}}
+      \put(210,20){\vector( 1,0){100}}
+      \put(120,15){Range = difference}
+
+    \end{picture}
+  }
+
+  \only<2>%
+  {
+    \begin{picture}(310,100)(0,0)
+      \multiput(10,90)(20, 0){15}{\line(1,0){15}}
+      \xnum=1
+      \xnumpos=12
+      \loop
+      \put(\xnumpos,95){$x_{{\the\xnum}}$}
+      \advance\xnumpos by 20
+      \ifnum\xnum < 15 \advance\xnum by 1
+      \repeat
+
+      \put(10,0){\line(0,1){80}}
+      \put(310,0){\line(0,1){80}}
+      \put(110,20){\vector(-1,0){100}}
+      \put(210,20){\vector( 1,0){100}}
+      \put(120,15){Range}
+
+      \put(156,25){\line(0,1){55}}
+      \put(60,30){\vector(-1,0){50}}
+      \put(105,30){\vector( 1,0){50}}
+      \put(63,25){Median}
+
+    \end{picture}
+  }
+
+  \only<3>%
+  {
+    \begin{picture}(310,100)(0,0)
+      \multiput(10,90)(20, 0){15}{\line(1,0){15}}
+      \xnum=1
+      \xnumpos=12
+      \loop
+      \put(\xnumpos,95){$x_{{\the\xnum}}$}
+      \advance\xnumpos by 20
+      \ifnum\xnum < 15 \advance\xnum by 1
+      \repeat
+
+      \put(10,0){\line(0,1){80}}
+      \put(310,0){\line(0,1){80}}
+      \put(110,20){\vector(-1,0){100}}
+      \put(210,20){\vector( 1,0){100}}
+      \put(120,15){Range}
+
+      \put(156,25){\line(0,1){55}}
+      \put(60,30){\vector(-1,0){50}}
+      \put(105,30){\vector( 1,0){50}}
+      \put(63,25){Median}
+
+      \put(78,45){\line(0,1){25}}
+      \put(30,50){\vector(-1,0){20}}
+      \put(58,50){\vector(1,0){20}}
+      \put(37,45){Q1}
+
+
+      \put(240,45){\line(0,1){25}}
+      \put(260,50){\vector(-1,0){20}}
+      \put(290,50){\vector(1,0){20}}
+      \put(265,45){Q3}
+
+
+    \end{picture}
+  }
+
+
+  \only<4>%
+  {
+    \begin{picture}(310,100)(0,0)
+      \multiput(10,90)(20, 0){15}{\line(1,0){15}}
+      \xnum=1
+      \xnumpos=12
+      \loop
+      \put(\xnumpos,95){{\color{red}$x_{{\the\xnum}}$}}
+      \advance\xnumpos by 20
+      \ifnum\xnum < 3 \advance\xnum by 1
+      \repeat
+
+      \xnum=5
+      \xnumpos=92
+      \loop
+      \put(\xnumpos,95){{\color{blue}$x_{{\the\xnum}}$}}
+      \advance\xnumpos by 20
+      \ifnum\xnum < 7 \advance\xnum by 1
+      \repeat
+
+      \xnum=9
+      \xnumpos=172
+      \loop
+      \put(\xnumpos,95){{\color{Violet}$x_{{\the\xnum}}$}}
+      \advance\xnumpos by 20
+      \ifnum\xnum < 12 \advance\xnum by 1
+      \repeat
+
+      \xnum=13
+      \xnumpos=252
+      \loop
+      \put(\xnumpos,95){{\color{Brown}$x_{{\the\xnum}}$}}
+      \advance\xnumpos by 20
+      \ifnum\xnum < 15 \advance\xnum by 1
+      \repeat
+
+
+      \put(72,95){$x_{4}$}
+      \put(152,95){$x_{8}$}
+      \put(232,95){$x_{12}$}
+
+      \put(10,0){\line(0,1){80}}
+      \put(310,0){\line(0,1){80}}
+      \put(110,20){\vector(-1,0){100}}
+      \put(210,20){\vector( 1,0){100}}
+      \put(120,15){Range}
+
+      \put(156,25){\line(0,1){55}}
+      \put(60,30){\vector(-1,0){50}}
+      \put(105,30){\vector( 1,0){50}}
+      \put(63,25){Median}
+
+      \put(78,45){\line(0,1){25}}
+      \put(30,50){\vector(-1,0){20}}
+      \put(58,50){\vector(1,0){20}}
+      \put(37,45){Q1}
+
+
+      \put(240,45){\line(0,1){25}}
+      \put(260,50){\vector(-1,0){20}}
+      \put(290,50){\vector(1,0){20}}
+      \put(265,45){Q3}
+
+
+    \end{picture}
+  }
+
+
+  \vfill
+  
+\end{frame}
+
+\begin{frame}{Example}
+
+  Find the minimum,  first quartile, median, third quartile, and
+  maximum of the data:\\
+  \begin{tabular}{lllllllll}
+    40 & 21 & 38 & 38 & 27 & 36 & 34 & 33 & 26
+  \end{tabular}
+
+  \only<2->%
+  {
+    \vfill
+    Sort the data: \\
+    \begin{tabular}{lllllllll}
+      21 & 26 & 27 & 33 & 34 & 36 & 38 & 38 & 40
+    \end{tabular}
+  }
+
+  \vfill
+  
+\end{frame}
+
+
+\begin{frame}{Five Point Summary}
+
+  \begin{definition}{Five Point Summary}
+
+    The five point summary for a data set is the minimum, first
+    quartile, median, third quartile, and maximum of the data.
+    
+  \end{definition}
+
+  \begin{definition}{Inter-Quartile Range}
+
+    The Inter-Quartile Range (IQR) is defined to be Q3-Q1.
+    
+  \end{definition}
+
+
+
+
+  \only<2->%
+  {
+    The five point summary for the data \
+    \begin{tabular}{lllllllll}
+      21 & 26 & 27 & 33 & 34 & 36 & 38 & 38 & 40
+    \end{tabular}
+    is \\
+    \begin{tabular}{lllll}
+      Min & Q1   & Median & Q3 & Max \\
+      21  & 26.5 & 34     & 38 & 40
+    \end{tabular}
+
+    The IQR is 38-26.5=11.5.
+  }
+
+  
+\end{frame}
+
+
 \begin{frame}
   \frametitle{Box Plots}
 
@@ -280,6 +518,51 @@
 \end{frame}
 
 
+\begin{frame}{Outliers}
+
+  \begin{definition}{Outliers}
+
+    If a number in a data set is less than Q1-$\frac{3}{2}$IQR it is
+    an outlier.
+
+    ~ \\
+
+    If a number in a data set is more than Q3+$\frac{3}{2}$IQR it is
+    an outlier.
+
+  \end{definition}
+  
+\end{frame}
+
+\begin{frame}{Example}
+
+  \begin{tabular}{lllllllll}
+    40 & 21 & 38 & 38 & 27 & 36 & 34 & 33 & 53 
+  \end{tabular}
+
+  \only<2->%
+  {
+    Sort the data: \\
+    \begin{tabular}{lllllllll}
+      21 & 27 & 33 & 34 & 36 & 38 & 38 & 40 & 53
+    \end{tabular}
+
+    Five point summary: \\
+    \begin{tabular}{lllll}
+      Min. & 1st Qu. & Median    & 3rd Qu. &   Max. \\
+      21   & 30      & 36        & 39     & 53
+    \end{tabular}
+    
+    The IQR is 39-30=9.
+
+    Anything smaller than $30-\frac{3}{2}9=16.5$ is an outlier.
+
+    Anything greater than $39+\frac{3}{2}9=52.5$ is an outlier.
+
+  }
+  
+\end{frame}
+
 
 \begin{frame}
   \frametitle{Z-Score}
@@ -299,4 +582,5 @@
 \end{frame}
 
 
-% LocalWords:  Clarkson pausesection hideallsubsections
+% LocalWords:  Clarkson pausesection hideallsubsections hideothersubsections
+% LocalWords:  sectionstyle IQR
