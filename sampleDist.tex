@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{Feb 27, 2012}
+\date{Feb 27, 2013}
 
 \begin{frame}
   \titlepage
@@ -22,28 +22,61 @@
 \subsection{Clicker Quiz}
 
 
-\begin{frame}
-  \frametitle{Clicker Quiz}
+\iftoggle{clicker}{%
+  \begin{frame}
+    \frametitle{Clicker Quiz}
 
-  The mass of the contents of a product are normally distributed with
-  a mean of 0.35 kg and a standard deviation of 0.04 kg. What is the
-  probability that the sample mean of four samples will be less than
-  0.33 kg?
+    The mass of the contents of a product are normally distributed
+    with a mean of 0.35 kg and a standard deviation of 0.04 kg. What
+    is the probability that one sample will be less than 0.33 kg?
 
-  \vfill
+    \vfill
 
-  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-    A: 0.0228  & B: 0.1318  & C: 0.1587
-  \end{tabular}
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: .31  & B: 0.34  & C: 0.50 & D: 0.69
+    \end{tabular}
 
-  \vfill
-  \vfill
-  \vfill
+    \vfill
+    \vfill
+    \vfill
 
-\end{frame}
+  \end{frame}
+}
+
 
 \subsection{The Sample Mean}
 
+\iftoggle{clicker}{%
+  \begin{frame}{Flip a Coin}
+
+    Everybody: Flip a coin three times. Count the number of
+    Heads. Press the number associated with the count on your clicker.
+
+    \only<2->%
+    {
+      Do it again.
+    }
+  
+  \end{frame}
+}
+
+\begin{frame}{Coin Flip}
+
+(21.1-19.  What did we just do? 
+
+  \only<2->%
+  {
+    We just calculated a sample mean. Twice!
+  }
+
+  \only<3->%
+  {
+    Each time we run these experiments we can get different results.
+
+    The sample mean is a random variable.
+  }
+  
+\end{frame}
 
 \subsection{The Sample Mean}
 
@@ -93,6 +126,29 @@
 \end{frame}
 
 
+\begin{frame}
+  \frametitle{Distribution of the Sample Mean}
+
+  We have a random variable, $X$, which has mean $\mu$ and standard
+  deviation $\sigma.$
+
+  We have a collection of measurements:
+  \begin{eqnarray*}
+    \bar{x} & = & x_1,~x_2,~x_3,\cdots,~x_n.
+  \end{eqnarray*}
+  Each measurement has a mean, $\mu$, and a standard deviation of
+  $\sigma$. We assume that they are all independent of one another.
+  
+  Given the measurements the sample mean is
+  \begin{eqnarray*}
+    \bar{x} & = & \frac{x_1+x_2+x_3+\cdots+x_n}{n}.
+  \end{eqnarray*}
+  The sample mean, $\bar{x}$,  has a mean of $\mu$, and it has a
+  standard deviation of $\frac{\sigma}{\sqrt{n}}$.
+
+\end{frame}
+
+
 
 \subsection{Examples}
 
@@ -124,32 +180,35 @@
   You want to estimate the start up costs for restaurants in an
   area. If the mean start up costs are \$235,000 with a standard
   deviation of \$45,000 how many restaurants should you poll so that
-  the probability to be within \$1,000 of the mean is ten percent?
+  the probability to be within \$1,000 of the mean is eighty percent?
 
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Clicker Quiz}
+\iftoggle{clicker}{%
+  \begin{frame}
+    \frametitle{Clicker Quiz}
 
-  You want to estimate the start up costs for restaurants in an
-  area. The mean start up costs are \$235,000 with a standard
-  deviation of \$45,000. What is the probability that twenty samples
-  will give a sample mean greater than \$245,000?
-
-
-  \vfill
-
-  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-    A: 0.1611  & B: 0.4121  & C: 0.9999
-  \end{tabular}
-
-  \vfill
-  \vfill
-  \vfill
-
-\end{frame}
+    You want to estimate the start up costs for restaurants in an
+    area. The mean start up costs are \$235,000 with a standard
+    deviation of \$45,000. What is the probability that twenty samples
+    will give a sample mean greater than \$245,000?
 
 
+    \vfill
 
-% LocalWords:  Clarkson pausesection hideallsubsections
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: 0.1611  & B: 0.4021  & C: 0.4121 & D: 0.9999
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+  \end{frame}
+}
+
+
+
+% LocalWords:  Clarkson pausesection hideallsubsections hideothersubsections
+% LocalWords:  sectionstyle
