@@ -1,13 +1,13 @@
 
-\lecture{Inference and Proportions}{inference-and-proportions}
-\section{Inference and Proportions}
+\lecture{Sample Proportions}{sample-proportions}
+\section{Sample Proportions}
 
-\title{Inference and Proportions}
-\subtitle{Our Old Friend the Binomial Distribution}
+\title{Sample Proportions}
+\subtitle{Sampling a Binomial Distribution}
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{2 April 2012}
+\date{1 March 2013}
 
 \begin{frame}
   \titlepage
@@ -23,70 +23,128 @@
 \subsection{Clicker Quiz}
 
 
-\begin{frame}{Clicker Quiz}
+\iftoggle{clicker}{%
+  \begin{frame}{Clicker Quiz}
 
-  \iftoggle{clicker}{%
+    \iftoggle{clicker}{%
 
-    \begin{eqnarray*}
-      \begin{array}{lrcl}
-        H_0: & \mu & = & 50.0 \\
-        H_a: & \mu & > & 50.0
-      \end{array}
-    \end{eqnarray*}
+      It is estimated that 51\% of the people in a congressional
+      district support the incumbent.  A poll is conducted in which 1000
+      people are called and asked if they support the incumbent. The
+      total number of people who say ``yes'' is counted. What is the
+      distribution that the total will follow?
 
-    \begin{eqnarray*}
-      n & = & 12, \\
-      \bar{x} & = & 56.3,\\
-      s       & = & 12.0, \\
-      \alpha  & = & 0.05.
-    \end{eqnarray*}
-
-    \vfill 
+      \vfill 
 
 
-    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: Reject $H_o$  & B: Do not reject $H_o$
+      \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+        A: Binomial  & B: Normal & C: Poisson
+      \end{tabular}
+
+      \vfill
+      \vfill
+      \vfill
+
+    }
+
+  \end{frame}
+}
+
+
+
+
+
+\subsection{Sample Proportions}
+
+\begin{frame}
+  \frametitle{Clicker Example}
+
+  Will Kanye West's love child be a boy or a girl?
+
+  \begin{tabular}{l@{\hspace{3em}}l}
+    A: Boy    & B: Girl
+  \end{tabular}
+  
+  
+
+  \vfill
+
+  \only<2->{ 
+
+    Left section: Will Kanye West's love child be a boy or a
+    girl?
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: Boy   & B: Girl & C: Not in left section
     \end{tabular}
 
-    \vfill
-    \vfill
-    \vfill
+  }
+
+  \vfill
+
+  \only<3->{ 
+
+    Center section: Will Kanye West's love child be a boy or a
+    girl?
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: Boy   & B: Girl& C: Not in center section
+    \end{tabular}
 
   }
+
+  \vfill
+
+  \only<4->{ 
+
+    Right section: Will Kanye West's love child be a boy or a
+    girl?
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: Boy    & B: Girl & Not in right section
+    \end{tabular}
+
+  }
+
+  \vfill
+
 
 \end{frame}
 
 
-
-
-
-\subsection{Proportions}
-
 \begin{frame}
-  \frametitle{Example}
+  \frametitle{Clicker Example}
 
-  You ask thirty people at random if they will vote for your
-  candidate. Seventeen say yes. What is the confidence interval for
-  the percentage of people who support your candidate? Use a 95\%
-  confidence level.
+  \begin{itemize}
+  \item We just made samples. (This is a not a random sample, but you
+    get the idea.)
+
+  \item Each time you take a sample you \textit{could} get something
+    different.
+
+  \item We make a calculation based on the sample. The calculation is
+    called the ``sample proportion.''
+
+  \end{itemize}
 
   \vfill
 
-  \only<2->
-  {
-    Let $X$ be a binomial distribution with a probability $p$ of
-    success and $n$ trials.
-  }
 
-  \vfill
+\end{frame}
 
-  \only<3->
-  {
-    If $n\cdot p \geq 5$ \textbf{and} $n\cdot (1-p) \geq 5$ then $X$
-    is approximately normally distributed with mean $n\cdot p$ and
-    standard deviation $\sqrt{p(1-p)n}$.
-  }
+\begin{frame}{Sampling a Binomial Distribution}
 
+  Recall that if $X$ be a binomial distribution with a probability $p$
+  of success and $n$ trials.
+  \begin{itemize}
+  \item Check if $n\cdot p \geq 5$ 
+  \item Check if $n\cdot (1-p) \geq 5$ 
+  \item If \textbf{both} conditions are true then $X$ is approximately
+    normally distributed with mean $n\cdot p$ and standard deviation
+    $\sqrt{p(1-p)n}$.
+  \end{itemize}
+
+  
 \end{frame}
 
 
@@ -145,122 +203,132 @@
 
   \only<4->
   {
-    Problem: We do not know $p$. That is okay just use $\hat{p}$ or
-    assume $p=\frac{1}{2}$ for the ``worst case scenario.''
+
+    Problem: We usually do not know $p$. That is okay just use
+    $\hat{p}$ or assume $p=\frac{1}{2}$ for the ``worst case
+    scenario.''
+
   }
 
 
 \end{frame}
+
+
+\subsection{Examples}
 
 \begin{frame}
   \frametitle{Example}
 
-  You ask thirty people at random if they will vote for your
-  candidate. Seventeen say yes. What is the confidence interval for
-  the percentage of people who support your candidate? Use a 95\%
-  confidence level.
+  Roughly 51\% of the people in a district support the
+  incumbent. One-thousand people are polled. What is the probability
+  that less than half of the people will say ``yes?''
 
   \vfill
 
-  \only<2->
-  {
 
-    The 95\% confidence interval for the proportion is between .389
-    and .745 assuming a normal approximation to the sample proportion.
+\end{frame}
 
-  }
+\begin{frame}{Example}
+
+  It is estimated that 64\% of the people who get a flu shot this year
+  will not get the flu. Four hundred people who have had the shot are
+  polled. What is the probability that more than 35\% of them will get
+  the flu?
+
+    \vfill
 
 \end{frame}
 
 
-\begin{frame}{Clicker Quiz}
 
-  \iftoggle{clicker}{%
+\iftoggle{clicker}{%
+  \begin{frame}{Clicker Quiz}
 
-    A new drug is tested on one-thousand and eighteen people. Of those
-    taking the drug, seven-hundred and fifteen show adequate
-    improvement. Find the 95\% confidence interval for the proportion
-    of people who will see an adequate improvement.
+
+    A previous study indicates that 34\% of people who use a cell
+    phone regularly will get parotid gland cancer. Two hundred people
+    are tracked who are regular cell phone users. What is the
+    probability that fewer than 30\% of the people will get parotid
+    gland cancer?
 
     \vfill 
 
 
     \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: .67 to .73  & B: .66 to .75 & C: -.19 to 1.60
+      A: 0.10  & B: 0.11 & C: 0.12 & D: 0.13
     \end{tabular}
 
     \vfill
     \vfill
     \vfill
 
-  }
+
 
 \end{frame}
+
+}
+
 
 
 \begin{frame}{In a nutshell}
 
+
+  You conduct $n$ trials. Each trial has a probability $p$ for
+  ``success'' and a probability of $1-p$ for a different
+  result. Define the sample proportion to be 
   \begin{eqnarray*}
-    z & = & \frac{\mathrm{error}}{\sqrt{\frac{p(1-p)}{n}}},
+    \hat{p} & = & \frac{\mathrm{number~of~successes}}{\mathrm{number~of~trials}}.
   \end{eqnarray*}
 
-  \begin{tabular}{ll}
-    Given $\alpha$, $\hat{p}$, $n$ & Find the error. (*) \\
-    Given $\alpha$, error, $n$ & Find $\hat{p}$. \\
-    Given $\alpha$, error & Find $n$. (*) \\
-  \end{tabular}
+  \begin{itemize}
+  \item The sample proportion has a mean of $p$, and a standard
+    deviation of $\sqrt{\frac{p(1-p)}{n}}$.
+  \item Check to see if $p\cdot n \geq 5$, $(1-p)\cdot n \geq 5$ and
+    $n\geq 20$. If \textit{all} of these things are true
+    \begin{itemize}
+    \item $\hat{p}$ is approximately normally distributed
+    \item The mean of $\hat{p}$ is mean $p$.
+    \item The standard deviation of $\hat{p}$ is
+      $\sqrt{\frac{p(1-p)}{n}}$
+    \item A $z$-statistic can be approximated using
+      \begin{eqnarray*}
+        z & = & \frac{\hat{p}-p}{\sqrt{\frac{p(1-p)}{n}}}.
+      \end{eqnarray*}
+    \end{itemize}
+
+  \end{itemize}
+
+
+
   
 \end{frame}
 
-\begin{frame}{Clicker Quiz}
+\begin{frame}{Example}
 
-  \iftoggle{clicker}{%
+  I want to conduct a poll. It is estimated that each time I ask
+  someone the question there is a probability of 0.35 that the person
+  will say ``yes.'' How many people should I poll so that there is a
+  probability of 0.05 that the sample proportion will be less than
+  0.30?
 
-    i want to conduct a poll so the probability that the true
-    proportion will be in a 95\% confidence interval with an error of
-    $\pm 0.03$. How many people should I poll?
-
-    \vfill 
+  \vfill
 
 
-    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: 33  & B: 267 & C: 1068 & D: 2014
-    \end{tabular}
+\end{frame}
 
-    \vfill
-    \vfill
-    \vfill
+\begin{frame}{Example}
 
-  }
+  I want to conduct a poll, and each question will be answered with
+  either a ``yes'' or a ``no.''  How many people should I poll so that
+  there is a probability of 0.05 that the sample proportion will be
+  less than 0.1 lower than the true value?
+
+  \vfill
+
 
 \end{frame}
 
 
-\begin{frame}{Clicker Quiz}
 
-  \iftoggle{clicker}{%
-
-    An advertisement includes a claim that ten percent of all people
-    use a particular brand of toilet paper. I think that it should be
-    more than that. I poll nine-hundred and fifty-six people and ask
-    them if they use this brand of toilet paper. One-hundred and ten
-    say yes. Is the claim true? (Use a five percent significant
-    level.)
-
-    \vfill 
-
-
-    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: Reject $H_o$.  & Do not reject $H_0$.
-    \end{tabular}
-
-    \vfill
-    \vfill
-    \vfill
-
-  }
-
-\end{frame}
-
-
-% LocalWords:  Clarkson pausesection hideallsubsections
+% LocalWords:  Clarkson pausesection hideallsubsections hideothersubsections
+% LocalWords:  sectionstyle Kanye parotid
