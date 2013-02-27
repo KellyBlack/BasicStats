@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{28 March 2012}
+\date{28 March 2013}
 
 \begin{frame}
   \titlepage
@@ -22,44 +22,32 @@
 \subsection{Clicker Quiz}
 
 
-\begin{frame}{Clicker Quiz}
+\iftoggle{clicker}{%
+  \begin{frame}{Clicker Quiz}
 
-  \iftoggle{clicker}{%
+    The volume for a stock is sampled on twenty randomly chosen
+    days. The sample mean for the volume is 2.65 million shares per
+    day. The standard deviation is 0.85 million shares per day. What
+    is the 95\% confidence interval for the estimation of the mean
+    number of shares traded?
 
-    \begin{eqnarray*}
-      \begin{array}{lrcl}
-        H_0: & \mu & = & 350 \\
-        H_a: & \mu & \neq & 350
-      \end{array}
-    \end{eqnarray*}
-
-    \begin{eqnarray*}
-      n & = & 13, \\
-      \bar{x} & = & 412.4,\\
-      s      & = & 75.0, \\
-      \alpha & = & 0.01.
-    \end{eqnarray*}
-
-    \vfill 
-
-    What is the \textit{critical} $z$-statistic?
+    \vfill
 
     \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: 1.64  & B: 1.94 & C: 2.58  & D: 3.00
+      A: 2.34 - 2.96 million shares  & B: 2.28 to 3.02 million shares 
     \end{tabular}
 
     \vfill
     \vfill
     \vfill
 
-  }
-
-\end{frame}
+  \end{frame}
+}
 
 
 \begin{frame}{Problem!}
 
-  We do not know $\sigma$!
+  We do not know $\sigma$ in practice!
 
   What do we do?
   
@@ -93,6 +81,12 @@
 
 \end{frame}
 
+\begin{frame}{The $t$-distribution}
+
+  \only<1>{\centerline{\includegraphics[width=5cm]{img/tdistExample}}}
+  \only<2>{\centerline{\includegraphics[width=5cm]{img/tdistComparison}}}
+  
+\end{frame}
 
 
 \begin{frame}
@@ -131,6 +125,23 @@
 
 \end{frame}
 
+
+\begin{frame}{The $t$-distribution Table}
+
+  The $t$-distribution table is different from the normal distribution
+  table. The issue is that the distribution is different for every
+  value of the number of degrees of freedom.
+
+  \vfill
+
+  The table only has \textit{critical values}.
+
+  \centerline{\includegraphics[width=5cm]{img/tdistTable}}
+
+  That is, given the area in grey and the number of degrees of
+  freedom, the table gives the value of $a$.
+  
+\end{frame}
 
 
 \begin{frame}
@@ -195,7 +206,7 @@ $\infty$ & 1.282 & 1.645 & 1.960 & 2.326 & 2.576 & 3.090 & 3.291
 
 \begin{frame}{\small Example: Find $t^*$ value for $p(|t|>t^*)
 \approx 0.01$ with 12 degrees of freedom.}
-{\tiny First find the row corresponding to $n=12$.}
+{\tiny First find the row corresponding to $df=12$.}
 
   {
 \fontencoding{T1}
@@ -319,85 +330,11 @@ $\infty$ & 1.282 & 1.645 & 1.960 & 2.326 & 2.576 & 3.090 & 3.291
 \end{frame}
 
 
-\begin{frame}{Our First Example}
-
-
-    \begin{eqnarray*}
-      \begin{array}{lrcl}
-        H_0: & \mu & = & 350 \\
-        H_a: & \mu & \neq & 350
-      \end{array}
-    \end{eqnarray*}
-
-    \begin{eqnarray*}
-      n & = & 13, \\
-      \bar{x} & = & 412.4,\\
-      s      & = & 75.0, \\
-      \alpha & = & 0.01.
-    \end{eqnarray*}
-
-    \vfill 
-
-    The \textit{critical} $t$-statistic is 
-    \begin{eqnarray*}
-      t^* & = & 3.055.
-    \end{eqnarray*}
-
-    The $t$-statistic from the data is
-    \begin{eqnarray*}
-      t & = & \frac{412.4-350}{\frac{75}{\sqrt{13}}}, \\
-        & \approx & 3.00.
-    \end{eqnarray*}
-
-
-
-\end{frame}
-
-\begin{frame}{Result}
-
-  We \textbf{do not} have sufficient evidence to reject $H_0$ at the
-  1\% significance level using a $t$-distribution with thirteen
-  samples and a standard deviation of 75.
-  
-\end{frame}
-
-
-\begin{frame}{Let's Change Our First Example}
-
-
-    \begin{eqnarray*}
-      \begin{array}{lrcl}
-        H_0: & \mu & = & 350 \\
-        H_a: & \mu & \neq & 350
-      \end{array}
-    \end{eqnarray*}
-
-    \begin{eqnarray*}
-      n & = & 13, \\
-      \bar{x} & = & 412.4,\\
-      s      & = & 75.0, \\
-      \alpha & = & 0.05.
-    \end{eqnarray*}
-
-    \vfill 
-
-    The $t$-statistic from the data is
-    \begin{eqnarray*}
-      t & = & \frac{412.4-350}{\frac{75}{\sqrt{13}}}, \\
-        & \approx & 3.00.
-    \end{eqnarray*}
-
-
-    What is the critical $t$-statistic?
-
-\end{frame}
-
-
 
 \begin{frame}{\small Example: Find $t^*$ value for $p(|t|>t^*)
-\approx 0.01$ with 12 degrees of freedom.}
+\approx 0.05$ with 19 degrees of freedom.}
   
-{\small First find the row corresponding to $n=12$.}
+{\small First find the row corresponding to $df=19$.}
 
   {
 \fontencoding{T1}
@@ -422,7 +359,7 @@ $\infty$ & 1.282 & 1.645 & 1.960 & 2.326 & 2.576 & 3.090 & 3.291
 10 & 1.372 & 1.812 & 2.228 & 2.764 & 3.169 & 4.144 & 4.587 \\ 
 [5pt]
 11 & 1.363 & 1.796 & 2.201 & 2.718 & 3.106 & 4.025 & 4.437 \\ 
-\rowcolor{red}12 & 1.356 & 1.782 & 2.179 & 2.681 & 3.055 & 3.930 & 4.318 \\ 
+12 & 1.356 & 1.782 & 2.179 & 2.681 & 3.055 & 3.930 & 4.318 \\ 
 13 & 1.350 & 1.771 & 2.160 & 2.650 & 3.012 & 3.852 & 4.221 \\ 
 14 & 1.345 & 1.761 & 2.145 & 2.624 & 2.977 & 3.787 & 4.140 \\ 
 15 & 1.341 & 1.753 & 2.131 & 2.602 & 2.947 & 3.733 & 4.073 \\ 
@@ -430,7 +367,7 @@ $\infty$ & 1.282 & 1.645 & 1.960 & 2.326 & 2.576 & 3.090 & 3.291
 16 & 1.337 & 1.746 & 2.120 & 2.583 & 2.921 & 3.686 & 4.015 \\ 
 17 & 1.333 & 1.740 & 2.110 & 2.567 & 2.898 & 3.646 & 3.965 \\ 
 18 & 1.330 & 1.734 & 2.101 & 2.552 & 2.878 & 3.610 & 3.922 \\ 
-19 & 1.328 & 1.729 & 2.093 & 2.539 & 2.861 & 3.579 & 3.883 \\ 
+\rowcolor{red}19 & 1.328 & 1.729 & 2.093 & 2.539 & 2.861 & 3.579 & 3.883 \\ 
 20 & 1.325 & 1.725 & 2.086 & 2.528 & 2.845 & 3.552 & 3.850 \\ 
 [5pt]
 21 & 1.323 & 1.721 & 2.080 & 2.518 & 2.831 & 3.527 & 3.819 \\ 
@@ -460,7 +397,7 @@ $\infty$ & 1.282 & 1.645 & 1.960 & 2.326 & 2.576 & 3.090 & 3.291
 \end{frame}
 
 \begin{frame}
-{\small Second find the column corresponding to 0.005. The critical $t$ value is 2.179.}
+{\small Second find the column corresponding to 0.025. The critical $t$ value is 2.179.}
 
   {
 \fontencoding{T1}
@@ -485,7 +422,7 @@ $\infty$ & 1.282 & 1.645 & 1.960 & 2.326 & 2.576 & 3.090 & 3.291
 10 & 1.372 & 1.812 & 2.228 & 2.764 & 3.169 & 4.144 & 4.587 \\ 
 [5pt]
 11 & 1.363 & 1.796 & 2.201 & 2.718 & 3.106 & 4.025 & 4.437 \\ 
-\rowcolor{red}12 & 1.356 & 1.782 & 2.179 & 2.681 & 3.055 & 3.930 & 4.318 \\ 
+12 & 1.356 & 1.782 & 2.179 & 2.681 & 3.055 & 3.930 & 4.318 \\ 
 13 & 1.350 & 1.771 & 2.160 & 2.650 & 3.012 & 3.852 & 4.221 \\ 
 14 & 1.345 & 1.761 & 2.145 & 2.624 & 2.977 & 3.787 & 4.140 \\ 
 15 & 1.341 & 1.753 & 2.131 & 2.602 & 2.947 & 3.733 & 4.073 \\ 
@@ -493,7 +430,7 @@ $\infty$ & 1.282 & 1.645 & 1.960 & 2.326 & 2.576 & 3.090 & 3.291
 16 & 1.337 & 1.746 & 2.120 & 2.583 & 2.921 & 3.686 & 4.015 \\ 
 17 & 1.333 & 1.740 & 2.110 & 2.567 & 2.898 & 3.646 & 3.965 \\ 
 18 & 1.330 & 1.734 & 2.101 & 2.552 & 2.878 & 3.610 & 3.922 \\ 
-19 & 1.328 & 1.729 & 2.093 & 2.539 & 2.861 & 3.579 & 3.883 \\ 
+\rowcolor{red}19 & 1.328 & 1.729 & 2.093 & 2.539 & 2.861 & 3.579 & 3.883 \\ 
 20 & 1.325 & 1.725 & 2.086 & 2.528 & 2.845 & 3.552 & 3.850 \\ 
 [5pt]
 21 & 1.323 & 1.721 & 2.080 & 2.518 & 2.831 & 3.527 & 3.819 \\ 
@@ -521,46 +458,78 @@ $\infty$ & 1.282 & 1.645 & 1.960 & 2.326 & 2.576 & 3.090 & 3.291
 \end{frame}
 
 
+\begin{frame}{Our First Example}
+
+  The volume for a stock is sampled on twenty randomly chosen
+  days. The sample mean for the mean volume is 2.65 million shares per
+  day. The {\color{red}\textit{sample}} standard deviation is 0.85
+  million shares per day. What is the 95\% confidence interval for the
+  mean number of shares traded?
+
+  \vfill
+
+  \only<2->%
+  {
+
+    The 95\% confidence interval for the mean volume of stocks is from
+    2.25 to 3.05 million shares per day assuming a $t$-distribution
+    with twenty samples and a sample standard deviation of 0.85
+    million shares per day.
+
+  }
+
+
+\end{frame}
+
+  
 
 \begin{frame}{Let's Change Our First Example}
 
+  The volume for a stock is sampled on twenty randomly chosen
+  days. The confidence interval for the mean is reported to be from
+  2.32 to 2.98 million shares per day. The
+  {\color{red}\textit{sample}} standard deviation is 0.85 million
+  shares per day. What is the sample mean?  What is the confidence
+  level?
 
-    \begin{eqnarray*}
-      \begin{array}{lrcl}
-        H_0: & \mu & = & 350 \\
-        H_a: & \mu & \neq & 350
-      \end{array}
-    \end{eqnarray*}
+  \vfill
 
-    \begin{eqnarray*}
-      n & = & 13, \\
-      \bar{x} & = & 412.4,\\
-      s      & = & 75.0, \\
-      \alpha & = & 0.05.
-    \end{eqnarray*}
+  \only<2->%
+  {
 
-    \vfill 
+    The sample mean is 2.65 million shares per day.
 
-    The $t$-statistic from the data is
-    \begin{eqnarray*}
-      t & = & \frac{412.4-350}{\frac{75}{\sqrt{13}}}, \\
-        & \approx & 3.00.
-    \end{eqnarray*}
+    The confidence level is 10\% assuming a t-distribution with 19
+    degrees of freedom and a sample standard deviation of 0.85 million
+    shares per day.
 
+  }
 
-    \begin{eqnarray*}
-      t^* & \approx & 2.179.
-    \end{eqnarray*}
 
 \end{frame}
 
 
-\begin{frame}{Result}
 
-  We have sufficient evidence to reject $H_0$ at the 5\% significance
-  level using a $t$-distribution with thirteen samples and a standard
-  deviation of 75.
-  
+\begin{frame}{Let's Change Our First Example}
+
+  We want to estimate the mean number of shares per day traded for a
+  stock. From previous studies it has been estimated that the standard
+  deviation is about 0.85 million shares per day. How many days should
+  be sampled so that there is a probability of 95\% that the sample
+  mean will be within 0.25 million shares per day of the true mean?
+
+  \vfill
+
+  \only<2->%
+  {
+
+    We need to sample 45 days to get an error of 0.25 million shares
+    per day assuming a normal distribution and a standard deviation of
+    0.85 million shares per day.
+
+  }
+
+
 \end{frame}
 
 
@@ -570,30 +539,31 @@ $\infty$ & 1.282 & 1.645 & 1.960 & 2.326 & 2.576 & 3.090 & 3.291
 
   \iftoggle{clicker}{%
 
-    \begin{eqnarray*}
-      \begin{array}{lrcl}
-        H_0: & \mu & = &  10 \\
-        H_a: & \mu & \neq & 10
-      \end{array}
-    \end{eqnarray*}
-
-    \begin{eqnarray*}
-      n & = & 17, \\
-      \bar{x} & = & 8.5,\\
-      s      & = & 3.0, \\
-      \alpha & = & 0.05.
-    \end{eqnarray*}
+    The number of units per day produced by a given factory is sampled
+    on twenty-five randomly chosen days. The sample mean is 890 units
+    per day, and the {\color{red}sample} standard deviation is 20
+    units per day. Determine the 95\% confidence interval.
 
     \vfill 
 
 
     \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: Reject $H_0$  & B: Cannot reject $H_0$ 
+      A: 883.2 to 896.8  & B: 881.7 to 898.3 & C: 888.6 to 891.4
     \end{tabular}
 
     \vfill
     \vfill
     \vfill
+
+  \only<2->%
+  {
+
+    The 95\% confidence interval is from 881.7 to 898.3 units per day
+    assuming a $t$-distribution with 24 degrees of freedom and a
+    sample standard deviation of 20 units per day.
+
+  }
+
 
   }
 
@@ -603,4 +573,5 @@ $\infty$ & 1.282 & 1.645 & 1.960 & 2.326 & 2.576 & 3.090 & 3.291
 
 
 
-% LocalWords:  Clarkson pausesection hideallsubsections
+% LocalWords:  Clarkson pausesection hideallsubsections hideothersubsections
+% LocalWords:  sectionstyle grey
