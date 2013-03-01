@@ -1,13 +1,13 @@
 
-\lecture{Couting}{counting}
-\section{Counting}
+\lecture{Confidence Intervals for the Sample Proportion}{confidence-interval-sample-proportions}
+\section{Confidence Intervals for the Sample Proportion}
 
-\title{Counting}
-\subtitle{Stuff We Thought We Knew}
+\title{Confidence Intervals for the Sample Proportion}
+\subtitle{What percentage?}
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{3 Feb 2012}
+\date{8 March 2013}
 
 \begin{frame}
   \titlepage
@@ -22,31 +22,225 @@
 \subsection{Clicker Quiz}
 
 
-\begin{frame}
-  \frametitle{Clicker Quiz}
+\iftoggle{clicker}{%
+  \begin{frame}
+    \frametitle{Clicker Quiz}
 
-  If $p(A)=0.3$, $p(B)=0.4$, and $p(A\mathrm{~or~}B)=.37$ what is
-  $p(A\mathrm{~and~}B)$?
+    Requests are made to determine the cost of including advertisements
+    on web pages.  Twenty-three responses are received, and the sample
+    mean is 1,300\$ with a sample standard deviation of 320\$. What is
+    the 95\% confidence interval for the mean?
 
-  \vfill
+    \vfill
 
-  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
-    A: .11 & B: 12 & C: .33
-  \end{tabular}
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: 1169\$ to 1431\$ & B: 1190\$ to 1410\$ \\
+      C: 1162\$ to 1438\$ & D: 1185\$ to 1415\$
+    \end{tabular}
 
-  \vfill
-  \vfill
-  \vfill
+    \vfill
+    \vfill
+    \vfill
 
+  \end{frame}
+}
+
+
+\subsection{Sample Proportion}
+
+\begin{frame}{The Sample Proportion}
+
+  You conduct $n$ trials. Each trial has a probability $p$ for
+  ``success'' and a probability of $1-p$ for a different
+  result. Define the sample proportion to be 
+  \begin{eqnarray*}
+    \hat{p} & = & \frac{\mathrm{number~of~successes}}{\mathrm{number~of~trials}}.
+  \end{eqnarray*}
+
+  \begin{itemize}
+  \item The sample proportion has a mean of $p$, and a standard
+    deviation of $\sqrt{\frac{p(1-p)}{n}}$.
+  \item Check to see if $p\cdot n \geq 5$, $(1-p)\cdot n \geq 5$ and
+    $n\geq 20$. If \textit{all} of these things are true
+    \begin{itemize}
+    \item $\hat{p}$ is approximately normally distributed
+    \item The mean of $\hat{p}$ is mean $p$.
+    \item The standard deviation of $\hat{p}$ is
+      $\sqrt{\frac{p(1-p)}{n}}$
+    \item A $z$-statistic can be approximated using
+      \begin{eqnarray*}
+        z & = & \frac{\hat{p}-p}{\sqrt{\frac{p(1-p)}{n}}}.
+      \end{eqnarray*}
+    \end{itemize}
+
+  \end{itemize}
+
+
+
+  
 \end{frame}
 
 
+\begin{frame}
+  \frametitle{Notation}
 
 
-\subsection{Example}
+  \begin{definition}[The Sample Proportion]
+
+    You conduct an experiment. There are $N$ trials. The number of
+    ``successes'' is $x$.  The sample proportion is defined to be 
+    \begin{eqnarray*}
+      \hat{p} & = & \frac{x}{N}.
+    \end{eqnarray*}
+
+    \only<2->%
+    {
+
+      If $Np\geq 5$ and $N(1-p)\geq 5$ and $N\geq 20$ then $\hat{p}$
+      can be approximated by a normal distribution with mean $p$ and
+      standard deviation $\sqrt{p(1-p)/N}$.
+
+    }
+
+    \only<3->%
+    {
+
+      Once we have the distribution then we can do all the stuff we do
+      with normal distributions. (i.e. We can find confidence intervals!)
+
+    }
+
+  \end{definition}
+  
+\end{frame}
+
+\subsection{Examples}
+
+\begin{frame}
+  \frametitle{Example}
+
+  I conduct a poll to determine what proportion of people are
+  satisfied with the company's benefits program. Forty-five people
+  respond and thirty-one people say they are satisfied.  What is the
+  95\% confidence interval for the proportion of people satisfied with
+  their benefits?
+
+  \only<2->%
+  {
+
+    In this case our estimate for $\hat{p}$ is 
+    \begin{eqnarray*}
+      \hat{p} & = & \frac{31}{45}.
+    \end{eqnarray*}
+    We use this as our estimate for $p$.
+
+  }
+
+  \only<3->%
+  {
+
+    {\color{red}
+      The 95\% confidence interval is from 0.554 to 0.824 assuming a
+      normal approximation with 45 samples.
+    }
+
+  }
+  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Example}
+
+  We want to determine how many people in a company have a commute
+  that takes more than one hour one-way. One-hundred and twenty people
+  respond, and forty-two say that their commute is more than one
+  hour. What is the 95\% confidence interval for the proportion of
+  people whose commute is more than one hour?
+
+  \only<2->%
+  {
+
+    In this case our estimate for $\hat{p}$ is 
+    \begin{eqnarray*}
+      \hat{p} & = & \frac{42}{120}.
+    \end{eqnarray*}
+    We use this as our estimate for $p$.
+
+  }
+
+  \only<3->%
+  {
+
+    {\color{red}
+      The 95\% confidence interval is from 0.265 to 0.435 assuming a
+      normal approximation with 120 samples.
+    }
+
+  }
+  
+\end{frame}
+
+
+\iftoggle{clicker}{%
+  \begin{frame}
+    \frametitle{Clicker Quiz}
+
+    We want to determine the percentage of stocks in a particular
+    market whose price rises on a given day. A sample of fifty-seven
+    stocks is made, and the price for eighteen rise.  What is the 95\%
+    confidence interval for the proportion of stocks whose price
+    increased that day?
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: .195 to .437 & B: .214 to .418 
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+  \end{frame}
+}
+
+\begin{frame}
+  \frametitle{Example}
+
+    We want to determine the percentage of stocks in a particular
+    market whose price rises on a given day. We want the error in the
+    confidence interval to be $\pm 1.5\%$ for the 95\% confidence
+    interval. How many stocks should we sample?
+
+    \only<2->%
+    {
+
+      We do not know $p$ and assume the value of $p$ that will make
+      the standard deviation as large as possible. Since
+      \begin{eqnarray*}
+        \sigma_{\hat{p}} & = & \sqrt{\frac{p(1-p)}{N}},
+      \end{eqnarray*}
+      then this is largest when $p=\half$.
+
+    }
+
+  \only<3->%
+  {
+
+    statement here.
+
+  }
+
+  
+\end{frame}
+
+
 
 
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "IntroStats"
 %%% End: 
+
+% LocalWords:  hideothersubsections sectionstyle pausesection
