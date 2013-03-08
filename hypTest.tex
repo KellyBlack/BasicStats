@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{9 March 2012}
+\date{15 March 2013}
 
 \begin{frame}
   \titlepage
@@ -22,25 +22,27 @@
 \subsection{Clicker Quiz}
 
 
-\begin{frame}
-  \frametitle{Clicker Quiz}
+\iftoggle{clicker}{%
+  \begin{frame}
+    \frametitle{Clicker Quiz}
 
-  A random variable has a mean of 3.7 and a standard deviation of
-  1.2. What is the probability that a sample mean using six samples is
-  more than 4.1?
+    A random variable has a mean of 3.7 and a standard deviation of
+    1.2. What is the probability that a sample mean using six samples is
+    more than 4.1?
 
-  \vfill
+    \vfill
 
-  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-    A: 0.2061  & B: 0.7939  & C: 0.8165
-  \end{tabular}
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: 0.2061  & B: 0.7939  & C: 0.8165
+    \end{tabular}
 
-  \vfill
-  \vfill
-  \vfill
+    \vfill
+    \vfill
+    \vfill
 
 
-\end{frame}
+  \end{frame}
+}
 
 
 
@@ -56,7 +58,20 @@
 
   \vfill
 
-  \only<2->{Maybe!}
+  \only<2->%
+  {
+    
+    \centerline{\includegraphics[width=4cm]{img/confidenceInterval}}
+
+    \iftoggle{clicker}{%
+      Clicker Quiz: \\
+      \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+        A: Yes  & B: No  & C: Maybe?
+      \end{tabular}
+
+    }
+
+  }
 
   \vfill
 
@@ -66,28 +81,30 @@
 \begin{frame}
   \frametitle{The Problem}
 
-  Situation: We think that $\mu$ is  some number.
+  Situation: We think that the mean of $X$ is $\mu$ (some number).
 
-  Problem: $\bar{x}$ is a random variable.
 
-  Problem\textsuperscript{2}: $\bar{x}$ is our only way of estimating $\mu$!
+  \begin{tabular}{ll}
+    Problem: & $\bar{x}$ is a random variable. \\
+    Problem: & $\bar{x}$ is our {\color{red}only way} of estimating $\mu$!
+  \end{tabular}
 
 \end{frame}
 
 \begin{frame}{What do we do?}
 
   \begin{enumerate}
-  \item<1-> We have some idea/belief of what to expect.
-  \item<2-> This is our hypothesis of what we \textit{think} is happening.
-  \item<3-> We want to make a case for some change in how we interpret the
+  \item<1-> We have some {\color{red}idea/belief} of what to expect.
+  \item<2-> This is our {\color{red}hypothesis} of what we \textit{think} is happening.
+  \item<3-> We want to {\color{red}make a case} for some change in how we interpret the
     situation.
-  \item<4-> Assume that the status quo is good or better. (Call this the
+  \item<4-> {\color{red}Assume} that the status quo is good or better. (Call this the
     \textit{Null Hypothesis}, $H_0$.)
-  \item<5-> Construct a hypothesis about what we think is \textbf{think}
+  \item<5-> {\color{red}Construct a hypothesis} about what we think is \textbf{think}
     is happening. (Call this the \textit{alternate hypothesis}, $H_a$.)
-  \item<6-> Collect evidence assuming $H_0$ is true. 
-  \item<7-> If the evidence is \textit{``highly unlikely''} under the
-    assumed conditions then reject the null hypothesis, otherwise we
+  \item<6-> Collect \textit{evidence} {\color{red}assuming $H_0$ is true}. 
+  \item<7-> If the evidence is {\color{red}\textit{``highly unlikely''} under the
+    assumed conditions} then reject the null hypothesis, otherwise we
     cannot reject the null hypothesis.
   \end{enumerate}
   
@@ -112,11 +129,8 @@
 
   \vfill
 
-  \only<3->
-  {
-    Sample fifteen banks, find the mean interest rate, and ask if
-    there is sufficient evidence to reject $H_0$.
-  }
+  \only<3-> { Sample fifteen banks, find the mean change in interest
+    rate, and ask if there is sufficient evidence to reject $H_0$.  }
 
   \vfill
 
@@ -250,6 +264,33 @@
 
 \end{frame}
 
+\iftoggle{clicker}{%
+
+  \begin{frame}{Clicker Quiz}
+
+    I think that the mean stock price in a given sector has
+    increased. I sample thirty stocks and determine the change in
+    price for each one. What is the hypothesis test?
+
+    \begin{tabular}{l@{\hspace{2em}}l} \hline
+      A \\
+      $H_0$: &  The mean price has not changed.\\
+      $H_a$: & The mean price change is greater than zero. \\
+      \\  \hline
+      B \\
+      $H_0$: &  The mean price has not changed. \\
+      $H_a$: & The mean price change is less than zero. \\
+      \\ \hline
+      C \\
+      $H_0$: &  The mean price has not changed.\\
+      $H_a$: & The mean price change is not zero. \\ \hline
+    \end{tabular}
+
+    
+  \end{frame}
+
+}
+
 
 \begin{frame}{Problem}
 
@@ -268,13 +309,18 @@
 
 \begin{frame}{The Possibilities}
 
+  \centerline{\includegraphics[width=3.0cm]{img/hindenburg}}
+
   \begin{eqnarray*}
     \mathrm{Data~-} & &
-      \begin{array}{l@{\hspace{1em}}|l|l|} 
-        \multicolumn{1}{c}{~} & \multicolumn{1}{c}{H_0 \mathrm{~is~true}} & \multicolumn{1}{c}{H_0 \mathrm{~is~false}} \\ 
-               \hhline{~--}
-        \mathrm{Do~Not~Reject~}H_0 & \mathrm{good!} & \mathrm{Type~II~Error} \\ \hhline{~|-|-|}
-        \mathrm{Reject~}H_0 & \mathrm{Type~I~Error} & \mathrm{good!} \\ \hhline{~--}
+      \begin{array}{l@{\hspace{1em}}|c|c|} 
+        \multicolumn{3}{r}{\mathrm{Reality}} \\ 
+        \multicolumn{1}{c}{~} & \multicolumn{1}{c}{H_0
+          \mathrm{~is~true}} & \multicolumn{1}{c}{H_0
+          \mathrm{~is~false}} \\  
+        \hhline{~--}
+        \mathrm{Do~Not~Reject~}H_0 & \includegraphics[width=0.7cm]{img/smiley} & \mathrm{Type~II~Error} \\ \hhline{~|-|-|}
+        \mathrm{Reject~}H_0 & \mathrm{Type~I~Error} & \includegraphics[width=0.7cm]{img/smiley} \\ \hhline{~--}
       \end{array}
   \end{eqnarray*}
   
@@ -289,14 +335,14 @@
 
   \begin{block}{Reject $H_0$}
     There is sufficient evidence to reject $H_0$ at the \#
-    significance level assuming a normal distribution and a \#
-    standard deviation.
+    significance level assuming a normal distribution and a 
+    standard deviation of \#.
   \end{block}
 
   \begin{block}{Cannot Reject $H_0$}
     There is not sufficient evidence to reject $H_0$ at the \#
-    significance level assuming a normal distribution and a \#
-    standard deviation.
+    significance level assuming a normal distribution and a 
+    standard deviation of \#.
   \end{block}
 
   
@@ -317,8 +363,9 @@
     \begin{itemize}
     \item The probability that we get our result to be ``small.''
     \item The probability that we get our result \textit{given our
-        assumptions} is the significance level ($\alpha$). \textbf{It is
-        a conditional probability!}
+        assumptions} is the significance level
+      ($\alpha$). \textbf{\color{red} It is a conditional
+        probability!}
     \end{itemize}
   }
 
