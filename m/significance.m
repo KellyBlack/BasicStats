@@ -66,7 +66,7 @@ axis([-10 10 0 0.35])
 set(gca,'XTickLabelMode','manual')
 set(gca,'XTick',[-4 0 4])
 set(gca,'YTick',0:0.1:0.7)
-set(gca,'XTickLabel',{'-x_{cr}';'Assumed Mean';'x_{cr}'})
+set(gca,'XTickLabel',{'u-error';'u=Assumed Mean';'u+error'})
 set(gca,'YTick',0:1:1)
 plot(x,y,'k-');
 
