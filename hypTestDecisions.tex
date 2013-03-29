@@ -1,9 +1,9 @@
 
-\lecture{Hypothesis Testing with the Classical Approach}{hypothesis-testing-classical}
-\section{Hypothesis Testing with the Classical Approach}
+\lecture{Hypothesis Testing Redux}{hypothesis-testing-redux}
+\section{Hypothesis Testing Redux}
 
 \title{Hypothesis Testing Again}
-\subtitle{The ``Classical'' Approach}
+\subtitle{Examples - Which one to use?}
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
@@ -30,7 +30,7 @@
     I read in the \textit{Integrator} that the mean height of Clarkson
     students is 180.0 cm with a standard deviation of 14.0 cm. I think
     that this is too high and sample twenty students chosen at random
-    to find a sample mean of 175.1 cm. Are my suspicions correct? (Use
+    to find a sample mean of 174.7 cm. Are my suspicions correct? (Use
     a 5\% significance level.)
 
     \vfill
@@ -51,17 +51,22 @@
 
 \end{frame}
 
-\subsection{Classical Approach}
+\begin{frame}
+    \input{img/confidenceIntervalDist}  % Added [thick,scale=0.6, every node/.style={scale=0.6}]
+                                      % to the \begin{tikzpicture} line
+\end{frame}
+
+\subsection{Examples}
 
 \begin{frame}
   \frametitle{What if....}
 
 
   I read in the \textit{Integrator} that the mean height of Clarkson
-  students is 180.0 cm with a standard deviation of 14 cm. I think
-  that this is too high and sample twenty students chosen at random to
-  find a sample mean of \textbf{174.7} cm. Are my suspicions correct?
-  (Use a 5\% significance level.)
+  students is 180.0 cm. I think that this is too high and sample
+  twenty students chosen at random to find a sample mean of 174.7 cm
+  with a {\color{red}sample} standard deviation of 14 cm. Are my
+  suspicions correct?  (Use a 5\% significance level.)
 
     \vfill
     
@@ -71,9 +76,9 @@
 
 \begin{frame}{Result}
 
-  We have sufficient evidence to reject $H_0$ at the 5\% significance
-  level using a normal distribution with twenty samples and a standard
-  deviation of 14.0cm.
+  We do not have sufficient evidence to reject $H_0$ at the 5\%
+  significance level using a $t$-distribution with twenty samples and
+  a standard deviation of 14.0cm.
   
 \end{frame}
 
@@ -86,13 +91,13 @@
   \iftoggle{clicker}{%
 
     I see a publication that says that the mean house value in an area
-    is \$215,000 with a standard deviation of \$35,000. I think that
-    this is too low.  Suppose that I take a random sample of fifteen
-    homes and get a sample mean of \$232,000.
+    is \$215,000. I think that this is too low.  Suppose that I take a
+    random sample of fifteen homes and get a sample mean of \$232,000
+    with a sample standard deviation of \$35,000.
 
     \vfill 
 
-    What is the $z$-statistic?
+    What is the $t$-statistic?
 
     \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
       A: -1.881  & B: -1.644  & C: 1.644 & D: 1.881
@@ -109,8 +114,28 @@
 \begin{frame}{Result}
 
   We have sufficient evidence to reject $H_0$ at the 5\% significance
-  level using a normal distribution with fifteen samples and a standard
+  level using a $t$-distribution with fifteen samples and a standard
   deviation of \$35,000.
+  
+\end{frame}
+
+
+\begin{frame}{Example}
+
+  I see a publication that says that half of the houses in an area
+  have a value of \$215,000 or more. I think that this is incorrect.
+  Suppose that I take a random sample of forty homes and find that
+  fifteen houses have at least this value. Are my suspicions correct?
+  
+  
+\end{frame}
+
+
+\begin{frame}{Result}
+
+  We do not have sufficient evidence to reject $H_0$ at the 5\%
+  significance level assuming a normal approximation to the sample
+  proportion with forty samples.
   
 \end{frame}
 
@@ -156,6 +181,51 @@
   samples and a standard deviation of 118.
   
 \end{frame}
+
+
+
+\begin{frame}{Clicker Quiz}
+
+  \iftoggle{clicker}{%
+
+    \begin{eqnarray*}
+      \begin{array}{lrcl}
+        H_0: & \mu & = & 800 \\
+        H_a: & \mu & \neq & 800
+      \end{array}
+    \end{eqnarray*}
+
+    \begin{eqnarray*}
+      n & = & 30, \\
+      \bar{x} & = & 758,\\
+      s & = & 118, \\
+      \alpha & = & 0.05.
+    \end{eqnarray*}
+
+    \vfill 
+
+    What is the $t$-statistic?
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: -1.960  & B: -1.950  & C: -0.065 & D: 1.960
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+  }
+
+\end{frame}
+
+\begin{frame}{Result}
+
+  We \textbf{do not} have sufficient evidence to reject $H_0$ at the
+  5\% significance level using a $t$-distribution with thirty samples
+  and a standard deviation of 118.
+  
+\end{frame}
+
 
 
 
