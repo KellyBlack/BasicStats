@@ -6,7 +6,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{16 April 2012}
+\date{17 April 2013}
 
 \begin{frame}
   \titlepage
@@ -85,6 +85,7 @@
 \begin{frame}
   \frametitle{Bivariate Data}
 
+  \vspace*{-1em}
   What if we change it a little bit: \\
   \begin{tabular}{r@{~$=$~}l}
     $x$ & Age of Cat (between 0 and 20 years)  \\
@@ -104,6 +105,7 @@
 
   \only<3->
   {
+    \vspace*{-1em}
     \includegraphics[width=6cm]{img/catsmassLater}
   }
 
@@ -199,6 +201,9 @@
 \begin{frame}
   \frametitle{Bivariate Data}
 
+  \textbf{After} the uni-variate statistics for the $x_i$ and the
+  $y_i$ data is examined then you can bring them together and explore
+  the \textit{relationship}:
   \begin{eqnarray*}
     \begin{array}{l|l}
       X & Y \\ \hline
@@ -233,10 +238,48 @@
 
     \column{.75\textwidth}
 
-  \only<2->
+  \only<4->
   {
-    \includegraphics[width=7cm]{img/simpleBivariateExample}
+    \includegraphics[width=5cm]{img/simpleBivariateExample}
   }
+
+
+  \end{columns}
+
+  \begin{columns}
+    \column{.5\textwidth}
+
+    \only<2-> {
+
+      Examine $x$ by itself: \\
+      \begin{tabular}{lllll}
+        \multicolumn{5}{l}{$N=5$} \\
+        \multicolumn{5}{l}{$\bar{x}=2.00$} \\
+        \multicolumn{5}{l}{$s_x=1.871$} \\
+        Min & Q1 & Med & Q3 & Max \\
+        -1.0 & 2.0 & 2.0 & 3.0 & 4.0
+      \end{tabular}
+
+
+    }
+      
+    \column{.5\textwidth}
+
+
+    \only<3-> {
+
+      Examine $y$ by itself: \\
+      \begin{tabular}{lllll}
+        \multicolumn{5}{l}{$N=5$} \\
+        \multicolumn{5}{l}{$\bar{y}=2.40$} \\
+        \multicolumn{5}{l}{$s_y=3.362$} \\
+        Min & Q1 & Med & Q3 & Max \\
+        -3.0 & 2.0 & 3.0 & 4.0 & 6.0
+      \end{tabular}
+
+
+
+    }
 
 
   \end{columns}
@@ -281,10 +324,12 @@
     \only<2-> {
 
       Examine $x$ by itself: \\
-      \begin{tabular}{l}
-        $N=4$ \\
-        $\bar{x}=2.5$ \\
-        $s_x=1.29$
+      \begin{tabular}{lllll}
+        \multicolumn{5}{l}{$N=4$} \\
+        \multicolumn{5}{l}{$\bar{x}=2.5$} \\
+        \multicolumn{5}{l}{$s_x=1.29$} \\
+        Min & Q1 & Med & Q3 & Max \\
+        1.0 & 1.75 & 2.5 & 3.25 & 4.0
       \end{tabular}
 
 
@@ -296,10 +341,12 @@
     \only<3-> {
 
       Examine $y$ by itself: \\
-      \begin{tabular}{l}
-        $n=4$ \\
-        $\bar{y}=6.75$ \\
-        $s_y=4.57$
+      \begin{tabular}{lllll}
+        \multicolumn{5}{l}{$N=4$} \\
+        \multicolumn{5}{l}{$\bar{y}=6.75$} \\
+        \multicolumn{5}{l}{$s_y=4.57$} \\
+        Min & Q1 & Med & Q3 & Max \\
+        2.0 & 3.5 & 6.5 & 9.75 & 12.0
       \end{tabular}
 
 
@@ -350,9 +397,9 @@
 
   First define the following sums:
   \begin{eqnarray*}
-    S_{xx} & = & (x_1-\bar{x})^2 + (x_2-\bar{x})^2 + \cdot + (x_n-\bar{x})^2, \\
-    S_{yy} & = & (y_1-\bar{y})^2 + (y_2-\bar{y})^2 + \cdot + (y_n-\bar{y})^2, \\
-    S_{xy} & = & (x_1-\bar{x}) + (x_2-\bar{x}) + \cdot + (x_n-\bar{x}), \\
+    S_{xx} & = & (x_1-\bar{x})^2 + (x_2-\bar{x})^2 + \cdots + (x_n-\bar{x})^2, \\
+    S_{yy} & = & (y_1-\bar{y})^2 + (y_2-\bar{y})^2 + \cdots + (y_n-\bar{y})^2, \\
+    S_{xy} & = & (x_1-\bar{x})(y_1-\bar{y}) + (x_2-\bar{x})(y_2-\bar{y}) + \cdots + (x_n-\bar{x})(y_n-\bar{y}), \\
   \end{eqnarray*}
 
   \uncover<2->
@@ -374,7 +421,7 @@
   \frametitle{Example}
   \vspace*{-1em}
   \begin{columns}
-    \column{.25\textwidth}
+    \column{.2\textwidth}
 
     \begin{tabular}{l|l}
       $X$ & $Y$ \\ \hline
@@ -384,10 +431,12 @@
       4 & 12
     \end{tabular}
 
+    \column{.5\textwidth}
 
-    \vfill
+    \vspace*{-1em}
+    \includegraphics[width=3cm]{img/simpleCorrelationExample}
 
-    \column{.75\textwidth}
+    \column{.3\textwidth}
 
     \only<2->
     {
@@ -408,13 +457,15 @@
             & = & 5, \\
       s_{yy} & = & \lp 2-6.75\rp^2 + \lp 4 - 6.75 \rp^2 + \lp 9 - 6.75 \rp^2 + \lp 12 - 6.75 \rp^2 \\
             & = & 62.75, \\
-      s_{xx} & = & \lp 1-2.5\rp\lp 2-6.75\rp + \lp 2 - 2.5 \rp\lp 4 - 6.75 \rp + \lp 3 - 2.5 \rp\lp 9 - 6.75 \rp + \lp 4 - 2.5 \rp\lp 12 - 6.75 \rp \\
+      s_{xy} & = & \lp 1-2.5\rp\lp 2-6.75\rp + \lp 2 - 2.5 \rp\lp 4 - 6.75 \rp + \\
+            &   & \lp 3 - 2.5 \rp\lp 9 - 6.75 \rp + \lp 4 - 2.5 \rp\lp 12 - 6.75 \rp \\
             & = & 17.5
     \end{eqnarray*}
   } 
 
   \only<4->
   {
+    \vspace*{-2em}
     \begin{eqnarray*}
       r & = & \frac{17.5}{\sqrt{5\cdot 62.75}}, \\
         & \approx & 0.988
@@ -440,6 +491,15 @@
 
 \end{frame}
 
+\begin{frame}{Be Careful!}
+
+  \begin{block}{Correlation}
+    The value of $r$ tells you whether or not the general relationship
+    is positive or negative and how closely it follows a linear
+    relationship. It says nothing about the magnitude of the relationship!
+  \end{block}
+  
+\end{frame}
 
 \begin{frame}
   \frametitle{Inference on the Correlation}
@@ -485,7 +545,6 @@
         4 & 12
       \end{tabular}
 
-
       \vfill
 
       \column{.75\textwidth}
@@ -499,6 +558,8 @@
     \vfill
 
   \end{columns}
+  
+  Recall: $r \approx 0.988$.
 
 
     \vfill 
