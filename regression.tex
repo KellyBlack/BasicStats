@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{18 April 2012}
+\date{18 April 2013}
 
 \begin{frame}
   \titlepage
@@ -79,6 +79,33 @@
 
 \subsection{Linear Regression}
 
+\begin{frame}{Linear Regression}
+
+  Given data can I find the ``best'' straight line
+  \begin{eqnarray*}
+    y & = & mx + b?
+  \end{eqnarray*}
+
+
+  \only<1>{\centerline{\includegraphics[width=4cm]{img/scatterLR-raw}}}
+  \only<2>{\centerline{\includegraphics[width=4cm]{img/scatterLR-line}}}
+  \only<3>{\centerline{\includegraphics[width=4cm]{img/scatterLR-preResidual}}}
+  \only<4->{%
+
+    \centerline{\includegraphics[width=4cm]{img/scatterLR-Residual}}
+    
+    \only<5->{%
+      Goal: minimize
+      \begin{eqnarray*}
+        & & \lp\mathrm{residual~1}\rp^2 + \lp\mathrm{residual~2}\rp^2 + \\
+        & & \lp\mathrm{residual~3}\rp^2 + \lp\mathrm{residual~4}\rp^2 + \lp\mathrm{residual~5}\rp^2 
+      \end{eqnarray*}
+    }
+
+  }
+  
+\end{frame}
+
 \begin{frame}
   \frametitle{Linear Regression}
 
@@ -89,7 +116,11 @@
 
       \column{.35\textwidth}
       
-      from section 3.3 (second week)
+      Our \textit{approximation} for the best linear fit is
+      \begin{eqnarray*}
+        y & = & \hat{m} x + \hat{b}.
+      \end{eqnarray*}
+      where
       \begin{eqnarray*}
         \hat{m} & = & \frac{s_{xy}}{s_{xx}}, \\
         \hat{b} & = & \bar{y} - \hat{m} \bar{x}.
@@ -103,14 +134,14 @@
 \begin{frame}{The Residual}
 
   \begin{definition}
-    The \textit{predicted value} for $y$ at $x$ is
+    The \textit{\color{red} predicted value} for $y$ at $x_i$ is
     \begin{eqnarray*}
-      \hat{y} & = & \hat{m} x + \hat{b}.
+      \hat{y}_i & = & \hat{m} x_i + \hat{b}.
     \end{eqnarray*}
 
-    The \textit{residual} at $x_i$ is 
+    The \textit{\color{red} residual} at $x_i$ is 
     \begin{eqnarray*}
-      \mathrm{Residual} & = & y_i - \lp \hat{m} x + \hat{b} \rp, \\
+      \mathrm{Residual} & = & y_i - \lp \hat{m} x_i + \hat{b} \rp, \\
       & = & y_i - \hat{y}_i.
     \end{eqnarray*}
 
@@ -331,4 +362,5 @@
 \end{frame}
 
 
-% LocalWords:  Clarkson pausesection hideallsubsections
+% LocalWords:  Clarkson pausesection hideallsubsections hideothersubsections
+% LocalWords:  sectionstyle
