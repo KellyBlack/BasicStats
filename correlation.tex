@@ -21,22 +21,23 @@
 
 \subsection{Clicker Quiz}
 
+\iftoggle{clicker}{%
+  \begin{frame}{Clicker Quiz}
 
-\begin{frame}{Clicker Quiz}
+    Determine if the following relationship is a ``positive relationship''
+    or a ``negative relationship'' between the two variables.
 
-Determine if the following relationship is a ``positive relationship''
-or a ``negative relationship'' between the two variables.
+    \begin{center}
+      \includegraphics[width=6cm]{img/week2Day3ClickerQuizNeg}
+    \end{center}
 
-\begin{center}
-  \includegraphics[width=6cm]{img/week2Day3ClickerQuizNeg}
-\end{center}
-
-\begin{tabular}{l@{\hspace{3em}}l}
-  A: Positive & B: Negative
-\end{tabular}
+    \begin{tabular}{l@{\hspace{3em}}l}
+      A: Positive & B: Negative
+    \end{tabular}
 
 
-\end{frame}
+  \end{frame}
+}
 
 
 \begin{frame}{Positive vs. Negative Relationships}
@@ -124,39 +125,42 @@ or a ``negative relationship'' between the two variables.
 
 
 
-\begin{frame}{Clicker Quiz 2}
+\iftoggle{clicker}{%
+  \begin{frame}{Clicker Quiz}
   
-  \begin{columns}
-    \column{.25\textwidth}
-    \begin{tabular}{r|r}
-      $x$ & $y$ \\ \hline
-      -1 & -1 \\
-      0 & 1 \\
-      1 & 2 \\
-      2 & 4
-    \end{tabular}
+    \begin{columns}
+      \column{.25\textwidth}
+      \begin{tabular}{r|r}
+        $x$ & $y$ \\ \hline
+        -1 & -1 \\
+        0 & 1 \\
+        1 & 2 \\
+        2 & 4
+      \end{tabular}
 
-    \column{.75\textwidth}
+      \column{.75\textwidth}
 
-    What is $S_{yy}$?
+      What is $S_{yy}$?
 
-    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: 5  & B: 8.5 & C: 13 & D: 16.75
-    \end{tabular}
+      \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+        A: 5  & B: 8.5 & C: 13 & D: 16.75
+      \end{tabular}
 
-    \only<2->{%
-      \begin{eqnarray*}
-        \bar{y} & = & 1.5, \\
-        s_{yy} & = & \lp -1 - 1.5\rp^2 + \lp 1 - 1.5\rp^2  + \\
-              &   & \lp 2 - 1.5\rp^2 + \lp 4 - 1.5\rp^2 \\
-              & = & 13
-      \end{eqnarray*}
-    }
+      \only<2->{%
+        \begin{eqnarray*}
+          \bar{y} & = & 1.5, \\
+          s_{yy} & = & \lp -1 - 1.5\rp^2 + \lp 1 - 1.5\rp^2  + \\
+                &   & \lp 2 - 1.5\rp^2 + \lp 4 - 1.5\rp^2 \\
+                & = & 13
+        \end{eqnarray*}
+      }
+
 
 
     \end{columns}
 
-\end{frame}
+  \end{frame}
+}
 
 \begin{frame}{Example}
   
@@ -197,7 +201,7 @@ or a ``negative relationship'' between the two variables.
         s_{xy}   & = & 8, \\
         r       & = & \frac{8}{\sqrt{5\cdot 13}}, \\
                 & \approx & 0.99, \\
-        \hat{m} & = & \frac{sxy}{syy}= \frac{8}{5}, \\
+        \hat{m} & = & \frac{sxy}{sxx}= \frac{8}{5}, \\
         \hat{b} & = & \bar{y} - \hat{m} \bar{x} = 0.7.
       \end{eqnarray*}
     }
