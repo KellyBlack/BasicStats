@@ -8,7 +8,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{20 April 2012}
+\date{19 April 2013}
 
 \begin{frame}
   \titlepage
@@ -40,7 +40,7 @@
     S_{xx}, \\
     S_{yy}, \\
     S_{xy}, \\
-    \hat{m} & = & \frac{S_{xy}}{S_{yy}}, \\
+    \hat{m} & = & \frac{S_{xy}}{S_{xx}}, \\
     \hat{b} & = & \bar{y} - \hat{m} \bar{x}, \\
     \only<4->
     {
@@ -98,7 +98,7 @@
   \begin{definition}
     The regression estimate for the slope satisfies the $t$ distribution
     \begin{eqnarray*}
-      t & = & \frac{\hat{m}-m}{s_y}
+      t & = & \frac{\hat{m}-m}{\lp s_y/\sqrt{s_{xx}} \rp}
     \end{eqnarray*}
     with $n-2$ degrees of freedom.
   \end{definition}
@@ -108,7 +108,7 @@
     \column{.5\textwidth}
     Confidence Intervals:
     \begin{eqnarray*}
-      t^* & = & \frac{\mathrm{error}}{s_y}
+      t^* & = & \frac{\mathrm{error}}{\lp s_y/\sqrt{s_{xx}} \rp}
     \end{eqnarray*}
     with $n-2$ degrees of freedom.
 
@@ -116,7 +116,7 @@
 
     Hypothesis Testing:
     \begin{eqnarray*}
-      t & = & \frac{\hat{m}-m}{s_y}
+      t & = & \frac{\hat{m}-m}{\lp s_y/\sqrt{s_{xx}}\rp}
     \end{eqnarray*}
     with $n-2$ degrees of freedom.
 
@@ -125,10 +125,8 @@
 
 \end{frame}
 
-
-\begin{frame}
-
-    \iftoggle{clicker}{%
+\iftoggle{clicker}{%
+  \begin{frame}{Clicker Quiz}
 
     \begin{columns}
       \column{.25\textwidth}
@@ -144,135 +142,194 @@
 
       \column{.75\textwidth}
 
-      Find the 95\% confidence interval for the slope.
+      Find the critical $t$-statistic for the 95\% confidence interval
+      for the slope.
 
       \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-        A: -4.3 to 7.5  & B: -10.0 to 13.2 \\ C: -11.6 to 14.8
+        A: 2.571  & B: 2.776 & C: 3.182
       \end{tabular}
 
 
-      \begin{eqnarray*}
-        \bar{x} & = & 3 \\
-        \bar{y} & = & 6.8, \\
-        s_y & = & 4.16
-      \end{eqnarray*}
-
     \end{columns}
 
-      \begin{eqnarray*}
-        s_{xx} & = & \lp 1-3\rp^2 + \lp 2 - 3 \rp^2 + \lp 3 - 3 \rp^2 + \lp 4 - 3 \rp^2 + \lp 5 - 3 \rp^2 \\
-        & = & 10, \\
-        s_{yy} & = & \lp 3-6.8\rp^2 + \lp 5 - 6.8 \rp^2 + \lp 9 - 6.8 \rp^2 + \lp 7 - 6.8 \rp^2 + \lp 10 - 6.8 \rp^2 \\
-        & = & 32.8, \\
-        s_{xy} & = & \lp 1-3\rp\lp 3-6.8\rp + \lp 2 - 3 \rp\lp 5 - 6.8 \rp + \lp 3 - 3 \rp\lp 9 - 6.8 \rp + \lp 4 - 3 \rp\lp 7 - 6.8 \rp + \lp 5-4 \rp \lp 10-6.8 \rp \\
-        & = & 16
-      \end{eqnarray*}
+  \end{frame}
+}
 
-    \vfill 
-
-
-
-
-    }
-
-\end{frame}
-
-
-\subsection{Inference On Predicted Value}
-
-\begin{frame}{The Predicted Value}
-
-  \begin{definition}
-    The \textit{predicted value} for $y$ at $x$ is
-    \begin{eqnarray*}
-      \hat{y} & = & \hat{m} x + \hat{b}.
-    \end{eqnarray*}
-
-    The \textit{residual} at $x_i$ is 
-    \begin{eqnarray*}
-      \mathrm{Residual} & = & y_i - \lp \hat{m} x + \hat{b} \rp, \\
-      & = & y_i - \hat{y}_i.
-    \end{eqnarray*}
-
-  \end{definition}
-
-  
-\end{frame}
 
 \begin{frame}
-  \frametitle{The Predicted Value}
 
-  The predicted value is 
-  \begin{eqnarray*}
-    \hat{y} & = & \hat{m} x + \hat{b}.
-  \end{eqnarray*}
+  \begin{columns}
+    \column{.25\textwidth}
 
+    \begin{tabular}{l|l}
+      $X$ & $Y$ \\ \hline
+      1 & 3 \\
+      2 & 5  \\
+      3 & 9 \\
+      4 & 7  \\
+      5 & 10
+    \end{tabular}
 
-  The predicted value  satisfies a $t$-distribution by
-  \begin{eqnarray*}
-    t & = & \frac{\hat{y}-y_{\mathrm{true}}}{s_y \sqrt{\frac{1}{n}+\frac{(x_y-\bar{x})^2}{S_{xx}}}},
-  \end{eqnarray*}
-  with $n-2$ degrees of freedom.
-
-  \only<2->
-  {
-
-    \begin{columns}
-
-      \column{.5\textwidth}
-      Confidence Intervals:
-      \begin{eqnarray*}
-        t & = & \frac{\mathrm{error}}{s_y \sqrt{\frac{1}{n}+\frac{(x_y-\bar{x})^2}{S_{xx}}}},
-      \end{eqnarray*}
-      with $n-2$ degrees of freedom.
-
-      \column{.5\textwidth}
-
-      Hypothesis Testing:
-      \begin{eqnarray*}
-        t & = & \frac{\hat{y}-y_{\mathrm{true}}}{s_y \sqrt{\frac{1}{n}+\frac{(x_y-\bar{x})^2}{S_{xx}}}},
-      \end{eqnarray*}
-      with $n-2$ degrees of freedom.
-
+    \column{.75\textwidth}
     
-    \end{columns}
+    \only<1>{%
+      \begin{eqnarray*}
+        \bar{x} & = & 3 \\
+        \bar{y} & = & 6.8, \\
+        s_y & = & 1.55
+      \end{eqnarray*}
+    }
+
+    \only<2-3>{%
+      \begin{eqnarray*}
+        \bar{x} & = & 3 \\
+        \bar{y} & = & 6.8, \\
+        s_y & = & 1.55, \\
+        s_{xx} & = & 10, \\
+        s_{yy} & = & 32.8, \\
+        s_{xy} & = & 16.
+      \end{eqnarray*}
+    }
+
+    \only<4->{%
+      \begin{eqnarray*}
+        \bar{x} & = & 3 \\
+        \bar{y} & = & 6.8, \\
+        s_y & = & 1.55, \\
+        \hat{m} & = & \frac{16}{10}, \\
+        \hat{b} & = & 2
+      \end{eqnarray*}
+    }
+
+
+  \end{columns}
+
+  \only<1>{%
+    \begin{eqnarray*}
+      s_{xx} & = & \lp 1-3\rp^2 + \lp 2 - 3 \rp^2 + \lp 3 - 3 \rp^2 + \lp 4 - 3 \rp^2 + \lp 5 - 3 \rp^2 \\
+      & = & 10, \\
+      s_{yy} & = & \lp 3-6.8\rp^2 + \lp 5 - 6.8 \rp^2 + \lp 9 - 6.8 \rp^2 + \lp 7 - 6.8 \rp^2 + \lp 10 - 6.8 \rp^2 \\
+      & = & 32.8, \\
+      s_{xy} & = & \lp 1-3\rp\lp 3-6.8\rp + \lp 2 - 3 \rp\lp 5 - 6.8 \rp + \lp 3 - 3 \rp\lp 9 - 6.8 \rp + \lp 4 - 3 \rp\lp 7 - 6.8 \rp + \lp 5-4 \rp \lp 10-6.8 \rp \\
+      & = & 16
+    \end{eqnarray*}
   }
 
+  \only<3>{%
+    \begin{eqnarray*}
+      \begin{array}{rclcl}
+      \hat{m} & = & \frac{s_{xy}}{s_{xx}}    & = & \frac{16}{10} \\
+      \hat{b} & = & \bar{y}-\hat{m}\bar{x} & = & 2
+    \end{array}
+    \end{eqnarray*}
+  }
 
+  \only<4->{%
+    Using a significance level of 5\%:
+    \begin{eqnarray*}
+      t^* & \approx & 3.182, \\
+      t^* & = & \frac{\mathrm{error}}{\lp s_y / \sqrt{s_{xx}} \rp}.
+    \end{eqnarray*}
+
+    The 95\% confidence interval for the slope is from 0.04 to 3.16
+    assuming a $t$-distribution with 3 degrees of freedom.
+
+  }
+    
 \end{frame}
 
 
-\begin{frame}{Example}
+\begin{frame}{Is the slope zero?}
 
+  \begin{columns}
+    \column{.25\textwidth}
+
+    \begin{tabular}{l|l}
+      $X$ & $Y$ \\ \hline
+      1 & 3 \\
+      2 & 5  \\
+      3 & 9 \\
+      4 & 7  \\
+      5 & 10
+    \end{tabular}
+
+      \begin{eqnarray*}
+        H_0: & & m=0, \\
+        H_a: & & m\neq 0, \\
+        \alpha & = & 5\%.
+      \end{eqnarray*}
+
+    \column{.75\textwidth}
+    
+    \only<1>{%
+      \begin{eqnarray*}
+        \bar{x} & = & 3 \\
+        \bar{y} & = & 6.8, \\
+        s_y & = & 1.55, \\
+        \hat{m} & = & \frac{16}{10}, \\
+        \hat{b} & = & 2
+      \end{eqnarray*}
+    }
+
+
+    \only<2->{%
+      \begin{eqnarray*}
+        s_y & = & 1.55, \\
+        \hat{m} & = & \frac{16}{10}, \\
+        \hat{b} & = & 2, \\
+      \end{eqnarray*}
+    }
+
+
+  \end{columns}
+
+  \only<2->{%
+    \begin{eqnarray*}
+      t^* & \approx & 3.182, \\
+      t & = & \frac{\frac{16}{10}-0}{\lp s_y/\sqrt{s_{xx}}\rp}.
+    \end{eqnarray*}
+  }
+
+  \only<3>{%
+    There is sufficient evidence to reject $H_0$ at the 95\%
+    confidence level assuming a $t$-distribution with three degrees of
+    freedom.  
+  y = c(-2.7,-4.5,-6.0,-9.7,-13.7)}
+
+    
+\end{frame}
+
+
+
+\iftoggle{clicker}{%
+  \begin{frame}{Clicker Quiz}
 
     \begin{columns}
       \column{.15\textwidth}
 
       \begin{tabular}{l|l}
         $X$ & $Y$ \\ \hline
-        1 & 3 \\
-        2 & 5  \\
-        3 & 9 \\
-        4 & 7  \\
-        5 & 10
+        1 & -2.7 \\
+        2 & -4.5  \\
+        3 & -6.0 \\
+        4 & -9.7 \\
+        5 & -13.7
       \end{tabular}
 
       \column{.44\textwidth}
 
       \begin{eqnarray*}
         \bar{x} & = & 3 \\
-        \bar{y} & = & 6.8, \\
-        s_y & = & 4.16 \\
-        \hat{m} & = & 1.6, \\
-        \hat{b} & = & 2.0.
+        \bar{y} & = & -7.32, \\
+        s_y & = & 1.068 \\
       \end{eqnarray*}
 
       \column{.44\textwidth}
 
       \begin{eqnarray*}
         s_{xx} & = & 10, \\
-        s_{yy} & = & 32.8, \\
-        s_{xy} & = & 16.
+        s_{yy} & = & 77.408, \\
+        s_{xy} & = & -27.2.
       \end{eqnarray*}
 
     \end{columns}
@@ -280,73 +337,70 @@
 
     \vfill 
 
-
-      Find the 95\% confidence interval for the value of $y$ at $x=3.5$.
-
-      \only<2->
-      {
-
-        The 95\% confidence interval for the value of $y$ at $x=3.5$
-        is between 1.33 and 13.87 assuming a $t$-distribution with 3 d.f..
-      }
-
-
-\end{frame}
-
-
-\begin{frame}{Example}
-
-  \iftoggle{clicker}{%
-
-    \begin{columns}
-      \column{.15\textwidth}
-
-      \begin{tabular}{l|l}
-        $X$ & $Y$ \\ \hline
-        1 & 3 \\
-        2 & 5  \\
-        3 & 9 \\
-        4 & 7  \\
-        5 & 10
-      \end{tabular}
-
-      \column{.44\textwidth}
-
-      \begin{eqnarray*}
-        \bar{x} & = & 3 \\
-        \bar{y} & = & 6.8, \\
-        s_y & = & 4.16 \\
-        \hat{m} & = & 1.6, \\
-        \hat{b} & = & 2.0.
-      \end{eqnarray*}
-
-      \column{.44\textwidth}
-
-      \begin{eqnarray*}
-        s_{xx} & = & 10, \\
-        s_{yy} & = & 32.8, \\
-        s_{xy} & = & 16.
-      \end{eqnarray*}
-
-    \end{columns}
-
-
-    \vfill 
-
-
-      Find the 95\% confidence interval for the value of $y$ at
-      $x=4.5$.
+    Is the slope zero? (Use a confidence level of 95\%.)
 
       \vfill
 
       \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-        A: .58 to 17.8  & B: 5.3 to 13.0 & C: 1.7 to 16.7
+        A: Reject $H_0$  & B: Cannot reject $H_0$
       \end{tabular}
 
 
-    }
 
-\end{frame}
+    \end{frame}
+}
 
 
-% LocalWords:  Clarkson pausesection hideallsubsections
+
+\iftoggle{clicker}{%
+  \begin{frame}{Clicker Quiz}
+
+    \begin{columns}
+      \column{.15\textwidth}
+
+      \begin{tabular}{l|l}
+        $X$ & $Y$ \\ \hline
+        1 & -2.7 \\
+        2 & -4.5  \\
+        3 & -6.0 \\
+        4 & -9.7 \\
+        5 & -13.7
+      \end{tabular}
+
+      \column{.44\textwidth}
+
+      \begin{eqnarray*}
+        \bar{x} & = & 3 \\
+        \bar{y} & = & -7.32, \\
+        s_y & = & 1.068 \\
+      \end{eqnarray*}
+
+      \column{.44\textwidth}
+
+      \begin{eqnarray*}
+        s_{xx} & = & 10, \\
+        s_{yy} & = & 77.408, \\
+        s_{xy} & = & -27.2.
+      \end{eqnarray*}
+
+    \end{columns}
+
+
+    \vfill 
+
+    What is the 95\% confidence interval for the slope?
+
+      \vfill
+
+      \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+        A: -2.54 to -2.90 & B: -3.79 to -1.65 & C: -6.12 to 0.68
+      \end{tabular}
+
+
+
+    \end{frame}
+}
+
+
+% LocalWords:  Clarkson pausesection hideallsubsections hideothersubsections
+% LocalWords:  sectionstyle
