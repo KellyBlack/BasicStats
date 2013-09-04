@@ -1,0 +1,201 @@
+
+\lecture{Continuous Random Variables}{continuous-random-variables}
+\section{Continuous Random Variables}
+
+\title{Continuous Random Variables}
+\subtitle{Quantifying Outcomes}
+
+%\author{Kelly Black}
+%\institute{Clarkson University}
+\date{6 September 2013}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[hideothersubsections,sectionstyle=show/hide]
+\end{frame}
+
+
+\subsection{Clicker Quiz}
+
+
+\iftoggle{clicker}{%
+  \begin{frame}
+    \frametitle{Clicker Quiz}
+
+    A fair, six sided die has the numbers one through six marked on
+    it. I roll the die and read the number, $x$. What is the cumulative
+    distribution function?
+
+    \vfill
+    
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: 1/6 & B: $\frac{x}{6}$ & C: $\frac{x-1}{6}$  & D: $\frac{x+1}{6}$
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+  \end{frame}
+}
+
+
+\subsection{Continuous Random Variables}
+
+\begin{frame}
+  \frametitle{Example}
+
+  A wheel has a circumference of two meters, and it has a marker at
+  the top. I spin the wheel and read the number representing the
+  length around the side from the top of the wheel where it stops and
+  the marker.
+
+\end{frame}
+
+\subsection{Examples}
+
+\begin{frame}{Examples}
+
+  \begin{itemize}
+  \item Pick a concrete sample at random. Record the force at which
+    the sample breaks.
+  \item A cow is picked at random and milked for a set period of
+    time. Record the volume of milk produced.
+  \end{itemize}
+  
+\end{frame}
+
+\subsection{Probability Density Function}
+
+\begin{frame}{Probability Density Function}
+
+  Probability Density Function
+  \begin{columns}
+    \column{.40\textwidth}
+
+    Area under the curve, $f(x)$, between $a$ and $b$ is the
+    probability we get a result between $a$ and $b$.
+
+    \column{.60\textwidth}
+    %     Properties:
+    \begin{eqnarray*}
+      f(x) & \geq & 0 \\
+      \int_{\mathrm{domain}} f(x) ~ dx & = & 1.
+    \end{eqnarray*}
+
+  \end{columns}
+  
+\end{frame}
+
+\subsection{Examples}
+
+\begin{frame}{Example}
+  Is 
+  \begin{eqnarray*}
+    f(x) & = & \left\{
+    \begin{array}{r@{\hspace{2em}}l}
+      \frac{x}{8} & 0\leq x \leq 4, \\
+      0 & \mathrm{otherwise},
+    \end{array}
+    \right.
+  \end{eqnarray*}
+  a probability density function?
+\end{frame}
+
+\iftoggle{clicker}{%
+  \begin{frame}
+    \frametitle{Clicker Quiz}
+
+    Determine a number $c$ so that
+    \begin{eqnarray*}
+      f(x) & = & \left\{
+        \begin{array}{r@{\hspace{2em}}l}
+          c & 3 \leq x \leq 7, \\
+          0 & \mathrm{otherwise},
+        \end{array}
+      \right.
+    \end{eqnarray*}
+    is a probability density function.
+
+    \vfill
+    
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: 4 & B: 1 & C: $\frac{1}{4}$ & D: $\frac{1}{7}$
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+  \end{frame}
+}
+
+
+\begin{frame}{Example}
+  Is it possible to find a $c$ such that
+  \begin{eqnarray*}
+    f(x) & = & \frac{c}{x^2}
+  \end{eqnarray*}
+  is a probability density function for $x\geq 1$.
+\end{frame}
+
+\subsection{Cumulative Distribution Function}
+
+\begin{frame}{The Cumulative Distribution Function}
+
+  The cumulative distribution function is defined to be
+  \begin{eqnarray*}
+    F(x) & = & p(X \leq x), \\
+    & = & \int^x_{-\infty} f(s) ~ ds.
+  \end{eqnarray*}
+  
+\end{frame}
+
+
+\begin{frame}{Example}
+  Find the cumulative distribution function for the probability
+  distribution function
+  \begin{eqnarray*}
+    f(x) & = & \left\{
+    \begin{array}{r@{\hspace{2em}}l}
+      \frac{x}{8} & 0\leq x \leq 4, \\
+      0 & \mathrm{otherwise}.
+    \end{array}
+  \right.
+  \end{eqnarray*}
+
+\end{frame}
+
+\begin{frame}{Example}
+  Is it possible to find a $c$ such that
+  \begin{eqnarray*}
+    f(x) & = & \left\{
+    \begin{array}{r@{\hspace{2em}}l}
+      c e^{-x/2} &  x \geq 0, \\
+      0 & \mathrm{otherwise},
+    \end{array}
+    \right.
+  \end{eqnarray*}
+  is a probability density function?
+\end{frame}
+
+\begin{frame}{Example}
+  Determine the cumulative distribution function for 
+  \begin{eqnarray*}
+    f(x) & = & \left\{
+    \begin{array}{r@{\hspace{2em}}l}
+      \half e^{-x/2} &  x \geq 0, \\
+      0 & \mathrm{otherwise}.
+    \end{array}
+    \right.
+  \end{eqnarray*}
+\end{frame}
+
+
+
+% LocalWords:  Clarkson pausesection hideallsubsections sectionstyle
+%  LocalWords:  hideothersubsections
