@@ -1,0 +1,263 @@
+
+\lecture{Expected Value}{expected-value}
+\section{Expectation of Random Variables}
+
+\title{Expectation of Random Variables}
+\subtitle{Defining the Mean of a Random Variable}
+
+%\author{Kelly Black}
+%\institute{Clarkson University}
+\date{9 September 2013}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[hideothersubsections,sectionstyle=show/hide]
+\end{frame}
+
+
+\subsection{Clicker Quiz}
+
+
+\iftoggle{clicker}{%
+  \begin{frame}
+    \frametitle{Clicker Quiz}
+
+    A random variable, $X$, has a probability density function given by
+    \begin{eqnarray*}
+      f(x) & = & \left\{
+        \begin{array}{l@{\hspace{2em}}l}
+          \frac{x}{18}, & 0\leq x \leq 6, \\
+          0 & \mathrm{otherwise.}
+        \end{array}
+      \right.
+    \end{eqnarray*}
+    What is the probability that $X$ is between one and three? 
+
+    \vfill
+    
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: $\frac{1}{36}$ & B: $\frac{7}{36}$ & C: $\frac{8}{36}$  & D: $\frac{9}{36}$
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+  \end{frame}
+}
+
+
+\subsection{Expected Value for Discrete Random Variables}
+
+
+ \begin{frame}
+ \frametitle{The Expected Value}
+   \begin{columns}
+     \column{.15\textwidth}
+     \begin{eqnarray*}
+       \begin{array}{r|l}
+         \mathrm{X} & p \\ \hline
+          x_1 & p_1 \\ [5pt]
+          x_2 & p_2 \\ [5pt]
+          x_3 & p_3 \\ [5pt]
+          x_4 & p_4 \\
+          \vdots & \vdots \\
+          x_n & p_n
+       \end{array}
+     \end{eqnarray*}
+
+     \column{.90\textwidth}
+     \uncover<2->
+     {
+       \begin{eqnarray*}
+         \mu_X \lp\mathrm{total~mass}\rp & = & x_1 \cdot p_1 + x_2\cdot p_2 + 
+                 x_3 \cdot p_3 + \cdots + x_n \cdot p_n. \\
+         \mu_X  & = & x_1 \cdot p_1 + x_2 \cdot p_2 + x_3 \cdot p_3 + \cdots + x_n \cdot p_n.
+       \end{eqnarray*}
+     }
+
+   \end{columns}
+
+ \end{frame}
+
+
+ \begin{frame}
+ \frametitle{The Expected Value}
+
+ \begin{definition}
+   The \redText{expected value} of a discrete random variable, $X$, is
+   \begin{eqnarray*}
+     E[X] & = & x_1 \cdot p_1 + x_2 \cdot p_2 + x_3 \cdot p_3 + \cdots + x_n \cdot p_n.
+   \end{eqnarray*}
+ \end{definition}
+
+ \end{frame}
+
+
+% \begin{frame}{Example}
+%   \begin{columns}
+%     \column{.15\textwidth}
+%     \begin{eqnarray*}
+%       \begin{array}{r|l}
+%         \mathrm{X} & p \\ \hline
+%          0 & \frac{1}{8} \\ [5pt]
+%          1 & \frac{1}{8} \\ [5pt]
+%          2 & \frac{4}{8} \\ [5pt]
+%          3 & \frac{2}{8}
+%       \end{array}
+%     \end{eqnarray*}
+
+%     \column{.90\textwidth}
+%     \uncover<2->
+%     {
+%       \begin{eqnarray*}
+%         \mu_X & = & 0 \cdot \frac{1}{8} + 1 \cdot \frac{1}{8} + 2 \cdot \frac{4}{8} + 3 \frac{2}{8}, \\
+%         & = & \frac{15}{8}.
+%       \end{eqnarray*}
+%     }
+
+%   \end{columns}
+
+%     \uncover<3->
+%     {
+%         \begin{eqnarray*}
+%           \sigma^2_X & = & \lp 0-\frac{15}{8}\rp^2 \frac{1}{8} + 
+%           \lp 1-\frac{15}{8}\rp^2 \frac{1}{8} + \lp 2-\frac{15}{8}\rp^2 \frac{4}{8} + 
+%           \lp 3-\frac{15}{8}\rp^2 \frac{2}{8}, \\
+%           & = & \frac{55}{64}.
+%         \end{eqnarray*}
+%     }
+
+%     \uncover<4->
+%     {
+%       \begin{eqnarray*}
+%         \sigma_X & = & \sqrt{\frac{55}{64}}.
+%       \end{eqnarray*}
+%       \vfill
+%     }
+
+    
+
+% \end{frame}
+
+
+
+\subsection{Examples}
+
+\begin{frame}{Examples}
+
+  Flip a fair coin three times and report the number of tails. What is
+  the expected value?
+  
+\end{frame}
+
+\begin{frame}{Examples}
+
+   \begin{columns}
+     \column{.20\textwidth}
+     \includegraphics[width=7em]{img/dr_evil_one_million_dollars}
+     \column{.75\textwidth}
+
+     I play the lottery, and it costs one dollar each time. If I match
+     seven random numbers between 0 and 9, inclusive, then I win
+     \textbf{one million dollars}. What is the expected earnings?
+   \end{columns}
+  
+\end{frame}
+
+\subsection{Expected Value for Continuous Random Variables}
+
+
+ \begin{frame}
+ \frametitle{The Expected Value}
+   \begin{columns}
+     \column{.5\textwidth}
+     \begin{eqnarray*}
+       p(a \leq x \leq b) & = & \int^b_a f(x) ~ dx.
+     \end{eqnarray*}
+
+     \column{.50\textwidth}
+     \uncover<2->
+     {
+       \begin{eqnarray*}
+         \mu_X \lp\mathrm{total~mass}\rp & = & \int^\infty_{-\infty} x f(x) ~ dx, \\
+         \mu_X  & = & \int^\infty_{-\infty} x f(x) ~ dx.
+       \end{eqnarray*}
+     }
+
+   \end{columns}
+
+ \end{frame}
+
+
+ \begin{frame}
+ \frametitle{The Expected Value}
+
+ \begin{definition}
+   The \redText{expected value} of a continuous random variable, $X$, is
+   \begin{eqnarray*}
+     E[X] & = & \int^\infty_{-\infty} x f(x) ~ dx.
+   \end{eqnarray*}
+ \end{definition}
+
+ \end{frame}
+
+
+\subsection{Examples}
+
+
+\iftoggle{clicker}{%
+  \begin{frame}
+    \frametitle{Clicker Quiz}
+
+    A uniformly distributed random variable takes on values between
+    one and five. What is the probability density function?
+
+
+    \vfill
+    
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: $\frac{1}{5}$ & B: $\frac{1}{4}$ & C: $1$  & D: $5$
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+  \end{frame}
+}
+
+
+\begin{frame}{Example}
+
+  A uniformly distributed random variable takes on values between one
+  and five. What is the expected value?
+  
+\end{frame}
+
+\begin{frame}{Example}
+
+  The probability density function for a random variable is 
+  \begin{eqnarray*}
+    f(x) & = & \left\{
+      \begin{array}{l@{\hspace{2em}}l}
+        \frac{1}{4}-\frac{x}{32}, & 0\leq x \leq 8, \\
+        0 & \mathrm{otherwise.}
+        \end{array}
+      \right.
+  \end{eqnarray*}
+  
+  \begin{enumerate}
+  \item What is $p(5\leq x \leq 6)$?
+  \item What is the expected value?
+  \end{enumerate}
+  
+\end{frame}
+
+
+% LocalWords:  Clarkson pausesection hideallsubsections sectionstyle
+%  LocalWords:  hideothersubsections
