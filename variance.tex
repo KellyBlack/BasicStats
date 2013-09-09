@@ -1,0 +1,267 @@
+
+\lecture{Variance}{variance}
+\section{Variance of Random Variables}
+
+\title{Variance of Random Variables}
+\subtitle{Defining the Variance of a Random Variable}
+
+%\author{Kelly Black}
+%\institute{Clarkson University}
+\date{11 September 2013}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[hideothersubsections,sectionstyle=show/hide]
+\end{frame}
+
+
+\subsection{Clicker Quiz}
+
+
+\iftoggle{clicker}{%
+  \begin{frame}
+    \frametitle{Clicker Quiz}
+
+    A random variable, $X$, is uniformly distributed between one and
+    four. Determine the expectation of the random variable.
+
+    \vfill
+    
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: $2$ & B: $\frac{5}{3}$ & C: $\frac{15}{8}$  & D: $\frac{3}{2}$
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+  \end{frame}
+}
+
+\subsection{Discrete Examples}
+
+\begin{frame}
+  \frametitle{Discrete Example}
+
+
+   \begin{columns}
+     \column{.15\textwidth}
+     \begin{eqnarray*}
+       \begin{array}{r|l}
+         \mathrm{X} & p \\ \hline
+          0 & \frac{1}{16}  \\ [5pt]
+          1 & \frac{2}{16}  \\ [5pt]
+          2 & \frac{10}{16} \\ [5pt]
+          3 & \frac{2}{16} \\ [5pt]
+          4 & \frac{1}{16}
+       \end{array}
+     \end{eqnarray*}
+
+     \column{.90\textwidth}
+     \uncover<2->
+     {
+       \begin{eqnarray*}
+         \mu_X & = & 0 \cdot \frac{1}{16} + 1 \cdot \frac{2}{16} + 2 \cdot \frac{10}{16} + 3 \cdot \frac{2}{16} + 4 \cdot \frac{1}{16}, \\
+         & = & 2.
+       \end{eqnarray*}
+     }
+
+   \end{columns}
+
+  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Discrete Example}
+
+
+   \begin{columns}
+     \column{.15\textwidth}
+     \begin{eqnarray*}
+       \begin{array}{r|l}
+         \mathrm{X} & p \\ \hline
+          0 & \frac{1}{5} \\ [5pt]
+          1 & \frac{1}{5} \\ [5pt]
+          2 & \frac{1}{5} \\ [5pt]
+          3 & \frac{1}{5} \\ [5pt]
+          4 & \frac{1}{5}
+       \end{array}
+     \end{eqnarray*}
+
+     \column{.90\textwidth}
+     \uncover<2->
+     {
+       \begin{eqnarray*}
+         \mu_X & = & 0 \cdot \frac{1}{5} + 1 \cdot \frac{1}{5} + 2 \cdot \frac{1}{5} + 3 \cdot \frac{1}{5} + 4 \cdot \frac{1}{5}, \\
+         & = & 2.
+       \end{eqnarray*}
+     }
+
+   \end{columns}
+
+  
+\end{frame}
+
+\subsection{Variance}
+
+
+\begin{frame}
+  \frametitle{Variance}
+  Spread away from what?
+  \uncover<2->{
+    \begin{definition}
+      The \redText{variance} of a random variable is defined to be
+      \begin{eqnarray*}
+        \sigma^2 & = & E\left[\lp X - E[X] \rp^2\right].
+      \end{eqnarray*}
+    \end{definition}
+  }
+  \uncover<3->{
+    \begin{definition}
+      The \redText{standard deviation} of a random variable is defined to be
+      \begin{eqnarray*}
+        \sigma   & = & \sqrt{\sigma^2}, \\
+                 & = & \sqrt{E\left[\lp X - E[X] \rp^2\right]}.
+      \end{eqnarray*}
+    \end{definition}
+  }
+
+\end{frame}
+
+\subsection{Discrete Examples}
+
+\begin{frame}
+  \frametitle{Discrete Example}
+
+
+   \begin{columns}
+     \column{.15\textwidth}
+     \begin{eqnarray*}
+       \begin{array}{r|l|l}
+         \mathrm{X} & p & \mathrm{X}^2 \\ \hline
+          0 & \frac{1}{16} & 0  \\ [5pt]
+          1 & \frac{2}{16} & 1 \\ [5pt]
+          2 & \frac{10}{16}& 4 \\ [5pt]
+          3 & \frac{2}{16} & 9 \\ [5pt]
+          4 & \frac{1}{16} & 16
+       \end{array}
+     \end{eqnarray*}
+
+     \column{.90\textwidth}
+       \begin{eqnarray*}
+         \mu_X & = & 2.
+       \end{eqnarray*}
+
+     \uncover<2->
+     {
+       \begin{eqnarray*}
+         E\left[\mathrm{X}^2\right] & = & 0 \cdot \frac{1}{16} + 1 \cdot \frac{2}{16} + 4 \cdot \frac{10}{16} + 9 \cdot \frac{2}{16} + 16 \cdot \frac{1}{16}, \\
+         & = & \frac{19}{4}, \\
+         \sigma^2_X & = & \frac{3}{4}.
+       \end{eqnarray*}
+     }
+
+   \end{columns}
+
+  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Discrete Example}
+
+
+   \begin{columns}
+     \column{.15\textwidth}
+     \begin{eqnarray*}
+       \begin{array}{r|l|l}
+         \mathrm{X} & p & \mathrm{X}^2\\ \hline
+          0 & \frac{1}{5} & 0 \\ [5pt]
+          1 & \frac{1}{5} & 1 \\ [5pt]
+          2 & \frac{1}{5} & 4 \\ [5pt]
+          3 & \frac{1}{5} & 9 \\ [5pt]
+          4 & \frac{1}{5} & 16
+       \end{array}
+     \end{eqnarray*}
+
+     \column{.90\textwidth}
+       \begin{eqnarray*}
+         \mu_X & = & 2.
+      \end{eqnarray*}
+
+     \uncover<2->
+     {
+       \begin{eqnarray*}
+         E\left[\mathrm{X}^2\right] & = & 0 \cdot \frac{1}{5} + 1 \cdot \frac{1}{5} + 4 \cdot \frac{1}{5} + 9 \cdot \frac{1}{5} + 16 \cdot \frac{1}{5}, \\
+         & = & 6, \\
+         \sigma^2 & = & 2.
+       \end{eqnarray*}
+     }
+
+   \end{columns}
+
+  
+\end{frame}
+
+
+
+\subsection{Continuous Examples}
+
+\begin{frame}
+  \frametitle{Example}
+
+  A random variable is uniformly distributed between one and
+  four. Calculate its variance.
+  
+\end{frame}
+
+
+\subsection{Quartiles}
+
+\begin{frame}
+  \frametitle{Quartiles Example}
+
+  A random variable is uniformly distributed between one and
+  four. Calculate the quartiles and the median.
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Quartiles Example}
+
+  A random variable has the following probability density function:
+      \begin{eqnarray*}
+      f(x) & = & \left\{
+        \begin{array}{l@{\hspace{2em}}l}
+          \frac{x}{8}, & 0\leq x \leq 4, \\
+          0 & \mathrm{otherwise.}
+        \end{array}
+      \right.
+    \end{eqnarray*}
+  Calculate the quartiles and the median.
+  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Chebychev Inequality Example}
+
+  A manufacturing process yields springs whose spring constants have a
+  mean of 1.5 N/m and a standard deviation of 0.2 N/m. Provide an
+  estimate of the percentage of springs with constants between 1.1 N/m
+  and 1.9 N/m.
+  
+\end{frame}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "IntroStats"
+%%% End: 
+
+%  LocalWords:  Quartiles quartiles Chebychev
