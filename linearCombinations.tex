@@ -1,0 +1,227 @@
+
+\lecture{Linear Combinations of Random Variables}{linear-combinations}
+\section{Linear Combinations of Random Variables}
+
+\title{Linear Combinations of Random Variables}
+\subtitle{What is the Difference?}
+
+%\author{Kelly Black}
+%\institute{Clarkson University}
+\date{16 September 2013}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[hideothersubsections,sectionstyle=show/hide]
+\end{frame}
+
+
+\subsection{Clicker Quiz}
+
+
+\iftoggle{clicker}{%
+  \begin{frame}
+    \frametitle{Clicker Quiz}
+
+    A random variable, $X$, is uniformly distributed between one and
+    four. Determine the expected value of $X$.
+
+    \vfill
+    
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: $2$ & B: $\frac{5}{2}$ & C: $\frac{8}{3}$  & D: $\frac{15}{8}$
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+  \end{frame}
+}
+
+\subsection{Linear Transformation}
+
+\begin{frame}
+  \frametitle{Example}
+  Suppose that we perform an experiment. We measure the temperature of
+  a cooling tube in Fahrenheit. 
+
+  \vfill
+  
+  Later we realize that it should have been in Celsius. 
+
+  \vfill
+
+  What do we do?
+
+\end{frame}
+
+\begin{frame}{Linear Transformation}
+
+  In general we have a Random Variable, $X$.
+
+  \vfill
+
+  We define a new random variable,
+  \begin{eqnarray*}
+    Y & = & a X + b.
+  \end{eqnarray*}
+
+  \vfill
+
+  Question, what is the expected value and variance of this new random
+  variable?
+
+  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Expectation and Variance of a Linear Transformation}
+
+  \begin{block}{Expectation of a Linear Transformation}
+    If $X$ is a random variable, and $a$ and $b$ are constants then
+    the expected value of $Y=aX+b$ is 
+    \begin{eqnarray*}
+      E[Y] & = & a E[X] + b.
+    \end{eqnarray*}
+  \end{block}
+
+  \begin{block}{Variation of a Linear Transformation}
+    If $X$ is a random variable, and $a$ and $b$ are constants then
+    the variation of $Y=aX+b$ is 
+    \begin{eqnarray*}
+      Var[Y] & = & a^2 Var[X].
+    \end{eqnarray*}
+  \end{block}
+
+  
+\end{frame}
+
+\subsection{Linear Combinations}
+
+\begin{frame}
+  \frametitle{Linear Combinations of Random Variables}
+
+  A linear combination of the random variables $X_1$, $X_2$, $\ldots$,
+  $X_n$ is given by
+  \begin{eqnarray*}
+    Y & = & a_1 X_1 + a_2 X_2 + \cdots + a_n X_n,
+  \end{eqnarray*}
+  where $a_1$, $a_2$, $\ldots$, and $a_n$ are constants.
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Independence of Two Random Variables}
+
+  \begin{definition}
+    If $X_1$ and $X_2$ are random variables then they are independent
+    if their covariance is zero,
+    \begin{eqnarray*}
+      \mathrm{Cov}(X_1,X_2) & = & 0.
+    \end{eqnarray*}
+  \end{definition}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Expectation and Variance of a Linear Combination}
+
+  A linear combination of the random variables $X_1$, $X_2$, $\ldots$,
+  $X_n$ is given by
+  \begin{eqnarray*}
+    Y & = & a_1 X_1 + a_2 X_2 + \cdots + a_n X_n,
+  \end{eqnarray*}
+  where $a_1$, $a_2$, $\ldots$, and $a_n$ are constants.
+
+
+  \begin{block}{Expectation of a Linear Combination}
+    The expected value of $Y$ is 
+    \begin{eqnarray*}
+      E[Y] & = & a_1 E[X_1] + a_2 E[X_2] + \cdots + a_n E[X_n].
+    \end{eqnarray*}
+  \end{block}
+
+  \begin{block}{Variation of a Linear Combination}
+    \redText{If the random variables are independent} then the
+    variation of $Y$ is
+    \begin{eqnarray*}
+      \mathrm{Var}[Y] & = & a_1^2 \mathrm{Var}[X_1] + a_2^2 \mathrm{Var}[X_2] + \cdots + a_n^2 \mathrm{Var}[X_n].
+    \end{eqnarray*}
+
+  \end{block}
+
+  
+\end{frame}
+
+
+\subsection{Examples}
+
+\begin{frame}
+  \frametitle{Example}
+  A plant assembles motors. We pick an engine at random and measure
+  the outside of a piston and the inside of the piston chamber. The
+  outside radius of the piston has a mean of 5.50cm and a standard
+  deviation of 0.02cm. The inside radius of the piston chamber has a
+  mean radius of 5.54cm and a standard deviation of 0.01cm. What is
+  the mean and standard deviation of the gap between the piston and
+  the chamber?
+\end{frame}
+
+\iftoggle{clicker}{%
+  \begin{frame}
+    \frametitle{Clicker Quiz}
+
+    A random variable, $X$, has a mean of 3 and a standard deviation
+    of 5. A random variable $Y$ has a mean of -2 and a standard
+    deviation of 4. What is the standard deviation of $2x-y$?
+
+    \vfill
+    
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: $6$ & B: $14$ & C: $104$  & D: $116$
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+  \end{frame}
+}
+
+
+
+\begin{frame}
+  \frametitle{Example}
+  There are two books used in a statistics course. The mean test score
+  for those using the first book is 93.0 with a standard deviation of
+  12.0. The mean test score for those using the second book is 89.0
+  with a standard deviation of 14.0. How do we compare the two groups?
+\end{frame}
+
+\begin{frame}
+  \frametitle{Example}
+  A random variable, $X$, has a probability density function given by
+  \begin{eqnarray*}
+    f(x) & = & \left\{
+      \begin{array}{l@{\hspace{2em}}l}
+        \frac{x}{8}, & 0\leq x \leq 4, \\
+        0 & \mathrm{otherwise.}
+      \end{array}
+    \right.
+  \end{eqnarray*}
+
+  Suppose that $Y=3X+8$. What is the cumulative distribution function
+  for $Y$?
+
+\end{frame}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "IntroStats"
+%%% End: 
