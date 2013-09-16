@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{21 January 2013}
+\date{18 September 2013}
 
 \begin{frame}
   \titlepage
@@ -15,7 +15,7 @@
 
 \begin{frame}
   \frametitle{Outline}
-  \tableofcontents[pausesection,hideothersubsections,sectionstyle=show/hide]
+  \tableofcontents[hideothersubsections,sectionstyle=show/hide]
 \end{frame}
 
 
@@ -26,12 +26,16 @@
   \begin{frame}
     \frametitle{Clicker Quiz}
 
-    If $p(A)=0.8$, $p(B|A)=0.4$ what is $p(A\mathrm{~and~}B)$?
+    I have eight markers, and they are all different colors. I pull
+    out the red one to set it aside because it is only for special
+    occasions, and I decide not to use it today. If I do not use the
+    red one what is the greatest number of colors that I can use
+    today?
 
     \vfill
 
-    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: .32 & B: 0.50 & C: 2.0
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: 7 & B: 8 & C: 42 & D: 56
     \end{tabular}
 
     \vfill
@@ -46,20 +50,13 @@
 
 \begin{frame}
   \frametitle{How Many Ways?}
-  Suppose that I flip a fair coin three times. How many possible
-  outcomes are there?
+
+  Suppose that I will run an experiment. I will make two
+  repetitions. Each repetition can have three possible outcomes. How
+  many possible events are possible?
 
   \vfill
 
-\end{frame}
-
-\begin{frame}{Example}
-
-  I have three pairs of pants and two shirts. How many different
-  outfits do I have?
-
-  \vfill
-  
 \end{frame}
 
 \begin{frame}
@@ -68,91 +65,63 @@
   \begin{definition}[The Multiplication Rule]
     If I have choices where I have
     \begin{itemize}
-    \item $p_1$ choices for the first item
-    \item $p_2$ choices for the second item
-    \item $p_3$ choices for the third item \\
+    \item $n_1$ choices for the first item
+    \item $n_2$ choices for the second item
+    \item $n_3$ choices for the third item \\
       $\vdots$
-    \item $p_k$ choices for the $k$\textsuperscript{th} item \\
+    \item $n_k$ choices for the $k$\textsuperscript{th} item \\
     \end{itemize}
 
     The total number of possible selections is 
     \begin{eqnarray*}
-      p_1 \cdot p_2 \cdot p_3 \cdots ~ \cdot p_k.
+      n_1 \cdot n_2 \cdot n_3 \cdots ~ \cdot n_k.
     \end{eqnarray*}
 
   \end{definition}
 
 \end{frame}
 
+
+\begin{frame}
+  \frametitle{Example}
+  There are three steps in a manufacturing process:
+  \begin{itemize}
+  \item Step one is done in one of four different stations.
+  \item Step two is done in one of three different stations.
+  \item Step three is done in one of five different stations.
+  \end{itemize}
+
+  How many different ways can the object be assembled?
+\end{frame}
+
+\begin{frame}
+  \frametitle{Example}
+  The operation of a solar panel involves five variables: the amount
+  of silicon, the temperature, the pressure, electrical potential, and
+  the amperage. We want to test the influence of the different
+  variables at different levels:
+  \begin{itemize}
+  \item Six levels of silicon.
+  \item Eight different temperatures.
+  \item Four different pressures.
+  \item Seven different electrical potentials.
+  \item Three different amperage levels.
+  \end{itemize}
+
+  How many different experimental setups are required?
+\end{frame}
+
+
 \subsection{Permutations}
 
 \begin{frame}
   \frametitle{Example}
-  A committee has eight people. There is a chair and a secretary for
-  the committee. How many ways are there to choose a chair and a
-  secretary?
-
+  Suppose that we have forty glass jars. We will randomly pull them
+  out of a bin without replacement. How many ways can we do this?
+  (Assume that the order matters.)
   \vfill
 
-  \textit{ order matters!}
 
-\end{frame}
-
-\begin{frame}
-  \frametitle{Example}
-  Twelve people are in a race. The first three people get an
-  award. How many different ways can we hand out the awards?
-
-  \vfill
-
-  \textit{ order matters!}
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{Permutations}
-  \begin{definition}[Permutations]
-    The number of permutations is the number of ways to arrange $n$
-    objects when $r$ is chosen. \textit{(The order matters.)}
-  \end{definition}
-
-  \only<2->%
-  {
-    \begin{definition}[Notation]
-      The number of permutations for $n$ objects when you choose $r$
-      is 
-      \begin{eqnarray*}
-        \prescript{~}{n}{P}_r.
-      \end{eqnarray*}
-    \end{definition}
-  }
-
-\end{frame}
-
-\begin{frame}
-  \frametitle{Previous Examples}
-
-  \begin{eqnarray*}
-    \prescript{~}{8}{P}_2 & = & 8\cdot 7, \\
-    \prescript{~}{12}{P}_3 & = & 12\cdot 11 \cdot 10. \\
-  \end{eqnarray*}
-
-
-  \only<2->%
-  {
-
-    \begin{definition}[General Formula for Permutations]
-
-      In general
-      \begin{eqnarray*}
-        \prescript{~}{n}{P}_r & = & n(n-1)(n-2)\cdots(n-r+1).
-      \end{eqnarray*}
-
-      
-    \end{definition}
-
-  }
-  
 \end{frame}
 
 \begin{frame}
@@ -160,11 +129,12 @@
 
   \begin{definition}[Factorials]
 
-    If $n$ is an integer then
+    If $n$ is a positive integer then
     \begin{eqnarray}
-      n! & = & n(n-1)(n-2)\cdot 3 \cdot 2 \cdot 1.
+      n! & = & n(n-1)(n-2)\cdots (3) \cdot (2) \cdot 1.
     \end{eqnarray}
-    
+
+    We define $0!$ to be equal to one.    
   \end{definition}
 
   Examples:
@@ -178,15 +148,35 @@
 
 
 \begin{frame}
-  \frametitle{By the Way}
+  \frametitle{Permutations}
 
-      \begin{eqnarray*}
-        \prescript{~}{n}{P}_r & = & n(n-1)(n-2)\cdots(n-r+1), \\
-        & = & \frac{n!}{(n-r)!}.
-      \end{eqnarray*}
+  \begin{definition}[Permutations]
+    The number of permutations is the number of ways to arrange $n$
+    objects when $k$ is chosen. \textit{(The order matters.)}
+  \end{definition}
 
-  
+  \begin{definition}[Notation]
+    The number of permutations for $n$ objects when you choose $k$
+    is 
+    \begin{eqnarray*}
+      \prescript{~}{n}{P}_k & = & n(n-1)(n-2)\cdots(n-r+1), \\
+                            & = & \frac{n!}{(n-k)!}.
+    \end{eqnarray*}
+  \end{definition}
+
 \end{frame}
+
+\begin{frame}
+  \frametitle{Previous Examples}
+
+  \begin{eqnarray*}
+    \prescript{~}{40}{P}_{40} & = & \frac{40!}{0!}, \\
+    \prescript{~}{40}{P}_2 & = & 40\cdot 39 ~ = ~ \frac{40!}{38!}. \\
+  \end{eqnarray*}
+
+
+\end{frame}
+
 
 \iftoggle{clicker}{%
 
@@ -219,22 +209,11 @@
 \begin{frame}
   \frametitle{Example}
 
-  What if I have three people on a team but only two can play at a
-  time? How many groups can play?
+  A box of paper clips contains two-hundred clips. I pull out five
+  paper clips without replacement. How many ways can I do this?
 
-  \vfill
+  What if I do not care about the order?
 
-  \only<2->%
-  {
-
-    Notation:
-    \begin{eqnarray*}
-      \prescript{~}{3}C_2 & = & 3, \\
-      3 \choose 2  & = & 3.
-    \end{eqnarray*}
-
-  }
-  
 \end{frame}
 
 
@@ -274,28 +253,27 @@
   
 \end{frame}
 
-\begin{frame}
-  \frametitle{Example}
-  Thirty people are on a committee. The executive committee is made up
-  of four people. How many ways are there to form the executive
-  committee?
-  
-\end{frame}
+%\begin{frame}
+%  \frametitle{Example}
+%
+%  \begin{eqnarray*}
+%    \prescript{~}{8}{C}_5 & = & \frac{8!}{3!5!}, \\
+%    & = & 56.
+%  \end{eqnarray*}
+%
+%\end{frame}
 
 \iftoggle{clicker}{%
 
 
   \begin{frame}
     \frametitle{Clicker Quiz}
-
-    There are eight distinct marbles in a bag. I pull three out one
-    after the other and give them to a friend. How many different
-    combinations can I give away?
-
+    What is $\prescript{~}{8}{C}_5$?
+ 
     \vfill
 
     \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: $\frac{8!}{3!}$ & B: $\frac{8!}{5!3!}$  & C: $\frac{5!}{3!}$ & C: $3!$
+      A: $56$ & B: $336$  & C: $6720$ & C: $40320$
     \end{tabular}
 
     \vfill
@@ -305,6 +283,28 @@
   \end{frame}
 
 }
+
+
+\begin{frame}
+  \frametitle{Example}
+
+  I have a box of forty glass jars. I am going to draw two without
+  replacement. How many combinations are possible?
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Example}
+
+  I have seven identical cards and three envelopes. How many ways are
+  there to put the cards into the envelopes?
+
+\end{frame}
+
+
+
+
 
 
 \subsection{Generalized Permutations}
@@ -329,15 +329,6 @@
   
 \end{frame}
 
-\begin{frame}
-  \frametitle{Example}
-
-  I have five blue flags and eight red flags. How many ways can I
-  arrange them on a vertical flag pole?
-
-  
-  
-\end{frame}
 
 %%% Local Variables: 
 %%% mode: latex
