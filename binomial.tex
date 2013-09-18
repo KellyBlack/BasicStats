@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{25 January 2013}
+\date{20 September 2013}
 
 \begin{frame}
   \titlepage
@@ -15,7 +15,7 @@
 
 \begin{frame}
   \frametitle{Outline}
-  \tableofcontents[pausesection,hideothersubsections,sectionstyle=show/hide]
+  \tableofcontents[hideothersubsections,sectionstyle=show/hide]
 \end{frame}
 
 
@@ -43,22 +43,59 @@
   \end{frame}
 }
 
+\subsection{Bernoulli Distribution}
 
 \begin{frame}
-  \frametitle{Four flips}
+  \frametitle{Bernoulli Distribution}
 
-  You are going to flip a coin four times. What is the probability of
-  getting three tails?
-
-    \vfill
+  \begin{definition}
+    A random variable is a \redText{Bernoulli distribution} if it has
+    a probability mass function that can written in the following form:\\
+    \begin{tabular}{r|c}
+      X & $p$ \\ \hline
+      0 & $1-p$ \\
+      1 & $p$
+    \end{tabular}
+  \end{definition}
 
 \end{frame}
 
 
-\begin{frame}{Turn It Around}
+\begin{frame}{Examples}
 
-  \includegraphics[width=11cm,height=6cm]{img/binomialTree}
+  \begin{itemize}
+  \item Pick a tire at random from a production line: \\
+    Report ``1'' if it passes inspection. \\
+    Report ``0'' if it does not pass the inspection.
+  \item Call a person at random: \\
+    Report ``1'' if they support candidate A. \\
+    Report ``0'' if they do not support candidate A.
+
+  \end{itemize}
   
+\end{frame}
+
+\begin{frame}{Properties of the Bernoulli Distribution}
+
+  \begin{columns}
+    \column{.25\textwidth}
+    \begin{tabular}{r|c}
+      X & $p$ \\ \hline
+      0 & $1-p$ \\
+      1 & $p$
+    \end{tabular}
+
+    \column{.75\textwidth}
+    \begin{eqnarray*}
+      E[X] & = & 0\cdot (1-p) + 1\cdot p, \\
+      & = & p, \\
+      E[X^2] & = & 0^2\cdot (1-p) + 1^2\cdot p, \\
+      & = & p, \\
+      \mathrm{Var}[X] & = & p - p^2, \\
+      & = & p(1-p), \\
+      \mathrm{Std.~Dev.} & = & \sqrt{p(1-p)}.
+    \end{eqnarray*}
+  \end{columns}
 \end{frame}
 
 \subsection{Binomial Distribution}
@@ -66,15 +103,27 @@
 \begin{frame}{Binomial Distribution}
 
   \begin{itemize}
-  \item I have $N$ experiments.
-  \item Each experiment has only two possible outcomes (Yes/No).
-  \item Each experiment has a probability $p$ of a ``yes'' outcome.
+  \item I have $N$ experiments, $X_1$, $X_2$, $\ldots$, $X_n$.
+  \item Each experiment has only two possible outcomes (0/1).
+  \item Each experiment has a probability $p$ of a ``1'' outcome.
   \item Each experiment is independent of the others.
   \end{itemize}
 
   \vfill
 
-  Question: What is the probability of $k$ ``yes'' outcomes?
+  \begin{definition}[Binomial Distribution]
+    If $X_1$, $X_2$, $\ldots$, $X_n$ satisfy the conditions above,
+    then the random variable
+    \begin{eqnarray*}
+      X & = & X_1 + X_2 + X_3 + \cdots + X_n
+    \end{eqnarray*}
+    has a \redText{binomial distribution}.
+  \end{definition}
+
+\end{frame}
+
+\begin{frame}{Binomial Distribution}
+    Question: What is the probability of $k$ ``yes'' outcomes?
 
   \vfill
 
@@ -104,9 +153,6 @@
       \rule{.3cm}{.2mm} \hspace{.05cm}}_{\mathrm{N-k~No}}
   \end{eqnarray*}
 
-
-
-  
 \end{frame}
 
 \begin{frame}{Binomial Distribution}
@@ -147,11 +193,13 @@
   
   \vfill
 
-  \textbf{Binommial Distribution:}\\
-  {\color{red}
-    The probability of $k$ ``yes'' outcomes is 
-    $\prescript{~}{n}{C}_k \cdot p^k (1-p)^{N-k}$.} 
-
+  \begin{definition}[Binommial Distribution]
+    The probability of $k$ ``yes'' outcomes for a random variable that
+    follows a binomial distribution is
+    \begin{eqnarray*}
+      p(X=k) & = & \prescript{~}{n}{C}_k \cdot p^k (1-p)^{N-k}.
+    \end{eqnarray*}
+  \end{definition}
   \vfill
 
   
@@ -164,9 +212,8 @@
 \begin{frame}
   \frametitle{Example}
 
-  It is estimated that in a given monthly period 55\% of all stocks
-  will rise. I pick four stocks at random (with replacement). What is
-  the probability that I get exactly one stock that rises?
+  I flip a coin ten times. If I report a ``1'' for each tails what is
+  the probability of four tails?
 
   \vfill
 
@@ -174,29 +221,54 @@
 
 
 \begin{frame}
+  \frametitle{Expectation and Variance}
+
+  $X$ is a random variable with parameters $p$ and $n$.
+
+  \begin{block}{Expectation}
+    \begin{eqnarray*}
+      E[X] & = & np.
+    \end{eqnarray*}
+  \end{block}
+
+  \begin{block}{Variation}
+    \begin{eqnarray*}
+      \mathrm{Var}[X] & = & np(1-p).
+    \end{eqnarray*}
+  \end{block}
+
+  \begin{block}{Standard Deviation}
+    \begin{eqnarray*}
+      \mathrm{Standard~Deviation}[X] & = & \sqrt{np(1-p)}.
+    \end{eqnarray*}
+  \end{block}
+
+
+\end{frame}
+
+\begin{frame}
   \frametitle{Example}
 
-  It is estimated that 2\% of the shirts made at a factory are not
-  suitable for sale. You choose 20 shirts at random (with
-  replacement). What is the probability that you find exactly three
-  unsuitable shirts?
+  I flip a coin ten times. If I report a ``1'' for each tails what is
+  the expected value and the standard deviation?
 
   \vfill
 
 \end{frame}
 
+
 \iftoggle{clicker}{%
   \begin{frame}{Clicker Quiz}
 
     A basketball player has a lifetime average of making 70\% of her
-    free throws. In a particular game she will attempt seven free
-    throws. What is the probability that she will make exactly five free
-    throws?
+    free throws. In a particular game she will attempt eight free
+    throws. What is the expected number of free throws that she will
+    make?
 
     \vfill
 
     \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: .015 & B: .105 & C: .32 & D: .64
+      A: 5  & B: 5.6 & C: 6 & D: 8 or we riot!
     \end{tabular}
 
     \vfill
@@ -205,6 +277,30 @@
   
   \end{frame}
 }
+
+\begin{frame}{Example}
+
+  Assume that the probability that a plane leaves late from the
+  Syracuse airport is 0.12. Assume that this is independent of other
+  flights. (Problem!) You plan on taking 14 trips in the upcoming
+  year. 
+
+  \begin{itemize}
+  \item What is the probability of five late flights?
+  \item What is the expected number of late flights?
+  \item What is the standard deviation in the number of late flights?
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}{Example}
+
+  Forty-eight percent of the people in a district will vote for your
+  candidate. You call two-hundred people at random and ask who they
+  will vote for. What is the expected number of people who will
+  vote your candidate?
+  
+\end{frame}
 
 
 % LocalWords:  Clarkson pausesection hideallsubsections
