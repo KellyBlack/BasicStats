@@ -1,0 +1,278 @@
+
+\lecture{Geometric and Hypergeometric Distributions}{geometry-hypergeometric}
+\section{Geometric and Hypergeometric Distributions}
+
+\title{Geometric and Hypergeometric Distributions}
+\subtitle{Don't Stop Me Now!}
+
+%\author{Kelly Black}
+%\institute{Clarkson University}
+\date{23 September 2013}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[hideothersubsections,sectionstyle=show/hide]
+\end{frame}
+
+
+\subsection{Clicker Quiz}
+
+
+\iftoggle{clicker}{%
+  \begin{frame}
+    \frametitle{Clicker Quiz}
+
+    A fair die is rolled ten times. What is the probability of getting
+    4 ones?
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: ${10 \choose 6} \lp\frac{1}{6}\rp^6 \lp\frac{5}{6}\rp^4$ & 
+      B: ${10 \choose 4} \lp\frac{1}{6}\rp^4 \lp\frac{5}{6}\rp^6$  \\ [10pt]
+      C: ${10 \choose 6} \lp\frac{1}{6}\rp^4 \lp\frac{5}{6}\rp^6$ & 
+      D: ${10 \choose 4} \lp\frac{1}{6}\rp^6 \lp\frac{5}{6}\rp^4$
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+
+  \end{frame}
+}
+
+\subsection{Geometric Distribution}
+
+\begin{frame}
+  \frametitle{Geometric Distribution}
+
+  \begin{definition}
+    A random variable is a \redText{Geometric distribution} if it
+    consists of
+    \begin{itemize}
+    \item A sequence of Bernoulli Trials, $X_1$, $X_2$, $X_3$,
+      $\ldots$
+    \item Each Bernoulli trial is independent of the others.
+    \item Each one has a probability of $p$ of success.
+    \item Test each one in order starting at the first.
+    \item You report the number of tests you conduct when you get the
+      first ``1'' (i.e. a ``success''). 
+    \end{itemize}
+  \end{definition}
+
+
+\end{frame}
+
+\begin{frame}{Properties}
+
+  The probability mass function for a geometric distribution with
+  probability $p$ for a success in any one trial is
+  \begin{eqnarray*}
+    p(X=k) & = & \lp 1-p\rp^{k-1} p.
+  \end{eqnarray*}
+
+  The expectation and variance of a geometric distribution are
+  \begin{eqnarray*}
+    E[X] & = & \frac{1}{p}, \\
+    \mathrm{Var}[X] & = & \frac{1-p}{p^2}.
+  \end{eqnarray*}
+
+\end{frame}
+
+
+\begin{frame}{Examples}
+
+  \begin{itemize}
+  \item Pick tires at random (with replacement) from a production line
+    and test each one until I find one that fails an
+    inspection. Report the number of
+    tires that I tested.\\
+  \item Call people at random (with replacement) and ask if they
+    support candidate A. The first time someone says ``yes'' report
+    the number of people that I called.
+  \item A person goes surfing in shark infested waters. Each time the
+    person goes surfing there is a probability of 0.0002 that the
+    person will be eaten. Report the number of times that the person
+    leaves the beach to go surfing.
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}{Example}
+
+  I walk to class every day. On any given day there is a probability
+  of 0.01 that I get frost bite. The first time that I get frost bite
+  I decide this is enough and enroll at Mississippi State
+  University. I go to class every day. What is the probability that I
+  enroll at Mississippi State University on the thirty-first day?
+
+\end{frame}
+
+\subsection{Hypergeometric Distribution}
+
+\begin{frame}{Hypergeometric Distribution}
+
+  \begin{itemize}
+  \item I have $N$ objects.
+  \item There are $r$ identical objects of type I. (Think red marble.)
+  \item There are $N-r$ identical objects of type II. (Think blue  marble.)
+  \item I choose $n$ objects at random \textbf{without} replacement.
+  \item I report the number of objects ($k$) that are type I. (red marbles)
+  \end{itemize}
+
+  \vfill
+
+
+\end{frame}
+
+\begin{frame}{Hypergeometric Distribution}
+
+
+  \begin{definition}[Hypergeometric Distribution]
+    If $X$ is a hypergeometric distribution then
+    \begin{eqnarray*}
+      p(X=k) & = & \frac{{r \choose k}\cdot{{N-r}\choose{n-k}}}{{N \choose n}}, \\
+      E[X] & = & \frac{nr}{N}, \\
+      \mathrm{Var}[X] & = & \frac{N-n}{N-1} \cdot n \cdot \frac{r}{N} \cdot \lp 1-\frac{r}{N}\rp.
+    \end{eqnarray*}
+  \end{definition}
+
+\end{frame}
+
+\subsection{Examples}
+
+
+
+
+\begin{frame}{Example}
+
+  A jury pool has twenty men and fifteen women. A jury of twelve
+  people is to be chosen. If everybody is treated equally then what is
+  the probability that a jury will have exactly two women on it?
+
+\end{frame}
+
+
+
+\iftoggle{clicker}{%
+  \begin{frame}{Clicker Quiz}
+
+    A contestant on a TV game show must throw a ball through a hoop
+    before moving on to the next task. Player A has a probability of
+    0.45 of getting the ball through the hoop on any one throw. What
+    is the probability that the player will be able to advance on the
+    fourth try?
+
+    \vfill
+
+    What kind of distribution is this?
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: Binomial  & B: Geometric & C: Hypergeometric
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+  
+  \end{frame}
+}
+
+
+
+\begin{frame}
+  \frametitle{Example}
+
+  A contestant on a TV game show must throw a ball through a hoop
+  before moving on to the next task. Player A has a probability of
+  0.45 of getting the ball through the hoop on any one throw. What is
+  the probability that the player will be able to advance on the
+  fourth try?
+
+  \vfill
+
+\end{frame}
+
+\iftoggle{clicker}{%
+  \begin{frame}{Clicker Quiz}
+
+    A batch of thirty concrete cores is made. Seven of the cores are
+    below the standards. Five cones are chosen at random. What is the
+    probability that two will be below the standards?
+
+    \vfill
+
+    What kind of distribution is this?
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: Binomial  & B: Geometric & C: Hypergeometric
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+  
+  \end{frame}
+}
+
+
+
+\begin{frame}
+  \frametitle{Example}
+
+    A batch of thirty concrete cores is made. Seven of the cores are
+    below the standards. Five cones are chosen at random. What is the
+    probability that two will be below the standards?
+  
+
+\end{frame}
+
+\iftoggle{clicker}{%
+  \begin{frame}{Clicker Quiz}
+
+    I check the load on a circuit every sixty seconds. There is a
+    probability of 0.03 that the current exceeds the safety limit
+    during any check. What is the probability that the safety limits
+    are exceeded on four of those checks?
+
+    \vfill
+
+    What kind of distribution is this?
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: Binomial  & B: Geometric & C: Hypergeometric
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+  
+  \end{frame}
+}
+
+
+\begin{frame}
+  \frametitle{Example}
+
+  I check the load on a circuit every sixty seconds. There is a
+  probability of 0.03 that the current exceeds the safety limit during
+  any check. What is the probability that the safety limits are
+  exceeded on four of those checks?
+
+  \vfill
+
+\end{frame}
+
+
+
+% LocalWords:  Clarkson pausesection hideallsubsections
+%  LocalWords:  Hypergeometric hypergeometric
