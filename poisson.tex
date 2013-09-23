@@ -1,0 +1,345 @@
+
+\lecture{Poisson Distribution}{poisson}
+\section{Poisson Distribution}
+
+\title{Poisson Distribution}
+\subtitle{How Many Times?}
+
+%\author{Kelly Black}
+%\institute{Clarkson University}
+\date{25 September 2013}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[hideothersubsections,sectionstyle=show/hide]
+\end{frame}
+
+
+\subsection{Clicker Quiz}
+
+
+\iftoggle{clicker}{%
+  \begin{frame}
+    \frametitle{Clicker Quiz}
+
+    A fair die is rolled until a one is rolled. What is the
+    probability that the first one appears after five rolls?
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: $\lp\frac{1}{6}\rp^4 \frac{5}{6}$ & 
+      B: $\lp\frac{1}{6}\rp^5 \frac{5}{6}$ &
+      C: $\lp\frac{5}{6}\rp^4 \frac{1}{6}$ & 
+      D: $\lp\frac{5}{6}\rp^5 \frac{1}{6}$
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+
+  \end{frame}
+}
+
+\subsection{Poisson Distribution}
+
+\begin{frame}
+  \frametitle{Poisson Distribution}
+
+  \begin{definition}
+    A random variable follows a \redText{Poisson distribution} if it
+    consists of
+    \begin{itemize}
+    \item A count of the total number of times some event occurs,
+    \item The count occurs under some constraint (ex: within a given
+      time).
+    \item There is no limit on the total number of times that the
+      event can occur.
+    \end{itemize}
+  \end{definition}
+
+
+\end{frame}
+
+\begin{frame}{Properties}
+
+  The probability mass function for a Poisson distribution with
+  parameter $\lambda$ for the number of times an event can occur
+  within the constraint is the following:
+  \begin{eqnarray*}
+    p(X=k) & = & \frac{e^{-\lambda}\lambda^k}{k!}.
+  \end{eqnarray*}
+
+  The expectation and variance of a Poisson distribution are
+  \begin{eqnarray*}
+    E[X] & = & \lambda, \\
+    \mathrm{Var}[X] & = & \lambda.
+  \end{eqnarray*}
+
+\end{frame}
+
+
+\subsection{Examples}
+
+\begin{frame}{Examples}
+
+  \begin{itemize}
+  \item Pick a tire at random from a production line and test the
+    number of places where the tread's depth is too shallow. Report
+    the number of places where the tread depth is too shallow.\\
+  \item Observe a polling station and ask the people waiting if they
+    support candidate A. Report the number of people in the line who
+    support candidate A.
+  \item People go surfing in shark infested waters. Count the number
+    of people eaten by sharks over a one year period.
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}{Example}
+
+  \vfill
+
+  Ladislaus Josephovich Bortkiewicz studied deaths by horse kicks in
+  the Prussian Army. He found that the number of deaths per year per
+  corp followed a Poisson distribution with a mean of approximately
+  four.
+
+  \vfill
+
+  What is the probability of three deaths in a year for a corp?
+
+  \vfill
+
+\end{frame}
+
+
+\begin{frame}{Example}
+
+  The number of scratches in the paint of the fenders coming off of a
+  production line is counted. The mean number of defects is observed
+  to be 7.1 scratches per fender. A fender is chosen at random. What
+  is the probability it has at least four scratches?
+
+\end{frame}
+
+
+\begin{frame}{Example}
+
+  The number of people crossing a bridge per day has a mean of twenty
+  people. What is the probability that at most twelve people use the
+  bridge on a given day?
+
+\end{frame}
+
+
+\iftoggle{clicker}{%
+  \begin{frame}{Clicker Quiz}
+
+    \vfill
+
+    An experiment is run. The potential difference in a solar energy
+    system is checked. There are twenty trials, and the system is
+    assessed as to whether or not the potential difference falls below
+    a 220V threshold. It is estimated that the probability that the
+    system will meet or exceed the threshold is 97\% at any time. What
+    is the probability that more than eighteen of the checks will meet
+    or exceed the threshold?
+  
+    \vfill
+
+    What kind of distribution is this?
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: Binomial  & B: Geometric \\ [12pt] C: Hypergeometric & D: Poisson
+    \end{tabular}
+
+    \vfill
+  
+  \end{frame}
+}
+
+
+
+\begin{frame}
+  \frametitle{Example}
+
+  \vfill
+
+  An experiment is run. The potential difference in a solar energy
+  system is checked. There are twenty trials, and the system is
+  assessed as to whether or not the potential difference falls below a
+  220V threshold. It is estimated that the probability that the system
+  will meet or exceed the threshold is 97\% at any time. What is the
+  probability that more than eighteen of the checks will meet or
+  exceed the threshold?
+
+  \vfill
+
+  (.883)
+
+\end{frame}
+
+
+
+\iftoggle{clicker}{%
+  \begin{frame}{Clicker Quiz}
+
+    \vfill
+
+    An experiment is run. The potential difference in a solar energy
+    system is checked. The system will be assessed for one hour, and
+    the number of times the potential difference falls below a 220V
+    threshold is determined. It is estimated that the mean number of
+    times the system will fall below the threshold in one hour is 3.2
+    times. What is the probability that the system will fall below the
+    threshold at most three times?
+  
+    \vfill
+
+    What kind of distribution is this?
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: Binomial  & B: Geometric \\ [12pt] C: Hypergeometric & D: Poisson
+    \end{tabular}
+
+    \vfill
+  
+  \end{frame}
+}
+
+
+
+\begin{frame}
+  \frametitle{Example}
+
+  \vfill
+
+  An experiment is run. The potential difference in a solar energy
+  system is checked. The system will be assessed for one hour, and the
+  number of times the potential difference falls below a 220V
+  threshold is determined. It is estimated that the mean number of
+  times the system will fall below the threshold in one hour is 3.2
+  times. What is the probability that the system will fall below the
+  threshold at most three times?
+
+  \vfill
+
+  (.603)
+
+\end{frame}
+
+
+\iftoggle{clicker}{%
+  \begin{frame}{Clicker Quiz}
+
+    \vfill
+
+    An experiment is run. The potential difference in a solar energy
+    system is checked. The system will be assessed at sixty minute
+    intervals until the potential difference falls below a 220V
+    threshold. It is estimated the probability that the system will
+    meet or exceed the threshold is 97\% at any time. What is the
+    probability that the system will require more than four checks?
+  
+    \vfill
+
+    What kind of distribution is this?
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: Binomial  & B: Geometric \\ [12pt] C: Hypergeometric & D: Poisson
+    \end{tabular}
+
+    \vfill
+  
+  \end{frame}
+}
+
+
+
+\begin{frame}
+  \frametitle{Example}
+
+  \vfill
+
+  An experiment is run. The potential difference in a solar energy
+  system is checked. The system will be assessed at sixty minute
+  intervals until the potential difference falls below a 220V
+  threshold. It is estimated the probability that the system will meet
+  or exceed the threshold is 97\% at any time. What is the probability
+  that the system will require more than four checks?
+
+  \vfill
+
+  (.913)
+
+\end{frame}
+
+
+\iftoggle{clicker}{%
+  \begin{frame}{Clicker Quiz}
+
+    \vfill
+
+    An experiment is run. The potential differences in some solar
+    energy systems are checked. Twenty systems are available to
+    determine whether or not the potential difference falls below a
+    220V threshold and six will be tested. It is estimated that
+    eighteen of the units will meet or exceed the threshold. What is
+    the probability that at most one unit will not meet the threshold?
+  
+    \vfill
+
+    What kind of distribution is this?
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: Binomial  & B: Geometric \\ [12pt] C: Hypergeometric & D: Poisson
+    \end{tabular}
+
+    \vfill
+  
+  \end{frame}
+}
+
+
+
+\begin{frame}
+  \frametitle{Example}
+
+  \vfill 
+
+  An experiment is run. The potential differences in some solar energy
+  systems are checked. Twenty systems are available to determine
+  whether or not the potential difference falls below a 220V threshold
+  and six will be tested. It is estimated that eighteen of the units
+  will meet or exceed the threshold. What is the probability that at
+  most one unit will not meet the threshold?
+
+  \vfill
+
+  (.921)
+
+\end{frame}
+
+
+
+% LocalWords:  Clarkson pausesection hideallsubsections Ladislaus
+%  LocalWords:  Hypergeometric hypergeometric Josephovich Bortkiewicz
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
