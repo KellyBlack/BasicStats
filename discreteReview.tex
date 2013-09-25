@@ -1,0 +1,539 @@
+
+\lecture{Review of Discrete Distributions}{discrete-reviews}
+\section{Review of Discrete Distributions}
+
+\title{Review of Discrete Distributions}
+\subtitle{How Many?}
+
+%\author{Kelly Black}
+%\institute{Clarkson University}
+\date{27 September 2013}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[hideothersubsections,sectionstyle=show/hide]
+\end{frame}
+
+
+\subsection{Clicker Quiz}
+
+
+\iftoggle{clicker}{%
+  \begin{frame}
+    \frametitle{Clicker Quiz}
+
+    The number of cars going through a toll booth in a given hour has
+    a mean of 97. What is the probability that 95 cars will go through
+    the toll booth in a given hour?
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: $\frac{e^{-95}(95)^{97}}{97!}$ & 
+      B: $\frac{e^{-97}(97)^{95}}{95!}$ &
+      C: ${97 \choose 95} (.5)^{95}(.5)^{2}$ & 
+      D: $0.5$
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+
+  \end{frame}
+}
+
+
+\subsection{Discrete Random Variables}
+
+\begin{frame}{Discrete Random Variables}
+
+  \begin{columns}
+    \column{.20\textwidth}
+    Probability Mass Function
+    \begin{eqnarray*}
+      \begin{array}{l|l}
+        \mathrm{X} & p \\ \hline
+        x_1 & p_1 \\
+        x_2 & p_2 \\
+        x_3 & p_3 \\
+        \vdots & \vdots \\
+        x_n & p_n
+      \end{array}
+    \end{eqnarray*}
+
+    \column{.80\textwidth}
+    Properties:
+    \begin{eqnarray*}
+      \begin{array}{rcccl}
+        0 & \leq & p_i & \leq 1
+      \end{array}
+      \\
+      p_1 + p_2 + p_3 + \cdots + p_n & = & 1.
+    \end{eqnarray*}
+
+   The \redText{expected value} of a discrete random variable, $X$, is
+   \begin{eqnarray*}
+     E[X] & = & x_1 \cdot p_1 + x_2 \cdot p_2 + x_3 \cdot p_3 + \cdots + x_n \cdot p_n.
+   \end{eqnarray*}
+
+
+  \end{columns}
+  
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Variance}
+
+    \begin{definition}
+      The \redText{variance} of a random variable is defined to be
+      \begin{eqnarray*}
+        \sigma^2 & = & E\left[\lp X - E[X] \rp^2\right], \\
+        & = & E\left[X^2\right] - \lp E\left[X\right]\rp^2.
+      \end{eqnarray*}
+    \end{definition}
+
+    \begin{definition}
+      The \redText{standard deviation} of a random variable is defined to be
+      \begin{eqnarray*}
+        \sigma   & = & \sqrt{\sigma^2}, \\
+                 & = & \sqrt{E\left[\lp X - E[X] \rp^2\right]}.
+      \end{eqnarray*}
+    \end{definition}
+
+\end{frame}
+
+
+\subsection{Bernoulli Distribution}
+
+\begin{frame}
+  \frametitle{Bernoulli Distribution}
+
+  \begin{columns}
+    \column{.50\textwidth}
+    \begin{definition}
+      A random variable is a \redText{Bernoulli distribution} if it
+      has
+      a probability mass function that can written in the following form:\\
+      \begin{tabular}{r|c}
+        X & $p$ \\ \hline
+        0 & $1-p$ \\
+        1 & $p$
+      \end{tabular}
+    \end{definition}
+    \column{.50\textwidth}
+    \begin{itemize}
+    \item Only two outcomes, 0 or 1.
+    \item A single trial.
+    \item One parameter, $p$.
+    \item $E[X]=p$
+    \item $\mathrm{Var}[X]=p(1-p)$.
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+
+
+\subsection{Binomial Distribution}
+
+\begin{frame}{Binomial Distribution}
+
+  \begin{columns}
+    \column{.50\textwidth}
+    \begin{definition}[Binomial Distribution]
+      If $X_1$, $X_2$, $\ldots$, $X_n$ are independent Bernoulli
+      random variables with the same parameter, $p$, then
+      \begin{eqnarray*}
+        X & = & X_1 + X_2 + X_3 + \cdots + X_n
+      \end{eqnarray*}
+      has a \redText{binomial distribution}.
+    \end{definition}
+    \column{.50\textwidth}
+    \begin{itemize}
+    \item $N$ experiments, $X_1$, $X_2$, $\ldots$, $X_n$.
+    \item Each experiment has only two possible outcomes (0/1).
+    \item Each experiment has a probability $p$ of a ``1'' outcome.
+    \item Each experiment is independent of the others.
+    \item Add up the results. (Total number of ``yeses.'')
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{Binomial Distribution}
+
+  \vfill
+  
+    The probability of $k$ ``yes'' outcomes for a random variable that
+    follows a binomial distribution is
+    \begin{eqnarray*}
+      p(X=k) & = & \prescript{~}{N}{C}_k \cdot p^k (1-p)^{N-k}, \\
+      & = & {N \choose k} \cdot p^k (1-p)^{N-k}.
+    \end{eqnarray*}
+
+    \vfill
+
+    The expectation and variation of a Binomial random variable are
+    the following:
+    \begin{eqnarray*}
+      E[X] & = & N\cdot p, \\
+      \mathrm{Var}[X] & = & N \cdot p \cdot (1-p).
+    \end{eqnarray*}
+
+\end{frame}
+
+
+
+\subsection{Geometric Distribution}
+
+\begin{frame}
+  \frametitle{Geometric Distribution}
+
+  \begin{columns}
+    \column{.50\textwidth}
+    \begin{definition}
+      A \redText{geometric} random variable returns the number of
+      times that a sequence of independent Bernoulli random variables,
+      each with parameter $p$, are sampled until the first ``yes''
+      is found.
+    \end{definition}
+    \column{.50\textwidth}
+      \begin{itemize}
+      \item A sequence of Bernoulli Trials, $X_1$, $X_2$, $X_3$,
+        $\ldots$
+      \item Each Bernoulli trial is independent of the others.
+      \item Each one has a probability of $p$ of a ``yes.''
+      \item Test each one in order starting at the first.
+      \item You report the number of tests you conduct when you get
+        the first ``1'' (i.e. a ``yes'').
+      \end{itemize}
+  \end{columns}
+
+\end{frame}
+
+\begin{frame}{Properties}
+
+  The probability mass function for a geometric distribution with
+  probability $p$ for a ``yes'' in any one trial is
+  \begin{eqnarray*}
+    p(X=k) & = & \lp 1-p\rp^{k-1} p.
+  \end{eqnarray*}
+
+  The expectation and variance of a geometric distribution are
+  \begin{eqnarray*}
+    E[X] & = & \frac{1}{p}, \\
+    \mathrm{Var}[X] & = & \frac{1-p}{p^2}.
+  \end{eqnarray*}
+
+\end{frame}
+
+\subsection{Hypergeometric Distribution}
+
+\begin{frame}{Hypergeometric Distribution}
+
+  \begin{columns}
+    \column{.50\textwidth}
+    \begin{definition}
+      Choose $n$ items without replacement from a group of $N$
+      items. There are $r$ objects that are ``special.'' Return the
+      number of ``special'' items that were chosen.
+    \end{definition}
+    \column{.50\textwidth}
+    \begin{itemize}
+    \item There are $N$ objects.
+    \item There are $r$ of the objects that are different.
+    \item I pick $n$ objects at random \textbf{without} replacement.
+    \item I report the number of objects ($k$) that are from the group
+      of ``different'' items that were chosen.
+    \end{itemize}
+  \end{columns}
+  \vfill
+
+
+\end{frame}
+
+\begin{frame}{Hypergeometric Distribution}
+
+
+  \begin{definition}[Hypergeometric Distribution]
+    If $X$ is a hypergeometric distribution then
+    \begin{eqnarray*}
+      p(X=k) & = & \frac{{r \choose k}\cdot{{N-r}\choose{n-k}}}{{N \choose n}}, \\
+      E[X] & = & \frac{nr}{N}, \\
+      \mathrm{Var}[X] & = & \frac{N-n}{N-1} \cdot n \cdot \frac{r}{N} \cdot \lp 1-\frac{r}{N}\rp.
+    \end{eqnarray*}
+  \end{definition}
+
+\end{frame}
+
+
+\subsection{Poisson Distribution}
+
+\begin{frame}
+  \frametitle{Poisson Distribution}
+
+  \begin{columns}
+    \column{.50\textwidth}
+    \begin{definition}
+      A \redText{Poisson} random variable returns the number of events
+      that occur within some constraint.
+    \end{definition}
+    \column{.50\textwidth}
+      \begin{itemize}
+      \item Count of the total number of times some event occurs,
+      \item The count occurs under some limit or per item or some sort
+        of constraint.
+      \item There is no explicit limit on the total number of times
+        that the event can occur.
+      \item Has one parameter, $\lambda$.
+      \end{itemize}
+  \end{columns}
+
+\end{frame}
+
+\begin{frame}{Properties}
+
+  The probability mass function for a Poisson distribution with
+  parameter $\lambda$ for the number of times an event can occur
+  within the constraint is the following:
+  \begin{eqnarray*}
+    p(X=k) & = & \frac{e^{-\lambda}\lambda^k}{k!}.
+  \end{eqnarray*}
+
+  The expectation and variance of a Poisson distribution are
+  \begin{eqnarray*}
+    E[X] & = & \lambda, \\
+    \mathrm{Var}[X] & = & \lambda.
+  \end{eqnarray*}
+
+\end{frame}
+
+
+\subsection{Examples}
+
+\begin{frame}{Good Problems in the Book}
+
+  \vfill 
+  Pages 184-185:
+  \begin{itemize}
+  \item 3.8.1-3.8.5
+  \item 3.8.7-3.8.9
+  \item 3.8.10 (a,c), 3.8.13 (a,c)
+  \item 3.8.11-3.8.12
+  \item 3.8.14
+  \item 3.8.16
+  \end{itemize}
+  \vfill
+  
+\end{frame}
+
+
+\iftoggle{clicker}{%
+  \begin{frame}{Clicker Quiz}
+
+    \vfill
+
+    A shelf in a store has ten items on it. Three of the items are out
+    of date. A customer picks four items at random. What is the
+    probability that the customer gets at most one out of date item?
+  
+    \vfill
+
+    What kind of distribution is this?
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: Binomial  & B: Geometric \\ [12pt] C: Hypergeometric & D: Poisson
+    \end{tabular}
+
+    \vfill
+  
+  \end{frame}
+}
+
+\begin{frame}{Example}
+
+  \vfill
+
+    A shelf in a store has ten items on it. Three of the items are out
+    of date. A customer picks four items at random. What is the
+    probability that the customer gets at most one out of date item?
+
+
+  \vfill
+
+  (0.6667)
+  
+\end{frame}
+
+\iftoggle{clicker}{%
+  \begin{frame}{Clicker Quiz}
+
+    \vfill
+
+    A person will use an object until they run into a problem and will
+    then throw it out. There is a probability of 0.02 that the item
+    will have a problem in any one use. What is the probability that
+    the person will use the item at least ten times?
+  
+    \vfill
+
+    What kind of distribution is this?
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: Binomial  & B: Geometric \\ [12pt] C: Hypergeometric & D: Poisson
+    \end{tabular}
+
+    \vfill
+  
+  \end{frame}
+}
+
+\begin{frame}{Example}
+
+  \vfill
+
+    A person will use an object until they run into a problem and will
+    then throw it out. There is a probability of 0.02 that the item
+    will have a problem in any one use. What is the probability that
+    the person will use the item at least ten times?
+
+    \vfill
+
+    (.8171)
+  
+\end{frame}
+
+\iftoggle{clicker}{%
+  \begin{frame}{Clicker Quiz}
+
+    \vfill
+
+    A paper mill has a roller that is expected to experience a mean of
+    1.3 failures per day. What is the probability of having less than
+    three failures in a given day?
+  
+    \vfill
+
+    What kind of distribution is this?
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: Binomial  & B: Geometric \\ [12pt] C: Hypergeometric & D: Poisson
+    \end{tabular}
+
+    \vfill
+  
+  \end{frame}
+}
+
+\begin{frame}{Example}
+
+  \vfill
+
+    A paper mill has a roller that is expected to experience a mean of
+    1.3 failures per day. What is the probability of having less than
+    three failures in a given day?
+
+  \vfill
+
+  (0.8571)
+  
+\end{frame}
+
+\iftoggle{clicker}{%
+  \begin{frame}{Clicker Quiz}
+
+    \vfill
+
+    A signal is received by a listening circuit once every 0.003
+    seconds. There is a probability of 0.012 that the signal is not
+    correct. What is the probability that there are more than two
+    errors in a 0.030 second time period?
+  
+    \vfill
+
+    What kind of distribution is this?
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: Binomial  & B: Geometric \\ [12pt] C: Hypergeometric & D: Poisson
+    \end{tabular}
+
+    \vfill
+  
+  \end{frame}
+}
+
+\begin{frame}{Example}
+
+  \vfill
+
+    A signal is received by a listening circuit once every 0.003
+    seconds. There is a probability of 0.012 that the signal is not
+    correct. What is the probability that there are more than two
+    errors in a 0.030 second time period?
+
+  \vfill
+
+  (.00019)
+  
+\end{frame}
+
+\iftoggle{clicker}{%
+  \begin{frame}{Clicker Quiz}
+
+    \vfill
+
+    A signal is received by a listening circuit. It is expected to
+    receive 1.8 errors per hour. What is the probability that there
+    will be more than two errors in a given hour.
+  
+    \vfill
+
+    What kind of distribution is this?
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: Binomial  & B: Geometric \\ [12pt] C: Hypergeometric & D: Poisson
+    \end{tabular}
+
+    \vfill
+  
+  \end{frame}
+}
+
+\begin{frame}{Example}
+
+  \vfill
+
+    A signal is received by a listening circuit. It is expected to
+    receive 1.8 errors per hour. What is the probability that there
+    will be more than two errors in a given hour.
+
+  \vfill
+
+  (.2693)
+  
+\end{frame}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
+
+%  LocalWords:  Hypergeometric hypergeometric
