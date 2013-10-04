@@ -1,105 +1,14 @@
+\documentclass{article}
+\usepackage[table]{xcolor}
+\usepackage{graphicx}
 
-\lecture{The Standard Normal Distribution}{standard-normal}
-\section{The Standard Normal Distribution}
+\begin{document}
 
-\title{The Standard Normal Distribution}
-\subtitle{A Continuous Random Variable}
+  Approximation of the cumulative distribution for the standard normal
+  distribution. \\
+  \includegraphics[height=3.25cm]{img/cummulativeDist}
 
-%\author{Kelly Black}
-%\institute{Clarkson University}
-\date{7 October 2013}
-
-\begin{frame}
-  \titlepage
-\end{frame}
-
-\begin{frame}
-  \frametitle{Outline}
-  \tableofcontents[hideothersubsections,sectionstyle=show/hide]
-\end{frame}
-
-
-\subsection{The sections}
-
-
-\iftoggle{clicker}{%
-  \begin{frame}
-    \frametitle{Clicker Quiz}
-
-    The length of core samples is exponentially distributed with a
-    mean of 5.0. What is the parameter $\lambda$?
-
-    \vfill
-    
-    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: $\frac{1}{5}$ & B: $\sqrt{\frac{1}{5}}$ & C: $5$  & D: $\sqrt{5}$
-    \end{tabular}
-
-    \vfill
-    \vfill
-    \vfill
-
-
-  \end{frame}
-}
-
-
-\subsection{The Normal Distribution}
-
-\begin{frame}{The Normal Distribution}
-
-  \only<1>{\includegraphics[width=5cm]{img/standardNormal}}
-  \only<2>{\includegraphics[width=5cm]{img/standardNormalInflection}}
-
-  \begin{eqnarray*}
-    f(z) & = & \frac{1}{\sqrt{2\pi}} e^{-z^2/2}.
-  \end{eqnarray*}
-  
-\end{frame}
-
-\begin{frame}{Probability and Area}
-
-  \includegraphics[width=5cm]{img/standardNormalArea}
-
-  \begin{eqnarray*}
-    p(X \leq a) 
-  \end{eqnarray*}
-  
-\end{frame}
-
-
-\begin{frame}{Probability and Area}
-
-  \includegraphics[width=5cm]{img/standardNormalAreaBoth}
-
-  \begin{eqnarray*}
-    p(a \leq X \leq b) 
-  \end{eqnarray*}
-  
-\end{frame}
-
-\subsection{Approximating Probabilities with Tables}
-
-\begin{frame}{Calculating the Probability For the Standard Normal}
-
-  \includegraphics[width=6cm]{img/cummulativeDist}
-  
-\end{frame}
-
-\begin{frame}
-  \frametitle{The Table}
-  \vspace*{-5em}
-  \hfill\includegraphics[width=2cm]{img/cummulativeDist}~~~~~~~~~~~~~~
-
-  {
-\fontencoding{T1}
-\fontfamily{pcr}
-\fontseries{m}
-\fontshape{n}
-\fontsize{5pt}{5pt}
-\selectfont
-
-  \begin{tabular}{l|llllllllll}
+\begin{tabular}{l|llllllllll}
      & 0.00   & 0.01   & 0.02   & 0.03   &  0.04   & 0.05   & 0.06   & 0.07   & 0.08  & 0.09 \\ \hline
 -3.4 & 0.0003 & 0.0003 & 0.0003 & 0.0003 & 0.0003 & 0.0003 & 0.0003 & 0.0003 & 0.0003 & 0.0002 \\ 
 -3.3 & 0.0005 & 0.0005 & 0.0005 & 0.0004 & 0.0004 & 0.0004 & 0.0004 & 0.0004 & 0.0004 & 0.0003 \\ 
@@ -137,21 +46,9 @@
 -0.1 & 0.4602 & 0.4562 & 0.4522 & 0.4483 & 0.4443 & 0.4404 & 0.4364 & 0.4325 & 0.4286 & 0.4247 \\ 
 -0.0 & 0.5000 & 0.4960 & 0.4920 & 0.4880 & 0.4840 & 0.4801 & 0.4761 & 0.4721 & 0.4681 & 0.4641 
 \end{tabular}
-}
-\end{frame}
 
-\begin{frame}
-  \vspace*{-5em}
-  \frametitle{The Table}
-  \hfill\includegraphics[width=2cm]{img/cummulativeDist}~~~~~~~~~~~~~~
 
-  {
-\fontencoding{T1}
-\fontfamily{pcr}
-\fontseries{m}
-\fontshape{n}
-\fontsize{5pt}{5pt}
-\selectfont
+\includegraphics[height=3.25cm]{img/cummulativeDist} ~ \\
 \begin{tabular}{l|llllllllll}
      & 0.00   & 0.01   & 0.02   & 0.03   & 0.04   & 0.05   & 0.06   & 0.07   & 0.08  & 0.09 \\ \hline
 0.0 & 0.5000 & 0.5040 & 0.5080 & 0.5120 & 0.5160 & 0.5199 & 0.5239 & 0.5279 & 0.5319 & 0.5359 \\ 
@@ -191,23 +88,10 @@
 3.4 & 0.9997 & 0.9997 & 0.9997 & 0.9997 & 0.9997 & 0.9997 & 0.9997 & 0.9997 & 0.9997 & 0.9998 
 \end{tabular}
 
-}
+\clearpage
+Example: Find the probability that a standard normal is less than -1.75. 
 
-\end{frame}
-
-\subsection{Examples}
-
-\begin{frame}{\small Find the probability that a standard normal is less than -1.75.}
-  
-{\small First find the row corresponding to -1.7.}
-
-  {
-\fontencoding{T1}
-\fontfamily{pcr}
-\fontseries{m}
-\fontshape{n}
-\fontsize{5pt}{5pt}
-\selectfont
+First find the row corresponding to -1.7.
 
 \begin{tabular}{l|llllllllll}
      & 0.00   & 0.01   & 0.02   & 0.03   &  0.04   & 0.05   & 0.06   & 0.07   & 0.08  & 0.09 \\ \hline
@@ -248,23 +132,10 @@
 -0.0 & 0.5000 & 0.4960 & 0.4920 & 0.4880 & 0.4840 & 0.4801 & 0.4761 & 0.4721 & 0.4681 & 0.4641 
 \end{tabular}
 
+\clearpage
 
-}
-
-
-\end{frame}
-
-\begin{frame} {\small First find the row corresponding to -1.7. Second
-    find the column corresponding to 0.05. The probability is the
-    intersection of the row and column, 0.0401.}
-
-  {
-\fontencoding{T1}
-\fontfamily{pcr}
-\fontseries{m}
-\fontshape{n}
-\fontsize{5pt}{5pt}
-\selectfont
+Second find the column corresponding to 0.05. The probability is the
+intersection of the row and column, 0.0401.
 
 \begin{tabular}{l|lllll>{\columncolor{blue}}lllll}
      & 0.00   & 0.01   & 0.02   & 0.03   &  0.04   & 0.05   & 0.06   & 0.07   & 0.08  & 0.09 \\ \hline
@@ -285,7 +156,7 @@
 -2.0 & 0.0228 & 0.0222 & 0.0217 & 0.0212 & 0.0207 & 0.0202 & 0.0197 & 0.0192 & 0.0188 & 0.0183 \\ 
 -1.9 & 0.0287 & 0.0281 & 0.0274 & 0.0268 & 0.0262 & 0.0256 & 0.0250 & 0.0244 & 0.0239 & 0.0233 \\ 
 -1.8 & 0.0359 & 0.0351 & 0.0344 & 0.0336 & 0.0329 & 0.0322 & 0.0314 & 0.0307 & 0.0301 & 0.0294 \\ 
-\rowcolor{red} -1.7 & 0.0446 & 0.0436 & 0.0427 & 0.0418 & 0.0409 & {\colorbox{yellow}{~~0.0401}~~} & 0.0392 & 0.0384 & 0.0375 & 0.0367 \\ 
+\rowcolor{red} -1.7 & 0.0446 & 0.0436 & 0.0427 & 0.0418 & 0.0409 & 0.0401 & 0.0392 & 0.0384 & 0.0375 & 0.0367 \\ 
 -1.6 & 0.0548 & 0.0537 & 0.0526 & 0.0516 & 0.0505 & 0.0495 & 0.0485 & 0.0475 & 0.0465 & 0.0455 \\ 
 -1.5 & 0.0668 & 0.0655 & 0.0643 & 0.0630 & 0.0618 & 0.0606 & 0.0594 & 0.0582 & 0.0571 & 0.0559 \\ 
 -1.4 & 0.0808 & 0.0793 & 0.0778 & 0.0764 & 0.0749 & 0.0735 & 0.0721 & 0.0708 & 0.0694 & 0.0681 \\ 
@@ -307,208 +178,4 @@
 
 
 
-}
-
-\end{frame}
-
-
-
-
-\begin{frame}{\small Find the probability that a standard normal is less than 0.87.}
-  
-{\small First find the row corresponding to 0.8.}
-
-  {
-\fontencoding{T1}
-\fontfamily{pcr}
-\fontseries{m}
-\fontshape{n}
-\fontsize{5pt}{5pt}
-\selectfont
-
-\begin{tabular}{l|llllllllll}
-     & 0.00   & 0.01   & 0.02   & 0.03   & 0.04   & 0.05   & 0.06   & 0.07   & 0.08  & 0.09 \\ \hline
-0.0 & 0.5000 & 0.5040 & 0.5080 & 0.5120 & 0.5160 & 0.5199 & 0.5239 & 0.5279 & 0.5319 & 0.5359 \\ 
-0.1 & 0.5398 & 0.5438 & 0.5478 & 0.5517 & 0.5557 & 0.5596 & 0.5636 & 0.5675 & 0.5714 & 0.5753 \\ 
-0.2 & 0.5793 & 0.5832 & 0.5871 & 0.5910 & 0.5948 & 0.5987 & 0.6026 & 0.6064 & 0.6103 & 0.6141 \\ 
-0.3 & 0.6179 & 0.6217 & 0.6255 & 0.6293 & 0.6331 & 0.6368 & 0.6406 & 0.6443 & 0.6480 & 0.6517 \\ 
-0.4 & 0.6554 & 0.6591 & 0.6628 & 0.6664 & 0.6700 & 0.6736 & 0.6772 & 0.6808 & 0.6844 & 0.6879 \\ 
-0.5 & 0.6915 & 0.6950 & 0.6985 & 0.7019 & 0.7054 & 0.7088 & 0.7123 & 0.7157 & 0.7190 & 0.7224 \\ 
-0.6 & 0.7257 & 0.7291 & 0.7324 & 0.7357 & 0.7389 & 0.7422 & 0.7454 & 0.7486 & 0.7517 & 0.7549 \\ 
-0.7 & 0.7580 & 0.7611 & 0.7642 & 0.7673 & 0.7704 & 0.7734 & 0.7764 & 0.7794 & 0.7823 & 0.7852 \\ 
-\rowcolor{red}0.8 & 0.7881 & 0.7910 & 0.7939 & 0.7967 & 0.7995 & 0.8023 & 0.8051 & 0.8078 & 0.8106 & 0.8133 \\ 
-0.9 & 0.8159 & 0.8186 & 0.8212 & 0.8238 & 0.8264 & 0.8289 & 0.8315 & 0.8340 & 0.8365 & 0.8389 \\ 
-1.0 & 0.8413 & 0.8438 & 0.8461 & 0.8485 & 0.8508 & 0.8531 & 0.8554 & 0.8577 & 0.8599 & 0.8621 \\ 
-1.1 & 0.8643 & 0.8665 & 0.8686 & 0.8708 & 0.8729 & 0.8749 & 0.8770 & 0.8790 & 0.8810 & 0.8830 \\ 
-1.2 & 0.8849 & 0.8869 & 0.8888 & 0.8907 & 0.8925 & 0.8944 & 0.8962 & 0.8980 & 0.8997 & 0.9015 \\ 
-1.3 & 0.9032 & 0.9049 & 0.9066 & 0.9082 & 0.9099 & 0.9115 & 0.9131 & 0.9147 & 0.9162 & 0.9177 \\ 
-1.4 & 0.9192 & 0.9207 & 0.9222 & 0.9236 & 0.9251 & 0.9265 & 0.9279 & 0.9292 & 0.9306 & 0.9319 \\ 
-1.5 & 0.9332 & 0.9345 & 0.9357 & 0.9370 & 0.9382 & 0.9394 & 0.9406 & 0.9418 & 0.9429 & 0.9441 \\ 
-1.6 & 0.9452 & 0.9463 & 0.9474 & 0.9484 & 0.9495 & 0.9505 & 0.9515 & 0.9525 & 0.9535 & 0.9545 \\ 
-1.7 & 0.9554 & 0.9564 & 0.9573 & 0.9582 & 0.9591 & 0.9599 & 0.9608 & 0.9616 & 0.9625 & 0.9633 \\ 
-1.8 & 0.9641 & 0.9649 & 0.9656 & 0.9664 & 0.9671 & 0.9678 & 0.9686 & 0.9693 & 0.9699 & 0.9706 \\ 
-1.9 & 0.9713 & 0.9719 & 0.9726 & 0.9732 & 0.9738 & 0.9744 & 0.9750 & 0.9756 & 0.9761 & 0.9767 \\ 
-2.0 & 0.9772 & 0.9778 & 0.9783 & 0.9788 & 0.9793 & 0.9798 & 0.9803 & 0.9808 & 0.9812 & 0.9817 \\ 
-2.1 & 0.9821 & 0.9826 & 0.9830 & 0.9834 & 0.9838 & 0.9842 & 0.9846 & 0.9850 & 0.9854 & 0.9857 \\ 
-2.2 & 0.9861 & 0.9864 & 0.9868 & 0.9871 & 0.9875 & 0.9878 & 0.9881 & 0.9884 & 0.9887 & 0.9890 \\ 
-2.3 & 0.9893 & 0.9896 & 0.9898 & 0.9901 & 0.9904 & 0.9906 & 0.9909 & 0.9911 & 0.9913 & 0.9916 \\ 
-2.4 & 0.9918 & 0.9920 & 0.9922 & 0.9925 & 0.9927 & 0.9929 & 0.9931 & 0.9932 & 0.9934 & 0.9936 \\ 
-2.5 & 0.9938 & 0.9940 & 0.9941 & 0.9943 & 0.9945 & 0.9946 & 0.9948 & 0.9949 & 0.9951 & 0.9952 \\ 
-2.6 & 0.9953 & 0.9955 & 0.9956 & 0.9957 & 0.9959 & 0.9960 & 0.9961 & 0.9962 & 0.9963 & 0.9964 \\ 
-2.7 & 0.9965 & 0.9966 & 0.9967 & 0.9968 & 0.9969 & 0.9970 & 0.9971 & 0.9972 & 0.9973 & 0.9974 \\ 
-2.8 & 0.9974 & 0.9975 & 0.9976 & 0.9977 & 0.9977 & 0.9978 & 0.9979 & 0.9979 & 0.9980 & 0.9981 \\ 
-2.9 & 0.9981 & 0.9982 & 0.9982 & 0.9983 & 0.9984 & 0.9984 & 0.9985 & 0.9985 & 0.9986 & 0.9986 \\ 
-3.0 & 0.9987 & 0.9987 & 0.9987 & 0.9988 & 0.9988 & 0.9989 & 0.9989 & 0.9989 & 0.9990 & 0.9990 \\ 
-3.1 & 0.9990 & 0.9991 & 0.9991 & 0.9991 & 0.9992 & 0.9992 & 0.9992 & 0.9992 & 0.9993 & 0.9993 \\ 
-3.2 & 0.9993 & 0.9993 & 0.9994 & 0.9994 & 0.9994 & 0.9994 & 0.9994 & 0.9995 & 0.9995 & 0.9995 \\ 
-3.3 & 0.9995 & 0.9995 & 0.9995 & 0.9996 & 0.9996 & 0.9996 & 0.9996 & 0.9996 & 0.9996 & 0.9997 \\ 
-3.4 & 0.9997 & 0.9997 & 0.9997 & 0.9997 & 0.9997 & 0.9997 & 0.9997 & 0.9997 & 0.9997 & 0.9998 
-\end{tabular}
-
-
-}
-
-
-\end{frame}
-
-\begin{frame}
-{\small Second find the column corresponding to 0.07. The probability is the
-intersection of the row and column, 0.8078.}
-
-  {
-\fontencoding{T1}
-\fontfamily{pcr}
-\fontseries{m}
-\fontshape{n}
-\fontsize{5pt}{5pt}
-\selectfont
-
-\begin{tabular}{l|lllllll>{\columncolor{blue}}lll}
-     & 0.00   & 0.01   & 0.02   & 0.03   & 0.04   & 0.05   & 0.06   & 0.07   & 0.08  & 0.09 \\ \hline
-0.0 & 0.5000 & 0.5040 & 0.5080 & 0.5120 & 0.5160 & 0.5199 & 0.5239 & 0.5279 & 0.5319 & 0.5359 \\ 
-0.1 & 0.5398 & 0.5438 & 0.5478 & 0.5517 & 0.5557 & 0.5596 & 0.5636 & 0.5675 & 0.5714 & 0.5753 \\ 
-0.2 & 0.5793 & 0.5832 & 0.5871 & 0.5910 & 0.5948 & 0.5987 & 0.6026 & 0.6064 & 0.6103 & 0.6141 \\ 
-0.3 & 0.6179 & 0.6217 & 0.6255 & 0.6293 & 0.6331 & 0.6368 & 0.6406 & 0.6443 & 0.6480 & 0.6517 \\ 
-0.4 & 0.6554 & 0.6591 & 0.6628 & 0.6664 & 0.6700 & 0.6736 & 0.6772 & 0.6808 & 0.6844 & 0.6879 \\ 
-0.5 & 0.6915 & 0.6950 & 0.6985 & 0.7019 & 0.7054 & 0.7088 & 0.7123 & 0.7157 & 0.7190 & 0.7224 \\ 
-0.6 & 0.7257 & 0.7291 & 0.7324 & 0.7357 & 0.7389 & 0.7422 & 0.7454 & 0.7486 & 0.7517 & 0.7549 \\ 
-0.7 & 0.7580 & 0.7611 & 0.7642 & 0.7673 & 0.7704 & 0.7734 & 0.7764 & 0.7794 & 0.7823 & 0.7852 \\ 
-\rowcolor{red}0.8 & 0.7881 & 0.7910 & 0.7939 & 0.7967 & 0.7995 & 0.8023 & 0.8051 & {\colorbox{yellow}{~~0.8078~~}} & 0.8106 & 0.8133 \\ 
-0.9 & 0.8159 & 0.8186 & 0.8212 & 0.8238 & 0.8264 & 0.8289 & 0.8315 & 0.8340 & 0.8365 & 0.8389 \\ 
-1.0 & 0.8413 & 0.8438 & 0.8461 & 0.8485 & 0.8508 & 0.8531 & 0.8554 & 0.8577 & 0.8599 & 0.8621 \\ 
-1.1 & 0.8643 & 0.8665 & 0.8686 & 0.8708 & 0.8729 & 0.8749 & 0.8770 & 0.8790 & 0.8810 & 0.8830 \\ 
-1.2 & 0.8849 & 0.8869 & 0.8888 & 0.8907 & 0.8925 & 0.8944 & 0.8962 & 0.8980 & 0.8997 & 0.9015 \\ 
-1.3 & 0.9032 & 0.9049 & 0.9066 & 0.9082 & 0.9099 & 0.9115 & 0.9131 & 0.9147 & 0.9162 & 0.9177 \\ 
-1.4 & 0.9192 & 0.9207 & 0.9222 & 0.9236 & 0.9251 & 0.9265 & 0.9279 & 0.9292 & 0.9306 & 0.9319 \\ 
-1.5 & 0.9332 & 0.9345 & 0.9357 & 0.9370 & 0.9382 & 0.9394 & 0.9406 & 0.9418 & 0.9429 & 0.9441 \\ 
-1.6 & 0.9452 & 0.9463 & 0.9474 & 0.9484 & 0.9495 & 0.9505 & 0.9515 & 0.9525 & 0.9535 & 0.9545 \\ 
-1.7 & 0.9554 & 0.9564 & 0.9573 & 0.9582 & 0.9591 & 0.9599 & 0.9608 & 0.9616 & 0.9625 & 0.9633 \\ 
-1.8 & 0.9641 & 0.9649 & 0.9656 & 0.9664 & 0.9671 & 0.9678 & 0.9686 & 0.9693 & 0.9699 & 0.9706 \\ 
-1.9 & 0.9713 & 0.9719 & 0.9726 & 0.9732 & 0.9738 & 0.9744 & 0.9750 & 0.9756 & 0.9761 & 0.9767 \\ 
-2.0 & 0.9772 & 0.9778 & 0.9783 & 0.9788 & 0.9793 & 0.9798 & 0.9803 & 0.9808 & 0.9812 & 0.9817 \\ 
-2.1 & 0.9821 & 0.9826 & 0.9830 & 0.9834 & 0.9838 & 0.9842 & 0.9846 & 0.9850 & 0.9854 & 0.9857 \\ 
-2.2 & 0.9861 & 0.9864 & 0.9868 & 0.9871 & 0.9875 & 0.9878 & 0.9881 & 0.9884 & 0.9887 & 0.9890 \\ 
-2.3 & 0.9893 & 0.9896 & 0.9898 & 0.9901 & 0.9904 & 0.9906 & 0.9909 & 0.9911 & 0.9913 & 0.9916 \\ 
-2.4 & 0.9918 & 0.9920 & 0.9922 & 0.9925 & 0.9927 & 0.9929 & 0.9931 & 0.9932 & 0.9934 & 0.9936 \\ 
-2.5 & 0.9938 & 0.9940 & 0.9941 & 0.9943 & 0.9945 & 0.9946 & 0.9948 & 0.9949 & 0.9951 & 0.9952 \\ 
-2.6 & 0.9953 & 0.9955 & 0.9956 & 0.9957 & 0.9959 & 0.9960 & 0.9961 & 0.9962 & 0.9963 & 0.9964 \\ 
-2.7 & 0.9965 & 0.9966 & 0.9967 & 0.9968 & 0.9969 & 0.9970 & 0.9971 & 0.9972 & 0.9973 & 0.9974 \\ 
-2.8 & 0.9974 & 0.9975 & 0.9976 & 0.9977 & 0.9977 & 0.9978 & 0.9979 & 0.9979 & 0.9980 & 0.9981 \\ 
-2.9 & 0.9981 & 0.9982 & 0.9982 & 0.9983 & 0.9984 & 0.9984 & 0.9985 & 0.9985 & 0.9986 & 0.9986 \\ 
-3.0 & 0.9987 & 0.9987 & 0.9987 & 0.9988 & 0.9988 & 0.9989 & 0.9989 & 0.9989 & 0.9990 & 0.9990 \\ 
-3.1 & 0.9990 & 0.9991 & 0.9991 & 0.9991 & 0.9992 & 0.9992 & 0.9992 & 0.9992 & 0.9993 & 0.9993 \\ 
-3.2 & 0.9993 & 0.9993 & 0.9994 & 0.9994 & 0.9994 & 0.9994 & 0.9994 & 0.9995 & 0.9995 & 0.9995 \\ 
-3.3 & 0.9995 & 0.9995 & 0.9995 & 0.9996 & 0.9996 & 0.9996 & 0.9996 & 0.9996 & 0.9996 & 0.9997 \\ 
-3.4 & 0.9997 & 0.9997 & 0.9997 & 0.9997 & 0.9997 & 0.9997 & 0.9997 & 0.9997 & 0.9997 & 0.9998 
-\end{tabular}
-
-
-
-}
-
-\end{frame}
-
-
-\subsection{Going Backwards}
-\begin{frame}{Going Backwards}
-
-  If $p(z \leq a) \approx 0.87$ what is $a$?
-
-  \hfill
-
-   If $p(z \geq a) \approx 0.35$ what is $a$?
-
-   \hfill
-  
-\end{frame}
-
-\begin{frame}{Example}
- 
-  A random variable is normally distributed with mean 2.0 and standard
-  deviation 3.0. What is the probability that it will return a value
-  between 2.5 and 3.5?
- 
-\end{frame}
-
-\begin{frame}
-
-  A random variable is normally distributed with mean 1.0 and standard
-  deviation 2.5. What is the probability that the random variable
-  returns a number between 0.23 and 1.21?
-
-\end{frame}
-
-
-\iftoggle{clicker}{%
-  \begin{frame}
-    \frametitle{Clicker Quiz}
-
-    A random variable is normally distributed with mean 4.2 and
-    standard deviation 1.7. What is the z-statistic for the value of
-    $x=3.5$?
-
-    \vfill
-
-    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: -2.50  & B: -0.70  & C: -0.41 & D: 1.47
-    \end{tabular}
-    % .9834-.9279 = 0.0555
-
-    \vfill
-    \vfill
-    \vfill
-
-
-  \end{frame}
-}
-
-
-\begin{frame}{Example}
-
-  A random variable is normally distributed with mean 4.2 and standard
-  deviation 1.7. Find a value of $x$ so that
-  \begin{eqnarray*}
-    p(x\leq X \leq 3.5) & = & 0.25.
-  \end{eqnarray*}
-
-  
-\end{frame}
-
-\begin{frame}{Examples (if time)}
-
-  The random variable $X$ is normally distributed with mean 3 and
-  standard deviation 2.5.
-  \begin{itemize}
-  \item $p(X \geq 4.5)=$? (.2742)
-  \item $p(1.5\leq X \leq 3.5)=$? (.3050)
-  \item $p(|X-4.1|\leq 1.5)=$? (.4144)
-  \item $p(|X-3|\leq a)=.5$\ what is $a$? (1.69)
-  \item $p(X\leq a) = 0.7$? What is $a$? (4.31)
-  \item $p(X\geq a) = 0.3$? What is $a$? (4.31)
-  \item What is $Q_1$? (1.31)
-  \item What is $Q_3$? (4.69)
-  \end{itemize}
-  
-\end{frame}
-
-% LocalWords:  Clarkson pausesection hideallsubsections
+\end{document}
