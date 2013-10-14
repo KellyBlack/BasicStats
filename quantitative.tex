@@ -1,13 +1,13 @@
 
-\lecture{Introduction to Bivariate Data}{introduction-to-bivariate-data}
-\section{Introduction to Bivariate Data}
+\lecture{Introduction to Continuous Data}{introduction-to-continuous-data}
+\section{Introduction to Continuous Data}
 
 \title{Quantitative Data}
 \subtitle{Methods to Assess Numerical Data}
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{8 February 2013}
+\date{16 October 2013}
 
 \begin{frame}
   \titlepage
@@ -41,21 +41,46 @@
   \end{frame}
 }
 
+\begin{frame}{Things You Need to Know}
+
+  Read Sections 6.1, 6.2, and 6.4:
+  \begin{itemize}
+  \item Pareto Chart \redText{Discrete Data}
+  \item Bar Charts \redText{Discrete Data}
+  \item Histograms \redText{Continuous Data}
+  \item Skew (left vs. right)
+  \item Sample Mode
+  \item Sample Mean
+  \item Sample Variance and Sample Standard Deviation
+  \item Trimmed Data
+  \item Coefficient of Variation
+  \item Sample Quartiles
+  \item Boxplots 
+  \end{itemize}
+  
+\end{frame}
+
+
 
 \subsection{Quantitative Data}
 
 \begin{frame}{Quantitative Data}
-  
-  \begin{definition}{Discrete Data}
+
+  \begin{definition}[Qualitative Data]
 
     A discrete random variable produces a countable number of
-    values. The values are one of a fixed set of values. 
-
-    \textit{{\color{red}Here the random variables are numbers.}}
+    values. The values are one of a fixed set of values.
     
   \end{definition}
+  
+  \begin{definition}[Discrete Quantitative Data]
 
-  \begin{definition}{Continuous Data}
+    A discrete random variable produces a countable number of
+    numbers. The values are one of a fixed set of values. 
+
+  \end{definition}
+
+  \begin{definition}[Continuous Data]
 
     The numbers produced come from an infinite number of possible
     outcomes.
@@ -64,17 +89,17 @@
 
 \end{frame}
 
-\begin{frame}{Discrete Data Examples}
+\begin{frame}{Examples}
 
   \begin{itemize}
   \item Count the number of people who arrive in a line during a given
-    time period.
+    time period. \redText{Discrete, quantitative data}
 
-  \item We report the number of bottles of a brand of soft drink that
-    are sold in a given time period.
+  \item Measure the amperage across a circuit
+    element. \redText{Continuous, quantitative data}
 
-  \item We report the number of defects found in a mirror randomly
-    chosen from a factory floor.
+  \item Ask someone how much they like a ride at a park on a scale
+    from one to five. \redText{Qualitative data}
 
   \end{itemize}
   
@@ -83,29 +108,20 @@
 
 \begin{frame}{Quantitative Data}
   
-  \begin{definition}{Univariate Data}
-
+  \begin{definition}[Univariate Data]
     The data consists of a set of numbers, and there are no explicit
     relationships between them.
-
-    \textit{{\color{red}All of the examples on the previous slide
-        represent univariate data.}}
-    
   \end{definition}
 
-  \begin{definition}{Bivariate Data}
-
+  \begin{definition}[Bivariate Data]
     The data consists of pairs of numbers, and the pairs have some
     assumed relationship to one another.
-    
   \end{definition}
 
-  \begin{definition}{Multivariate Data}
-
+  \begin{definition}[Multivariate Data]
     The data consists of groups of numbers, and the groups have some
     assumed relationship to one another. There is more than two
     numbers per group.
-    
   \end{definition}
 
 
@@ -136,8 +152,9 @@
     \frametitle{Clicker Quiz}
 
     An experiment is run in which an intersection is observed over
-    twenty different two hour periods, and the number of people who do
-    not stop at a stop sign is observed.
+    twenty different two hour periods. The time period and the number
+    of people who do not stop at a stop sign is observed and is
+    recorded. .
 
     What kind of data is this?
 
@@ -157,278 +174,186 @@
 
 \subsection{Discrete Quantitative Data}
 
-\begin{frame}
-  \frametitle{Discrete Quantitative Data}
+\begin{frame}{Discrete Data}
 
-  \begin{eqnarray*}
-    5,~5,~3,~5,~4,~3,~4,~1,~6,~3,~2,~1
-  \end{eqnarray*}
+  Examples:
 
-  This is no different from what we did with qualitative data in our
-  last session. Just count the number of occurrences and work with
-  frequencies.
+  \begin{itemize}
+  \item a, b, b, a, b, b, b, a, b
+  \item 2, 2, 3, 2, 4, 1, 3, 2
+  \end{itemize}
+  
+\end{frame}
 
+\iftoggle{clicker}{%
+  \begin{frame}
+    \frametitle{Clicker Quiz}
 
-  \only<2->%
-  {
-    \begin{tabular}{l|l}
-      Number  & Frequency \\ \hline
-      1 & 2 \\
-      2 & 1 \\
-      3 & 3 \\
-      4 & 2 \\
-      5 & 3 \\
-      6 & 1 
+    Determine the number of times the letter a occurs in the following
+    data set: \\
+      a, b, b, c, a, b, b, c, b, c
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: 0 & B: 1  & C: 2 & D: 3
     \end{tabular}
-  }
 
-  \only<3->%
-  {
-    \textit{relative frequency, blah blah blah}
-  }
+    \vfill
+
+  \end{frame}
+}
+
+
+\begin{frame}
+  \frametitle{Discrete Data}
+
+  \vfill
+
+  Data: \\
+  a, b, b, c, a, b, b, c, b, c
+
+  \vfill
+
+  \begin{tabular}{l|l}
+    Number  & Frequency \\ \hline
+    a & 2 \\
+    b & 5 \\
+    c & 3 
+  \end{tabular}
+
+  \vfill
+
+  \textit{To calculate the relative frequency divide by the total
+    number of data points.}
+
+  \vfill
+
+\end{frame}
+
+\begin{frame}{Sample Mode}
+
+  \begin{definition}[Sample Mode]
+    The sample mode is/are the values with the highest frequency.
+  \end{definition}
+
+  Data: \\
+  a, b, b, c, a, b, b, c, b, c
+
+  \vfill
+
+  \begin{tabular}{l|l}
+    Number  & Frequency \\ \hline
+    a & 2 \\
+    \redText{b} & \redText{5} \\
+    c & 3 
+  \end{tabular}
+
+  The mode is 5. If more than one of the values has the maximum
+  frequency then the set of modes includes all of the values that
+  occur the maximum number of times.
 
 \end{frame}
 
 \subsection{Continuous Data}
 
-\begin{frame}
-  \frametitle{Continuous Data}
 
-  \begin{itemize}
-  \item Every day I measure the amount of precipitation over the
-    previous 24 hours.
+\begin{frame}{Trimmed Data}
 
-  \item I observe the price of a particular stock at the end of each day.
-    \uncover<2->{\textit{\color{red}Well... technically this is discrete, but we
-        pretend it is continuous.}}
+  Delete some percentage of the largest and smallest numbers.
 
-  \item I measure the blood alcohol levels for people who have been
-    pulled over each night in Potsdam, NY.
-  \end{itemize}
+  Example: 
+  We have one hundred data points.
+
+  \vfill
+
+  For a 10\% trimmed mean: delete the 10 smallest and the 10 largest
+  numbers.
+
+  \vfill
+
+  For a 5\% trimmed mean: delete the 5 smallest and the 5 largest
+  numbers.
+
+  \vfill
+
 \end{frame}
 
-\subsection{Graphical Techniques}
+\begin{frame}{Continuous Data}
 
-\begin{frame}{Graphical Techniques}
+  \begin{tabular}{l}
+    Data \\ \hline
+    $x_1$ \\
+    $x_2$ \\
+    $x_3$ \\
+    $x_4$ \\
+    $\vdots$ \\
+    $x_{n-1}$ \\
+    $x_{n}$ \\
+  \end{tabular}
 
-  \begin{itemize}
-  \item Bar Plots
-  \item Dot Plots
-  \item Stem-Leaf Charts
-  \item histograms
-  \end{itemize}
+  \vfill
+
+  It makes sense to perform arithmetic operations on the numbers.
   
 \end{frame}
 
-
-\begin{frame}{Bar Plots}
+\begin{frame}{Sample Mean and Sample Variance}
 
   \begin{eqnarray*}
-    5,~5,~3,~5,~4,~3,~4,~1,~6,~3,~2,~1
+    x_1,~x_2,~x_3,~x_4,\ldots,x_{n-1},~x_n.
   \end{eqnarray*}
 
-
-  \begin{columns}
-    \column{.25\textwidth}
-
-
-    \begin{tabular}{l|l}
-      Number  & Frequency \\ \hline
-      1 & 2 \\
-      2 & 1 \\
-      3 & 3 \\
-      4 & 2 \\
-      5 & 3 \\
-      6 & 1 
-    \end{tabular}
-
-    \column{.75\textwidth}
-
-    \includegraphics[width=7cm]{img/barplotExample}
-
-
-  \end{columns}
-  
-  
-\end{frame}
-
-
-\begin{frame}{Dot Charts}
-
-  \begin{eqnarray*}
-    5,~5,~3,~5,~4,~3,~4,~1,~6,~3,~2,~1
-  \end{eqnarray*}
-
-
-  \begin{columns}
-    \column{.25\textwidth}
-
-
-    \begin{tabular}{l|l}
-      Number  & Frequency \\ \hline
-      1 & 2 \\
-      2 & 1 \\
-      3 & 3 \\
-      4 & 2 \\
-      5 & 3 \\
-      6 & 1 
-    \end{tabular}
-
-    \column{.75\textwidth}
-
-    \only<1>{\includegraphics[width=7cm]{img/stripChart}}
-    \only<2>{\includegraphics[width=7cm]{img/dotChart}}
-
-
-  \end{columns}
-  
-  
-\end{frame}
-
-
-\begin{frame}{Stem-Leaf Plot}
-
-  We can divide a number between its ``stem'' and ``leaf.''
-
-  For example:
-  \only<1>%
-  {
+  \begin{definition}{Sample Mean}
+    The sample mean of a set of numbers is 
     \begin{eqnarray*}
-      17
+      \begin{array}{lclcl}
+        \bar{x} & = & \frac{x_1+x_2+x_3+x_4+\cdots+x_{n-1}+x_n}{n}
+        & = & \frac{1}{n}\sum^n_{i=1} x_i.
+    \end{array}
     \end{eqnarray*}
-  }
-  \only<2>%
-  {
-    \begin{eqnarray*}
-      \underbrace{\color{red}1}_{\mathrm{stem}}\underbrace{\color{blue}7}_{\mathrm{leaf}}
-    \end{eqnarray*}
-  }
+  \end{definition}
 
-  \only<3>%
-  {
-    Given a group of numbers we can organize the numbers with the same
-    stem in the same rows. Then list each leaf in ascending order. The
-    result is a ``stem-leaf plot.''
-  }
-  
+  \begin{definition}{Sample Variation}
+    The sample variation of a set of numbers is 
+    \begin{eqnarray*}
+      s^2_x & = & \frac{\lp x_1-\bar{x}\rp^2 + \lp x_2-\bar{x}\rp^2 +
+                  \cdots+\lp x_{n-1} - \bar{x} \rp^2 + \lp x_n - \bar{x}\rp^2}{n-1}, \\
+      & = & \frac{\sum^n_{i=1} \lp x_i - \bar{x} \rp^2 }{n-1}.
+    \end{eqnarray*}
+  \end{definition}
+
   
 \end{frame}
 
 \begin{frame}{Example}
 
-  \only<1>%
-  {
-    \begin{eqnarray*}
-      47,~44,~29,~27,~29,~36,~24,~21,~36,~34
-    \end{eqnarray*}
-  }
-  \only<2>%
-  {
-    Identify the stems:
-    \begin{eqnarray*}
-      {\color{red}4}7,~{\color{red}4}4,~{\color{red}2}9,~{\color{red}2}7,
-      ~{\color{red}2}9,~{\color{red}3}6,~{\color{red}2}4,~{\color{red}2}1,
-      ~{\color{red}3}6,~{\color{red}3}4
-    \end{eqnarray*}
-  }\
-  \only<3->%
-  {
-    Identify the leaves:
-    \begin{eqnarray*}
-      {\color{red}4}{\color{blue}7},~{\color{red}4}{\color{blue}4},
-      ~{\color{red}2}{\color{blue}9},~{\color{red}2}{\color{blue}7},
-      ~{\color{red}2}{\color{blue}9},~{\color{red}3}{\color{blue}6},
-      ~{\color{red}2}{\color{blue}4},~{\color{red}2}{\color{blue}1},
-      ~{\color{red}3}{\color{blue}6},~{\color{red}3}{\color{blue}4}
-    \end{eqnarray*}
-  }
+  \begin{tabular}{l}
+    1.2 \\ 1.5 \\ 2.1 \\ 4.3 \\ 1.7
+  \end{tabular}
 
-  \only<4>%
-  {
-    Write out the unique stems in order: \\
-    \begin{tabular}{l@{\hspace{1em}}|@{\hspace{1em}}l}
-      {\color{red}2} & \\
-      {\color{red}3} & \\
-      {\color{red}4} & 
-    \end{tabular}
-  }
-
-  \only<5>%
-  {
-    Write out every leaf in ascending order: \\
-    \begin{tabular}{l@{\hspace{1em}}|@{\hspace{1em}}l}
-      {\color{red}2} & {\color{blue}14799}\\
-      {\color{red}3} & {\color{blue}466}\\
-      {\color{red}4} & {\color{blue}47}
-    \end{tabular}
-  }
-
-  
 \end{frame}
 
-\begin{frame}{Histograms}
+\begin{frame}{Sample Quartiles}
 
-  This is a generalization of the stem-leaf plot. Instead of dividing
-  things in groups by the ``tens'' we instead use an arbitrary range
-  of values. We calculate how many data points fall into the
-  pre-determined ranges and then make a bar plot of the frequencies.
+  \begin{enumerate}
+  \item Sort the data
+  \item Divide into sets of four
+  \end{enumerate}
+
+  (Graphical view: boxplot)
   
 \end{frame}
 
 \begin{frame}{Example}
 
-  \begin{eqnarray*}
-    2.7,~3.6,~3.8,~2.7,~2.7,~3.3,~3.3,~3.6,~3.0,~3.2
-  \end{eqnarray*}
-
-
-  \begin{columns}
-    \column{.25\textwidth}
-
-    \only<2>%
-    {
-      We (arbitrarily) break things up into a range of values: \\
-      \begin{tabular}{l|l}
-        2.6-2.8 \\
-        2.8-3.0 \\
-        3.0-3.2 \\
-        3.2-3.4 \\
-        3.4-3.6 \\
-        3.6-3.8
-      \end{tabular}
-    }
-
-    \only<3->%
-    {
-      We (arbitrarily) break things up into a range of values: \\
-      \begin{tabular}{l|l}
-        2.6-2.8 & III\\
-        2.8-3.0 & I \\
-        3.0-3.2 & I \\
-        3.2-3.4 & II \\
-        3.4-3.6 & II \\
-        3.6-3.8 & I
-      \end{tabular}
-    }
-    
-    \column{.75\textwidth}
-
-    \only<4>{\includegraphics[width=6cm]{img/histogramExample}}
-
-  \end{columns}
+  \begin{tabular}{l}
+    1.2 \\ 1.5 \\ 2.1 \\ 4.3 \\ 1.7
+  \end{tabular}
 
   
+
 \end{frame}
 
-\begin{frame}{Histograms}
-
-  \begin{itemize}
-  \item Overall shape 
-  \item Skew
-  \item Center (balance point, middle of area)
-  \item Spread
-  \end{itemize}
-  
-\end{frame}
 
 % LocalWords:  Clarkson pausesection hideallsubsections Bivariate
