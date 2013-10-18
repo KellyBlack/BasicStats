@@ -1,13 +1,13 @@
 
-\lecture{Central Tendencies}{central-tendencies}
-\section{Central Tendencies}
+\lecture{Point Estimates}{point-estimates}
+\section{Point Estimates}
 
-\title{Central Tendencies}
-\subtitle{Center and Spread of Data}
+\title{Point Estimates}
+\subtitle{Estimating Parameters}
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{13 February 2013}
+\date{18 October 2013}
 
 \begin{frame}
   \titlepage
@@ -22,7 +22,7 @@
 \iftoggle{clicker}{%
   \subsection{Clicker Question}
   \begin{frame}
-    \frametitle{Find The Average}
+    \frametitle{Find The Sample mean}
     (Use channel 42)
 
     \vfill 
@@ -44,85 +44,116 @@
 }
 
 
-\subsection{Center of Data}
+\subsection{Point Estimates}
 
-\begin{frame}{Center of Data}
+\begin{frame}{Point Estimates}
 
-  The term ``average'' is not a defined quantity. It can mean many
-  things and can be misleading!
-
-  Example: \\
-  \begin{tabular}{lllllll}
-    3, & 5, & -2, & 1 & 10 & -2 & -2
+  We have a random variables and have samples of the random
+  variable:\\ [10pt]
+  \begin{tabular}{l|l}
+    Observation & Value \\ \hline
+    1 & $x_1$ \\ 
+    2 & $x_2$ \\
+    3 & $x_3$ \\
+    \vdots & \vdots \\
+    $n$ & $x_n$
   \end{tabular}
 
-  \uncover<1->%
-  {
+  \vfill
 
-    It could be the ``sample mean:'' 1.86.
+  What estimate can we make for a ``parameter?''
 
-    It could be the ``median:'' 1.
-
-    It could be the ``mode:'' -2
-
-  }
-
+  \vfill
   
 \end{frame}
 
 
-\begin{frame}{Center of Data}
+\begin{frame}{Parameters versus Statistic}
 
-  What is the ``center'' of the data?
+  \begin{definition}[Parameter]
+    A \redText{parameter} is a quantity that is a \blueText{property}
+    of the random variable.
+  \end{definition}
 
-  \begin{tabular}{lll}
-    3, & 5, & -2
-  \end{tabular}
+  \begin{definition}[Statistic]
+    A \redText{statistic} is a \blueText{calculation} based on a set
+    of samples.
+  \end{definition}
 
-  
 \end{frame}
 
-
-\begin{frame}{Center of Data}
-
-  What is the ``center?''
-
-  \begin{description}
-  \item[Population Mean] The mean of the whole population.
-  \item[Sample Mean] The sum of the data divided by the number of
-    samples.
-  \item[Median] The middle value of the whole population.
-  \item[Sample Median] The middle value of the data.
-  \end{description}
-
-  
-\end{frame}
 
 
 
 \begin{frame}
-  \frametitle{Center of Data}
+  \frametitle{Example}
 
-  Given data:
-  \begin{eqnarray*}
-    x_1, ~ x_2, ~ x_3, ~ \ldots ~,x_n.
-  \end{eqnarray*}
-
-  \begin{definition}
-    The sample mean of the data is 
-    \begin{eqnarray*}
-      \bar{x} & = & \frac{x_1+x_2+\cdots+x_n}{n}.
-    \end{eqnarray*}
-  \end{definition}
-
-  \begin{definition}
-    The median is the number for which half the data is smaller than
-    it and half is larger that it.
-  \end{definition}
-  
+  A random variable has a mean $\mu$ and standard deviation
+  $\sigma$. A set of samples is taken: \\ [10pt]
+  \begin{tabular}{l|l}
+    Observation & Value \\ \hline
+    1 & $1.0$ \\ 
+    2 & $3.0$ \\
+    3 & $8.0$ \\
+    4 & $4.0$ \\
+    5 & $7.0$
+  \end{tabular}
 
 \end{frame}
 
+
+\begin{frame}{Point Estimate}
+
+  \begin{definition}[Point Estimate]
+    A \redText{point estimate} is an \blueText{estimate} of a
+    parameter based on whatever, limited, information that is
+    available to us.
+  \end{definition}
+\end{frame}
+
+
+\begin{frame}{Example}
+
+  $\bar{x}$ is an estimate for the mean.
+  
+\end{frame}
+
+\begin{frame}{Example}
+  How likely is it that a coin flip returns a tails?
+
+  \vfill
+
+  Flip a coin seven times.
+
+  \vfill
+
+\end{frame}
+
+
+\begin{frame}{Example}
+
+  The voltage difference across a resistor is measured at random
+  times: \\ [10pt]
+  \begin{tabular}{l|l}
+    Observation & Voltage \\ \hline
+    1 & 3.50 \\
+    2 & 3.61 \\
+    3 & 3.53 \\
+    4 & 3.55 
+  \end{tabular}
+  
+\end{frame}
+
+\begin{frame}{Extra Examples}
+
+  \vfill
+
+  The following examples are extra examples that are not covered in
+  class.
+
+  \vfill
+  
+\end{frame}
 
 \begin{frame}{Example}
 
@@ -331,72 +362,6 @@
 \end{frame}
 
 
-\subsection{Spread of Data}
-
-\begin{frame}{Center of what?}
-
-  The sample mean and sample give us an estimate of the ``center'' of
-  the data. The question that next comes up is the center of what?
-
-  The center of the data is just as important as the spread around the
-  center.
-  
-\end{frame}
-
-\begin{frame}{Example}
-
-  You have daily sales from stores. You take ten samples from each store and
-  want to estimate the mean sales. For which store do you place a
-  greater trust in your estimate?
-
-  \begin{columns}
-    \column{.5\textwidth}
-    \includegraphics[width=4cm]{img/dailySalesStore1}
-
-    \column{.5\textwidth}
-    \includegraphics[width=4cm]{img/dailySalesStore2}
-    
-  \end{columns}
-  
-\end{frame}
-
-\begin{frame}
-  \frametitle{Spread of Data}
-
-  Given data:
-  \begin{eqnarray*}
-    x_1, ~ x_2, ~ x_3, ~ \ldots ~,x_n.
-  \end{eqnarray*}
-
-  \begin{definition}
-    The range is the biggest number minus the smallest number.
-  \end{definition}
-
-
-  \begin{definition}
-    The sample variation of the data is 
-    \begin{eqnarray*}
-      s^2 & = & \frac{(x_1-\bar{x})^2+(x_2-\bar{x})^2+\cdots+(x_n-\bar{x})^2}{n-1}.
-    \end{eqnarray*}
-  \end{definition}
-
-  \begin{definition}
-    The sample standard deviation of the data is the square root of
-    the sample variation.
-  \end{definition}
-
-
-\end{frame}
-
-\begin{frame}{Example}
-
-  Find the range and standard deviation of the following data: \\
-  \begin{tabular}{lll}
-    3, & 5, & -2
-  \end{tabular}
-
-  
-\end{frame}
 
 \iftoggle{clicker}{%
   \begin{frame}
