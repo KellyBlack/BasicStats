@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{6 March 2013}
+\date{30 October 2013}
 
 \begin{frame}
   \titlepage
@@ -46,51 +46,28 @@
 
 
 \begin{frame}
-  \frametitle{Problem!}
+  \frametitle{The Issue}
 
-  We have a random variable. It has a mean, $\mu$, and a standard
-  deviation, $\sigma$. How do we know?
+  Goal: determine the mean of a random variable.
 
-  \vfill
+  Problem: It is a random variable.
 
-  \only<2->
-  {
-    \begin{block}{Example}
-      We run a capitol investment firm. Someone asks us for \$250,000
-      to start a restaurant. It this a reasonable amount?
-    \end{block}
+  \only<2->{%
+    \redText{Solution: Change the question!}
   }
-
   \vfill
 
 \end{frame}
 
 
-\begin{frame}{The Big Question}
-
-  How do we estimate the mean of a random variable?
-  
-\end{frame}
-
-
-\begin{frame}{Example}
-  
-  We call up ten restaurant owners and ask them for the amount they
-  needed to get started. We then calculate a \textit{sample mean},
-  \begin{eqnarray*}
-    \bar{x} & = & \frac{x_1 + x_2 + x_3 + x_4 + x_5 + x_6 + x_7 + x_8 + x_9 + x_{10}}{10}.
-  \end{eqnarray*}
-  This is our \textbf{estimate} for the mean.
-  
-\end{frame}
 
 
 \iftoggle{clicker}{%
   \begin{frame}
     \frametitle{Clicker Quiz}
 
-    We call up ten restaurant owners and ask them for the amount they
-    needed to get started. We then calculate a \textit{sample mean},
+    We take a sample of ten cables and then measure their breaking
+    strength. We then calculate a \textit{sample mean},
     \begin{eqnarray*}
       \bar{x} & = & \frac{x_1 + x_2 + x_3 + x_4 + x_5 + x_6 + x_7 + x_8 + x_9 + x_{10}}{10}.
     \end{eqnarray*}
@@ -110,45 +87,6 @@
   \end{frame}
 }
 
-
-\begin{frame}{Estimators}
-
-  The only thing that we have is $\bar{x}$ and $s$. The problem is
-  that these things are random variables.
-
-  $\bar{x}$ is an estimate for the mean, $\mu$.
-
-  $s$ is an estimate for the standard deviation, $\sigma$.
-
-  \begin{definition}{Bias}
-    \begin{itemize}
-    \item If our estimator for a parameter is expected to be less that
-      the true value is has a \textit{negative bias.}
-    \item If our estimator for a parameter is expected to be more that
-      the true value is has a \textit{positive bias.}
-    \item If the expectation of our estimator for a parameter is the
-      same as the true value then it is \textit{unbiased.}
-    \end{itemize}
-  \end{definition}
-  
-  \vfill
-
-\end{frame}
-
-\begin{frame}{Estimator Of The Mean}
-
-  \begin{definition}{Estimator of the mean}
-    The sample mean is an estimator of the mean,
-  \begin{eqnarray*}
-    \bar{x} & = & \frac{x_1 + x_2 + x_3 + \cdots + x_{n}}{n}.
-  \end{eqnarray*}    
-  \end{definition}
-  
-  \vfill
-  \vfill
-  \vfill
-
-\end{frame}
 
 
 \begin{frame}{The Sample Mean}
@@ -172,7 +110,7 @@ Problem: We do not know what $\mu$ is!
 
     \column{.6\textwidth}
 
-    We want one of the following things:
+    In practice we want to do one of the following things:
     \begin{itemize}
     \item Determine the value of the error
     \item Determine number of samples (N)
@@ -202,11 +140,18 @@ Problem: We do not know what $\mu$ is!
     \end{eqnarray*}
     and
     \begin{eqnarray*}
-      z & = & \frac{-\mathrm{error}}{\sigma/n}.
+      t & = & \frac{-\mathrm{error}}{s/n}.
     \end{eqnarray*}
 
   \end{columns}
 
+\end{frame}
+
+
+\begin{frame}{Simulation}
+
+  See the simulation.
+  
 \end{frame}
 
 
@@ -230,6 +175,9 @@ Problem: We do not know what $\mu$ is!
 
   \end{frame}
 }
+
+
+
 
 
 
@@ -260,7 +208,7 @@ Problem: We do not know what $\mu$ is!
 
     \column{.6\textwidth}
 
-    We want one of the following things:
+    We want to do one of the following things:
     \begin{itemize}
     \item Given $N$ and $\alpha$ calculate the error
     \item Given $N$ and the error calculate $\alpha$
@@ -332,32 +280,105 @@ Problem: We do not know what $\mu$ is!
 
 \end{frame}
 
-\begin{frame}{Simulation}
-
-  See the simulation.
-  
-\end{frame}
-
 
 \begin{frame}
   \frametitle{Example}
 
-  We contact ten restaurant owners and ask what their starting costs
-  were. We get a sample mean of \$235,000 and a standard deviation of
-  \$45,000. Find the 95\% confidence interval.
+  A sample of the mass of jars is taken. Fifteen samples yield a
+  sample mean of 0.80 kg and a sample standard deviation of 0.10
+  kg. Determine the 90\% confidence interval.
 
   \vfill
 
   \only<2->%
   {
 
-    The 95\% confidence interval is from 207,109\$ to 262,891\$
-    assuming a normal distribution with a sample size of ten.
+    The 90\% confidence interval is from 0.75 kg to 0.85 kg
+    assuming a $t$-distribution with fourteen degrees of freedom.
 
   }
 
   \vfill
 
+\end{frame}
+
+\begin{frame}
+  \frametitle{Example}
+
+  A sample of the mass of jars is taken. Fifteen samples yield a
+  sample mean of 0.80 kg and a sample standard deviation of 0.10
+  kg. Determine the 95\% confidence interval.
+
+  \vfill
+
+  \only<2->%
+  {
+
+    The 95\% confidence interval is from 0.74 kg to 0.86 kg
+    assuming a $t$-distribution with fourteen degrees of freedom.
+
+  }
+
+  \vfill
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Example}
+
+  A sample of the mass of jars is to be taken. We need an error of
+  $\pm 0.04$ kg using a 90\% confidence level. If the expected sample
+  standard deviation is 0.10 kg how many samples should we take?
+
+  \vfill
+
+  \only<2->%
+  {
+
+    Nineteen samples are required for a 90\% confidence level assuming
+    a $t$-distribution.
+
+  }
+
+  \vfill
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Example}
+
+  A sample of the mass of jars is to be taken. We need an error of
+  $\pm 0.04$ kg using a 95\% confidence level. If the expected sample
+  standard deviation is 0.10 kg how many samples should we take?
+
+  \vfill
+
+  \only<2->%
+  {
+
+    Twenty-seven samples are required for a 90\% confidence level
+    assuming a $t$-distribution.
+
+  }
+
+  \vfill
+
+\end{frame}
+
+
+\begin{frame}{Example}
+
+  The mass of fifteen glass jars is measured. A sample mean of 0.80 kg
+  and a sample standard deviation of 0.10 kg is calculated. What is
+  the lower bound on the mean using a 90\% confidence level?
+
+  \vfill
+
+  \only<2->{%
+    The lower bound on the mean is 0.76 kg using a $t$-distribution
+    with fourteen degrees of freedom and a 90\% confidence level.
+  }
+  
 \end{frame}
 
 

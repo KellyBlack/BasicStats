@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{27 March 2013}
+\date{1 November 2013}
 
 \begin{frame}
   \titlepage
@@ -52,9 +52,11 @@
 \begin{frame}
   \frametitle{Introduction To Hypothesis Testing}
 
-  I \textbf{\underline{think}} that a random variable has a mean of 3.7
-  and a standard deviation of 1.2. I take six samples and get a sample
-  mean of 4.1. Is the mean really 3.7?
+  A randomly chosen can of oil should have a mean viscosity of 1.80
+  centi-Stokes. I put in an additive and take fifteen random
+  samples. The sample mean of the viscosities is 1.87 centi-Stokes
+  with a \redText{sample} standard deviation of 0.15 centi-Stokes. Did
+  it make a difference?
 
   \vfill
 
@@ -100,190 +102,190 @@
     situation.
   \item<4-> {\color{red}Assume} that the \textit{status quo} is good or better. (Call this the
     \textit{Null Hypothesis}, $H_0$.)
-  \item<5-> {\color{red}Construct a hypothesis} about what we think is \textbf{think}
+  \item<5-> {\color{red}Construct a hypothesis} about what we \textbf{think}
     is happening. (Call this the \textit{alternate hypothesis}, $H_a$.)
   \item<6-> Collect \textit{evidence} {\color{red}assuming $H_0$ is true}. 
-  \item<7-> If the evidence is {\color{red}\textit{``highly unlikely''} under the
-    assumed conditions} then reject the null hypothesis, otherwise we
-    cannot reject the null hypothesis.
+  \item<7-> If the \textit{evidence} is {\color{red}\textit{``highly
+        unlikely''} under the assumed conditions} then reject the null
+    hypothesis, otherwise we cannot reject the null hypothesis.
   \end{enumerate}
   
 \end{frame}
 
 \subsection{Examples}
 
+\begin{frame}{Hypothesis Testing}
+
+  \begin{columns}
+    \column{.5\textwidth}
+    $H_0$ is the null hypothesis.
+    \vfill
+    \textit{This is what we think is unlikely.}
+    \column{.5\textwidth}
+    $H_a$ is the alternate hypothesis.
+    \vfill
+    \textit{This is what we think is likely.}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Left Sided Test of the Mean}
+
+  You think that the mean is lower.
+
+  \begin{columns}
+    \column{0.25\textwidth}
+    \begin{eqnarray*}
+      \begin{array}{lrcl}
+        H_0: & \mu & = & \# \\
+        H_a: & \mu & < & \#
+      \end{array}
+    \end{eqnarray*}
+
+    \column{0.75\textwidth}
+
+    \includegraphics[width=5cm]{img/leftSideHypothesisTest}
+
+  \end{columns}
+
+  \begin{description}
+  \item[$p$-value Approach] The probability that you do worse than
+    $\bar{x}$ is the area to the left under the curve. If the area is
+    smaller than the significance level ($\alpha$) then it is an
+    \textit{unlikely result}.
+  \item[Classical Approach] The area to the left of $x_{cr}$ is
+    equal to the significance level ($\alpha$). If your $\bar{x}$ is
+    less than this critical value then it is an \textit{unlikely
+      result}.
+  \end{description}
+
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Right Sided Test of the Mean}
+
+  You think that the mean is higher.
+
+  \begin{columns}
+    \column{0.25\textwidth}
+    \begin{eqnarray*}
+      \begin{array}{lrcl}
+        H_0: & \mu & = & \# \\
+        H_a: & \mu & > & \#
+      \end{array}
+    \end{eqnarray*}
+
+    \column{0.75\textwidth}
+
+    \includegraphics[width=5cm]{img/rightSideHypothesisTest}
+
+  \end{columns}
+
+  \begin{description}
+  \item[$p$-value Approach] The probability that you do worse than
+    $\bar{x}$ is the area to the right under the curve. If the area is
+    smaller than the significance level ($\alpha$) then it is an
+    \textit{unlikely result}.
+  \item[Classical Approach] The area to the right of $x_{cr}$ is
+    equal to the significance level ($\alpha$). If your $\bar{x}$ is
+    more than this critical value then it is an \textit{unlikely
+      result}.
+  \end{description}
+
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Two Sided Test of the Mean}
+
+  \vspace*{-1em}
+
+  You think that the mean is different.
+
+  \begin{columns}
+    \column{0.25\textwidth}
+    \begin{eqnarray*}
+      \begin{array}{lrcl}
+        H_0: & \mu & = & \# \\
+        H_a: & \mu & \neq & \#
+      \end{array}
+    \end{eqnarray*}
+
+    \column{0.75\textwidth}
+
+    \includegraphics[width=5cm]{img/twoSideHypothesisTest}
+
+  \end{columns}
+
+  \begin{description}
+  \item[$p$-value Approach] The probability that you do worse than
+    $\bar{x}$ is the area to the left \textit{and} right under the
+    curve. If the area is smaller than the significance level
+    ($\alpha$) then it is an \textit{unlikely result}.
+  \item[Classical Approach] The area to the left of
+    $\mu-\mathrm{error}$ and to the right of $\mu+\mathrm{error}$ is
+    equal to the significance level ($\alpha$). If your $\bar{x}$ is
+    less than $\mu-\mathrm{error}$ or more than $\mu+\mathrm{error}$
+    this critical value then it is an \textit{unlikely result}.
+  \end{description}
+
+
+\end{frame}
+
+
+
 \begin{frame}{Example}
 
-  We think that interest rates for mortgages have decreased since last
-  quarter.
+  A vendor claims that the spring constant for its springs is 0.040
+  N/M. You suspect that the mean is really lower. You take a random
+  sample of eight springs and find a sample mean of 0.038 N/m with a
+  sample standard deviation of 0.0030 N/m. Use a confidence level of
+  95\% to decide if your suspicions are correct.
 
   \vfill
 
   \only<2->
   {
     \begin{tabular}{l@{\hspace{2em}}l}
-      $H_0$: & Interest rates are the same. \\
-      $H_a$: & Interest rates have decreased.
+      $H_0$: & $\mu \geq 0.040$. \\
+      $H_a$: & $\mu < 0.040$.
     \end{tabular}
   }
 
   \vfill
 
-  \only<3-> { Sample fifteen banks, find the mean change in interest
-    rate, and ask if there is sufficient evidence to reject $H_0$.  }
-
-  \vfill
-
-\end{frame}
-
-\begin{frame}{Example}
-
-  We think that foreclosures have increased since last quarter.
-
-  \vfill
-
-  \only<2->
-  {
-    \begin{tabular}{l@{\hspace{2em}}l}
-      $H_0$: & Foreclosure rates are the same. \\
-      $H_a$: & Foreclosure rates have increased.
-    \end{tabular}
-  }
-
-  \vfill
-
-  \only<3->
-  {
-    Sample thirty properties at random, calculate a foreclosure rate, and ask if
-    there is sufficient evidence to reject $H_0$.
-  }
+  \only<3-> { We cannot reject $H_0$ assuming a $t$-distribution with
+    seven degrees of freedom and a 95\% confidence level.}
 
   \vfill
 
 \end{frame}
 
 
-\begin{frame}{Example}
 
-  We think that a new commercial will change the demand for a product.
-
-  \vfill
-
-  \only<2->
-  {
-    \begin{tabular}{l@{\hspace{2em}}l}
-      $H_0$: & The commercial has no impact. \\
-      $H_a$: & The commercial has an impact.
-    \end{tabular}
-  }
-
-  \vfill
-
-  \only<3->
-  {
-    Play the commercial in ten markets. Monitor the sales in those markets, and ask if
-    there is sufficient evidence to reject $H_0$.
-  }
-
-  \vfill
-
-\end{frame}
-
-
-\begin{frame}{Three Options!}
-
-  In the proceeding examples there were three different options:
-  \begin{itemize}
-  \item Decrease,
-  \item Increase,
-  \item Change.
-  \end{itemize}
-  
-\end{frame}
-
-
-\begin{frame}{Example}
-
-  We think that interest rates for mortgages have
-  \textcolor{red}{\textbf{decreased}} since last quarter.
-
-  \vfill
-
-    \begin{tabular}{l@{\hspace{2em}}l}
-      $H_0$: & Interest rates are the same. \\
-      $H_a$: & Interest rates have \textcolor{red}{\textbf{decreased}}.
-    \end{tabular}
-
-  \vfill
-
-    Sample fifteen banks, find the mean interest rate, and ask if
-    there is sufficient evidence to reject $H_0$.
-
-  \vfill
-
-\end{frame}
-
-\begin{frame}{Example}
-
-  We think that foreclosures have \textcolor{red}{\textbf{increased}} since last quarter.
-
-  \vfill
-
-    \begin{tabular}{l@{\hspace{2em}}l}
-      $H_0$: & Foreclosure rates are the same. \\
-      $H_a$: & Foreclosure rates have \textcolor{red}{\textbf{increased}}.
-    \end{tabular}
-
-  \vfill
-
-    Sample theory properties at random, calculate a foreclosure rate, and ask if
-    there is sufficient evidence to reject $H_0$.
-
-  \vfill
-
-\end{frame}
-
-
-\begin{frame}{Example}
-
-  We think that a new commercial will \textcolor{red}{\textbf{change}} the demand for a product.
-
-  \vfill
-
-    \begin{tabular}{l@{\hspace{2em}}l}
-      $H_0$: & The commercial has no impact. \\
-      $H_a$: & The commercial has \textcolor{red}{\textbf{an impact}}.
-    \end{tabular}
-
-  \vfill
-
-    Play the commercial in ten markets. Monitor the sales in those markets, and ask if
-    there is sufficient evidence to reject $H_0$.
-
-  \vfill
-
-\end{frame}
 
 \iftoggle{clicker}{%
 
   \begin{frame}{Clicker Quiz}
 
-    I think that the mean stock price in a given sector has
-    increased. I sample thirty stocks and determine the change in
-    price for each one. What is the hypothesis test?
+    A vendor claims that the company's lights have a mean voltage draw
+    of 80V. You think that it is actually higher than that. What is
+    the hypothesis test that you will use when you conduct a test?
 
     \begin{tabular}{l@{\hspace{2em}}l} \hline
       A \\
-      $H_0$: &  The mean price has not changed.\\
-      $H_a$: & The mean price change is greater than zero. \\
+      $H_0$: & The mean voltage draw is less than 80V.\\
+      $H_a$: & The mean voltage draw is more than 80V. \\
       \\  \hline
       B \\
-      $H_0$: &  The mean price has not changed. \\
-      $H_a$: & The mean price change is less than zero. \\
+      $H_0$: & The mean voltage draw is more than 80V. \\
+      $H_a$: & The mean voltage draw is less than 80V. \\
       \\ \hline
       C \\
-      $H_0$: &  The mean price has not changed.\\
-      $H_a$: & The mean price change is not zero. \\ \hline
+      $H_0$: & The mean voltage draw is not 80V.\\
+      $H_a$: & The mean voltage draw is 80V. \\ \hline
     \end{tabular}
 
     
@@ -309,7 +311,7 @@
 
 \begin{frame}{The Possibilities}
 
-  \centerline{\includegraphics[width=3.0cm]{img/hindenburg}}
+  \centerline{\includegraphics[width=6.0cm]{img/hindenburg}}
 
   \begin{eqnarray*}
     \mathrm{Data~-} & &
@@ -335,14 +337,14 @@
 
   \begin{block}{Reject $H_0$}
     There is sufficient evidence to reject $H_0$ at the \#
-    significance level assuming a normal distribution and a 
-    standard deviation of \#.
+    significance level assuming a $t$-distribution with \# degrees of
+    freedom and a standard deviation of \#.
   \end{block}
 
   \begin{block}{Cannot Reject $H_0$}
     There is not sufficient evidence to reject $H_0$ at the \#
-    significance level assuming a normal distribution and a 
-    standard deviation of \#.
+    significance level assuming a $t$-distribution with \# degrees of
+    freedom and a standard deviation of \#.
   \end{block}
 
   
@@ -377,41 +379,5 @@
   
 \end{frame}
 
-
-\begin{frame}{Example}
-
-  I see a publication that says that the mean house value in an area
-  is \$215,000 with a standard deviation of \$35,000. I think that
-  this is too high.
-
-  \vfill
-
-  \only<2->
-  {
-
-    \begin{tabular}{l@{\hspace{2em}}l}
-      $H_0$: & The mean house price is \$215,000 or more. \\
-      $H_a$: & The mean house price is \textcolor{red}{\textbf{less than \$215,000}}.
-    \end{tabular}
-
-    I will use a 5\% significance level.
-
-  }
-
-  \vfill
-
-  \only<3->
-  {
-
-    Suppose that I take a random sample of ten homes and get a sample
-    mean of \$198,000. Is the mean house price smaller than \$215,000?
-
-  }
-
-  \vfill
-
-  
-  
-\end{frame}
 
 % LocalWords:  Clarkson pausesection hideallsubsections
