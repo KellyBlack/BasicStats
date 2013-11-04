@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{1 November 2013}
+\date{6 November 2013}
 
 \begin{frame}
   \titlepage
@@ -58,210 +58,165 @@
 
 \subsection{Hypothesis Testing}
 
-\begin{frame}{Hypothesis Testing: The Idea}
+\begin{frame}{Problem}
 
-  You do not ``prove'' your hypothesis. Instead you gather
-  (circumstantial) evidence against a counter-situation.
+  \vfill
 
-  \begin{itemize}
-  \item You have a hypothesis, call it the alternate hypothesis.
-  \item You have null hypothesis ($H_0$) that \textit{\color{red}you think is not correct}.
-  \item Assume that $H_0$ is correct.
-  \item Gather the evidence (for us: data)
-  \item Decide if your result is \textit{\color{red}unlikely \underline{given}
-      your assumptions}.
-  \end{itemize}
+  $\bar{x}$ is a random variable.
 
-  \only<2->%
+  \vfill
+
+  The data can \textbf{lie}!
+
+  \vfill
+  
+\end{frame}
+
+
+\begin{frame}{The Possibilities}
+
+  \centerline{\includegraphics[width=6.0cm]{img/hindenburg}}
+
+  \begin{eqnarray*}
+    \mathrm{Data~-} & &
+      \begin{array}{l@{\hspace{1em}}|c|c|} 
+        \multicolumn{3}{r}{\mathrm{Reality}} \\ 
+        \multicolumn{1}{c}{~} & \multicolumn{1}{c}{H_0
+          \mathrm{~is~true}} & \multicolumn{1}{c}{H_0
+          \mathrm{~is~false}} \\  
+        \hhline{~--}
+        \mathrm{Do~Not~Reject~}H_0 & \includegraphics[width=0.7cm]{img/smiley} & \mathrm{Type~II~Error} \\ \hhline{~|-|-|}
+        \mathrm{Reject~}H_0 & \mathrm{Type~I~Error} & \includegraphics[width=0.7cm]{img/smiley} \\ \hhline{~--}
+      \end{array}
+  \end{eqnarray*}
+  
+\end{frame}
+
+
+\begin{frame}{How To State Results}
+
+  How you state your conclusions matter! It is an ethical issue in
+  terms of conveying your assumptions and potential problems
+  associated with the methodology.
+
+  \begin{block}{Reject $H_0$}
+    There is sufficient evidence to reject $H_0$ at the \#
+    significance level assuming a $t$-distribution with \# degrees of
+    freedom and a standard deviation of \#.
+  \end{block}
+
+  \begin{block}{Cannot Reject $H_0$}
+    There is not sufficient evidence to reject $H_0$ at the \#
+    significance level assuming a $t$-distribution with \# degrees of
+    freedom and a standard deviation of \#.
+  \end{block}
+
+  
+\end{frame}
+
+\begin{frame}{The Methodology}
+
+  What do we do?
+
+  \begin{enumerate}
+  \item Assume that $H_0$ is true.
+  \item Ask, ``Are the data an unlikely result?''
+  \end{enumerate}
+
+  \only<2->
   {
-
-    There are two ways to do this. The first is the \textit{Classical
-      Approach}, and the second is the the $p$-value approach. You
-    need to know how both approaches work because different people
-    have different preferences, and you have to know how to react.
-
+    We want:
+    \begin{itemize}
+    \item The probability that we get our result to be ``small.''
+    \item The probability that we get our result \textit{given our
+        assumptions} is the significance level
+      ($\alpha$). \textbf{\color{red} It is a conditional
+        probability!}
+    \end{itemize}
   }
 
+  \only<3->
+  {
+    Note: We need to define this cut-off value, $\alpha$, \textbf{in
+      advance!} i.e. before any data collection or manipulation.
+  }
+  
 \end{frame}
-
-\begin{frame}
-  \frametitle{Left Sided Test of the Mean}
-
-  You think that the mean is lower.
-
-  \begin{columns}
-    \column{0.25\textwidth}
-    \begin{eqnarray*}
-      \begin{array}{lrcl}
-        H_0: & \mu & = & \# \\
-        H_a: & \mu & < & \#
-      \end{array}
-    \end{eqnarray*}
-
-    \column{0.75\textwidth}
-
-    \includegraphics[width=5cm]{img/leftSideHypothesisTest}
-
-  \end{columns}
-
-  \begin{description}
-  \item[$p$-value Approach] The probability that you do worse than
-    $\bar{x}$ is the area to the left under the curve. If the area is
-    smaller than the significance level ($\alpha$) then it is an
-    \textit{unlikely result}.
-  \item[Classical Approach] The area to the left of $x_{cr}$ is
-    equal to the significance level ($\alpha$). If your $\bar{x}$ is
-    less than this critical value then it is an \textit{unlikely
-      result}.
-  \end{description}
-
-
-\end{frame}
-
-\begin{frame}
-  \frametitle{Right Sided Test of the Mean}
-
-  You think that the mean is higher.
-
-  \begin{columns}
-    \column{0.25\textwidth}
-    \begin{eqnarray*}
-      \begin{array}{lrcl}
-        H_0: & \mu & = & \# \\
-        H_a: & \mu & > & \#
-      \end{array}
-    \end{eqnarray*}
-
-    \column{0.75\textwidth}
-
-    \includegraphics[width=5cm]{img/rightSideHypothesisTest}
-
-  \end{columns}
-
-  \begin{description}
-  \item[$p$-value Approach] The probability that you do worse than
-    $\bar{x}$ is the area to the right under the curve. If the area is
-    smaller than the significance level ($\alpha$) then it is an
-    \textit{unlikely result}.
-  \item[Classical Approach] The area to the right of $x_{cr}$ is
-    equal to the significance level ($\alpha$). If your $\bar{x}$ is
-    more than this critical value then it is an \textit{unlikely
-      result}.
-  \end{description}
-
-
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{Two Sided Test of the Mean}
-
-  \vspace*{-1em}
-
-  You think that the mean is different.
-
-  \begin{columns}
-    \column{0.25\textwidth}
-    \begin{eqnarray*}
-      \begin{array}{lrcl}
-        H_0: & \mu & = & \# \\
-        H_a: & \mu & \neq & \#
-      \end{array}
-    \end{eqnarray*}
-
-    \column{0.75\textwidth}
-
-    \includegraphics[width=5cm]{img/twoSideHypothesisTest}
-
-  \end{columns}
-
-  \begin{description}
-  \item[$p$-value Approach] The probability that you do worse than
-    $\bar{x}$ is the area to the left \textit{and} right under the
-    curve. If the area is smaller than the significance level
-    ($\alpha$) then it is an \textit{unlikely result}.
-  \item[Classical Approach] The area to the left of
-    $\mu-\mathrm{error}$ and to the right of $\mu+\mathrm{error}$ is
-    equal to the significance level ($\alpha$). If your $\bar{x}$ is
-    less than $\mu-\mathrm{error}$ or more than $\mu+\mathrm{error}$
-    this critical value then it is an \textit{unlikely result}.
-  \end{description}
-
-
-\end{frame}
-
 
 
 \subsection{Examples}
 
-\subsection{Cereal Box Contents}
+\begin{frame}{Example}
 
-\begin{frame}{Cereal}
-
-  Cereal is produced at one of your factories. You are told that the
-  mean contents is 417.3g per box. You suspect that this is too
-  high. 
+  A new type of fertilizer is trialed. Previous results indicated a
+  mean height of the corn at harvest to be 2.80m. A sample of fourteen
+  plants with the new fertilizer gave a sample mean of 2.93m and a
+  sample standard deviation of 0.20m. Does the new fertilizer give a
+  higher mean height?
 
   \vfill
 
   \only<2->
   {
     \begin{tabular}{l@{\hspace{2em}}l}
-      $H_0$: & The mean is 417.3g \\
-      $H_a$: & The mean is less than 417.3g 
+      $H_0$: & $\mu = 2.80$m \\
+      $H_a$: & $\mu > 2.80$m
     \end{tabular}
-    \\ Use a 5\% significance level.
+    \\ Use a 5\% significance level. (Need to decide this first!)
   }
 
   \vfill
 
   \only<3->
   {
-
-    Sample fifteen boxes chosen at random, and ask if there is
-    sufficient evidence to reject $H_0$. Suppose we find a sample mean
-    of 412.4g and a {\color{red}standard deviation} of 12.0g.
-
+    We cannot reject the null hypothesis at the 95\% confidence level
+    assuming a $t$-distribution with thirteen degrees of freedom.
   }
 
   \vfill
 
 \end{frame}
 
-\begin{frame}{Result}
 
-  We \textbf{do not} have sufficient evidence to reject $H_0$ at the
-  5\% significance level using a {\color{red}normal distribution} with fifteen
-  samples and a {\color{red}standard deviation} of 12.0g.
+
+\begin{frame}{Notation}
+
+  $H_0:\mu=8$ vs. $H_a:\mu\neq 8$, $z^{*}=1.95$.
+
+  \vfill
+
+  $H_0:\mu=8$ vs. $H_a:\mu > 8$, $z^{*}=1.85$.
+
   
 \end{frame}
 
 
 
-\subsection{Stock Price Change}
-
 \iftoggle{clicker}{%
   \begin{frame}
     \frametitle{Clicker Quiz}
 
-    We read that the mean change in the price of the stocks in a given
-    sector changed by -0.55\$ with a standard deviation of 0.74\$. We
-    suspect that the mean change is not that low.
+    \vspace*{-1.5em}
+    Fertilizer is produced and the amount of nitrogen is estimated to
+    be 0.300 kg per cubic meter. A new process is put in place and
+    tested. After eighteen trials a sample mean of 0.287 kg per cubic
+    meter and a standard deviation of 0.030 kg per cubic meter is
+    found. Does the new method make a difference?
 
     What hypothesis test would you form to test this? \\
     ~ \\
     \begin{tabular}{ll@{\hspace{3em}}l}
-      A & $H_0$: The mean change is -0.55\$. \\
-        & $H_a$: The mean change is more than -0.55. \\
-      ~ \\
-      B & $H_0$: The mean change is -0.55\$. \\
-        & $H_a$: The mean change is less than -0.55\$. \\
+      A & $H_0$: The mean is 0.300 kg per cubic meters. \\
+        & $H_a$: The mean is less than 0.300 kg per cubic meters. \\
         ~ \\
-      C & $H_0$: The mean change is less than -0.55\$.  \\
-        & $H_a$: The mean change is -0.55\$. \\
+      B & $H_0$: The mean is 0.300 kg per cubic meters. \\
+        & $H_a$: The mean is more than 0.300 kg per cubic meters. \\
         ~ \\
-      D & $H_0$: The mean change is more than -0.55\$.  \\
-        & $H_a$: The mean change is -0.55\$.
+      C & $H_0$: The mean is 0.300 kg per cubic meters. \\
+        & $H_a$: The mean is not 0.300 kg per cubic meters. \\
+        ~ \\
+      D & $H_0$: The mean is not 0.300 kg per cubic meters. \\
+        & $H_a$: The mean is 0.300 kg per cubic meters. \\
 
       \end{tabular}
 
@@ -269,120 +224,110 @@
 }
 
 
-\begin{frame}{Stock Price}
+\begin{frame}{Example}
 
-  We read that the mean change in the price of the stocks in a given
-  sector changed by -0.55\$ with a {\color{red}standard deviation} of 0.74\$. We
-  suspect that the mean change is not that low.
+    Fertilizer is produced and the amount of nitrogen is estimated to
+    be 0.300 kg per cubic meter. A new process is put in place and
+    tested. After eighteen trials a sample mean of 0.287 kg per cubic
+    meter and a standard deviation of 0.030 kg per cubic meter is
+    found. Does the new method make a difference?
+
 
   \vfill
 
   \only<2->
   {
     \begin{tabular}{l@{\hspace{2em}}l}
-      $H_0$: & The mean change is -0.55\$. \\
-      $H_a$: & The mean change is more than -0.55. 
+      $H_0$: & $\mu = 0.300$m \\
+      $H_a$: & $\mu \neq 0.300$m
     \end{tabular}
-    \\ Use a 5\% significance level.
+    \\ Use a 5\% significance level. (Need to decide this first!)
   }
 
   \vfill
 
   \only<3->
   {
-
-    Sample one-hundred stocks chosen at random, and ask if there is
-    sufficient evidence to reject $H_0$. Suppose that we find a sample
-    mean of -0.42\$.
-
+    We cannot reject the null hypothesis at the 95\% confidence level
+    assuming a $t$-distribution with thirteen degrees of freedom.
   }
 
   \vfill
 
 \end{frame}
 
-\begin{frame}{Result}
-
-  We have sufficient evidence to reject $H_0$ at the 5\% significance
-  level using a normal distribution with a one-hundred samples and a
-  {\color{red}standard deviation} of 0.74\$.
-  
-\end{frame}
 
 
-\subsection{Units Shipped}
+\begin{frame}{Example}
 
-\iftoggle{clicker}{%
-  \begin{frame}
-    \frametitle{Clicker Quiz}
+  Fertilizer is produced and the amount of nitrogen is estimated to be
+  0.300 kg per cubic meter. A new process is put in place and
+  tested. After eighteen trials a sample mean of 0.287 kg per cubic
+  meter and a standard deviation of 0.030 kg per cubic meter is
+  found. Has the mean amount of nitrogen required decreased?
 
-    You are told that the mean number of units shipped per day at a
-    particular factory is 135,000 units per day. You think that number
-    is not correct.
-
-    What hypothesis test would you form to test this? \\
-    ~ \\
-    \begin{tabular}{ll@{\hspace{3em}}l}
-      A & $H_0$: The mean number of units is more than 135,000 units per day. \\
-        & $H_a$: The mean number of units is 135,000 units per day. \\
-        ~ \\
-      B & $H_0$: The mean number of units is 135,000 units per day. \\
-        & $H_a$: The mean number of units is more than 135,000 units per day. \\
-        ~ \\
-      C & $H_0$: The mean number of units is 135,000 units per day.  \\
-        & $H_a$: The mean number of units is not 135,000 units per day. \\
-        ~ \\
-      D & $H_0$: The mean number of units is not 135,000 units per day.  \\
-        & $H_a$: The mean number of units is 135,000 units per day.
-
-      \end{tabular}
-
-    \end{frame}
-}
-
-
-\begin{frame}{Units Shipped}
-
-
-  You are told that the mean number of units shipped per day at a
-  particular factory is 135,000 units per day. You think that number
-  is not correct.
 
   \vfill
 
   \only<2->
   {
     \begin{tabular}{l@{\hspace{2em}}l}
-      $H_0$: & The mean number of units is 135,000 units per day. \\
-      $H_a$: & The mean number of units is not 135,000 units per day.
+      $H_0$: & $\mu = 0.300$m \\
+      $H_a$: & $\mu < 0.300$m
     \end{tabular}
-    \\ Use a 5\% significance level.
+    \\ Use a 5\% significance level. (Need to decide this first!)
   }
 
   \vfill
 
   \only<3->
   {
-
-    Sample the daily output for twenty-five days chosen at random, and
-    ask if there is sufficient evidence to reject $H_0$. Suppose we
-    find a sample mean of 140,266 units per day and a standard
-    deviation of 14,000 units per day.
-
+    We can reject the null hypothesis at the 95\% confidence level
+    assuming a $t$-distribution with thirteen degrees of freedom.
   }
 
   \vfill
 
 \end{frame}
 
-\begin{frame}{Result}
+\begin{frame}{Recall - Errors}
 
-  We \textbf{do not} have sufficient evidence to reject $H_0$ at the
-  5\% significance level using a normal distribution with twenty-five
-  samples and a {\color{red}standard deviation} of 14,000 units per day.
+
+    \begin{eqnarray*}
+      \mathrm{Data~-} & &
+      \begin{array}{l@{\hspace{1em}}|c|c|} 
+        \multicolumn{3}{r}{\mathrm{Reality}} \\ 
+        \multicolumn{1}{c}{~} & \multicolumn{1}{c}{H_0
+          \mathrm{~is~true}} & \multicolumn{1}{c}{H_0
+          \mathrm{~is~false}} \\  
+        \hhline{~--}
+        \mathrm{Do~Not~Reject~}H_0 & \includegraphics[width=0.7cm]{img/smiley} & \mathrm{Type~II~Error} \\ \hhline{~|-|-|}
+        \mathrm{Reject~}H_0 & \mathrm{Type~I~Error} & \includegraphics[width=0.7cm]{img/smiley} \\ \hhline{~--}
+      \end{array}
+    \end{eqnarray*}
+
+    \begin{itemize}
+    \item \redText{\textbf{IF}} the null hypothesis is true then the
+      probability of rejecting $H_0$ is the \blueText{\textit{significance
+        level}}.
+  \item \redText{\textbf{IF}} the alternate hypothesis is true then
+    the probability of rejecting $H_0$ is the
+    \blueText{\textit{power}} of the test.
+    \end{itemize}
   
 \end{frame}
 
+\begin{frame}{Power}
+
+  \only<1>{
+    \centerline{\includegraphics[width=6.0cm]{img/rejectionRegion}}
+  }
+
+  \only<2>{
+    \centerline{\includegraphics[width=6.0cm]{img/power}}
+  }
+  
+\end{frame}
 
 
 % LocalWords:  Clarkson pausesection hideallsubsections hideothersubsections
