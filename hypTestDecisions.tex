@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{8 April 2013}
+\date{8 November 2013}
 
 \begin{frame}
   \titlepage
@@ -22,34 +22,30 @@
 \subsection{Clicker Quiz}
 
 
-\begin{frame}
-  \frametitle{Clicker Quiz}
-
-  \iftoggle{clicker}{%
-
-    I read in the \textit{Integrator} that the mean height of Clarkson
-    students is 180.0 cm with a standard deviation of 14.0 cm. I think
-    that this is too high and sample twenty students chosen at random
-    to find a sample mean of 174.7 cm. Are my suspicions correct? (Use
-    a 5\% significance level.)
-
-    \vfill
-
-    \begin{tabular}{l@{\hspace{3em}}l}
-      A: & There is sufficient evidence to reject $H_0$.  \\
-      B: & There is not sufficient evidence to reject $H_0$.  
-    \end{tabular}
-
-    \vfill
-    \vfill
-    \vfill
-
-    
-
-  }
-
-
-\end{frame}
+%\begin{frame}
+%  \frametitle{Clicker Quiz}%
+%
+%  \iftoggle{clicker}{%
+%
+%    I read in the \textit{Integrator} that the mean height of Clarkson
+%    students is 180.0 cm with a standard deviation of 14.0 cm. I think
+%    that this is too high and sample twenty students chosen at random
+%    to find a sample mean of 174.7 cm. Are my suspicions correct? (Use
+%    a 5\% significance level.)
+%
+%    \vfill
+%
+%    \begin{tabular}{l@{\hspace{3em}}l}
+%      A: & There is sufficient evidence to reject $H_0$.  \\
+%      B: & There is not sufficient evidence to reject $H_0$.  
+%    \end{tabular}
+%
+%    \vfill
+%    \vfill
+%    \vfill
+%  }
+%
+%\end{frame}
 
 \begin{frame}
     \input{img/confidenceIntervalDist}  % Added [thick,scale=0.6, every node/.style={scale=0.6}]
@@ -70,84 +66,39 @@
 
     \vfill
     
-
-\end{frame}
-
-
-\begin{frame}{Result}
-
-  We do not have sufficient evidence to reject $H_0$ at the 5\%
-  significance level using a $t$-distribution with twenty samples and
-  a standard deviation of 14.0cm.
-  
+    \only<2->{%
+      We do not have sufficient evidence to reject $H_0$ at the 5\%
+      significance level using a $t$-distribution with twenty samples and
+      a standard deviation of 14.0cm.
+    }
 \end{frame}
 
 
 
 
+\begin{frame}{Example}
 
-\begin{frame}{Clicker Quiz}
+  I see a publication that says that the mean value of houses in an
+  area is \$285,000. I think that this is incorrect.  Suppose that I
+  take a random sample of seventeen homes and find a sample mean of \$
+  and a sample standard deviation of \$35,000. Are my suspicions
+  correct?  (Use a 5\% significance level.)
 
-  \iftoggle{clicker}{%
+  \vfill
 
-    I see a publication that says that the mean house value in an area
-    is \$215,000. I think that this is too low.  Suppose that I take a
-    random sample of fifteen homes and get a sample mean of \$232,000
-    with a sample standard deviation of \$35,000.
-
-    \vfill 
-
-    What is the $t$-statistic?
-
-    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: -1.881  & B: -1.644  & C: 1.644 & D: 1.881
-    \end{tabular}
-
-    \vfill
-    \vfill
-    \vfill
-
-  }
-
-\end{frame}
-
-\begin{frame}{Result}
-
-  We have sufficient evidence to reject $H_0$ at the 5\% significance
-  level using a $t$-distribution with fifteen samples and a standard
-  deviation of \$35,000.
-  
+  \only<2->{%
+    We have sufficient evidence to reject $H_0$ at the 5\%
+    significance level assuming a $t$-distribution with sixteen
+    degrees of freedom.  }
 \end{frame}
 
 
 \begin{frame}{Example}
 
-  I see a publication that says that half of the houses in an area
-  have a value of \$215,000 or more. I think that this is incorrect.
-  Suppose that I take a random sample of forty homes and find that
-  fifteen houses have at least this value. Are my suspicions correct?
-  
-  
-\end{frame}
-
-
-\begin{frame}{Result}
-
-  We do not have sufficient evidence to reject $H_0$ at the 5\%
-  significance level assuming a normal approximation to the sample
-  proportion with forty samples.
-  
-\end{frame}
-
-
-\begin{frame}{Clicker Quiz}
-
-  \iftoggle{clicker}{%
-
     \begin{eqnarray*}
       \begin{array}{lrcl}
         H_0: & \mu & = & 800 \\
-        H_a: & \mu & \neq & 800
+        H_a: & \mu & > & 800
       \end{array}
     \end{eqnarray*}
 
@@ -158,76 +109,43 @@
       \alpha & = & 0.05.
     \end{eqnarray*}
 
-    \vfill 
 
-    What is the $z$-statistic?
-
-    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: -1.960  & B: -1.950  & C: -0.065 & D: 1.960
-    \end{tabular}
-
-    \vfill
-    \vfill
-    \vfill
-
-  }
-
+    \only<2->{%
+      We have sufficient evidence to reject $H_0$ at the 5\%
+      significance level using a normal distribution with thirty
+      samples and a standard deviation of 118.  }
 \end{frame}
 
-\begin{frame}{Result}
 
-  We \textbf{do not} have sufficient evidence to reject $H_0$ at the
-  5\% significance level using a normal distribution with thirty
-  samples and a standard deviation of 118.
+
+\begin{frame}{Example}
+
+  The breaking strength of wood pegs is to be tested. We think that
+  the mean breaking strength is 50.0N with a standard deviation of
+  8.0N. How many samples should we take if we want the 95\% confidence
+  interval to have an error 0.2N?
   
 \end{frame}
 
 
+\begin{frame}{Example}
 
-\begin{frame}{Clicker Quiz}
-
-  \iftoggle{clicker}{%
-
-    \begin{eqnarray*}
-      \begin{array}{lrcl}
-        H_0: & \mu & = & 800 \\
-        H_a: & \mu & \neq & 800
-      \end{array}
-    \end{eqnarray*}
-
-    \begin{eqnarray*}
-      n & = & 30, \\
-      \bar{x} & = & 758,\\
-      s & = & 118, \\
-      \alpha & = & 0.05.
-    \end{eqnarray*}
-
-    \vfill 
-
-    What is the $t$-statistic?
-
-    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: -1.960  & B: -1.950  & C: -0.065 & D: 1.960
-    \end{tabular}
-
-    \vfill
-    \vfill
-    \vfill
-
-  }
-
-\end{frame}
-
-\begin{frame}{Result}
-
-  We \textbf{do not} have sufficient evidence to reject $H_0$ at the
-  5\% significance level using a $t$-distribution with thirty samples
-  and a standard deviation of 118.
+  The concentration of lead is tested at twelve randomly chosen
+  homes. The tests yield a sample mean of 14.5 parts per billion with
+  a sample standard deviation of 3.8 parts per billion. Determine the
+  95\% confidence interval.
   
 \end{frame}
 
+\begin{frame}{Example}
 
-
+  The EPA limits for lead in tap water is 15 parts per billion.  The
+  concentration of lead is tested at twelve randomly chosen homes. The
+  tests yield a sample mean of 14.5 parts per billion with a sample
+  standard deviation of 3.8 parts per billion. Is the mean lead levels
+  below the EPA limits?
+  
+\end{frame}
 
 
 % LocalWords:  Clarkson pausesection hideallsubsections
