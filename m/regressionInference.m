@@ -4,11 +4,10 @@ x = [0 10];
 y = [0 10];
 z = [0 0];
 
+theLine = @(x) 0.5*x+3;
 xdata = 1:8/7:9;
 ydata = theLine(xdata) + randn(size(xdata));
 
-
-theLine = @(x) 0.5*x+3;
 
 clf;
 hold on;
@@ -37,7 +36,7 @@ h = plot3(x,theLine(x),z,'r-');
 set(h,'LineWidth',2.2)
 h = text(2,theLine(2)-0.5,0.0,'y= m x + b','FontSize',15,'Color','r');
 view([0,90]);
-print -dpng 'regressionInferenceOne.png' -r800
+print -dpng 'regressionInferenceOne.png' -r600
 %return
 
 
@@ -51,8 +50,8 @@ h = plot3(yspan*0+xm,yspan,zspan,'b-', ...
           [xm xm],[ym ym],[0 factor],'g--');
 set(h,'LineWidth',2.0)
 h = text(xm+0.25,0.25,0.0,'x','FontSize',15,'Color','b');
-print -dpng 'regressionInferenceTwo.png' -r800
+print -dpng 'regressionInferenceTwo.png' -r600
 %return;
 
 view([-32,26]);
-print -dpng 'regressionInferenceThree.png' -r800
+print -dpng 'regressionInferenceThree.png' -r600

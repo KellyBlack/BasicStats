@@ -6,7 +6,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{10 April 2013}
+\date{20 November 2013}
 
 \begin{frame}
   \titlepage
@@ -53,74 +53,6 @@
 \subsection{Bivariate Data}
 
 
-\begin{frame}
-  \frametitle{Bivariate Data}
-
-  \begin{tabular}{r@{~$=$~}l}
-    $x$ & Age of Cat (between 0 and 1 year)  \\
-    $y$ & Mass of Cat (kg)
-  \end{tabular}
-  
-  \vfill
-
-  \only<2->
-  {
-
-    As the age of the cat increases in the first year we expect that
-    the cat's mass will \textbf{tend} to increase.
-
-  }
-
-  \only<3->
-  {
-    \includegraphics[width=6cm]{img/catsmass}
-  }
-
-  \vfill
-
-
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{Bivariate Data}
-
-  \vspace*{-1em}
-  What if we change it a little bit: \\
-  \begin{tabular}{r@{~$=$~}l}
-    $x$ & Age of Cat (between 0 and 20 years)  \\
-    $y$ & Mass of Cat (kg)
-  \end{tabular}
-  
-  \vfill
-
-  \only<2->
-  {
-
-    As the age of the cat increases in the first year we expect that
-    the cat's mass will \textbf{tend} to increase, but eventually it
-    will level out.
-
-  }
-
-  \only<3->
-  {
-    \vspace*{-1em}
-    \includegraphics[width=6cm]{img/catsmassLater}
-  }
-
-  \vfill
-
-
-\end{frame}
-
-
-\begin{frame}
-  Question: How do we quantify the ``tendency'' of this relationship?
-\end{frame}
-
-
-\subsection{Correlation}
 
 
 \begin{frame}
@@ -144,7 +76,7 @@
 
     \column{.75\textwidth}
 
-    \only<3->
+    \only<2->
     {
       There is a ``one to one'' correspondence between each
       row. i.e. $x_3$ and $y_3$ are related to one another.
@@ -159,7 +91,7 @@
   \begin{columns}
     \column{.5\textwidth}
 
-    \only<4-> {
+    \only<3-> {
 
       Examine $x$ by itself: \\
       \begin{tabular}{l}
@@ -175,7 +107,7 @@
     \column{.5\textwidth}
 
 
-    \only<5-> {
+    \only<4-> {
 
       Examine $y$ by itself: \\
       \begin{tabular}{l}
@@ -195,7 +127,6 @@
 
 \end{frame}
 
-\subsection{Bivariate Data}
 
 
 \begin{frame}
@@ -289,76 +220,6 @@
 
 
 
-\begin{frame}
-  \frametitle{Example}
-
-  \begin{columns}
-    \column{.25\textwidth}
-
-    \begin{tabular}{l|l}
-      $X$ & $Y$ \\ \hline
-      1 & 2 \\
-      2 & 4  \\
-      3 & 9 \\
-      4 & 12
-    \end{tabular}
-
-
-    \vfill
-
-    \column{.75\textwidth}
-
-    \only<4->
-    {
-      \includegraphics[width=4cm]{img/simpleCorrelationExample}
-    }
-
-    \vfill
-
-  \end{columns}
-
-
-  \begin{columns}
-    \column{.5\textwidth}
-
-    \only<2-> {
-
-      Examine $x$ by itself: \\
-      \begin{tabular}{lllll}
-        \multicolumn{5}{l}{$N=4$} \\
-        \multicolumn{5}{l}{$\bar{x}=2.5$} \\
-        \multicolumn{5}{l}{$s_x=1.29$} \\
-        Min & Q1 & Med & Q3 & Max \\
-        1.0 & 1.75 & 2.5 & 3.25 & 4.0
-      \end{tabular}
-
-
-    }
-      
-    \column{.5\textwidth}
-
-
-    \only<3-> {
-
-      Examine $y$ by itself: \\
-      \begin{tabular}{lllll}
-        \multicolumn{5}{l}{$N=4$} \\
-        \multicolumn{5}{l}{$\bar{y}=6.75$} \\
-        \multicolumn{5}{l}{$s_y=4.57$} \\
-        Min & Q1 & Med & Q3 & Max \\
-        2.0 & 3.5 & 6.5 & 9.75 & 12.0
-      \end{tabular}
-
-
-
-    }
-
-
-  \end{columns}
-
-
-\end{frame}
-
 \begin{frame}{Now Bring Them Together}
 
   Graphically, we can look at the scatter plot:
@@ -393,7 +254,245 @@
 \end{frame}
 
 
-\begin{frame}{Calculating the Correlation}
+\begin{frame}{Clicker Quiz}
+
+  \iftoggle{clicker}{%
+
+    Suppose that \\
+    \begin{tabular}{r@{~$=$~}l}
+      $x$ & Age of Cat (between 0 and 1 year)  \\
+      $y$ & Mass of Cat (kg)
+    \end{tabular}
+
+    \vfill
+
+    Is this is a positive or negative relationship?
+
+    \vfill 
+
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: Positive  & B: Negative
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+  }
+
+\end{frame}
+
+
+\begin{frame}{Linear Regression}
+
+  Given data can I find the ``best'' straight line
+  \begin{eqnarray*}
+    y & = & \beta_0 + \beta_1 x?
+  \end{eqnarray*}
+
+
+  \only<1>{\centerline{\includegraphics[width=4cm]{img/scatterLR-raw}}}
+  \only<2>{\centerline{\includegraphics[width=4cm]{img/scatterLR-line}}}
+  
+\end{frame}
+
+
+\begin{frame}{Linear Model}
+
+  We model a linear relationship:
+  \only<1>{%
+    \begin{eqnarray*}
+      y_i & = & \beta_0 + \beta_1 x_i + \epsilon_i.
+    \end{eqnarray*}
+  }
+  \only<2->{%
+    \begin{eqnarray*}
+      y_i & = & \redText{\beta_0 + \beta_1 x_i} + \blueText{\epsilon_i},
+    \end{eqnarray*}
+    \begin{itemize}
+    \item \redText{Straight line relationship: $\beta_0 + \beta_1 x$,}
+    \item \blueText{Error: $\epsilon_i$.}
+    \end{itemize}
+  }
+  \only<3->{%
+
+    Assumptions:
+    \begin{itemize}
+    \item The error is normally distributed with mean zero and
+      variance $\sigma^2$.
+    \item The value of $x_i$ is known to a higher level of certainty. 
+    \end{itemize}
+
+  }
+  
+\end{frame}
+
+\begin{frame}{The Distribution of Y}
+
+  \begin{block}{Distribution of Y}
+    The random variable $y_i$ is a normally distributed random
+    variable with mean $\beta_0+\beta_1x_i$.
+  \end{block}
+
+    \only<2>{%
+      \centerline{\includegraphics[width=5cm]{img/regressionInferenceOne}}
+    }
+
+    \only<3>{%
+      \centerline{\includegraphics[width=5cm]{img/regressionInferenceTwo}}
+    }
+
+    \only<4>{%
+      \centerline{\includegraphics[width=5cm]{img/regressionInferenceThree}}
+    }
+
+  
+\end{frame}
+
+\begin{frame}{Question}
+  
+  \begin{columns}
+    \column{.25\textwidth}
+
+    \begin{tabular}{l|l}
+      $X$ & $Y$ \\ \hline
+      $x_1$ & $y_1$ \\
+      $x_2$ & $y_2$ \\
+      $x_3$ & $y_3$ \\
+      $x_4$ & $y_4$ \\
+      $\vdots$ & $\vdots$ \\
+      $x_n$ & $y_n$ \\
+    \end{tabular}
+
+
+    \vfill
+
+    \column{.75\textwidth}
+
+    Given the data can we estimate $\beta_0$, $\beta_1$, and $\sigma^2$.
+
+    \vfill
+
+  \end{columns}
+
+\end{frame}
+
+\begin{frame}{Example}
+
+  \begin{columns}
+    \column{.25\textwidth}
+
+    Flow rate for Aswan Dam 
+    \begin{tabular}{l|l|l}
+      Year & Jan & Feb \\ \hline
+      1874 & 6.4 & 4.4\\
+      1875 & 4.1 & 2.4\\
+      1876 & 5.4 & 4.1\\
+      1877 & 3.3 & 1.8 \\
+      $\vdots$ & $\vdots$ \\
+      1984 & 3.7 & 2.8 \\
+      1985 & 3.9 & 2.8 \\
+      1986 & 3.5 & 2.9 \\
+      1987 & 3.8 & 4.0 \\
+      1988 & 3.7 & 3.1
+    \end{tabular}
+
+
+    \vfill
+
+    \column{.75\textwidth}
+
+    {\tiny
+      Summary:\\
+      \begin{tabular}{llllll}
+        Min. & 1st Qu.  & Median     & Mean & 3rd Qu. &   Max.  \\
+        Jan \\
+        1.640 &  3.345 &  3.850 &  4.025 &  4.625 &  7.070  \\
+        Feb. \\
+        1.230 &  2.170 &  2.850 &  2.896 &  3.435 &  5.670 \\
+      \end{tabular}
+    }
+
+    \hfill\includegraphics[height=3cm]{img/aswanJan}
+
+    \hfill\includegraphics[height=3cm]{img/aswanFeb}
+
+    \vfill
+
+  \end{columns}
+  
+\end{frame}
+
+\begin{frame}{Aswan Dam as Bivariate Data}
+
+  \only<1>{\includegraphics[height=6cm]{img/aswanBivariate}}
+
+  \only<2>{\includegraphics[height=6cm]{img/aswanBivariateRegression}}
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{R Commands}
+
+{\tiny
+\begin{verbatim}
+  # Read the data
+  nile = read.csv(file="fig12.8-nile-river-flowrate.txt",sep=",",head=TRUE)
+
+  # Get a summary of the data
+  summary(nile$Jan)
+  summary(nile$Feb)
+
+  # plot histograms of the data
+  hist(nile$Jan,xlab="Flow Rate",main="Aswan Dam Flowrates for January")
+  hist(nile$Feb,xlab="Flow Rate",main="Aswan Dam Flowrates for February")
+
+  # Plot a scatterplot of the data
+  plot(nile$Jan,nile$Feb,
+       main="Comparison of Aswan High Flow Dates",xlab="January",ylab="February")
+
+  # Determine the best straight line file
+  fit = lm(nile$Feb ~ nile$Jan)
+
+  # Add the straight line to the plot
+  abline(fit)
+
+  # calculate the correlation
+  cor(nile$Jan,nile$Feb)
+\end{verbatim}
+  }
+\end{frame}
+
+\subsection{Correlation}
+
+\begin{frame}
+
+  \begin{description}
+    \item[Question:] What is the best fit straight line?
+    \item[Answer:] Is it even appropriate?
+    \item[Question:] How do we know?
+    \item[Answer:] Is it physically appropriate?
+    \item[Answer:] Does the data support it?
+  \end{description}
+  
+\end{frame}
+
+\begin{frame}{Correlation}
+
+  \begin{definition}{Correlation}
+    The correlation between random variables $X$ and $Y$ is defined to
+    be 
+    \begin{eqnarray*}
+      \mathrm{Correlation} & = & \frac{E\left[ \lp X-E[X]\rp \lp Y-E[Y]\rp \right]}{
+        \sqrt{\mathrm{Var}[X]\mathrm{Var}[Y]}}, \\
+      & = & \frac{\mathrm{Cor}(X,Y)}{\sqrt{\mathrm{Var}[X]\mathrm{Var}[Y]}}.
+    \end{eqnarray*}
+  \end{definition}
+  
+\end{frame}
+
+\begin{frame}{Calculating the Sample Correlation}
 
   First define the following sums:
   \begin{eqnarray*}
@@ -501,81 +600,6 @@
   
 \end{frame}
 
-\begin{frame}
-  \frametitle{Inference on the Correlation}
-
-  \begin{definition}
-    The sample correlation can be used to define a $t$-distribution:
-    \begin{eqnarray*}
-      t & = & \frac{r\sqrt{n-2}}{\sqrt{1-r^2}}
-    \end{eqnarray*}
-    with $n-2$ degrees of freedom.
-  \end{definition}
-
-\end{frame}
-
-\begin{frame}{Hypothesis Test for the Correlation}
-
-  Is there a relationship between the two variables? \\
-  \begin{tabular}{ll}
-    $H_0$ & $r=0$, \\
-    $H_a$ & $r\neq 0$.
-  \end{tabular}
-
-  (Note, a one sided test can also be constructed if you ask if there
-  is a positive or negative relationship between the variables.)
-
-  
-\end{frame}
 
 
-\begin{frame}{Clicker Quiz}
-
-  \iftoggle{clicker}{%
-
-
-    \begin{columns}
-      \column{.25\textwidth}
-
-      \begin{tabular}{l|l}
-        $X$ & $Y$ \\ \hline
-        1 & 2 \\
-        2 & 4  \\
-        3 & 9 \\
-        4 & 12
-      \end{tabular}
-
-      \vfill
-
-      \column{.75\textwidth}
-      
-      \begin{tabular}{ll}
-        $H_0$ & $r=0$, \\
-        $H_a$ & $r\neq 0$.
-      \end{tabular} \\
-      Use a 95\% confidence level.
-
-    \vfill
-
-  \end{columns}
-  
-  Recall: $r \approx 0.988$.
-
-
-    \vfill 
-
-
-    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: Reject $H_0$  & B: Do not reject $H_0$
-    \end{tabular}
-
-    \vfill
-    \vfill
-    \vfill
-
-  }
-
-\end{frame}
-
-
-% LocalWords:  Clarkson pausesection hideallsubsections
+% LocalWords:  Clarkson pausesection hideallsubsections Bivariate
