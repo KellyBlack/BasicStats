@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{12 April 2013}
+\date{20 April 2013}
 
 \begin{frame}
   \titlepage
@@ -32,37 +32,35 @@
 
       \begin{tabular}{l|l}
         $X$ & $Y$ \\ \hline
-        1 & 2 \\
-        2 & 3  \\
-        3 & 3 \\
-        4 & 5  \\
-        5 & 4
+        1 & 5.0 \\
+        2 & 7.1  \\
+        3 & 9.0 \\
+        4 & 10.9
       \end{tabular}
 
       \column{.75\textwidth}
 
-      Is there a relationship between the two variables? (Use a 95\%
-      confidence level.)
+      What is the sample correlation?
 
       \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-        A: Reject $H_0$  & B: Do not reject $H_0$
+        A: 0.0265  & B: 0.1020  \\ C: 0.3922 & D: 0.9997
       \end{tabular}
 
 
       \begin{eqnarray*}
-        \bar{x} & = & 3 \\
-        \bar{y} & = & 3.4
+        \bar{x} & = & 2.5 \\
+        \bar{y} & = & 8.0
       \end{eqnarray*}
 
     \end{columns}
 
       \begin{eqnarray*}
-        s_{xx} & = & \lp 1-3\rp^2 + \lp 2 - 3 \rp^2 + \lp 3 - 3 \rp^2 + \lp 4 - 3 \rp^2 + \lp 5 - 3 \rp^2 \\
-        & = & 10, \\
-        s_{yy} & = & \lp 2-3.4\rp^2 + \lp 3 - 3.4 \rp^2 + \lp 3 - 3.4 \rp^2 + \lp 5 - 3.4 \rp^2 + \lp 4 - 3.4 \rp^2 \\
-        & = & 5.2, \\
-        s_{xy} & = & \lp 1-3\rp\lp 2-3.4\rp + \lp 2 - 3 \rp\lp 3 - 3.4 \rp + \lp 3 - 3 \rp\lp 3 - 3.4 \rp + \lp 4 - 3 \rp\lp 5 - 3.4 \rp + \lp 5-4 \rp \lp 4-3.4 \rp \\
-        & = & 6
+        s_{xx} & = & \lp 1-2.5\rp^2 + \lp 2 - 2.5 \rp^2 + \lp 3 - 2.5 \rp^2 + \lp 4 - 2.5 \rp^2 \\
+        & = & 5, \\
+        s_{yy} & = & \lp 5.0-8.0\rp^2 + \lp 7.1 - 8.0 \rp^2 + \lp 9.0 - 8.0 \rp^2 + \lp 10.9 - 8.0 \rp^2 \\
+        & = & 19.22, \\
+        s_{xy} & = & \lp 1-2.5\rp\lp 5.0-8.0\rp + \lp 2 - 2.5 \rp\lp 7.1 - 8.0 \rp + \lp 3 - 2.5 \rp\lp 9.0 - 8.0 \rp + \lp 4 - 2.5 \rp\lp 10.9 - 8.0 \rp \\
+        & = & 9.8
       \end{eqnarray*}
 
     \vfill 
@@ -74,7 +72,83 @@
 
 \end{frame}
 
+\subsection{Sample Correlation}
 
+\begin{frame}{Calculating the Correlation}
+
+  First define the following sums:
+  \begin{eqnarray*}
+    S_{xx} & = & (x_1-\bar{x})^2 + (x_2-\bar{x})^2 + \cdot + (x_n-\bar{x})^2, \\
+    S_{yy} & = & (y_1-\bar{y})^2 + (y_2-\bar{y})^2 + \cdot + (y_n-\bar{y})^2, \\
+    S_{xy} & = & (x_1-\bar{x}) + (x_2-\bar{x}) + \cdot + (x_n-\bar{x}), \\
+  \end{eqnarray*}
+
+
+  \begin{definition}
+    The sample correlation coefficient is defined to be
+    \begin{eqnarray*}
+      r & = & \frac{S_{xy}}{\sqrt{S_{xx} S_{yy}}}.
+    \end{eqnarray*}
+  \end{definition}
+
+  This definition implies that
+  \begin{eqnarray*}
+    -1 ~ \leq ~ r ~ \leq 1.
+  \end{eqnarray*}
+  
+\end{frame}
+
+
+\begin{frame}{Distribution of the Sample Regression}
+
+  \begin{definition}
+    The sample correlation follows the distribution
+    \begin{eqnarray*}
+      t & = & \frac{r\sqrt{n-2}}{\sqrt{1-r^2}}.
+    \end{eqnarray*}
+  \end{definition}
+  
+\end{frame}
+
+
+
+
+\begin{frame}{Example}
+
+    \begin{columns}
+      \column{.25\textwidth}
+
+      \begin{tabular}{l|l}
+        $X$ & $Y$ \\ \hline
+        1 & 5.0 \\
+        2 & 7.1  \\
+        3 & 9.0 \\
+        4 & 10.9
+      \end{tabular}
+
+      \column{.65\textwidth}
+
+      \begin{eqnarray*}
+        \bar{x} & = & 2.5 \\
+        \bar{y} & = & 8.0 \\
+        s_{xx} & = & 5, \\
+        s_{yy} & = & 19.22, \\
+        s_{xy} & = & 9.8, \\
+        r & = & \frac{9.8}{\sqrt{19.22 \cdot 5}}, \\
+        & \approx & 0.9997.  
+      \end{eqnarray*}
+
+      \end{columns}
+
+
+      Is there a linear relationship?
+
+      \only<2->{%
+        We can reject $H_0$ at the 95\% confidence level assuming a
+        $t$ distribution with 2 degrees of freedom.
+      }
+  
+\end{frame}
 
 
 \subsection{Linear Regression}
@@ -83,7 +157,7 @@
 
   Given data can I find the ``best'' straight line
   \begin{eqnarray*}
-    y & = & mx + b?
+    y & = & \beta_0 + \beta_1 x?
   \end{eqnarray*}
 
 
@@ -177,17 +251,28 @@
 
       \column{.65\textwidth}
 
-      \begin{eqnarray*}
-        \bar{x} & = & 3 \\
-        \bar{y} & = & 3.4 \\
-        s_{xx} & = & 10, \\
-        s_{yy} & = & 5.2, \\
-        s_{xy} & = & 6
-      \end{eqnarray*}
+      \only<2>{%
+        \centerline{\includegraphics[width=4cm]{img/regressionExample}}
+      }
+
+      \only<3>{%
+        \centerline{\includegraphics[width=4cm]{img/regressionExampleLine}}
+      }
+
+
+      \only<4->{%
+        \begin{eqnarray*}
+          \bar{x} & = & 3 \\
+          \bar{y} & = & 3.4 \\
+          s_{xx} & = & 10, \\
+          s_{yy} & = & 5.2, \\
+          s_{xy} & = & 6
+        \end{eqnarray*}
+      }
 
       \end{columns}
 
-  \only<2->
+  \only<5->
   {
 
     \begin{eqnarray*}
@@ -220,15 +305,15 @@
 
       \column{.65\textwidth}
 
-      \begin{eqnarray*}
-        \bar{x} & = & 3 \\
-        \bar{y} & = & 3.4 \\
-        s_{xx} & = & 10, \\
-        s_{yy} & = & 5.2, \\
-        s_{xx} & = & 6, \\
-        \hat{m} & = & 0.6, \\
-        \hat{b} & = & 1.6
-      \end{eqnarray*}
+        \begin{eqnarray*}
+          \bar{x} & = & 3 \\
+          \bar{y} & = & 3.4 \\
+          s_{xx} & = & 10, \\
+          s_{yy} & = & 5.2, \\
+          s_{xx} & = & 6, \\
+          \hat{m} & = & 0.6, \\
+          \hat{b} & = & 1.6
+        \end{eqnarray*}
 
       \end{columns}
 
@@ -250,6 +335,7 @@
   
 \end{frame}
 
+\subsection{Inference for the Slope}
 
 \begin{frame}{Example}
 
@@ -272,94 +358,43 @@
 \end{frame}
   
 
-\subsection{Inference for the Slope}
+\begin{frame}{What is the relationship?}
 
-\begin{frame}
-  \frametitle{Inference for the Slope}
-
-  We have the following estimate for the linear regression line:
-  \begin{eqnarray*}
-    y & = & \hat{m} x + \hat{b}.
-  \end{eqnarray*}
-
-  \begin{definition}
-    The regression estimate for the slope satisfies the $t$ distribution
-    \begin{eqnarray*}
-      t & = & \frac{\hat{m}-m}{s_y}
-    \end{eqnarray*}
-    with $n-2$ degrees of freedom.
-  \end{definition}
-
-\end{frame}
-
-
-\begin{frame}{Inference for the Slope}
-
-  \begin{columns}
-
-    \column{.5\textwidth}
-    Confidence Intervals:
-    \begin{eqnarray*}
-      t^* & = & \frac{\mathrm{error}}{s_y}
-    \end{eqnarray*}
-    with $n-2$ degrees of freedom.
-
-    \column{.5\textwidth}
-
-    Hypothesis Testing:
-    \begin{eqnarray*}
-      t & = & \frac{\hat{m}-m}{\lp s_y/\sqrt{s_{xx}}\rp}
-    \end{eqnarray*}
-    with $n-2$ degrees of freedom.
-
-    
-  \end{columns}
-
-\end{frame}
-
-\begin{frame}
-  \frametitle{Clicker Quiz}
-
-    \iftoggle{clicker}{%
 
     \begin{columns}
-      \column{.15\textwidth}
-
-      \begin{tabular}{l|l}
-        $X$ & $Y$ \\ \hline
-        1 & 2 \\
-        2 & 3  \\
-        3 & 3 \\
-        4 & 5  \\
-        5 & 4
-      \end{tabular}
-
-      \column{.25\textwidth}
+      \column{.33\textwidth}
 
       \begin{eqnarray*}
-        \hat{m} & = & 0.6, \\
-        \hat{b} & = & 1.6, \\
-        s_y & = & .730
+        H_0: & & m=0, \\
+        H_a: & & m<0,
       \end{eqnarray*}
+      a negative relationship?
+
+      \column{.33\textwidth}
+
+      \begin{eqnarray*}
+        H_0: & & m=0, \\
+        H_a: & & m>0,
+      \end{eqnarray*}
+      a positive relationship?
 
 
-      \column{.6\textwidth}
+      \column{.33\textwidth}
 
-      Is the slope different from zero? (Use a 95\% confidence level.)
+      \begin{eqnarray*}
+        H_0: & & m=0, \\
+        H_a: & & m\neq 0,
+      \end{eqnarray*}
+      any relationship?
 
+      
     \end{columns}
 
-    \vfill
-
-    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: Reject $H_0$  & B: Do not reject $H_0$
-    \end{tabular}
-
-    \vfill
-
-    }
-
+  
 \end{frame}
+
+
+
 
 
 % LocalWords:  Clarkson pausesection hideallsubsections hideothersubsections
