@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{16 January 2013}
+\date{15 January 2014}
 
 \begin{frame}
   \titlepage
@@ -46,19 +46,26 @@
 
   I roll a six-sided die. What is the probability that I roll a one?
 
-  \only<2->%
+  \only<2>%
+  {
+    \begin{eqnarray*}
+      p(\underbrace{\mathrm{\color{red}{roll~a~one}}}_{\mathrm{an~\textbf{event}!}}) 
+    \end{eqnarray*}
+  }
+
+  \only<3->%
   {
     I roll a six-sided die. What is the probability that I roll a one
     \textbf{or} a two?
   }
 
-  \only<3->%
+  \only<4->%
   {
     I roll a six-sided die. What is the probability that I roll an odd
     number?
   }
 
-  \only<4->%
+  \only<5->%
   {
     I roll a six-sided die. What is the probability that I roll an odd
     number \textbf{or} a number less than 3?
@@ -195,11 +202,11 @@
     Age & Male & Female & Total \\
     $<$16 & 227 & 77 & 304 \\
     16-20 & 5180 & 2113 & 7293 \\
-    21-34 & 13611 & 4311 & 17922 \\
+    21-34 & \color{red}{13611} & 4311 & \color{green}{17922} \\
     35-54 & 15108 & 5027 & 20135 \\
     55-74 & 6801 & 2452 & 9253 \\
     $>$74   & 2022 & 980 & 3002 \\
-    Total & 42949 & 14960 & 57909 
+    Total & \color{green}{42949} & 14960 & \color{red}{57909}
   \end{tabular} \\
 
   \vfill
@@ -210,7 +217,7 @@
   \vfill
 
   I pick one person at random. What is the probability that the person
-  is male or has an age between 21 and 34?
+  is male {\color{blue}{\textbf{or}}} has an age between 21 and 34?
 
   
   
@@ -227,8 +234,8 @@
     21-34 & 13611 & 4311 & 17922 \\
     35-54 & 15108 & 5027 & 20135 \\
     55-74 & 6801 & 2452 & 9253 \\
-    $>$74   & 2022 & 980 & 3002 \\
-    Total & 42949 & 14960 & 57909 
+    $>$74   & 2022 & 980 & \color{green}{3002} \\
+    Total & 42949 & 14960 & \color{green}{57909}
   \end{tabular} \\
 
   \vfill
@@ -239,7 +246,7 @@
   \vfill
 
   I pick one person at random. What is the probability that the person's
-  age is less that 74?
+  age is less than or equal to 74?
 
   
   
