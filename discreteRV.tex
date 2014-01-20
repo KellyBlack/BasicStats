@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{23 January 2013}
+\date{22 January 2014}
 
 \begin{frame}
   \titlepage
@@ -89,12 +89,16 @@
     \bar{x} & = & \frac{x_1 + x_2 + x_3 + \cdot + x_n}{n}, \\
     \only<2>%
     {
+      & = & \frac{0 + 3 + 0 + 1 + 2 + 1 + 0 + \cdots + 1 + 1 + 0}{n}, \\
+    }
+    \only<3>%
+    {
       & = & \frac{1}{n}\lp 0 + 0 + \cdots + 0 \rp + \\
       &   & \frac{1}{n}\lp 1 + 1 + \cdots + 1 \rp + \\
       &   & \frac{1}{n}\lp 2 + 2 + \cdots + 2 \rp + \\
       &   & \frac{1}{n}\lp 3 + 3 + \cdots + 3 \rp  \\
     }
-    \only<3>%
+    \only<4>%
     {
       & = & \frac{1}{n}\lp \underbrace{0 + 0 + \cdots +
         0}_{\mathrm{number~of~zeroes}}  \rp + \\
@@ -102,21 +106,21 @@
       &   & \frac{1}{n}\lp \underbrace{2 + 2 + \cdots + 2}_{\mathrm{number~of~twos}} \rp + \\
       &   & \frac{1}{n}\lp \underbrace{3 + 3 + \cdots + 3}_{\mathrm{number~of~threes}} \rp  \\
     }
-    \only<4>%
+    \only<5>%
     {
       & = & \frac{1}{n}\lp 0\cdot{\mathrm{number~of~zeroes}}  \rp + \\
       &   & \frac{1}{n}\lp 1\cdot{\mathrm{number~of~ones}} \rp + \\
       &   & \frac{1}{n}\lp 2\cdot{\mathrm{number~of~twos}} \rp + \\
       &   & \frac{1}{n}\lp 3\cdot{\mathrm{number~of~threes}} \rp  \\
     }
-    \only<5>%
-    {
-      & = & \frac{1}{n}\lp 0\cdot{n\cdot\frac{1}{8}}  \rp + \\
-      &   & \frac{1}{n}\lp 1\cdot{n\cdot\frac{3}{8}} \rp + \\
-      &   & \frac{1}{n}\lp 2\cdot{n\cdot\frac{3}{8}} \rp + \\
-      &   & \frac{1}{n}\lp 3\cdot{n\cdot\frac{1}{8}} \rp  \\
-    }
     \only<6>%
+    {
+      & = & 0 \cdot \lp \frac{\mathrm{number~of~zeroes}}{n}  \rp + \\
+      &   & 1 \cdot \lp \frac{\mathrm{number~of~ones}}{n} \rp + \\
+      &   & 2 \cdot \lp \frac{\mathrm{number~of~twos}}{n} \rp + \\
+      &   & 3 \cdot \lp \frac{\mathrm{number~of~threes}}{n} \rp  \\
+    }
+    \only<7>%
     {
       & = & 0\cdot{\frac{1}{8}}  + \\
       &   & 1\cdot{\frac{3}{8}}  + \\
@@ -154,8 +158,9 @@
   \uncover<4->
   {
     \begin{definition}
-      A \textbf{probability distribution} is a list of probabilities of
-      \textit{all possible outcomes} of a random variable.
+      A \textbf{probability distribution} is a list of \textit{all
+        possible outcomes} of a random variable \textbf{and} their
+      respective probabilities.
     \end{definition}
   }
 

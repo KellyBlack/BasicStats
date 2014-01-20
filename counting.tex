@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{21 January 2013}
+\date{20 January 2014}
 
 \begin{frame}
   \titlepage
@@ -51,12 +51,89 @@
 
   \vfill
 
+  \only<2->{
+
+    \begin{picture}(180,180)
+      \put(0,90){\circle*{5}}
+      \put(0,90){\line(5,3){50}}
+      \put(0,90){\line(5,-3){50}}
+      \put(52,120){H}
+      \put(52,60){T}
+
+      \only<3->{
+        \put(60,130){\line(5,3){40}}
+        \put(60,130){\line(5,-2){40}}
+        \put(105,157.5){H}
+        \put(105,112.5){T}
+        \put(60,60){\line(5,2){40}}
+        \put(60,60){\line(5,-3){40}}
+        \put(105, 67.5){H}
+        \put(105, 22.5){T}
+      }
+
+      \only<4->{
+        \put(115,162.5){\line(5,1){40}}
+        \put(115,162.5){\line(5,-1){40}}
+        \put(157.5,168.75){H}
+        \put(157.5,146.25){T}
+        \put(115,117){\line(5,1){40}}
+        \put(115,117){\line(5,-1){40}}
+        \put(157.5,123.75){H}
+        \put(157.5,101.25){T}
+        \put(115,74){\line(5,1){40}}
+        \put(115,74){\line(5,-1){40}}
+        \put(157.5, 78.75){H}
+        \put(157.5, 56.25){T}
+        \put(115,26){\line(5,1){40}}
+        \put(115,26){\line(5,-1){40}}
+        \put(157.5, 33.75){H}
+        \put(157.5, 11.25){T}
+      }
+
+    \end{picture}
+
+  }
+
+  \vfill
+
 \end{frame}
 
 \begin{frame}{Example}
 
   I have three pairs of pants and two shirts. How many different
   outfits do I have?
+
+  \vfill
+
+  \only<2->{
+
+    \begin{picture}(180,180)
+      \put(0,90){\circle*{5}}
+      \put(0,90){\line(4,5){50}}
+      \put(0,90){\line(4,0){50}}
+      \put(0,90){\line(4,-5){50}}
+      \put(52,150){$P_1$}
+      \put(52, 90){$P_1$}
+      \put(52, 30){$P_1$}
+
+      \only<3->{
+        \put( 65,155){\line(5,2){35}}
+        \put( 65,155){\line(5,-2){35}}
+        \put(105,165){$S_1$}
+        \put(105,135){$S_2$}
+        \put(65,95){\line(5,2){35}}
+        \put(65,95){\line(5,-2){35}}
+        \put(105,105){$S_1$}
+        \put(105, 75){$S_2$}
+        \put(65,35){\line(5,2){35}}
+        \put(65,35){\line(5,-2){35}}
+        \put(105, 45){$S_1$}
+        \put(105, 15){$S_2$}
+      }
+
+    \end{picture}
+
+  }
 
   \vfill
   
@@ -94,7 +171,7 @@
 
   \vfill
 
-  \textit{ order matters!}
+  \textit{{\color{red}{order matters!}}}
 
 \end{frame}
 
@@ -105,7 +182,7 @@
 
   \vfill
 
-  \textit{ order matters!}
+  \textit{{\color{red}{order matters!}}}
 \end{frame}
 
 
@@ -113,7 +190,7 @@
   \frametitle{Permutations}
   \begin{definition}[Permutations]
     The number of permutations is the number of ways to arrange $n$
-    objects when $r$ is chosen. \textit{(The order matters.)}
+    objects when $r$ are chosen. \textit{{\color{red}{(The order matters.)}}}
   \end{definition}
 
   \only<2->%
@@ -220,7 +297,7 @@
   \frametitle{Example}
 
   What if I have three people on a team but only two can play at a
-  time? How many groups can play?
+  time? How many different groups can play?
 
   \vfill
 
@@ -319,13 +396,22 @@
   \item Another set of $n_3$ identical objects \\
     \vdots
   \item Another set of $n_k$ identical objects, \\
-  \item $n=n_1+n_2+n_3+\cdots+n_k$.
   \end{itemize}
 
-  The number of ways to arrange these objects is 
-  \begin{eqnarray*}
-    \frac{n!}{n_1! n_2! n_3! \cdots n_k!}.
-  \end{eqnarray*}
+  \vfill
+
+  \uncover<2->{
+    Define the total number of object to be $N=n_1+n_2+n_3+\cdots+n_k$.
+  }
+
+  \vfill
+
+  \uncover<3->{
+    The number of ways to arrange these objects is 
+    \begin{eqnarray*}
+      \frac{N!}{n_1! n_2! n_3! \cdots n_k!}.
+    \end{eqnarray*}
+  }
   
 \end{frame}
 
