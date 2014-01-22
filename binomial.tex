@@ -45,6 +45,7 @@
 
 \subsection{Bernoulli Distribution}
 
+
 \begin{frame}
   \frametitle{Bernoulli Distribution}
 
@@ -61,6 +62,7 @@
 \end{frame}
 
 
+<<<<<<< HEAD
 \begin{frame}{Examples}
 
   \begin{itemize}
@@ -73,6 +75,96 @@
 
   \end{itemize}
   
+=======
+  \only<2->{
+
+    \begin{picture}(180,180)
+      \put(0,90){\circle*{5}}
+      \put(0,90){\line(5,3){50}}
+      \put(0,90){\line(5,-3){50}}
+      \put(52,120){H}
+      \put(52,60){T}
+
+      \only<3->{
+        \put(60,130){\line(5,3){40}}
+        \put(60,130){\line(5,-2){40}}
+        \put(105,157.5){H}
+        \put(105,112.5){T}
+        \put(60,60){\line(5,2){40}}
+        \put(60,60){\line(5,-3){40}}
+        \put(105, 67.5){H}
+        \put(105, 22.5){T}
+      }
+
+      \only<4->{
+        \put(115,162.5){\line(5,1){40}}
+        \put(115,162.5){\line(5,-1){40}}
+        \put(157.5,168.75){H}
+        \put(157.5,146.25){T}
+        \put(115,117){\line(5,1){40}}
+        \put(115,117){\line(5,-1){40}}
+        \put(157.5,123.75){H}
+        \put(157.5,101.25){T}
+        \put(115,74){\line(5,1){40}}
+        \put(115,74){\line(5,-1){40}}
+        \put(157.5, 78.75){H}
+        \put(157.5, 56.25){T}
+        \put(115,26){\line(5,1){40}}
+        \put(115,26){\line(5,-1){40}}
+        \put(157.5, 33.75){H}
+        \put(157.5, 11.25){T}
+      }
+
+      \only<5->{
+        \put(165,173){\line(5,1){20}}
+        \put(165,173){\line(5,-1){20}}
+        \put(187,177){H}
+        \put(187,163){T}
+
+        \put(165,152){\line(5,1){20}}
+        \put(165,152){\line(5,-1){20}}
+        \put(187,156){H}
+        \put(187,142){T}
+
+        \put(165,128){\line(5,1){20}}
+        \put(165,128){\line(5,-1){20}}
+        \put(187,132){H}
+        \put(187,118){T}
+
+        \put(165,107){\line(5,1){20}}
+        \put(165,107){\line(5,-1){20}}
+        \put(187,111){H}
+        \put(187,97){T}
+
+        \put(165,85){\line(5,1){20}}
+        \put(165,85){\line(5,-1){20}}
+        \put(187,89){H}
+        \put(187,75){T}
+
+        \put(165,64){\line(5,1){20}}
+        \put(165,64){\line(5,-1){20}}
+        \put(187,68){H}
+        \put(187,54){T}
+
+        \put(165,37){\line(5,1){20}}
+        \put(165,37){\line(5,-1){20}}
+        \put(187,41){H}
+        \put(187,27){T}
+
+        \put(165,16){\line(5,1){20}}
+        \put(165,16){\line(5,-1){20}}
+        \put(187,20){H}
+        \put(187,6){T}
+
+      }
+
+
+    \end{picture}
+
+  }
+
+
+>>>>>>> 7d055f1... Updated the binomial talk
 \end{frame}
 
 \begin{frame}{Properties of the Bernoulli Distribution}
@@ -121,6 +213,28 @@
   \end{definition}
 
 \end{frame}
+
+\begin{frame}{Turn It Around}
+
+ \begin{columns}
+    \column{.35\textwidth}
+
+    Flip a coin three times. How many ways to get two tails?
+
+    \column{.65\textwidth}
+
+    \uncover<2->{%
+
+      \includegraphics[width=7.5cm]{img/tailsAndCups}
+
+      Change the question: How many ways can I put the tails into three
+      cups?
+    }
+
+  \end{columns}
+  
+\end{frame}
+
 
 \begin{frame}{Binomial Distribution}
     Question: What is the probability of $k$ ``yes'' outcomes?
