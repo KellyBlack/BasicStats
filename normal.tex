@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{30 January 2013}
+\date{27 January 2014}
 
 \begin{frame}
   \titlepage
@@ -26,10 +26,10 @@
   \begin{frame}
     \frametitle{Clicker Quiz}
 
-    Calculate the value $5 \choose 2 $.
+    Calculate the value $\prescript{~}{5}C_2$.
     \vfill
 
-    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}ll@{\hspace{3em}}l}
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
       A: 10 & B: 20 & C: 25 & D: 30 
     \end{tabular}
 
@@ -49,10 +49,13 @@
   I take a wheel that has a circumference of 2 and spin it. Let $X$ be
   the distance it turns.
 
-  \includegraphics[width=3cm]{img/spinWheel}
+  \only<1>{\includegraphics[width=3cm]{img/spinWheel}}
+  \only<2->{\includegraphics[width=3cm]{img/spinWheelRotated}}
 
-  What is the probability that $X$ is equal to $\half$? \\
-  $p\lp X=\half \rp$
+  \only<3>{%
+    What is the probability that $X$ is equal to $\frac{3}{8}$? \\
+    $p\lp X=\frac{3}{8} \rp$
+  }
   
 \end{frame}
 
@@ -161,6 +164,19 @@
   \end{eqnarray*}
   
 \end{frame}
+
+\begin{frame}{Probability and Area}
+
+  \begin{tabular}{lcr}
+  \includegraphics[width=3.5cm]{img/standardNormalRightArea} & - &
+  \includegraphics[width=3.55cm]{img/standardNormalArea}
+\end{tabular}
+  \begin{eqnarray*}
+    p(a \leq X \leq b) & = & p(X \leq b) - p(X \leq a)
+  \end{eqnarray*}
+  
+\end{frame}
+
 
 \subsection{Calculating Probabilities}
 
@@ -544,11 +560,11 @@ intersection of the row and column, 0.8078.}
 
 \begin{frame}{Going Backwards}
 
-  If $p(z \leq a) \approx 0.87$ what is $a$?
+  If $p(z \leq a) \approx 0.9834$ what is $a$?
 
   \hfill
 
-   If $p(z \geq a) \approx 0.05$ what is $a$?
+  \uncover<2->{If $p(z \geq a) \approx 0.05$ what is $a$?}
 
    \hfill
   
