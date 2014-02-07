@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{13 February 2013}
+\date{12 February 2014}
 
 \begin{frame}
   \titlepage
@@ -48,8 +48,9 @@
 
 \begin{frame}{Center of Data}
 
-  The term ``average'' is not a defined quantity. It can mean many
-  things and can be misleading!
+  {\color{red}The term ``average'' is not a defined quantity.}
+
+  It can mean many things and is misleading!
 
   Example: \\
   \begin{tabular}{lllllll}
@@ -87,13 +88,31 @@
 
   What is the ``center?''
 
-  \begin{description}
-  \item[Population Mean] The mean of the whole population.
-  \item[Sample Mean] The sum of the data divided by the number of
-    samples.
-  \item[Median] The middle value of the whole population.
-  \item[Sample Median] The middle value of the data.
-  \end{description}
+  \only<1>{%
+    \begin{description}
+    \item[Population Mean] The mean of the whole population.
+    \item[Sample Mean] The sum of the data divided by the number of
+      samples.
+    \item[Median] The middle value of the whole population.
+    \item[Sample Median] The middle value of the data.
+    \end{description}
+  }
+
+
+  \only<2>{%
+    \begin{description}
+    \item[{\color{red}Population Mean}] {\color{red}The mean of the whole population.*}
+    \item[{\color{blue}Sample Mean}] {\color{blue}The sum of the data divided by the number of
+      samples.**}
+    \item[{\color{red}Median}] {\color{red}The middle value of the whole population.*}
+    \item[{\color{blue}Sample Median}] {\color{blue}The middle value of the data.**}
+    \end{description}
+
+    {\color{red}What we want.*}
+
+    {\color{blue}What we have.**}
+
+  }
 
   
 \end{frame}
@@ -108,16 +127,16 @@
     x_1, ~ x_2, ~ x_3, ~ \ldots ~,x_n.
   \end{eqnarray*}
 
-  \begin{definition}
+  \begin{definition}[Sample Mean]
     The sample mean of the data is 
     \begin{eqnarray*}
       \bar{x} & = & \frac{x_1+x_2+\cdots+x_n}{n}.
     \end{eqnarray*}
   \end{definition}
 
-  \begin{definition}
+  \begin{definition}[Sample Median]
     The median is the number for which half the data is smaller than
-    it and half is larger that it.
+    it and half is larger than it.
   \end{definition}
   
 
@@ -154,7 +173,8 @@
   \only<3->%
   {
     \begin{tabular}{lllllll}
-      {\color{red}22} & {\color{red}28} & {\color{red}30} & $\underbrace{31}_{Median}$ & {\color{blue}31} & {\color{blue}33} & {\color{blue}35}
+      {\color{red}22} & {\color{red}28} & {\color{red}30} &
+      $\underbrace{31}_{Sample~Median}$ & {\color{blue}31} & {\color{blue}33} & {\color{blue}35}
     \end{tabular}
   }
   
@@ -165,7 +185,7 @@
 
   Even number of data points.
 
-  \begin{tabular}{lllllll}
+  \begin{tabular}{cccccc}
     30 & 28 & 31 & 33 & 35 & 22 
   \end{tabular}
 
@@ -178,24 +198,24 @@
   To get the median first order the data: \\
   \only<1>%
   {
-    \begin{tabular}{llllll}
+    \begin{tabular}{cccccc}
       22 & 28 & 30 & 31 & 33 & 35
     \end{tabular}
   }
 
   \only<2>%
   {
-    \begin{tabular}{llllll}
+    \begin{tabular}{cccccc}
       {\color{red}22} & {\color{red}28} & 30 & 31  & {\color{blue}33} & {\color{blue}35}
     \end{tabular}
   }
 
   \only<3->%
   {
-    \begin{tabular}{llccll}
+    \begin{tabular}{cccccc}
       {\color{red}22} & {\color{red}28} & 30 & 31 & 
       {\color{blue}33} & {\color{blue}35} \\
-      & & \multicolumn{2}{c}{Median = $\frac{30+31}{2}$} 
+      & & \multicolumn{2}{c}{Sample Median = $\frac{30+31}{2}$} 
     \end{tabular}
   }
   
@@ -206,7 +226,7 @@
   \frametitle{Clicker Quiz}
   (Use channel 42)
 
-  Find the median of the following data set:
+  Find the sample median of the following data set:
   \vfill 
 
   \begin{tabular}{llll}
@@ -229,7 +249,7 @@
 
   \begin{enumerate}
   \item They represent different things.
-  \item The median is more robust.
+  \item The sample median is more robust.
   \end{enumerate}
 
   \only<1-2>%
@@ -241,7 +261,7 @@
 
     \only<2>%
     {
-      The median is 98, and the mean is 98.5.
+      The sample median is 98, and the sample mean is 98.5.
     }
   }
 
@@ -254,8 +274,9 @@
 
     \only<4>%
     {
-      The median is 98, and the mean is 101.7. The median is less
-      likely to be altered by outliers.
+      The sample median is 98, and the sample mean is 101.7. The
+      sample median will not change as much for ``large'' or
+      ``small'' numbers in your data.
     }
   }
 
@@ -268,17 +289,17 @@
 \begin{frame}{Skew}
 
   \begin{definition}[Left Skew]
-    If the mean is to the left of the median the data is skewed to the
-    left.
+    If the sample mean is to the left of the sample median the data is
+    skewed to the left.
   \end{definition}
 
   \begin{definition}[Right Skew]
-    If the mean is to the right of the median the data is skewed to
-    the right.
+    If the sample mean is to the right of the sample median the data
+    is skewed to the right.
   \end{definition}
 
   \begin{definition}[Symmetric]
-    If the mean is close to the median the data is symmetric.
+    If the sample mean is close to the sample median the data is symmetric.
   \end{definition}
   
 \end{frame}
@@ -335,8 +356,9 @@
 
 \begin{frame}{Center of what?}
 
-  The sample mean and sample give us an estimate of the ``center'' of
-  the data. The question that next comes up is the center of what?
+  The sample mean and sample median give us an estimate of the
+  ``center'' of the data. The question that next comes up is the
+  center of what?
 
   The center of the data is just as important as the spread around the
   center.
