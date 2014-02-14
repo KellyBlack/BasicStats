@@ -8,7 +8,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{20 February 2013}
+\date{17 February 2014}
 
 \begin{frame}
   \titlepage
@@ -28,7 +28,7 @@
     \frametitle{Clicker Quiz}
 
     \vfill
-    Find the median of the following data set:\\
+    Find the sample median of the following data set:\\
     \begin{tabular}{llllll}
       28, & 17, & 12, & 20, & 21, & 18
     \end{tabular}
@@ -179,21 +179,21 @@
   \only<1>
   {
     89, 85, 97 106, 94, 100, 92, 120, 92, 97, 89, 90, 103, 86, 106, 112, 100, 92, 84,
-    97, 103, 91, 104, 91, 104
+    97, 103, 91, 104, 91, 106
   }
 
   \only<2>
   {
     Sort it: \\
     84, 85, 86, 89, 89, 90, 91, 91, 92, 92, 92, 94, 97, 97, 97, 100,
-    100, 103, 103, 104, 104, 106, 106, 112, 120
+    100, 103, 103, 104, 106, 106, 106, 112, 120
   }
 
   \only<3>
   {
     Sort it: \\
     84, 85, 86, 89, 89, 90, 91, 91, 92, 92, 92, 94, 97, 97, 97, 100,
-    100, 103, 103, 104, \underline{104}, \underline{106}, 106, 112, 120
+    100, 103, 103, {\color{red}\underline{104}}, {\color{red}\underline{106}}, 106, 106, 112, 120
   }
 
 
@@ -231,10 +231,10 @@
 
 The 25\textsuperscript{th} and 75\textsuperscript{th} percentiles are
 special cases called the first quartile and third quartile
-respectively, \\
+respectively, \\ [12pt]
 \begin{tabular}{ll}
-  P\textsuperscript{25}: & First Quartile \\
-  P\textsuperscript{75}: & Third Quartile \\
+  P\textsuperscript{25}: & {\color{red}\only<1>{First Quartile}\only<2>{$Q_1$}} \\
+  P\textsuperscript{75}: & {\color{red}\only<1>{Third Quartile}\only<2>{$Q_3$}} \\
 \end{tabular}
   
 \end{frame}
@@ -243,8 +243,8 @@ respectively, \\
 \begin{frame}{Calculating Quartiles}
 
   To calculate the quartiles you can use a short cut. Divide the data
-  into smaller half and larger half. Then find the medians of the two
-  different data sets.
+  into smaller half and larger half. Then find the sample medians of
+  the two different data sets.
 
   \vfill
 
@@ -262,9 +262,9 @@ respectively, \\
 
       \put(10,0){\line(0,1){80}}
       \put(310,0){\line(0,1){80}}
-      \put(110,20){\vector(-1,0){100}}
-      \put(210,20){\vector( 1,0){100}}
-      \put(120,15){Range = difference}
+      \put(85,20){\vector(-1,0){75}}
+      \put(235,20){\vector( 1,0){75}}
+      \put(95,15){Sample Range = difference}
 
     \end{picture}
   }
@@ -285,12 +285,12 @@ respectively, \\
       \put(310,0){\line(0,1){80}}
       \put(110,20){\vector(-1,0){100}}
       \put(210,20){\vector( 1,0){100}}
-      \put(120,15){Range}
+      \put(120,15){Sample Range}
 
-      \put(156,25){\line(0,1){55}}
-      \put(60,30){\vector(-1,0){50}}
-      \put(105,30){\vector( 1,0){50}}
-      \put(63,25){Median}
+      \put(156,35){\line(0,1){45}}
+      \put(45,40){\vector(-1,0){35}}
+      \put(121,40){\vector( 1,0){35}}
+      \put(50,35){Sample Median}
 
     \end{picture}
   }
@@ -311,23 +311,23 @@ respectively, \\
       \put(310,0){\line(0,1){80}}
       \put(110,20){\vector(-1,0){100}}
       \put(210,20){\vector( 1,0){100}}
-      \put(120,15){Range}
+      \put(120,15){Sample Range}
 
-      \put(156,25){\line(0,1){55}}
-      \put(60,30){\vector(-1,0){50}}
-      \put(105,30){\vector( 1,0){50}}
-      \put(63,25){Median}
+      \put(156,35){\line(0,1){45}}
+      \put(45,40){\vector(-1,0){35}}
+      \put(121,40){\vector( 1,0){35}}
+      \put(50,35){Sample Median}
 
-      \put(78,45){\line(0,1){25}}
-      \put(30,50){\vector(-1,0){20}}
-      \put(58,50){\vector(1,0){20}}
-      \put(37,45){Q1}
+      \put(78,50){\line(0,1){30}}
+      \put(30,55){\vector(-1,0){20}}
+      \put(58,55){\vector(1,0){20}}
+      \put(37,50){Q1}
 
 
-      \put(240,45){\line(0,1){25}}
-      \put(260,50){\vector(-1,0){20}}
-      \put(290,50){\vector(1,0){20}}
-      \put(265,45){Q3}
+      \put(240,50){\line(0,1){30}}
+      \put(260,55){\vector(-1,0){20}}
+      \put(290,55){\vector(1,0){20}}
+      \put(265,50){Q3}
 
 
     \end{picture}
@@ -379,24 +379,22 @@ respectively, \\
       \put(310,0){\line(0,1){80}}
       \put(110,20){\vector(-1,0){100}}
       \put(210,20){\vector( 1,0){100}}
-      \put(120,15){Range}
+      \put(120,15){Sample Range}
 
-      \put(156,25){\line(0,1){55}}
-      \put(60,30){\vector(-1,0){50}}
-      \put(105,30){\vector( 1,0){50}}
-      \put(63,25){Median}
+      \put(156,35){\line(0,1){45}}
+      \put(45,40){\vector(-1,0){35}}
+      \put(121,40){\vector( 1,0){35}}
+      \put(50,35){Sample Median}
 
-      \put(78,45){\line(0,1){25}}
-      \put(30,50){\vector(-1,0){20}}
-      \put(58,50){\vector(1,0){20}}
-      \put(37,45){Q1}
+      \put(78,50){\line(0,1){30}}
+      \put(30,55){\vector(-1,0){20}}
+      \put(58,55){\vector(1,0){20}}
+      \put(37,50){Q1}
 
-
-      \put(240,45){\line(0,1){25}}
-      \put(260,50){\vector(-1,0){20}}
-      \put(290,50){\vector(1,0){20}}
-      \put(265,45){Q3}
-
+      \put(240,50){\line(0,1){30}}
+      \put(260,55){\vector(-1,0){20}}
+      \put(290,55){\vector(1,0){20}}
+      \put(265,50){Q3}
 
     \end{picture}
   }
@@ -408,7 +406,7 @@ respectively, \\
 
 \begin{frame}{Example}
 
-  Find the minimum,  first quartile, median, third quartile, and
+  Find the minimum, first quartile, sample median, third quartile, and
   maximum of the data:\\
   \begin{tabular}{lllllllll}
     40 & 21 & 38 & 38 & 27 & 36 & 34 & 33 & 26
@@ -430,14 +428,14 @@ respectively, \\
 
 \begin{frame}{Five Point Summary}
 
-  \begin{definition}{Five Point Summary}
+  \begin{definition}[Five Point Summary]
 
     The five point summary for a data set is the minimum, first
-    quartile, median, third quartile, and maximum of the data.
+    quartile, sample median, third quartile, and maximum of the data.
     
   \end{definition}
 
-  \begin{definition}{Inter-Quartile Range}
+  \begin{definition}[Inter-Quartile Range]
 
     The Inter-Quartile Range (IQR) is defined to be Q3-Q1.
     
@@ -476,8 +474,8 @@ respectively, \\
 
   \only<1>
   {
-    89, 85, 97 106, 94, 100, 92, 120, 92, 97, 89, 90, 103, 86, 106, 112, 100, 92, 84,
-    97, 103, 91, 104, 91, 104
+    89, 85, 97, 106, 94, 100, 92, 120, 92, 97, 89, 90, 103, 86, 106, 112, 100, 92, 84,
+    97, 103, 91, 104, 91, 106
 
     \vfill
   }
@@ -486,7 +484,7 @@ respectively, \\
   {
     Sort it: \\
     84, 85, 86, 89, 89, 90, 91, 91, 92, 92, 92, 94, 97, 97, 97, 100,
-    100, 103, 103, 104, 104, 106, 106, 112, 120
+    100, 103, 103, 104, 106, 106, 106, 112, 120
 
     Five point summary: \\
     \begin{tabular}{lllll}
@@ -520,7 +518,7 @@ respectively, \\
 
 \begin{frame}{Outliers}
 
-  \begin{definition}{Outliers}
+  \begin{definition}[Outliers]
 
     If a number in a data set is less than Q1-$\frac{3}{2}$IQR it is
     an outlier.
@@ -547,17 +545,29 @@ respectively, \\
       21 & 27 & 33 & 34 & 36 & 38 & 38 & 40 & 53
     \end{tabular}
 
+    \vfill
+
     Five point summary: \\
     \begin{tabular}{lllll}
       Min. & 1st Qu. & Median    & 3rd Qu. &   Max. \\
       21   & 30      & 36        & 39     & 53
     \end{tabular}
+
+    \vfill
     
-    The IQR is 39-30=9.
+    \uncover<3->{
+      {\color{red}The IQR is 39-30=9.}
+    }
 
-    Anything smaller than $30-\frac{3}{2}9=16.5$ is an outlier.
+    \uncover<4->{
+      ~ \\
+      {\color{blue}Anything smaller than $30-\frac{3}{2}9=16.5$ is an outlier.}
+    }
 
-    Anything greater than $39+\frac{3}{2}9=52.5$ is an outlier.
+    \uncover<5->{
+      ~ \\
+      {\color{green}Anything greater than $39+\frac{3}{2}9=52.5$ is an outlier.}
+    }
 
   }
   
@@ -567,15 +577,18 @@ respectively, \\
 \begin{frame}
   \frametitle{Z-Score}
 
-  \begin{definition}
+  You sample a random variable with mean $\mu$ and standard deviation
+  $\sigma$.
+
+  \begin{definition}[Z-Score]
     Given a set of data,
     \begin{eqnarray*}
       x_1,~x_2,~x_3,\ldots,x_n,
     \end{eqnarray*}
-    with sample mean $\bar{x}$ and standard deviation $s$ the
-    $z$-score for a number, $x_i$, is
+    from a random variable with mean $\mu$ and standard deviation
+    $\sigma$ the $z$-score for a number, $x_i$, is
     \begin{eqnarray*}
-      z_i & = & \frac{x_i-\bar{x}}{s}.
+      z_i & = & \frac{x_i-\mu}{\sigma}.
     \end{eqnarray*}
   \end{definition}
 
