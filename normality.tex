@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{22 Feb 2012}
+\date{19 Feb 2014}
 
 \begin{frame}
   \titlepage
@@ -55,7 +55,7 @@
   Given a set of data you want to know if it is consistent with some
   distribution. Here we focus on the normal distribution. 
 
-  The Idea - \textbf{If the data is normally distributed then}
+  The Idea - \textbf{If the random variable is normally distributed then}
   \begin{itemize}
   \item You can calculate a $z$-statistic for each number in the data
     set.
@@ -112,23 +112,26 @@
 \begin{frame}
   \frametitle{Example}
 
-  First, nobody does this by hand without begging for mercy before it
-  is done. This is something that is done on a computer.
+  First, nobody does this by hand. {\color{red}This is something that
+    is done on a computer.}  \uncover<2->{{\color{blue}You still need to know how
+    to interpret these graphs!}}
 
-  \begin{columns}
+  \uncover<3->{%
+    \begin{columns}
 
-    \column{.4\textwidth}
-    Given the data, \\
-    \begin{tabular}{llllll}
-      17 & 16 & 18 & 18 & 13 & 15
-    \end{tabular} \\
-    The normal probability plot is shown.
+      \column{.4\textwidth}
+      Given the data, \\
+      \begin{tabular}{llllll}
+        17 & 16 & 18 & 18 & 13 & 15
+      \end{tabular} \\
+      The normal probability plot is shown.
 
-  \column{.5\textwidth}
+      \column{.5\textwidth}
 
-  \includegraphics[width=5cm]{img/normalQQEx1}
+      \includegraphics[width=5cm]{img/normalQQEx1}
 
-  \end{columns}
+    \end{columns}
+  }
   
   
 \end{frame}
