@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{1 March 2013}
+\date{26 February 2014}
 
 \begin{frame}
   \titlepage
@@ -59,7 +59,7 @@
 \begin{frame}
   \frametitle{Clicker Example}
 
-  Will Kanye West's love child be a boy or a girl?
+  Will Snooki's love child be a boy or a girl?
 
   \begin{tabular}{l@{\hspace{3em}}l}
     A: Boy    & B: Girl
@@ -71,7 +71,7 @@
 
   \only<2->{ 
 
-    Left section: Will Kanye West's love child be a boy or a
+    Left section: Will Snooki's love child be a boy or a
     girl?
 
     \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
@@ -84,7 +84,7 @@
 
   \only<3->{ 
 
-    Center section: Will Kanye West's love child be a boy or a
+    Center section: Will Snooki's love child be a boy or a
     girl?
 
     \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
@@ -97,7 +97,7 @@
 
   \only<4->{ 
 
-    Right section: Will Kanye West's love child be a boy or a
+    Right section: Will Snooki's love child be a boy or a
     girl?
 
     \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
@@ -125,6 +125,16 @@
   \item We make a calculation based on the sample. The calculation is
     called the ``sample proportion.''
 
+    \only<2->{%
+      \begin{definition}[The Sample Proportion]
+        The sample proportion is defined to be
+        \begin{eqnarray*}
+          \hat{p} & = & \frac{\mathrm{Number~of~Yeses}}{\mathrm{Total~Number}}.
+        \end{eqnarray*}
+      \end{definition}
+
+    }
+
   \end{itemize}
 
   \vfill
@@ -151,8 +161,8 @@
 \begin{frame}
   \frametitle{Not What We Have!}
 
-  We are asked about the \textit{proportion} not the total number who
-  say ``yes.''
+  We are not seeking the number ``yeses.''
+  Instead we are asked about the \textit{proportion} of ``yeses.''
 
   \vfill
 
@@ -204,9 +214,10 @@
   \only<4->
   {
 
-    Problem: We usually do not know $p$. That is okay just use
-    $\hat{p}$ or assume $p=\frac{1}{2}$ for the ``worst case
-    scenario.''
+    Problem: We usually do not know $p$. {\color{red}If necessary use
+      the largest possible value of the standard deviation as a
+      ``worst case scenario.''} That occurs when $p=\frac{1}{2}$, and
+    we sometimes use that if we are not sure.
 
   }
 
@@ -232,7 +243,7 @@
 
   It is estimated that 64\% of the people who get a flu shot this year
   will not get the flu. Four hundred people who have had the shot are
-  polled. What is the probability that more than 35\% of them will get
+  polled. What is the probability that less than 34\% of them will get
   the flu?
 
     \vfill
@@ -284,17 +295,12 @@
   \item The sample proportion has a mean of $p$, and a standard
     deviation of $\sqrt{\frac{p(1-p)}{n}}$.
   \item Check to see if $p\cdot n \geq 5$, $(1-p)\cdot n \geq 5$ and
-    $n\geq 20$. If \textit{all} of these things are true
-    \begin{itemize}
-    \item $\hat{p}$ is approximately normally distributed
-    \item The mean of $\hat{p}$ is mean $p$.
-    \item The standard deviation of $\hat{p}$ is
-      $\sqrt{\frac{p(1-p)}{n}}$
-    \item A $z$-statistic can be approximated using
-      \begin{eqnarray*}
-        z & = & \frac{\hat{p}-p}{\sqrt{\frac{p(1-p)}{n}}}.
-      \end{eqnarray*}
-    \end{itemize}
+    $n\geq 20$. If \textit{all} of these things are true then a
+    $z$-statistic can be approximated using
+    \begin{eqnarray*}
+      z & = & \frac{\hat{p}-p}{\sqrt{\frac{p(1-p)}{n}}}.
+    \end{eqnarray*}
+
 
   \end{itemize}
 

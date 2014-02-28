@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{6 March 2013}
+\date{28 February 2014}
 
 \begin{frame}
   \titlepage
@@ -48,16 +48,17 @@
 \begin{frame}
   \frametitle{Problem!}
 
-  We have a random variable. It has a mean, $\mu$, and a standard
-  deviation, $\sigma$. How do we know?
+  We have a random variable, $X$. We want to know what its mean,
+  $\mu$, or its standard deviation, $\sigma$, is. How do we figure
+  this out?
 
   \vfill
 
   \only<2->
   {
     \begin{block}{Example}
-      We run a capitol investment firm. Someone asks us for \$250,000
-      to start a restaurant. It this a reasonable amount?
+      We run a capitol investment firm. Someone says that they need
+      \$250,000 to start a restaurant. It this a reasonable amount?
     \end{block}
   }
 
@@ -75,10 +76,18 @@
 
 \begin{frame}{Example}
   
-  We call up ten restaurant owners and ask them for the amount they
-  needed to get started. We then calculate a \textit{sample mean},
+  We call up ten random restaurant owners and ask them for the amount
+  they needed to get started. We get the following amounts:
+  \begin{tabular}{lllll}
+    \$250,397 & \$241,621 & \$238,706 & \$249,276 & \$248,577 \\
+    \$260,748 & \$268,647 & \$269,197 & \$232,603 & \$221,389
+  \end{tabular}
+
+  We then calculate a \textit{sample mean},
   \begin{eqnarray*}
-    \bar{x} & = & \frac{x_1 + x_2 + x_3 + x_4 + x_5 + x_6 + x_7 + x_8 + x_9 + x_{10}}{10}.
+    \bar{x} & = &
+    \frac{250397+241621+238706+\cdots+232603+221389}{10}, \\
+    & = & \$248,116.10\\
   \end{eqnarray*}
   This is our \textbf{estimate} for the mean.
   
@@ -89,10 +98,18 @@
   \begin{frame}
     \frametitle{Clicker Quiz}
 
-    We call up ten restaurant owners and ask them for the amount they
-    needed to get started. We then calculate a \textit{sample mean},
+    We call up ten random restaurant owners and ask them for the
+    amount they needed to get started. We get the following amounts:
+    \begin{tabular}{lllll}
+    \$250,397 & \$241,621 & \$238,706 & \$249,276 & \$248,577 \\
+    \$260,748 & \$268,647 & \$269,197 & \$232,603 & \$221,389
+    \end{tabular}
+
+    We then calculate a \textit{sample mean},
     \begin{eqnarray*}
-      \bar{x} & = & \frac{x_1 + x_2 + x_3 + x_4 + x_5 + x_6 + x_7 + x_8 + x_9 + x_{10}}{10}.
+      \bar{x} & = &
+      \frac{250397+241621+238706+\cdots+232603+221389}{10}, \\
+      & = & \$248,116.10\\
     \end{eqnarray*}
 
     Is this estimate close to the true mean?
@@ -110,6 +127,27 @@
   \end{frame}
 }
 
+\begin{frame}{Stupid Coworker}
+  
+  One of your coworkers tries to suck up to the boss and also calls
+  ten random restaurant owners and ask them for the amount they needed
+  to get started. He got the following amounts:
+  \begin{tabular}{lllll}
+    \$237,031 & \$275,563 & \$255,643 & \$264,230 & \$251,355 \\
+    \$257,822 & \$252,246 & \$252,851 & \$260,110 & \$247,164
+  \end{tabular}
+
+  The resulting \textit{sample mean} is
+  \begin{eqnarray*}
+    \bar{x} & = &
+    \frac{237031+275563+255643+\cdots+260110+247164}{10}, \\
+    & = & \$255,401.50\\
+  \end{eqnarray*}
+
+  \only<2->{\color{red}Which one of you is right?}
+  
+\end{frame}
+
 
 \begin{frame}{Estimators}
 
@@ -122,12 +160,12 @@
 
   \begin{definition}{Bias}
     \begin{itemize}
-    \item If our estimator for a parameter is expected to be less that
-      the true value is has a \textit{negative bias.}
-    \item If our estimator for a parameter is expected to be more that
-      the true value is has a \textit{positive bias.}
-    \item If the expectation of our estimator for a parameter is the
-      same as the true value then it is \textit{unbiased.}
+    \item If our estimator for a parameter is {\color{red}expected} to be less that
+      the true value it has a \textit{\color{blue}negative bias.}
+    \item If our estimator for a parameter is {\color{red}expected} to be more that
+      the true value it has a \textit{\color{blue} positive bias.}
+    \item If the {\color{red}expectation} of our estimator for a parameter is the
+      same as the true value then it is \textit{\color{blue} unbiased.}
     \end{itemize}
   \end{definition}
   
@@ -137,7 +175,7 @@
 
 \begin{frame}{Estimator Of The Mean}
 
-  \begin{definition}{Estimator of the mean}
+  \begin{definition}[Estimator of the mean]
     The sample mean is an estimator of the mean,
   \begin{eqnarray*}
     \bar{x} & = & \frac{x_1 + x_2 + x_3 + \cdots + x_{n}}{n}.
@@ -172,7 +210,7 @@ Problem: We do not know what $\mu$ is!
 
     \column{.6\textwidth}
 
-    We want one of the following things:
+    In practice we usually want one of the following things:
     \begin{itemize}
     \item Determine the value of the error
     \item Determine number of samples (N)
@@ -357,6 +395,15 @@ Problem: We do not know what $\mu$ is!
   }
 
   \vfill
+
+  \only<3->%
+  {
+
+    {\color{red}You must have a formal, complete sentence for your
+      final answer. You should state your result and provide enough
+      information to allow your reader to make an informed decision.}
+
+  }
 
 \end{frame}
 

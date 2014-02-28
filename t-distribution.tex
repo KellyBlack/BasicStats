@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{8 March 2013}
+\date{3 March 2014}
 
 \begin{frame}
   \titlepage
@@ -96,14 +96,13 @@
     \column{0.5\textwidth}
     Normal Distribution:
     \begin{eqnarray*}
-      z &  = & \frac{\bar{x}-\mu}{\lp \frac{\sigma}{\sqrt{n}} \rp}.
+      z &  = & \frac{\bar{x}-\mu}{\lp \frac{{\color{red}\sigma}}{\sqrt{n}} \rp}.
     \end{eqnarray*}
 
     \column{0.5\textwidth}
     $t$-Distribution:
     \begin{eqnarray*}
-      t &  = & \frac{\bar{x}-\mu}{\lp \frac{s}{\sqrt{n}} \rp}, \\
-      df & = & n-1.
+      t &  = & \frac{\bar{x}-\mu}{\lp \frac{{\color{red}s}}{\sqrt{n}} \rp}, ~~~~ {\color{blue}df  =  n-1}.
     \end{eqnarray*}
 
   \end{columns}
@@ -116,7 +115,7 @@
       \begin{center}
         The algebra and concepts are exactly the same!
 
-        The only difference is $\sigma$ vs. $s$ and $df=n-1$.
+        The only difference is {\color{red}$\sigma$} vs. {\color{red}$s$} and {\color{blue}$df=n-1$}.
       \end{center}
     }
 
@@ -134,7 +133,7 @@
 
   \vfill
 
-  The table only has \textit{critical values}.
+  {\color{red}The table only has \textit{critical values}.}
 
   \centerline{\includegraphics[width=5cm]{img/tdistTable}}
 
@@ -468,12 +467,22 @@ $\infty$ & 1.282 & 1.645 & 1.960 & 2.326 & 2.576 & 3.090 & 3.291
 
   \vfill
 
-  \only<2->%
+  \only<2>%
   {
 
     The 95\% confidence interval for the mean volume of stocks is from
     2.25 to 3.05 million shares per day assuming a $t$-distribution
     with twenty samples and a sample standard deviation of 0.85
+    million shares per day.
+
+  }
+
+  \only<3->%
+  {
+
+    The {\color{red}95\%} confidence interval for the mean volume of stocks is from
+    {\color{red}2.25} to {\color{red}3.05} million shares per day {\color{red}assuming a $t$-distribution}
+    with {\color{red}twenty samples} and a {\color{red}sample standard deviation of 0.85}
     million shares per day.
 
   }
@@ -494,13 +503,24 @@ $\infty$ & 1.282 & 1.645 & 1.960 & 2.326 & 2.576 & 3.090 & 3.291
 
   \vfill
 
-  \only<2->%
+  \only<2>%
   {
 
     The sample mean is 2.65 million shares per day.
 
     The confidence level is 10\% assuming a t-distribution with 19
     degrees of freedom and a sample standard deviation of 0.85 million
+    shares per day.
+
+  }
+
+  \only<3->%
+  {
+
+    The sample mean is 2.65 million shares per day.
+
+    The confidence level is {\color{red}10\%} assuming a {\color{red}t-distribution} with {\color{red}19
+    degrees of freedom} and a {\color{red}sample standard deviation of 0.85 million}
     shares per day.
 
   }
@@ -520,12 +540,21 @@ $\infty$ & 1.282 & 1.645 & 1.960 & 2.326 & 2.576 & 3.090 & 3.291
 
   \vfill
 
-  \only<2->%
+  \only<2>%
   {
 
     We need to sample 45 days to get an error of 0.25 million shares
     per day assuming a normal distribution and a standard deviation of
     0.85 million shares per day.
+
+  }
+
+  \only<3>%
+  {
+
+    We need to sample {\color{red}45 days} to get an {\color{red}error of 0.25} million shares
+    per day {\color{red}assuming a normal distribution} and a {\color{red}standard deviation of
+    0.85} million shares per day.
 
   }
 
