@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{13 March 2013}
+\date{14 March 2014}
 
 \begin{frame}
   \titlepage
@@ -50,31 +50,33 @@
 
 \begin{frame}{The Sample Proportion}
 
-  You conduct $n$ trials. Each trial has a probability $p$ for
-  ``success'' and a probability of $1-p$ for a different
-  result. Define the sample proportion to be 
+  You conduct $n$ trials. Each trial has a probability $p$ for a
+  ``yes'' and a probability of $1-p$ for a ``no.'' Define the sample
+  proportion to be
   \begin{eqnarray*}
-    \hat{p} & = & \frac{\mathrm{number~of~successes}}{\mathrm{number~of~trials}}.
+    \hat{p} & = & \frac{\mathrm{number~of~yeses}}{\mathrm{number~of~trials}}.
   \end{eqnarray*}
 
-  \begin{itemize}
-  \item The sample proportion has a mean of $p$, and a standard
-    deviation of $\sqrt{\frac{p(1-p)}{n}}$.
-  \item Check to see if $p\cdot n \geq 5$, $(1-p)\cdot n \geq 5$ and
-    $n\geq 20$. If \textit{all} of these things are true
+  \only<2->{%
     \begin{itemize}
-    \item $\hat{p}$ is approximately normally distributed
-    \item The mean of $\hat{p}$ is mean $p$.
-    \item The standard deviation of $\hat{p}$ is
-      $\sqrt{\frac{p(1-p)}{n}}$
-    \item A $z$-statistic can be approximated using
-      \begin{eqnarray*}
-        z & = & \frac{\hat{p}-p}{\sqrt{\frac{p(1-p)}{n}}}.
-      \end{eqnarray*}
+    \item The sample proportion has a mean of $p$, and a standard
+      deviation of $\sqrt{\frac{p(1-p)}{n}}$.
+      \only<3->{%
+      \item Check to see if $p\cdot n \geq 5$, $(1-p)\cdot n \geq 5$ and
+        $n\geq 20$. If \textit{all} of these things are true
+        \begin{itemize}
+        \item $\hat{p}$ is approximately normally distributed
+        %\item The mean of $\hat{p}$ is mean $p$.
+        %\item The standard deviation of $\hat{p}$ is
+        %  $\sqrt{\frac{p(1-p)}{n}}$
+        \item A {\color{red}$z$}-statistic can be approximated using
+          \begin{eqnarray*}
+            z & \approx & \frac{\hat{p}-p}{\sqrt{\frac{p(1-p)}{n}}}.
+          \end{eqnarray*}
+        \end{itemize}
+      }
     \end{itemize}
-
-  \end{itemize}
-
+  }
 
 
   
@@ -88,7 +90,7 @@
   \begin{definition}[The Sample Proportion]
 
     You conduct an experiment. There are $N$ trials. The number of
-    ``successes'' is $x$.  The sample proportion is defined to be 
+    ``yeses'' is $x$.  The sample proportion is defined to be 
     \begin{eqnarray*}
       \hat{p} & = & \frac{x}{N}.
     \end{eqnarray*}
