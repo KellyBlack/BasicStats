@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{15 March 2013}
+\date{24 March 2014}
 
 \begin{frame}
   \titlepage
@@ -52,11 +52,10 @@
 
 \begin{frame}
 
-  \centerline{\includegraphics[width=6cm]{img/confidenceInterval}}
-
   \begin{columns}[T]
 
     \begin{column}[T]{0.5\textwidth}
+      \centerline{\includegraphics[width=5cm]{img/confidenceInterval}}
       The R.V. $X$ has mean $\mu$ and standard deviation $\sigma$.
 
       The sample mean, $\bar{x}$ has mean $\mu$ and standard deviation
@@ -64,12 +63,15 @@
 
     \end{column}
 
+    \uncover<2->{%
     \begin{column}[T]{0.5\textwidth}
+      \centerline{\includegraphics[width=5cm]{img/confidenceIntervalProportion}}
       The sample proportion has mean $p$ and standard deviation
       $\sqrt{\frac{p(1-p)}{n}}$.
 
       %\vfill
     \end{column}
+  }
 
   \end{columns}
 
@@ -84,7 +86,7 @@
   \begin{columns}
     \column{0.25\textwidth}
     \begin{definition}
-      The \textit{confidence interval} is an interval that likely
+      The \textit{\color{red}confidence interval} is an interval that \textit{\color{red}likely}
       includes the true mean.
     \end{definition}
 
@@ -96,20 +98,18 @@
 
 \end{frame}
 
-\begin{frame}
+\begin{frame}{The Error Relationships for Confidence Intervals}
 
   \begin{columns}[T]
 
     \begin{column}[T]{0.5\textwidth}
-      \begin{block}{The Error Relationship for Confidence Intervals
-          (Normal)}
+      \begin{block}{\color{red}Normal Distribution}
         \begin{eqnarray*}
           p\lp z \leq \frac{-error}{\frac{\sigma}{\sqrt{n}}}\rp & = & \frac{\alpha}{2}.
         \end{eqnarray*}
       \end{block}
 
-      \begin{block}{The Error Relationship for Confidence Intervals
-          ($t$)}
+      \begin{block}{\color{red}$t$ Distribution}
         \begin{eqnarray*}
           p\lp t \leq \frac{-error}{\frac{\sigma}{\sqrt{n}}}\rp & = & \frac{\alpha}{2},
         \end{eqnarray*}
@@ -119,8 +119,7 @@
 
 
     \begin{column}[T]{0.5\textwidth}
-      \begin{block}{The Error Relationship for Confidence Intervals
-          (proportions)}
+      \begin{block}{\color{red}Proportions}
         Check to see if $p\cdot n \geq 5$, $(1-p)\cdot n \geq 5$ and
         $n\geq 20$. If \textit{all} of these things are true
         \begin{eqnarray*}
@@ -142,15 +141,16 @@
 
   We call up and ask twenty factory operators in a given sector what
   their yearly output is in dollars. The sample mean is \$450,000 and
-  the sample standard deviation is \$50,000. Find the 95\% confidence
-  interval.
+  the \only<1>{sample}\only<2->{{\color{red}sample}} standard deviation is
+  \$50,000. Find the 95\% confidence interval.
 
   \vfill
 
-  \only<2->{
+  \only<3->{
     \textit{
       The 95\% confidence interval is from \$426,600 and \$473,400
-      assuming a $t$-distribution with nineteen degrees of freedom.
+      assuming a $t$-distribution with nineteen degrees of freedom and
+      a sample standard deviation  of \$50,000.
     }
   }
 
