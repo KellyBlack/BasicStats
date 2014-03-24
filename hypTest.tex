@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{27 March 2013}
+\date{26 March 2014}
 
 \begin{frame}
   \titlepage
@@ -129,8 +129,9 @@
 
   \vfill
 
-  \only<3-> { Sample fifteen banks, find the mean change in interest
-    rate, and ask if there is sufficient evidence to reject $H_0$.  }
+  \only<3-> { Sample fifteen banks, find the sample mean for the
+    change in interest rates, and ask if there is sufficient evidence
+    to reject $H_0$.  }
 
   \vfill
 
@@ -152,11 +153,9 @@
 
   \vfill
 
-  \only<3->
-  {
-    Sample thirty properties at random, calculate a foreclosure rate, and ask if
-    there is sufficient evidence to reject $H_0$.
-  }
+  \only<3-> { Sample thirty properties at random, calculate a
+    foreclosure rate for the sample, and ask if there is sufficient
+    evidence to reject $H_0$.  }
 
   \vfill
 
@@ -270,20 +269,21 @@
 
     I think that the mean stock price in a given sector has
     increased. I sample thirty stocks and determine the change in
-    price for each one. What is the hypothesis test?
+    price for each one (current price minus previous price). What is
+    the hypothesis test?
 
-    \begin{tabular}{l@{\hspace{2em}}l} \hline
-      A \\
-      $H_0$: &  The mean price has not changed.\\
-      $H_a$: & The mean price change is greater than zero. \\
+    \begin{tabular}{ll@{\hspace{2em}}l} \hline
+      {\color{red}\textbf{A}} 
+      & $H_0$: &  The mean price has not changed.\\
+      & $H_a$: & The mean price change is greater than zero. \\
       \\  \hline
-      B \\
-      $H_0$: &  The mean price has not changed. \\
-      $H_a$: & The mean price change is less than zero. \\
+      {\color{red}\textbf{B}} 
+      & $H_0$: &  The mean price has not changed. \\
+      & $H_a$: & The mean price change is less than zero. \\
       \\ \hline
-      C \\
-      $H_0$: &  The mean price has not changed.\\
-      $H_a$: & The mean price change is not zero. \\ \hline
+      {\color{red}\textbf{C}} 
+      & $H_0$: &  The mean price has not changed.\\
+      & $H_a$: & The mean price change is not zero. \\ \hline
     \end{tabular}
 
     
@@ -336,13 +336,13 @@
   \begin{block}{Reject $H_0$}
     There is sufficient evidence to reject $H_0$ at the \#
     significance level assuming a normal distribution and a 
-    standard deviation of \#.
+    standard deviation of \# with \# samples.
   \end{block}
 
   \begin{block}{Cannot Reject $H_0$}
     There is not sufficient evidence to reject $H_0$ at the \#
     significance level assuming a normal distribution and a 
-    standard deviation of \#.
+    standard deviation of \#  with \# samples.
   \end{block}
 
   
@@ -354,7 +354,7 @@
 
   \begin{enumerate}
   \item Assume that $H_0$ is true.
-  \item Ask, ``Are the data an unlikely result?''
+  \item Ask, ``Are the data an {\color{red}unlikely} result?''
   \end{enumerate}
 
   \only<2->
@@ -404,7 +404,8 @@
   {
 
     Suppose that I take a random sample of ten homes and get a sample
-    mean of \$198,000. Is the mean house price smaller than \$215,000?
+    mean of \$198,000. Assume that the mean house price really is
+    \$215,000? Is this an unlikely result?
 
   }
 
