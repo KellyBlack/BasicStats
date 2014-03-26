@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{29 March 2013}
+\date{28 March 2014}
 
 \begin{frame}
   \titlepage
@@ -69,19 +69,25 @@
   \item Assume that $H_0$ is correct.
   \item Gather the evidence (for us: data)
   \item Decide if your result is \textit{\color{red}unlikely \underline{given}
-      your assumptions}.
+      your assumption that $H_0$ is true}.
   \end{itemize}
 
-  \only<2->%
-  {
 
-    There are two ways to do this. The first is the \textit{Classical
-      Approach}, and the second is the the $p$-value approach. You
-    need to know how both approaches work because different people
+\end{frame}
+
+\begin{frame}{Two Ways to Do This}
+
+    There are two ways to do this. 
+
+    \begin{itemize}
+    \item \textit{Classical Approach} - Does the sample mean fall in a
+      ``bad range?''
+    \item The $p$-value approach. Is the result ``unlikely?''
+    \end{itemize}
+
+    You need to know how both approaches work because different people
     have different preferences, and you have to know how to react.
-
-  }
-
+  
 \end{frame}
 
 \begin{frame}
@@ -317,8 +323,9 @@
     \frametitle{Clicker Quiz}
 
     You are told that the mean number of units shipped per day at a
-    particular factory is 135,000 units per day. You think that number
-    is not correct.
+    particular factory is 135,000 units per day with a standard
+    deviation of 14,000 units per day. You think that number is not
+    correct.
 
     What hypothesis test would you form to test this? \\
     ~ \\
@@ -344,9 +351,10 @@
 \begin{frame}{Units Shipped}
 
 
-  You are told that the mean number of units shipped per day at a
-  particular factory is 135,000 units per day. You think that number
-  is not correct.
+    You are told that the mean number of units shipped per day at a
+    particular factory is 135,000 units per day with a standard
+    deviation of 14,000 units per day. You think that number is not
+    correct.
 
   \vfill
 
@@ -366,8 +374,7 @@
 
     Sample the daily output for twenty-five days chosen at random, and
     ask if there is sufficient evidence to reject $H_0$. Suppose we
-    find a sample mean of 140,266 units per day and a standard
-    deviation of 14,000 units per day.
+    find a sample mean of 140,266 units per day.
 
   }
 
