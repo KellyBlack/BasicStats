@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{3 April 2013}
+\date{7 April 2014}
 
 \begin{frame}
   \titlepage
@@ -105,14 +105,18 @@
   \end{columns}
 
   \begin{description}
-  \item[$p$-value Approach] The probability that you do worse than
-    $\bar{p}$ is the area to the left under the curve. If the area is
-    smaller than the significance level ($\alpha$) then it is an
-    \textit{unlikely result}.
-  \item[Classical Approach] The area to the left of $p_{cr}$ is
-    equal to the significance level ($\alpha$). If your $\bar{p}$ is
-    less than this critical value then it is an \textit{unlikely
-      result}.
+    \only<1>{
+    \item[$p$-value Approach] The probability that you do worse than
+      $\hat{p}^*$ is the area to the left under the curve. If the area is
+      smaller than the significance level ($\alpha$) then it is an
+      \textit{unlikely result}.
+    }
+    \only<2>{
+    \item[Classical Approach] The area to the left of $p_{cr}$ is
+      equal to the significance level ($\alpha$). If your $\hat{p}^*$ is
+      less than this critical value then it is an \textit{unlikely
+        result}.
+    }
   \end{description}
 
 
@@ -139,14 +143,18 @@
   \end{columns}
 
   \begin{description}
-  \item[$p$-value Approach] The probability that you do worse than
-    $\bar{p}$ is the area to the right under the curve. If the area is
-    smaller than the significance level ($\alpha$) then it is an
-    \textit{unlikely result}.
-  \item[Classical Approach] The area to the right of $p_{cr}$ is
-    equal to the significance level ($\alpha$). If your $\bar{p}$ is
-    more than this critical value then it is an \textit{unlikely
-      result}.
+    \only<1>{
+    \item[$p$-value Approach] The probability that you do worse than
+      $\hat{p}^*$ is the area to the right under the curve. If the area is
+      smaller than the significance level ($\alpha$) then it is an
+      \textit{unlikely result}.
+    }
+    \only<2>{
+    \item[Classical Approach] The area to the right of $p_{cr}$ is
+      equal to the significance level ($\alpha$). If your $\hat{p}^*$ is
+      more than this critical value then it is an \textit{unlikely
+        result}.
+    }
   \end{description}
 
 
@@ -176,15 +184,20 @@
   \end{columns}
 
   \begin{description}
-  \item[$p$-value Approach] The probability that you do worse than
-    $\bar{p}$ is the area to the left \textit{and} right under the
-    curve. If the area is smaller than the significance level
-    ($\alpha$) then it is an \textit{unlikely result}.
-  \item[Classical Approach] The area to the left of
-    $p-\mathrm{error}$ and to the right of $p+\mathrm{error}$ is
-    equal to the significance level ($\alpha$). If your $\bar{p}$ is
-    less than $p-\mathrm{error}$ or more than $p+\mathrm{error}$
-    this critical value then it is an \textit{unlikely result}.
+    \only<1>{
+    \item[$p$-value Approach] The probability that you do worse than
+      $\hat{p}^*$ is the area to the left \textit{plus} the area to the
+      right under the curve. If the area is smaller than the
+      significance level ($\alpha$) then it is an \textit{unlikely
+        result}.  
+    } 
+    \only<2>{
+    \item[Classical Approach] The area to the left of
+      $p-\mathrm{error}$ plus the area to the right of
+      $p+\mathrm{error}$ is equal to the significance level
+      ($\alpha$). If your $\hat{p}^*$ is less than $p-\mathrm{error}$ or
+      more than $p+\mathrm{error}$ then it is an \textit{unlikely
+        result}.  }
   \end{description}
 
 
@@ -210,6 +223,8 @@
   their highest grade level is high-school or better. Are your
   suspicions correct? (Use a 95\% confidence level.)
 
+  \vfill
+
   \only<2>%
   {
     \begin{eqnarray*}
@@ -223,12 +238,12 @@
   \only<3>%
   {
     \begin{eqnarray*}
-      40*.8 & = & 32, \\
-      40*.2 & = & 8, \\
-      N & = & 40, \\
-      \hat{p} & = & \frac{28}{40}, \\
-      z & = & \frac{\frac{28}{40}-.8}{.8(.2)/\sqrt{40}}, \\
-      & \approx & -1.58
+      & & 
+      \begin{array}{rcl@{\hspace{3em}}rcl}
+          40*.8 & = & 32, & 40*.2 & = & 8, \\
+          N & = & 40, & \hat{p}^* & = & \frac{28}{40},
+        \end{array} \\
+      z & = & \frac{\frac{28}{40}-.8}{.8(.2)/\sqrt{40}}, ~~ \approx ~~ -1.58
     \end{eqnarray*}
   }
   
@@ -249,7 +264,7 @@
 
   }
 
-
+  \vfill
   
 \end{frame}
 
@@ -267,6 +282,8 @@
   eighty-one say that they will have to continue to work. Are your
   suspicions correct?  (Use a 95\% confidence level.)
 
+  \vfill
+
   \only<2>%
   {
     \begin{eqnarray*}
@@ -283,7 +300,7 @@
       500*.52     & = & 260, \\
       500*(1-.52) & = & 240, \\
       N & = & 500, \\
-      \hat{p} & = & \frac{281}{500}, \\
+      \hat{p}^* & = & \frac{281}{500}, \\
       z & = & \frac{\frac{281}{500}-.52}{.52(.48)/\sqrt{500}}, \\
       & \approx & 1.88
     \end{eqnarray*}
@@ -306,7 +323,7 @@
 
   }
 
-
+  \vfill
   
 \end{frame}
 
@@ -322,6 +339,8 @@
   of the job that the congress is doing. Fifty people say that they
   approve of the work that the congress is doing. Are your suspicions
   correct?  (Use a 95\% confidence level.)
+
+  \vfill
 
   \only<2>%
   {
@@ -339,7 +358,7 @@
       400*.15     & = & 60, \\
       400*(1-.15) & = & 340, \\
       N & = & 400, \\
-      \hat{p} & = & \frac{50}{400}, \\
+      \hat{p}^* & = & \frac{50}{400}, \\
       z & = & \frac{\frac{50}{400}-.15}{.15(.85)/\sqrt{400}}, \\
       & \approx & -1.400
     \end{eqnarray*}
@@ -364,7 +383,7 @@
 
   }
 
-
+  \vfill
   
 \end{frame}
 
