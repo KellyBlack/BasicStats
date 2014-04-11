@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{12 April 2013}
+\date{13 April 2014}
 
 \begin{frame}
   \titlepage
@@ -32,11 +32,11 @@
 
       \begin{tabular}{l|l}
         $X$ & $Y$ \\ \hline
-        1 & 2 \\
-        2 & 3  \\
-        3 & 3 \\
-        4 & 5  \\
-        5 & 4
+        {\color{red}1} & {\color{blue}2} \\
+        {\color{red}2} & {\color{blue}3}  \\
+        {\color{red}3} & {\color{blue}3} \\
+        {\color{red}4} & {\color{blue}5}  \\
+        {\color{red}5} & {\color{blue}4}
       \end{tabular}
 
       \column{.75\textwidth}
@@ -50,18 +50,22 @@
 
 
       \begin{eqnarray*}
-        \bar{x} & = & 3 \\
-        \bar{y} & = & 3.4
+        {\color{red}\bar{x}} & = & {\color{red}3} \\
+        {\color{blue}\bar{y}} & = & {\color{blue}3.4}
       \end{eqnarray*}
 
     \end{columns}
 
       \begin{eqnarray*}
-        s_{xx} & = & \lp 1-3\rp^2 + \lp 2 - 3 \rp^2 + \lp 3 - 3 \rp^2 + \lp 4 - 3 \rp^2 + \lp 5 - 3 \rp^2 \\
+        s_{xx} & = & \lp {\color{red}1-3}\rp^2 + \lp {\color{red}2 - 3} \rp^2 + \lp {\color{red}3 - 3} \rp^2 + 
+                    \lp {\color{red}4 - 3} \rp^2 + \lp {\color{red}5 - 3} \rp^2 \\
         & = & 10, \\
-        s_{yy} & = & \lp 2-3.4\rp^2 + \lp 3 - 3.4 \rp^2 + \lp 3 - 3.4 \rp^2 + \lp 5 - 3.4 \rp^2 + \lp 4 - 3.4 \rp^2 \\
+        s_{yy} & = & \lp {\color{blue}2-3.4}\rp^2 + \lp {\color{blue}3 - 3.4} \rp^2 + \lp {\color{blue}3 - 3.4} \rp^2 + 
+                    \lp {\color{blue}5 - 3.4} \rp^2 + \lp {\color{blue}4 - 3.4 }\rp^2 \\
         & = & 5.2, \\
-        s_{xy} & = & \lp 1-3\rp\lp 2-3.4\rp + \lp 2 - 3 \rp\lp 3 - 3.4 \rp + \lp 3 - 3 \rp\lp 3 - 3.4 \rp + \lp 4 - 3 \rp\lp 5 - 3.4 \rp + \lp 5-4 \rp \lp 4-3.4 \rp \\
+        s_{xy} & = & \lp {\color{red}1-3}\rp\lp {\color{blue}2-3.4}\rp + \lp {\color{red}2 - 3} \rp\lp {\color{blue}3 - 3.4 }\rp + 
+                    \lp {\color{red}3 - 3} \rp\lp {\color{blue}3 - 3.4 }\rp + \\
+              &   & \lp {\color{red}4 - 3} \rp\lp {\color{blue}5 - 3.4} \rp + \lp {\color{red}5-4} \rp \lp {\color{blue}4-3.4} \rp \\
         & = & 6
       \end{eqnarray*}
 
@@ -116,9 +120,9 @@
 
       \column{.35\textwidth}
       
-      Our \textit{approximation} for the best linear fit is
+      Our \textit{\color{red}approximation} for the best linear fit is
       \begin{eqnarray*}
-        y & = & \hat{m} x + \hat{b}.
+        y & = & {\color{red}\hat{m}} x + {\color{red}\hat{b}}.
       \end{eqnarray*}
       where
       \begin{eqnarray*}
@@ -136,13 +140,13 @@
   \begin{definition}
     The \textit{\color{red} predicted value} for $y$ at $x_i$ is
     \begin{eqnarray*}
-      \hat{y}_i & = & \hat{m} x_i + \hat{b}.
+      {\color{red}\hat{y}_i} & = & \hat{m} x_i + \hat{b}.
     \end{eqnarray*}
 
     The \textit{\color{red} residual} at $x_i$ is 
     \begin{eqnarray*}
-      \mathrm{Residual} & = & y_i - \lp \hat{m} x_i + \hat{b} \rp, \\
-      & = & y_i - \hat{y}_i.
+      \mathrm{Residual} & = & y_i - \lp {\color{blue}\hat{m} x_i + \hat{b}} \rp, \\
+      & = & y_i - {\color{blue}\hat{y}_i}.
     \end{eqnarray*}
 
   \end{definition}
@@ -153,7 +157,7 @@
     \begin{definition}
       The variance of the error is 
       \begin{eqnarray*}
-        s^2_y & = & \frac{\lp y_1 - \hat{y}_1\rp^2 + \lp y_2 - \hat{y}_2\rp^2 + \cdots + \lp y_n - \hat{y}_n\rp^2 }{n-2}.
+        s^2_e & = & \frac{\lp y_1 - \hat{y}_1\rp^2 + \lp y_2 - \hat{y}_2\rp^2 + \cdots + \lp y_n - \hat{y}_n\rp^2 }{n-2}.
       \end{eqnarray*}
     \end{definition}
 
@@ -263,9 +267,9 @@
   \end{tabular}
 
   \begin{eqnarray*}
-    s^2_y & = & \frac{ (-.2)^2 + (.2)^2 + (-.4)^2 + (1.0)^2 + (-.6)^2}{5-2}, \\
+    s^2_e & = & \frac{ (-.2)^2 + (.2)^2 + (-.4)^2 + (1.0)^2 + (-.6)^2}{5-2}, \\
     & = & \frac{1.6}{3}, \\
-    s_y & = & \sqrt{\frac{1.6}{3}}, \\
+    s_e & = & \sqrt{\frac{1.6}{3}}, \\
     & \approx & .730
   \end{eqnarray*}
   
@@ -282,13 +286,13 @@
     y & = & \hat{m} x + \hat{b}.
   \end{eqnarray*}
 
-  \begin{definition}
+  \begin{block}{Theorem}
     The regression estimate for the slope satisfies the $t$ distribution
     \begin{eqnarray*}
-      t & = & \frac{\hat{m}-m}{s_y}
+      t & = & \frac{\hat{m}-m}{\lp s_e/\sqrt{s_{xx}} \rp}
     \end{eqnarray*}
     with $n-2$ degrees of freedom.
-  \end{definition}
+  \end{block}
 
 \end{frame}
 
@@ -300,7 +304,7 @@
     \column{.5\textwidth}
     Confidence Intervals:
     \begin{eqnarray*}
-      t^* & = & \frac{\mathrm{error}}{s_y}
+      t_{cr} & = & \frac{\mathrm{error}}{\lp s_e/\sqrt{s_{xx}} \rp}
     \end{eqnarray*}
     with $n-2$ degrees of freedom.
 
@@ -308,7 +312,7 @@
 
     Hypothesis Testing:
     \begin{eqnarray*}
-      t & = & \frac{\hat{m}-m}{\lp s_y/\sqrt{s_{xx}}\rp}
+      t^* & = & \frac{\hat{m}-m}{\lp s_e/\sqrt{s_{xx}}\rp}
     \end{eqnarray*}
     with $n-2$ degrees of freedom.
 
@@ -339,7 +343,8 @@
       \begin{eqnarray*}
         \hat{m} & = & 0.6, \\
         \hat{b} & = & 1.6, \\
-        s_y & = & .730
+        s_e & = & .730, \\
+        s_{xx} & = & 10.
       \end{eqnarray*}
 
 
