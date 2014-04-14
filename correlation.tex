@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{15 April 2013}
+\date{16 April 2014}
 
 \begin{frame}
   \titlepage
@@ -24,11 +24,12 @@
 \iftoggle{clicker}{%
   \begin{frame}{Clicker Quiz}
 
-    Determine if the following relationship is a ``positive relationship''
-    or a ``negative relationship'' between the two variables.
+    Is the following relationship in the scatter plot below a
+    ``positive relationship'' or a ``negative relationship'' between
+    the two variables.
 
     \begin{center}
-      \includegraphics[width=6cm]{img/week2Day3ClickerQuizNeg}
+      \includegraphics[width=5cm]{img/week2Day3ClickerQuizNeg}
     \end{center}
 
     \begin{tabular}{l@{\hspace{3em}}l}
@@ -72,13 +73,54 @@
 \end{frame}
 
 
+\begin{frame}
+
+    \begin{columns}
+      \column{.25\textwidth}
+
+      \begin{tabular}{l|l}
+        $X$ & $Y$ \\ \hline
+        {\color{red}$x_1$} & {\color{blue}$y_1$} \\
+        {\color{red}$x_2$} & {\color{blue}$y_2$}  \\
+        {\color{red}$x_3$} & {\color{blue}$y_3$} \\
+        {\color{red}\vdots} & {\color{blue}\vdots}  \\
+        {\color{red}$x_n$} & {\color{blue}$y_n$}
+      \end{tabular}
+
+      \column{.75\textwidth}
+
+      Is there a relationship between the two variables?
+
+
+      \begin{eqnarray*}
+        {\color{red}\bar{x}} & = &
+        {\color{red}\frac{x_1+x_2+\cdots+x_n}{n}} \\ [10pt]
+        {\color{blue}\bar{y}} & = & {\color{blue}\frac{y_1+y_2+\cdots+y_n}{n}}
+      \end{eqnarray*}
+
+    \end{columns}
+
+      \begin{eqnarray*}
+        s_{xx} & = & \lp {\color{red}x_1-\bar{x}}\rp^2 + \lp {\color{red}x_2-\bar{x}} \rp^2 + \cdots + \lp {\color{red}x_n-\bar{x}} \rp^2 \\
+        s_{yy} & = & \lp {\color{blue}y_1-\bar{y}}\rp^2 + \lp {\color{blue}y_2 - \bar{y}} \rp^2 + \cdots + \lp {\color{blue}y_n - \bar{y}}\rp^2 \\
+        s_{xy} & = & \lp {\color{red}x_1-\bar{x}}\rp\lp {\color{blue}y_1-\bar{y}}\rp + \lp {\color{red}x_2 - \bar{x}} \rp\lp {\color{blue}y_2 - \bar{y}}\rp + \cdots +
+                    \lp {\color{red}x_n-\bar{x}} \rp\lp {\color{blue}y_n - \bar{y}}\rp \\
+      \end{eqnarray*}
+
+    \vfill 
+
+
+\end{frame}
+
+
+
 \begin{frame}{Calculating the Correlation}
 
   First define the following sums:
   \begin{eqnarray*}
-    S_{xx} & = & (x_1-\bar{x})^2 + (x_2-\bar{x})^2 + \cdot + (x_n-\bar{x})^2, \\
-    S_{yy} & = & (y_1-\bar{y})^2 + (y_2-\bar{y})^2 + \cdot + (y_n-\bar{y})^2, \\
-    S_{xy} & = & (x_1-\bar{x}) + (x_2-\bar{x}) + \cdot + (x_n-\bar{x}), \\
+    S_{xx} & = & (x_1-\bar{x})^2 + (x_2-\bar{x})^2 + \cdots + (x_n-\bar{x})^2, \\
+    S_{yy} & = & (y_1-\bar{y})^2 + (y_2-\bar{y})^2 + \cdots + (y_n-\bar{y})^2, \\
+    S_{xy} & = & (x_1-\bar{x})(y_1-\bar{y}) + (x_2-\bar{x})(y_2-\bar{y}) + \cdots + (x_n-\bar{x})(y_n-\bar{y}). \\
   \end{eqnarray*}
 
   \uncover<2->
