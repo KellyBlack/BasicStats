@@ -8,7 +8,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{17 April 2013}
+\date{18 April 2014}
 
 \begin{frame}
   \titlepage
@@ -27,6 +27,8 @@
   \frametitle{Linear Regression}
 
 
+\begin{columns}
+  \column{.75\textwidth}
   \begin{tabular}{r|r<{\onslide<2->}|r<{\onslide<3->}|r<{\onslide}} % 
     $X$ & $Y$ & $\hat{Y}$ & Residual \\ \hline
     $x_1$ & $y_1$ & $\hat{y}_1=\hat{m}x_1+\hat{b}$ & $\epsilon_1 = y_1-\hat{y}_1$ \\
@@ -35,6 +37,8 @@
     $x_n$ & $y_n$ & $\hat{y}_n=\hat{m}x_n+\hat{b}$ & $\epsilon_n = y_n-\hat{y}_n$
   \end{tabular}
 
+  \column{.25\textwidth}
+
   Calculate the following:
   \begin{eqnarray*}
     S_{xx}, \\
@@ -42,7 +46,13 @@
     S_{xy}, \\
     \hat{m} & = & \frac{S_{xy}}{S_{xx}}, \\
     \hat{b} & = & \bar{y} - \hat{m} \bar{x}, \\
-    \only<4->
+  \end{eqnarray*}
+
+
+\end{columns}
+
+  \begin{eqnarray*}
+    \uncover<4->
     {
       s^2_y & = & \frac{\lp y_1 - \hat{y}_1\rp^2 + \lp y_2 - \hat{y}_2\rp^2 + \cdots + \lp y_n - \hat{y}_n\rp^2 }{n-2}.
     }
@@ -56,31 +66,38 @@
 
 
     \begin{columns}
-      \column{.33\textwidth}
+      \begin{column}{.33\textwidth}
+        \begin{eqnarray*}
+          H_0: & & m=0, \\
+          H_a: & & m<0,
+        \end{eqnarray*}
+        a negative relationship?
 
-      \begin{eqnarray*}
-        H_0: & & m=0, \\
-        H_a: & & m<0,
-      \end{eqnarray*}
-      a negative relationship?
+        \vfill
+      \end{column}
+      \vrule{}
 
-      \column{.33\textwidth}
+      \begin{column}{.33\textwidth}
+        \begin{eqnarray*}
+          H_0: & & m=0, \\
+          H_a: & & m>0,
+        \end{eqnarray*}
+        a positive relationship?
 
-      \begin{eqnarray*}
-        H_0: & & m=0, \\
-        H_a: & & m>0,
-      \end{eqnarray*}
-      a positive relationship?
+        \vfill
+      \end{column}
+      \vrule{}
 
+      \begin{column}{.33\textwidth}
+        \begin{eqnarray*}
+          H_0: & & m=0, \\
+          H_a: & & m\neq 0,
+        \end{eqnarray*}
+        any relationship?
 
-      \column{.33\textwidth}
-
-      \begin{eqnarray*}
-        H_0: & & m=0, \\
-        H_a: & & m\neq 0,
-      \end{eqnarray*}
-      any relationship?
-
+        \vfill
+      \end{column}
+      \vrule{}
       
     \end{columns}
 
@@ -98,17 +115,21 @@
   \begin{definition}
     The regression estimate for the slope satisfies the $t$ distribution
     \begin{eqnarray*}
-      t & = & \frac{\hat{m}-m}{\lp s_y/\sqrt{s_{xx}} \rp}
+      t & = & \frac{\hat{m}-m}{\lp s_e/\sqrt{s_{xx}} \rp}
     \end{eqnarray*}
     with $n-2$ degrees of freedom.
   \end{definition}
 
-  \begin{columns}
+
+\end{frame}
+
+\begin{frame}{Inference for the Slope}
+    \begin{columns}
 
     \column{.5\textwidth}
     Confidence Intervals:
     \begin{eqnarray*}
-      t^* & = & \frac{\mathrm{error}}{\lp s_y/\sqrt{s_{xx}} \rp}
+      t^* & = & \frac{\mathrm{error}}{\lp s_e/\sqrt{s_{xx}} \rp}
     \end{eqnarray*}
     with $n-2$ degrees of freedom.
 
@@ -116,7 +137,7 @@
 
     Hypothesis Testing:
     \begin{eqnarray*}
-      t & = & \frac{\hat{m}-m}{\lp s_y/\sqrt{s_{xx}}\rp}
+      t & = & \frac{\hat{m}-m}{\lp s_e/\sqrt{s_{xx}}\rp}
     \end{eqnarray*}
     with $n-2$ degrees of freedom.
 
@@ -146,7 +167,7 @@
       for the slope.
 
       \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-        A: 2.571  & B: 2.776 & C: 3.182
+        A: $\pm 2.571$  & B: $\pm 2.776$ & C: $\pm 3.182$
       \end{tabular}
 
 
@@ -163,11 +184,11 @@
 
     \begin{tabular}{l|l}
       $X$ & $Y$ \\ \hline
-      1 & 3 \\
-      2 & 5  \\
-      3 & 9 \\
-      4 & 7  \\
-      5 & 10
+      {\color{red}1} & {\color{blue}3} \\
+      {\color{red}2} & {\color{blue}5}  \\
+      {\color{red}3} & {\color{blue}9} \\
+      {\color{red}4} & {\color{blue}7}  \\
+      {\color{red}5} & {\color{blue}10}
     \end{tabular}
 
     \column{.75\textwidth}
@@ -176,7 +197,7 @@
       \begin{eqnarray*}
         \bar{x} & = & 3 \\
         \bar{y} & = & 6.8, \\
-        s_y & = & 1.55
+        s_e & = & 1.55
       \end{eqnarray*}
     }
 
@@ -184,7 +205,7 @@
       \begin{eqnarray*}
         \bar{x} & = & 3 \\
         \bar{y} & = & 6.8, \\
-        s_y & = & 1.55, \\
+        s_e & = & 1.55, \\
         s_{xx} & = & 10, \\
         s_{yy} & = & 32.8, \\
         s_{xy} & = & 16.
@@ -195,7 +216,7 @@
       \begin{eqnarray*}
         \bar{x} & = & 3 \\
         \bar{y} & = & 6.8, \\
-        s_y & = & 1.55, \\
+        s_e & = & 1.55, \\
         \hat{m} & = & \frac{16}{10}, \\
         \hat{b} & = & 2
       \end{eqnarray*}
@@ -206,11 +227,16 @@
 
   \only<1>{%
     \begin{eqnarray*}
-      s_{xx} & = & \lp 1-3\rp^2 + \lp 2 - 3 \rp^2 + \lp 3 - 3 \rp^2 + \lp 4 - 3 \rp^2 + \lp 5 - 3 \rp^2 \\
+      s_{xx} & = & \lp{\color{red}1-3}\rp^2 + \lp{\color{red}2-3}\rp^2 + \lp{\color{red}3-3}\rp^2 + 
+                  \lp{\color{red}4-3}\rp^2 + \lp{\color{red}5-3}\rp^2 \\
       & = & 10, \\
-      s_{yy} & = & \lp 3-6.8\rp^2 + \lp 5 - 6.8 \rp^2 + \lp 9 - 6.8 \rp^2 + \lp 7 - 6.8 \rp^2 + \lp 10 - 6.8 \rp^2 \\
+      s_{yy} & = & \lp{\color{blue}3-6.8}\rp^2 + \lp{\color{blue}5-6.8}\rp^2 + 
+                  \lp{\color{blue}9-6.8}\rp^2 + \lp{\color{blue}7-6.8}\rp^2 + 
+                  \lp{\color{blue}10-6.8}\rp^2 \\
       & = & 32.8, \\
-      s_{xy} & = & \lp 1-3\rp\lp 3-6.8\rp + \lp 2 - 3 \rp\lp 5 - 6.8 \rp + \lp 3 - 3 \rp\lp 9 - 6.8 \rp + \lp 4 - 3 \rp\lp 7 - 6.8 \rp + \lp 5-4 \rp \lp 10-6.8 \rp \\
+      s_{xy} & = & \lp{\color{red}1-3}\rp\lp{\color{blue}3-6.8}\rp + \lp{\color{red}2-3}\rp\lp{\color{blue}5-6.8}\rp + 
+                  \lp{\color{red}3-3}\rp\lp{\color{blue}9-6.8}\rp \\
+            &  &+ \lp{\color{red}4-3}\rp\lp{\color{blue}7-6.8}\rp + \lp{\color{red}5-4}\rp \lp{\color{blue}10-6.8}\rp \\
       & = & 16
     \end{eqnarray*}
   }
@@ -227,8 +253,8 @@
   \only<4->{%
     Using a significance level of 5\%:
     \begin{eqnarray*}
-      t^* & \approx & 3.182, \\
-      t^* & = & \frac{\mathrm{error}}{\lp s_y / \sqrt{s_{xx}} \rp}.
+      t_{cr} & \approx & 3.182, \\
+      t_{cr} & = & \frac{\mathrm{error}}{\lp s_e / \sqrt{s_{xx}} \rp}.
     \end{eqnarray*}
 
     The 95\% confidence interval for the slope is from 0.04 to 3.16
@@ -253,48 +279,40 @@
       5 & 10
     \end{tabular}
 
+    \column{.25\textwidth}
+
+    {\color{red}
       \begin{eqnarray*}
         H_0: & & m=0, \\
         H_a: & & m\neq 0, \\
         \alpha & = & 5\%.
       \end{eqnarray*}
+      }
 
-    \column{.75\textwidth}
+    \column{.5\textwidth}
     
-    \only<1>{%
       \begin{eqnarray*}
         \bar{x} & = & 3 \\
         \bar{y} & = & 6.8, \\
-        s_y & = & 1.55, \\
+        s_e & = & 1.55, \\
         \hat{m} & = & \frac{16}{10}, \\
         \hat{b} & = & 2
       \end{eqnarray*}
-    }
-
-
-    \only<2->{%
-      \begin{eqnarray*}
-        s_y & = & 1.55, \\
-        \hat{m} & = & \frac{16}{10}, \\
-        \hat{b} & = & 2, \\
-      \end{eqnarray*}
-    }
 
 
   \end{columns}
 
-  \only<2->{%
+  \uncover<2->{%
     \begin{eqnarray*}
-      t^* & \approx & 3.182, \\
-      t & = & \frac{\frac{16}{10}-0}{\lp s_y/\sqrt{s_{xx}}\rp}.
+      t_{cr} & \approx & 3.182, \\
+      t^* & = & \frac{\frac{16}{10}-0}{\lp s_e/\sqrt{s_{xx}}\rp}.
     \end{eqnarray*}
   }
 
-  \only<3>{%
+  \uncover<3>{%
     There is sufficient evidence to reject $H_0$ at the 95\%
     confidence level assuming a $t$-distribution with three degrees of
-    freedom.  
-  y = c(-2.7,-4.5,-6.0,-9.7,-13.7)}
+    freedom.}
 
     
 \end{frame}
@@ -321,7 +339,7 @@
       \begin{eqnarray*}
         \bar{x} & = & 3 \\
         \bar{y} & = & -7.32, \\
-        s_y & = & 1.068 \\
+        s_e & = & 1.068 \\
       \end{eqnarray*}
 
       \column{.44\textwidth}
@@ -372,7 +390,7 @@
       \begin{eqnarray*}
         \bar{x} & = & 3 \\
         \bar{y} & = & -7.32, \\
-        s_y & = & 1.068 \\
+        s_e & = & 1.068 \\
       \end{eqnarray*}
 
       \column{.44\textwidth}

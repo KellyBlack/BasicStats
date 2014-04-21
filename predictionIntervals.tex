@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{19 April 2013}
+\date{21 April 2014}
 
 \begin{frame}
   \titlepage
@@ -171,15 +171,25 @@
   \end{eqnarray*}
   with $n-2$ degrees of freedom.
 
-  \only<2->
-  {
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{The Predicted Value}
+
+  The predicted value is 
+  \begin{eqnarray*}
+    \hat{y} & = & \hat{m} x + \hat{b}.
+  \end{eqnarray*}
+
+
 
     \begin{columns}
 
       \column{.5\textwidth}
       Confidence Intervals:
       \begin{eqnarray*}
-        t^* & = & \frac{\mathrm{error}}{s_y \sqrt{\frac{1}{n}+\frac{(x-\bar{x})^2}{S_{xx}}}},
+        t_{cr} & = & \frac{\mathrm{error}}{s_y \sqrt{\frac{1}{n}+\frac{(x-\bar{x})^2}{S_{xx}}}},
       \end{eqnarray*}
       with $n-2$ degrees of freedom.
 
@@ -193,10 +203,10 @@
 
     
     \end{columns}
-  }
 
 
 \end{frame}
+
 
 \section{Examples}
 
@@ -257,9 +267,9 @@
       \only<3>
       {
         \begin{eqnarray*}
-          t^* & \approx & \pm 4.30 \\
-          y & = & \frac{-22.3}{5} \cdot 3.5 - 1.65, \\
-          t & = & \frac{-17.26-(-19.2)}{5.42\sqrt{\frac{1}{4} + \frac{(3.5-2.5)^2}{5}}}, \\
+          t_{cr} & \approx & \pm 4.30 \\
+          \hat{y} & = & \frac{-22.3}{5} \cdot 3.5 - 1.65, \\
+          t^* & = & \frac{-17.26-(-19.2)}{5.42\sqrt{\frac{1}{4} + \frac{(3.5-2.5)^2}{5}}}, \\
           & \approx &  0.533
         \end{eqnarray*}
       }
@@ -296,7 +306,7 @@
       \begin{eqnarray*}
         \bar{x} & = & 3 \\
         \bar{y} & = & 6.8, \\
-        s_y & \approx & 1.90 \\
+        s_y & \approx & 1.55 \\
         \hat{m} & = & 1.6, \\
         \hat{b} & = & 2.0.
       \end{eqnarray*}
@@ -349,7 +359,7 @@
       \begin{eqnarray*}
         \bar{x} & = & 3 \\
         \bar{y} & = & 6.8, \\
-        s_y & \approx & 1.90 \\
+        s_y & \approx & 1.55 \\
         \hat{m} & = & 1.6, \\
         \hat{b} & = & 2.0.
       \end{eqnarray*}
@@ -374,7 +384,7 @@
       \vfill
 
       \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-        A: .58 to 17.8  & B: 5.26 to 13.14 & C: 1.7 to 16.7
+        A: .58 to 17.8  & B: 7.39 to 13.81 & C: 8.26 to 12.94
       \end{tabular}
 
 
