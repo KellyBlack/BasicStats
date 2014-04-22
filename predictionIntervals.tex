@@ -167,7 +167,7 @@
 
   The predicted value  satisfies a $t$-distribution by
   \begin{eqnarray*}
-    t & = & \frac{\hat{y}-y_{\mathrm{true}}}{s_y \sqrt{\frac{1}{n}+\frac{(x-\bar{x})^2}{S_{xx}}}},
+    t & = & \frac{\hat{y}-y_{\mathrm{true}}}{s_e \sqrt{\frac{1}{n}+\frac{(x-\bar{x})^2}{S_{xx}}}},
   \end{eqnarray*}
   with $n-2$ degrees of freedom.
 
@@ -189,7 +189,7 @@
       \column{.5\textwidth}
       Confidence Intervals:
       \begin{eqnarray*}
-        t_{cr} & = & \frac{\mathrm{error}}{s_y \sqrt{\frac{1}{n}+\frac{(x-\bar{x})^2}{S_{xx}}}},
+        t_{cr} & = & \frac{\mathrm{error}}{s_e \sqrt{\frac{1}{n}+\frac{(x-\bar{x})^2}{S_{xx}}}},
       \end{eqnarray*}
       with $n-2$ degrees of freedom.
 
@@ -197,7 +197,7 @@
 
       Hypothesis Testing:
       \begin{eqnarray*}
-        t & = & \frac{\hat{y}-y_{\mathrm{true}}}{s_y \sqrt{\frac{1}{n}+\frac{(x-\bar{x})^2}{S_{xx}}}},
+        t & = & \frac{\hat{y}-y_{\mathrm{true}}}{s_e \sqrt{\frac{1}{n}+\frac{(x-\bar{x})^2}{S_{xx}}}},
       \end{eqnarray*}
       with $n-2$ degrees of freedom.
 
@@ -240,7 +240,7 @@
       \begin{eqnarray*}
         \hat{m} & = & \frac{-22.3}{5}, \\
         \hat{b} & = & -12.8 - \frac{-22.3}{5} \cdot 2.5, \\
-        s_y & \approx & 5.42
+        s_e & \approx & 5.42
       \end{eqnarray*}
 
       \begin{eqnarray*}
@@ -306,7 +306,7 @@
       \begin{eqnarray*}
         \bar{x} & = & 3 \\
         \bar{y} & = & 6.8, \\
-        s_y & \approx & 1.55 \\
+        s_e & \approx & 1.55 \\
         \hat{m} & = & 1.6, \\
         \hat{b} & = & 2.0.
       \end{eqnarray*}
@@ -331,7 +331,7 @@
       {
 
         The 95\% confidence interval for the value of $y$ at $x=3.5$
-        is between 4.73 and 10.47 assuming a $t$-distribution with 3 d.f..
+        is between 5.26 and 9.94 assuming a $t$-distribution with 3 d.f..
       }
 
 
@@ -359,7 +359,7 @@
       \begin{eqnarray*}
         \bar{x} & = & 3 \\
         \bar{y} & = & 6.8, \\
-        s_y & \approx & 1.55 \\
+        s_e & \approx & 1.55 \\
         \hat{m} & = & 1.6, \\
         \hat{b} & = & 2.0.
       \end{eqnarray*}
@@ -384,7 +384,7 @@
       \vfill
 
       \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-        A: .58 to 17.8  & B: 7.39 to 13.81 & C: 8.26 to 12.94
+        A: .58 to 17.8  & B: 5.99 to 12.41 & C: 8.26 to 12.94
       \end{tabular}
 
 
