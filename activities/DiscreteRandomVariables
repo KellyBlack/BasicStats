@@ -1,0 +1,54 @@
+\documentclass[12pt]{article}
+
+\oddsidemargin=0.0in
+\evensidemargin=0.0in
+\textwidth=6in
+\topmargin=-1in
+\textheight=9.5in
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+ \textbf{Probability: Discrete Random Variables} \\
+\\
+\textit{You are not expected to finish this during the class period. Anything you don't finish is good to practice at home.}  \\ [5pt]
+
+\textbf{Please define the following terms in your own words:} (1 or 2 sentences) \\ [5pt]
+
+ \textit{Random Variable:} \\
+\\
+\textit{Discrete Random Variable:}\\
+
+
+\textbf{Definittions:}  \\ [5pt]
+
+\textit{Probability Mass Function: } (PMF) The probability that a discrete random variable is exactly equal to some value.  A PMF is equal to values between 0 and 1 with the sum of those values adding up to 1. \\  [12pt]
+
+How would you graph a probability mass function? \\ [12pt]
+
+
+ \textbf{Examples: } \\
+
+\begin{enumerate}
+
+\item List three examples of discrete random variables.\\[12pt]
+
+
+\item Toss a coin and let Y equal the number of tails. Find the PMF of Y. \\[12pt]
+
+
+\item Toss a coin twice and let Y equal the number of tails. Find the PMF of Y.\\[12pt]
+
+
+\item You toss two six sided fair dice. The number of miles you have to run is equal to the sun on the dice and Y is equal to the number of miles you have to run after tossing the dice once. Find and graph the PMF of Y. \\[12pt]
+
+
+
+\end{enumerate}
+
+\end{document}
+
+
+
+
