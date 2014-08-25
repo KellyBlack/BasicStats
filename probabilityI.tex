@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{14 January 2013}
+\date{27 August 2014}
 
 \begin{frame}
   \titlepage
@@ -41,7 +41,7 @@
 
 
 
-\subsection{Example}
+\subsection{Recap From Previous Meeting}
 
 %\begin{frame}
 %  \frametitle{Clicker Exercise}
@@ -68,7 +68,7 @@
     ``\textbf{Probability} is the measure of the likelihood of a random
     phenomena or chance behavior. Probability describes the long-term
     proportion with which a certain \textbf{outcome} will occur in
-    situations with short-term uncertainty.'' (Page 223)
+    situations with short-term uncertainty.'' % (Page 223)
   \end{definition}
 
   
@@ -141,7 +141,7 @@
 
 \end{frame}
 
-\subsection{Examples}
+\subsection{Sample Space Examples}
 
 \begin{frame}{Example}
 
@@ -163,6 +163,60 @@
   
 \end{frame}
 
+\begin{frame}{Example}
+
+  We flip a coin two times. What are the events?
+
+  \begin{columns}
+    \column{.5\textwidth}
+
+    \begin{picture}(100,100)
+      \put(0,0){\line(1,0){100}}
+      \put(100,0){\line(0,1){100}}
+      \put(0,0){\line(0,1){100}}
+      \put(0,100){\line(1,0){100}}
+      \put(50,0){\line(0,1){100}}
+      \put(0,50){\line(1,0){100}}
+
+      \put(20,20){TT}
+      \put(20,70){HT}
+      \put(70,70){HH}
+      \put(70,20){TH}
+
+    \end{picture}
+
+
+    \column{.5\textwidth}
+
+    \begin{picture}(100,100)
+      \put(0,50){\circle*{2}}
+
+      \put(0,50){\line(1,1){20}}
+      \put(22,68){T}
+      \put(0,50){\line(1,-1){20}}
+      \put(22,25){H}
+
+      \put(35,75){\circle*{2}}
+      \put(35,75){\line(2,1){20}}
+      \put(59,85){T}
+      \put(35,75){\line(2,-1){20}}
+      \put(59,60){H}
+
+      \put(35,30){\circle*{2}}
+      \put(35,30){\line(2,1){20}}
+      \put(59,40){T}
+      \put(35,30){\line(2,-1){20}}
+      \put(59,15){H}
+
+    \end{picture}
+
+
+
+  \end{columns}
+  
+\end{frame}
+
+
 \begin{frame}{Clicker Quiz}
   A couple has a child. Two years later they have another child. What
   is the probability that they have one girl and one boy?
@@ -171,25 +225,91 @@
     A: 0 & B: 1/4 & C: 1/2 & D: 1
   \end{tabular}
 
-
 \end{frame}
 
 \begin{frame}{Example}
 
-  I roll a die twice. What is $p(\mathrm{sum}=5)$?
+  I roll a fair three sided die twice. What is $p(\mathrm{sum}=2)$?
   
 \end{frame}
 
+\subsection{The Compliment}
 
-\subsection{Properties of Probabilities}
+\begin{frame}{The Compliment}
 
-\begin{frame}{Properties of Probabilities}
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{definition}[The Compliment]
+      The compliment of an event, $A$, is the set of all events not in
+      $A$.  The compliment of a set, $A$, is denoted $A'$. (Other
+      notations: $\bar{A}$ or $A^c$ or others.)
+    \end{definition}
 
-  Suppose that A is an event in the sample space, then
+    \column{.5\textwidth}
+    \centerline{\includegraphics[width=4cm]{img/compliment}}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Example}
+  You meet two unrelated people. What is the probability that their
+  birthdays are not on the same day?
+\end{frame}
+
+
+\subsection{Combining Events}
+
+\begin{frame}{The Intersection}
+
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{definition}[Intersection]
+      The intersection of two events, $A$ and $B$, is the set of all
+      events that are in both $A$ \textbf{and} $B$.
+    \end{definition}
+    \column{.5\textwidth}
+    Notation:
+    \begin{eqnarray*}
+      p(A\cap B) & = & \mathrm{Probability~that~an} \\
+                 &   & \mathrm{~event~in~both} \\
+                 &   & \mathrm{~A~and~B~occurs.}
+    \end{eqnarray*}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{The Union}
+
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{definition}[Union]
+      The union of two events, $A$ and $B$, is the set of all
+      events that are in either $A$ \textbf{or} $B$.
+    \end{definition}
+    \column{.5\textwidth}
+    Notation:
+    \begin{eqnarray*}
+      p(A\cup B) & = & \mathrm{Probability~that~an} \\
+                 &   & \mathrm{~event~in~either} \\
+                 &   & \mathrm{~A~or~B~occurs.}
+    \end{eqnarray*}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Example}
+
+  \centerline{\includegraphics[width=6cm]{img/vennProbability}}
+  
+\end{frame}
+
+\begin{frame}{Identities}
+
   \begin{eqnarray*}
-    \begin{array}{rcccl}
-      0 & \leq & P(A) & \leq & 1
-    \end{array}
+    p(A \cup B) & = & p(A) + p(B) - p(A \cap B), \\
+    \uncover<2>{
+      p(A \cup B \cup C) & = & p(A) + p(B) + p(C) \\
+      & & - p(A \cap B) - p(B \cap C) - p(C \cap A) \\
+      & & + p(A \cap B \cap C).
+    }
   \end{eqnarray*}
   
 \end{frame}
