@@ -2,12 +2,12 @@
 \lecture{Probability Rules}{probability-rules}
 \section{Probability Rules}
 
-\title{Probability Rules}
-\subtitle{Putting it All Together}
+\title{Conditional Probability}
+\subtitle{We Know Things}
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{18 January 2013}
+\date{29 August 2014}
 
 \begin{frame}
   \titlepage
@@ -28,7 +28,7 @@
 
     I have a bag with ten blue marbles and four red marbles. I remove
     one marble and put it to the side. The marble was a blue
-    marble. What is the probability that I pull out a blue marble the
+    marble. What is the probability that I pull out a red marble the
     next time I draw a marble?
 
     \vspace{2em}
@@ -47,50 +47,23 @@
 
   I have a bag with ten blue marbles and four red marbles. I remove
   one marble \textbf{without replacement}. The marble was a blue
-  marble. What is the probability that I pull out a blue marble the
+  marble. What is the probability that I pull out a red marble the
   next time I draw a marble?
 
     \vfill
 
 \end{frame}
 
-\begin{frame}{I Know Things}
+\begin{frame}{We Know Things}
 
   Problem: Sometimes I know something about what
-  occured. \textit{\textbf{Given}} that information how do I incorporate it
-  into the probability that some event occured?
+  occured. \textit{\textbf{Given}} that information how do I
+  incorporate it into the probability that some event occured?
 
   \vfill
-  \includegraphics[width=5cm]{img/vennDiagram}
+  \centerline{\includegraphics[width=5cm]{img/vennDiagram}}
   \vfill
   
-\end{frame}
-
-\begin{frame}
-  \frametitle{Example From Last Time}
-
-  1000 voters are polled in the 2008 election. We get the following
-  information: \\
-  \only<1>
-  {
-    \begin{tabular}{l|l|l|l}
-      Education & Obama & McCain & Others  \\ \hline
-      No H.S. Diploma & 19 & 20 & 1   \\
-      H.S. Diploma only & 114 & 103 & 3 
-    \end{tabular}
-  }
-  \only<2->
-  {
-    \begin{tabular}{l|l|l|l|l}
-      Education & Obama & McCain & Others & Total \\ \hline
-      No H.S. Diploma & 19 & 20 & 1 & 40 \\
-      H.S. Diploma only & 114 & 103 & 3 & 220 \\ \hline
-      Total & 133 & 123 & 4 & 260
-    \end{tabular}
-  }
-
-
-
 \end{frame}
 
 
@@ -113,17 +86,30 @@
 \end{frame}
 
 
+\begin{frame}
+  \frametitle{Notation}
 
+  I have a bag with ten blue marbles and four red marbles. I remove
+  one marble \textbf{without replacement}. The marble was a blue
+  marble. What is the probability that I pull out a blue marble the
+  next time I draw a marble?
 
-\begin{frame}{Conditional Probability}
+  \vfill
 
-  \includegraphics[width=5cm]{img/vennDiagram}
+  \begin{eqnarray*}
+    A & = & \left\{ \mathrm{A~red~marble~is~chosen~second} \right\}, \\
+    B & = & \left\{ \mathrm{A~blue~marble~is~chosen~first} \right\}, \\
+    p(A|B) & = & ? \\
+    p(B|A) & = & ?
+  \end{eqnarray*}
 
-  I know that B occured. Given that information, what is the
-  probability that A occured?
+  \vfill
 
-  
 \end{frame}
+
+
+
+
 
 \begin{frame}
   \frametitle{Conditional Probability}
@@ -140,8 +126,36 @@
 
 \end{frame}
 
+\begin{frame}
+  \frametitle{Notation}
 
-\begin{frame}{Example 2}
+  I have a bag with ten blue marbles and four red marbles. I remove
+  one marble \textbf{without replacement}. The marble was a blue
+  marble. What is the probability that I pull out a blue marble the
+  next time I draw a marble?
+
+  \vfill
+
+  \begin{eqnarray*}
+    A & = & \left\{ \mathrm{A~red~marble~is~chosen~second} \right\}, \\
+    B & = & \left\{ \mathrm{A~blue~marble~is~chosen~first} \right\}, \\
+    p(A|B) & = & ? \\
+    p(B|A) & = & ?
+  \end{eqnarray*}
+
+  \vfill
+
+\end{frame}
+
+
+\begin{frame}{Example}
+
+  \centerline{\includegraphics[width=6cm]{img/vennProbability}}
+  
+\end{frame}
+
+
+\begin{frame}{Example}
 
   I have a bag with eight marbles. Five marbles are red and three are
   blue. I pick two, one after the other without replacing them. What
@@ -191,7 +205,7 @@
 \subsection{Examples}
 
 \begin{frame}
-  \frametitle{Example 1}
+  \frametitle{Example}
 
   \vfill
 
@@ -253,8 +267,8 @@
   \frametitle{Example}
 
   I have a bag with ten blue marbles and four red marbles. I remove
-  two marbles without replacement. What is the probability that I pull
-  out at least one blue marble?
+  three marbles without replacement. What is the probability that I
+  pull out at least one blue marble?
 
 
   \vfill
