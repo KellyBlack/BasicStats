@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{2 September 2013}
+\date{1 September 2014}
 
 \begin{frame}
   \titlepage
@@ -41,7 +41,7 @@
   \end{frame}
 }
 
-\subsection{Examples}
+\subsection{Conditional Probability Examples}
 
 \begin{frame}
   \frametitle{Example}
@@ -54,13 +54,6 @@
 
 \end{frame}
 
-\begin{frame}{Example}
-
-  Flip a coin three times. What is the probability of three tails?
-
-  \vfill
-  
-\end{frame}
 
 \begin{frame}
   \frametitle{Example}
@@ -77,20 +70,38 @@
 
 \subsection{Independence}
 
-\subsection{Examples}
-
 \begin{frame}
-  \frametitle{Example}
+  \frametitle{Independence}
 
-  A machine is assembled in three steps. The probability of making an
-  error in each step is given below:\\
-  \begin{tabular}{l@{=}l}
-    Prob. of error in step 1 & .005 \\
-    Prob. of error in step 2 & .01 \\
-    Prob. of error in step 3 & .002 
-  \end{tabular}
+%  \begin{definition}
+%    Two events are independent if 
+%    \begin{eqnarray*}
+%      p(A|B) & = & p(A).
+%    \end{eqnarray*}
+
+%    This is equivalent to requiring that
+%    \begin{eqnarray*}
+%      p(B|A) & = & p(B).
+%    \end{eqnarray*}
+
+%  \end{definition}
 
 \end{frame}
+
+\begin{frame}{Example}
+
+  Suppose that $p(A)=0.6$, $p(B)=0.3$, and $p(A\mathrm{~or~}B)=.8$
+  Are they independent?
+
+  \vfill
+
+  
+\end{frame}
+
+
+
+\subsection{Examples}
+
 
 \iftoggle{clicker}{%
   \begin{frame}
@@ -112,10 +123,17 @@
 }
 
 
-\subsection{Proving Independence}
 
-\begin{frame}
-  \frametitle{}
 
+
+\begin{frame}{Many Events}
+
+  \begin{eqnarray*}
+    p(A_1 \cap A_2 \cap A_3 \cap \cdots \cap A_N) & = & ? \\
+    \uncover<2>{
+      p(A_1 \cup A_2 \cup A_3) & = & ? \\
+    }
+  \end{eqnarray*}
+  
 \end{frame}
 
