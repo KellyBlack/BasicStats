@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{4 September 2013}
+\date{3 September 2014}
 
 \begin{frame}
   \titlepage
@@ -61,7 +61,9 @@
     \end{definition}
   }
 
-  \uncover<3->
+  \only<3>{\redText{There are two kinds of random variables.}}
+
+  \uncover<4->
   {
     \begin{definition}
       A \textbf{continuous random variable} is a random variable whose
@@ -69,7 +71,7 @@
     \end{definition}
   }
 
-  \uncover<4->
+  \uncover<5->
   {
     \begin{definition}
       A \textbf{probability distribution} is a list of probabilities of
@@ -99,7 +101,7 @@
 
 \begin{frame}{Discrete Random Variables}
 
-  Probability Mass Function
+  Probability Mass Function (pmf)
   \begin{columns}
     \column{.40\textwidth}
 
@@ -128,7 +130,6 @@
   
 \end{frame}
 
-
 \begin{frame}{Example}
   Flip a coin three times. Report the number of tails. Determine the
   probability mass function.
@@ -155,6 +156,28 @@
 }
 
 
+\subsection{Cumulative Distribution Function}
+
+
+\begin{frame}{Cumulative Distribution Function}
+
+  \begin{definition}
+    The \redText{cumulative distribution function} of a random
+    variable, $X$, is
+    \begin{eqnarray*}
+      F(a) & = & p(X \leq a).
+    \end{eqnarray*}
+  \end{definition}
+  
+\end{frame}
+
+\begin{frame}{Example}
+  Flip a coin three times. Report the number of tails. Determine the
+  cumulative distribution function.
+\end{frame}
+
+\subsection{Infinite Series}
+
 \begin{frame}{Example}
   Suppose that the probability that $x$ packages are delivered on a
   given day is 
@@ -173,12 +196,6 @@
   
 \end{frame}
 
-\subsection{Cumulative Distribution Function}
-
-\begin{frame}{Example}
-  Flip a coin three times. Report the number of tails. Determine the
-  cumulative distribution function.
-\end{frame}
 
 
 \begin{frame}{Example}
@@ -186,25 +203,44 @@
   Roll a six sided die twice and add the results. Find the cumulative
   distribution function.
 
-  \only<2->{
-    \begin{tabular}{l|l|l|l|l|l|l|}
-      \multicolumn{1}{l}{~} & \multicolumn{1}{l}{\redText{1}} & \multicolumn{1}{l}{\redText{2}} & \multicolumn{1}{l}{\redText{3}} & \multicolumn{1}{l}{\redText{4}} & \multicolumn{1}{l}{\redText{5}} & \multicolumn{1}{l}{\redText{6}}  \\ \hline
-       \redText{1}  & 2 & 3 & 4 & 5 & 6 & 7  \\ \hline 
-       \redText{2}  & 3 & 4 & 5 & 6 & 7 & 8  \\ \hline 
-       \redText{3}  & 4 & 5 & 6 & 7 & 8 & 9  \\ \hline 
-       \redText{4}  & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline 
-       \redText{5}  & 6 & 7 & 8 & 9 & 10& 11 \\ \hline 
-       \redText{6}  & 7 & 8 & 9 & 10& 11& 12\\ \hline 
-    \end{tabular}
+  \vfill
+
+  \uncover<2->{
+    \only<2>{
+      \begin{tabular}{l|l|l|l|l|l|l|}
+        \multicolumn{1}{l}{\blueText{\textbf{S}}} & \multicolumn{1}{l}{\redText{1}} & \multicolumn{1}{l}{\redText{2}} & \multicolumn{1}{l}{\redText{3}} & \multicolumn{1}{l}{\redText{4}} & \multicolumn{1}{l}{\redText{5}} & \multicolumn{1}{l}{\redText{6}}  \\ \cline{2-7}
+        \redText{1}  &  &  &  & & &  \\ \cline{2-7} 
+        \redText{2}  &  &  &  & & &  \\ \cline{2-7} 
+        \redText{3}  &  &  &  & & &  \\ \cline{2-7} 
+        \redText{4}  &  &  &  & & &  \\ \cline{2-7} 
+        \redText{5}  &  &  &  & & &  \\ \cline{2-7} 
+        \redText{6}  &  &  &  & & &  \\ \cline{2-7} 
+      \end{tabular}
+    }
+
+    \only<3->{
+      \begin{tabular}{l|l|l|l|l|l|l|}
+        \multicolumn{1}{l}{\blueText{\textbf{S}}} & \multicolumn{1}{l}{\redText{1}} & \multicolumn{1}{l}{\redText{2}} & \multicolumn{1}{l}{\redText{3}} & \multicolumn{1}{l}{\redText{4}} & \multicolumn{1}{l}{\redText{5}} & \multicolumn{1}{l}{\redText{6}}  \\ \cline{2-7}
+        \redText{1}  & 2 & 3 & 4 & 5 & 6 & 7  \\ \cline{2-7} 
+        \redText{2}  & 3 & 4 & 5 & 6 & 7 & 8  \\ \cline{2-7} 
+        \redText{3}  & 4 & 5 & 6 & 7 & 8 & 9  \\ \cline{2-7} 
+        \redText{4}  & 5 & 6 & 7 & 8 & 9 & 10 \\ \cline{2-7} 
+        \redText{5}  & 6 & 7 & 8 & 9 & 10& 11 \\ \cline{2-7} 
+        \redText{6}  & 7 & 8 & 9 & 10& 11& 12 \\ \cline{2-7} 
+      \end{tabular}
+    }
+
   }
+
+
+
+  \vfill
   
 \end{frame}
 
 
 
-\subsection{Infinite Series}
-
-~
+%\subsection{Infinite Series}
 
 % \begin{frame}{Discrete Random Variables}
 
