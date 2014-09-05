@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{6 September 2013}
+\date{5 September 2014}
 
 \begin{frame}
   \titlepage
@@ -27,13 +27,13 @@
     \frametitle{Clicker Quiz}
 
     A fair, six sided die has the numbers one through six marked on
-    it. I roll the die and read the number, $x$. What is the cumulative
-    distribution function?
+    it. I roll the die and read the number, $x$. What is the
+    probability that I get a number less than 5?
 
     \vfill
     
     \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: 1/6 & B: $\frac{x}{6}$ & C: $\frac{x-1}{6}$  & D: $\frac{x+1}{6}$
+      A: 2/6 & B: 3/6 & C: 4/6  & D: 5/6
     \end{tabular}
 
     \vfill
@@ -73,20 +73,27 @@
 
 \begin{frame}{Probability Density Function}
 
-  Probability Density Function
+  
   \begin{columns}
-    \column{.40\textwidth}
-
-    Area under the curve, $f(x)$, between $a$ and $b$ is the
-    probability we get a result between $a$ and $b$.
-
     \column{.60\textwidth}
-    %     Properties:
-    \begin{eqnarray*}
-      f(x) & \geq & 0 \\
-      \int_{\mathrm{domain}} f(x) ~ dx & = & 1.
-    \end{eqnarray*}
 
+    \begin{definition}[Probability Density Function]
+      The area under the curve, $f(x)$, between $a$ and $b$ is the
+      probability we get a result between $a$ and $b$:
+      \begin{eqnarray*}
+        p( a \leq X \leq b ) & = & \int^b_a f(x) ~ dx.
+      \end{eqnarray*}
+    \end{definition}
+
+
+    \column{.40\textwidth}
+    \uncover<2->{%
+      Properties:
+      \begin{eqnarray*}
+        f(x) & \geq & 0 \\
+        \int_{\mathrm{domain}} f(x) ~ dx & = & 1.
+      \end{eqnarray*}
+    }
   \end{columns}
   
 \end{frame}
@@ -94,7 +101,7 @@
 \subsection{Examples}
 
 \begin{frame}{Example}
-  Is 
+  Is the function
   \begin{eqnarray*}
     f(x) & = & \left\{
     \begin{array}{r@{\hspace{2em}}l}
@@ -104,13 +111,23 @@
     \right.
   \end{eqnarray*}
   a probability density function?
+
+  \vfill
+
+  \uncover<2->{%
+    Determine the probability that the random variable returns a
+    number between one and three.
+  }
+
+  \vfill
+
 \end{frame}
 
 \iftoggle{clicker}{%
   \begin{frame}
     \frametitle{Clicker Quiz}
 
-    Determine a number $c$ so that
+    Determine the value of a constant $c$ so that
     \begin{eqnarray*}
       f(x) & = & \left\{
         \begin{array}{r@{\hspace{2em}}l}
@@ -147,12 +164,12 @@
 
 \begin{frame}{The Cumulative Distribution Function}
 
-  The cumulative distribution function is defined to be
-  \begin{eqnarray*}
-    F(x) & = & p(X \leq x), \\
-    & = & \int^x_{-\infty} f(s) ~ ds.
-  \end{eqnarray*}
-  
+  \begin{definition}[The cumulative distribution]
+    \begin{eqnarray*}
+      F(a) & = & p(X \leq a), \\
+      & = & \int^a_{-\infty} f(s) ~ ds.
+    \end{eqnarray*}
+  \end{definition}
 \end{frame}
 
 

@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{9 September 2013}
+\date{8 September 2014}
 
 \begin{frame}
   \titlepage
@@ -56,31 +56,33 @@
 
  \begin{frame}
  \frametitle{The Expected Value}
-   \begin{columns}
-     \column{.15\textwidth}
+
      \begin{eqnarray*}
        \begin{array}{r|l}
          \mathrm{X} & p \\ \hline
           x_1 & p_1 \\ [5pt]
           x_2 & p_2 \\ [5pt]
           x_3 & p_3 \\ [5pt]
-          x_4 & p_4 \\
           \vdots & \vdots \\
           x_n & p_n
        \end{array}
      \end{eqnarray*}
 
-     \column{.90\textwidth}
      \uncover<2->
      {
-       \begin{eqnarray*}
-         \mu_X \lp\mathrm{total~mass}\rp & = & x_1 \cdot p_1 + x_2\cdot p_2 + 
-                 x_3 \cdot p_3 + \cdots + x_n \cdot p_n. \\
-         \mu_X  & = & x_1 \cdot p_1 + x_2 \cdot p_2 + x_3 \cdot p_3 + \cdots + x_n \cdot p_n.
-       \end{eqnarray*}
-     }
 
-   \end{columns}
+       Recall, the definition of center of mass:
+         \begin{eqnarray*}
+           \mu_X \cdot \lp \mathrm{Total~mass}\rp & = & x_1 \cdot p_1 + x_2\cdot p_2 + 
+                                                    x_3 \cdot p_3 + \cdots + x_n \cdot p_n, \\
+          \uncover<3->{%
+            \mu_X  & = & x_1 \cdot p_1 + x_2\cdot p_2 +   x_3 \cdot p_3 + \cdots + x_n \cdot p_n.
+          }
+         \end{eqnarray*}
+
+
+       }
+
 
  \end{frame}
 
@@ -94,6 +96,13 @@
      E[X] & = & x_1 \cdot p_1 + x_2 \cdot p_2 + x_3 \cdot p_3 + \cdots + x_n \cdot p_n.
    \end{eqnarray*}
  \end{definition}
+
+ \uncover<2->{%
+   Notation:
+   \begin{eqnarray*}
+     \mu_X & = & \sum^n_{i=1} p_i \cdot x_i
+   \end{eqnarray*}
+  }
 
  \end{frame}
 
@@ -174,22 +183,19 @@
 
  \begin{frame}
  \frametitle{The Expected Value}
-   \begin{columns}
-     \column{.5\textwidth}
+
      \begin{eqnarray*}
        p(a \leq x \leq b) & = & \int^b_a f(x) ~ dx.
      \end{eqnarray*}
 
-     \column{.50\textwidth}
      \uncover<2->
      {
        \begin{eqnarray*}
-         \mu_X \lp\mathrm{total~mass}\rp & = & \int^\infty_{-\infty} x f(x) ~ dx, \\
+         E[X] \cdot \lp \mathrm{Total~mass}\rp   & = & \int^\infty_{-\infty} x f(x) ~ dx, \\
          \mu_X  & = & \int^\infty_{-\infty} x f(x) ~ dx.
        \end{eqnarray*}
      }
 
-   \end{columns}
 
  \end{frame}
 
@@ -221,7 +227,7 @@
     \vfill
     
     \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: $\frac{1}{5}$ & B: $\frac{1}{4}$ & C: $1$  & D: $5$
+      A: $f(x)=\frac{1}{5}$ & B: $f(x)=\frac{1}{4}$ & C: $f(x)=1$  & D: $f(x)=5$
     \end{tabular}
 
     \vfill
