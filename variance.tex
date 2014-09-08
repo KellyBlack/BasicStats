@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{11 September 2013}
+\date{10 September 2014}
 
 \begin{frame}
   \titlepage
@@ -27,12 +27,13 @@
     \frametitle{Clicker Quiz}
 
     A random variable, $X$, is uniformly distributed between one and
-    four. Determine the expectation of the random variable.
+    four. Determine the probability distribution function for the
+    random variable.
 
     \vfill
     
     \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: $2$ & B: $\frac{5}{3}$ & C: $\frac{15}{8}$  & D: $\frac{3}{2}$
+      A: $\frac{1}{4}$ & B: $\frac{1}{3}$ & C: $1$  & D: $\frac{5}{2}$
     \end{tabular}
 
     \vfill
@@ -131,6 +132,8 @@
     \end{definition}
   }
 
+  \uncover<4->{See page 103 for another way to calculate the variance.}
+
 \end{frame}
 
 \subsection{Discrete Examples}
@@ -143,12 +146,12 @@
      \column{.15\textwidth}
      \begin{eqnarray*}
        \begin{array}{r|l|l}
-         \mathrm{X} & p & \mathrm{X}^2 \\ \hline
-          0 & \frac{1}{16} & 0  \\ [5pt]
-          1 & \frac{2}{16} & 1 \\ [5pt]
-          2 & \frac{10}{16}& 4 \\ [5pt]
-          3 & \frac{2}{16} & 9 \\ [5pt]
-          4 & \frac{1}{16} & 16
+         \mathrm{X} & p & \uncover<2->{\mathrm{X}^2} \\ \hline
+          0 & \frac{1}{16} & \uncover<2->{0}  \\ [5pt]
+          1 & \frac{2}{16} & \uncover<2->{1} \\ [5pt]
+          2 & \frac{10}{16}& \uncover<2->{4} \\ [5pt]
+          3 & \frac{2}{16} & \uncover<2->{9} \\ [5pt]
+          4 & \frac{1}{16} & \uncover<2->{16}
        \end{array}
      \end{eqnarray*}
 
@@ -157,7 +160,7 @@
          \mu_X & = & 2.
        \end{eqnarray*}
 
-     \uncover<2->
+     \uncover<3->
      {
        \begin{eqnarray*}
          E\left[\mathrm{X}^2\right] & = & 0 \cdot \frac{1}{16} + 1 \cdot \frac{2}{16} + 4 \cdot \frac{10}{16} + 9 \cdot \frac{2}{16} + 16 \cdot \frac{1}{16}, \\
@@ -216,7 +219,7 @@
   \frametitle{Example}
 
   A random variable is uniformly distributed between one and
-  four. Calculate its variance.
+  four. Calculate its standard deviation.
   
 \end{frame}
 
