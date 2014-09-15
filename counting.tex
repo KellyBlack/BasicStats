@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{18 September 2013}
+\date{17 September 2014}
 
 \begin{frame}
   \titlepage
@@ -26,10 +26,10 @@
   \begin{frame}
     \frametitle{Clicker Quiz}
 
-    I have eight markers, and they are all different colors. I pull
+    I have eight markers, and they are all different colours. I pull
     out the red one to set it aside because it is only for special
     occasions, and I decide not to use it today. If I do not use the
-    red one what is the greatest number of colors that I can use
+    red one what is the greatest number of colours that I can use
     today?
 
     \vfill
@@ -159,7 +159,7 @@
     The number of permutations for $n$ objects when you choose $k$
     is 
     \begin{eqnarray*}
-      \prescript{~}{n}{P}_k & = & n(n-1)(n-2)\cdots(n-r+1), \\
+      {P}_k^{n} & = & n(n-1)(n-2)\cdots(n-k+1), \\
                             & = & \frac{n!}{(n-k)!}.
     \end{eqnarray*}
   \end{definition}
@@ -170,8 +170,9 @@
   \frametitle{Previous Examples}
 
   \begin{eqnarray*}
-    \prescript{~}{40}{P}_{40} & = & \frac{40!}{0!}, \\
-    \prescript{~}{40}{P}_2 & = & 40\cdot 39 ~ = ~ \frac{40!}{38!}. \\
+    {P}_{5}^{40} & = & 40\cdot 39 \cdot 38 \cdot 37 \cdot 36, \\
+    {P}_{40}^{40} & = & \frac{40!}{0!}, \\
+    {P}_2^{40} & = & 40\cdot 39 ~ = ~ \frac{40!}{38!}. \\
   \end{eqnarray*}
 
 
@@ -242,12 +243,12 @@
   \only<2->%
   {
 
-    There are $\prescript{~}{n}{P}_r$ permutations. Each permutation
+    There are ${P}_k^{n}$ permutations. Each permutation
     can be expressed in $k!$ different ways,
     \begin{eqnarray*}
-      \prescript{~}{n}{P}_r & = & k! \prescript{~}{n}{C}_r, \\
-      \prescript{~}{n}{C}_r & = & \frac{\prescript{~}{n}{P}_r}{k!}, \\
-      \prescript{~}{n}{C}_r & = & \frac{n!}{(n-k)!k!}.
+      {P}_k^{n} & = & k! {C}_k^{n}, \\
+      {C}_k^{n} & = & \frac{{P}_k^{n}}{k!}, \\
+      {C}_k^{n} & = & \frac{n!}{(n-k)!k!}.
     \end{eqnarray*}
   }
   
@@ -257,7 +258,7 @@
 %  \frametitle{Example}
 %
 %  \begin{eqnarray*}
-%    \prescript{~}{8}{C}_5 & = & \frac{8!}{3!5!}, \\
+%    {C}_5^{8} & = & \frac{8!}{3!5!}, \\
 %    & = & 56.
 %  \end{eqnarray*}
 %
@@ -268,7 +269,7 @@
 
   \begin{frame}
     \frametitle{Clicker Quiz}
-    What is $\prescript{~}{8}{C}_5$?
+    What is ${C}_5^{8}$?
  
     \vfill
 
@@ -297,7 +298,7 @@
 \begin{frame}
   \frametitle{Example}
 
-  I have seven identical cards and three envelopes. How many ways are
+  I have five identical cards and two envelopes. How many ways are
   there to put the cards into the envelopes?
 
 \end{frame}
