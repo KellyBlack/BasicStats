@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{23 September 2013}
+\date{22 September 2014}
 
 \begin{frame}
   \titlepage
@@ -32,10 +32,10 @@
     \vfill
 
     \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: ${10 \choose 6} \lp\frac{1}{6}\rp^6 \lp\frac{5}{6}\rp^4$ & 
-      B: ${10 \choose 4} \lp\frac{1}{6}\rp^4 \lp\frac{5}{6}\rp^6$  \\ [10pt]
-      C: ${10 \choose 6} \lp\frac{1}{6}\rp^4 \lp\frac{5}{6}\rp^6$ & 
-      D: ${10 \choose 4} \lp\frac{1}{6}\rp^6 \lp\frac{5}{6}\rp^4$
+      A: $C^{10}_6 \lp\frac{1}{6}\rp^6 \lp\frac{5}{6}\rp^4$ & 
+      B: $C^{10}_4 \lp\frac{1}{6}\rp^4 \lp\frac{5}{6}\rp^6$  \\ [10pt]
+      C: $C^{10}_6 \lp\frac{1}{2}\rp^4 \lp\frac{1}{2}\rp^6$ & 
+      D: $C^{10}_4 \lp\frac{1}{2}\rp^6 \lp\frac{1}{2}\rp^4$
     \end{tabular}
 
     \vfill
@@ -61,7 +61,7 @@
     \item Each one has a probability of $p$ of success.
     \item Test each one in order starting at the first.
     \item You report the number of tests you conduct when you get the
-      first ``1'' (i.e. a ``success''). 
+      first ``1'' (i.e. a ``yes''). 
     \end{itemize}
   \end{definition}
 
@@ -136,7 +136,7 @@
   \begin{definition}[Hypergeometric Distribution]
     If $X$ is a hypergeometric distribution then
     \begin{eqnarray*}
-      p(X=k) & = & \frac{{r \choose k}\cdot{{N-r}\choose{n-k}}}{{N \choose n}}, \\
+      p(X=k) & = & \frac{C^r_k C^{n-r}_{n-k}}{C^N_n}, \\
       E[X] & = & \frac{nr}{N}, \\
       \mathrm{Var}[X] & = & \frac{N-n}{N-1} \cdot n \cdot \frac{r}{N} \cdot \lp 1-\frac{r}{N}\rp.
     \end{eqnarray*}
@@ -241,10 +241,10 @@
 
     \vfill
 
-    I check the load on a circuit every sixty seconds. There is a
-    probability of 0.03 that the current exceeds the safety limit
-    during any check. What is the probability that the safety limits
-    are exceeded on four of those checks?
+    I check the load on a circuit every sixty seconds for half an
+    hour. There is a probability of 0.03 that the current exceeds the
+    safety limit during any check. What is the probability that the
+    safety limits are exceeded on four of those checks?
 
     \vfill
 
@@ -263,10 +263,10 @@
 \begin{frame}
   \frametitle{Example}
 
-  I check the load on a circuit every sixty seconds. There is a
-  probability of 0.03 that the current exceeds the safety limit during
-  any check. What is the probability that the safety limits are
-  exceeded on four of those checks?
+  I check the load on a circuit every sixty seconds for half an
+  hour. There is a probability of 0.03 that the current exceeds the
+  safety limit during any check. What is the probability that the
+  safety limits are exceeded on four of those checks?
 
   \vfill
 
