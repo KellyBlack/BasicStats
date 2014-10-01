@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{4 October 2013}
+\date{5 October 2014}
 
 \begin{frame}
   \titlepage
@@ -62,6 +62,24 @@
 
  \end{frame}
 
+\begin{frame}{Uniform Distribution}
+
+  A random variable, $X$, is uniformly distributed between $a$ and
+  $b$.
+
+  \vfill
+
+  \begin{itemize}
+  \item What is the probability density function?
+  \item What is the expected value?
+  \item What is the variance?
+  \end{itemize}
+
+  \vfill
+
+\end{frame}
+
+
 
  \begin{frame}
  \frametitle{Example}
@@ -75,6 +93,33 @@
 
 \subsection{Exponential Distribution}
 
+\begin{frame}{Exponential Distribution}
+
+  Often used for probabilities for the time between events.
+
+  \vfill
+
+  The probability density function is
+  \begin{eqnarray*}
+    f(x) & = & \left\{
+      \begin{array}{l@{\hspace{2em}}rcl}
+        \lambda e^{-\lambda x}, & x & \geq & 0, \\
+        0, &   \multicolumn{3}{c}{\mathrm{otherwise}}.
+      \end{array}
+      \right.
+  \end{eqnarray*}
+
+  \vfill
+
+  \begin{itemize}
+  \item What is the expected value?
+  \item What is the variance?
+  \end{itemize}
+
+  \vfill
+
+  
+\end{frame}
 
 \iftoggle{clicker}{%
   \begin{frame}
@@ -120,8 +165,7 @@
 \begin{frame}{Example}
 
   The length of cracks in an airframe have a mean of 0.2cm and are
-  exponentially distributed. What is the probability that a crack is
-  more than 0.3cm?
+  exponentially distributed. What is the median length of the cracks?
   
 \end{frame}
 

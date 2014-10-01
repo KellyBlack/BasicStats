@@ -3,11 +3,11 @@
 \section{Review of Discrete Distributions}
 
 \title{Review of Discrete Distributions}
-\subtitle{How Many?}
+\subtitle{Which one is which?}
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{27 September 2013}
+\date{26 September 2014}
 
 \begin{frame}
   \titlepage
@@ -149,11 +149,12 @@
     \column{.50\textwidth}
     \begin{definition}[Binomial Distribution]
       If $X_1$, $X_2$, $\ldots$, $X_n$ are independent Bernoulli
-      random variables with the same parameter, $p$, then
+      random variables with the same parameter, $p$, then define $Y$
+      to be 
       \begin{eqnarray*}
-        X & = & X_1 + X_2 + X_3 + \cdots + X_n
+        Y & = & X_1 + X_2 + X_3 + \cdots + X_n.
       \end{eqnarray*}
-      has a \redText{binomial distribution}.
+      The random variale $Y$ has a \redText{binomial distribution}.
     \end{definition}
     \column{.50\textwidth}
     \begin{itemize}
@@ -174,8 +175,7 @@
     The probability of $k$ ``yes'' outcomes for a random variable that
     follows a binomial distribution is
     \begin{eqnarray*}
-      p(X=k) & = & \prescript{~}{N}{C}_k \cdot p^k (1-p)^{N-k}, \\
-      & = & {N \choose k} \cdot p^k (1-p)^{N-k}.
+      p(Y=k) & = & C^N_k \cdot p^k (1-p)^{N-k}.
     \end{eqnarray*}
 
     \vfill
@@ -183,8 +183,8 @@
     The expectation and variation of a Binomial random variable are
     the following:
     \begin{eqnarray*}
-      E[X] & = & N\cdot p, \\
-      \mathrm{Var}[X] & = & N \cdot p \cdot (1-p).
+      E[Y] & = & N\cdot p, \\
+      \mathrm{Var}[Y] & = & N \cdot p \cdot (1-p).
     \end{eqnarray*}
 
 \end{frame}
@@ -202,7 +202,7 @@
       A \redText{geometric} random variable returns the number of
       times that a sequence of independent Bernoulli random variables,
       each with parameter $p$, are sampled until the first ``yes''
-      is found.
+      is found. Define $Y$ to be the total number of trials taken.
     \end{definition}
     \column{.50\textwidth}
       \begin{itemize}
@@ -223,13 +223,13 @@
   The probability mass function for a geometric distribution with
   probability $p$ for a ``yes'' in any one trial is
   \begin{eqnarray*}
-    p(X=k) & = & \lp 1-p\rp^{k-1} p.
+    p(Y=k) & = & \lp 1-p\rp^{k-1} p.
   \end{eqnarray*}
 
   The expectation and variance of a geometric distribution are
   \begin{eqnarray*}
-    E[X] & = & \frac{1}{p}, \\
-    \mathrm{Var}[X] & = & \frac{1-p}{p^2}.
+    E[Y] & = & \frac{1}{p}, \\
+    \mathrm{Var}[Y] & = & \frac{1-p}{p^2}.
   \end{eqnarray*}
 
 \end{frame}
@@ -243,7 +243,8 @@
     \begin{definition}
       Choose $n$ items without replacement from a group of $N$
       items. There are $r$ objects that are ``special.'' Return the
-      number of ``special'' items that were chosen.
+      number of ``special'' items that were chosen. Define $Y$ to be
+      the number of ``special'' items selected.
     \end{definition}
     \column{.50\textwidth}
     \begin{itemize}
@@ -262,14 +263,12 @@
 \begin{frame}{Hypergeometric Distribution}
 
 
-  \begin{definition}[Hypergeometric Distribution]
-    If $X$ is a hypergeometric distribution then
+    If $Y$ is a hypergeometric distribution then
     \begin{eqnarray*}
-      p(X=k) & = & \frac{{r \choose k}\cdot{{N-r}\choose{n-k}}}{{N \choose n}}, \\
-      E[X] & = & \frac{nr}{N}, \\
-      \mathrm{Var}[X] & = & \frac{N-n}{N-1} \cdot n \cdot \frac{r}{N} \cdot \lp 1-\frac{r}{N}\rp.
+      p(Y=k) & = & \frac{C^r_k \cdot C^{N-r}_{n-k}}{C^N_n}, \\
+      E[Y] & = & \frac{nr}{N}, \\
+      \mathrm{Var}[Y] & = & \frac{N-n}{N-1} \cdot n \cdot \frac{r}{N} \cdot \lp 1-\frac{r}{N}\rp.
     \end{eqnarray*}
-  \end{definition}
 
 \end{frame}
 
@@ -328,7 +327,6 @@
   \item 3.8.10 (a,c), 3.8.13 (a,c)
   \item 3.8.11-3.8.12
   \item 3.8.14
-  \item 3.8.16
   \end{itemize}
   \vfill
   
@@ -379,7 +377,7 @@
 
     \vfill
 
-    A person will use an object until they run into a problem and will
+    A person will use a pen until they run into a problem and will
     then throw it out. There is a probability of 0.02 that the item
     will have a problem in any one use. What is the probability that
     the person will use the item at least ten times?
@@ -403,7 +401,7 @@
 
   \vfill
 
-    A person will use an object until they run into a problem and will
+    A person will use a pen until they run into a problem and will
     then throw it out. There is a probability of 0.02 that the item
     will have a problem in any one use. What is the probability that
     the person will use the item at least ten times?
