@@ -13,6 +13,36 @@ source('normalArea.R')
 #print(paste("The cut off is ",cutoff))
 
 
+#png('generalNormal.png',width=2048,height=2048)
+mean = 3.0
+stdDev = 1.0
+x <- seq(mean-3*stdDev,mean+3*stdDev,by=0.1);
+plot(x,dnorm(x,mean=mean,sd=stdDev),type="l",lwd=4,axes=FALSE,col=4,ylab="p")
+axis(1,at=c(mean-3*stdDev,mean-stdDev,mean,mean+stdDev,mean+3*stdDev),
+     pos = c(mean-3*stdDev,0),lwd=4,cex.axis=2,
+     labels=c("",expression(mu-sigma),expression(mu),expression(mu+sigma),""))
+axis(2,lwd=4,cex.axis=2)
+title('Normal Distribution',xlab='x',ylab='p')
+dev.copy(png,filename="generalNormal.png");
+dev.off()
+
+#png('generalNormalAnnotated.png',width=2048,height=2048)
+plot(x,dnorm(x,mean=mean,sd=stdDev),type="l",lwd=4,axes=FALSE,col=4,ylab="p")
+dotLocations <- c(mean-stdDev,mean,mean+stdDev)
+points(dotLocations,dnorm(dotLocations,mean=mean,sd=stdDev),cex=2,pch=20,col=2)
+for (points in dotLocations)
+    {
+        points(c(points,points),c(0,dnorm(points,mean=mean,sd=stdDev)),type="l",lty=2,lwd=3)
+    }
+axis(1,at=c(mean-3*stdDev,mean-stdDev,mean,mean+stdDev,mean+3*stdDev),
+     pos = c(mean-3*stdDev,0),lwd=4,
+     labels=c("",expression(mu-sigma),expression(mu),expression(mu+sigma),""),cex.axis=2)
+axis(2,lwd=4,cex.axis=2)
+title('Normal Distribution',xlab='x',ylab='p')
+dev.copy(png,filename="generalNormalAnnotated.png");
+dev.off()
+
+
 png('topStockPicks.png',width=1024,height=1024)
 mean = 0.5
 stdDev = 4.4
