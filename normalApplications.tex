@@ -1,13 +1,13 @@
 
-\lecture{Examples of the Normal Distribution}{normal-distributions-examples}
-\section{Examples of the Normal Distribution}
+\lecture{Linear Combinations of Normal Distributions}{normal-distributions-linear-combos}
+\section{Linear Combinations of Normal Random Variables}
 
-\title{Examples of the Normal Distribution}
-\subtitle{Moar Normal!}
+\title{Linear Combinations of Normal Random Variables}
+\subtitle{Adding Normals}
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{9 October 2013}
+\date{8 October 2014}
 
 \begin{frame}
   \titlepage
@@ -42,6 +42,94 @@
 }
 
 
+\subsection{Linear Combinations}
+
+\begin{frame}{Linear Transformation of a Normal Variable}
+
+  \vfill
+
+  Suppose that $X$ is a normally distributed random variable with mean
+  $\mu_x$ and standard deviation $\sigma_x$.
+
+  \vfill
+
+  Define a new random variable
+  \begin{eqnarray*}
+    Y & = & a X + b.
+  \end{eqnarray*}
+
+  \vfill
+
+  Then $Y$ is normally distributed with
+  \begin{eqnarray*}
+    E[Y] & = & \\
+    \mathrm{Var}[Y] & = & 
+  \end{eqnarray*}
+
+  \vfill
+
+\end{frame}
+
+
+\begin{frame}{Sum of Two Normal Variables}
+
+  \vfill
+
+  Suppose that $X$ is a normally distributed random variable with mean
+  $\mu_x$ and standard deviation $\sigma_x$. Also, $Y$ is a normally
+  distributed random variable with mean $\mu_y$ and standard deviation
+  $\sigma_y$. 
+
+  \vfill
+
+  Define a new random variable
+  \begin{eqnarray*}
+    W & = & X + Y.
+  \end{eqnarray*}
+
+  \vfill
+
+  \textit{\redText{If $X$ and $Y$ are independent}} then $W$ is
+  normally distributed with
+  \begin{eqnarray*}
+    E[W] & = & \\
+    \mathrm{Var}[W] & = & 
+  \end{eqnarray*}
+
+  \vfill
+  
+\end{frame}
+
+\begin{frame}{Linear Combinations of Normal Variables}
+  
+  \vfill
+
+  Suppose that $X_1$, $X_2$, \ldots, $X_n$ are \redText{independent}
+  normally distributed random variables with mean $\mu_1$, $\mu_2$,
+  \dots, $\mu_n$ and standard deviations $\sigma_1$, $\sigma_2$,
+  \ldots, $\sigma_n$.
+
+  \vfill
+
+  Define a new random variable
+  \begin{eqnarray*}
+    W & = & a_1 X_1 + a_2 X_2 + \cdots + a_n X_n + b,
+  \end{eqnarray*}
+  where $a_1$, $a_2$, \ldots, $a_n$ and $b$ are all constants.
+
+  \vfill
+
+  Then $W$ is normally distributed with
+  \begin{eqnarray*}
+    E[W] & = & \\
+    \mathrm{Var}[W] & = & 
+  \end{eqnarray*}
+
+  \vfill
+  
+\end{frame}
+
+
 \subsection{Examples}
 
 \begin{frame}
@@ -67,9 +155,9 @@
   The mass of glass jars are normally distributed with a mean of
   0.25kg and a standard deviation of 0.03kg. The total mass of the
   packaged product is normally distributed with a mean of 0.35kg and a
-  standard deviation of 0.08kg. What is the distribution associated
-  with the contents of the jars? (Assume that the mass of the jar and
-  its contents are independent.)
+  standard deviation of 0.08kg. What is the \redText{distribution}
+  associated with the contents of the jars? (Assume that the mass of
+  the jar and its contents are independent.)
 
 \end{frame}
 
@@ -77,11 +165,11 @@
   \begin{frame}
     \frametitle{Clicker Quiz - Starting Salaries}
 
-    $X$ is normally distributed with mean 3.0 and standard deviation 1.7.
+    $X$ is normally distributed with mean 3.0 and std. deviation 1.7.
     
-    $Y$ is normally distributed with mean 4.1 and standard deviation 2.1.
+    $Y$ is normally distributed with mean 4.1 and std. deviation 2.1.
 
-    $W$ is normally distributed with mean 2.5 and standard deviation 3.1.
+    $W$ is normally distributed with mean 2.5 and std. deviation 3.1.
 
     What is the standard deviation of  $X+Y-W$?
 
@@ -106,11 +194,11 @@
 \begin{frame}
   \frametitle{Example}
 
-  $X$ is normally distributed with mean 3.0 and standard deviation 1.7.
+  $X$ is normally distributed with mean 3.0 and std. deviation 1.7.
 
-  $Y$ is normally distributed with mean 4.1 and standard deviation 2.1.
+  $Y$ is normally distributed with mean 4.1 and std. deviation 2.1.
 
-  $W$ is normally distributed with mean 2.5 and standard deviation 3.1.
+  $W$ is normally distributed with mean 2.5 and std. deviation 3.1.
 
   What is the probability that $X+Y-W$ is between 3.0 and 4.0?
 
@@ -133,6 +221,8 @@
 
   \vfill
 
+  ($\mu=1.35$ cm, $\sigma\approx$.089 cm)
+
 \end{frame}
 
 
@@ -141,10 +231,12 @@
 
   The voltage across a resistor is normally distributed with mean 18V
   and standard deviation 1.2V. Two measurements are taken and
-  averaged. What is the probability that the average is more than
-  18.5V? (Assume that the measurements are independent.)
+  ``averaged.'' What is the probability that the ``average'' is more
+  than 18.5V? (Assume that the measurements are independent.)
 
   \vfill
+
+  (0.2776)
 
 \end{frame}
 
@@ -163,7 +255,7 @@
     \vfill
 
     \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: 2.0  & B: 1.41 & C: 3.0 7 D: 4.0
+      A: 2.0  & B: 1.41 & C: 3.07 & D: 4.0
     \end{tabular}
 
     \vfill
@@ -181,11 +273,14 @@
   Some bolts are to be designed so that their breaking strength is
   normally distributed with mean 80N. Three samples are taken. What
   should the standard deviation be so that the probability that the
-  average breaking strength of the samples is less than 78N is 0.05?
+  ``average'' breaking strength of the samples is less than 78N is
+  0.05?
 
   (Assume that the samples are independent.)
 
   \vfill
+
+  (2.71N)
   
 \end{frame}
 
@@ -195,11 +290,11 @@
   A random variable, $X$, is normally distributed with mean 3.5 and
   standard deviation 1.2. Determine the following probabilities:
   \begin{eqnarray*}
-    p(X\geq 3.2), \\
-    p(X \leq 4.7), \\
-    p(3.1\leq X \leq 5.2), \\
-    p(|X-3|\leq 1.1), \\
-    p(|X-2.5|\geq 2.1).
+    p(X \geq 3.2), (.5987)\\
+    p(X \leq 4.7), (.1587) \\
+    p(3.1 \leq X \leq 5.2),  (.5523)\\
+    p(|X-3| \leq 1.1), (.6003)\\
+    p(|X-2.5| \geq 2.1), (.1846).
   \end{eqnarray*}
   
 \end{frame}
@@ -211,6 +306,10 @@
   standard deviation of 0.02cm. The bore should be designed so that
   the gap is normally distributed with a mean of 0.10cm and a standard
   deviation of 0.04cm. What is the required distribution for the bore?
+
+  \vfill
+  
+  Normal: mean=4.70cm, std. dev$\approx$.077cm
   
 \end{frame}
 
@@ -220,6 +319,11 @@
   independence between samples), and the sample mean, $Y$, is
   calculated. What is the probability that the sample mean of the four
   samples is more than 0.10 from the mean of $Y$?
+
+  \vfill
+
+  (.5687)
+
 \end{frame}
 
 
@@ -229,6 +333,10 @@
   independence between samples), and the sample mean, $Y$, is
   calculated. What is the probability that the sample mean of the five
   samples is more than 0.10 from the mean of $Y$?
+
+  \vfill
+
+  (.5222)
 \end{frame}
 
 
