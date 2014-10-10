@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{16 October 2013}
+\date{15 October 2014}
 
 \begin{frame}
   \titlepage
@@ -215,17 +215,19 @@
 
   \vfill
 
-  \begin{tabular}{l|l}
-    Number  & Frequency \\ \hline
-    a & 2 \\
-    b & 5 \\
-    c & 3 
+  \begin{tabular}{l|l|l}
+    Observation  & Frequency & \uncover<2>{Relative Frequency} \\ \hline
+    a & 2 & \uncover<2>{2/10} \\
+    b & 5 & \uncover<2>{5/10} \\
+    c & 3 & \uncover<2>{3/10}
   \end{tabular}
 
   \vfill
 
-  \textit{To calculate the relative frequency divide by the total
-    number of data points.}
+  \uncover<2>{%
+    \textit{To calculate the relative frequency divide by the total
+      number of data points.}
+  }
 
   \vfill
 
@@ -234,50 +236,33 @@
 \begin{frame}{Sample Mode}
 
   \begin{definition}[Sample Mode]
-    The sample mode is/are the values with the highest frequency.
+    The sample mode is/are the observations with the highest frequency.
   \end{definition}
 
-  Data: \\
-  a, b, b, c, a, b, b, c, b, c
+  \uncover<2>{%
+    Data: \\
+    a, b, b, c, a, b, b, c, b, c
 
-  \vfill
+    \vfill
 
-  \begin{tabular}{l|l}
-    Number  & Frequency \\ \hline
-    a & 2 \\
-    \redText{b} & \redText{5} \\
-    c & 3 
-  \end{tabular}
+    \begin{tabular}{l|l}
+      Number  & Frequency \\ \hline
+      a & 2 \\
+      \redText{b} & \redText{5} \\
+      c & 3 
+    \end{tabular}
 
-  The mode is 5. If more than one of the values has the maximum
-  frequency then the set of modes includes all of the values that
-  occur the maximum number of times.
+    The sample mode is 5. If more than one of the values has the maximum
+    frequency then the set of modes includes all of the values that
+    occur the maximum number of times.
+
+  }
 
 \end{frame}
 
 \subsection{Continuous Data}
 
 
-\begin{frame}{Trimmed Data}
-
-  Delete some percentage of the largest and smallest numbers.
-
-  Example: 
-  We have one hundred data points.
-
-  \vfill
-
-  For a 10\% trimmed mean: delete the 10 smallest and the 10 largest
-  numbers.
-
-  \vfill
-
-  For a 5\% trimmed mean: delete the 5 smallest and the 5 largest
-  numbers.
-
-  \vfill
-
-\end{frame}
 
 \begin{frame}{Continuous Data}
 
@@ -345,15 +330,243 @@
   
 \end{frame}
 
+\begin{frame}{Sample Quantiles}
+
+  \newcount\xnum
+  \newcount\xnumpos
+
+    \begin{picture}(310,100)(0,0)
+      \multiput(10,90)(20, 0){15}{\line(1,0){15}}
+      \xnum=1
+      \xnumpos=12
+      \loop
+      \put(\xnumpos,95){{\color{red}$x_{{\the\xnum}}$}}
+      \advance\xnumpos by 20
+      \ifnum\xnum < 3 \advance\xnum by 1
+      \repeat
+
+      \xnum=5
+      \xnumpos=92
+      \loop
+      \put(\xnumpos,95){{\color{blue}$x_{{\the\xnum}}$}}
+      \advance\xnumpos by 20
+      \ifnum\xnum < 7 \advance\xnum by 1
+      \repeat
+
+      \xnum=9
+      \xnumpos=172
+      \loop
+      \put(\xnumpos,95){{\color{Violet}$x_{{\the\xnum}}$}}
+      \advance\xnumpos by 20
+      \ifnum\xnum < 12 \advance\xnum by 1
+      \repeat
+
+      \xnum=13
+      \xnumpos=252
+      \loop
+      \put(\xnumpos,95){{\color{Brown}$x_{{\the\xnum}}$}}
+      \advance\xnumpos by 20
+      \ifnum\xnum < 15 \advance\xnum by 1
+      \repeat
+
+
+      \put(72,95){$x_{4}$}
+      \put(152,95){$x_{8}$}
+      \put(232,95){$x_{12}$}
+
+      \put(10,0){\line(0,1){80}}
+      \put(310,0){\line(0,1){80}}
+      \put(110,10){\vector(-1,0){100}}
+      \put(210,10){\vector( 1,0){100}}
+      \put(120,5){Range}
+
+      \put(156,25){\line(0,1){55}}
+      \put(60,30){\vector(-1,0){50}}
+      \put(105,30){\vector( 1,0){50}}
+      \put(63,25){Median}
+
+      \put(78,45){\line(0,1){25}}
+      \put(30,50){\vector(-1,0){20}}
+      \put(58,50){\vector(1,0){20}}
+      \put(37,45){Q1}
+
+
+      \put(240,45){\line(0,1){25}}
+      \put(260,50){\vector(-1,0){20}}
+      \put(290,50){\vector(1,0){20}}
+      \put(265,45){Q3}
+
+
+    \end{picture}
+  
+\end{frame}
+
+\begin{frame}{Sample Quantiles}
+
+    \begin{picture}(310,100)(0,0)
+      \multiput(20,90)(20, 0){14}{\line(1,0){15}}
+      \xnum=1
+      \xnumpos=22
+      \loop
+      \put(\xnumpos,95){{\color{red}$x_{{\the\xnum}}$}}
+      \advance\xnumpos by 20
+      \ifnum\xnum < 3 \advance\xnum by 1
+      \repeat
+
+      \xnum=5
+      \xnumpos=102
+      \loop
+      \put(\xnumpos,95){{\color{blue}$x_{{\the\xnum}}$}}
+      \advance\xnumpos by 20
+      \ifnum\xnum < 7 \advance\xnum by 1
+      \repeat
+
+      \xnum=8
+      \xnumpos=162
+      \loop
+      \put(\xnumpos,95){{\color{Violet}$x_{{\the\xnum}}$}}
+      \advance\xnumpos by 20
+      \ifnum\xnum < 10 \advance\xnum by 1
+      \repeat
+
+      \xnum=12
+      \xnumpos=242
+      \loop
+      \put(\xnumpos,95){{\color{Brown}$x_{{\the\xnum}}$}}
+      \advance\xnumpos by 20
+      \ifnum\xnum < 14 \advance\xnum by 1
+      \repeat
+
+
+      \put(82,95){$x_{4}$}
+      \put(222,95){$x_{11}$}
+
+      \put(20,0){\line(0,1){90}}
+      \put(300,0){\line(0,1){90}}
+      \put(110,10){\vector(-1,0){90}}
+      \put(210,10){\vector( 1,0){90}}
+      \put(120,5){Range}
+
+      \put(156,25){\line(0,1){55}}
+      \put(60,30){\vector(-1,0){40}}
+      \put(105,30){\vector( 1,0){50}}
+      \put(63,25){Median}
+
+      \put(85,45){\line(0,1){25}}
+      \put(40,50){\vector(-1,0){20}}
+      \put(65,50){\vector(1,0){20}}
+      \put(45,45){Q1}
+
+
+      \put(230,45){\line(0,1){25}}
+      \put(250,50){\vector(-1,0){20}}
+      \put(280,50){\vector(1,0){20}}
+      \put(255,45){Q3}
+
+
+    \end{picture}
+  
+\end{frame}
+
+
+\begin{frame}{Sample Quantiles}
+
+    \begin{picture}(310,100)(0,0)
+      \multiput(30,90)(20, 0){13}{\line(1,0){15}}
+      \xnum=1
+      \xnumpos=32
+      \loop
+      \put(\xnumpos,95){{\color{red}$x_{{\the\xnum}}$}}
+      \advance\xnumpos by 20
+      \ifnum\xnum < 3 \advance\xnum by 1
+      \repeat
+
+      \xnum=4
+      \xnumpos=92
+      \loop
+      \put(\xnumpos,95){{\color{blue}$x_{{\the\xnum}}$}}
+      \advance\xnumpos by 20
+      \ifnum\xnum < 6 \advance\xnum by 1
+      \repeat
+
+      \xnum=8
+      \xnumpos=172
+      \loop
+      \put(\xnumpos,95){{\color{Violet}$x_{{\the\xnum}}$}}
+      \advance\xnumpos by 20
+      \ifnum\xnum < 10 \advance\xnum by 1
+      \repeat
+
+      \xnum=11
+      \xnumpos=232
+      \loop
+      \put(\xnumpos,95){{\color{Brown}$x_{{\the\xnum}}$}}
+      \advance\xnumpos by 20
+      \ifnum\xnum < 13 \advance\xnum by 1
+      \repeat
+
+
+      \put(152,95){$x_{7}$}
+
+      \put(30,0){\line(0,1){90}}
+      \put(290,0){\line(0,1){90}}
+      \put(120,10){\vector(-1,0){90}}
+      \put(200,10){\vector( 1,0){90}}
+      \put(145,5){Range}
+
+      \put(156,25){\line(0,1){55}}
+      \put(70,30){\vector(-1,0){40}}
+      \put(105,30){\vector( 1,0){50}}
+      \put(70,25){Median}
+
+      \put(88,45){\line(0,1){25}}
+      \put(50,50){\vector(-1,0){20}}
+      \put(68,50){\vector(1,0){20}}
+      \put(50,45){Q1}
+
+
+      \put(228,45){\line(0,1){25}}
+      \put(248,50){\vector(-1,0){20}}
+      \put(270,50){\vector(1,0){20}}
+      \put(255,45){Q3}
+
+
+    \end{picture}
+  
+\end{frame}
+
+
 \begin{frame}{Example}
 
   \begin{tabular}{l}
-    1.2 \\ 1.5 \\ 2.1 \\ 4.3 \\ 1.7
+    1.2 \\ 1.5 \\ 2.1 \\ 4.3 \\ 1.7 \\ 1.5
   \end{tabular}
 
   
 
 \end{frame}
+
+\begin{frame}{Trimmed Data}
+
+  Delete some percentage of the largest and smallest numbers.
+
+  Example: 
+  We have one hundred data points.
+
+  \vfill
+
+  For 100 points, a 10\% trimmed mean: delete the 10 smallest and the 10 largest
+  numbers.
+
+  \vfill
+
+  For 100 points, a 5\% trimmed mean: delete the 5 smallest and the 5
+  largest numbers.
+
+  \vfill
+
+\end{frame}
+
 
 
 % LocalWords:  Clarkson pausesection hideallsubsections Bivariate
