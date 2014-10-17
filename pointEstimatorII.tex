@@ -8,7 +8,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{23 October 2013}
+\date{22 October 2014}
 
 \begin{frame}
   \titlepage
@@ -62,7 +62,7 @@
       $n$ & $x_n$
     \end{tabular}
 
-  \only<2->%
+  \uncover<2->%
   {
     We calculate a sample mean:
     \begin{eqnarray*}
@@ -70,7 +70,7 @@
     \end{eqnarray*}
   }
 
-  \only<3->%
+  \uncover<3->%
   {
     Problem: If $x_1$ is a random variable then so is $\bar{x}$!
   }
@@ -139,7 +139,7 @@
     \vfill
 
     $X$ is a Bernoulli random variable with parameter $p$. We take $N$
-    trials and count the number of successes. The count follows what
+    trials and count the number of ``yeses.'' The count follows what
     distribution?
 
     \vfill
@@ -167,13 +167,20 @@
 
 
 
+\begin{frame}{Which One To Use?}
+
+  Suppose I have two ways, $\hat{\theta}_1$ and $\hat{\theta}_2$, to
+  estimate the mean. Which one do I use?
+  
+\end{frame}
+
 
 
 \begin{frame}{Relative Efficiency}
 
   \begin{definition}
-    The \blueText{relative efficiency} between two estimates,
-    $\hat{\theta}_1$ and $\hat{\theta}_2$ is
+    The \redText{relative efficiency} between two \blueText{unbiased}
+    estimates, $\hat{\theta}_1$ and $\hat{\theta}_2$ is
     \begin{eqnarray*}
       \frac{\mathrm{var}\left( \hat{\theta}_2\right) }{\mathrm{var}\left( \hat{\theta}_1\right) }
     \end{eqnarray*}
@@ -189,6 +196,19 @@
   observations and find a sample mean. In the second experiment we
   take 40 observations and find a sample mean. What is the relative
   efficiency between the two estimates of the mean?
+  
+\end{frame}
+
+
+\begin{frame}{Mean Squared Error}
+
+  \begin{definition}
+    The \redText{mean squared error} for an estimator,
+    $\hat{\theta}$ is
+    \begin{eqnarray*}
+      E\left[ \left( \hat{\theta} - \theta \right)^2\right].
+    \end{eqnarray*}
+  \end{definition}
   
 \end{frame}
 

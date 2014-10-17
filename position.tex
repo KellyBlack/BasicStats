@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{18 October 2013}
+\date{20 October 2014}
 
 \begin{frame}
   \titlepage
@@ -88,8 +88,8 @@
 \begin{frame}
   \frametitle{Example}
 
-  A random variable has a mean $\mu$ and standard deviation
-  $\sigma$. A set of samples is taken: \\ [10pt]
+  We think that a random variable is normally distributed. It has
+  parameters $\mu$ and   $\sigma$. A set of samples is taken: \\ [10pt]
   \begin{tabular}{l|l}
     Observation & Value \\ \hline
     1 & $1.0$ \\ 
@@ -98,6 +98,8 @@
     4 & $4.0$ \\
     5 & $7.0$
   \end{tabular}
+
+  How do we estimate the values of $\mu$ and $\sigma$?
 
 \end{frame}
 
@@ -109,17 +111,27 @@
     parameter based on whatever, limited, information that is
     available to us.
   \end{definition}
+
+  \vfill
+
+  \uncover<2->{%
+    \noindent
+    Example:
+
+    $\bar{x}$ is an \redText{estimate} for the mean.
+
+    $s$ is an \redText{estimate} for the variation.
+  }
+
+  \vfill
 \end{frame}
 
 
-\begin{frame}{Example}
 
-  $\bar{x}$ is an estimate for the mean.
   
-\end{frame}
 
 \begin{frame}{Example}
-  How likely is it that a coin flip returns a tails?
+  I flip a coin. How likely is it that the result is a tail?
 
   \vfill
 
@@ -141,6 +153,12 @@
     3 & 3.53 \\
     4 & 3.55 
   \end{tabular}
+
+  \vfill
+
+  \uncover<2->{
+    (Definition of the coefficient of variation.)
+  }
   
 \end{frame}
 
@@ -148,7 +166,7 @@
 
   \vfill
 
-  The following examples are extra examples that are not covered in
+  The following examples are extra examples that may not be covered in
   class.
 
   \vfill
