@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{30 October 2013}
+\date{27 October 2014}
 
 \begin{frame}
   \titlepage
@@ -48,13 +48,16 @@
 \begin{frame}
   \frametitle{The Issue}
 
-  Goal: determine the mean of a random variable.
+  \begin{description}
+  \item[\blueText{Goal:}] determine the mean of a random variable.
 
-  Problem: It is a random variable.
+  \item[\blueText{Method:}] Take many measurements, and calculate the sample mean.
 
-  \only<2->{%
-    \redText{Solution: Change the question!}
-  }
+  \item[\blueText{Problem:}] $\bar{x}$ is a random variable.
+
+  \item[\redText{Solution:}]<2-> \redText{Change the question!}
+
+  \end{description}
   \vfill
 
 \end{frame}
@@ -88,6 +91,62 @@
 }
 
 
+\begin{frame}{A Single Point Estimate}
+
+  The issue is that we only have one sample mean, i.e. one point
+  estimate for the mean.
+
+  \begin{center}
+    \begin{picture}(200,75) 
+      \put(0,50){\line(1,0){200}}
+      \put(100,50){\circle*{4}} 
+      \put(96,36){$\mu$}
+      \put(75,50){\circle*{4}} 
+      \put(71,36){$\bar{x}$}
+      \uncover<2->{%
+        \put(150,47){\textbf{\redText{)}}}
+        \put( 50,47){\textbf{\redText{(}}}
+      }
+      \uncover<3->{%
+        {
+          \color{blue}
+          \put(146,22){\line(0,1){20}}
+          \put( 93,22){\line(0,1){10}}
+          \put(109,22){Error}
+          \put(105,25){\vector(-1,0){11}}
+          \put(135,25){\vector(1,0){11}}
+        }
+      }
+    \end{picture}
+  \end{center}
+
+  \uncover<4->{%
+    We want to find an interval which likely includes the true mean.
+    \begin{center}
+      \begin{picture}(200,65) 
+        \put(0,50){\line(1,0){200}}
+        \put(100,50){\circle*{4}} 
+        \put(96,36){$\mu$}
+        \put(75,50){\circle*{4}} 
+        \put(71,36){$\bar{x}$}
+        \put(125,47){\textbf{\redText{)}}}
+        \put( 25,47){\textbf{\redText{(}}}
+        {
+          \color{blue}
+          \put(125,22){\line(0,1){20}}
+          \put( 72,22){\line(0,1){10}}
+          \put( 88,22){Error}
+          \put( 83,25){\vector(-1,0){11}}
+          \put(114,25){\vector(1,0){11}}
+        }
+      \end{picture}
+    \end{center}
+  }
+
+  \vfill
+  
+\end{frame}
+
 
 \begin{frame}{The Sample Mean}
 
@@ -114,7 +173,7 @@ Problem: We do not know what $\mu$ is!
     \begin{itemize}
     \item Determine the value of the error
     \item Determine number of samples (N)
-    \item Determine the probability that we are outside of the error bounds.
+    \item Determine the probability that $\bar{x}$ is outside of the error bounds.
     \end{itemize}
 
   \end{columns}
@@ -140,7 +199,7 @@ Problem: We do not know what $\mu$ is!
     \end{eqnarray*}
     and
     \begin{eqnarray*}
-      t & = & \frac{-\mathrm{error}}{s/n}.
+      t & = & \frac{-\mathrm{error}}{s/\sqrt{n}}.
     \end{eqnarray*}
 
   \end{columns}
@@ -161,7 +220,7 @@ Problem: We do not know what $\mu$ is!
     \frametitle{Clicker Quiz}
 
 
-    \centerline{\includegraphics[width=6cm]{img/week8DistConfInterval}}
+    \centerline{\includegraphics[width=6cm]{img/confidenceInterval}}
     If the value of $\alpha$ is increased does the length of the
     ``error'' increase or decrease?  \vfill
 
@@ -292,10 +351,10 @@ Problem: We do not know what $\mu$ is!
 
   \only<2->%
   {
-
-    The 90\% confidence interval is from 0.75 kg to 0.85 kg
-    assuming a $t$-distribution with fourteen degrees of freedom.
-
+    \redText{
+      The 90\% confidence interval is from 0.75 kg to 0.85 kg
+      assuming a $t$-distribution with fourteen degrees of freedom.
+    }
   }
 
   \vfill
@@ -313,10 +372,10 @@ Problem: We do not know what $\mu$ is!
 
   \only<2->%
   {
-
-    The 95\% confidence interval is from 0.74 kg to 0.86 kg
-    assuming a $t$-distribution with fourteen degrees of freedom.
-
+    \redText{
+      The 95\% confidence interval is from 0.74 kg to 0.86 kg
+      assuming a $t$-distribution with fourteen degrees of freedom.
+    }
   }
 
   \vfill
@@ -334,10 +393,10 @@ Problem: We do not know what $\mu$ is!
 
   \only<2->%
   {
-
-    Nineteen samples are required for a 90\% confidence level assuming
-    a $t$-distribution.
-
+    \redText{
+      Nineteen samples are required for a 90\% confidence level assuming
+      a $t$-distribution.
+    }
   }
 
   \vfill
@@ -355,10 +414,10 @@ Problem: We do not know what $\mu$ is!
 
   \only<2->%
   {
-
-    Twenty-seven samples are required for a 90\% confidence level
-    assuming a $t$-distribution.
-
+    \redText{
+      Twenty-seven samples are required for a 95\% confidence level
+      assuming a $t$-distribution.
+    }
   }
 
   \vfill
@@ -375,8 +434,10 @@ Problem: We do not know what $\mu$ is!
   \vfill
 
   \only<2->{%
-    The lower bound on the mean is 0.76 kg using a $t$-distribution
-    with fourteen degrees of freedom and a 90\% confidence level.
+    \redText{
+      The lower bound on the mean is 0.76 kg using a $t$-distribution
+      with fourteen degrees of freedom and a 90\% confidence level.
+    }
   }
   
 \end{frame}
