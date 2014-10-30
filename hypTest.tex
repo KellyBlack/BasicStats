@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{1 November 2013}
+\date{3 November 2014}
 
 \begin{frame}
   \titlepage
@@ -49,14 +49,28 @@
 
 \subsection{Introduction To Hypothesis Testing}
 
+\begin{frame}{The Idea}
+
+  \vfill
+
+  I want to take some action. I think it will be ``better.'' Is it? 
+
+  \vfill
+
+  This is a yes or no question!
+
+  \vfill
+  
+\end{frame}
+
 \begin{frame}
   \frametitle{Introduction To Hypothesis Testing}
 
   A randomly chosen can of oil should have a mean viscosity of 1.80
   centi-Stokes. I put in an additive and take fifteen random
   samples. The sample mean of the viscosities is 1.87 centi-Stokes
-  with a \redText{sample} standard deviation of 0.15 centi-Stokes. Did
-  it make a difference?
+  with a \redText{sample} standard deviation of 0.15
+  centi-Stokes. \blueText{Did it make a difference?}
 
   \vfill
 
@@ -131,10 +145,11 @@
 \begin{frame}
   \frametitle{Left Sided Test of the Mean}
 
-  You think that the mean is lower.
-
   \begin{columns}
-    \column{0.25\textwidth}
+    \column{0.45\textwidth}
+    \textit{You think that the mean is lower.}
+
+    Notation:
     \begin{eqnarray*}
       \begin{array}{lrcl}
         H_0: & \mu & = & \# \\
@@ -142,18 +157,18 @@
       \end{array}
     \end{eqnarray*}
 
-    \column{0.75\textwidth}
+    \column{0.55\textwidth}
 
     \includegraphics[width=5cm]{img/leftSideHypothesisTest}
 
   \end{columns}
 
   \begin{description}
-  \item[$p$-value Approach] The probability that you do worse than
+  \item[$p$-value Approach:] The probability that you do worse than
     $\bar{x}$ is the area to the left under the curve. If the area is
     smaller than the significance level ($\alpha$) then it is an
     \textit{unlikely result}.
-  \item[Classical Approach] The area to the left of $x_{cr}$ is
+  \item[Classical Approach:] The area to the left of $x_{cr}$ is
     equal to the significance level ($\alpha$). If your $\bar{x}$ is
     less than this critical value then it is an \textit{unlikely
       result}.
@@ -165,10 +180,11 @@
 \begin{frame}
   \frametitle{Right Sided Test of the Mean}
 
-  You think that the mean is higher.
-
   \begin{columns}
-    \column{0.25\textwidth}
+    \column{0.45\textwidth}
+    \textit{You think that the mean is higher.}
+
+    Notation:
     \begin{eqnarray*}
       \begin{array}{lrcl}
         H_0: & \mu & = & \# \\
@@ -176,18 +192,18 @@
       \end{array}
     \end{eqnarray*}
 
-    \column{0.75\textwidth}
+    \column{0.55\textwidth}
 
     \includegraphics[width=5cm]{img/rightSideHypothesisTest}
 
   \end{columns}
 
   \begin{description}
-  \item[$p$-value Approach] The probability that you do worse than
+  \item[$p$-value Approach:] The probability that you do worse than
     $\bar{x}$ is the area to the right under the curve. If the area is
     smaller than the significance level ($\alpha$) then it is an
     \textit{unlikely result}.
-  \item[Classical Approach] The area to the right of $x_{cr}$ is
+  \item[Classical Approach:] The area to the right of $x_{cr}$ is
     equal to the significance level ($\alpha$). If your $\bar{x}$ is
     more than this critical value then it is an \textit{unlikely
       result}.
@@ -202,10 +218,11 @@
 
   \vspace*{-1em}
 
-  You think that the mean is different.
-
   \begin{columns}
-    \column{0.25\textwidth}
+    \column{0.45\textwidth}
+    \textit{You think that the mean is different.}
+
+    Notation:
     \begin{eqnarray*}
       \begin{array}{lrcl}
         H_0: & \mu & = & \# \\
@@ -213,18 +230,18 @@
       \end{array}
     \end{eqnarray*}
 
-    \column{0.75\textwidth}
+    \column{0.55\textwidth}
 
     \includegraphics[width=5cm]{img/twoSideHypothesisTest}
 
   \end{columns}
 
   \begin{description}
-  \item[$p$-value Approach] The probability that you do worse than
+  \item[$p$-value Approach:] The probability that you do worse than
     $\bar{x}$ is the area to the left \textit{and} right under the
     curve. If the area is smaller than the significance level
     ($\alpha$) then it is an \textit{unlikely result}.
-  \item[Classical Approach] The area to the left of
+  \item[Classical Approach:] The area to the left of
     $\mu-\mathrm{error}$ and to the right of $\mu+\mathrm{error}$ is
     equal to the significance level ($\alpha$). If your $\bar{x}$ is
     less than $\mu-\mathrm{error}$ or more than $\mu+\mathrm{error}$
@@ -359,11 +376,10 @@
   \item Ask, ``Are the data an unlikely result?''
   \end{enumerate}
 
-  \only<2->
+  \uncover<2->
   {
-    We want:
     \begin{itemize}
-    \item The probability that we get our result to be ``small.''
+    \item To reject $H_0$: The probability that we get our result must be ``small.''
     \item The probability that we get our result \textit{given our
         assumptions} is the significance level
       ($\alpha$). \textbf{\color{red} It is a conditional
@@ -371,7 +387,7 @@
     \end{itemize}
   }
 
-  \only<3->
+  \uncover<3->
   {
     Note: We need to define this cut-off value, $\alpha$, \textbf{in
       advance!} i.e. before any data collection or manipulation.
