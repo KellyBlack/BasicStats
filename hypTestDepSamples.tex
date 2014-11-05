@@ -8,7 +8,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{8 November 2013}
+\date{7 November 2014}
 
 \begin{frame}
   \titlepage
@@ -62,36 +62,61 @@
 \begin{frame}{Comparing Two Groups}
 
   We have two populations and take some samples: \\
-  \begin{columns}
-    \column{.5\textwidth}
-    \begin{tabular}{ll}
-      Group 1 \\ \hline
-      $x_1$  \\
-      $x_2$  \\
-      $x_3$  \\
-      $\vdots$ \\
-      $x_{\redText{N}}$  \\
-    \end{tabular}
-    \column{.5\textwidth}
+  \begin{columns}[T]
+    \column{.3\textwidth}
+      \begin{tabular}{ll}
+        Group 1 \\ \hline
+        $x_1$  \\
+        $x_2$  \\
+        $x_3$  \\
+        $\vdots$ \\
+        $x_{\redText{N}}$  \\
+      \end{tabular}
+
+    \uncover<2>{%
+      \vfill
+
+      \blueText{This is the $X$ variable.}
+    }
+
+    \vfill
+    \column{.3\textwidth}
     \begin{tabular}{ll}
       Group 2 \\ \hline
       $y_1$ \\
       $y_2$ \\
       $y_3$ \\
+      \\
       $\vdots$ \\
+      $\vdots$ \\
+      \\
       $y_{\redText{M}}$ \\
     \end{tabular}
+
+    \uncover<2>{%
+      \vfill
+
+      \blueText{This is the $Y$ variable.}
+    }
+
+    \column[t]{.4\textwidth}
+
+    \vfill
+
+    Are they different? 
+
+    \vfill
+
+    What does that question even mean? 
+
+    \vfill
+
+    What is different?
+
+    \vfill
+
   \end{columns}
 
-  \vfill
-
-  Question: Are they different? 
-
-  \vfill
-
-  What does that question even mean? What is different?
-
-  \vfill
 
 \end{frame}
 
@@ -128,6 +153,35 @@
   
 \end{frame}
 
+\begin{frame}{Independent vs. Independent Samples}
+
+  \begin{columns}[T]
+    \column{.5\textwidth}
+    Independent Samples
+
+    \includegraphics[width=5cm]{img/independentSamples}
+
+    \vfill
+    \column{.5\textwidth}
+
+    Dependent Samples
+
+    \begin{tabular}{l@{$\Rightarrow$}r}
+      ``Before'' & ``After'' \\ \hline
+      $\textrm{before}_1$  & $\textrm{after}_1$ \\
+      $\textrm{before}_2$  & $\textrm{after}_2$ \\
+      $\textrm{before}_3$  & $\textrm{after}_3$ \\
+      $\vdots$ & $\vdots$ \\
+      $\textrm{before}_{\redText{N}}$ & $\textrm{after}_{\redText{N}}$  \\
+    \end{tabular}
+
+
+    \vfill
+
+  \end{columns}
+
+  
+\end{frame}
 
 \subsection{Differences Between Dependent Samples}
 
@@ -166,6 +220,7 @@
 
   \begin{itemize}
   \item We have two random variables, $X$ and $Y$.
+  \item There is a direct relationship between them.
   \item We \textbf{CAN} define $W=X-Y$. (i.e. subtraction makes
     sense.)
   \item We define specific samples of $W$:
@@ -217,6 +272,8 @@
       4.3-4.2 & 0.1 \\
       3.5-3.4 & 0.1
     \end{tabular}
+
+    % w <- c(0,.1,.1,.1,0,.1,.1,.1,.1,.1)
 
     }
 
