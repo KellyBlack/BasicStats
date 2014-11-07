@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{18 November 2013}
+\date{10 November 2014}
 
 \begin{frame}
   \titlepage
@@ -19,11 +19,39 @@
 \end{frame}
 
 
-\subsection{Clicker Quiz}
-
-
 
 \subsection{Independent Samples}
+
+\begin{frame}{Independent vs. Independent Samples}
+
+  \begin{columns}[T]
+    \column{.5\textwidth}
+    Independent Samples
+
+    \includegraphics[width=5cm]{img/independentSamples}
+
+    \vfill
+    \column{.5\textwidth}
+
+    Dependent Samples
+
+    \begin{tabular}{l@{$\Rightarrow$}r}
+      ``Before'' & ``After'' \\ \hline
+      $\textrm{before}_1$  & $\textrm{after}_1$ \\
+      $\textrm{before}_2$  & $\textrm{after}_2$ \\
+      $\textrm{before}_3$  & $\textrm{after}_3$ \\
+      $\vdots$ & $\vdots$ \\
+      $\textrm{before}_{\redText{N}}$ & $\textrm{after}_{\redText{N}}$  \\
+    \end{tabular}
+
+
+    \vfill
+
+  \end{columns}
+
+  
+\end{frame}
+
 
 \begin{frame}{Independent Samples}
   
@@ -36,10 +64,18 @@
 
   We define 
   \begin{eqnarray*}
-    W & = & X - Y, \\
-    E[W] & = & \mu_x - \mu_y, \\
-    \mathrm{Var}[X-Y] & = & \mathrm{Var}[X] + \mathrm{Var}[Y].
+    W & = & X - Y.
   \end{eqnarray*}
+  We assume that $X$ and $Y$ are independent random variables.
+
+  \uncover<2->{%
+    We get the following results:
+    \begin{eqnarray*}
+      W & = & X - Y, \\
+      E[W] & = & \mu_x - \mu_y, \\
+      \mathrm{Var}[X-Y] & = & \mathrm{Var}[X] + \mathrm{Var}[Y].
+    \end{eqnarray*}
+  }
 
   \vfill
 
@@ -61,8 +97,7 @@
     \end{tabular}
 
     \begin{eqnarray*}
-      \bar{x} & = & \frac{x_1+x_2+\cdots+x_N}{N}, \\
-      \bar{y} & = & \frac{y_1+y_2+\cdots+y_M}{M}, \\
+      \bar{x} & = & \frac{x_1+x_2+\cdots+x_N}{N}
     \end{eqnarray*}
 
     \column{.5\textwidth}
@@ -71,15 +106,16 @@
       $y_1$ \\
       $y_2$ \\
       $y_3$ \\
+      ~ \\
       $\vdots$ \\
+      ~ \\
       $y_{\redText{M}}$ \\
     \end{tabular}
 
     \begin{eqnarray*}
-      E[\bar{x}-\bar{y}] & = & \mu_x - \mu_y, \\
-      \mathrm{Var}[\bar{x}-\bar{y}] & = & \frac{\sigma^2_x}{N} + \frac{\sigma^2_y}{M}, \\
-      \mathrm{Std.~Dev.}[\bar{x}-\bar{y}] & = & \sqrt{\frac{\sigma^2_x}{N} + \frac{\sigma^2_y}{M}}.
+      \bar{y} & = & \frac{y_1+y_2+\cdots+y_M}{M}
     \end{eqnarray*}
+
 
   \end{columns}
 
@@ -90,6 +126,16 @@
 
 \end{frame}
 
+
+\begin{frame}{The Sample Distribution For the Difference}
+  
+    \begin{eqnarray*}
+      E[\bar{x}-\bar{y}] & = & \mu_x - \mu_y, \\
+      \mathrm{Var}[\bar{x}-\bar{y}] & = & \frac{\sigma^2_x}{N} + \frac{\sigma^2_y}{M}, \\
+      \mathrm{Std.~Dev.}[\bar{x}-\bar{y}] & = & \sqrt{\frac{\sigma^2_x}{N} + \frac{\sigma^2_y}{M}}.
+    \end{eqnarray*}
+
+\end{frame}
 
 \begin{frame}{Sample Standard Deviation}
 
@@ -160,6 +206,24 @@
       degrees of freedom.  }
 \end{frame}
 
+\begin{frame}{By the way...}
+
+\redText{Note:}
+The method used in the previous example assumes that the variances are
+different. 
+
+\vfill
+
+\redText{Problem:} 
+There are times when you assume the null hypothesis is correct you
+\blueText{do not} want to assume that the variances are 
+different!
+
+
+\vfill
+\vfill
+  
+\end{frame}
 
 \begin{frame}{Pooled Variance}
 
@@ -181,8 +245,9 @@
 
   \iftoggle{clicker}{%
 
-    Two methods of producing a compound are compared. In method one
-    twelve samples and taken, and a sample mean of 1,200KW with a
+    There are two methods of producing a compound, and we want to
+    compare how much power is required in the two processes. In method
+    one twelve samples and taken, and a sample mean of 1,200KW with a
     standard deviation of 180KW is found for the power
     requirements. For method two fifteen samples yield a sample mean
     of 1,300KW with a sample standard deviation of 190KW. Assuming
@@ -209,8 +274,9 @@
 
 \begin{frame}{Example}
 
-  Two methods of producing a compound are compared. In method one
-  twelve samples and taken, and a sample mean of 1,200KW with a
+  There are two methods of producing a compound, and we want to
+  compare how much power is required in the two processes.  In method
+  one twelve samples and taken, and a sample mean of 1,200KW with a
   standard deviation of 180KW is found for the power requirements. For
   method two fifteen samples yield a sample mean of 1,300KW with a
   sample standard deviation of 190KW. Assuming that the variance of
@@ -221,7 +287,7 @@
   \only<2->{%
     We do not have sufficient evidence to reject $H_0$ at the 5\%
     significance level assuming a $t$-distribution with twenty-five
-    degrees of freedom.  }
+    degrees of freedom \redText{and a pooled variance}.  }
 \end{frame}
 
 
@@ -237,9 +303,11 @@
   \vfill
 
   \only<2->{%
-    We have sufficient evidence to reject $H_0$ at the 5\%
-    significance level assuming a $t$-distribution with nineteen
-    degrees of freedom.  }
+
+    The 95\% confidence interval is from -.12mm and .06mm  assuming a $t$-distribution with
+    nineteen degrees of freedom.
+    
+  }
 \end{frame}
 
 \begin{frame}
