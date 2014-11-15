@@ -577,6 +577,218 @@
 \end{frame}
 
 
+\section{Which Treatment is Different?}
+
+\begin{frame}{Which Treatment is Different?}
+
+We just rejected this hypothesis test:
+\begin{eqnarray*}
+  H_0: & & \mu_1 = \mu_2 = \cdots = \mu_k, \\
+  H_a: & & \mu_i \neq \mu_j ~\mathrm{for~some~}i,~j.
+\end{eqnarray*}
+
+\vfill
+
+Question: How do we decide which one is different.
+
+\vfill
+
+Problem: The null hypothesis assumes that \redText{\textbf{ALL}} means
+are the same!
+
+Problem: This is no longer a $t$ distribution because our sample
+standard deviation uses data from all treatments, and we assume that
+the total significance level across \redText{\textbf{ALL}} treatments
+\blueText{together} is $\alpha$.
+
+\vfill
+  
+  
+\end{frame}
+
+\begin{frame}{Confidence Interval For Pairwise Differences}
+
+  The idea:
+  \begin{itemize}
+  \item We look at all possible pairings for the treatments.
+  \item We look at the difference in the means for the each pair.
+  \item We find the confidence interval for the difference. 
+  \item If the confidence interval contains zero for a given pair then
+    we cannot say that there is a difference in the means for that
+    pair.
+  \item This is a two sided test!
+  \item We have to maintain an overall significance level of $\alpha$
+    when considering all of the pairings, so the distribution is a
+    \textit{Studentized Range} distribution, $q_{\alpha,df1,df2}$.
+  \end{itemize}
+
+  \vfill
+  
+\end{frame}
+
+
+\begin{frame}{Confidence Interval For Pairwise Differences}
+
+  \begin{definition}
+    The $1-\alpha$ confidence interval for the difference in the means of a pair
+    of treatments is from $\bar{x}_i - \bar{x}_j - \mathrm{~error}$ to 
+    $\bar{x}_i - \bar{x}_j + \mathrm{~error}$, where
+    \begin{eqnarray*}
+      \mathrm{error} & = & s \frac{q_{\alpha,k,\nu}}{\sqrt{2}} 
+                           \sqrt{\frac{1}{n_i}+\frac{1}{n_j}},
+    \end{eqnarray*}
+    where $\nu=N_{Tot}-k$ and $s=\sqrt{\mathrm{MSE}}$.
+  \end{definition}
+
+\end{frame}
+
+\begin{frame}{Pairwise Differences}
+
+  We have rejected $H_0$ for our hypothesis test using ANOVA. Which
+  one is different?
+
+  \centerline{\includegraphics[width=4cm]{img/periodontalBoxplot}}
+
+  \vfill
+
+  There are $C^3_2$ pairs:
+
+  \begin{columns}
+    \column{.33\textwidth}
+
+      Coe v. Peripac
+
+    \column{.33\textwidth}
+
+       Coe v. Putty 
+
+    \column{.33\textwidth}
+
+      Peripac v. Putty 
+
+
+  \end{columns}
+
+
+
+\end{frame}
+
+
+\begin{frame}{Which One is Different?}
+
+  Using a 95\% confidence level we have
+  \begin{eqnarray*}
+    k & = & 3, \\
+    \nu & = & 30-3 ~ = ~ 27, \\
+    s & \approx & 117.89, \\
+    q_{0.05,3,27} & \approx & 3.5064.
+  \end{eqnarray*}
+
+
+\end{frame}
+
+
+\begin{frame}{Which One is Different?}
+
+  \begin{columns}
+    \column{.33\textwidth}
+
+      Coe v. Peripac
+
+      \begin{tabular}{rr}
+        $\bar{x}_1$ & $\bar{x}_2$ \\
+        573.6 & 112.0 \\
+        Difference & Error \\
+        461.6 & 130.72
+      \end{tabular}
+      % $117.89 \cdot \frac{3.5064}{\sqrt{2}} \sqrt{\frac{1}{10}+\frac{1}{10}}$
+
+
+      The 95\% confidence interval assuming a Studentized range
+      distribution with 3 and 27 d.f. is from 330.9 kN/mm to 592.32 kN/mm .
+
+    \column{.33\textwidth}
+
+       Coe v. Putty 
+
+      \begin{tabular}{rr}
+        $\bar{x}_1$ & $\bar{x}_2$ \\
+        573.6 & 837.9 \\
+        Difference & Error \\
+        -264.3 & 130.72
+      \end{tabular}
+      % $117.89 \cdot \frac{3.5064}{\sqrt{2}} \sqrt{\frac{1}{10}+\frac{1}{10}}$
+
+      The 95\% confidence interval assuming a Studentized range
+      distribution with 3 and 27 d.f. is from -395.0 kN/mm to  -133.6 kN/mm.
+
+
+    \column{.33\textwidth}
+
+      Peripac v. Putty 
+
+      \begin{tabular}{rr}
+        $\bar{x}_1$ & $\bar{x}_2$ \\
+        112.0 & 837.9 \\
+        Difference & Error \\
+        -725.9 & 130.72
+      \end{tabular}
+      % $117.89 \cdot \frac{3.5064}{\sqrt{2}} \sqrt{\frac{1}{10}+\frac{1}{10}}$
+
+      The 95\% confidence interval assuming a Studentized range
+      distribution with 3 and 27 d.f. is from -856.6  kN/mm to  -595.2 kN/mm.
+
+
+  \end{columns}
+
+
+  
+\end{frame}
+
+\begin{frame}[fragile]{One Last Note}
+
+  Nobody does this nonsense by hand! (But you have to do it once in
+  your lifetime, usually on your 21st birthday.)
+
+  What we do in real life:
+
+ {
+   \fontencoding{T1}
+   \fontfamily{pcr}
+   \fontseries{m}
+   \fontshape{n}
+   \fontsize{5pt}{5pt}
+   \selectfont
+
+\begin{verbatim}
+> bonding <- read.csv('dental.txt') 
+> comparison <- aov(bonding$strength~bonding$treatment)
+> comparison
+Call:
+   aov(formula = restricted$strength ~ restricted$treatment)
+
+Terms:
+                restricted$treatment Residuals
+Sum of Squares             2699532.9  375231.3
+Deg. of Freedom                    2        27
+
+Residual standard error: 117.8875
+Estimated effects may be unbalanced
+
+> summary(comparison)
+
+                     Df  Sum Sq Mean Sq F value   Pr(>F)    
+restricted$treatment  2 2699533 1349766   97.12 4.65e-13 ***
+Residuals            27  375231   13897                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+\end{verbatim}
+}
+ 
+  You need to know how to read this information!
+
+ 
+\end{frame}
 
 %%% Local Variables: 
 %%% mode: latex
