@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{20 April 2013}
+\date{19 November 2014}
 
 \begin{frame}
   \titlepage
@@ -72,15 +72,59 @@
 
 \end{frame}
 
+\begin{frame}{Basic Assumptions}
+  
+  \begin{columns}
+    \column{.25\textwidth}
+
+    \begin{tabular}{l|l}
+      $X$ & $Y$ \\ \hline
+      $x_1$ & $y_1$ \\
+      $x_2$ & $y_2$ \\
+      $x_3$ & $y_3$ \\
+      $x_4$ & $y_4$ \\
+      $\vdots$ & $\vdots$ \\
+      $x_n$ & $y_n$ \\
+    \end{tabular}
+
+
+    \vfill
+
+    \column{.75\textwidth}
+
+    For linear regression We assume that the relationship between each
+    pair of data points is
+    \begin{eqnarray*}
+      \only<1>{%
+        y_i & = & \beta_o + \beta_1 x_i + \epsilon_i,
+        }
+        \only<2>{%
+          y_i & = & \underbrace{\beta_o + \beta_1 x_i}_{\mathrm{linear~relationship}} + 
+                    \underbrace{\epsilon_i}_{\mathrm{error}},
+        }
+    \end{eqnarray*}
+    where 
+    \begin{eqnarray*}
+      \epsilon_i & \thicksim & N(0,\sigma^2)
+    \end{eqnarray*}
+    is a random variable.
+
+    \vfill
+
+  \end{columns}
+
+\end{frame}
+
+
 \subsection{Sample Correlation}
 
 \begin{frame}{Calculating the Correlation}
 
   First define the following sums:
   \begin{eqnarray*}
-    S_{xx} & = & (x_1-\bar{x})^2 + (x_2-\bar{x})^2 + \cdot + (x_n-\bar{x})^2, \\
-    S_{yy} & = & (y_1-\bar{y})^2 + (y_2-\bar{y})^2 + \cdot + (y_n-\bar{y})^2, \\
-    S_{xy} & = & (x_1-\bar{x}) + (x_2-\bar{x}) + \cdot + (x_n-\bar{x}), \\
+    S_{xx} & = & (x_1-\bar{x})^2 + (x_2-\bar{x})^2 + \cdots + (x_n-\bar{x})^2, \\
+    S_{yy} & = & (y_1-\bar{y})^2 + (y_2-\bar{y})^2 + \cdots + (y_n-\bar{y})^2, \\
+    S_{xy} & = & (x_1-\bar{x})(y_1-\bar{y}) + (x_2-\bar{x})(y_2-\bar{y}) + \cdots + (x_n-\bar{x})(y_n-\bar{y}), \\
   \end{eqnarray*}
 
 
@@ -101,12 +145,13 @@
 
 \begin{frame}{Distribution of the Sample Regression}
 
-  \begin{definition}
+  \begin{block}{Consequence of the Definition of r}
     The sample correlation follows the distribution
     \begin{eqnarray*}
-      t & = & \frac{r\sqrt{n-2}}{\sqrt{1-r^2}}.
+      t & = & \frac{r\sqrt{n-2}}{\sqrt{1-r^2}}
     \end{eqnarray*}
-  \end{definition}
+    with the number of degrees of freedom equal to $n-2$.
+  \end{block}
   
 \end{frame}
 
@@ -141,7 +186,7 @@
       \end{columns}
 
 
-      Is there a linear relationship?
+      Is there a \redText{linear} relationship?
 
       \only<2->{%
         We can reject $H_0$ at the 95\% confidence level assuming a
@@ -152,6 +197,63 @@
 
 
 \subsection{Linear Regression}
+
+\begin{frame}{What Is The Relationship?}
+
+  We assume that there is a very good reason to think that the relationship is linear. 
+  (i.e. the relationship is motivated by actual science and not just looking at the 
+  data.)
+
+  \vfill
+
+  Question: What is the linear relationship?
+
+  Answer: We will construct point estimates for the slope and intercept parameters!
+
+  \vfill
+  
+\end{frame}
+
+\begin{frame}{Basic Assumptions (Again)}
+  
+  \begin{columns}
+    \column{.25\textwidth}
+
+    \begin{tabular}{l|l}
+      $X$ & $Y$ \\ \hline
+      $x_1$ & $y_1$ \\
+      $x_2$ & $y_2$ \\
+      $x_3$ & $y_3$ \\
+      $x_4$ & $y_4$ \\
+      $\vdots$ & $\vdots$ \\
+      $x_n$ & $y_n$ \\
+    \end{tabular}
+
+
+    \vfill
+
+    \column{.75\textwidth}
+
+    For linear regression We assume that the relationship between each
+    pair of data points is
+    \begin{eqnarray*}
+      y_i & = & \beta_o + \beta_1 x_i + \epsilon_i,
+    \end{eqnarray*}
+    where 
+    \begin{eqnarray*}
+      \epsilon_i & \thicksim & N(0,\sigma^2)
+    \end{eqnarray*}
+    is a random variable. \redText{This assumption implies that we
+      think that we know the value of each $x_i$ with a high degree of
+      certainty.}
+
+    \vfill
+
+  \end{columns}
+
+\end{frame}
+
+
 
 \begin{frame}{Linear Regression}
 
@@ -225,9 +327,9 @@
   {
 
     \begin{definition}
-      The variance of the error is 
+      The sample variance of the error is 
       \begin{eqnarray*}
-        s^2_y & = & \frac{\lp y_1 - \hat{y}_1\rp^2 + \lp y_2 - \hat{y}_2\rp^2 + \cdots + \lp y_n - \hat{y}_n\rp^2 }{n-2}.
+        \hat{\sigma}^2_y & = & \frac{\lp y_1 - \hat{y}_1\rp^2 + \lp y_2 - \hat{y}_2\rp^2 + \cdots + \lp y_n - \hat{y}_n\rp^2 }{n-2}.
       \end{eqnarray*}
     \end{definition}
 
@@ -349,9 +451,9 @@
   \end{tabular}
 
   \begin{eqnarray*}
-    s^2_y & = & \frac{ (-.2)^2 + (.2)^2 + (-.4)^2 + (1.0)^2 + (-.6)^2}{5-2}, \\
+    \hat{\sigma}^2_y & = & \frac{ (-.2)^2 + (.2)^2 + (-.4)^2 + (1.0)^2 + (-.6)^2}{5-2}, \\
     & = & \frac{1.6}{3}, \\
-    s_y & = & \sqrt{\frac{1.6}{3}}, \\
+    \hat{\sigma}_y & = & \sqrt{\frac{1.6}{3}}, \\
     & \approx & .730
   \end{eqnarray*}
   
