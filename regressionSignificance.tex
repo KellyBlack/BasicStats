@@ -8,7 +8,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{25 November 2013}
+\date{1 December 2014}
 
 \begin{frame}
   \titlepage
@@ -44,7 +44,7 @@
     \hat{\beta_0} & = & \bar{y} - \hat{\beta_1} \bar{x}, \\
     \only<4->
     {
-      s^2_y & = & \frac{\lp y_1 - \hat{y}_1\rp^2 + \lp y_2 - \hat{y}_2\rp^2 + \cdots + \lp y_n - \hat{y}_n\rp^2 }{n-2}.
+      \hat{\sigma}^2_y & = & \frac{\lp y_1 - \hat{y}_1\rp^2 + \lp y_2 - \hat{y}_2\rp^2 + \cdots + \lp y_n - \hat{y}_n\rp^2 }{n-2}.
     }
   \end{eqnarray*}
 
@@ -89,6 +89,19 @@
 
 \subsection{Inference for the Slope}
 
+\begin{frame}{The Slope Parameter}
+
+  \begin{eqnarray*}
+    \hat{\beta}_1 & = & 
+    \frac{\sum_{i=1}^n \lp x_i-\bar{x} \rp \lp y_i-\bar{y}\rp}{S_{xx}}, \\
+    & = &  \frac{\sum_{i=1}^n \lp x_i - \bar{x} \rp y_i  - \bar{y} \redText{\sum_{i=1}^n \lp x_i-\bar{x} \rp}}{S_{xx}}, \\ [10pt]
+      & =& \frac{\lp x_1 - \bar{x}\rp y_1  + \lp x_2 - \bar{x}\rp y_2 + \cdots + \lp x_n - \bar{x} \rp\lp y_n \rp}{S_{xx}}, \\ [10pt]
+      & = & \frac{x_1- \bar{x}}{S_{xx}} y_1 + \frac{x_2- \bar{x}}{S_{xx}} y_2 + \cdots + \frac{x_n- \bar{x}}{S_{xx}} y_n, \\ [10pt]
+      & = & c_1 y_1 + c_2 y_2 + \cdots + c_n y_n.
+  \end{eqnarray*}
+  
+\end{frame}
+
 \begin{frame}
   \frametitle{Inference for the Slope}
 
@@ -100,7 +113,7 @@
   \begin{definition}
     The regression estimate for the slope satisfies the $t$ distribution
     \begin{eqnarray*}
-      t & = & \frac{\hat{\beta_1}-\beta_1}{\lp\frac{s_y}{\sqrt{s_{xx}}}\rp}
+      t & = & \frac{\hat{\beta_1}-\beta_1}{\lp\frac{\hat{\sigma}_y}{\sqrt{s_{xx}}}\rp}
     \end{eqnarray*}
     with $n-2$ degrees of freedom.
   \end{definition}
@@ -115,7 +128,7 @@
     \column{.5\textwidth}
     Confidence Intervals:
     \begin{eqnarray*}
-      t_{cr} & = & \frac{\mathrm{error}}{\lp\frac{s_y}{\sqrt{s_{xx}}}\rp}
+      t_{cr} & = & \frac{\mathrm{error}}{\lp\frac{\hat{\sigma}_y}{\sqrt{s_{xx}}}\rp}
     \end{eqnarray*}
     with $n-2$ degrees of freedom.
 
@@ -123,7 +136,7 @@
 
     Hypothesis Testing:
     \begin{eqnarray*}
-      t & = & \frac{\hat{\beta_1}-\beta_1}{\lp \frac{s_y}{\sqrt{s_{xx}}}\rp}
+      t & = & \frac{\hat{\beta_1}-\beta_1}{\lp \frac{\hat{\sigma}_y}{\sqrt{s_{xx}}}\rp}
     \end{eqnarray*}
     with $n-2$ degrees of freedom.
 
@@ -153,7 +166,7 @@
       \begin{eqnarray*}
         \hat{\beta_1} & = & 1.96, \\
         \hat{\beta_0} & = & 3.1, \\
-        s_y & = & \sqrt{0.006} \\
+        \hat{\sigma}_y & = & \sqrt{0.006} \\
         s_{xx} & = & 5, \\
         s_{yy} & = & 19.22, \\
         s_{xy} & = & 9.8. 
@@ -174,7 +187,7 @@
     \vfill
 
     \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: -4.30  & B: -3.18 & C: 3.18 & D: 4.30
+      A: $\pm 4.30$  & B: $\pm 3.18$ & C: $\pm 2.78$
     \end{tabular}
 
     \vfill
@@ -203,7 +216,7 @@
       \begin{eqnarray*}
         \hat{\beta_1} & = & 1.96, \\
         \hat{\beta_0} & = & 3.1, \\
-        s_y & = & \sqrt{0.006} \\
+        \hat{\sigma}_y & = & \sqrt{0.006} \\
         s_{xx} & = & 5, \\
         s_{yy} & = & 19.22, \\
         s_{xy} & = & 9.8. 
@@ -234,7 +247,7 @@
   \frametitle{Example}
 
     \begin{columns}
-      \column{.15\textwidth}
+      \column{.20\textwidth}
 
       \begin{tabular}{l|l}
         $X$ & $Y$ \\ \hline
@@ -244,23 +257,25 @@
         4 & 10.9 \\
       \end{tabular}
 
-      \column{.25\textwidth}
+      \column{.35\textwidth}
 
       \begin{eqnarray*}
         \hat{\beta_1} & = & 1.96, \\
         \hat{\beta_0} & = & 3.1, \\
-        s_y & = & \sqrt{0.006} \\
+        \hat{\sigma}_y & = & \sqrt{0.006} \\
         s_{xx} & = & 5, \\
         s_{yy} & = & 19.22, \\
         s_{xy} & = & 9.8. 
       \end{eqnarray*}
 
 
-      \column{.6\textwidth}
+      \column{.45\textwidth}
 
       Determine the 95\% confidence interval for the slope parameter.
 
     \end{columns}
+
+    \vfill
 
     \only<2->{%
       The 95\% confidence interval for the slope is from 1.81 and 2.11
@@ -281,7 +296,7 @@
   \begin{definition}
     The regression estimate for the slope satisfies the $t$ distribution
     \begin{eqnarray*}
-      t & = & \frac{\hat{\beta_1}-\beta_1}{\lp s_y/\sqrt{s_{xx}} \rp}
+      t & = & \frac{\hat{\beta_1}-\beta_1}{\lp \hat{\sigma}_y/\sqrt{s_{xx}} \rp}
     \end{eqnarray*}
     with $n-2$ degrees of freedom.
   \end{definition}
@@ -291,7 +306,7 @@
     \column{.5\textwidth}
     Confidence Intervals:
     \begin{eqnarray*}
-      t_{cr} & = & \frac{\mathrm{error}}{\lp s_y/\sqrt{s_{xx}} \rp}
+      t_{cr} & = & \frac{\mathrm{error}}{\lp \hat{\sigma}_y/\sqrt{s_{xx}} \rp}
     \end{eqnarray*}
     with $n-2$ degrees of freedom.
 
@@ -299,7 +314,7 @@
 
     Hypothesis Testing:
     \begin{eqnarray*}
-      t & = & \frac{\hat{\beta_1}-\beta_1}{\lp s_y/\sqrt{s_{xx}}\rp}
+      t & = & \frac{\hat{\beta_1}-\beta_1}{\lp \hat{\sigma}_y/\sqrt{s_{xx}}\rp}
     \end{eqnarray*}
     with $n-2$ degrees of freedom.
 
@@ -359,7 +374,7 @@
       \begin{eqnarray*}
         \bar{x} & = & 3 \\
         \bar{y} & = & 6.8, \\
-        s_y & = & 1.55
+        \hat{\sigma}_y & = & 1.55
       \end{eqnarray*}
     }
 
@@ -367,7 +382,7 @@
       \begin{eqnarray*}
         \bar{x} & = & 3 \\
         \bar{y} & = & 6.8, \\
-        s_y & = & 1.55, \\
+        \hat{\sigma}_y & = & 1.55, \\
         s_{xx} & = & 10, \\
         s_{yy} & = & 32.8, \\
         s_{xy} & = & 16.
@@ -378,7 +393,7 @@
       \begin{eqnarray*}
         \bar{x} & = & 3 \\
         \bar{y} & = & 6.8, \\
-        s_y & = & 1.55, \\
+        \hat{\sigma}_y & = & 1.55, \\
         \hat{\beta_1} & = & \frac{16}{10}, \\
         \hat{\beta_0} & = & 2
       \end{eqnarray*}
@@ -411,7 +426,7 @@
     Using a significance level of 5\%:
     \begin{eqnarray*}
       t_{cr} & \approx & 3.182, \\
-      t_{cr} & = & \frac{\mathrm{error}}{\lp s_y / \sqrt{s_{xx}} \rp}.
+      t_{cr} & = & \frac{\mathrm{error}}{\lp \hat{\sigma}_y / \sqrt{s_{xx}} \rp}.
     \end{eqnarray*}
 
     The 95\% confidence interval for the slope is from 0.04 to 3.16
@@ -448,7 +463,7 @@
       \begin{eqnarray*}
         \bar{x} & = & 3 \\
         \bar{y} & = & 6.8, \\
-        s_y & = & 1.55, \\
+        \hat{\sigma}_y & = & 1.55, \\
         \hat{\beta_1} & = & \frac{16}{10}, \\
         \hat{\beta_0} & = & 2
       \end{eqnarray*}
@@ -457,7 +472,7 @@
 
     \only<2->{%
       \begin{eqnarray*}
-        s_y & = & 1.55, \\
+        \hat{\sigma}_y & = & 1.55, \\
         \hat{\beta_1} & = & \frac{16}{10}, \\
         \hat{\beta_0} & = & 2, \\
       \end{eqnarray*}
@@ -469,7 +484,7 @@
   \only<2->{%
     \begin{eqnarray*}
       t_{cr} & \approx & 3.182, \\
-      t & = & \frac{\frac{16}{10}-0}{\lp s_y/\sqrt{s_{xx}}\rp}.
+      t & = & \frac{\frac{16}{10}-0}{\lp \hat{\sigma}_y/\sqrt{s_{xx}}\rp}.
     \end{eqnarray*}
   }
 
@@ -504,15 +519,15 @@
       \begin{eqnarray*}
         \bar{x} & = & 3 \\
         \bar{y} & = & -7.32, \\
-        s_y & = & 1.068 \\
+        \hat{\sigma}_y & \approx & 1.068 \\
       \end{eqnarray*}
 
       \column{.44\textwidth}
 
       \begin{eqnarray*}
         s_{xx} & = & 10, \\
-        s_{yy} & = & 77.408, \\
-        s_{xy} & = & -27.2.
+        s_{yy} & \approx & 77.408, \\
+        s_{xy} & \approx & -27.2.
       \end{eqnarray*}
 
     \end{columns}
@@ -555,15 +570,15 @@
       \begin{eqnarray*}
         \bar{x} & = & 3 \\
         \bar{y} & = & -7.32, \\
-        s_y & = & 1.068 \\
+        \hat{\sigma}_y & \approx & 1.068 \\
       \end{eqnarray*}
 
       \column{.44\textwidth}
 
       \begin{eqnarray*}
         s_{xx} & = & 10, \\
-        s_{yy} & = & 77.408, \\
-        s_{xy} & = & -27.2.
+        s_{yy} & \approx & 77.408, \\
+        s_{xy} & \approx & -27.2.
       \end{eqnarray*}
 
     \end{columns}
