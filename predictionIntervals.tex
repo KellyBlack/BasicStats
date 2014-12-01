@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{2 December 2013}
+\date{3 December 2014}
 
 \begin{frame}
   \titlepage
@@ -82,6 +82,7 @@
 
 \subsection{Inference On Predicted Value}
 
+
 \begin{frame}
   \frametitle{Recall: Linear Regression}
 
@@ -97,13 +98,13 @@
   Calculate the following:
   \begin{eqnarray*}
     S_{xx} & = & \lp x_1 - \bar{x}\rp^2 + \cdots + \lp x_n - \bar{x} \rp^2, \\
-    S_{yy} & = & \lp x_1 - \bar{y}\rp^2 + \cdots + \lp y_n - \bar{y} \rp^2, \\
+    S_{yy} & = & \lp y_1 - \bar{y}\rp^2 + \cdots + \lp y_n - \bar{y} \rp^2, \\
     S_{xy} & = & \lp x_1 - \bar{x}\rp\lp y_1 - \bar{y}\rp + \cdots + \lp x_n - \bar{x} \rp\lp y_n - \bar{y}\rp, \\
     \hat{\beta_1} & = & \frac{S_{xy}}{S_{xx}}, \\
     \hat{\beta_0} & = & \bar{y} - \hat{\beta_1} \bar{x}, \\
     \only<4->
     {
-      s^2_y & = & \frac{\lp y_1 - \hat{y}_1\rp^2 + \lp y_2 - \hat{y}_2\rp^2 + \cdots + \lp y_n - \hat{y}_n\rp^2 }{n-2}.
+      \hat{\sigma}^2_y & = & \frac{\lp y_1 - \hat{y}_1\rp^2 + \lp y_2 - \hat{y}_2\rp^2 + \cdots + \lp y_n - \hat{y}_n\rp^2 }{n-2}.
     }
   \end{eqnarray*}
 
@@ -140,7 +141,7 @@
         y & = & \beta_1 x + \beta_0 + {\color{red}\epsilon} \\
         {\color{blue}\hat{\beta}_1} & = & \frac{S_{xy}}{S_{xx}} \\
         {\color{blue}\hat{\beta}_0} & = & \bar{y} - {\color{blue}\hat{\beta}_1} \bar{x} \\
-        t & = & \frac{\hat{\beta}_1-\beta_1}{\lp\frac{s_y}{\sqrt{s_{xx}}}\rp},~df=n-2
+        t & = & \frac{\hat{\beta}_1-\beta_1}{\lp\frac{\hat{\sigma}_y}{\sqrt{s_{xx}}}\rp},~df=n-2
       \end{eqnarray*}
 
     \end{columns}
@@ -196,7 +197,7 @@
 
   The predicted value  satisfies a $t$-distribution by
   \begin{eqnarray*}
-    t & = & \frac{\hat{y}-y_{\mathrm{true}}}{s_y \sqrt{\frac{1}{n}+\frac{(x-\bar{x})^2}{S_{xx}}}},
+    t & = & \frac{\hat{y}-y_{\mathrm{true}}}{\hat{\sigma}_y \sqrt{\frac{1}{n}+\frac{(x-\bar{x})^2}{S_{xx}}}},
   \end{eqnarray*}
   with $n-2$ degrees of freedom.
 
@@ -208,7 +209,7 @@
       \column{.5\textwidth}
       Confidence Intervals:
       \begin{eqnarray*}
-        t^* & = & \frac{\mathrm{error}}{s_y \sqrt{\frac{1}{n}+\frac{(x-\bar{x})^2}{S_{xx}}}},
+        t^* & = & \frac{\mathrm{error}}{\hat{\sigma}_y \sqrt{\frac{1}{n}+\frac{(x-\bar{x})^2}{S_{xx}}}},
       \end{eqnarray*}
       with $n-2$ degrees of freedom.
 
@@ -216,7 +217,7 @@
 
       Hypothesis Testing:
       \begin{eqnarray*}
-        t & = & \frac{\hat{y}-y_{\mathrm{true}}}{s_y \sqrt{\frac{1}{n}+\frac{(x-\bar{x})^2}{S_{xx}}}},
+        t & = & \frac{\hat{y}-y_{\mathrm{true}}}{\hat{\sigma}_y \sqrt{\frac{1}{n}+\frac{(x-\bar{x})^2}{S_{xx}}}},
       \end{eqnarray*}
       with $n-2$ degrees of freedom.
 
@@ -228,7 +229,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Alternate Formula}
+  \frametitle{Side Note!}
 
   The predicted value is 
   \begin{eqnarray*}
@@ -238,21 +239,21 @@
 
   The predicted value  satisfies a $t$-distribution by
   \begin{eqnarray*}
-    \only<1>{t & = & \frac{\hat{y}-y_{\mathrm{true}}}{s_y\sqrt{\frac{1}{n}+\frac{(x-\bar{x})^2}{S_{xx}}}},}
+    \only<1>{t & = & \frac{\hat{y}-y_{\mathrm{true}}}{\hat{\sigma}_y\sqrt{\frac{1}{n}+\frac{(x-\bar{x})^2}{S_{xx}}}},}
     \only<2>{t & = & \frac{\lp \hat{\beta}_1 x + \hat{\beta}_0 \rp - \lp \beta_1 x + \beta_0\rp}{
-        s_y\sqrt{\frac{1}{n}+\frac{(x-\bar{x})^2}{S_{xx}}}},}
+        \hat{\sigma}_y\sqrt{\frac{1}{n}+\frac{(x-\bar{x})^2}{S_{xx}}}},}
   \end{eqnarray*}
   with $n-2$ degrees of freedom.
   
 \end{frame}
 
 \begin{frame}
-  \frametitle{Alternate Formula}
+  \frametitle{Inference on the Intercept Parameter}
 
   Let $x=0$, and we get 
   \begin{eqnarray*}
     t & = & \frac{\hat{\beta}_0 - \beta_0}{
-        s_y\sqrt{\frac{1}{n}+\frac{(x-\bar{x})^2}{S_{xx}}}},
+        \hat{\sigma}_y\sqrt{\frac{1}{n}+\frac{(x-\bar{x})^2}{S_{xx}}}},
   \end{eqnarray*}
   with $n-2$ degrees of freedom.
   
@@ -278,7 +279,7 @@
       \begin{eqnarray*}
         \hat{\beta_1} & = & 1.96, \\
         \hat{\beta_0} & = & 3.1, \\
-        s_y & = & \sqrt{0.006} \\
+        \hat{\sigma}_y & = & \sqrt{0.006} \\
         s_{xx} & = & 5, \\
         s_{yy} & = & 19.22, \\
         s_{xy} & = & 9.8. 
@@ -292,7 +293,7 @@
     \end{columns}
 
     \only<2->{%
-      The 95\% confidence interval is from 7.76 to 7.84 assuming a
+      The 95\% confidence interval is from 7.64 to 7.97 assuming a
       $t$-distribution with 2 degrees of freedom.  
     }
 
@@ -318,7 +319,7 @@
       \begin{eqnarray*}
         \hat{\beta_1} & = & 1.96, \\
         \hat{\beta_0} & = & 3.1, \\
-        s_y & = & \sqrt{0.006} \\
+        \hat{\sigma}_y & = & \sqrt{0.006} \\
         s_{xx} & = & 5, \\
         s_{yy} & = & 19.22, \\
         s_{xy} & = & 9.8. 
@@ -332,13 +333,76 @@
     \end{columns}
 
     \only<2->{%
-      The 95\% confidence interval is from 12.8 to 13.0 assuming a $t$-distribution with 2
+      The 95\% confidence interval is from 12.49 to 13.31 assuming a $t$-distribution with 2
       degrees of freedom.  }
 
 
 \end{frame}
 
+\subsection{Connections with ANOVA}
 
+\begin{frame}
+  \frametitle{Bivariate Data and ANOVA}
+
+    \begin{columns}
+      \column{.15\textwidth}
+
+      \begin{tabular}{r|r} % 
+        $X$ & $Y$ \\ \hline
+        $x_1$ & $y_1$ \\
+        $x_2$ & $y_2$ \\
+        $\vdots$ & $\vdots$ \\
+        $x_n$ & $y_n$ 
+      \end{tabular}
+
+      \column{.85\textwidth}
+      \uncover<2->{%
+        Calculate the following:
+        \begin{eqnarray*}
+          S_{xx} & = & \lp x_1 - \bar{x}\rp^2 + \cdots + \lp x_n - \bar{x} \rp^2, \\
+          S_{yy} & = & \lp y_1 - \bar{y}\rp^2 + \cdots + \lp y_n - \bar{y} \rp^2, \\
+          S_{xy} & = & \lp x_1 - \bar{x}\rp\lp y_1 - \bar{y}\rp + \cdots + \lp x_n - \bar{x} \rp\lp y_n - \bar{y}\rp, \\
+          \hat{r} & = & \frac{S_{xy}}{\sqrt{S_{xx} S_{yy}}}.
+        \end{eqnarray*}
+      }
+      \end{columns}
+
+
+  \uncover<3->{%
+    
+    Note:\\
+    \begin{eqnarray*}
+      \mathrm{SST}  & = & (y_1-\bar{y})^2 + (y_2-\bar{y})^2 + \cdots + (y_n-\bar{y})^2, \\
+      \mathrm{SSTr} & = & (\hat{y}_1-\bar{y})^2 + (\hat{y}_2-\bar{y})^2 + \cdots + (\hat{y}_n-\bar{y})^2, \\
+      \mathrm{SSE}  & = & (y_1 - \hat{y}_1)^2 + (y_2 - \hat{y}_2)^2 + \cdots + (y_n-\hat{y}_n)^2, \\
+      \Rightarrow \mathrm{SST} & = & \mathrm{SSTr} + \mathrm{SSE}.
+    \end{eqnarray*}
+  }
+
+  \vfill
+  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Coefficient of Determination}
+
+  \begin{definition}[Coefficient of Determination]
+    The coefficient of determination is defined to be
+    \begin{eqnarray*}
+      R^2 & = & \frac{\mathrm{SSTr}}{\mathrm{SST}}, \\
+          & = & 1 - \frac{\mathrm{SSE}}{\mathrm{SST}}.
+    \end{eqnarray*}
+  \end{definition}
+
+  \uncover<2->{%
+    The coefficient of determination represents the percent of change
+    in the $y$ data that can be attributed to the change in the $x$
+    data.  
+  }
+  
+
+\end{frame}
 
 
 %%% Local Variables: 
