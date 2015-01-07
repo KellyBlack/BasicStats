@@ -1,0 +1,184 @@
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% List of definitions that are used in the different pages for the
+% notes
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Basic definitions used throughout the notes
+
+\newcommand{\change}[1]{\triangle #1}
+\newcommand{\fortyFive}{\frac{\sqrt{2}}{2}}
+\newcommand{\imag}{j}
+\newcommand{\half}{\mbox{$\frac{1}{2}$}}
+\newcommand{\deltat}{\mbox{$\triangle t$}}
+\newcommand{\deltax}{\mbox{$\triangle x$}}
+\newcommand{\deltay}{\mbox{$\triangle y$}}
+
+\newcommand{\deriv}[2]{\frac{d}{d#2}#1}
+\newcommand{\derivTwo}[2]{\frac{d^2}{d#2^2}#1}
+
+\newcommand{\lp}{\left(}
+\newcommand{\rp}{\right)}
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Theorem and definition environments
+\newenvironment{definition}[1][Definition:]{\begin{trivlist}
+  \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+\newenvironment{example}[1][Example:]{\begin{trivlist}
+  \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Basic linear algebra commands
+
+\newcommand{\arrayTwo}[4]{
+  \left[
+  \begin{array}{rr}
+    #1 & #2 \\
+    #3 & #4
+  \end{array}
+  \right]
+}
+
+\newcommand{\vecTwo}[2]{
+  \left[
+  \begin{array}{r}
+    #1 \\  #2
+  \end{array}
+  \right]
+}
+
+\newcommand{\vecFour}[4]{
+  \left[
+  \begin{array}{r}
+    #1 \\  #2 \\ #3 \\ #4
+  \end{array}
+  \right]
+}
+
+
+\newcommand{\stateTwo}[2]{
+  \begin{array}{rr}
+    \mbox{\fontsize{6}{6}\selectfont $#1$} \\  \mbox{\fontsize{6}{6}\selectfont $#2$}
+  \end{array}
+}
+
+
+\newcommand{\arrayThree}[9]{
+  \left[
+    \begin{array}{rrr}
+      #1 & #2 & #3 \\
+      #4 & #5 & #6 \\
+      #7 & #8 & #9
+    \end{array}
+  \right]
+}
+
+\newcommand{\startRowOps}{
+  \left[
+    \begin{array}{rrr|r}
+}
+
+\newcommand{\oneRowOps}[4] {
+      #1 & #2 & #3 & #4 \\
+}
+
+\newcommand{\stopRowOps}{
+    \end{array}
+  \right]
+}
+
+
+\newcommand{\vecThree}[3]{
+  \left[
+  \begin{array}{r}
+    #1 \\  #2 \\ #3
+  \end{array}
+  \right]
+}
+
+
+\newcommand{\stateThree}[3]{
+  \begin{array}{r}
+    \mbox{\fontsize{6}{6}\selectfont $#1$} \\  
+    \mbox{\fontsize{6}{6}\selectfont $#2$} \\ 
+    \mbox{\fontsize{6}{6}\selectfont $#3$}
+  \end{array}
+}
+
+
+
+
+
+\newcommand{\detTwo}[4]{
+  \left|
+  \begin{array}{rr}
+    #1 & #2 \\
+    #3 & #4
+  \end{array}
+  \right|
+}
+
+
+
+\newcommand{\detThree}[9]{
+  \left|
+    \begin{array}{rrr}
+      #1 & #2 & #3 \\
+      #4 & #5 & #6 \\
+      #7 & #8 & #9
+    \end{array}
+  \right|
+}
+
+
+
+
+\newcommand{\startRowFour}{
+  \left[
+    \begin{array}{rrrr}
+}
+
+\newcommand{\oneRowFour}[4] {
+      #1 & #2 & #3 & #4 \\
+}
+
+
+
+
+\newcommand{\startRowOpsTwo}{
+  \left[
+    \begin{array}{rr|rr}
+}
+
+\newcommand{\oneRowOpsTwo}[4] {
+      #1 & #2 & #3 & #4 \\
+}
+
+
+\newcommand{\startRowOpsThree}{
+  \left[
+    \begin{array}{rrr|rrr}
+}
+
+\newcommand{\oneRowOpsThree}[6] {
+      #1 & #2 & #3 & #4 & #5 & #6 \\
+}
+
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Laplace Transforms
+
+\newcommand{\laplace}[1]{\makebox{$ {\cal L} \{ #1 \}$}}
+\newcommand{\invlaplace}[1]{\makebox{$ {\cal L}^{-1} \left\{ #1 \right\}$}}
+
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

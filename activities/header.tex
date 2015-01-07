@@ -1,0 +1,188 @@
+\newcommand{\introduction}[1]{}
+
+\font\tenit=cmti10
+\makeatletter
+
+\renewcommand{\@evenfoot}{\tenit Clarkson University Division of
+  Mathematics and Computer Science \hfill}
+\renewcommand{\@oddfoot}{\tenit \hfill Math 232: Introduction to
+  Differential Equations - \today}
+
+\renewcommand{\section}{\@startsection
+  {section}
+  {1}
+  {0em}
+  {\baselineskip}
+  {-1em}
+  {\normalfont\normalsize\bfseries}}
+
+\renewcommand{\subsection}{\@startsection
+  {subsection}
+  {2}
+  {0em}
+  {\baselineskip}
+  {-1em}
+  {\normalfont\normalsize\bfseries}}
+
+\renewcommand{\subsubsection}{\@startsection
+  {subsubsection}
+  {2}
+  {0em}
+  {\baselineskip}
+  {-2em}
+  {\normalfont\normalsize\itshape}}
+
+\makeatother
+
+
+\newlength{\basicoddside}
+\newlength{\basicevenside}
+\newlength{\basicwidth}
+\newlength{\basictop}
+\newlength{\basicheight}
+
+\newcommand{\activityParams}{
+  %\setlength{\hoffset}{0in}
+  %\setlength{\oddsidemargin}{-0.5in}
+  %\setlength{\evensidemargin}{-0.5in}
+  %\setlength{\textwidth}{7.5in}
+  \setlength{\topmargin}{-0.5in}
+  \setlength{\textheight}{9in}
+}
+
+\newcommand{\textParams}{
+  \setlength{\oddsidemargin}{\basicoddside}
+  \setlength{\evensidemargin}{\basicevenside}
+  \setlength{\textwidth}{\basicwidth}
+  \setlength{\topmargin}{\basictop}
+  \setlength{\textheight}{\basicheight}
+}
+
+
+  \setlength{\oddsidemargin}{-0.25in}
+  \setlength{\evensidemargin}{0.25in}
+  \setlength{\textwidth}{6.25in}
+  \setlength{\topmargin}{-0.5in}
+  \setlength{\textheight}{9in}
+  \setlength{\marginparwidth}{56pt}
+
+
+\newcommand{\sideNote}[1]{\marginpar{\tenit \raggedright #1}}
+\newcommand{\doNotPrint}[1]{}
+
+
+\newtheorem{lemma}{Lemma}[subsection]
+\newtheorem{theorem}{Theorem}[subsection]
+
+
+
+\newcounter{activity}
+\setcounter{activity}{1}
+
+\newcommand{\actTitle}[1]{
+  \cleardoublepage
+  \activityParams
+  \stepcounter{activity}
+  \markboth
+  {Name: \hspace*{2.5in} \hfil  Activity: \theactivity}
+  {Name: \hspace*{2.5in} \hfil  Activity: \theactivity}
+  \stepcounter{subsection}
+  \addcontentsline{toc}{subsection}{
+    \protect\numberline{\thesubsection}{#1}}
+}
+
+\newcounter{hw}
+\setcounter{hw}{0}
+\newcommand{\hwTitle}[1]{
+  \cleardoublepage
+  \activityParams
+  \stepcounter{hw}
+  \markboth
+  {Name: \hspace*{2.5in} \hfil  Home Work: \thehw}
+  {Name: \hspace*{2.5in} \hfil  Home Work: \thehw}
+  \stepcounter{subsubsection}
+  \addcontentsline{toc}{subsubsection}{
+    \protect\numberline{\thesubsubsection}{#1}}
+}
+
+\newcommand{\preClass}[1]{
+  \cleardoublepage
+  \activityParams
+  \markboth
+  {Name: \hspace*{2in} \hfil Preclass Work - Finish Before Class Begins \hfil}
+  {Name: \hspace*{2in} \hfil Preclass Work - Finish Before Class Begins \hfil}
+  \stepcounter{subsubsection}
+  \addcontentsline{toc}{subsubsection}{
+    \protect\numberline{\thesubsubsection}{#1}}
+}
+
+\newcommand{\postClass}{
+
+  \cleardoublepage
+  \activityParams
+  \markboth
+  {Name: \hspace*{2in} \hfil Postclass Work - Finish After Class \hfil}
+  {Name: \hspace*{2in} \hfil Postclass Work - Finish After Class \hfil}
+%  \stepcounter{subsubsection}
+%  \addcontentsline{toc}{subsubsection}{
+%    \protect\numberline{\thesubsubsection}{#1}}
+}
+
+
+\newcounter{quiz}
+\setcounter{quiz}{1}
+\newcommand{\qzTitle}[1]{
+  \cleardoublepage
+  \activityParams
+  \stepcounter{quiz}
+  \markboth
+  {Name: \hspace*{2.5in} \hfil  #1 Quiz: \thequiz}
+  {Name: \hspace*{2.5in} \hfil  #1 Quiz: \thequiz}
+  \stepcounter{subsubsection}
+  \addcontentsline{toc}{subsubsection}{
+    \protect\numberline{\thesubsubsection}{#1}}
+}
+
+
+\newcommand{\stateSummary}{\item State and summarize two ideas from today's
+  class. 
+  \vfill 
+  \centerline{\textit{(Over)}}
+  \clearpage }
+
+
+\newcommand{\addTOC}[1]{
+  \stepcounter{section}
+  \addcontentsline{toc}{section}{
+    \protect\numberline{\thesection}{#1}}
+  }
+
+
+
+\newenvironment{problem}
+{\begin{list}
+{\arabic{enumi}.}
+{\usecounter{enumi}
+\setlength{\rightmargin}{0pt}
+%\setlength{\rightmargin}{-72pt}
+\setlength{\parsep}{1em}
+\setlength{\listparindent}{0pt}
+}}
+{\end{list}}
+
+\newenvironment{subproblem}
+{\begin{list}
+{(\alph{enumii})}
+{\usecounter{enumii}
+\setlength{\rightmargin}{0pt}
+\setlength{\parsep}{1em}
+\setlength{\listparindent}{0pt}
+}}
+{\end{list}}
+
+\newenvironment{multiEqn}
+{\begin{eqnarray*} 
+ \begin{array}{rclclclcl}}
+{\end{array}
+ \end{eqnarray*}}
+

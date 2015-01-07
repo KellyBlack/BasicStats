@@ -1,0 +1,107 @@
+\documentclass[12pt,twoside]{book}
+\usepackage{layout}
+%\usepackage{makeidx}
+\RequirePackage{verbatim}
+%\RequirePackage{alltt}
+\usepackage{hyperref}
+\usepackage{ifpdf}
+\usepackage{etoolbox}
+
+
+
+\newtoggle{solutions}
+\toggletrue{solutions}
+\togglefalse{solutions}
+
+\ifpdf 
+   \pdfcompresslevel=9
+   \pdfoutput=1
+                                                                                            
+                       
+   \usepackage[pdftex]{graphicx}
+   \usepackage[pdftex]{geometry}
+   \usepackage[pdftex]{color}
+   \usepackage{hyperref}
+   \hypersetup{
+     pdftitle={Recitation Activities for the Introduction to Differential Equations},
+     pdfsubject={ODE},
+     pdfauthor={Kelly Black},
+     pdfkeywords={classroom activities},
+     anchorcolor = {red},
+     colorlinks = {true},
+     %pdfpagemode={FullScreen}
+   }
+\else
+   \usepackage{epsfig}
+   \usepackage{color}
+\fi
+
+
+
+\pagestyle{myheadings}
+
+%\setlength{\basicoddside}{\oddsidemargin}
+%\setlength{\basicevenside}{\evensidemargin}
+%\setlength{\basicwidth}{\textwidth}
+%\setlength{\basictop}{\topmargin}
+%\setlength{\basicheight}{\textheight}
+
+
+\input{header}
+\setcounter{activity}{0}
+
+\input{latexDefinitions}
+
+%\includeonly{laplace}
+
+\begin{document}
+
+
+\title{Recitation Activities \\ 
+  Introduction to Statistics
+  \iftoggle{solutions}{%
+    \\\textit{Solution Manual}
+  }
+}
+\author{Kelly Black\\Clarkson University\\Division of Mathematics and
+  Computer Science}
+
+\maketitle
+
+\textit{\small Inside of front cover - (intentionally blank)
+  \tiny{well mostly blank....}}
+
+\clearpage
+
+\begin{center}
+  
+  \includegraphics{img/ccV3}
+
+  Recitation Activities for the Introduction to Statistics
+  by Kelly Black is licensed under a Creative Commons
+  Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+
+  Special thanks go to Khrystyna Dilai and Justin Foster who made the
+  first draft of all of the files.
+
+  \url{http://creativecommons.org/licenses/by-nc-sa/3.0/ }
+
+\end{center}
+
+
+\tableofcontents
+
+%\clearpage
+
+\chapter{Probability}
+
+\include{ProbabilityIntroduction}      % 1
+
+
+\chapter{Descriptive Statistics}
+\include{descriptive}    % 4a
+
+\chapter{Inference}
+\include{Activities_JF}    % 4a
+
+\end{document}
