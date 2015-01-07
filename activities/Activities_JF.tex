@@ -1,0 +1,112 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\begin{document}
+\begin{enumerate}
+\item The equation for a confidence interval is given below
+\begin{equation*}
+\mu \in \left( \bar{x} \mp \frac{t_{\frac{\alpha}{2},n-1}s}{\sqrt{n}}\right)
+\end{equation*} \\
+\begin{enumerate}
+\item $\bar{x}$ is called the\noindent\hrulefill \\
+\item $t_{\frac{\alpha}{2},n-1}$ is called the \noindent\hrulefill \\
+\item $\frac{s}{\sqrt{n}}$ is called the \noindent\hrulefill \\
+\item A t-critical point is used when you don't know the \noindent\hrulefill .\\ If you do know it then a critical point of \noindent\hrulefill is used.
+\item Supposed you have a data set with sample mean $\bar{x} = 3.5$, $s=0.25$, and $n=40$. Calculate the 90\%, 95\%, and 99\% confidence internvals, then explain what happens to the length of the interval as the confidence level increases.
+\end{enumerate}
+\item The following data set shows the U.S. GDP from 2000 to 2010 in billions of dollars. Construct a 95\% confidence interval for the mean GDP in billions of dollars. 
+\begin{table}[h]
+    \begin{tabular}{ll}
+   2000 &12565.2 \\
+  2001  &12684.4 \\
+   2002 &12909.7 \\
+   2003 &13270.0 \\
+    2004 &13774.0 \\
+  2005  &14235.6 \\
+   2006 &14615.2 \\
+   2007 &14876.6 \\
+   2008 &14833.6 \\
+   2009 &14417.9 \\
+   2010 &14779.4 \\
+    \end{tabular}
+\end{table}
+\end{enumerate}
+\newpage
+\begin{enumerate}
+\item What is the confidence interval for proportions? 
+\begin{enumerate}
+\item How do you find $\hat{p}$?
+\item A company can stay in business if they are profitable at the end of the year (assume break-even coutns as profitable). The Mayor of Beaverdam claims that at least 65\% of companies stay in business each year. A sample of 40 companies are checked for profitability at the end of the year. Of these 30 show to be profitable. Construct a 95\% confidence interval and decide whether or not the mayor is accurate in saying that at least 65\% stay in business.
+\\ \\
+\end{enumerate}
+\item The equation for the length of an interval is 
+\begin{equation*}
+L_{0} = z_{\frac{\alpha}{2}}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+\end{equation*}
+\begin{enumerate}
+\item Solve this equation for $n$ in terms of the other variables
+\item Suppose you want to know if dropping a aphone into water will damage it. You're looking for the proportion of phones that stop working after being dropped in the water. If you wanted a 95\% confidence interval with a margin of error of $\pm .07\%$, how many phones do you test? Assume $\hat{p}=0.05$
+\end{enumerate}
+\end{enumerate}
+\newpage
+\begin{enumerate}
+\item Suppose employees get an annual bonus if the average annual revenue is greater than \$100,000. State the null and alternative hypothesis.
+\begin{enumerate}
+\item The following equation is used to calculate a p-value
+\begin{equation*}
+p-value = P(x \le -|t|) + P(x \ge |t|)
+\end{equation*}
+Show this graphically below \\
+\item a t-distribution is symmetrical which means that 
+\begin{equation*}
+p-value = 2 \times P(x \ge |t|)
+\end{equation*}
+Show this graphically below \\ 
+\item For a two-sided hypothesis test the rejection region is $|t| > t_{\frac{\alpha}{2},n-1}$ while the acceptance region is $|t| < t_{\frac{\alpha}{2},n-1}$. For $n=20$, show that the acceptance region increases as $\alpha$ decreases. Show this by using $\alpha = 0.1, 0.05, 0.01$.
+\end{enumerate}
+\item For a known population standard deviation we use a z-statisitic. The p-value is then 
+\begin{equation*}
+p-value = 2\times \Phi (-|z|)
+\end{equation*}
+\begin{enumerate}
+\item State the equation for the z-statistic
+\item If your sample size is 30, population mean is 7.5, and your sample mean is 6.0, with a standard deviation of 3.5, calculate the p-value
+\item Using a significance level of 0.05, compare your p-value from part (b) to your significance level. Do you reject or fail to reject a null hypothesis?
+\end{enumerate}
+\end{enumerate}
+\newpage
+\begin{enumerate}
+\item 200 students are surveyed about their fondness for sports at Clarkson University. Of those 80 say they like sports. Is this proportion low for college students? Let $P_{0}$ be the proportion of college students who like sports.
+\begin{enumerate}
+\item Write the null and alternative hypothesis below
+\item The test statisitic can be calculated as:
+\begin{equation*}
+z=\frac{\hat{P}-P_{0}}{\sqrt{\frac{P_{0}(1-P_{0})}{n}}}
+\end{equation*}
+Another survey finds $\hat{P} = .265$, calculate z
+\item The p-value can be calculated as
+\begin{equation*}
+p-value = P(z \ge |z|)
+\end{equation*}
+Calculate the p-value and compare it to $\alpha = 0.05$. Do you accept or reject $H_{0}$?
+\end{enumerate}
+\item For the comparison of two proportions the test statistic is defined differently, but the concept is still the same as a sinlge proportion. Let $d_{0}$ be the difference between the two proportions (if you claim that the proportions are the same then $d_{0}$ =0). Before we defined $\hat{p}$ as $\hat{p}=\frac{x}{n}$. This time we'll say that $\hat{p_{1}} = \frac{x_{1}}{n_{1}}$ and similarly $\hat{p_{2}} = \frac{x_{2}}{n_{2}}$. The combined proportion, which we'll call $\hat{P}$ will be equal to $\hat{P} = \frac{x_{1}+x_{2}}{n_{1}+n_{2}}$. This means that the test statisitic is:
+\begin{equation*}
+z=\frac{(\hat{p_{1}}-\hat{p_{2}})-d_{0}}{\sqrt{\hat{P}(1-\hat{P})\left(\frac{1}{n_{1}}+\frac{1}{n_{2}}\right)}}
+\end{equation*}
+\begin{enumerate}
+\item Given the values below, calculate the z-statistic
+\begin{flalign*}
+n_{1} &= 40 & \\
+n_{2} &= 60 & \\
+x_{1} &= 8.8 & \\
+x_{2} &= 14
+\end{flalign*}
+\item Test the hypothesis that $d_{0} = 0$ by calculating the p-value (this is done the same was as a single proportion problem).
+\item Give the p-value, do you reject or fail to reject $H_{0}$?
+\end{enumerate}
+\end{enumerate}
+\end{document}
