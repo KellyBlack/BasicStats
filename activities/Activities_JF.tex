@@ -1,15 +1,13 @@
-\documentclass{article}
-\usepackage{graphicx}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
+%\usepackage{graphicx}
+%\usepackage{amsmath}
+%\usepackage{amssymb}
+%\usepackage{amsthm}
 
-\begin{document}
 \begin{enumerate}
 \item The equation for a confidence interval is given below
-\begin{equation*}
+\begin{eqnarray*}
 \mu \in \left( \bar{x} \mp \frac{t_{\frac{\alpha}{2},n-1}s}{\sqrt{n}}\right)
-\end{equation*} \\
+\end{eqnarray*} \\
 \begin{enumerate}
 \item $\bar{x}$ is called the\noindent\hrulefill \\
 \item $t_{\frac{\alpha}{2},n-1}$ is called the \noindent\hrulefill \\
@@ -43,9 +41,9 @@
 \\ \\
 \end{enumerate}
 \item The equation for the length of an interval is 
-\begin{equation*}
+\begin{eqnarray*}
 L_{0} = z_{\frac{\alpha}{2}}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
-\end{equation*}
+\end{eqnarray*}
 \begin{enumerate}
 \item Solve this equation for $n$ in terms of the other variables
 \item Suppose you want to know if dropping a aphone into water will damage it. You're looking for the proportion of phones that stop working after being dropped in the water. If you wanted a 95\% confidence interval with a margin of error of $\pm .07\%$, how many phones do you test? Assume $\hat{p}=0.05$
@@ -56,21 +54,21 @@ L_{0} = z_{\frac{\alpha}{2}}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
 \item Suppose employees get an annual bonus if the average annual revenue is greater than \$100,000. State the null and alternative hypothesis.
 \begin{enumerate}
 \item The following equation is used to calculate a p-value
-\begin{equation*}
+\begin{eqnarray*}
 p-value = P(x \le -|t|) + P(x \ge |t|)
-\end{equation*}
+\end{eqnarray*}
 Show this graphically below \\
 \item a t-distribution is symmetrical which means that 
-\begin{equation*}
+\begin{eqnarray*}
 p-value = 2 \times P(x \ge |t|)
-\end{equation*}
+\end{eqnarray*}
 Show this graphically below \\ 
 \item For a two-sided hypothesis test the rejection region is $|t| > t_{\frac{\alpha}{2},n-1}$ while the acceptance region is $|t| < t_{\frac{\alpha}{2},n-1}$. For $n=20$, show that the acceptance region increases as $\alpha$ decreases. Show this by using $\alpha = 0.1, 0.05, 0.01$.
 \end{enumerate}
 \item For a known population standard deviation we use a z-statisitic. The p-value is then 
-\begin{equation*}
+\begin{eqnarray*}
 p-value = 2\times \Phi (-|z|)
-\end{equation*}
+\end{eqnarray*}
 \begin{enumerate}
 \item State the equation for the z-statistic
 \item If your sample size is 30, population mean is 7.5, and your sample mean is 6.0, with a standard deviation of 3.5, calculate the p-value
@@ -83,30 +81,29 @@ p-value = 2\times \Phi (-|z|)
 \begin{enumerate}
 \item Write the null and alternative hypothesis below
 \item The test statisitic can be calculated as:
-\begin{equation*}
+\begin{eqnarray*}
 z=\frac{\hat{P}-P_{0}}{\sqrt{\frac{P_{0}(1-P_{0})}{n}}}
-\end{equation*}
+\end{eqnarray*}
 Another survey finds $\hat{P} = .265$, calculate z
 \item The p-value can be calculated as
-\begin{equation*}
+\begin{eqnarray*}
 p-value = P(z \ge |z|)
-\end{equation*}
+\end{eqnarray*}
 Calculate the p-value and compare it to $\alpha = 0.05$. Do you accept or reject $H_{0}$?
 \end{enumerate}
 \item For the comparison of two proportions the test statistic is defined differently, but the concept is still the same as a sinlge proportion. Let $d_{0}$ be the difference between the two proportions (if you claim that the proportions are the same then $d_{0}$ =0). Before we defined $\hat{p}$ as $\hat{p}=\frac{x}{n}$. This time we'll say that $\hat{p_{1}} = \frac{x_{1}}{n_{1}}$ and similarly $\hat{p_{2}} = \frac{x_{2}}{n_{2}}$. The combined proportion, which we'll call $\hat{P}$ will be equal to $\hat{P} = \frac{x_{1}+x_{2}}{n_{1}+n_{2}}$. This means that the test statisitic is:
-\begin{equation*}
+\begin{eqnarray*}
 z=\frac{(\hat{p_{1}}-\hat{p_{2}})-d_{0}}{\sqrt{\hat{P}(1-\hat{P})\left(\frac{1}{n_{1}}+\frac{1}{n_{2}}\right)}}
-\end{equation*}
+\end{eqnarray*}
 \begin{enumerate}
 \item Given the values below, calculate the z-statistic
-\begin{flalign*}
-n_{1} &= 40 & \\
-n_{2} &= 60 & \\
-x_{1} &= 8.8 & \\
-x_{2} &= 14
-\end{flalign*}
+\begin{itemize}
+\item $n_{1} = 40 $
+\item $n_{2} = 60 $
+\item $x_{1} = 8.8 $
+\item $x_{2} = 14$
+\end{itemize}
 \item Test the hypothesis that $d_{0} = 0$ by calculating the p-value (this is done the same was as a single proportion problem).
 \item Give the p-value, do you reject or fail to reject $H_{0}$?
 \end{enumerate}
 \end{enumerate}
-\end{document}
