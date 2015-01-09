@@ -3,7 +3,6 @@
 %\usepackage{makeidx}
 \RequirePackage{verbatim}
 %\RequirePackage{alltt}
-\usepackage{hyperref}
 \usepackage{ifpdf}
 \usepackage{etoolbox}
 \usepackage{mathtools}
@@ -35,7 +34,7 @@
    \usepackage{epsfig}
    \usepackage{color}
 \fi
-
+\usepackage[table]{xcolor}
 
 
 \pagestyle{myheadings}
@@ -97,7 +96,8 @@
 
 \include{ProbabilityIntroduction}      % 1, 2, and 3
 \include{ProbabilityCounting}          % 4 and 5
-\include{DiscreteRandomVariables}
+\include{DiscreteRandomVariables}      % 6 and 7
+\include{normalDistribution}           % 8 and 9
 
 
 \chapter{Descriptive Statistics}
