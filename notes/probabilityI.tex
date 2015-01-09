@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{13 January 2014}
+\date{12 January 2015}
 
 \begin{frame}
   \titlepage
@@ -78,30 +78,32 @@
 \begin{frame}{Also Recall}
 
   \begin{description}
-  \item[Event:] Something that \textit{can} happen.
-  \item[Outcome:] Something that did happen.
+  \item[Event:] Something that \textit{\color{red}can} happen.
+  \item[Outcome:] Something that \textit{\color{red}did} happen.
   \item[Experiment:] A structured activity that includes the
     measurement of the outcomes of the activity after predefined and
-    intentional changes to some aspect of the events.
+    {\color{blue}intentional changes to some aspect of the events}.
   \item[Observational Study:] A structured activity that includes the
-    measurement of the outcomes of the activity without intentional
-    changes to the events.
+    measurement of the outcomes of the activity {\color{blue}without
+      intentional changes to the events}.
   \item[Expected Outcome:] The ``average'' of the possible outcomes.
-  \item[Variation:] Some measure of the spread of possible outcomes.
+  \item[{\color{red}Variation}:] {\color{red}Some measure of the
+      spread of possible outcomes.}
   \end{description}
   
 \end{frame}
 
 \begin{frame}{Also Also Recall}
 
-  ``Probability'' is an idealized notion. If we repeat the experiment
-  an infinite number of times we ask what \textit{will} happen.
+  \textbf{\color{blue}Probability} is an idealized notion. If we
+    repeat the experiment an infinite number of times we ask what
+    \textit{\color{red}might} happen.
 
   \vfill
 
-  ``Statistics'' is the study of how to interpret data. We ask what
-  ``did'' happen and what does it imply about the underlying
-  probabilities?
+  \textbf{\color{blue}Statistics} is the study of how to interpret
+  data. We ask what \textit{\color{red}did} happen and what does it
+  imply about the underlying probabilities?
 
   \vfill
 
@@ -142,7 +144,7 @@
 
   We flip a coin two times. What are the events?
 
-  \only<2>%
+  \only<2-4>%
   {
 
     \begin{picture}(250,120)
@@ -151,42 +153,50 @@
       \put(5,60){TH}
       \put(5,45){TT}
 
-      \put( 55,110){\line(50,0){75}}
-      \put( 55, 35){\line(50,0){75}}
-      \put( 55,72.5){\line(50,0){75}}
-      \put( 55,110){\line(0,-50){75}}
-      \put( 95,110){\line(0,-50){75}}
-      \put(130,110){\line(0,-50){75}}
-      \put( 71,85){HH}
-      \put(103,85){HT}
-      \put( 71,50){TH}
-      \put(103,50){TT}
-
-      \put(155,72.5){\circle*{5}}
-      \put(155,72.5){\line(1,1){20}}
-      \put(155,72.5){\line(1,-1){20}}
-      \put(195,95){\circle*{5}}
-      \put(195,95){\line(1,1){20}}
-      \put(195,95){\line(1,-1){20}}
-      \put(180,92){H}
-      \put(195,45){\circle*{5}}
-      \put(195,45){\line(1,1){20}}
-      \put(195,45){\line(1,-1){20}}
-      \put(180,42){T}
-      \put(217,112){H}
-      \put(217,72){T}
-      \put(217,59){H}
-      \put(217,23){T}
-
       \put(1,10){All}
       \put(1,0){Events}
-      \put(60,10){Venn Diagram}
-      \put(165,10){Tree Diagram}
+
+
+      \uncover<3->{%
+        \put( 55,110){\line(50,0){75}}
+        \put( 55, 35){\line(50,0){75}}
+        \put( 55,72.5){\line(50,0){75}}
+        \put( 55,110){\line(0,-50){75}}
+        \put( 95,110){\line(0,-50){75}}
+        \put(130,110){\line(0,-50){75}}
+        \put( 71,85){HH}
+        \put(103,85){HT}
+        \put( 71,50){TH}
+        \put(103,50){TT}
+
+        \put(60,10){Venn Diagram}
+      }
+
+      \uncover<4->{%
+        \put(155,72.5){\circle*{5}}
+        \put(155,72.5){\line(1,1){20}}
+        \put(155,72.5){\line(1,-1){20}}
+        \put(195,95){\circle*{5}}
+        \put(195,95){\line(1,1){20}}
+        \put(195,95){\line(1,-1){20}}
+        \put(180,92){H}
+        \put(195,45){\circle*{5}}
+        \put(195,45){\line(1,1){20}}
+        \put(195,45){\line(1,-1){20}}
+        \put(180,42){T}
+        \put(217,112){H}
+        \put(217,72){T}
+        \put(217,59){H}
+        \put(217,23){T}
+
+        \put(165,10){Tree Diagram}
+      }
+
     \end{picture}
 
   }
 
-  \only<3->%
+  \only<5->%
   {
 
     \begin{eqnarray*}
@@ -215,7 +225,7 @@
 
 \begin{frame}{Example}
 
-  I roll a die twice. What is $p(\mathrm{sum}=5)$?
+  I roll a fair, six sided die twice. What is $p(\mathrm{sum}=5)$?
   
 \end{frame}
 
@@ -236,8 +246,21 @@
     p(\mathrm{Sample~Space}) & = & 1.
   \end{eqnarray*}
 
-  The notation here matters! It is easy to get sloppy, but it makes it
+  The notation matters! It is easy to get sloppy, but it makes it
   harder to understand what is going on if you do.
+  
+\end{frame}
+
+
+\begin{frame}{}
+
+  It is estimated that one in every three-hundred and fifty-two
+  properties in Miami has been foreclosed by a
+  bank\footnote{\url{http://www.realtytrac.com/statsandtrends/foreclosuretrends/fl/miami-dade-county}}. Three
+  properties in Miami are chosen at random. What is the probability
+  that one is a foreclosed property?
+
+  \vfill
   
 \end{frame}
 
