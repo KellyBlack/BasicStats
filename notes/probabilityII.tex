@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{15 January 2014}
+\date{14 January 2015}
 
 \begin{frame}
   \titlepage
@@ -53,22 +53,29 @@
     \end{eqnarray*}
   }
 
-  \only<3->%
+  \uncover<3->%
   {
-    I roll a six-sided die. What is the probability that I roll a one
-    \textbf{or} a two?
+
+    \textcolor<3>{blue}{I roll a six-sided die. What is the
+      probability that I roll a one \textbf{or} a two?}
+
   }
 
-  \only<4->%
+  \uncover<4->%
   {
-    I roll a six-sided die. What is the probability that I roll an odd
-    number?
+
+    \textcolor<4>{blue}{I roll a six-sided die. What is the
+      probability that I roll an odd number?}
+
   }
 
-  \only<5->%
+  \uncover<5->%
   {
-    I roll a six-sided die. What is the probability that I roll an odd
-    number \textbf{or} a number less than 3?
+
+    \textcolor<5>{blue}{I roll a six-sided die. What is the
+      probability that I roll an odd number \textbf{or} a number less
+      than 3?}
+
   }
 
   
@@ -170,14 +177,14 @@
 
   Number of drivers killed in fatal automobile crashes in 2005: \\
   \begin{tabular}{llll}
-    Age & Male & Female & Total \\
-    $<$16 & 227 & 77 & 304 \\
-    16-20 & 5180 & 2113 & 7293 \\
-    21-34 & 13611 & 4311 & 17922 \\
-    35-54 & 15108 & 5027 & 20135 \\
-    55-74 & 6801 & 2452 & 9253 \\
-    $>$74   & 2022 & 980 & 3002 \\
-    Total & 42949 & 14960 & 57909 
+    Age   & Male  & Female & \action<2-|alert@2>{Total} \\
+    $<$16 & 227   & 77     & \action<2->{\color{red}304} \\
+    16-20 & 5180  & 2113   & \action<2->{\color{red}7293} \\
+    21-34 & 13611 & 4311   & \action<2->{\color{red}17922} \\
+    35-54 & 15108 & 5027   & \action<2->{\color{red}20135} \\
+    55-74 & 6801  & 2452   & \action<2->{\color{red}9253} \\
+    $>$74 & 2022  & 980    & \action<2->{\color{red}3002} \\
+    \uncover<3->{{\color{blue}\textbf{Total}} & {\color{blue}42949} & {\color{blue}14960}  & {\color{blue}57909} }
   \end{tabular} \\
 
   \vfill
