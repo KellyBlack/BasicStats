@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{17 January 2014}
+\date{16 January 2015}
 
 \begin{frame}
   \titlepage
@@ -89,6 +89,21 @@
     \end{tabular}
   }
 
+  \vfill
+
+  \visible<3->{%
+    \textcolor<4>{gray}{
+      I choose one of these people at random, and I know that the person
+      voted for President Obama. What is the probability that the person
+      has no high school diploma?
+    }
+  }
+
+  \uncover<4->{%
+    I choose one of these people at random, and I know that the person
+    has no high school diploma. What is the probability that the
+    person voted for President Obama?
+  }
 
 
 \end{frame}
@@ -144,19 +159,38 @@
 \begin{frame}{Example 2}
 
   I have a bag with eight marbles. Five marbles are red and three are
-  blue. I pick two, one after the other without replacing them. What
-  is the probability that I pull out a red and then a blue marble?
+  blue. I pick two, one after the other \textcolor<2->{red}{without
+    replacement}. \textcolor<2->{blue}{What is the probability that I pull
+    out a red and then a blue marble?}
 
   \vfill
 
-  \uncover<2->%
+  \visible<3->%
   {
-
-    What is the probability that I get exactly one red marble?
-    \vfill
-
+    \textcolor<4->{gray}{
+      What is the probability that I get exactly one red marble?
+    }
   }
   
+  \vfill
+
+  \visible<4->%
+  {
+    \textcolor<5->{gray}{
+      What is the probability that I get two red marbles?
+    }
+  }
+  
+  \vfill
+
+  \visible<5->%
+  {
+      What is the probability that I get no red marbles?
+  }
+  
+  \vfill
+
+
 \end{frame}
 
 
@@ -253,8 +287,9 @@
   \frametitle{Example}
 
   I have a bag with ten blue marbles and four red marbles. I remove
-  two marbles without replacement. What is the probability that I pull
-  out at least one blue marble?
+  two marbles \textcolor<2->{red}{without
+    replacement}. \textcolor<2->{blue}{What is the probability that I
+    pull out at least one blue marble?}
 
 
   \vfill
