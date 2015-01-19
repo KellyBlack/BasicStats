@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{22 January 2014}
+\date{21 January 2015}
 
 \begin{frame}
   \titlepage
@@ -80,6 +80,8 @@
   
 \end{frame}
 
+
+
 \begin{frame}{The Mean Number of Tails}
   \vspace*{-1em}
   {\footnotesize If I do this experiment (flip a coin three times and count the
@@ -127,8 +129,17 @@
       &   & 2\cdot{\frac{3}{8}}  + \\
       &   & 3\cdot{\frac{1}{8}}   \\
     }
+    \only<8>%
+    {
+            & = & \textcolor{red}{0\cdot p(0T)  +} \\
+            &   & \textcolor{red}{1\cdot p(1T)  +} \\
+            &   & \textcolor{red}{2\cdot p(2T)  +} \\
+            &   & \textcolor{red}{3\cdot p(3T) }   \\
+    }
   \end{eqnarray*}
-  
+
+  \vfill
+
 \end{frame}
 
 \begin{frame}
@@ -197,8 +208,9 @@
 \begin{frame}{Discrete Random Variables}
 
   \begin{columns}
-    \column{.40\textwidth}
+    \column{.50\textwidth}
 
+    The probability mass function (PMF):
     \begin{eqnarray*}
       \begin{array}{l|l}
         \mathrm{X} & p \\ \hline
@@ -210,7 +222,7 @@
       \end{array}
     \end{eqnarray*}
 
-    \column{.60\textwidth}
+    \column{.50\textwidth}
     Properties:
     \begin{eqnarray*}
       \begin{array}{rcccl}
@@ -228,7 +240,7 @@
 \begin{frame}{Discrete Random Variables}
 
   \begin{columns}
-    \column{.10\textwidth}
+    \column{.15\textwidth}
     \begin{eqnarray*}
       \begin{array}{l|l}
         \mathrm{X} & p \\ \hline
@@ -241,7 +253,7 @@
     \end{eqnarray*}
     \vfill
 
-    \column{.90\textwidth}
+    \column{.85\textwidth}
     \uncover<2->
     {
       \begin{definition}
@@ -257,7 +269,8 @@
       \begin{definition}
         The \textbf{variation} of a random variable is
         \begin{eqnarray*}
-          \sigma^2_X & = & (x_1-\mu_X)^2 p_1 + (x_2-\mu_X)^2 p_2 + \cdots + (x_n-\mu_X)^2 p_n.
+          \sigma^2_X & = & (x_1-\mu_X)^2 p_1 + (x_2-\mu_X)^2 p_2 + \cdots + \\
+                     &   & (x_{n-1}-\mu_X)^2 p_{n-1} + (x_n-\mu_X)^2 p_n.
         \end{eqnarray*}
       \end{definition}
     }
@@ -301,23 +314,18 @@
 
   \end{columns}
 
-    \uncover<3->
-    {
-        \begin{eqnarray*}
-          \sigma^2_X & = & \lp -2-\frac{1}{3}\rp^2 \frac{1}{6} + 
-          \lp 0-\frac{1}{3}\rp^2 \frac{3}{6} + \lp 2-\frac{1}{3}\rp^2 \frac{2}{6}, \\
-          & = & \frac{17}{9}.
-        \end{eqnarray*}
+  \begin{eqnarray*}
+    \uncover<3->{%
+    \sigma^2_X & = & \lp -2-\frac{1}{3}\rp^2 \frac{1}{6} + 
+                     \lp 0-\frac{1}{3}\rp^2 \frac{3}{6} + 
+                     \lp 2-\frac{1}{3}\rp^2 \frac{2}{6}, \\
+              & = & \frac{17}{9}, \\
     }
-
-    \uncover<4->
-    {
-      \begin{eqnarray*}
-        \sigma_X & = & \sqrt{\frac{17}{9}}.
-      \end{eqnarray*}
-      \vfill
+    \uncover<4->{%
+    \sigma_X  & = & \sqrt{\frac{17}{9}}.
     }
-
+  \end{eqnarray*}
+  \vfill
     
 
 \end{frame}
@@ -373,23 +381,19 @@
 
   \end{columns}
 
-    \uncover<3->
-    {
-        \begin{eqnarray*}
-          \sigma^2_X & = & \lp 0-\frac{15}{8}\rp^2 \frac{1}{8} + 
-          \lp 1-\frac{15}{8}\rp^2 \frac{1}{8} + \lp 2-\frac{15}{8}\rp^2 \frac{4}{8} + 
-          \lp 3-\frac{15}{8}\rp^2 \frac{2}{8}, \\
-          & = & \frac{55}{64}.
-        \end{eqnarray*}
-    }
-
-    \uncover<4->
-    {
-      \begin{eqnarray*}
+  \begin{eqnarray*}
+    \uncover<3->{%
+    \sigma^2_X & = &  \lp 0-\frac{15}{8}\rp^2 \frac{1}{8} +  
+                      \lp 1-\frac{15}{8}\rp^2 \frac{1}{8} + \\
+               &    & \lp 2-\frac{15}{8}\rp^2 \frac{4}{8} + 
+                      \lp 3-\frac{15}{8}\rp^2 \frac{2}{8}, \\
+               & = & \frac{55}{64}. \\
+     }
+    \uncover<4->{%
         \sigma_X & = & \sqrt{\frac{55}{64}}.
-      \end{eqnarray*}
-      \vfill
     }
+  \end{eqnarray*}
+  \vfill
 
     
 
