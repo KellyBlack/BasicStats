@@ -1,8 +1,8 @@
-\preClass{Calculating Probabilities Associated with Sample Means}
+\preClass{Calculating Confidence Intervals}
 
 
 \begin{problem}
-\item Examples of calculating probabilities associated with sample means.
+\item Examples of calculating confidence intervals.
 
   \begin{subproblem}
   \item 
@@ -16,183 +16,267 @@
 \end{problem}
 
 
-\actTitle{The Confidence Interval for the Sample Mean} 
+\actTitle{An Example of Determining Confidence Intervals} 
+
+Your company is building a new website to offer reviews of
+restaurants. The website has a mobile app associated with it that can
+be used to provide ratings and also estimate waiting times.
 
 \begin{problem}
-  \item A random variable has a mean of 5.0 and a standard deviation
-    of 17.0. The random variable is sampled twenty times, and the
-    sample mean, $\bar{x}$, is calculated. Answer each of the
-    following questions:
+\item In the beta testing for the app a small number of people are
+  allowed the app to calculate the waiting time required to obtain a
+  seat.  The app reported the following wait times for one restaurant in minutes: \\
+  \begin{tabular}{rrrrrrrr}
+    3.3 & 4.1 & 1.5 & 3.5 & 1 & 3.5 & 0.4 & 2.2
+  \end{tabular}
     \begin{subproblem}
-      \item What is the probability that $\bar{x}$ is more than 6.0.
+    \item Determine the 95\% confidence interval for the mean waiting time
+      for this restaurant.
 
-        \vfill
+      \vfill
 
-      \item What is the probability that $\bar{x}$ is more than 6.0 if
-        it were sampled forty times instead?
+    \item Determine the 99\% confidence interval for the mean waiting time
+      for this restaurant.
 
-        \vfill
+      \vfill
 
-      \item Determine a value, $x^*$, where there is a probability of
-        0.025 that $\bar{x}$ with twenty samples will be smaller than
-        $x^*$.
+      \clearpage
 
-        \vfill
+    \item The restaurant claims that the mean waiting time is 2.0
+      minutes. Assuming that their claim is correct what is the
+      probability that you would have obtained the sample mean
+      calculated above or higher? Is their claim plausible?
+
+      \vfill
+
+    \item Suppose that the restaurant claims that the mean waiting
+      time is 1.0 minutes. Assuming that their claim is correct what
+      is the probability that you would have obtained the sample mean
+      calculated above or higher? Is their claim plausible?
+
+      \vfill
+
+      \clearpage
+
+    \item Your company wants to expand the beta testing program. Your
+      supervisor would like to be able to obtain a 95\% confidence
+      interval for the waiting time whose total width is one
+      minute. Assuming that the sample standard deviation will remain
+      the same, how many samples will be required?
+
+      \vfill
+
+    \item Your company wants to expand the beta testing program. Your
+      supervisor would like to be able to obtain a 95\% confidence
+      interval for the waiting time whose total width is thirty
+      seconds. Assuming that the sample standard deviation will remain
+      the same, how many samples will be required?
+
+      \vfill
+
 
     \end{subproblem}
 
     \clearpage
 
-  \item The equation for a confidence interval is 
-    \begin{eqnarray*}
-      \left( \bar{x} \mp \frac{t_{\frac{\alpha}{2},n-1}s}{\sqrt{n}}\right).
-    \end{eqnarray*} 
+  \item The app is used for people to rate the overall experience at a
+    restaurant. At the end of the meal the app is used to answer the
+    question, ``Would you recommend this restaurant to a friend?''
+    Results for one restaurant are given below:
+
+    \begin{tabular}{rrrrrrrr}
+      Yes & Yes & No  & No & Yes & Yes & No  & No \\
+      No  & Yes & Yes & No & No  & Yes & Yes & Yes
+    \end{tabular}
+
+    (For the following questions assume that you can use the normal
+    approximation even though it is not appropriate here.)
 
     \begin{subproblem}
-    \item $\bar{x}$ is the \rule{3cm}{0.2mm}   
-    \item $t_{\frac{\alpha}{2},n-1}$ is the \rule{3cm}{0.2mm}  
-    \item $\frac{s}{\sqrt{n}}$ is the \rule{3cm}{0.2mm} 
-    \item A t-critical point is used when you don't know the
-      \rule{3cm}{0.2mm}
-    \item If you do know it then a critical
-      point of the \rule{3cm}{0.2mm} distribution is used.
+    \item Determine the 95\% confidence interval for the percentage of
+      people who would recommend the restaurant.
+
+      \vfill
+
+    \item Determine the 99\% confidence interval for the percentage of
+      people who would recommend the restaurant.
+
+      \vfill
+
+      \clearpage
+
+    \item Suppose that the restaurant manager claims that 75\% of its
+      customers would recommend the restaurant to a friend. If this is
+      true what is the probability that you would have obtained the
+      sample proportion above or less?
+
+      \vfill
+
+    \item Suppose that the restaurant manager claims that 85\% of its
+      customers would recommend the restaurant to a friend. If this is
+      true what is the probability that you would have obtained the
+      sample proportion above or less?
+
+      \vfill
+
+      \clearpage
+
+    \item Assume that your company wants to expand its beta testing
+      program. Your supervisor would like to obtain a 95\% confidence
+      interval for the proportion to be plus or minus 3\%. How many
+      samples are required assuming you get the same sample proportion
+      above?
+
+      \vfill
+
+    \item Assume that your company wants to expand its beta testing
+      program. Your supervisor would like to obtain a 98\% confidence
+      interval for the proportion to be plus or minus 3\%. How many
+      samples are required assuming you do not know what the true
+      proportion is.
+
+      \vfill
+
     \end{subproblem}
 
-  \item Supposed you have a data set with sample mean $\bar{x} = 3.5$,
-    $s=0.25$, and $n=40$. Calculate the 90\%, 95\%, and 99\%
-    confidence internvals, then explain what happens to the length of
-    the interval as the confidence level increases.
+\end{problem}
 
-    \vfill
 
-\clearpage
+\actTitle{More Examples of Determining Confidence Intervals} 
 
-\item The quality control manager at a tire plant is asked to estimate
-  the mean tread life for one of the plant's products. A random sample
-  of 64 tires is made. The sample mean is 55,100 miles with a sample
-  standard deviation of 2,050 miles. 
+\begin{problem}
+
+\item A group of people who spend the majority of their work time at a
+  computer are given a questionnaire. The group includes 315 men and
+  248 women.
+
   \begin{subproblem}
-  \item Determine the 95\% confidence interval for the mean tread
-    life.
+  \item One of the questions is whether or not the respondent has felt
+    a sharp pain in their neck or their left or right scapular
+    area. From the group of men, 197 reported that they have felt a
+    sharp pain. Determine the 95\% confidence interval for the
+    proportion of male computer workers who have felt a sharp pain.
 
     \vfill
 
-  \item Can the manufacturer claim that the tread life is 56,000
-    miles?
+  \item One of the questions is whether or not the respondent has felt
+    a sharp pain in their neck or their left or right scapular
+    area. From the group of women, 173 reported that they have felt a
+    sharp pain. Determine the 95\% confidence interval for the
+    proportion of male computer workers who have felt a sharp pain.
 
     \vfill
 
-  \item What is the probability that a randomly selected tire will
-    last longer than 56,000 miles?
+    \clearpage
+
+  \item A paper is published, and the authors claim that 65\% of men
+    working at a computer will experience a sharp pain in their neck
+    or their left or right scapular area. Assuming that the paper is
+    correct what is the probability that you would have found the
+    proportion in your study or less?
 
     \vfill
 
-  \item Discuss whether or not a tread life of 60,000 miles is unusual.
+  \item A paper is published, and the authors claim that 75\% of women
+    working at a computer will experience a sharp pain in their neck
+    or their left or right scapular area. Assuming that the paper is
+    correct what is the probability that you would have found the
+    proportion in your study or more?
 
     \vfill
 
-  \item How would your answers to the previous questions change if the
-    sample standard deviation were 3,500 miles?
+    \clearpage
+
+  \item Your supervisor wishes to repeat the study. She would like the
+    95\% confidence interval for the proportion of people who
+    experience a sharp pain in their neck or their left or right
+    scapular area to have a total width of 1\%. Use the proportion
+    from all people in your study to determine the number of people
+    who should be polled.
+
+    \vfill
+
+  \item Your supervisor wishes to repeat the study. She would like the
+    95\% confidence interval for the proportion of people who
+    experience a sharp pain in their neck or their left or right
+    scapular area to have a total width of 1\%. Determine the number
+    of people who should be polled assuming you do not have an idea
+    what the true proportion is.
+
 
     \vfill
 
   \end{subproblem}
 
-\clearpage
+  \clearpage
 
-\item The following data set shows the U.S. GDP from 2000 to 2010 in
-  billions of dollars. Construct a 95\% confidence interval for the
-  mean GDP in billions of dollars.
+\item The results from the 2013 Retirement Security
+  Survey\footnote{\url{http://www.ebri.org/pdf/briefspdf/ebri_ib_397_mar14.rcs.pdf}}
+  were compiled after interviewing 1,501 people. One-thousand of the
+  people interviewed were still working, and the rest were retired. 
+  \begin{subproblem}
+  \item The following quote can be found in the methodology section
+    (page 32):
+    \begin{quote}
+      In theory, the weighted sample of 1,000 workers yields a
+      statistical precision of plus or minus 3.5 percentage points
+      (with 95 percent certainty) of what the results would be if all
+      Americans age 25 and older were surveyed with complete accuracy.
+    \end{quote}
+    What does this mean?
 
-    \begin{tabular}{l|l}
-      Year & GDP (Billions of USD) \\ \hline
-      2000 & 12565.2 \\
-      2001 & 12684.4 \\
-      2002 & 12909.7 \\
-      2003 & 13270.0 \\
-      2004 & 13774.0 \\
-      2005 & 14235.6 \\
-      2006 & 14615.2 \\
-      2007 & 14876.6 \\
-      2008 & 14833.6 \\
-      2009 & 14417.9 \\
-      2010 & 14779.4
-    \end{tabular}
+    \vfill
 
-
-\end{problem}
-
-
-\actTitle{The Confidence Interval for the Sample Proportion} 
-
-\begin{problem}
-\item What is the confidence interval for the sample proportion? Write
-  out the formula for finding the confidence interval for $\hat{p}$.
-  \vspace{3em}
-
-  \item A company can stay in business if they are profitable at the
-    end of the year (assume break-even coutns as profitable). The
-    Mayor of Beaverdam claims that at least 65\% of companies stay in
-    business each year. A sample of 40 companies are checked for
-    profitability at the end of the year. Of these 30 show to be
-    profitable. Construct a 95\% confidence interval and decide
-    whether or not the mayor is accurate in saying that at least 65\%
-    stay in business.
+  \item What value did they use for $p$ to make this calculation?
 
     \vfill
 
     \clearpage
 
-  \item Using your equation for $\hat{p}$ on the previous page to solve for $n$.
-
-    \vfill
-
-  \item Suppose you want to know if dropping a phone into water will
-    damage it. You're looking for the proportion of phones that stop
-    working after being dropped in the water. If you wanted a 95\%
-    confidence interval with a margin of error of $\pm .07\%$, how
-    many phones do you test? (Assume you have no idea what the true
-    value of $p$ is.)
-
-    \vfill
-
-  \item Redo your calculations on the previous question assuming that
-    $\hat{p}=0.05$
-
-    \vfill
-    \vfill
-
-
-    \clearpage
-
-  \item A group of University of San Antonio professors compared the
-    sale price with the estimated market prices for homes that were
-    published by zillow.com. They estimate that roughly half of the
-    sale prices for homes on zillow.com were overestimated. They based
-    this estimate on a sample of 2,045 homes sampled on the web site.
+  \item On page 6 the authors include the following quote:
+    \begin{quote}
+      Eighteen percent are now very confident they will have enough
+      money to live comfortably throughout their retirement years, 5
+      percentage points higher than the low of 13 percent measured in
+      2009, 2011, and 2013, but still well below the historic high of
+      27 percent observed in 2007.
+    \end{quote}
 
     \begin{subproblem}
-    \item Determine the confidence interval for the proportion of homes
-      whose market value is overestimated by more than 10\% on
-      zillow.com. 
+    \item Determine the two 95\% confidence intervals for 2013 and the
+      year 2009.
 
       \vfill
 
-    \item How likely is it that the real proportion is less than 45\%?
+    \item Rewrite the paragraph to properly convey the statistical
+      uncertainty in the results.
 
       \vfill
 
-    \item Describe the variables used in the study and how they were
-      used. 
+      \clearpage
+
+    \item Suppose that the two proportions, $p_{2009}$ and
+      $p_{2013}$ are the same, 13 percent. What is the variance in their
+      difference
+      \begin{eqnarray*}
+        \hat{p}_{2009} - \hat{p}_{2013}?
+      \end{eqnarray*}
 
       \vfill
 
-    \item Describe the population used in this study. Should they use
-      the same number, 2,045 homes, if they wanted to repeat the study
-      for the whole United States?
+    \item If you assume that both  proportions are the same, 13
+      percent, what is the probability that the difference will be
+      more than 5 percent?
+
+      \vfill
+
+    \item If you assume that both  proportions are the same, 13
+      percent, what is the probability that the difference will be
+      less than -5 percent?
 
       \vfill
 
     \end{subproblem}
+  \end{subproblem}
 
 \end{problem}
