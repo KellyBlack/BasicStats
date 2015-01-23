@@ -1,62 +1,251 @@
-
-\begin{enumerate}
-\item Suppose employees get an annual bonus if the average annual
-  revenue is greater than \$100,000. State the null and alternative
-  hypothesis.
+\preClass{Calculating probabilities associated with sample distributions.}
 
 
-\begin{enumerate}
-\item The following equation is used to calculate a p-value
-\begin{eqnarray*}
-p-value = P(x \le -|t|) + P(x \ge |t|)
-\end{eqnarray*}
-Show this graphically below \\
-\item a t-distribution is symmetrical which means that 
-\begin{eqnarray*}
-p-value = 2 \times P(x \ge |t|)
-\end{eqnarray*}
-Show this graphically below \\ 
-\item For a two-sided hypothesis test the rejection region is $|t| > t_{\frac{\alpha}{2},n-1}$ while the acceptance region is $|t| < t_{\frac{\alpha}{2},n-1}$. For $n=20$, show that the acceptance region increases as $\alpha$ decreases. Show this by using $\alpha = 0.1, 0.05, 0.01$.
-\end{enumerate}
-\item For a known population standard deviation we use a z-statisitic. The p-value is then 
-\begin{eqnarray*}
-p-value = 2\times \Phi (-|z|)
-\end{eqnarray*}
-\begin{enumerate}
-\item State the equation for the z-statistic
-\item If your sample size is 30, population mean is 7.5, and your sample mean is 6.0, with a standard deviation of 3.5, calculate the p-value
-\item Using a significance level of 0.05, compare your p-value from part (b) to your significance level. Do you reject or fail to reject a null hypothesis?
-\end{enumerate}
-\end{enumerate}
-\newpage
-\begin{enumerate}
-\item 200 students are surveyed about their fondness for sports at Clarkson University. Of those 80 say they like sports. Is this proportion low for college students? Let $P_{0}$ be the proportion of college students who like sports.
-\begin{enumerate}
-\item Write the null and alternative hypothesis below
-\item The test statisitic can be calculated as:
-\begin{eqnarray*}
-z=\frac{\hat{P}-P_{0}}{\sqrt{\frac{P_{0}(1-P_{0})}{n}}}
-\end{eqnarray*}
-Another survey finds $\hat{P} = .265$, calculate z
-\item The p-value can be calculated as
-\begin{eqnarray*}
-p-value = P(z \ge |z|)
-\end{eqnarray*}
-Calculate the p-value and compare it to $\alpha = 0.05$. Do you accept or reject $H_{0}$?
-\end{enumerate}
-\item For the comparison of two proportions the test statistic is defined differently, but the concept is still the same as a sinlge proportion. Let $d_{0}$ be the difference between the two proportions (if you claim that the proportions are the same then $d_{0}$ =0). Before we defined $\hat{p}$ as $\hat{p}=\frac{x}{n}$. This time we'll say that $\hat{p_{1}} = \frac{x_{1}}{n_{1}}$ and similarly $\hat{p_{2}} = \frac{x_{2}}{n_{2}}$. The combined proportion, which we'll call $\hat{P}$ will be equal to $\hat{P} = \frac{x_{1}+x_{2}}{n_{1}+n_{2}}$. This means that the test statisitic is:
-\begin{eqnarray*}
-z=\frac{(\hat{p_{1}}-\hat{p_{2}})-d_{0}}{\sqrt{\hat{P}(1-\hat{P})\left(\frac{1}{n_{1}}+\frac{1}{n_{2}}\right)}}
-\end{eqnarray*}
-\begin{enumerate}
-\item Given the values below, calculate the z-statistic
-\begin{itemize}
-\item $n_{1} = 40 $
-\item $n_{2} = 60 $
-\item $x_{1} = 8.8 $
-\item $x_{2} = 14$
-\end{itemize}
-\item Test the hypothesis that $d_{0} = 0$ by calculating the p-value (this is done the same was as a single proportion problem).
-\item Give the p-value, do you reject or fail to reject $H_{0}$?
-\end{enumerate}
-\end{enumerate}
+\begin{problem}
+\item Examples of calculating probabilities of sample means.
+
+  \begin{subproblem}
+  \item 
+    \begin{eqnarray}
+      y & = 3x + 4.
+    \end{eqnarray}
+    \vfill
+  \end{subproblem}
+
+
+\end{problem}
+
+
+\actTitle{Constructing Hypothesis Tests} 
+
+\begin{problem}
+
+\item For each question below state the hypothesis test and what
+  distribution you would use. (Just state the hypothesis test.)
+
+  \begin{subproblem}
+  \item A new approach for a therapy will be tested. The mean number
+    of people using the previous therapy required a mean of 30.0 days
+    for full recovery. You use the new approach on thirty patients,
+    and the sample mean is 28.0 days with a sample standard deviation
+    of 12.0 days.
+
+    \vfill
+
+  \item The labels on bottles produced by a bottling plant indicate that
+    the drink contains two liters. The county division of weights
+    sampled twenty bottles to determine if the label is accurate. They
+    found a sample mean of 1.99 liters with a standard deviation of
+    0.05 liters.
+
+    \vfill
+
+  \item You are considering making a loan to a company that uses
+    injection molding to produce golf tees. Prior to approving the
+    loan you want to insure that the company's production process is
+    satisfactory. The mean weight of the tees should be .250
+    ounces. Forty random tees are sampled, and the sample mean and
+    sample standard deviation are calculated. 
+
+    \vfill
+
+  \item The manager of the customer service division said that their
+    consumer satisfaction has improved. A random sample of 400 people
+    who have called for service is sampled, and 280 reported that they
+    were pleased with the service. Last year it was estimated that
+    65\% of the people using the service were pleased. 
+
+    \vfill
+
+  \end{subproblem}
+
+\clearpage
+
+\item Employees at your firm get an annual bonus. The goal is to
+  provide a mean of \$1,000 for the bonus, but you feel that this is
+  not the case. You will poll a number of people to see what their
+  bonus was.
+
+\begin{subproblem}
+\item State the null and alternative hypothesis.
+  \vspace*{2em}
+
+\item The following equation is used to calculate a $p$-value
+  \begin{eqnarray*}
+    p = P(z \le -|z^*|) + P(z \ge |z^*|)
+  \end{eqnarray*}
+  Draw a sketch that demonstrates what this means.
+
+  \vfill
+
+\item A $z$-distribution is a symmetric distribution which means that
+  \begin{eqnarray*}
+    p = 2 \cdot  P(x \ge |z^*|)
+  \end{eqnarray*}
+  Draw a sketch that demonstrates what this means.
+
+  \vfill
+
+
+
+\item For a two-sided hypothesis test the rejection region is
+  $|z| > z_{\frac{\alpha}{2},n-1}$ while the acceptance region is
+  $|z| < z_{\frac{\alpha}{2},n-1}$.  Find the acceptance region for
+  $n=20$ where $\alpha = 0.1$, $0.05$, and $0.01$. What is happening
+  to the size of the acceptance region?
+
+  \vfill
+
+\end{subproblem}
+
+\clearpage
+
+\item When the population standard deviation is known we use a
+  $z$-statisitic. The $p$-value for a two sided test is 
+  \begin{eqnarray*}
+    p = 2 \cdot p(|z|\leq Z_{cr} )
+  \end{eqnarray*}
+  \begin{subproblem}
+  \item State the equation for the $z$-statistic
+    \vfill
+
+  \item If your sample size is 30, population mean is 7.5, and your
+    sample mean is 6.0, with a standard deviation of 3.5, calculate the
+    $p$-value
+
+    \vfill
+
+  \item Using a significance level of 0.05, compare your $p$-value from
+    part (b) to your significance level. Do you reject or fail to
+    reject a null hypothesis?
+
+    \vfill
+
+  \end{subproblem}
+
+
+\clearpage
+
+\item Perform the following hypothesis tests. Clearly state your
+  the $p$-values and whether or not you would reject the null
+  hypothesis at the 95\% level.
+
+  \begin{subproblem}
+    \item $H_0: ~ \mu=10.2$, $H_a: ~ \mu > 10.2$, $z^*=1.67$.
+      \vfill
+
+    \item $H_0: ~ \mu=62.1$, $H_a: ~ \mu \neq 62.1$, $z^*=-1.90$.
+
+      \vfill
+
+    \item $H_0: ~ \mu=321.1$, $H_a: ~ \mu < 321.1$, $z^*=-1.40$.
+
+      \vfill
+
+  \end{subproblem}
+
+
+\end{problem}
+
+\actTitle{Hypothesis Test Examples} 
+
+\begin{problem}
+\item 200 students are surveyed about their fondness for sports at
+  Clarkson University. Of those 80 say they like sports. Is this
+  proportion low for college students? Let $P_{0}$ be the proportion
+  of college students who like sports.
+  \begin{subproblem}
+  \item Write the null and alternative hypothesis below
+    \vspace{3em}
+
+  \item The test statisitic can be calculated as:
+    \begin{eqnarray*}
+      z=\frac{\hat{p}-p}{\sqrt{\frac{p(1-p)}{n}}}
+    \end{eqnarray*}
+    Another survey finds $\hat{p} = .265$, calculate $z^*$.
+
+    \vfill
+
+  \item The $p$-value can be calculated as $P(z \ge |z^*|).$ Calculate
+    the $p$-value and compare it to $\alpha = 0.05$. Do you accept or
+    reject $H_{0}$?
+
+    \vfill
+
+\end{subproblem}
+
+\clearpage
+
+\item For the comparison of two proportions the test statistic is
+  defined differently, but the concept is still the same as a single
+  proportion. Let $d_{0}$ be the difference between the two
+  proportions (if you claim that the proportions are the same then
+  $d_{0}$ =0). Before we defined $\hat{p}$ as
+  $\hat{p}=\frac{x}{n}$. This time we'll say that
+  $\hat{p_{1}} = \frac{x_{1}}{n_{1}}$ and similarly
+  $\hat{p_{2}} = \frac{x_{2}}{n_{2}}$. The combined proportion, which
+  we'll call $\hat{P}$ will be equal to
+  $\hat{P} = \frac{x_{1}+x_{2}}{n_{1}+n_{2}}$. This means that the
+  test statisitic is:
+  \begin{eqnarray*}
+    z=\frac{(\hat{p_{1}}-\hat{p_{2}})-d_{0}}{
+    \sqrt{\hat{P}(1-\hat{P})\left(\frac{1}{n_{1}}+\frac{1}{n_{2}}\right)}}
+  \end{eqnarray*}
+
+  \begin{subproblem}
+  \item Given the values below, calculate the $z$-statistic
+    \begin{itemize}
+    \item $n_{1} = 140 $
+    \item $n_{2} = 160 $
+    \item $x_{1} = 90 $
+    \item $x_{2} = 140$
+    \end{itemize}
+
+  \item Test the hypothesis that $d_{0} = 0$ by calculating the
+    $p$-value (this is done the same was as a single proportion
+    problem).
+
+    \vfill
+
+  \item Give the $p$-value, do you reject or fail to reject $H_{0}$?
+
+    \vfill
+
+  \end{subproblem}
+
+  \clearpage
+
+\item You are considering making a loan to a company that uses
+  injection molding to produce golf tees. Prior to approving the loan
+  you want to insure that the company's production process is
+  satisfactory. The mean weight of the tees should be .250 ounces. A
+  random set of tees are sampled, and the weights are given below (in ounces): \\
+  \begin{tabular}{rrrrrrrr}
+    0.256 & 0.246 & 0.246 & 0.262 & 0.258 & 0.249 & 0.255 & 0.251 \\
+    0.246 & 0.254 & 0.253 & 0.244 & 0.243 & 0.248 & 0.247 & 0.240
+  \end{tabular}
+
+  State the hypothesis test, organize and calculate any necessary
+  values, sketch an appropriate plot, determine whether or not you can
+  reject the null hypothesis, and then make a formal statement of your
+  conclusions.
+
+    \vfill
+    \clearpage
+
+  \item The manager of the customer service division said that their
+    consumer satisfaction has improved. A random sample of 400 people
+    who have called for service is sampled, and 280 reported that they
+    were pleased with the service. Last year it was estimated that
+    65\% of the people using the service were pleased with their
+    experience.
+
+    State the hypothesis test, organize and calculate any necessary
+    values, sketch an appropriate plot, determine whether or not you
+    can reject the null hypothesis, and then make a formal statement
+    of your conclusions.
+
+    \vfill
+    \clearpage
+
+\end{problem}
