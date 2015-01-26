@@ -1,15 +1,92 @@
-\documentclass[12pt]{article}
-
-\oddsidemargin=0.0in
-\evensidemargin=0.0in
-\textwidth=6in
-\topmargin=-1in
-\textheight=9.5in
 
 
-\begin{document}
+\preClass{Basic Calculations on Bivariate Data}
 
-Bivariate data
+
+\begin{problem}
+\item Examples of calculating sample statistics on bivariate data.
+
+  \begin{subproblem}
+  \item 
+    \begin{eqnarray}
+      y & = 3x + 4.
+    \end{eqnarray}
+    \vfill
+  \end{subproblem}
+
+
+\end{problem}
+
+\actTitle{Bivariate Data}
+
+\begin{problem}
+  \item The marketing department wants to get data on the price
+    elasticity of demand for tissues. A set of stores is chosen at
+    random, and the prices for a four pack of tissues is set at
+    different levels. The number of sales at each store are then
+    measured, and the results are given below. \\
+    \begin{tabular}{r|r}
+      Price & Units Sold \\ \hline
+      6.46\$ & 704 \\
+      7.38\$ & 677 \\
+      6.79\$ & 695 \\
+      6.69\$ & 697 \\
+      6.12\$ & 717
+    \end{tabular}
+
+    \begin{subproblem}
+    \item Make a sketch of the scatter plot. State what the $x$ and
+      the $y$ variables should be and why. State whether or not there
+      should be a positive or negative relationship and justify your
+      answer.
+
+      \vfill
+
+    \item Determine the sample correlation between the price and the
+      number of sales.
+
+      \vfill
+
+    \item Determine estimates for the slope and $y$-intercept for the
+      linear regression.
+
+      \vfill
+
+    \item Do you think it is appropriate to perform a linear
+      regression on these two variables?
+
+      \vfill
+
+    \end{subproblem}
+
+    \clearpage
+
+  \item Jeff Saruo wrote a blog
+    post\footnote{\url{http://www.measuringu.com/1955.php}} in
+    reaction to a book by Malcom Gladwell in which it is stated that
+    the birth date for hockey players matters with respect to their
+    success. Gladwell tried to replicate that analysis for
+    millionaires. The argument is that there was a particular time
+    that was right for rapid success in the software industry, and he
+    compiled the following data set: \\
+    \begin{tabular}{r|r|r|r}
+      Year & Number Births & All CEO   & Software  Millionaire \\
+           & (USA)         & Birthdays & Birthdays \\
+      1920 & 28,582,000 &  2  &  3 \\
+      1930 & 24,374,000 &  2  &  1 \\
+      1940 & 31,666,000 &  23 & 10 \\
+      1950 & 40,530,000 &  38 & 14 \\
+      1960 & 38,808,409 &  9  &  7 \\
+      1970 & 33,308,985 &  0  &  4
+    \end{tabular}
+
+    Perform an appropriate analysis of this data.
+
+    \vfill
+
+  \end{problem}
+
+\actTitle{Calculation With Bivariate Data}
 
 The opening values for the DOW are given below as well as the opening
 prices for stocks in Eli Lilly.
@@ -23,11 +100,11 @@ prices for stocks in Eli Lilly.
   2014-01-02 & 44.20 & 50.97
 \end{tabular}
 
-\begin{enumerate}
+\begin{problem}
 \item Your colleague wants to know if the DOW is a good predictor for
   the price of Eli Lilly stocks.
 
-  \begin{enumerate}
+  \begin{subproblem}
   \item Make a sketch of the scatter plot with the $x$ variable being
     the value of the DOW, and the $y$ variable is the price of an Eli
     Lilly stock. State whether or not you think there is a positive or
@@ -41,7 +118,7 @@ prices for stocks in Eli Lilly.
     \vfill
   \item Do you think it is appropriate to perform a linear regression
     on these two variables?
-  \end{enumerate}
+  \end{subproblem}
 
 \clearpage
 
@@ -49,7 +126,7 @@ prices for stocks in Eli Lilly.
   relationship and asks you to perform linear regression. Use the
   table on the previous page to answer each of the questions below.
 
-  \begin{enumerate}
+  \begin{subproblem}
   \item Determine estimates for the slope and intercept using linear
     regression. 
     \vfill
@@ -60,7 +137,7 @@ prices for stocks in Eli Lilly.
     \vfill
   \item Do you think it is appropriate to perform a linear regression
     on these two variables?
-  \end{enumerate}
+  \end{subproblem}
 
 \clearpage
 
@@ -79,7 +156,7 @@ prices for stocks in Eli Lilly.
 Your colleague wants to know if there is a relationship between the
 time after treatment and the red blood cell count.
 
-  \begin{enumerate}
+  \begin{subproblem}
   \item Make a sketch of the scatter plot with the $x$ variable being
     the number of weeks after treatment, and the $y$ variable is the
     red blood cell count. State whether or not you think there is a
@@ -96,7 +173,7 @@ time after treatment and the red blood cell count.
 
   \item Do you think it is appropriate to perform a linear regression
     on these two variables?
-  \end{enumerate}
+  \end{subproblem}
 
   \clearpage
 
@@ -104,7 +181,7 @@ time after treatment and the red blood cell count.
   relationship and asks you to perform linear regression. Use the
   table on the previous page to answer each of the questions below.
 
-  \begin{enumerate}
+  \begin{subproblem}
   \item Determine estimates for the slope and intercept using linear
     regression. 
     \vfill
@@ -116,35 +193,27 @@ time after treatment and the red blood cell count.
 
   \item Do you think it is appropriate to perform a linear regression
     on these two variables?
-  \end{enumerate}
+  \end{subproblem}
 
 
-\end{enumerate}
-
-\end{document}
+\end{problem}
 
 
-%%% Local Variables: 
-%%% mode: latex
-%%% TeX-master: t
-%%% End: 
+%% x sample mean = 33.83
+%% s_xx = 161.08
+%% y sample mean = 42.76
+%% s_yy = 226.08
+% s_xy = 117.14
+%%r = .614
 
+%% Second data set:
 
-x sample mean = 33.83
-s_xx = 161.08
-y sample mean = 42.76
-s_yy = 226.08
-s_xy = 117.14
-r = .614
+%% w = week number
+%% w sample mean = 2.5
+%% s_ww = 5
 
-Second data set:
-
-w = week number
-w sample mean = 2.5
-s_ww = 5
-
-c = red blood cell count
-c sample mean = 4.185
-s_cc = .0563
-s_cw = .47
-r = 0.886
+%% c = red blood cell count
+%% c sample mean = 4.185
+%% s_cc = .0563
+%% s_cw = .47
+%% r = 0.886
