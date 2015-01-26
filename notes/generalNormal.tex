@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{29 January 2014}
+\date{28 January 2015}
 
 \begin{frame}
   \titlepage
@@ -191,7 +191,9 @@
 
 \begin{frame}{Probability and Area}
 
-  \begin{tabular}{lcr}
+  Subtract areas to get the areas between $a$ and $b$:
+
+  \begin{tabular}{>{\centering\bfseries}m{4cm}>{\centering\bfseries}c>{\centering\bfseries}m{4cm}}
   \includegraphics[width=3.5cm]{img/standardNormalRightArea} & - &
   \includegraphics[width=3.55cm]{img/standardNormalArea}
 \end{tabular}
@@ -205,8 +207,8 @@
 \begin{frame}{Example}
 
   I have a random variable that follows a standard normal. I sample it
-  \textbf{once}. What is the probability that the value will be
-  between -0.45 and 0.35?
+  \textbf{\textcolor{red}{once}}. What is the probability that the
+  value will be between -0.45 and 0.35?
 
   \vfill
   
@@ -216,8 +218,8 @@
 \begin{frame}{Work it backwards}
 
   I have a random variable that follows a standard normal, and I am
-  going to take a sample.  Find the cut-off value, $z$, where the
-  probability that the sample will be less than $z$ is 0.35.
+  going to take a sample.  Find the value, $z^*$, where the probability
+  that the sample will be less than $z^*$ is 0.35.
 
   \vfill
   
@@ -227,8 +229,8 @@
 \begin{frame}{Work it backwards}
 
   I have a random variable that follows a standard normal, and I am
-  going to take a sample.  Find the cut-off value, $z$, where the
-  probability that the sample will be more than $z$ is 0.35.
+  going to take a sample.  Find the value, $z^*$, where the probability
+  that the sample will be more than $z^*$ is 0.35.
 
   \vfill
   
@@ -258,8 +260,9 @@
   \frametitle{Example}
 
   A random variable, $X$, is normally distributed with a mean of 3.0
-  and a standard distribution of 0.5. I am going to take a single
-  sample. What is the probability that the sample will be less than 2.4?
+  and a standard distribution of 0.5. I am going to take a
+  \textbf{\textcolor{red}{single}} sample. What is the probability
+  that the sample will be less than 2.4?
 
   \vfill
 
@@ -270,9 +273,9 @@
   \frametitle{Example}
 
   A random variable, $X$, is normally distributed with a mean of 0.1
-  and a standard distribution of 3.1. I am going to take a single
-  sample. What is the probability that the sample will be between -0.5
-  and 2.1?
+  and a standard distribution of 3.1. I am going to take a
+  \textbf{\textcolor{red}{single}} sample. What is the probability
+  that the sample will be between -0.5 and 2.1?
 
   \vfill
 
@@ -287,9 +290,9 @@
     \frametitle{Clicker Quiz}
 
     A random variable, $X$, is normally distributed with a mean of 2.3
-    and a standard distribution of 3.18. I am going to take a single
-    sample. What is the probability that it will be between -1.0 and
-    0.0?
+    and a standard distribution of 3.18. I am going to take a
+    \textbf{\textcolor{red}{single}} sample. What is the probability
+    that it will be between -1.0 and 0.0?
 
     (Use the closest number)
 
@@ -313,13 +316,27 @@
 \begin{frame}{Example}
 
   A random variable, $X$, is normally distributed with mean -1.2 and a
-  standard deviation of 4.5. I will take a single sample. Find the
-  cut-off value for $X$ where there is a probability of 0.25 that the
-  sample will be less than that value.
+  standard deviation of 4.5. I will take a
+  \textbf{\textcolor{red}{single}} sample. Find the value for $X$
+  where there is a probability of 0.25 that the sample will be less
+  than that value.
   
 \end{frame}
 
 
+\begin{frame}{Example (If time - Do on your own!)}
+
+  A random variable, $X$, is normally distributed with mean 0.2 and
+  standard deviation 2.3. Determine a value of $a$ where
+  \begin{eqnarray*}
+    p( |X-.2| \leq a ) & = & 0.8.
+  \end{eqnarray*}
+
+  \vfill
+
+  Answer: $a\approx 2.944$
+  
+\end{frame}
 
 
 
