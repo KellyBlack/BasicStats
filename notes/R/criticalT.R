@@ -45,7 +45,6 @@ cat("\\documentclass{article}\n",
 
 
 criticalP = c(0.25,0.20,0.15,0.1,0.05,0.025,0.020,0.01,0.005,0.0025,0.001,5e-04)
-degreeFree = c(1:30,40,50,60,120)
 row = paste(rep("l",length(criticalP)),collapse="",sep="")
 row = paste("\\begin{tabular}{l|",row,"}",collapse='',sep="")
 cat(row,"\n",file=fileName,append=T);
@@ -57,11 +56,11 @@ for (p in criticalP) {
 row = gsub("& $","",row,perl=TRUE)
 
 cat(row,"\\\\\\hline","\n",file=fileName,append=T);
-for (df in 1:5)
+for (df in 1:7)
   {
     printTable(criticalP,(5*df-4):(5*df),fileName)
   }
-printTable(criticalP,c(40,50,60,120),fileName)
+printTable(criticalP,c(40,50,60,80,120),fileName)
 row = "$\\infty$ "
 for (p in criticalP) {
   z = sprintf('%05.4f',-qnorm(p))
