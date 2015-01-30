@@ -18,13 +18,13 @@
 
 
 
-\actTitle{Analysis of Variance}
+\actTitle{Analysis of Variance - Patient Hand Strength}
 
 The American Society of Hand Therapists has a set of guidelines and
-tables associated with grip strength. A group of hand therapists run
-an experiment to see how their own patients compare with each
-other. They choose a group of patients at random and measure their
-grip strength using a dynamometer. 
+tables associated with grip strength. A group of hand therapists
+decide to run their own experiment in response to see how their own
+patients compare with each other. They choose a group of patients at
+random and measure their grip strength using a dynamometer.
 
 They obtain the following results for strength in their patient's
 left hands: \\
@@ -47,7 +47,7 @@ Age Range & Sex & Force (lb.) & Age Range & Sex & Force (lb.) \\
     \vfill
 
   \item Determine the numbers of degrees of freedom for the male and
-    female groups as well as the total.
+    female groups as well as the total number of degrees of freedom.
 
     \vspace{5em}
 
@@ -67,10 +67,10 @@ Age Range & Sex & Force (lb.) & Age Range & Sex & Force (lb.) \\
   \item Fill in the analysis of variance table. 
 
     \begin{tabular}{|l|l|l|l|l|l|} \hline
-      Source & df & Sum of Squares & Mean Squares & F-statistic & $p$-value \\ \hline
+      Source & ~df~ & Sum of Squares & Mean Squares & F-statistic & $p$-value \\ \hline
       Treatments & & & & & \\ \hline
-      Error & & & & &  \\ \hline
-      Total & & & & &  \\ \hline
+      Error & & & & \cellcolor{black!75} &  \cellcolor{black!75} \\ \hline
+      Total & & & \cellcolor{black!75} & \cellcolor{black!75} & \cellcolor{black!75}  \\ \hline
     \end{tabular}
 
   \item State the conclusion for your hypothesis test.
@@ -87,9 +87,70 @@ Age Range & Sex & Force (lb.) & Age Range & Sex & Force (lb.) \\
 \end{problem}
 
 
-\actTitle{Analysis of Variance and $p$-values}
+\actTitle{Analysis of Variance - Mutual Fund Returns}
 
+Your firm wishes to perform a comparison of the annual return rates
+for mutual funds. The mutual funds are classified as being small cap,
+medium cap, or large cap funds. They are also classified as being
+either value or growth funds.
+
+A randomly chosen set of funds are chosen, and their annual return
+rates are given below: \\
+\begin{tabular}{lll@{\hspace{4em}}lll}
+Size   & Type   & Return Rate & Size & Type & Return Rate  \\
+large  & value  & 5.7   & large  & value  & 10.1 \\ 
+large  & value  & 14.7  & small  & value  & 9.1 \\
+large  & growth & 40.6  & large  & growth & 20.8 \\
+medium & value  & 18.7  & small  & value  & 17.6 \\
+small  & growth & -24.1 & large  & value  & 7.9 \\
+medium & value  & 13.3  & medium & value  & 13.2 \\
+medium & growth & 13.0  & small  & value  & 12.3 \\
+small  & growth & 16.6  & small  & value  & 18.0 \\
+large  & growth & 8.9   & medium & value  & 22.4
+\end{tabular}
 
 \begin{problem}
-\item ~  
+  \item Organize and collect the data into two groups, growth  and
+    value. 
+    \vfill
+
+  \item Determine the numbers of degrees of freedom for the growth and
+    value groups as well as the total.
+
+    \vspace{5em}
+
+  \item The staff at the firm believe that there is a difference in
+    the annual return rates between the growth and value stocks. State
+    the hypothesis test that they will use.
+
+    \vfill
+
+    \clearpage
+    
+  \item Determine the values for the sum of the squares, SSTr, SST,
+    and SSE.  Verify that SST = SSTr + SSE.
+
+    \vfill
+
+  \item Fill in the analysis of variance table. 
+
+    \begin{tabular}{|l|l|l|l|l|l|} \hline
+      Source & ~df~ & Sum of Squares & Mean Squares & F-statistic & $p$-value \\ \hline
+      Treatments & & & & & \\ \hline
+      Error & & & & \cellcolor{black!75} &  \cellcolor{black!75} \\ \hline
+      Total & & & \cellcolor{black!75} & \cellcolor{black!75} & \cellcolor{black!75}  \\ \hline
+    \end{tabular}
+
+  \item State the conclusion for your hypothesis test.
+
+    \vspace{5em}
+
+    \clearpage
+
+  \item Repeat the previous analysis but use the three different sizes
+    (small, medium, and large cap) instead.
+
+    \clearpage
+    
+
 \end{problem}
