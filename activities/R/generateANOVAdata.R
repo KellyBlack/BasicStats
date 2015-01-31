@@ -16,37 +16,41 @@ sdRange <- array(c((123.6-104.6)*sqrt(134)/5/qnorm(0.95),(71.8-61.4)/5*sqrt(133)
 N <- 18
 for(lupe in 1:N)
     {
+        firstCol <- paste(range[r],gender[g],trunc(10*(rnorm(1,mean=meanRange[g,r],sd=sdRange[g,r])))/10,collapse=" & ",sep=" & ")
         r <- trunc(runif(1,0.0,length(range)))+1
         g <- trunc(runif(1,0.0,length(gender)))+1
-        print(paste(range[r],gender[g],trunc(10*(rnorm(1,mean=meanRange[g,r],sd=sdRange[g,r])))/10,collapse=" & ",sep=" & "))
+
+        r <- trunc(runif(1,0.0,length(range)))+1
+        g <- trunc(runif(1,0.0,length(gender)))+1
+        print(noquote(paste(firstCol,range[r],gender[g],trunc(10*(rnorm(1,mean=meanRange[g,r],sd=sdRange[g,r])))/10,collapse=" & ",sep=" & ")))
     }
 
 
 
 
-range <- c('small','medium','large')
-gender <- c('value','growth')
+capSize <- c('small','medium','large')
+riskType <- c('value','growth')
 
-meanRange <- array(c(15.0,45,
+meanCapSize <- array(c(15.0,45,
                      18.0,38.0,
                      12.0,35.0),
-                   dim=c(length(gender),length(range)))
+                   dim=c(length(riskType),length(capSize)))
 
-sdRange <- array(c(6.0,31.0,
+sdCapSize <- array(c(6.0,31.0,
                    5.0,27.0,
                    3.0,19.0),
-                 dim=c(length(gender),length(range)))
+                 dim=c(length(riskType),length(capSize)))
 
 
 N <- 9
 for(lupe in 1:N)
     {
-        r <- trunc(runif(1,0.0,length(range)))+1
-        g <- trunc(runif(1,0.0,length(gender)))+1
-        firstCol <- paste(range[r],gender[g],trunc(10*(rnorm(1,mean=meanRange[g,r],sd=sdRange[g,r])))/10,collapse=" & ",sep=" & ")
+        r <- trunc(runif(1,0.0,length(capSize)))+1
+        g <- trunc(runif(1,0.0,length(riskType)))+1
+        firstCol <- paste(capSize[r],riskType[g],trunc(10*(rnorm(1,mean=meanCapSize[g,r],sd=sdCapSize[g,r])))/10,collapse=" & ",sep=" & ")
 
-        r <- trunc(runif(1,0.0,length(range)))+1
-        g <- trunc(runif(1,0.0,length(gender)))+1
-        print(paste(firstCol,range[r],gender[g],trunc(10*(rnorm(1,mean=meanRange[g,r],sd=sdRange[g,r])))/10,collapse=" & ",sep=" & "))
+        r <- trunc(runif(1,0.0,length(capSize)))+1
+        g <- trunc(runif(1,0.0,length(riskType)))+1
+        print(noquote(paste(firstCol,capSize[r],riskType[g],trunc(10*(rnorm(1,mean=meanCapSize[g,r],sd=sdCapSize[g,r])))/10,collapse=" & ",sep=" & ")))
     }
 
