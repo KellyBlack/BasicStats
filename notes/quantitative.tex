@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{5 February 2014}
+\date{4 February 2015}
 
 \begin{frame}
   \titlepage
@@ -51,7 +51,7 @@
     A discrete random variable produces a countable number of
     values. The values are one of a fixed set of values. 
 
-    \textit{{\color{red}Here the random variables are numbers.}}
+    \textit{{\color{red}Here the random variables return numbers.}}
     
   \end{definition}
 
@@ -84,8 +84,8 @@
   
   \begin{definition}[Univariate Data]
 
-    Each observation consists of a measurement, and there are no
-    explicit relationships between them.
+    Each observation consists of a single measurement, and there are
+    no explicit relationships between them.
 
     \textit{{\color{red}All of the examples on the previous slide
         represent univariate data.}}
@@ -116,10 +116,19 @@
   \frametitle{Bivariate Data}
 
   \begin{eqnarray*}
-    \begin{array}{l|l}
-      x      & y \\ \hline 
+    \begin{array}{l|l@{\hspace{2em}}r}
+      x      & y \\ \cline{1-2}
       x_1    & y_1 \\
+      \only<1>{%
       x_2    & y_2 \\
+      }
+      \only<2>{%
+      \color{red}{x_2} & \color{red}{y_2} \\
+      }
+      \only<3>{%
+      \color{red}{x_2} & \color{red}{y_2} & \leftarrow \mathrm{~one~set~of~observations} \\
+      }
+      x_3    & y_3 \\
       \vdots & \vdots \\
       x_n    & y_n
     \end{array}
@@ -132,9 +141,9 @@
   \begin{frame}
     \frametitle{Clicker Quiz}
 
-    An experiment is run in which an intersection is observed over
-    twenty different two hour periods, and the number of people who do
-    not stop at a stop sign is observed.
+    An experiment is run. Twenty different two hour periods are chosen
+    at random. At the end of each time period the start time and the
+    number of cars that stop at the sign are recorded.
 
     What kind of data is this?
 
@@ -169,7 +178,7 @@
   \only<2->%
   {
     \begin{tabular}{l|l}
-      Number  & Frequency \\ \hline
+      Value  & Frequency \\ \hline
       1 & 2 \\
       2 & 1 \\
       3 & 3 \\
@@ -230,7 +239,7 @@
 
 
     \begin{tabular}{l|l}
-      Number  & Frequency \\ \hline
+      Number  & Freq. \\ \hline
       1 & 2 \\
       2 & 1 \\
       3 & 3 \\
@@ -321,7 +330,8 @@
   }
   \only<2>%
   {
-    Identify the stems:
+    \noindent
+    {\color{red}{Identify the stems}}:
     \begin{eqnarray*}
       {\color{red}4}7,~{\color{red}4}4,~{\color{red}2}9,~{\color{red}2}7,
       ~{\color{red}2}9,~{\color{red}3}6,~{\color{red}2}4,~{\color{red}2}1,
@@ -330,7 +340,9 @@
   }\
   \only<3->%
   {
-    Identify the leaves:
+    \noindent
+    {\color{red}{Identify the stems}} and 
+    {\color{blue}{identify the leaves}}:
     \begin{eqnarray*}
       {\color{red}4}{\color{blue}7},~{\color{red}4}{\color{blue}4},
       ~{\color{red}2}{\color{blue}9},~{\color{red}2}{\color{blue}7},
