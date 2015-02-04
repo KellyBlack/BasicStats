@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{12 February 2014}
+\date{6 February 2015}
 
 \begin{frame}
   \titlepage
@@ -23,7 +23,6 @@
   \subsection{Clicker Question}
   \begin{frame}
     \frametitle{Find The Average}
-    (Use channel 42)
 
     \vfill 
     
@@ -88,7 +87,7 @@
 
   What is the ``center?''
 
-  \only<1>{%
+  \only<1,4>{%
     \begin{description}
     \item[Population Mean] The mean of the whole population.
     \item[Sample Mean] The sum of the data divided by the number of
@@ -96,10 +95,28 @@
     \item[Median] The middle value of the whole population.
     \item[Sample Median] The middle value of the data.
     \end{description}
+
+    \vfill
+    ~
   }
 
 
   \only<2>{%
+    \begin{description}
+    \item[{\color{red}Population Mean}] {\color{red}The mean of the whole population.*}
+    \item[Sample Mean] The sum of the data divided by the number of
+      samples.
+    \item[{\color{red}Median}] {\color{red}The middle value of the whole population.*}
+    \item[Sample Median] The middle value of the data.
+    \end{description}
+
+    \vfill
+    {\color{red}What we want.*}
+
+  }
+
+
+  \only<3>{%
     \begin{description}
     \item[{\color{red}Population Mean}] {\color{red}The mean of the whole population.*}
     \item[{\color{blue}Sample Mean}] {\color{blue}The sum of the data divided by the number of
@@ -108,11 +125,15 @@
     \item[{\color{blue}Sample Median}] {\color{blue}The middle value of the data.**}
     \end{description}
 
+    \vfill
     {\color{red}What we want.*}
 
     {\color{blue}What we have.**}
 
   }
+
+  \uncover<4>{What is the relationship between these ideas? (We will
+    answer that later.)}
 
   
 \end{frame}
@@ -143,7 +164,7 @@
 \end{frame}
 
 
-\begin{frame}{Example}
+\begin{frame}{Example - Odd number of samples}
 
   \begin{tabular}{lllllll}
     30 & 28 & 31 & 33 & 35 & 22 & 31
@@ -181,9 +202,7 @@
 \end{frame}
 
 
-\begin{frame}{Example}
-
-  Even number of data points.
+\begin{frame}{Example - Even number of samples}
 
   \begin{tabular}{cccccc}
     30 & 28 & 31 & 33 & 35 & 22 
@@ -198,25 +217,34 @@
   To get the sample median first order the data: \\
   \only<1>%
   {
-    \begin{tabular}{cccccc}
-      22 & 28 & 30 & 31 & 33 & 35
-    \end{tabular}
+    \begin{center}
+      \begin{tabular}{cccccc}
+        22 & 28 & 30 & 31 & 33 & 35
+      \end{tabular}
+    \end{center}
   }
 
   \only<2>%
   {
-    \begin{tabular}{cccccc}
-      {\color{red}22} & {\color{red}28} & 30 & 31  & {\color{blue}33} & {\color{blue}35}
-    \end{tabular}
+    \begin{center}
+      \begin{tabular}{cccccc}
+        {\color{red}22} & {\color{red}28} & 30 & 31  & {\color{blue}33} & {\color{blue}35}
+        \\ \cline{3-4}
+      \end{tabular}
+    \end{center}
   }
 
   \only<3->%
   {
-    \begin{tabular}{cccccc}
-      {\color{red}22} & {\color{red}28} & 30 & 31 & 
-      {\color{blue}33} & {\color{blue}35} \\
-      & & \multicolumn{2}{c}{Sample Median = $\frac{30+31}{2}$} 
-    \end{tabular}
+    \begin{center}
+      \begin{tabular}{cccccc}
+        {\color{red}22} & {\color{red}28} & 
+         30 & 31 & 
+        {\color{blue}33} & {\color{blue}35} \\ \cline{3-4}
+        \\
+        \multicolumn{6}{c}{Sample Median = $\frac{30+31}{2}$} 
+      \end{tabular}
+    \end{center}
   }
   
 \end{frame}
@@ -224,7 +252,6 @@
 
 \begin{frame}
   \frametitle{Clicker Quiz}
-  (Use channel 42)
 
   Find the sample median of the following data set:
   \vfill 
@@ -236,7 +263,7 @@
   \vfill
 
   \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-    a: 5/2  & b: 7/2 & c: 3 & D: 4
+    a: 2.5  & b: 3 & c: 3.5 & D: 4
   \end{tabular}
 
   \vfill
@@ -390,23 +417,27 @@
     x_1, ~ x_2, ~ x_3, ~ \ldots ~,x_n.
   \end{eqnarray*}
 
-  \begin{definition}
-    The sample range is the biggest number minus the smallest number.
-  \end{definition}
+  \only<2>{%
+    \begin{definition}[Sample Range]
+      The sample range is the biggest number minus the smallest number.
+    \end{definition}
+  }
 
+  \only<3->{%
+    \begin{definition}[Sample Variation]
+      The sample variation of the data is 
+      \begin{eqnarray*}
+        s^2 & = & \frac{(x_1-\bar{x})^2+(x_2-\bar{x})^2+\cdots+(x_n-\bar{x})^2}{n-1}.
+      \end{eqnarray*}
+    \end{definition}
+  }
 
-  \begin{definition}
-    The sample variation of the data is 
-    \begin{eqnarray*}
-      s^2 & = & \frac{(x_1-\bar{x})^2+(x_2-\bar{x})^2+\cdots+(x_n-\bar{x})^2}{n-1}.
-    \end{eqnarray*}
-  \end{definition}
-
-  \begin{definition}
-    The sample standard deviation of the data is the square root of
-    the sample variation.
-  \end{definition}
-
+  \uncover<4->{%
+    \begin{definition}[Sample Standard Deviation]
+      The sample standard deviation of the data is the square root of
+      the sample variation.
+    \end{definition}
+  }
 
 \end{frame}
 
@@ -423,7 +454,6 @@
 \iftoggle{clicker}{%
   \begin{frame}
     \frametitle{Clicker Quiz}
-    (Use channel 42)
 
     Find the sample standard deviation of the following data set:
     \vfill 
