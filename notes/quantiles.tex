@@ -8,7 +8,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{17 February 2014}
+\date{11 February 2015}
 
 \begin{frame}
   \titlepage
@@ -442,6 +442,7 @@ respectively, \\ [12pt]
   \end{definition}
 
 
+  \vfill
 
 
   \only<2->%
@@ -462,30 +463,39 @@ respectively, \\ [12pt]
   
 \end{frame}
 
+\begin{frame}{Box Plots}
+
+  \vfill
+
+  A box plot is a graphical view of the five point summary.
+
+  \vfill
+  
+\end{frame}
 
 \begin{frame}
   \frametitle{Box Plots}
 
-  \vfill 
 
   Find the five point summary for the following data:
 
-  \vfill
-
-  \only<1>
-  {
     89, 85, 97, 106, 94, 100, 92, 120, 92, 97, 89, 90, 103, 86, 106, 112, 100, 92, 84,
-    97, 103, 91, 104, 91, 106
+    97, 102, 91, 103, 91, 106
 
     \vfill
-  }
 
-  \only<2>
+  \uncover<2->
   {
     Sort it: \\
     84, 85, 86, 89, 89, 90, 91, 91, 92, 92, 92, 94, 97, 97, 97, 100,
-    100, 103, 103, 104, 106, 106, 106, 112, 120
+    100, 102, 103, 103, 106, 106, 106, 112, 120
 
+  }
+
+    \vfill
+
+    \uncover<3->
+    {
     Five point summary: \\
     \begin{tabular}{lllll}
      Min. & 1st Qu. & Median    & 3rd Qu. &   Max. \\
@@ -516,7 +526,7 @@ respectively, \\ [12pt]
 \end{frame}
 
 
-\begin{frame}{Outliers}
+\begin{frame}{Outliers - The $\frac{3}{2}$ Rule}
 
   \begin{definition}[Outliers]
 
@@ -573,12 +583,53 @@ respectively, \\ [12pt]
   
 \end{frame}
 
+\begin{frame}{Box Plot With Outliers}
+
+    Five point summary: \\
+    \begin{tabular}{lllll}
+      Min. & 1st Qu. & Median    & 3rd Qu. &   Max. \\
+      21   & 30      & 36        & 39     & 53
+    \end{tabular}
+
+    \vfill
+
+  \begin{picture}(190,45)
+    \put( 15,25){\line(0,1){20}}
+    \put( 60,25){\line(0,1){20}}
+    \put( 90,25){\line(0,1){20}}
+    \put(105,25){\line(0,1){20}}
+    \put(110,25){\line(0,1){20}}
+    \put(175,35){\circle{5}}
+    \put(60,25){\line(1,0){45}}
+    \put(60,45){\line(1,0){45}}
+
+    %\put(15,35){\line(1,0){45}}
+    %\put(105,35){\line(1,0){5}}
+    \multiput( 16,35)(5,0){9}{\line(1,0){3}}
+    \multiput(106,35)(5,0){1}{\line(1,0){3}}
+
+    \put(0,20){\line(1,0){190}}
+
+    \put( 15,18){\line(0,1){4}}
+    \put( 60,18){\line(0,1){4}}
+    \put( 90,18){\line(0,1){4}}
+    \put(105,18){\line(0,1){4}}
+    \put(110,18){\line(0,1){4}}
+    \put(175,18){\line(0,1){4}}
+
+    \put( 10,10){21}
+    \put( 55,10){30}
+    \put( 85,10){36}
+    \put(100,10){39}
+    \put(105, 0){40}
+    \put(170,10){53}
+
+  \end{picture}
+\end{frame}
+
 
 \begin{frame}
   \frametitle{Z-Score}
-
-  You sample a random variable with mean $\mu$ and standard deviation
-  $\sigma$.
 
   \begin{definition}[Z-Score]
     Given a set of data,
@@ -588,7 +639,7 @@ respectively, \\ [12pt]
     from a random variable with mean $\mu$ and standard deviation
     $\sigma$ the $z$-score for a number, $x_i$, is
     \begin{eqnarray*}
-      z_i & = & \frac{x_i-\mu}{\sigma}.
+      z_i^* & = & \frac{x_i-\mu}{\sigma}.
     \end{eqnarray*}
   \end{definition}
 
