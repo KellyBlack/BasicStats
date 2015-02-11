@@ -1,15 +1,11 @@
 \documentclass[svgnames,table]{beamer}
+%\documentclass[svgnames,table,handout]{beamer}
 \usepackage{hhline}
 \usepackage{etoolbox}
 \usepackage{tikz}
 \usepackage{mathtools}
 \usepackage{amssymb}
 %\usepackage{/usr/lib64/R/share/texmf/Sweave}
-\mode<presentation>
-
-
-
-
 
 
 
@@ -71,9 +67,8 @@
 %\includeonly{quantitative}
 %\includeonly{position}
 %%\includeonly{groupedData}
-\includeonly{quantiles}
-%\includeonly{normality}
-%\includeonly{approxBinomial}
+%\includeonly{quantiles}
+\includeonly{approxBinomial}
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\includeonly{sampleDist}
 %\includeonly{sampleProportions}
@@ -95,6 +90,17 @@
 %\includeonly{predictionIntervals}
 
 
+\mode<presentation>{
+  \setbeamercovered{invisible}
+  \setbeameroption{hide notes}
+}
+
+\mode<handout>{
+  \usepackage{pgfpages}
+  \pgfpagesuselayout{4 on 1}[letterpaper, border shrink =
+  5mm,landscape]
+  \setbeameroption{show notes}
+}
 
 \begin{document}
 
