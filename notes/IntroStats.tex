@@ -99,7 +99,9 @@
 \mode<handout>{
   \usepackage{pgfpages}
   \pgfpagesuselayout{4 on 1}[letterpaper, border shrink=5mm]
+  \pgfpagesuselayout{resize to}[letterpaper,border shrink=5mm]
   \setbeameroption{show notes}
+
 
   %\pgfpagesphysicalpageoptions{logical pages=2,physical
   %height=\pgfpageoptionheight,physical width=\pgfpageoptionwidth}
@@ -107,26 +109,6 @@
   % This idea and some code came from
   % http://www.guidodiepen.nl/2009/07/creating-latex-beamer-handouts-with-notes/
 
-
-  \AtBeginDocument{
-    \newbox\notesbox
-    \setbox\notesbox=\vbox{
-      \hsize=\paperwidth
-      \vskip-1in\hskip-1in\vbox{
-        \vskip1cm
-        \textcolor{light-gray}{\hrule width\paperwidth\vskip1cm}
-        \textcolor{light-gray}{\hrule width\paperwidth\vskip1cm}
-        \textcolor{light-gray}{\hrule width\paperwidth\vskip1cm}
-        \textcolor{light-gray}{\hrule width\paperwidth\vskip1cm}
-        \textcolor{light-gray}{\hrule width\paperwidth\vskip1cm}
-        \textcolor{light-gray}{\hrule width\paperwidth\vskip1cm}
-        \textcolor{light-gray}{\hrule width\paperwidth\vskip1cm}
-        \textcolor{light-gray}{\hrule width\paperwidth\vskip1cm}}
-      }
-      \pgfpagesshipoutlogicalpage{4}\copy\notesbox
-      \pgfpagesshipoutlogicalpage{5}\copy\notesbox
-      \pgfpagesshipoutlogicalpage{6}\copy\notesbox
-    }
 
 
 \pgfpagesdeclarelayout{3 on 1 with notes} {
@@ -169,7 +151,7 @@
 	\pgfpageslogicalpageoptions{4}
     {%
       border shrink=\pgfpageoptionborder,%
-      resized width=.4\pgfphysicalwidth,%
+      resized width=.5\pgfphysicalwidth,%
       resized height=.33\pgfphysicalheight,%
       center=\pgfpoint{.75\pgfphysicalwidth}{.83\pgfphysicalheight},%
       copy from=4
@@ -177,7 +159,7 @@
     \pgfpageslogicalpageoptions{5}
     {%
       border shrink=\pgfpageoptionborder,%
-      resized width=.4\pgfphysicalwidth,%
+      resized width=.5\pgfphysicalwidth,%
       resized height=.33\pgfphysicalheight,%
       center=\pgfpoint{.75\pgfphysicalwidth}{.50\pgfphysicalheight},%
       copy from=5
@@ -185,7 +167,7 @@
     \pgfpageslogicalpageoptions{6}
     {%
       border shrink=\pgfpageoptionborder,%
-      resized width=.4\pgfphysicalwidth,%
+      resized width=.5\pgfphysicalwidth,%
       resized height=.33\pgfphysicalheight,%
       center=\pgfpoint{.75\pgfphysicalwidth}{.17\pgfphysicalheight},%
       copy from=6
@@ -195,31 +177,48 @@
       \newbox\notesbox
       \setbox\notesbox=\vbox{
         \hsize=\paperwidth
-        \vskip-1in\hskip-1in\vbox{
-        \textcolor{light-gray}{\hrule width\paperwidth\vskip1cm}
-        \textcolor{light-gray}{\hrule width\paperwidth\vskip1cm}
-        \textcolor{light-gray}{\hrule width\paperwidth\vskip1cm}
-        \textcolor{light-gray}{\hrule width\paperwidth\vskip1cm}
-        \textcolor{light-gray}{\hrule width\paperwidth\vskip1cm}
-        \textcolor{light-gray}{\hrule width\paperwidth\vskip1cm}
-        \textcolor{light-gray}{\hrule width\paperwidth\vskip1cm}
-        \textcolor{light-gray}{\hrule width\paperwidth\vskip1cm}
-        \textcolor{light-gray}{\hrule width\paperwidth\vskip1cm}
-        \textcolor{light-gray}{\hrule width\paperwidth\vskip1cm}
+        \vskip-2.5cm\hskip-5cm\vbox{
+        \textcolor{light-gray}{\hrule width 12.5cm\vskip0.5cm}
+        \textcolor{light-gray}{\hrule width 12.5cm\vskip0.5cm}
+        \textcolor{light-gray}{\hrule width 12.5cm\vskip0.5cm}
+        \textcolor{light-gray}{\hrule width 12.5cm\vskip0.5cm}
+        \textcolor{light-gray}{\hrule width 12.5cm\vskip0.5cm}
+        \textcolor{light-gray}{\hrule width 12.5cm\vskip0.5cm}
+        \textcolor{light-gray}{\hrule width 12.5cm\vskip0.5cm}
+        \textcolor{light-gray}{\hrule width 12.5cm\vskip0.5cm}
+        \textcolor{light-gray}{\hrule width 12.5cm\vskip0.5cm}
+        \textcolor{light-gray}{\hrule width 12.5cm\vskip0.5cm}
+        \textcolor{light-gray}{\hrule width 12.5cm\vskip0.5cm}
+        \textcolor{light-gray}{\hrule width 12.5cm\vskip0.5cm}
+        \textcolor{light-gray}{\hrule width 12.5cm\vskip0.5cm}
+        \textcolor{light-gray}{\hrule width 12.5cm\vskip0.5cm}
+        \textcolor{light-gray}{\hrule width 12.5cm\vskip0.5cm}
+        \textcolor{light-gray}{\hrule width 12.5cm\vskip0.5cm}
+        \textcolor{light-gray}{\hrule width 12.5cm\vskip0.5cm}
+        \textcolor{light-gray}{\hrule width 12.5cm\vskip0.5cm}
+        \textcolor{light-gray}{\hrule width 12.5cm\vskip0.5cm}
 
-        \vspace*{-10.1cm}
-        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.1cm}\hskip1cm}
-        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.1cm}\hskip1cm}
-        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.1cm}\hskip1cm}
-        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.1cm}\hskip1cm}
-        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.1cm}\hskip1cm}
-        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.1cm}\hskip1cm}
-        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.1cm}\hskip1cm}
-        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.1cm}\hskip1cm}
-        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.1cm}\hskip1cm}
-        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.1cm}\hskip1cm}
-        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.1cm}\hskip1cm}
-        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.1cm}\hskip1cm}
+        \vspace*{-9.75cm}
+        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.25cm}\hskip0.5cm}
+        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.25cm}\hskip0.5cm}
+        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.25cm}\hskip0.5cm}
+        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.25cm}\hskip0.5cm}
+        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.25cm}\hskip0.5cm}
+        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.25cm}\hskip0.5cm}
+        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.25cm}\hskip0.5cm}
+        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.25cm}\hskip0.5cm}
+        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.25cm}\hskip0.5cm}
+        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.25cm}\hskip0.5cm}
+        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.25cm}\hskip0.5cm}
+        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.25cm}\hskip0.5cm}
+        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.25cm}\hskip0.5cm}
+        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.25cm}\hskip0.5cm}
+        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.25cm}\hskip0.5cm}
+        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.25cm}\hskip0.5cm}
+        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.25cm}\hskip0.5cm}
+        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.25cm}\hskip0.5cm}
+        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.25cm}\hskip0.5cm}
+        \textcolor{light-gray}{\rule[-1.0cm]{1pt}{9.25cm}\hskip0.5cm}
 
       }
 
