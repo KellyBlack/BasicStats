@@ -1,13 +1,13 @@
 
 \lecture{More Sample Distributions}{more-sample-distributions}
-\section{More Sample Distributions}
+\section{The Sample Distribution}
 
-\title{More Sample Distributions}
-\subtitle{More Examples}
+\title{The Sample Distribution}
+\subtitle{The Central Limit Theorem}
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{Feb 24, 2014}
+\date{Feb 18, 20145}
 
 \begin{frame}
   \titlepage
@@ -70,15 +70,17 @@ What did we just do?
   }
 
   \only<3->%
-  {
-    Each time we run these experiments we can get different results.
+  { 
+
+    Each time we run these experiments we \textcolor{red}{can} get
+    different results.
 
     The sample mean is a random variable.
   }
   
 \end{frame}
 
-\subsection{The Sample Mean}
+\subsection{The Central Limit Theorem}
 
 \begin{frame}
   \frametitle{Sample Mean}
@@ -139,12 +141,28 @@ What did we just do?
   We have a random variable, $X$, which has mean $\mu$ and standard
   deviation $\sigma.$
 
+  \vfill
+
   We have a collection of measurements:
   \begin{eqnarray*}
     x_1,~x_2,~x_3,\cdots,~x_n.
   \end{eqnarray*}
   Each measurement has a mean, $\mu$, and a standard deviation of
   $\sigma$. We assume that they are all independent of one another.
+
+  \vfill
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Distribution of the Sample Mean}
+
+  We have a collection of measurements:
+  \begin{eqnarray*}
+    x_1,~x_2,~x_3,\cdots,~x_n.
+  \end{eqnarray*}
+
+  \vfill
   
   Given the measurements the sample mean is
   \begin{eqnarray*}
@@ -152,6 +170,8 @@ What did we just do?
   \end{eqnarray*}
   The sample mean, $\bar{x}$,  has a mean of $\mu$, and it has a
   standard deviation of $\frac{\sigma}{\sqrt{n}}$.
+
+  \vfill
 
 \end{frame}
 
@@ -162,15 +182,15 @@ What did we just do?
 \begin{frame}
   \frametitle{Example}
 
-  The life time of batteries is normally distributed with a mean of
-  19.8 hours and a standard deviation of 1.3 hours. What is the
-  probability that a sample size of six batteries will give a sample
-  mean that is more than 21.1 hours?
+  The life time for a brand of batteries is normally distributed with
+  a mean of 19.8 hours and a standard deviation of 1.3 hours. What is
+  the probability that a sample size of six batteries will give a
+  sample mean that is more than 21.1 hours?
 
   \vfill
 
   \only<2->{%
-    Organize the information: \\
+    First, organize the information: \\
     \begin{tabular}{l|l}
       Random variable & \action<3-|alert@3>{\color{red}Sample Mean} \\ 
       $\mu=19.8$   & \action<3-|alert@3>{\color{red}$\mu=19.8$} \\
@@ -181,6 +201,16 @@ What did we just do?
 
   \vfill
 
+  \note{
+    \begin{itemize}
+    \item Ans: 0.0071
+    \item First organize the information.
+    \item Make a rough sketch.
+    \item Figure out the question that is asked.
+    \item Figure out how to answer the question.
+    \item Finally, carry out your plan.
+    \end{itemize}
+  }
 \end{frame}
 
 
@@ -195,7 +225,7 @@ What did we just do?
   \vfill
 
   \only<2->{%
-    Organize the information: \\
+    First, organize the information: \\
     \begin{tabular}{l|l}
       Random variable & \action<3-|alert@3>{\color{red}Sample Mean} \\ 
       $\mu=\$235,000$   & \action<3-|alert@3>{\color{red}$\mu=\$235,000$} \\
@@ -206,7 +236,16 @@ What did we just do?
 
   \vfill
 
-
+  \note{
+    \begin{itemize}
+    \item Ans: 0.9920
+    \item First organize the information.
+    \item Make a rough sketch.
+    \item Figure out the question that is asked.
+    \item Figure out how to answer the question.
+    \item Finally, carry out your plan.
+    \end{itemize}
+  }
 \end{frame}
 
 
@@ -226,12 +265,23 @@ What did we just do?
       Random variable & \action<3-|alert@3>{\color{red}Sample Mean} \\ 
       $\mu=\$235,000$   & \action<3-|alert@3>{\color{red}$\mu=\$235,000$} \\
       $\sigma=\$45,000$ & \action<3-|alert@3>{\color{red}$\sigma=\frac{\$45,000}{\sqrt{N}}$} \\
-                   & \action<3-|alert@3>{\color{red}$n=N$}
+                   & \action<3-|alert@3>{\color{red}$n=?$}
     \end{tabular}
   }
 
   \vfill
 
+  \note{
+    \begin{itemize}
+    \item $N=3318$
+    \item Note that we rounded up!
+    \item First organize the information.
+    \item Make a rough sketch.
+    \item Figure out the question that is asked.
+    \item Figure out how to answer the question.
+    \item Finally, carry out your plan.
+    \end{itemize}
+  }
 
 \end{frame}
 
