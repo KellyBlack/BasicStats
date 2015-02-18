@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{26 February 2014}
+\date{20 February 2015}
 
 \begin{frame}
   \titlepage
@@ -59,49 +59,52 @@
 \begin{frame}
   \frametitle{Clicker Example}
 
-  Will Snooki's love child be a boy or a girl?
+  Is it right that a beagle won best in show at the Westminster Kennel Club Dog Show?
 
   \begin{tabular}{l@{\hspace{3em}}l}
-    A: Boy    & B: Girl
+    A: Yes    & B: No
   \end{tabular}
   
   
 
   \vfill
 
-  \only<2->{ 
+  \uncover<2->{ 
 
-    Left section: Will Snooki's love child be a boy or a
-    girl?
+    \textcolor{red}{Left section}: 
+    Is it right that a beagle won best
+    in show at the Westminster Kennel Club Dog Show?
 
     \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: Boy   & B: Girl & C: Not in left section
+      A: Yes   & B: No & C: Not in left section
     \end{tabular}
 
   }
 
   \vfill
 
-  \only<3->{ 
+  \uncover<3->{ 
 
-    Center section: Will Snooki's love child be a boy or a
-    girl?
+    \textcolor{red}{Center section}: 
+    Is it right that a beagle won best in show at the
+    Westminster Kennel Club Dog Show?
 
     \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: Boy   & B: Girl& C: Not in center section
+      A: Yes   & B: No& C: Not in center section
     \end{tabular}
 
   }
 
   \vfill
 
-  \only<4->{ 
+  \uncover<4->{ 
 
-    Right section: Will Snooki's love child be a boy or a
-    girl?
+    \textcolor{red}{Right section}: 
+    Is it right that a beagle won best in show at the
+    Westminster Kennel Club Dog Show?
 
     \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: Boy    & B: Girl & C: Not in right section
+      A: Yes    & B: No & C: Not in right section
     \end{tabular}
 
   }
@@ -113,7 +116,7 @@
 
 
 \begin{frame}
-  \frametitle{Clicker Example}
+  \frametitle{What Just Happened?}
 
   \begin{itemize}
   \item We just made samples. (This is a not a random sample, but you
@@ -125,7 +128,7 @@
   \item We make a calculation based on the sample. The calculation is
     called the ``sample proportion.''
 
-    \only<2->{%
+    \uncover<2->{%
       \begin{definition}[The Sample Proportion]
         The sample proportion is defined to be
         \begin{eqnarray*}
@@ -144,14 +147,15 @@
 
 \begin{frame}{Sampling a Binomial Distribution}
 
-  Recall that if $X$ be a binomial distribution with a probability $p$
-  of success and $n$ trials.
+  Recall that if $X$ follows a binomial distribution. 
   \begin{itemize}
+  \item There are $n$ independent trials.
+  \item Each trial has a probability of a ``yes.''
   \item Check if $n\cdot p \geq 5$ 
   \item Check if $n\cdot (1-p) \geq 5$ 
-  \item If \textbf{both} conditions are true then $X$ is approximately
-    normally distributed with mean $n\cdot p$ and standard deviation
-    $\sqrt{p(1-p)n}$.
+  \item If \textcolor{red}{\textbf{both}} conditions above are true
+    then $X$ is \textcolor{red}{approximately normally distributed}
+    with mean $n\cdot p$ and standard deviation $\sqrt{p(1-p)n}$.
   \end{itemize}
 
   
@@ -161,12 +165,12 @@
 \begin{frame}
   \frametitle{Not What We Have!}
 
-  We are not seeking the number ``yeses.''
-  Instead we are asked about the \textit{proportion} of ``yeses.''
+  We are not seeking the number ``yeses.''  Instead we are asked about
+  the \textcolor{red}{\textit{proportion}} of ``yeses.''
 
   \vfill
 
-  \begin{definition}[The sample proportion]
+  \begin{definition}[\textcolor{red}{The sample proportion}]
 
     We take a sample from $n$ trials. Each trial has probability $p$
     of ``success.'' We count the total number of successes from the
@@ -182,26 +186,26 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{The sample proportion}
+  \frametitle{The Sample Proportion}
 
   The sample proportion has a mean of $p$, and a standard deviation of
   $\sqrt{\frac{p(1-p)}{n}}$.
 
   \vfill
 
-  \only<2->
+  \uncover<2->
   {
 
     If $p\cdot n \geq 5$ \textbf{and} $(1-p)\cdot n \geq 5$
-    \textbf{and} $n\geq 20$ then $\hat{p}$ is approximately normally
-    distributed with mean $p$ and standard deviation
-    $\sqrt{\frac{p(1-p)}{n}}$.
+    \textbf{and} \textcolor{red}{$n\geq 20$} then $\hat{p}$ is
+    approximately normally distributed with mean $p$ and standard
+    deviation $\sqrt{\frac{p(1-p)}{n}}$.
 
   }
 
   \vfill
 
-  \only<3->
+  \uncover<3->
   {
     If this is the case we have
     \begin{eqnarray*}
@@ -211,19 +215,26 @@
 
   \vfill
 
-  \only<4->
-  {
-
-    Problem: We usually do not know $p$. {\color{red}If necessary use
-      the largest possible value of the standard deviation as a
-      ``worst case scenario.''} That occurs when $p=\frac{1}{2}$, and
-    we sometimes use that if we are not sure.
-
-  }
-
-
 \end{frame}
 
+
+\begin{frame}{The Sample Proportion}
+
+  If we can use the normal approximation we have
+  \begin{eqnarray*}
+    z & = & \frac{\hat{p}-p}{\sqrt{\frac{\textcolor{red}{p(1-p)}}{n}}}.
+  \end{eqnarray*}
+
+  \vfill
+
+  Problem: We usually do not know $p$. {\color{blue}If necessary use
+    the largest possible value of the standard deviation as a
+    ``worst case scenario.''} That occurs when $p=\frac{1}{2}$, and
+    we sometimes use that if we are not sure.
+
+    \vfill
+
+\end{frame}
 
 \subsection{Examples}
 
@@ -236,6 +247,15 @@
 
   \vfill
 
+  \note{
+
+    \begin{itemize}
+    \item Explicitly check the conditions to make sure that you can
+      use the normal approximation and show your work!
+    \item Answer: .2643
+    \end{itemize}
+
+  }
 
 \end{frame}
 
@@ -248,47 +268,30 @@
 
     \vfill
 
-\end{frame}
 
+  \note{%
+    \begin{itemize}
+    \item Explicitly check the conditions to make sure that you can
+      use the normal approximation and show your work!
+    \item Be careful when reading the problem. This can be confusing!
+    \item Answer: 0.2033
+    \end{itemize}
 
-
-\iftoggle{clicker}{%
-  \begin{frame}{Clicker Quiz}
-
-
-    A previous study indicates that 34\% of people who use a cell
-    phone regularly will get parotid gland cancer. Two hundred people
-    are tracked who are regular cell phone users. What is the
-    probability that fewer than 30\% of the people will get parotid
-    gland cancer?
-
-    \vfill 
-
-
-    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: 0.10  & B: 0.11 & C: 0.12 & D: 0.13
-    \end{tabular}
-
-    \vfill
-    \vfill
-    \vfill
-
+  }
 
 
 \end{frame}
-
-}
 
 
 
 \begin{frame}{In a nutshell}
 
 
-  You conduct $n$ trials. Each trial has a probability $p$ for
-  ``success'' and a probability of $1-p$ for a different
-  result. Define the sample proportion to be 
+  You conduct $n$ trials. Each trial has a probability $p$ for a
+  ``yes'' and a probability of $1-p$ otherwise. The sample
+  proportion is defined to be
   \begin{eqnarray*}
-    \hat{p} & = & \frac{\mathrm{number~of~successes}}{\mathrm{number~of~trials}}.
+    \hat{p} & = & \frac{\mathrm{number~of~yeses}}{\mathrm{number~of~trials}}.
   \end{eqnarray*}
 
   \begin{itemize}
@@ -309,6 +312,32 @@
   
 \end{frame}
 
+
+\iftoggle{clicker}{%
+
+  \begin{frame}{Clicker Quiz}
+
+    Find the value of $z^*$ so that the probability of obtaining a
+    value less than $z^*$ from a standard normal is 0.05.
+
+    \vfill 
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: -1.96  & B: -1.65 & C: 1.65 & D: 1.96
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+
+
+\end{frame}
+
+}
+
+
+
 \begin{frame}{Example}
 
   I want to conduct a poll. It is estimated that each time I ask
@@ -319,6 +348,15 @@
 
   \vfill
 
+  \note{%
+
+    \begin{itemize}
+    \item We assume that we can use the normal approximation.
+    \item Ans: $n=248$ 
+    \item Here we always round up!
+    \end{itemize}
+
+  }
 
 \end{frame}
 
@@ -330,6 +368,16 @@
   less than 0.1 lower than the true value?
 
   \vfill
+
+  \note{%
+
+    \begin{itemize}
+    \item We assume that we can use the normal approximation.
+    \item Ans: $n=69$ 
+    \item Here we always round up!
+    \end{itemize}
+
+  }
 
 
 \end{frame}
