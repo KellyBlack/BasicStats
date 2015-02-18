@@ -1,5 +1,5 @@
 \documentclass[svgnames,table]{beamer}
-%\documentclass[svgnames,table,handout]{beamer}
+%\documentclass[svgnames,table,handout,aspectratio=129]{beamer}
 \usepackage{hhline}
 \usepackage{etoolbox}
 \usepackage{tikz}
@@ -101,6 +101,13 @@
 }
 
 \mode<handout>{
+  \oddsidemargin=0.0in
+  \evensidemargin=0.0in
+  \textwidth=6.5in
+
+  \topmargin=0.0in
+  \textheight=9in
+
   \usepackage{pgfpages}
   \pgfpagesuselayout{4 on 1}[letterpaper, border shrink=5mm]
   \pgfpagesuselayout{resize to}[letterpaper,border shrink=5mm]
@@ -134,21 +141,21 @@
           border shrink=\pgfpageoptionborder,%
           resized width=.5\pgfphysicalwidth,%
           resized height=.33\pgfphysicalheight,%
-          center=\pgfpoint{.3\pgfphysicalwidth}{.83\pgfphysicalheight}%
+          center=\pgfpoint{.15\pgfphysicalwidth}{.9\pgfphysicalheight}%
         }%
         \pgfpageslogicalpageoptions{2}
         {%
           border shrink=\pgfpageoptionborder,%
           resized width=.5\pgfphysicalwidth,%
           resized height=.33\pgfphysicalheight,%
-          center=\pgfpoint{.3\pgfphysicalwidth}{.5\pgfphysicalheight}%
+          center=\pgfpoint{.15\pgfphysicalwidth}{.55\pgfphysicalheight}%
         }%
         \pgfpageslogicalpageoptions{3}
         {%
           border shrink=\pgfpageoptionborder,%
           resized width=.5\pgfphysicalwidth,%
           resized height=.33\pgfphysicalheight,%
-          center=\pgfpoint{.3\pgfphysicalwidth}{.17\pgfphysicalheight}%
+          center=\pgfpoint{.15\pgfphysicalwidth}{.25\pgfphysicalheight}%
         }%
 
 	
