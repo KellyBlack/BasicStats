@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{28 February 2014}
+\date{23 February 2015}
 
 \begin{frame}
   \titlepage
@@ -25,14 +25,16 @@
   \begin{frame}
     \frametitle{Clicker Quiz}
 
-    You sample a random variable which has a mean of 2.1 and a standard
-    deviation of 4.5. You take 30 samples. What is the probability that
-    the sample mean is more than 3.5?
+    You sample a random variable which has a mean of 2.1 and a
+    standard deviation of 4.5. You take 30 samples, and the sample
+    mean is 3.5. What is the value of the $z$-statistic? (The
+    $z$-statistic is the value of $z^*$ associated with this sample
+    mean.)
 
     \vfill
 
     \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: 0.0446  & B: 0.6221  & C: 0.9954
+      A: 0.31  & B: 0.78  & C: 1.70
     \end{tabular}
 
     \vfill
@@ -83,13 +85,13 @@
     \$260,748 & \$268,647 & \$269,197 & \$232,603 & \$221,389
   \end{tabular}
 
-  We then calculate a \textit{sample mean},
+  We then calculate a \textcolor{red}{\textit{sample mean}},
   \begin{eqnarray*}
     \bar{x} & = &
     \frac{250397+241621+238706+\cdots+232603+221389}{10}, \\
     & = & \$248,116.10\\
   \end{eqnarray*}
-  This is our \textbf{estimate} for the mean.
+  This is our \textcolor{blue}{\textbf{estimate}} for the mean.
   
 \end{frame}
 
@@ -154,9 +156,9 @@
   The only thing that we have is $\bar{x}$ and $s$. The problem is
   that these things are random variables.
 
-  $\bar{x}$ is an estimate for the mean, $\mu$.
+  $\bar{x}$ is an \textcolor{red}{estimate} for the mean, $\mu$.
 
-  $s$ is an estimate for the standard deviation, $\sigma$.
+  $s$ is an \textcolor{red}{estimate} for the standard deviation, $\sigma$.
 
   \begin{definition}{Bias}
     \begin{itemize}
@@ -203,6 +205,9 @@ Problem: We do not know what $\mu$ is!
 
 \begin{frame}{Confidence Interval}
 
+  There is a probability of $1-\alpha$ that $\bar{x}$ is within the
+  error of the true mean.
+
   \begin{columns}
     \column{.4\textwidth}
 
@@ -212,8 +217,8 @@ Problem: We do not know what $\mu$ is!
 
     In practice we usually want one of the following things:
     \begin{itemize}
-    \item Determine the value of the error
-    \item Determine number of samples (N)
+    \item Determine the value of the error for a given value of $\alpha$.
+    \item Determine number of samples (N).
     \item Determine the probability that we are outside of the error bounds.
     \end{itemize}
 
@@ -240,8 +245,10 @@ Problem: We do not know what $\mu$ is!
     \end{eqnarray*}
     and
     \begin{eqnarray*}
-      z & = & \frac{-\mathrm{error}}{\sigma/n}.
+      z^* & = & \frac{-\mathrm{error}}{\sigma/n}.
     \end{eqnarray*}
+
+    $z^*$ is the \textcolor{red}{critical $z$-statistic}.
 
   \end{columns}
 
@@ -292,17 +299,17 @@ Problem: We do not know what $\mu$ is!
 \begin{frame}{Confidence Interval}
 
   \begin{columns}
-    \column{.4\textwidth}
+    \column{.3\textwidth}
 
     \centerline{\includegraphics[width=4cm]{img/confidenceInterval}}
 
-    \column{.6\textwidth}
+    \column{.7\textwidth}
 
-    We want one of the following things:
+    We usually want one of the following things:
     \begin{itemize}
-    \item Given $N$ and $\alpha$ calculate the error
-    \item Given $N$ and the error calculate $\alpha$
-    \item Given $\alpha$ and the error calculate $N$
+    \item Given $N$ and $\alpha$ calculate the error.
+    \item Given $N$ and the error calculate $\alpha$.
+    \item Given $\alpha$ and the error calculate $N$.
     \end{itemize}
 
   \end{columns}
@@ -376,6 +383,7 @@ Problem: We do not know what $\mu$ is!
   
 \end{frame}
 
+\subsection{Examples}
 
 \begin{frame}
   \frametitle{Example}
@@ -388,10 +396,10 @@ Problem: We do not know what $\mu$ is!
 
   \only<2->%
   {
-
-    The 95\% confidence interval is from 207,109\$ to 262,891\$
-    assuming a normal distribution with a sample size of ten.
-
+    {\color{blue}
+      The 95\% confidence interval is from 207,109\$ to 262,891\$
+      assuming a normal distribution with a sample size of ten.
+    }
   }
 
   \vfill
