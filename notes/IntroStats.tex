@@ -7,6 +7,7 @@
 \usepackage{amssymb}
 %\usepackage{/usr/lib64/R/share/texmf/Sweave}
 
+\input{latexdefinitions}
 
 
 \usetheme{Frankfurt}%
@@ -17,10 +18,8 @@
 \usecolortheme{seagull}
 \logo{\includegraphics[height=.25in]{img/clarksonGreen}}
 
-\definecolor{garnet}{RGB}{136,0,0}
-%\definecolor{clarksonGreen}{RGB}{0,71,28}
-\definecolor{light-gray}{gray}{0.8}
-\definecolor{clarksonGreen}{RGB}{0,52,21}
+% Note that the colour definitions are given in the latexDefinitions
+% file.
 \setbeamercolor{palette primary}{fg=clarksonGreen,bg=white}
 \setbeamercolor{palette secondary}{fg=clarksonGreen,bg=white}
 \setbeamercolor{palette tertiary}{fg=clarksonGreen,bg=white}
@@ -29,18 +28,8 @@
 \setbeamercolor{block body}{fg=black,bg=black!10}
 \setbeamercolor{titlelike}{bg=clarksonGreen,fg=white} % parent=palette quaternary}
 
-\newcommand{\half}{\mbox{$\frac{1}{2}$}}
-\newcommand{\deltat}{\mbox{$\triangle t$}}
-\newcommand{\deltax}{\mbox{$\triangle x$}}
-\newcommand{\deltay}{\mbox{$\triangle y$}}
-
-\newcommand{\deriv}[2]{\frac{d}{d#2}#1}
-\newcommand{\derivTwo}[2]{\frac{d^2}{d#2^2}#1}
-
-\newcommand{\lp}{\left(}
-\newcommand{\rp}{\right)}
-
-
+% Define the variable to determine whether or not the clicker quizzes
+% are visible in the resulting output.
 \newtoggle{clicker}
 \toggletrue{clicker}
 %\togglefalse{clicker}
@@ -79,8 +68,8 @@
 %\includeonly{sampleProportions}
 %\includeonly{confInterval}
 %\includeonly{t-distribution}
-\includeonly{proportionConfInterval}
-%\includeonly{confIntervalsDecisions}
+%\includeonly{proportionConfInterval}
+\includeonly{confIntervalsDecisions}
 %\includeonly{hypTest}
 %\includeonly{hypTestMean}
 %\includeonly{hypTestTDist}

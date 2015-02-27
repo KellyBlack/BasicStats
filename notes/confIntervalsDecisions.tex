@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{24 March 2014}
+\date{4 March 2015}
 
 \begin{frame}
   \titlepage
@@ -26,18 +26,18 @@
   \begin{frame}
     \frametitle{Clicker Quiz}
 
-    Thirty-one medium sized companies are sampled from a given sector. For
-    each company the amount of money spent for research per year is
-    sampled. The sample mean for expenditures is 1.3 million dollars
-    with a sample standard deviation of 0.18 million dollars. What is
-    the 90\% confidence interval for the mean?
+    Thirty-one medium sized companies are sampled from a given
+    sector. For each company the amount of money spent for research
+    per year is sampled. The sample mean for expenditures is 1.3
+    million dollars with a sample standard deviation of 0.18 million
+    dollars. What is the critical $t$ value for the 90\% confidence
+    interval for the mean?
 
     \vfill
 
 
     \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: 1.221 to 1.379 million  & B: 1.234 to 1.366 million  \\
-      C: 1.245 to 1.355 million
+      A: 0.05  & B: 1.310  & C: 1.697
     \end{tabular}
 
     \vfill
@@ -58,16 +58,16 @@
       \centerline{\includegraphics[width=5cm]{img/confidenceInterval}}
       The R.V. $X$ has mean $\mu$ and standard deviation $\sigma$.
 
-      The sample mean, $\bar{x}$ has mean $\mu$ and standard deviation
-      $\frac{\sigma}{\sqrt{n}}$.
+      The sample mean, $\bar{x}$ has {\color{red}mean $\mu$} and
+      {\color{red} standard deviation $\frac{\sigma}{\sqrt{n}}$}.
 
     \end{column}
 
     \uncover<2->{%
     \begin{column}[T]{0.5\textwidth}
       \centerline{\includegraphics[width=5cm]{img/confidenceIntervalProportion}}
-      The sample proportion has mean $p$ and standard deviation
-      $\sqrt{\frac{p(1-p)}{n}}$.
+      The sample proportion has {\color{blue}mean $p$} and
+      {\color{blue}standard deviation $\sqrt{\frac{p(1-p)}{n}}$}.
 
       %\vfill
     \end{column}
@@ -103,27 +103,27 @@
   \begin{columns}[T]
 
     \begin{column}[T]{0.5\textwidth}
-      \begin{block}{\color{red}Normal Distribution}
+      \begin{block}{\color{blue}Normal Distribution}
         \begin{eqnarray*}
-          p\lp z \leq \frac{-error}{\frac{\sigma}{\sqrt{n}}}\rp & = & \frac{\alpha}{2}.
+          p\lp z \leq \frac{-error}{\frac{\redText{\sigma}}{\sqrt{n}}}\rp & = & \frac{\alpha}{2}.
         \end{eqnarray*}
       \end{block}
 
-      \begin{block}{\color{red}$t$ Distribution}
+      \begin{block}{\color{blue}$t$ Distribution}
         \begin{eqnarray*}
-          p\lp t \leq \frac{-error}{\frac{\sigma}{\sqrt{n}}}\rp & = & \frac{\alpha}{2},
+          p\lp t \leq \frac{-error}{\frac{\redText{s}}{\sqrt{n}}}\rp & = & \frac{\alpha}{2},
         \end{eqnarray*}
-        where $df=n-1$.
+        where \redText{$df=n-1$}.
       \end{block}
     \end{column}
 
 
     \begin{column}[T]{0.5\textwidth}
-      \begin{block}{\color{red}Proportions}
+      \begin{block}{\color{blue}Proportions}
         Check to see if $p\cdot n \geq 5$, $(1-p)\cdot n \geq 5$ and
         $n\geq 20$. If \textit{all} of these things are true
         \begin{eqnarray*}
-          p\lp z \leq \frac{-error}{\sqrt{\frac{p(1-p)}{n}}} \rp & = & \frac{\alpha}{2}.
+          p\lp z \leq \frac{-error}{\redText{\sqrt{\frac{p(1-p)}{n}}}} \rp & = & \frac{\alpha}{2}.
         \end{eqnarray*}
       \end{block}
     \end{column}
@@ -164,7 +164,7 @@
 
   You read a report that says that eighteen companies in a given
   sector were polled, and the confidence interval for the yearly
-  output in dollars is between \$710,000 and \$650,000 with a standard
+  output in dollars is between \$650,000 and \$710,000 with a standard
   deviation of \$96,000. What is the significance level?
 
   \vfill
@@ -172,7 +172,8 @@
   \only<2->{
     \textit{
       There is a probability of about 18\% that the true mean is not
-      between \$710,000 and \$650,000 assuming a normal distribution.
+      between \$650,000 and \$710,000 assuming a normal distribution
+      and a standard deviation of \$96,000.
     }
   }
 
