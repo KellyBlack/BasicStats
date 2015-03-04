@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{26 March 2014}
+\date{6 March 2015}
 
 \begin{frame}
   \titlepage
@@ -86,7 +86,7 @@
 
   \begin{tabular}{ll}
     Problem: & $\bar{x}$ is a random variable. \\
-    Problem: & $\bar{x}$ is our {\color{red}only way} of estimating $\mu$!
+    Problem: & $\bar{x}$ is our {\color{red}one} estimate for $\mu$!
   \end{tabular}
 
 \end{frame}
@@ -98,14 +98,15 @@
   \item<2-> This is our {\color{red}hypothesis} of what we \textit{think} is happening.
   \item<3-> We want to {\color{red}make a case} for some change in how we interpret the
     situation.
-  \item<4-> {\color{red}Assume} that the \textit{status quo} is good or better. (Call this the
+  \item<4-> {\color{red}Assume} that the \textit{status quo} is correct. (Call this the
     \textit{Null Hypothesis}, $H_0$.)
   \item<5-> {\color{red}Construct a hypothesis} about what we think is \textbf{think}
     is happening. (Call this the \textit{alternate hypothesis}, $H_a$.)
   \item<6-> Collect \textit{evidence} {\color{red}assuming $H_0$ is true}. 
-  \item<7-> If the evidence is {\color{red}\textit{``highly unlikely''} under the
-    assumed conditions} then reject the null hypothesis, otherwise we
-    cannot reject the null hypothesis.
+  \item<7-> If the evidence is {\color{red}\textit{``highly
+        unlikely''} under the assumed conditions} then
+    \blueText{reject the null hypothesis, otherwise we cannot reject
+      the null hypothesis}.
   \end{enumerate}
   
 \end{frame}
@@ -210,7 +211,7 @@
 
     \begin{tabular}{l@{\hspace{2em}}l}
       $H_0$: & Interest rates are the same. \\
-      $H_a$: & Interest rates have \textcolor{red}{\textbf{decreased}}.
+      $H_a$: & Interest rates have \textcolor{blue}{\textbf{decreased}}.
     \end{tabular}
 
   \vfill
@@ -230,7 +231,7 @@
 
     \begin{tabular}{l@{\hspace{2em}}l}
       $H_0$: & Foreclosure rates are the same. \\
-      $H_a$: & Foreclosure rates have \textcolor{red}{\textbf{increased}}.
+      $H_a$: & Foreclosure rates have \textcolor{blue}{\textbf{increased}}.
     \end{tabular}
 
   \vfill
@@ -251,7 +252,7 @@
 
     \begin{tabular}{l@{\hspace{2em}}l}
       $H_0$: & The commercial has no impact. \\
-      $H_a$: & The commercial has \textcolor{red}{\textbf{an impact}}.
+      $H_a$: & The commercial has \textcolor{blue}{\textbf{an impact}}.
     \end{tabular}
 
   \vfill
@@ -335,13 +336,13 @@
 
   \begin{block}{Reject $H_0$}
     There is sufficient evidence to reject $H_0$ at the \#
-    significance level assuming a normal distribution and a 
+    confidence level assuming a normal distribution and a 
     standard deviation of \# with \# samples.
   \end{block}
 
   \begin{block}{Cannot Reject $H_0$}
     There is not sufficient evidence to reject $H_0$ at the \#
-    significance level assuming a normal distribution and a 
+    confidence level assuming a normal distribution and a 
     standard deviation of \#  with \# samples.
   \end{block}
 
@@ -363,9 +364,9 @@
     \begin{itemize}
     \item The probability that we get our result to be ``small.''
     \item The probability that we get our result \textit{given our
-        assumptions} is the significance level
-      ($\alpha$). \textbf{\color{red} It is a conditional
-        probability!}
+        assumptions} is the $p$-value. \textbf{\color{red} It is a
+        conditional probability!} We want it to be smaller than the
+      significance level, $\alpha$.
     \end{itemize}
   }
 
