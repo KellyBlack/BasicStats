@@ -7,7 +7,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{7 April 2014}
+\date{23 March 2015}
 
 \begin{frame}
   \titlepage
@@ -28,13 +28,13 @@
     
     I call fifty people and ask if they use glasses or another
     corrective lens. Studies indicate that 64\% of people use some
-    sort of corrective lens. What is the probability that less than 30
-    will say yes?
+    sort of corrective lens. Thirty people say that they use
+    glasses. What is the $z$-statistic?
 
     \vfill
 
     \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: 0.28 & B: 0.47  & C: 0.49
+      A: -0.833  & B: -0.577   & C: -0.589 
     \end{tabular}
 
     \vfill
@@ -50,11 +50,11 @@
 
 \begin{frame}{The Sample Proportion}
 
-  You conduct $n$ trials. Each trial has a probability $p$ for
-  ``success'' and a probability of $1-p$ for a different
-  result. Define the sample proportion to be 
+  You conduct $n$ trials. Each trial has a probability $p$ for ``yes''
+  and a probability of $1-p$ for a different result. Define the sample
+  proportion to be
   \begin{eqnarray*}
-    \hat{p} & = & \frac{\mathrm{number~of~successes}}{\mathrm{number~of~trials}}.
+    \hat{p} & = & \frac{\mathrm{number~of~yeses}}{\mathrm{number~of~trials}}.
   \end{eqnarray*}
 
   \begin{itemize}
@@ -64,9 +64,6 @@
     $n\geq 20$. If \textit{all} of these things are true
     \begin{itemize}
     \item $\hat{p}$ is approximately normally distributed
-    \item The mean of $\hat{p}$ is mean $p$.
-    \item The standard deviation of $\hat{p}$ is
-      $\sqrt{\frac{p(1-p)}{n}}$
     \item A $z$-statistic can be approximated using
       \begin{eqnarray*}
         z & = & \frac{\hat{p}-p}{\sqrt{\frac{p(1-p)}{n}}}.
@@ -240,10 +237,10 @@
     \begin{eqnarray*}
       & & 
       \begin{array}{rcl@{\hspace{3em}}rcl}
-          40*.8 & = & 32, & 40*.2 & = & 8, \\
-          N & = & 40, & \hat{p}^* & = & \frac{28}{40},
+          40*.8 & = & 32>5, & 40*.2 & = & 8>5, \\
+          N & = & 40>20, & \hat{p}^* & = & \frac{28}{40},
         \end{array} \\
-      z & = & \frac{\frac{28}{40}-.8}{\sqrt{.8(.2)/40}}, ~~ \approx ~~ -1.58
+      z^* & = & \frac{\frac{28}{40}-.8}{\sqrt{.8(.2)/40}}, ~~ \approx ~~ -1.58
     \end{eqnarray*}
   }
   
@@ -297,11 +294,11 @@
   \only<3>%
   {
     \begin{eqnarray*}
-      500*.52     & = & 260, \\
-      500*(1-.52) & = & 240, \\
-      N & = & 500, \\
+      500*.52     & = & 260>5, \\
+      500*(1-.52) & = & 240>5, \\
+      N & = & 500>20, \\
       \hat{p}^* & = & \frac{281}{500}, \\
-      z & = & \frac{\frac{281}{500}-.52}{\sqrt{.52(.48)/500}}, \\
+      z^* & = & \frac{\frac{281}{500}-.52}{\sqrt{.52(.48)/500}}, \\
       & \approx & 1.88
     \end{eqnarray*}
   }
@@ -355,11 +352,11 @@
   \only<3>%
   {
     \begin{eqnarray*}
-      400*.15     & = & 60, \\
-      400*(1-.15) & = & 340, \\
-      N & = & 400, \\
+      400*.15     & = & 60>5, \\
+      400*(1-.15) & = & 340>5, \\
+      N & = & 400>20, \\
       \hat{p}^* & = & \frac{50}{400}, \\
-      z & = & \frac{\frac{50}{400}-.15}{\sqrt{.15(.85)/400}}, \\
+      z^* & = & \frac{\frac{50}{400}-.15}{\sqrt{\frac{.15(.85)}{400}}}, \\
       & \approx & -1.400
     \end{eqnarray*}
   }
@@ -377,7 +374,7 @@
 
       There is not sufficient evidence to reject $H_0$ at the 95\%
       confidence level assuming a normal approximation to the
-      proportion with 500 samples.  
+      proportion with 400 samples.  
 
     }
 
