@@ -1,7 +1,6 @@
 *.o
 .cproject
 .project
-.gitignore
 *.pyc
 *.aux
 *.log
@@ -11,4 +10,8 @@
 *.snm
 *.toc
 *.csv
+data
+auto
+STAT Problems ID sheet.docx
+labManual.pdf
 IntroStats.pdf

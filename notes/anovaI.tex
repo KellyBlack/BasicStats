@@ -6,7 +6,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{14 November 2014}
+\date{27 March 2015}
 
 \begin{frame}
   \titlepage
@@ -24,6 +24,8 @@
 \begin{frame}{Clicker Quiz}
 
   \iftoggle{clicker}{%
+
+    \vspace*{-1em}
 
     The strength of three periodontal dressings is to be compared. The
     three different dressings are used on different patients, the
@@ -52,13 +54,13 @@
 
   \end{columns}
 
-    How do we treat these samples?
+  \vfill
 
+  \redText{Is there a difference in the treatments?}
 
-    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-      A: 2 Ind. Samples  & B: 2 Dep. Samples \\ 
-      C: 3 Ind. Samples  & D: 3 Dep. Samples.
-    \end{tabular}
+  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+    \redText{A: Yes}  & \redText{B: No} & \redText{C: Maybe}
+  \end{tabular}
 
     \vfill
     \vfill
@@ -224,11 +226,12 @@
 
 
   \begin{eqnarray*}
-    \begin{array}{llll@{\hspace{3em}}rr}
-      x_{1,1}, & x_{1,2}, & \ldots & x_{1,n_1}, & \uncover<2->{ \bar{x_1} & n_1 } \\ 
-      x_{2,1}, & x_{2,2}, & \ldots & x_{2,n_2}, & \uncover<2->{ \bar{x_2} & n_2 } \\
-      \vdots  & \vdots  &       & \vdots \\
-      x_{k,1}, & x_{k,2}, & \ldots & x_{k,n_k}. & \uncover<2->{ \bar{x_k} & n_k } 
+    \begin{array}{lllll@{\hspace{3em}}rr}
+      \mathrm{Treatment~1:} & x_{1,1}, & x_{1,2}, & \ldots & x_{1,n_1}, & \uncover<6->{ \redText{\bar{x_1}} & \redText{n_1} } \\ 
+      \uncover<2->{\mathrm{Treatment~2:} & x_{2,1}, & x_{2,2}, & \ldots & x_{2,n_2}, & \uncover<6->{ \redText{\bar{x_2}} & \redText{n_2} } \\}
+      \uncover<3->{\mathrm{Treatment~3:} & x_{3,1}, & x_{3,2}, & \ldots & x_{3,n_2}, & \uncover<6->{ \redText{\bar{x_2}} & \redText{n_2} } \\}
+      \uncover<4->{\vdots  & \vdots  &       & \vdots \\}
+      \uncover<5->{\mathrm{Treatment~k:} & x_{k,1}, & x_{k,2}, & \ldots & x_{k,n_k}. & \uncover<6->{ \redText{\bar{x_k}} & \redText{n_k} } }
     \end{array}
   \end{eqnarray*}
 
@@ -265,7 +268,8 @@
     \bar{x}_2 & = & \frac{x_{2,1} + \cdots + x_{2,n_2}}{n_2}, \\
               & \vdots & \\
     \bar{x}_k & = & \frac{x_{k,1} + \cdots + x_{k,n_k}}{n_k}, \\
-    \bar{x}_T & = & \frac{n_1 \bar{x_1} + \cdots + n_k \bar{x_k}}{n_1+\cdots+n_k}.
+    \bar{x}_T & = & \frac{n_1 \bar{x_1} + \cdots + n_k \bar{x_k}}{n_1+\cdots+n_k}, \\
+    N_T       & = & n_1+n_2+\cdots+n_k.
   \end{eqnarray*}
   
 \end{frame}
@@ -366,6 +370,8 @@
       MSE  & = & \frac{SSE}{N_T - k}, \\
       F    & = & \frac{MSTR}{MSE}.
     \end{eqnarray*}
+
+    $df_1=k-1$, and $df_2=N_T-k$.
 
   \vfill
 
