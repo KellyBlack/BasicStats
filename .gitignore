@@ -1,0 +1,14 @@
+*.o
+.cproject
+.project
+.gitignore
+*.pyc
+*.aux
+*.log
+*.dvi
+*.nav
+*.out
+*.snm
+*.toc
+*.csv
+IntroStats.pdf
