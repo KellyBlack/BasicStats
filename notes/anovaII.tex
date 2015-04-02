@@ -1,12 +1,12 @@
 \lecture{ANOVA}{ANOVA}
-\section{Analysis of Variance}
+\section{Analysis of Variance Examples}
 
-\title{Analysis of Variance}
+\title{Examples of Analysis of Variance}
 \subtitle{Detecting a Difference Between Multiple Treatments}
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{27 March 2015}
+\date{3 April 2015}
 
 \begin{frame}
   \titlepage
@@ -19,87 +19,97 @@
 
 
 
-\subsection{Clicker Quiz}
+\subsection{Example}
 
-\begin{frame}{Clicker Quiz}
+\begin{frame}{Time in Bankruptcy}
 
-  \iftoggle{clicker}{%
-
-    \vspace*{-1em}
-
-    The strength of three periodontal dressings is to be compared. The
-    three different dressings are used on different patients, the
-    strengths are measured. 
-
-  \begin{columns}
-    \column{.33\textwidth}
-    \begin{tabular}{l}
-      Coe \\ \hline
-      546 kN/mm\\ 469 kN/mm\\ 602 kN/mm\\ 511 kN/mm\\ 665 kN/mm\\ 631
-      kN/mm\\ 539 kN/mm\\ 631 kN/mm\\ 596 kN/mm\\ 546 kN/mm
-    \end{tabular}
-    \column{.33\textwidth}
-    \begin{tabular}{l}
-      Peripac \\ \hline
-      91 kN/mm\\ 168 kN/mm\\ 168 kN/mm\\ 34 kN/mm\\ 71 kN/mm\\ 126 kN/mm\\
-      77 kN/mm\\ 126 kN/mm\\ 119 kN/mm\\ 140 kN/mm
-    \end{tabular}
-
-    \column{.33\textwidth}
-    \begin{tabular}{l}
-      Putty \\ \hline
-      631 kN/mm\\ 1058 kN/mm\\ 631 kN/mm\\ 882 kN/mm\\ 777 kN/mm\\
-      1190 kN/mm\\ 833 kN/mm\\ 961 kN/mm\\ 785 kN/mm\\ 631 kN/mm
-    \end{tabular}
-
-  \end{columns}
+  When a firm is in a financial crisis there are many options. One
+  option is to declare some form of bankruptcy to get relief from
+  creditors. There are many ways to proceed in bankruptcy. We look at
+  three types of plans for getting out of bankruptcy: No Prefiling (N),
+  Prepackaged (P), and Joint Exchange (J).
 
   \vfill
 
-  \redText{Is there a difference in the treatments?}
+  A number of firms were sampled at random, and their plan as well as
+  time in bankruptcy (in weeks) were sampled.
 
-  \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
-    \redText{A: Yes}  & \redText{B: No} & \redText{C: Maybe}
-  \end{tabular}
+  \vfill
+  Question: Is there a difference?
 
-    \vfill
-    \vfill
-    \vfill
-
-  }
-
+  
 \end{frame}
 
-\subsection{Example}
+\begin{frame}{Time in Bankruptcy}
+
+  A number of firms were sampled at random, and their plan as well as
+  time in bankruptcy (in weeks) were sampled.
+
+  \vfill
+
+  Question: Is there a difference?
+
+  \vfill
+
+  \begin{tabular}{rr|@{\hspace{2em}}rr|@{\hspace{2em}}rr|@{\hspace{2em}}rr}
+    Plan & Time & Plan & Time & Plan & Time & Plan & Time \\ \hline
+    N & 1.1 & P & 0.5 & N & 6.6 & N & 3.2 \\
+    P & 2.5 & N & 5.0 & J & 5.2 & P & 3.5 \\
+    J & 4.1 & P & 2.4 & J & 3.5 & P & 1.6 \\
+    N & 6.2 & N & 3.1 & J & 2.2 & J & 3.0 \\
+    J & 2.3 & J & 2.9 
+  \end{tabular}
+
+  
+\end{frame}
 
 \begin{frame}{Comparing Multiple Independent Samples}
 
-    The strength of three periodontal dressings is to be compared. The
-    three different dressings are used on different patients, the
-    strengths are measured. 
+  \only<2->{%
+    \iftoggle{clicker}{%
+
+      \redText{\textbf{Clicker Quiz: Is there a difference?}}
+
+      \vfill
+
+    }
+  }
 
   \begin{columns}
     \column{.33\textwidth}
+    No Pre-Filing \\
     \begin{tabular}{l}
-      Coe \\ \hline
-      546 kN/mm\\ 469 kN/mm\\ 602 kN/mm\\ 511 kN/mm\\ 665 kN/mm\\ 631
-      kN/mm\\ 539 kN/mm\\ 631 kN/mm\\ 596 kN/mm\\ 546 kN/mm
+      1.1 \\ 6.6  \\ 3.2 \\ 5.0  \\ 6.2 \\ 3.1
     \end{tabular}
     \column{.33\textwidth}
+    Pre-packaged \\
     \begin{tabular}{l}
-      Peripac \\ \hline
-      91 kN/mm\\ 168 kN/mm\\ 168 kN/mm\\ 34 kN/mm\\ 71 kN/mm\\ 126 kN/mm\\
-      77 kN/mm\\ 126 kN/mm\\ 119 kN/mm\\ 140 kN/mm
+      0.5 \\ 2.5 \\ 3.5 \\ 2.4 \\ 1.6
     \end{tabular}
-
     \column{.33\textwidth}
+    Joint Exchange \\
     \begin{tabular}{l}
-      Putty \\ \hline
-      631 kN/mm\\ 1058 kN/mm\\ 631 kN/mm\\ 882 kN/mm\\ 777 kN/mm\\
-      1190 kN/mm\\ 833 kN/mm\\ 961 kN/mm\\ 785 kN/mm\\ 631 kN/mm
+      5.2 \\ 4.1 \\ 3.5 \\ 2.2 \\ 3.0 \\ 2.3 \\ 2.9
     \end{tabular}
 
   \end{columns}
+
+  \only<2->{%
+    \iftoggle{clicker}{%
+
+      \vspace*{-1em}
+    
+      \vfill
+
+      \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+        \redText{A: Yes}  & \redText{B: No} & \redText{C: Maybe}
+      \end{tabular}
+
+      \vfill
+      \vfill
+      \vfill
+    }
+  }
 
 
 \end{frame}
@@ -109,63 +119,63 @@
 
   The point estimates:
     \only<1>{%
-      \redText{Coe}
+      \redText{No Pre-Filing}
 
       \begin{tabular}{rrrrr}
-           Min. & 1st Qu. & Median  &  3rd Qu. &   Max. \\
-           469.0   & 540.8 &   571.0  &  623.8 &   665.0 \\
+        Min. & 1st Qu. & Median  &  3rd Qu. &   Max. \\
+        1.100 &  3.125 &  4.100  &   5.900  &  6.600 
       \end{tabular}
 
       \vfill
 
       \begin{tabular}{rr}
         Sample Mean & Sample Standard Deviation \\
-        573.6 & 61.31
+        4.2 & 2.108
       \end{tabular}
 
       \vfill
 
-      \includegraphics[width=4cm]{img/coePeriodontal}
+      \includegraphics[width=4cm]{img/noPreFilingTime}
       
     }
     \only<2>{%
-      \redText{Peripac}
+      \redText{Pre-packaged}
 
       \begin{tabular}{rrrrr}
-           Min. & 1st Qu. & Median  &  3rd Qu. &   Max. \\
-           34.0 &  80.5   & 122.5   &  136.5   & 168.0
+        Min. & 1st Qu. & Median  &  3rd Qu. &   Max. \\
+        0.5  &   1.6   &  2.4    &    2.5   &   3.5 
       \end{tabular}
 
       \vfill
 
       \begin{tabular}{rr}
         Sample Mean & Sample Standard Deviation \\
-        112 & 43.7
+        2.1 & 1.120 
       \end{tabular}
 
       \vfill
 
-      \includegraphics[width=4cm]{img/peripacPeriodontal.png}
+      \includegraphics[width=4cm]{img/prePackagedTime}
 
     }
     \only<3>{%
-      \redText{Putty}
+      \redText{Joint Exchange}
 
       \begin{tabular}{rrrrr}
-           Min. & 1st Qu. & Median  &  3rd Qu. &   Max. \\
-           631.0&  667.5  & 809.0   &  941.2   & 1190.0
+        Min. & 1st Qu. & Median  &  3rd Qu. &   Max. \\
+        2.200 &   2.600 &  3.000 &   3.800  &  5.200 
       \end{tabular}
 
       \vfill
 
       \begin{tabular}{rr}
         Sample Mean & Sample Standard Deviation \\
-        837.9 & 189.9
+        3.31 & 1.060
       \end{tabular}
 
       \vfill
 
-      \includegraphics[width=4cm]{img/puttyPeriodontal}
+      \includegraphics[width=4cm]{img/jointExchangeTime}
 
     }
 
@@ -181,34 +191,36 @@
 
   \begin{columns}
     \column{.33\textwidth}
-
-      \begin{tabular}{rr}
-        $\bar{x}_1$ & $s_1$ \\
-        573.6 & 61.31
-      \end{tabular}
-
-
-    \column{.33\textwidth}
-
-      \begin{tabular}{rr}
-        $\bar{x}_2$ & $s_2$ \\
-        112 & 43.7
-      \end{tabular}
+    No-Prefiling \\
+    \begin{tabular}{rrr}
+      $\bar{x}_1$ & $s_1$ & $n_1$ \\
+      4.2 & 2.108 & 6
+    \end{tabular}
 
 
     \column{.33\textwidth}
 
-      \begin{tabular}{rr}
-        $\bar{x}_3$ & $s_3$ \\
-        837.9 & 189.9
-      \end{tabular}
+    Pre-Packaged \\
+    \begin{tabular}{rrr}
+      $\bar{x}_2$ & $s_2$ & $n_2$ \\
+      2.1 & 1.120 & 5
+    \end{tabular}
+
+
+    \column{.33\textwidth}
+
+    Joint Exchange
+    \begin{tabular}{rrr}
+      $\bar{x}_3$ & $s_3$ & $n_3$ \\
+      3.31 & 1.060 & 7
+    \end{tabular}
 
 
   \end{columns}
 
   \vfill
 
-  \centerline{\includegraphics[width=4cm]{img/periodontalBoxplot}}
+  \centerline{\includegraphics[width=4cm]{img/bankruptcyBoxplots}}
 
   \vfill
 
@@ -276,11 +288,13 @@
 
 \begin{frame}{Three Measures of Variation}
 
+  % x_{tr} \approx 3.272222
+
   We have three measures of variance: \\
   \begin{tabular}{ll}
-    SSTr & $=$ \\
-    SSE  & $=$ \\
-    SST  & $=$  
+    SSTr & $=$ \\ % 12.04754
+    SSE  & $=$ \\ % 33.98857
+    SST  & $=$ \\ % 46.03611
   \end{tabular}
   
 \end{frame}
@@ -293,10 +307,10 @@
     H_a: & & \mu_i \neq \mu_j ~\mathrm{for~some~}i,~j.
   \end{eqnarray*}
 
-  \only<1>{\centerline{\includegraphics[width=4cm]{img/periodontalBoxplot}}}
-  \only<2>{\centerline{\includegraphics[width=4cm]{img/periodontalBoxplotSSE}}}
-  \only<3>{\centerline{\includegraphics[width=4cm]{img/periodontalBoxplotTotalMean}}}
-  \only<4>{\centerline{\includegraphics[width=4cm]{img/periodontalBoxplotSST}}}
+  \only<1>{\centerline{\includegraphics[width=4cm]{img/bankruptcyBoxplots}}}
+  \only<2>{\centerline{\includegraphics[width=4cm]{img/bankruptcyBoxplotSSE}}}
+  \only<3>{\centerline{\includegraphics[width=4cm]{img/bankruptcyBoxplotTotalMean}}}
+  \only<4>{\centerline{\includegraphics[width=4cm]{img/bankruptcyBoxplotSST}}}
   
 \end{frame}
 
@@ -312,48 +326,53 @@
   
 \end{frame}
 
-\begin{frame}{Bonding Strength for Periodontal Dressing}
+\begin{frame}{Comparing Multiple Independent Samples}
 
-  The strength of three periodontal dressings is to be compared. The
-  three different dressings are used on different patients, the
-  strengths are measured.
+  A number of firms were sampled at random, and their plan as well as
+  time in bankruptcy (in weeks) were sampled.
+
+  \vfill
+  Question: Is there a difference?
+
 
   \begin{columns}
     \column{.33\textwidth}
+    No Pre-Filing \\
     \begin{tabular}{l}
-      Coe \\ \hline
-      546 kN/mm\\ 469 kN/mm\\ 602 kN/mm\\ 511 kN/mm\\ 665 kN/mm\\ 631
-      kN/mm\\ 539 kN/mm\\ 631 kN/mm\\ 596 kN/mm\\ 546 kN/mm
+      1.1 \\ 6.6  \\ 3.2 \\ 5.0  \\ 6.2 \\ 3.1
     \end{tabular}
     \column{.33\textwidth}
+    Pre-packaged \\
     \begin{tabular}{l}
-      Peripac \\ \hline
-      91 kN/mm\\ 168 kN/mm\\ 168 kN/mm\\ 34 kN/mm\\ 71 kN/mm\\ 126 kN/mm\\
-      77 kN/mm\\ 126 kN/mm\\ 119 kN/mm\\ 140 kN/mm
+      0.5 \\ 2.5 \\ 3.5 \\ 2.4 \\ 1.6
     \end{tabular}
-
     \column{.33\textwidth}
+    Joint Exchange \\
     \begin{tabular}{l}
-      Putty \\ \hline
-      631 kN/mm\\ 1058 kN/mm\\ 631 kN/mm\\ 882 kN/mm\\ 777 kN/mm\\
-      1190 kN/mm\\ 833 kN/mm\\ 961 kN/mm\\ 785 kN/mm\\ 631 kN/mm
+      5.2 \\ 4.1 \\ 3.5 \\ 2.2 \\ 3.0 \\ 2.3 \\ 2.9
     \end{tabular}
 
   \end{columns}
 
+
 \end{frame}
 
-\begin{frame}{Bonding Strength for Periodontal Dressing}
 
-  The strength of three periodontal dressings is to be compared. The
-  three different dressings are used on different patients, the
-  strengths are measured.
+\begin{frame}{Comparing Multiple Independent Samples}
+
+  When a firm is in a financial crisis there are many options. One
+  option is to declare some form of bankruptcy to get relief from
+  creditors. There are many ways to proceed in bankruptcy. We look at
+  three types of plans for getting out of bankruptcy: No Prefiling (N),
+  Prepackaged (P), and Joint Exchange (J).
+
+  \vfill
 
   The three measures of variance: \\
   \begin{tabular}{ll}
-    SSTr & $=$ \\
-    SSE  & $=$ \\
-    SST  & $=$  
+    SSTr & $=$ \\ % 12.04754
+    SSE  & $=$ \\ % 33.98857
+    SST  & $=$ \\ % 46.03611
   \end{tabular}
 
 
@@ -366,10 +385,11 @@
 
     We define the following quantities:
     \begin{eqnarray*}
-      MSTR & = & \frac{SSTr}{k-1}, \\
-      MSE  & = & \frac{SSE}{N_T - k}, \\
-      F    & = & \frac{MSTR}{MSE}.
+      MSTR & = & \frac{SSTr}{k-1}, \\    % 6.024 
+      MSE  & = & \frac{SSE}{N_T - k}, \\ % 2.266
+      F    & = & \frac{MSTR}{MSE}.    \\ % 2.658
     \end{eqnarray*}
+    % F_cr = 3.68232
 
     $df_1=k-1$, and $df_2=N_T-k$.
 
@@ -390,7 +410,7 @@
 
 
 \begin{frame}{F-Tables}
-{\small Approximation of the critical values for the $F$-distribution for $\alpha=0.1$. }
+{\small Approximation of the critical values for the $F$-distribution for $\alpha=0.05$. }
  {
    \fontencoding{T1}
    \fontfamily{pcr}
@@ -399,38 +419,34 @@
    \fontsize{5pt}{5pt}
    \selectfont
    \begin{tabular}{l|lllllllllllll} 
-     df2  & df1      1  &      2  &      3  &      4  &      5  &      6  &      7  &      8  &      9   \\ 
-     1 & 39.8635 & 49.5000 & 53.5932 & 55.8330 & 57.2401 & 58.2044 & 58.9060 & 59.4390 & 59.8576   \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     2 & 8.5263 & 9.0000 & 9.1618 & 9.2434 & 9.2926 & 9.3255 & 9.3491 & 9.3668 & 9.3805  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     3 & 5.5383 & 5.4624 & 5.3908 & 5.3426 & 5.3092 & 5.2847 & 5.2662 & 5.2517 & 5.2400  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     4 & 4.5448 & 4.3246 & 4.1909 & 4.1072 & 4.0506 & 4.0097 & 3.9790 & 3.9549 & 3.9357  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     5 & 4.0604 & 3.7797 & 3.6195 & 3.5202 & 3.4530 & 3.4045 & 3.3679 & 3.3393 & 3.3163  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     \\ 
-     6 & 3.7759 & 3.4633 & 3.2888 & 3.1808 & 3.1075 & 3.0546 & 3.0145 & 2.9830 & 2.9577  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     7 & 3.5894 & 3.2574 & 3.0741 & 2.9605 & 2.8833 & 2.8274 & 2.7849 & 2.7516 & 2.7247  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     8 & 3.4579 & 3.1131 & 2.9238 & 2.8064 & 2.7264 & 2.6683 & 2.6241 & 2.5893 & 2.5612  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     9 & 3.3603 & 3.0065 & 2.8129 & 2.6927 & 2.6106 & 2.5509 & 2.5053 & 2.4694 & 2.4403  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     10 & 3.2850 & 2.9245 & 2.7277 & 2.6053 & 2.5216 & 2.4606 & 2.4140 & 2.3772 & 2.3473  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     \\ 
-     11 & 3.2252 & 2.8595 & 2.6602 & 2.5362 & 2.4512 & 2.3891 & 2.3416 & 2.3040 & 2.2735  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     12 & 3.1765 & 2.8068 & 2.6055 & 2.4801 & 2.3940 & 2.3310 & 2.2828 & 2.2446 & 2.2135  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     13 & 3.1362 & 2.7632 & 2.5603 & 2.4337 & 2.3467 & 2.2830 & 2.2341 & 2.1953 & 2.1638  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     14 & 3.1022 & 2.7265 & 2.5222 & 2.3947 & 2.3069 & 2.2426 & 2.1931 & 2.1539 & 2.1220  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     15 & 3.0732 & 2.6952 & 2.4898 & 2.3614 & 2.2730 & 2.2081 & 2.1582 & 2.1185 & 2.0862  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     \\ 
-     16 & 3.0481 & 2.6682 & 2.4618 & 2.3327 & 2.2438 & 2.1783 & 2.1280 & 2.0880 & 2.0553  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     17 & 3.0262 & 2.6446 & 2.4374 & 2.3077 & 2.2183 & 2.1524 & 2.1017 & 2.0613 & 2.0284  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     18 & 3.0070 & 2.6239 & 2.4160 & 2.2858 & 2.1958 & 2.1296 & 2.0785 & 2.0379 & 2.0047  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     19 & 2.9899 & 2.6056 & 2.3970 & 2.2663 & 2.1760 & 2.1094 & 2.0580 & 2.0171 & 1.9836  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     20 & 2.9747 & 2.5893 & 2.3801 & 2.2489 & 2.1582 & 2.0913 & 2.0397 & 1.9985 & 1.9649  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+     df2  & df1      1  &      2  &      3  &      4  &      5  &      6  &      7  &      8  &      9 \\ \hline 
+  1 & 161.45 & 199.50 & 215.71 & 224.58 & 230.16 & 233.99 & 236.77 & 238.88 & 240.54 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  2 & 18.513 & 19.000 & 19.164 & 19.247 & 19.296 & 19.330 & 19.353 & 19.371 & 19.385 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  3 & 10.128 & 9.5521 & 9.2766 & 9.1172 & 9.0135 & 8.9406 & 8.8867 & 8.8452 & 8.8123 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  4 & 7.7086 & 6.9443 & 6.5914 & 6.3882 & 6.2561 & 6.1631 & 6.0942 & 6.0410 & 5.9988 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  5 & 6.6079 & 5.7861 & 5.4095 & 5.1922 & 5.0503 & 4.9503 & 4.8759 & 4.8183 & 4.7725 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  6 & 5.9874 & 5.1433 & 4.7571 & 4.5337 & 4.3874 & 4.2839 & 4.2067 & 4.1468 & 4.0990 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  7 & 5.5914 & 4.7374 & 4.3468 & 4.1203 & 3.9715 & 3.8660 & 3.7870 & 3.7257 & 3.6767 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  8 & 5.3177 & 4.4590 & 4.0662 & 3.8379 & 3.6875 & 3.5806 & 3.5005 & 3.4381 & 3.3881 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  9 & 5.1174 & 4.2565 & 3.8625 & 3.6331 & 3.4817 & 3.3738 & 3.2927 & 3.2296 & 3.1789 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 10 & 4.9646 & 4.1028 & 3.7083 & 3.4780 & 3.3258 & 3.2172 & 3.1355 & 3.0717 & 3.0204 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 11 & 4.8443 & 3.9823 & 3.5874 & 3.3567 & 3.2039 & 3.0946 & 3.0123 & 2.9480 & 2.8962 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 12 & 4.7472 & 3.8853 & 3.4903 & 3.2592 & 3.1059 & 2.9961 & 2.9134 & 2.8486 & 2.7964 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 13 & 4.6672 & 3.8056 & 3.4105 & 3.1791 & 3.0254 & 2.9153 & 2.8321 & 2.7669 & 2.7144 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 14 & 4.6001 & 3.7389 & 3.3439 & 3.1122 & 2.9582 & 2.8477 & 2.7642 & 2.6987 & 2.6458 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 15 & 4.5431 & 3.6823 & 3.2874 & 3.0556 & 2.9013 & 2.7905 & 2.7066 & 2.6408 & 2.5876 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 16 & 4.4940 & 3.6337 & 3.2389 & 3.0069 & 2.8524 & 2.7413 & 2.6572 & 2.5911 & 2.5377 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 17 & 4.4513 & 3.5915 & 3.1968 & 2.9647 & 2.8100 & 2.6987 & 2.6143 & 2.5480 & 2.4943 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 18 & 4.4139 & 3.5546 & 3.1599 & 2.9277 & 2.7729 & 2.6613 & 2.5767 & 2.5102 & 2.4563 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 19 & 4.3807 & 3.5219 & 3.1274 & 2.8951 & 2.7401 & 2.6283 & 2.5435 & 2.4768 & 2.4227 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
    \end{tabular}
 }
   
 \end{frame}
 
 
-\begin{frame}{\small Find the critical F for df1=6, df2=8, $\alpha=0.1$}
-{\small Approximation of the critical values for the $F$-distribution for $\alpha=0.1$. }
+\begin{frame}{\small Find the critical F for df1=4, df2=10, $\alpha=0.05$}
+{\small Approximation of the critical values for the $F$-distribution for $\alpha=0.05$. }
  {
    \fontencoding{T1}
    \fontfamily{pcr}
@@ -439,38 +455,34 @@
    \fontsize{5pt}{5pt}
    \selectfont
    \begin{tabular}{l|lllllllll} 
-     df2  & df1      1  &      2  &      3  &      4  &      5  &      6  &      7  &      8  &      9   \\ 
-     1 & 39.8635 & 49.5000 & 53.5932 & 55.8330 & 57.2401 & 58.2044 & 58.9060 & 59.4390 & 59.8576   \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     2 & 8.5263 & 9.0000 & 9.1618 & 9.2434 & 9.2926 & 9.3255 & 9.3491 & 9.3668 & 9.3805  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     3 & 5.5383 & 5.4624 & 5.3908 & 5.3426 & 5.3092 & 5.2847 & 5.2662 & 5.2517 & 5.2400  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     4 & 4.5448 & 4.3246 & 4.1909 & 4.1072 & 4.0506 & 4.0097 & 3.9790 & 3.9549 & 3.9357  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     5 & 4.0604 & 3.7797 & 3.6195 & 3.5202 & 3.4530 & 3.4045 & 3.3679 & 3.3393 & 3.3163  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     \\ 
-     6 & 3.7759 & 3.4633 & 3.2888 & 3.1808 & 3.1075 & 3.0546 & 3.0145 & 2.9830 & 2.9577  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     7 & 3.5894 & 3.2574 & 3.0741 & 2.9605 & 2.8833 & 2.8274 & 2.7849 & 2.7516 & 2.7247  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     8 & 3.4579 & 3.1131 & 2.9238 & 2.8064 & 2.7264 & 2.6683 & 2.6241 & 2.5893 & 2.5612  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     9 & 3.3603 & 3.0065 & 2.8129 & 2.6927 & 2.6106 & 2.5509 & 2.5053 & 2.4694 & 2.4403  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     10 & 3.2850 & 2.9245 & 2.7277 & 2.6053 & 2.5216 & 2.4606 & 2.4140 & 2.3772 & 2.3473  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     \\ 
-     11 & 3.2252 & 2.8595 & 2.6602 & 2.5362 & 2.4512 & 2.3891 & 2.3416 & 2.3040 & 2.2735  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     12 & 3.1765 & 2.8068 & 2.6055 & 2.4801 & 2.3940 & 2.3310 & 2.2828 & 2.2446 & 2.2135  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     13 & 3.1362 & 2.7632 & 2.5603 & 2.4337 & 2.3467 & 2.2830 & 2.2341 & 2.1953 & 2.1638  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     14 & 3.1022 & 2.7265 & 2.5222 & 2.3947 & 2.3069 & 2.2426 & 2.1931 & 2.1539 & 2.1220  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     15 & 3.0732 & 2.6952 & 2.4898 & 2.3614 & 2.2730 & 2.2081 & 2.1582 & 2.1185 & 2.0862  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     \\ 
-     16 & 3.0481 & 2.6682 & 2.4618 & 2.3327 & 2.2438 & 2.1783 & 2.1280 & 2.0880 & 2.0553  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     17 & 3.0262 & 2.6446 & 2.4374 & 2.3077 & 2.2183 & 2.1524 & 2.1017 & 2.0613 & 2.0284  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     18 & 3.0070 & 2.6239 & 2.4160 & 2.2858 & 2.1958 & 2.1296 & 2.0785 & 2.0379 & 2.0047  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     19 & 2.9899 & 2.6056 & 2.3970 & 2.2663 & 2.1760 & 2.1094 & 2.0580 & 2.0171 & 1.9836  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     20 & 2.9747 & 2.5893 & 2.3801 & 2.2489 & 2.1582 & 2.0913 & 2.0397 & 1.9985 & 1.9649  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+     df2  & df1      1  &      2  &      3  &      4  &      5  &      6  &      7  &      8  &      9 \\ \hline 
+  1 & 161.45 & 199.50 & 215.71 & 224.58 & 230.16 & 233.99 & 236.77 & 238.88 & 240.54 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  2 & 18.513 & 19.000 & 19.164 & 19.247 & 19.296 & 19.330 & 19.353 & 19.371 & 19.385 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  3 & 10.128 & 9.5521 & 9.2766 & 9.1172 & 9.0135 & 8.9406 & 8.8867 & 8.8452 & 8.8123 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  4 & 7.7086 & 6.9443 & 6.5914 & 6.3882 & 6.2561 & 6.1631 & 6.0942 & 6.0410 & 5.9988 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  5 & 6.6079 & 5.7861 & 5.4095 & 5.1922 & 5.0503 & 4.9503 & 4.8759 & 4.8183 & 4.7725 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  6 & 5.9874 & 5.1433 & 4.7571 & 4.5337 & 4.3874 & 4.2839 & 4.2067 & 4.1468 & 4.0990 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  7 & 5.5914 & 4.7374 & 4.3468 & 4.1203 & 3.9715 & 3.8660 & 3.7870 & 3.7257 & 3.6767 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  8 & 5.3177 & 4.4590 & 4.0662 & 3.8379 & 3.6875 & 3.5806 & 3.5005 & 3.4381 & 3.3881 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  9 & 5.1174 & 4.2565 & 3.8625 & 3.6331 & 3.4817 & 3.3738 & 3.2927 & 3.2296 & 3.1789 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 10 & 4.9646 & 4.1028 & 3.7083 & 3.4780 & 3.3258 & 3.2172 & 3.1355 & 3.0717 & 3.0204 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 11 & 4.8443 & 3.9823 & 3.5874 & 3.3567 & 3.2039 & 3.0946 & 3.0123 & 2.9480 & 2.8962 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 12 & 4.7472 & 3.8853 & 3.4903 & 3.2592 & 3.1059 & 2.9961 & 2.9134 & 2.8486 & 2.7964 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 13 & 4.6672 & 3.8056 & 3.4105 & 3.1791 & 3.0254 & 2.9153 & 2.8321 & 2.7669 & 2.7144 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 14 & 4.6001 & 3.7389 & 3.3439 & 3.1122 & 2.9582 & 2.8477 & 2.7642 & 2.6987 & 2.6458 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 15 & 4.5431 & 3.6823 & 3.2874 & 3.0556 & 2.9013 & 2.7905 & 2.7066 & 2.6408 & 2.5876 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 16 & 4.4940 & 3.6337 & 3.2389 & 3.0069 & 2.8524 & 2.7413 & 2.6572 & 2.5911 & 2.5377 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 17 & 4.4513 & 3.5915 & 3.1968 & 2.9647 & 2.8100 & 2.6987 & 2.6143 & 2.5480 & 2.4943 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 18 & 4.4139 & 3.5546 & 3.1599 & 2.9277 & 2.7729 & 2.6613 & 2.5767 & 2.5102 & 2.4563 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 19 & 4.3807 & 3.5219 & 3.1274 & 2.8951 & 2.7401 & 2.6283 & 2.5435 & 2.4768 & 2.4227 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
    \end{tabular}
 }
   
 \end{frame}
 
 
-\begin{frame}{\small Find the critical F for df1=6, df2=8, $\alpha=0.1$}
-{\small Approximation of the critical values for the $F$-distribution for $\alpha=0.1$. }
+\begin{frame}{\small Find the critical F for df1=4, df2=10, $\alpha=0.05$}
+{\small Approximation of the critical values for the $F$-distribution for $\alpha=0.05$. }
  {
    \fontencoding{T1}
    \fontfamily{pcr}
@@ -478,38 +490,34 @@
    \fontshape{n}
    \fontsize{5pt}{5pt}
    \selectfont
-   \begin{tabular}{l|lllll>{\columncolor{light-blue}}llll} 
-     df2  & df1      1  &      2  &      3  &      4  &      5  &      6  &      7  &      8  &      9   \\ 
-     1 & 39.8635 & 49.5000 & 53.5932 & 55.8330 & 57.2401 & 58.2044 & 58.9060 & 59.4390 & 59.8576   \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     2 & 8.5263 & 9.0000 & 9.1618 & 9.2434 & 9.2926 & 9.3255 & 9.3491 & 9.3668 & 9.3805  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     3 & 5.5383 & 5.4624 & 5.3908 & 5.3426 & 5.3092 & 5.2847 & 5.2662 & 5.2517 & 5.2400  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     4 & 4.5448 & 4.3246 & 4.1909 & 4.1072 & 4.0506 & 4.0097 & 3.9790 & 3.9549 & 3.9357  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     5 & 4.0604 & 3.7797 & 3.6195 & 3.5202 & 3.4530 & 3.4045 & 3.3679 & 3.3393 & 3.3163  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     \\ 
-     6 & 3.7759 & 3.4633 & 3.2888 & 3.1808 & 3.1075 & 3.0546 & 3.0145 & 2.9830 & 2.9577  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     7 & 3.5894 & 3.2574 & 3.0741 & 2.9605 & 2.8833 & 2.8274 & 2.7849 & 2.7516 & 2.7247  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     8 & 3.4579 & 3.1131 & 2.9238 & 2.8064 & 2.7264 & 2.6683 & 2.6241 & 2.5893 & 2.5612  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     9 & 3.3603 & 3.0065 & 2.8129 & 2.6927 & 2.6106 & 2.5509 & 2.5053 & 2.4694 & 2.4403  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     10 & 3.2850 & 2.9245 & 2.7277 & 2.6053 & 2.5216 & 2.4606 & 2.4140 & 2.3772 & 2.3473  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     \\ 
-     11 & 3.2252 & 2.8595 & 2.6602 & 2.5362 & 2.4512 & 2.3891 & 2.3416 & 2.3040 & 2.2735  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     12 & 3.1765 & 2.8068 & 2.6055 & 2.4801 & 2.3940 & 2.3310 & 2.2828 & 2.2446 & 2.2135  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     13 & 3.1362 & 2.7632 & 2.5603 & 2.4337 & 2.3467 & 2.2830 & 2.2341 & 2.1953 & 2.1638  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     14 & 3.1022 & 2.7265 & 2.5222 & 2.3947 & 2.3069 & 2.2426 & 2.1931 & 2.1539 & 2.1220  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     15 & 3.0732 & 2.6952 & 2.4898 & 2.3614 & 2.2730 & 2.2081 & 2.1582 & 2.1185 & 2.0862  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     \\ 
-     16 & 3.0481 & 2.6682 & 2.4618 & 2.3327 & 2.2438 & 2.1783 & 2.1280 & 2.0880 & 2.0553  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     17 & 3.0262 & 2.6446 & 2.4374 & 2.3077 & 2.2183 & 2.1524 & 2.1017 & 2.0613 & 2.0284  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     18 & 3.0070 & 2.6239 & 2.4160 & 2.2858 & 2.1958 & 2.1296 & 2.0785 & 2.0379 & 2.0047  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     19 & 2.9899 & 2.6056 & 2.3970 & 2.2663 & 2.1760 & 2.1094 & 2.0580 & 2.0171 & 1.9836  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     20 & 2.9747 & 2.5893 & 2.3801 & 2.2489 & 2.1582 & 2.0913 & 2.0397 & 1.9985 & 1.9649  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+   \begin{tabular}{l|lll>{\columncolor{light-blue}}llllll} 
+     df2  & df1      1  &      2  &      3  &      4  &      5  &      6  &      7  &      8  &      9 \\ \hline 
+  1 & 161.45 & 199.50 & 215.71 & 224.58 & 230.16 & 233.99 & 236.77 & 238.88 & 240.54 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  2 & 18.513 & 19.000 & 19.164 & 19.247 & 19.296 & 19.330 & 19.353 & 19.371 & 19.385 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  3 & 10.128 & 9.5521 & 9.2766 & 9.1172 & 9.0135 & 8.9406 & 8.8867 & 8.8452 & 8.8123 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  4 & 7.7086 & 6.9443 & 6.5914 & 6.3882 & 6.2561 & 6.1631 & 6.0942 & 6.0410 & 5.9988 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  5 & 6.6079 & 5.7861 & 5.4095 & 5.1922 & 5.0503 & 4.9503 & 4.8759 & 4.8183 & 4.7725 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  6 & 5.9874 & 5.1433 & 4.7571 & 4.5337 & 4.3874 & 4.2839 & 4.2067 & 4.1468 & 4.0990 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  7 & 5.5914 & 4.7374 & 4.3468 & 4.1203 & 3.9715 & 3.8660 & 3.7870 & 3.7257 & 3.6767 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  8 & 5.3177 & 4.4590 & 4.0662 & 3.8379 & 3.6875 & 3.5806 & 3.5005 & 3.4381 & 3.3881 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  9 & 5.1174 & 4.2565 & 3.8625 & 3.6331 & 3.4817 & 3.3738 & 3.2927 & 3.2296 & 3.1789 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 10 & 4.9646 & 4.1028 & 3.7083 & 3.4780 & 3.3258 & 3.2172 & 3.1355 & 3.0717 & 3.0204 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 11 & 4.8443 & 3.9823 & 3.5874 & 3.3567 & 3.2039 & 3.0946 & 3.0123 & 2.9480 & 2.8962 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 12 & 4.7472 & 3.8853 & 3.4903 & 3.2592 & 3.1059 & 2.9961 & 2.9134 & 2.8486 & 2.7964 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 13 & 4.6672 & 3.8056 & 3.4105 & 3.1791 & 3.0254 & 2.9153 & 2.8321 & 2.7669 & 2.7144 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 14 & 4.6001 & 3.7389 & 3.3439 & 3.1122 & 2.9582 & 2.8477 & 2.7642 & 2.6987 & 2.6458 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 15 & 4.5431 & 3.6823 & 3.2874 & 3.0556 & 2.9013 & 2.7905 & 2.7066 & 2.6408 & 2.5876 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 16 & 4.4940 & 3.6337 & 3.2389 & 3.0069 & 2.8524 & 2.7413 & 2.6572 & 2.5911 & 2.5377 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 17 & 4.4513 & 3.5915 & 3.1968 & 2.9647 & 2.8100 & 2.6987 & 2.6143 & 2.5480 & 2.4943 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 18 & 4.4139 & 3.5546 & 3.1599 & 2.9277 & 2.7729 & 2.6613 & 2.5767 & 2.5102 & 2.4563 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 19 & 4.3807 & 3.5219 & 3.1274 & 2.8951 & 2.7401 & 2.6283 & 2.5435 & 2.4768 & 2.4227 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
    \end{tabular}
 }
   
 \end{frame}
 
-\begin{frame}{\small Find the critical F for df1=6, df2=8, $\alpha=0.1$}
-{\small Approximation of the critical values for the $F$-distribution for $\alpha=0.1$. }
+\begin{frame}{\small Find the critical F for df1=4, df2=10, $\alpha=0.05$}
+{\small Approximation of the critical values for the $F$-distribution for $\alpha=0.05$. }
  {
    \fontencoding{T1}
    \fontfamily{pcr}
@@ -517,38 +525,85 @@
    \fontshape{n}
    \fontsize{5pt}{5pt}
    \selectfont
-   \begin{tabular}{l|lllll>{\columncolor{light-blue}}llll} 
-     df2  & df1      1  &      2  &      3  &      4  &      5  &      6  &      7  &      8  &      9   \\ 
-     1 & 39.8635 & 49.5000 & 53.5932 & 55.8330 & 57.2401 & 58.2044 & 58.9060 & 59.4390 & 59.8576   \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     2 & 8.5263 & 9.0000 & 9.1618 & 9.2434 & 9.2926 & 9.3255 & 9.3491 & 9.3668 & 9.3805  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     3 & 5.5383 & 5.4624 & 5.3908 & 5.3426 & 5.3092 & 5.2847 & 5.2662 & 5.2517 & 5.2400  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     4 & 4.5448 & 4.3246 & 4.1909 & 4.1072 & 4.0506 & 4.0097 & 3.9790 & 3.9549 & 3.9357  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     5 & 4.0604 & 3.7797 & 3.6195 & 3.5202 & 3.4530 & 3.4045 & 3.3679 & 3.3393 & 3.3163  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     \\ 
-     6 & 3.7759 & 3.4633 & 3.2888 & 3.1808 & 3.1075 & 3.0546 & 3.0145 & 2.9830 & 2.9577  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     7 & 3.5894 & 3.2574 & 3.0741 & 2.9605 & 2.8833 & 2.8274 & 2.7849 & 2.7516 & 2.7247  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-\rowcolor{light-red} 8 & 3.4579 & 3.1131 & 2.9238 & 2.8064 & 2.7264 & 2.6683 & 2.6241 & 2.5893 & 2.5612  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     9 & 3.3603 & 3.0065 & 2.8129 & 2.6927 & 2.6106 & 2.5509 & 2.5053 & 2.4694 & 2.4403  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     10 & 3.2850 & 2.9245 & 2.7277 & 2.6053 & 2.5216 & 2.4606 & 2.4140 & 2.3772 & 2.3473  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     \\ 
-     11 & 3.2252 & 2.8595 & 2.6602 & 2.5362 & 2.4512 & 2.3891 & 2.3416 & 2.3040 & 2.2735  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     12 & 3.1765 & 2.8068 & 2.6055 & 2.4801 & 2.3940 & 2.3310 & 2.2828 & 2.2446 & 2.2135  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     13 & 3.1362 & 2.7632 & 2.5603 & 2.4337 & 2.3467 & 2.2830 & 2.2341 & 2.1953 & 2.1638  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     14 & 3.1022 & 2.7265 & 2.5222 & 2.3947 & 2.3069 & 2.2426 & 2.1931 & 2.1539 & 2.1220  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     15 & 3.0732 & 2.6952 & 2.4898 & 2.3614 & 2.2730 & 2.2081 & 2.1582 & 2.1185 & 2.0862  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     \\ 
-     16 & 3.0481 & 2.6682 & 2.4618 & 2.3327 & 2.2438 & 2.1783 & 2.1280 & 2.0880 & 2.0553  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     17 & 3.0262 & 2.6446 & 2.4374 & 2.3077 & 2.2183 & 2.1524 & 2.1017 & 2.0613 & 2.0284  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     18 & 3.0070 & 2.6239 & 2.4160 & 2.2858 & 2.1958 & 2.1296 & 2.0785 & 2.0379 & 2.0047  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     19 & 2.9899 & 2.6056 & 2.3970 & 2.2663 & 2.1760 & 2.1094 & 2.0580 & 2.0171 & 1.9836  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
-     20 & 2.9747 & 2.5893 & 2.3801 & 2.2489 & 2.1582 & 2.0913 & 2.0397 & 1.9985 & 1.9649  \\[5pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+   \begin{tabular}{l|lll>{\columncolor{light-blue}}llllll} 
+     df2  & df1      1  &      2  &      3  &      4  &      5  &      6  &      7  &      8  &      9 \\ \hline 
+  1 & 161.45 & 199.50 & 215.71 & 224.58 & 230.16 & 233.99 & 236.77 & 238.88 & 240.54 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  2 & 18.513 & 19.000 & 19.164 & 19.247 & 19.296 & 19.330 & 19.353 & 19.371 & 19.385 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  3 & 10.128 & 9.5521 & 9.2766 & 9.1172 & 9.0135 & 8.9406 & 8.8867 & 8.8452 & 8.8123 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  4 & 7.7086 & 6.9443 & 6.5914 & 6.3882 & 6.2561 & 6.1631 & 6.0942 & 6.0410 & 5.9988 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  5 & 6.6079 & 5.7861 & 5.4095 & 5.1922 & 5.0503 & 4.9503 & 4.8759 & 4.8183 & 4.7725 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  6 & 5.9874 & 5.1433 & 4.7571 & 4.5337 & 4.3874 & 4.2839 & 4.2067 & 4.1468 & 4.0990 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  7 & 5.5914 & 4.7374 & 4.3468 & 4.1203 & 3.9715 & 3.8660 & 3.7870 & 3.7257 & 3.6767 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  8 & 5.3177 & 4.4590 & 4.0662 & 3.8379 & 3.6875 & 3.5806 & 3.5005 & 3.4381 & 3.3881 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  9 & 5.1174 & 4.2565 & 3.8625 & 3.6331 & 3.4817 & 3.3738 & 3.2927 & 3.2296 & 3.1789 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+\rowcolor{light-red} 10 & 4.9646 & 4.1028 & 3.7083 & 3.4780 & 3.3258 & 3.2172 & 3.1355 & 3.0717 & 3.0204 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 11 & 4.8443 & 3.9823 & 3.5874 & 3.3567 & 3.2039 & 3.0946 & 3.0123 & 2.9480 & 2.8962 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 12 & 4.7472 & 3.8853 & 3.4903 & 3.2592 & 3.1059 & 2.9961 & 2.9134 & 2.8486 & 2.7964 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 13 & 4.6672 & 3.8056 & 3.4105 & 3.1791 & 3.0254 & 2.9153 & 2.8321 & 2.7669 & 2.7144 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 14 & 4.6001 & 3.7389 & 3.3439 & 3.1122 & 2.9582 & 2.8477 & 2.7642 & 2.6987 & 2.6458 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 15 & 4.5431 & 3.6823 & 3.2874 & 3.0556 & 2.9013 & 2.7905 & 2.7066 & 2.6408 & 2.5876 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 16 & 4.4940 & 3.6337 & 3.2389 & 3.0069 & 2.8524 & 2.7413 & 2.6572 & 2.5911 & 2.5377 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 17 & 4.4513 & 3.5915 & 3.1968 & 2.9647 & 2.8100 & 2.6987 & 2.6143 & 2.5480 & 2.4943 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 18 & 4.4139 & 3.5546 & 3.1599 & 2.9277 & 2.7729 & 2.6613 & 2.5767 & 2.5102 & 2.4563 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 19 & 4.3807 & 3.5219 & 3.1274 & 2.8951 & 2.7401 & 2.6283 & 2.5435 & 2.4768 & 2.4227 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
    \end{tabular}
 }
   
 \end{frame}
 
 
-\begin{frame}{The F Statistic for the Strength of Three Periodontal Dressings }
+\begin{frame}{Clicker Quiz}
+  \iftoggle{clicker}{%
+    \redText{\textbf{Determine the Critical F for $\alpha=0.05$, $df1=2$, and $df2=15$.}}
+  }
+
+{\small Approximation of the critical values for the $F$-distribution for $\alpha=0.05$. }
+ {
+   \fontencoding{T1}
+   \fontfamily{pcr}
+   \fontseries{m}
+   \fontshape{n}
+   \fontsize{5pt}{5pt}
+   \selectfont
+   \begin{tabular}{l|lllllllllllll} 
+     df2  & df1      1  &      2  &      3  &      4  &      5  &      6  &      7  &      8  &      9 \\ \hline 
+  1 & 161.45 & 199.50 & 215.71 & 224.58 & 230.16 & 233.99 & 236.77 & 238.88 & 240.54 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  2 & 18.513 & 19.000 & 19.164 & 19.247 & 19.296 & 19.330 & 19.353 & 19.371 & 19.385 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  3 & 10.128 & 9.5521 & 9.2766 & 9.1172 & 9.0135 & 8.9406 & 8.8867 & 8.8452 & 8.8123 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  4 & 7.7086 & 6.9443 & 6.5914 & 6.3882 & 6.2561 & 6.1631 & 6.0942 & 6.0410 & 5.9988 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  5 & 6.6079 & 5.7861 & 5.4095 & 5.1922 & 5.0503 & 4.9503 & 4.8759 & 4.8183 & 4.7725 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  6 & 5.9874 & 5.1433 & 4.7571 & 4.5337 & 4.3874 & 4.2839 & 4.2067 & 4.1468 & 4.0990 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  7 & 5.5914 & 4.7374 & 4.3468 & 4.1203 & 3.9715 & 3.8660 & 3.7870 & 3.7257 & 3.6767 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  8 & 5.3177 & 4.4590 & 4.0662 & 3.8379 & 3.6875 & 3.5806 & 3.5005 & 3.4381 & 3.3881 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+  9 & 5.1174 & 4.2565 & 3.8625 & 3.6331 & 3.4817 & 3.3738 & 3.2927 & 3.2296 & 3.1789 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 10 & 4.9646 & 4.1028 & 3.7083 & 3.4780 & 3.3258 & 3.2172 & 3.1355 & 3.0717 & 3.0204 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 11 & 4.8443 & 3.9823 & 3.5874 & 3.3567 & 3.2039 & 3.0946 & 3.0123 & 2.9480 & 2.8962 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 12 & 4.7472 & 3.8853 & 3.4903 & 3.2592 & 3.1059 & 2.9961 & 2.9134 & 2.8486 & 2.7964 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 13 & 4.6672 & 3.8056 & 3.4105 & 3.1791 & 3.0254 & 2.9153 & 2.8321 & 2.7669 & 2.7144 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 14 & 4.6001 & 3.7389 & 3.3439 & 3.1122 & 2.9582 & 2.8477 & 2.7642 & 2.6987 & 2.6458 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 15 & 4.5431 & 3.6823 & 3.2874 & 3.0556 & 2.9013 & 2.7905 & 2.7066 & 2.6408 & 2.5876 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 16 & 4.4940 & 3.6337 & 3.2389 & 3.0069 & 2.8524 & 2.7413 & 2.6572 & 2.5911 & 2.5377 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 17 & 4.4513 & 3.5915 & 3.1968 & 2.9647 & 2.8100 & 2.6987 & 2.6143 & 2.5480 & 2.4943 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 18 & 4.4139 & 3.5546 & 3.1599 & 2.9277 & 2.7729 & 2.6613 & 2.5767 & 2.5102 & 2.4563 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+ 19 & 4.3807 & 3.5219 & 3.1274 & 2.8951 & 2.7401 & 2.6283 & 2.5435 & 2.4768 & 2.4227 \\[2pt] \arrayrulecolor{light-gray}\hline\arrayrulecolor{black}  
+   \end{tabular}
+}
+
+    \iftoggle{clicker}{%
+
+      \vfill
+
+      \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+        \redText{A: 3.2874}  & \redText{B: 3.6823} & \redText{C: 3.7389}
+      \end{tabular}
+
+    }
+
+  
+\end{frame}
+
+
+\begin{frame}{The F Statistic for the Time in Bankruptcy}
 
   \begin{columns}
     \column{.5\textwidth}
@@ -575,185 +630,18 @@
 
     \uncover<2->{%
 
-      We can reject $H_0$ with a confidence level of 95\% and using an F distribution with df1=2 and df2=27.
+      We cannot reject $H_0$ with a confidence level of 95\% and using an F distribution with df1=2 and df2=15.
 
     }
   
 \end{frame}
 
 
-\section{Which Treatment is Different?}
-
-\begin{frame}{Which Treatment is Different?}
-
-We just rejected this hypothesis test:
-\begin{eqnarray*}
-  H_0: & & \mu_1 = \mu_2 = \cdots = \mu_k, \\
-  H_a: & & \mu_i \neq \mu_j ~\mathrm{for~some~}i,~j.
-\end{eqnarray*}
-
-\vfill
-
-Question: How do we decide which one is different.
-
-\vfill
-
-Problem: The null hypothesis assumes that \redText{\textbf{ALL}} means
-are the same!
-
-Problem: This is no longer a $t$ distribution because our sample
-standard deviation uses data from all treatments, and we assume that
-the total significance level across \redText{\textbf{ALL}} treatments
-\blueText{together} is $\alpha$.
-
-\vfill
-  
-  
-\end{frame}
-
-\begin{frame}{Confidence Interval For Pairwise Differences}
-
-  The idea:
-  \begin{itemize}
-  \item We look at all possible pairings for the treatments.
-  \item We look at the difference in the means for the each pair.
-  \item We find the confidence interval for the difference. 
-  \item If the confidence interval contains zero for a given pair then
-    we cannot say that there is a difference in the means for that
-    pair.
-  \item This is a two sided test!
-  \item We have to maintain an overall significance level of $\alpha$
-    when considering all of the pairings, so the distribution is a
-    \textit{Studentized Range} distribution, $q_{\alpha,df1,df2}$.
-  \end{itemize}
-
-  \vfill
-  
-\end{frame}
-
-
-\begin{frame}{Confidence Interval For Pairwise Differences}
-
-  \begin{definition}
-    The $1-\alpha$ confidence interval for the difference in the means of a pair
-    of treatments is from $\bar{x}_i - \bar{x}_j - \mathrm{~error}$ to 
-    $\bar{x}_i - \bar{x}_j + \mathrm{~error}$, where
-    \begin{eqnarray*}
-      \mathrm{error} & = & s \frac{q_{\alpha,k,\nu}}{\sqrt{2}} 
-                           \sqrt{\frac{1}{n_i}+\frac{1}{n_j}},
-    \end{eqnarray*}
-    where $\nu=N_{Tot}-k$ and $s=\sqrt{\mathrm{MSE}}$.
-  \end{definition}
-
-\end{frame}
-
-\begin{frame}{Pairwise Differences}
-
-  We have rejected $H_0$ for our hypothesis test using ANOVA. Which
-  one is different?
-
-  \centerline{\includegraphics[width=4cm]{img/periodontalBoxplot}}
-
-  \vfill
-
-  There are $C^3_2$ pairs:
-
-  \begin{columns}
-    \column{.33\textwidth}
-
-      Coe v. Peripac
-
-    \column{.33\textwidth}
-
-       Coe v. Putty 
-
-    \column{.33\textwidth}
-
-      Peripac v. Putty 
-
-
-  \end{columns}
-
-
-
-\end{frame}
-
-
-\begin{frame}{Which One is Different?}
-
-  Using a 95\% confidence level we have
-  \begin{eqnarray*}
-    k & = & 3, \\
-    \nu & = & 30-3 ~ = ~ 27, \\
-    s & \approx & 117.89, \\
-    q_{0.05,3,27} & \approx & 3.5064.
-  \end{eqnarray*}
-
-
-\end{frame}
-
-
-\begin{frame}{Which One is Different?}
-
-  \begin{columns}
-    \column{.33\textwidth}
-
-      Coe v. Peripac
-
-      \begin{tabular}{rr}
-        $\bar{x}_1$ & $\bar{x}_2$ \\
-        573.6 & 112.0 \\
-        Difference & Error \\
-        461.6 & 130.72
-      \end{tabular}
-      % $117.89 \cdot \frac{3.5064}{\sqrt{2}} \sqrt{\frac{1}{10}+\frac{1}{10}}$
-
-
-      The 95\% confidence interval assuming a Studentized range
-      distribution with 3 and 27 d.f. is from 330.9 kN/mm to 592.32 kN/mm .
-
-    \column{.33\textwidth}
-
-       Coe v. Putty 
-
-      \begin{tabular}{rr}
-        $\bar{x}_1$ & $\bar{x}_2$ \\
-        573.6 & 837.9 \\
-        Difference & Error \\
-        -264.3 & 130.72
-      \end{tabular}
-      % $117.89 \cdot \frac{3.5064}{\sqrt{2}} \sqrt{\frac{1}{10}+\frac{1}{10}}$
-
-      The 95\% confidence interval assuming a Studentized range
-      distribution with 3 and 27 d.f. is from -395.0 kN/mm to  -133.6 kN/mm.
-
-
-    \column{.33\textwidth}
-
-      Peripac v. Putty 
-
-      \begin{tabular}{rr}
-        $\bar{x}_1$ & $\bar{x}_2$ \\
-        112.0 & 837.9 \\
-        Difference & Error \\
-        -725.9 & 130.72
-      \end{tabular}
-      % $117.89 \cdot \frac{3.5064}{\sqrt{2}} \sqrt{\frac{1}{10}+\frac{1}{10}}$
-
-      The 95\% confidence interval assuming a Studentized range
-      distribution with 3 and 27 d.f. is from -856.6  kN/mm to  -595.2 kN/mm.
-
-
-  \end{columns}
-
-
-  
-\end{frame}
 
 \begin{frame}[fragile]{One Last Note}
 
-  Nobody does this nonsense by hand! (But you have to do it once in
-  your lifetime, usually on your 21st birthday.)
+  Nobody does this nonsense by hand! (Except, of course, the poor
+  schmucks who take introductory statistics courses.)
 
   What we do in real life:
 
@@ -766,27 +654,24 @@ the total significance level across \redText{\textbf{ALL}} treatments
    \selectfont
 
 \begin{verbatim}
-> bonding <- read.csv('dental.txt') 
-> comparison <- aov(bonding$strength~bonding$treatment)
+> bankruptcyTime <- read.csv('bankruptcy.csv')
+> comparison <- aov(bankruptcyTime$t ~ bankruptcyTime$type)
 > comparison
 Call:
-   aov(formula = restricted$strength ~ restricted$treatment)
+   aov(formula = bankruptcyTime$t ~ bankruptcyTime$type)
 
 Terms:
-                restricted$treatment Residuals
-Sum of Squares             2699532.9  375231.3
-Deg. of Freedom                    2        27
+                bankruptcyTime$type Residuals
+Sum of Squares             12.04754  33.98857
+Deg. of Freedom                   2        15
 
-Residual standard error: 117.8875
+Residual standard error: 1.505292
 Estimated effects may be unbalanced
-
 > summary(comparison)
-
-                     Df  Sum Sq Mean Sq F value   Pr(>F)    
-restricted$treatment  2 2699533 1349766   97.12 4.65e-13 ***
-Residuals            27  375231   13897                     
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+                    Df Sum Sq Mean Sq F value Pr(>F)
+bankruptcyTime$type  2  12.05   6.024   2.658  0.103
+Residuals           15  33.99   2.266               
+>
 \end{verbatim}
 }
  
