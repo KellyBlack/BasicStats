@@ -6,7 +6,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{11 April 2014}
+\date{6 April 2015}
 
 \begin{frame}
   \titlepage
@@ -33,7 +33,7 @@
 
     \vfill
 
-    If $x$ increases what do you expect to happen to $y$?
+    As $x$ (time) increases what do you expect to happen to $y$ (mass)?
 
     \vfill 
 
@@ -133,7 +133,8 @@
       $X$ & $Y$ \\ \hline
       $x_1$ & $y_1$ \\
       $x_2$ & $y_2$ \\
-      $x_3$ & $y_3$ \\
+      \only<1>{$x_3$ & $y_3$ }
+      \only<2->{\cellcolor{light-red} $x_3$ & \cellcolor{light-red} $y_3$ } \\
       $x_4$ & $y_4$ \\
       $\vdots$ & $\vdots$ \\
       $x_n$ & $y_n$ \\
@@ -144,7 +145,7 @@
 
     \column{.75\textwidth}
 
-    \only<3->
+    \uncover<3->
     {
       There is a ``one to one'' correspondence between each
       row. i.e. $x_3$ and $y_3$ are related to one another.
@@ -159,7 +160,7 @@
   \begin{columns}
     \column{.5\textwidth}
 
-    \only<4-> {
+    \uncover<4-> {
 
       Examine $x$ by itself: \\
       \begin{tabular}{l}
@@ -175,7 +176,7 @@
     \column{.5\textwidth}
 
 
-    \only<5-> {
+    \uncover<5-> {
 
       Examine $y$ by itself: \\
       \begin{tabular}{l}
@@ -238,7 +239,7 @@
 
     \column{.75\textwidth}
 
-  \only<4->
+  \uncover<4->
   {
     \includegraphics[width=5cm]{img/simpleBivariateExample}
   }
@@ -249,7 +250,7 @@
   \begin{columns}
     \column{.5\textwidth}
 
-    \only<2-> {
+    \uncover<2-> {
 
       Examine $x$ by itself: \\
       \begin{tabular}{lllll}
@@ -266,7 +267,7 @@
     \column{.5\textwidth}
 
 
-    \only<3-> {
+    \uncover<3-> {
 
       Examine $y$ by itself: \\
       \begin{tabular}{lllll}
@@ -308,7 +309,7 @@
 
     \column{.75\textwidth}
 
-    \only<4->
+    \uncover<4->
     {
       \includegraphics[width=4cm]{img/simpleCorrelationExample}
     }
@@ -321,22 +322,7 @@
   \begin{columns}
     \column{.5\textwidth}
 
-    \only<2-> {
-    Flow rate for Aswan Dam 
-    \begin{tabular}{l|l|l}
-      Year & Jan & Feb \\ \hline
-      1874 & 6.4 & 4.4\\
-      1875 & 4.1 & 2.4\\
-      1876 & 5.4 & 4.1\\
-      1877 & 3.3 & 1.8 \\
-      $\vdots$ & $\vdots$ & $\vdots$\\
-      1984 & 3.7 & 2.8 \\
-      1985 & 3.9 & 2.8 \\
-      1986 & 3.5 & 2.9 \\
-      1987 & 3.8 & 4.0 \\
-      1988 & 3.7 & 3.1
-    \end{tabular}
-
+    \uncover<2-> {
       Examine $x$ by itself: \\
       \begin{tabular}{lllll}
         \multicolumn{5}{l}{$N=4$} \\
@@ -352,7 +338,7 @@
     \column{.5\textwidth}
 
 
-    \only<3-> {
+    \uncover<3-> {
 
       Examine $y$ by itself: \\
       \begin{tabular}{lllll}
@@ -373,7 +359,7 @@
 
 \end{frame}
 
-\begin{frame}{Now Bring Them Together}
+\begin{frame}{Quantifying Relationships}
 
   Graphically, we can look at the scatter plot:
 
@@ -452,7 +438,7 @@
 
     \column{.3\textwidth}
 
-    \only<2->
+    \uncover<2->
     {
       \begin{eqnarray*}
         \bar{x} & = & 2.5 \\
@@ -464,7 +450,7 @@
 
   \end{columns}
 
-  \only<3->
+  \uncover<3->
   {
     \begin{eqnarray*}
       s_{xx} & = & \lp 1-2.5\rp^2 + \lp 2 - 2.5 \rp^2 + \lp 3 - 2.5 \rp^2 + \lp 4 - 2.5 \rp^2 \\
@@ -477,7 +463,7 @@
     \end{eqnarray*}
   } 
 
-  \only<4->
+  \uncover<4->
   {
     \vspace*{-2em}
     \begin{eqnarray*}
