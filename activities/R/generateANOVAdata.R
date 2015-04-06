@@ -16,12 +16,13 @@ sdRange <- array(c((123.6-104.6)*sqrt(134)/5/qnorm(0.95),(71.8-61.4)/5*sqrt(133)
 N <- 18
 for(lupe in 1:N)
     {
-        firstCol <- paste(range[r],gender[g],trunc(10*(rnorm(1,mean=meanRange[g,r],sd=sdRange[g,r])))/10,collapse=" & ",sep=" & ")
         r <- trunc(runif(1,0.0,length(range)))+1
         g <- trunc(runif(1,0.0,length(gender)))+1
+        firstCol <- paste(range[r],gender[g],trunc(10*(rnorm(1,mean=meanRange[g,r],sd=sdRange[g,r])))/10,collapse=" & ",sep=" & ")
 
         r <- trunc(runif(1,0.0,length(range)))+1
         g <- trunc(runif(1,0.0,length(gender)))+1
+        
         print(noquote(paste(firstCol,range[r],gender[g],trunc(10*(rnorm(1,mean=meanRange[g,r],sd=sdRange[g,r])))/10,collapse=" & ",sep=" & ")))
     }
 
