@@ -8,7 +8,7 @@
 
 %\author{Kelly Black}
 %\institute{Clarkson University}
-\date{18 April 2014}
+\date{13 April 2015}
 
 \begin{frame}
   \titlepage
@@ -54,13 +54,14 @@
   \begin{eqnarray*}
     \uncover<4->
     {
-      s^2_y & = & \frac{\lp y_1 - \hat{y}_1\rp^2 + \lp y_2 - \hat{y}_2\rp^2 + \cdots + \lp y_n - \hat{y}_n\rp^2 }{n-2}.
+      s^2_e & = & \frac{\lp y_1 - \hat{y}_1\rp^2 + \lp y_2 - \hat{y}_2\rp^2 + \cdots + \lp y_n - \hat{y}_n\rp^2 }{n-2}.
     }
   \end{eqnarray*}
 
 \end{frame}
 
 
+\subsection{Inference and Regression}
 
 \begin{frame}{What is the relationship?}
 
@@ -112,13 +113,13 @@
     y & = & \hat{m} x + \hat{b}.
   \end{eqnarray*}
 
-  \begin{definition}
+  \begin{block}{Distribution of the Estimate of the Slope}
     The regression estimate for the slope satisfies the $t$ distribution
     \begin{eqnarray*}
       t & = & \frac{\hat{m}-m}{\lp s_e/\sqrt{s_{xx}} \rp}
     \end{eqnarray*}
     with $n-2$ degrees of freedom.
-  \end{definition}
+  \end{block}
 
 
 \end{frame}
@@ -145,6 +146,8 @@
   \end{columns}
 
 \end{frame}
+
+\subsection{Examples}
 
 \iftoggle{clicker}{%
   \begin{frame}{Clicker Quiz}
