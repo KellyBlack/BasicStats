@@ -1,0 +1,385 @@
+
+\lecture{Sample Proportions}{sample-proportions}
+\section{Sample Proportions}
+
+\title{Sample Proportions}
+\subtitle{Sampling a Binomial Distribution}
+
+%\author{Kelly Black}
+%\institute{Clarkson University}
+\date{20 February 2015}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[hideothersubsections,sectionstyle=show/hide]
+\end{frame}
+
+
+
+\subsection{Clicker Quiz}
+
+
+\iftoggle{clicker}{%
+  \begin{frame}{Clicker Quiz}
+
+    \iftoggle{clicker}{%
+
+      It is estimated that 51\% of the people in a congressional
+      district support the incumbent.  A poll is conducted in which 1000
+      people are called and asked if they support the incumbent. The
+      total number of people who say ``yes'' is counted. What is the
+      distribution that the total will follow?
+
+      \vfill 
+
+
+      \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+        A: Binomial  & B: Normal & C: Poisson
+      \end{tabular}
+
+      \vfill
+      \vfill
+      \vfill
+
+    }
+
+  \end{frame}
+}
+
+
+
+
+
+\subsection{Sample Proportions}
+
+\begin{frame}
+  \frametitle{Clicker Example}
+
+  Would you vote for Hillary Clinton?
+
+  \begin{tabular}{l@{\hspace{3em}}l}
+    A: Yes    & B: No
+  \end{tabular}
+  
+  
+
+  \vfill
+
+  \uncover<2->{ 
+
+    \textcolor{red}{Left section}: 
+    Would you vote for Hillary Clinton?
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: Yes   & B: No & C: Not in left section
+    \end{tabular}
+
+  }
+
+  \vfill
+
+  \uncover<3->{ 
+
+    \textcolor{red}{Center section}: 
+    Would you vote for Hillary Clinton?
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: Yes   & B: No& C: Not in center section
+    \end{tabular}
+
+  }
+
+  \vfill
+
+  \uncover<4->{ 
+
+    \textcolor{red}{Right section}: 
+    Would you vote for Hillary Clinton?
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: Yes    & B: No & C: Not in right section
+    \end{tabular}
+
+  }
+
+  \vfill
+
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{What Just Happened?}
+
+  \begin{itemize}
+  \item We just made samples. (This is a not a random sample, but you
+    get the idea.)
+
+  \item Each time you take a sample you \textit{could} get something
+    different.
+
+  \item We make a calculation based on the sample. The calculation is
+    called the ``sample proportion.''
+
+    \uncover<2->{%
+      \begin{definition}[The Sample Proportion]
+        The sample proportion is defined to be
+        \begin{eqnarray*}
+          \hat{p} & = & \frac{\mathrm{Number~of~Yeses}}{\mathrm{Total~Number}}.
+        \end{eqnarray*}
+      \end{definition}
+
+    }
+
+  \end{itemize}
+
+  \vfill
+
+
+\end{frame}
+
+\begin{frame}{Sampling a Binomial Distribution}
+
+  Recall that if $X$ follows a binomial distribution. 
+  \begin{itemize}
+  \item There are $n$ independent trials.
+  \item Each trial has a probability of a ``yes.''
+  \item Check if $n\cdot p \geq 5$ 
+  \item Check if $n\cdot (1-p) \geq 5$ 
+  \item If \textcolor{red}{\textbf{both}} conditions above are true
+    then $X$ is \textcolor{red}{approximately normally distributed}
+    with mean $n\cdot p$ and standard deviation $\sqrt{p(1-p)n}$.
+  \end{itemize}
+
+  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Not What We Have!}
+
+  We are not seeking the number ``yeses.''  Instead we are asked about
+  the \textcolor{red}{\textit{proportion}} of ``yeses.''
+
+  \vfill
+
+  \begin{definition}[\textcolor{red}{The sample proportion}]
+
+    We take a sample from $n$ trials. Each trial has probability $p$
+    of ``success.'' We count the total number of successes from the
+    $n$ trials.  The sample proportion is defined to be
+    \begin{eqnarray*}
+      \hat{p} & = & \frac{\mathrm{number~of~successes}}{n}.
+    \end{eqnarray*}
+    
+  \end{definition}
+
+
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{The Sample Proportion}
+
+  The sample proportion has a mean of $p$, and a standard deviation of
+  $\sqrt{\frac{p(1-p)}{n}}$.
+
+  \vfill
+
+  \uncover<2->
+  {
+
+    If $p\cdot n \geq 5$ \textbf{and} $(1-p)\cdot n \geq 5$
+    \textbf{and} \textcolor{red}{$n\geq 20$} then $\hat{p}$ is
+    approximately normally distributed with mean $p$ and standard
+    deviation $\sqrt{\frac{p(1-p)}{n}}$.
+
+  }
+
+  \vfill
+
+  \uncover<3->
+  {
+    If this is the case we have
+    \begin{eqnarray*}
+      z & = & \frac{\hat{p}-p}{\sqrt{\frac{p(1-p)}{n}}}.
+    \end{eqnarray*}
+  }
+
+  \vfill
+
+\end{frame}
+
+
+\begin{frame}{The Sample Proportion}
+
+  If we can use the normal approximation we have
+  \begin{eqnarray*}
+    z & = & \frac{\hat{p}-p}{\sqrt{\frac{\textcolor{red}{p(1-p)}}{n}}}.
+  \end{eqnarray*}
+
+  \vfill
+
+  Problem: We usually do not know $p$. {\color{blue}If necessary use
+    the largest possible value of the standard deviation as a
+    ``worst case scenario.''} That occurs when $p=\frac{1}{2}$, and
+    we sometimes use that if we are not sure.
+
+    \vfill
+
+\end{frame}
+
+\subsection{Examples}
+
+\begin{frame}
+  \frametitle{Example}
+
+  Roughly 51\% of the people in a district support the
+  incumbent. One-thousand people are polled. What is the probability
+  that less than half of the people will say ``yes?''
+
+  \vfill
+
+  \note{
+
+    \begin{itemize}
+    \item Explicitly check the conditions to make sure that you can
+      use the normal approximation and show your work!
+    \item Answer: .2643
+    \end{itemize}
+
+  }
+
+\end{frame}
+
+\begin{frame}{Example}
+
+  It is estimated that 64\% of the people who get a flu shot this year
+  will not get the flu. Four hundred people who have had the shot are
+  polled. What is the probability that less than 34\% of them will get
+  the flu?
+
+    \vfill
+
+
+  \note{%
+    \begin{itemize}
+    \item Explicitly check the conditions to make sure that you can
+      use the normal approximation and show your work!
+    \item Be careful when reading the problem. This can be confusing!
+    \item Answer: 0.2033
+    \end{itemize}
+
+  }
+
+
+\end{frame}
+
+
+
+\begin{frame}{In a nutshell}
+
+
+  You conduct $n$ trials. Each trial has a probability $p$ for a
+  ``yes'' and a probability of $1-p$ otherwise. The sample
+  proportion is defined to be
+  \begin{eqnarray*}
+    \hat{p} & = & \frac{\mathrm{number~of~yeses}}{\mathrm{number~of~trials}}.
+  \end{eqnarray*}
+
+  \begin{itemize}
+  \item The sample proportion has a mean of $p$, and a standard
+    deviation of $\sqrt{\frac{p(1-p)}{n}}$.
+  \item Check to see if $p\cdot n \geq 5$, $(1-p)\cdot n \geq 5$ and
+    $n\geq 20$. If \textit{all} of these things are true then a
+    $z$-statistic can be approximated using
+    \begin{eqnarray*}
+      z & = & \frac{\hat{p}-p}{\sqrt{\frac{p(1-p)}{n}}}.
+    \end{eqnarray*}
+
+
+  \end{itemize}
+
+
+
+  
+\end{frame}
+
+
+\iftoggle{clicker}{%
+
+  \begin{frame}{Clicker Quiz}
+
+    Find the value of $z^*$ so that the probability of obtaining a
+    value less than $z^*$ from a standard normal is 0.05.
+
+    \vfill 
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: -1.96  & B: -1.65 & C: 1.65 & D: 1.96
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+
+
+\end{frame}
+
+}
+
+
+
+\begin{frame}{Example}
+
+  I want to conduct a poll. It is estimated that each time I ask
+  someone the question there is a probability of 0.35 that the person
+  will say ``yes.'' How many people should I poll so that there is a
+  probability of 0.05 that the sample proportion will be less than
+  0.30?
+
+  \vfill
+
+  \note{%
+
+    \begin{itemize}
+    \item We assume that we can use the normal approximation.
+    \item Ans: $n=248$ 
+    \item Here we always round up!
+    \end{itemize}
+
+  }
+
+\end{frame}
+
+\begin{frame}{Example}
+
+  I want to conduct a poll, and each question will be answered with
+  either a ``yes'' or a ``no.''  How many people should I poll so that
+  there is a probability of 0.05 that the sample proportion will be
+  less than 0.1 lower than the true value?
+
+  \vfill
+
+  \note{%
+
+    \begin{itemize}
+    \item We assume that we can use the normal approximation.
+    \item Ans: $n=69$ 
+    \item Here we always round up!
+    \end{itemize}
+
+  }
+
+
+\end{frame}
+
+
+
+% LocalWords:  Clarkson pausesection hideallsubsections hideothersubsections
+% LocalWords:  sectionstyle Kanye parotid

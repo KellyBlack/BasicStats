@@ -1,17 +1,114 @@
-\documentclass[12pt]{article}
 
-\oddsidemargin=0.0in
-\evensidemargin=0.0in
-\textwidth=6in
-\topmargin=-1in
-\textheight=9.5in
+\preClass{Calculating probabilities associated with sample distributions.}
 
 
-\begin{document}
+\begin{problem}
+\item Examples of calculating probabilities of sample means.
 
-Survey of Hypothesis Testing
+  \begin{subproblem}
+  \item 
+    \begin{eqnarray}
+      y & = 3x + 4.
+    \end{eqnarray}
+    \vfill
+  \end{subproblem}
 
-\begin{enumerate}
+
+\end{problem}
+
+\actTitle{Hypothesis Testing for Proportions}
+
+\begin{problem}
+\item 200 students are surveyed about their fondness for sports at
+  Clarkson University. Of those 80 say they like sports. Is this
+  proportion low for college students? Let $P_{0}$ be the proportion
+  of college students who like sports.
+  \begin{subproblem}
+  \item Write the null and alternative hypothesis below
+    \vspace{3em}
+
+  \item The test statisitic can be calculated as:
+    \begin{eqnarray*}
+      z=\frac{\hat{p}-p}{\sqrt{\frac{p(1-p)}{n}}}
+    \end{eqnarray*}
+    Another survey finds $\hat{p} = .265$, calculate $z^*$.
+
+    \vfill
+
+  \item The $p$-value can be calculated as $P(z \ge |z^*|).$ Calculate
+    the $p$-value and compare it to $\alpha = 0.05$. Do you accept or
+    reject $H_{0}$?
+
+    \vfill
+
+  \end{subproblem}
+
+  \clearpage
+
+  \item The manager of the customer service division said that their
+    consumer satisfaction has improved. A random sample of 400 people
+    who have called for service is sampled, and 280 reported that they
+    were pleased with the service. Last year it was estimated that
+    65\% of the people using the service were pleased with their
+    experience.
+
+    State the hypothesis test, organize and calculate any necessary
+    values, sketch an appropriate plot, determine whether or not you
+    can reject the null hypothesis, and then make a formal statement
+    of your conclusions.
+
+    \vfill
+    \clearpage
+
+
+
+
+\item For the comparison of two proportions the test statistic is
+  defined differently, but the concept is still the same as a single
+  proportion. Let $d_{0}$ be the difference between the two
+  proportions (if you claim that the proportions are the same then
+  $d_{0}$ =0). Before we defined $\hat{p}$ as
+  $\hat{p}=\frac{x}{n}$. This time we'll say that
+  $\hat{p_{1}} = \frac{x_{1}}{n_{1}}$ and similarly
+  $\hat{p_{2}} = \frac{x_{2}}{n_{2}}$. The combined proportion, which
+  we'll call $\hat{P}$ will be equal to
+  $\hat{P} = \frac{x_{1}+x_{2}}{n_{1}+n_{2}}$. This means that the
+  test statisitic is:
+  \begin{eqnarray*}
+    z=\frac{(\hat{p_{1}}-\hat{p_{2}})-d_{0}}{
+    \sqrt{\hat{P}(1-\hat{P})\left(\frac{1}{n_{1}}+\frac{1}{n_{2}}\right)}}
+  \end{eqnarray*}
+
+  \begin{subproblem}
+  \item Given the values below, calculate the $z$-statistic
+    \begin{itemize}
+    \item $n_{1} = 140 $
+    \item $n_{2} = 160 $
+    \item $x_{1} = 90 $
+    \item $x_{2} = 140$
+    \end{itemize}
+
+  \item Test the hypothesis that $d_{0} = 0$ by calculating the
+    $p$-value (this is done the same was as a single proportion
+    problem).
+
+    \vfill
+
+  \item Give the $p$-value, do you reject or fail to reject $H_{0}$?
+
+    \vfill
+
+  \end{subproblem}
+
+  \clearpage
+
+
+\end{problem}
+
+
+\actTitle{Survey of Hypothesis Testing}
+
+\begin{problem}
 \item A new procedure is tested for patients recovering from knee
   replacement surgery. Currently patients have a mean range of motion
   of ninety degrees after four weeks. A randomly chosen group of
@@ -20,14 +117,14 @@ Survey of Hypothesis Testing
   ninety-three degrees with a sample standard deviation of nine
   degrees. Did the new schedule increase the range of motion?
 
-  \begin{enumerate}
+  \begin{subproblem}
   \item What is the appropriate distribution? 
   \item Organize the relevant information: \\ [30pt]
   \item State the hypothesis test: \\ [20pt]
   \item Determine whether or not you can reject the null hypotheis:
     \vfill
   \item Provide a formal statement of your conclusion: 
-  \end{enumerate}
+  \end{subproblem}
 
 \clearpage
 
@@ -41,14 +138,14 @@ Survey of Hypothesis Testing
   greater than ninety degrees. Did the new schedule increase the range
   of motion?
 
-  \begin{enumerate}
+  \begin{subproblem}
   \item What is the appropriate distribution? 
   \item Organize the relevant information: \\ [30pt]
   \item State the hypothesis test: \\ [20pt]
   \item Determine whether or not you can reject the null hypotheis:
     \vfill
   \item Provide a formal statement of your conclusion: 
-  \end{enumerate}
+  \end{subproblem}
 
 \clearpage
 
@@ -60,22 +157,16 @@ Survey of Hypothesis Testing
   the study if we wish to reject the null hypothesis if the error in
   the means is more than three degrees?
 
-  \begin{enumerate}
+  \begin{subproblem}
   \item What is the appropriate distribution? 
   \item Organize the relevant information: \\ [30pt]
   \item State the hypothesis test: \\ [20pt]
   \item Determine the required number of patients.
     \vfill
-  \end{enumerate}
+  \end{subproblem}
 
 
 
 
-\end{enumerate}
+\end{problem}
 
-\end{document}
-
-%%% Local Variables: 
-%%% mode: latex
-%%% TeX-master: t
-%%% End: 

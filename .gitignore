@@ -1,0 +1,17 @@
+*.o
+.cproject
+.project
+*.pyc
+*.aux
+*.log
+*.dvi
+*.nav
+*.out
+*.snm
+*.toc
+*.csv
+data
+auto
+STAT Problems ID sheet.docx
+labManual.pdf
+IntroStats.pdf

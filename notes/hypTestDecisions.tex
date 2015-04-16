@@ -1,0 +1,258 @@
+
+\lecture{Hypothesis Testing Redux}{hypothesis-testing-redux}
+\section{Hypothesis Testing Redux}
+
+\title{Hypothesis Testing Again}
+\subtitle{Examples - Which one to use?}
+
+%\author{Kelly Black}
+%\institute{Clarkson University}
+\date{25 March 2015}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[hideothersubsections,sectionstyle=show/hide]
+\end{frame}
+
+
+\subsection{Clicker Quiz}
+
+
+\begin{frame}
+  \frametitle{Clicker Quiz}
+
+  \iftoggle{clicker}{%
+
+    I read in the \textit{Integrator} that the mean height of Clarkson
+    students is 180.0 cm with a standard deviation of 14.0 cm. I think
+    that this is too high and sample twenty students chosen at random
+    to find a sample mean of 174.7 cm. Are my suspicions correct? (Use
+    a 5\% significance level.)
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l}
+      A: & There is sufficient evidence to reject $H_0$.  \\
+      B: & There is not sufficient evidence to reject $H_0$.  
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+    
+
+  }
+
+
+\end{frame}
+
+\begin{frame}
+    \input{img/confidenceIntervalDist}  % Added [thick,scale=0.6, every node/.style={scale=0.6}]
+                                      % to the \begin{tikzpicture} line
+\end{frame}
+
+\subsection{Examples}
+
+\begin{frame}
+  \frametitle{What if....}
+
+
+  I read in the \textit{Integrator} that the mean height of Clarkson
+  students is 180.0 cm. I think that this is too high and sample
+  twenty students chosen at random to find a sample mean of 174.7 cm
+  with a {\color{red}sample} standard deviation of 14 cm. Are my
+  suspicions correct?  (Use a 5\% significance level.)
+
+    \vfill
+    
+
+\end{frame}
+
+
+\begin{frame}{Result}
+
+  We do not have sufficient evidence to reject $H_0$ at the 5\%
+  significance level using a $t$-distribution with twenty samples and
+  a standard deviation of 14.0cm.
+  
+\end{frame}
+
+
+
+
+
+\begin{frame}{Clicker Quiz}
+
+  \iftoggle{clicker}{%
+
+    I see a publication that says that the mean house value in an area
+    is \$215,000. I think that this is too low.  Suppose that I take a
+    random sample of fifteen homes and get a sample mean of \$232,000
+    with a sample standard deviation of \$35,000.
+
+    \vfill 
+
+    What is the $t$-statistic?
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: -1.881  & B: -1.644  & C: 1.644 & D: 1.881
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+  }
+
+\end{frame}
+
+\begin{frame}{Result}
+
+  We have sufficient evidence to reject $H_0$ at the 5\% significance
+  level using a $t$-distribution with fifteen samples and a standard
+  deviation of \$35,000.
+  
+\end{frame}
+
+
+\begin{frame}{Example}
+
+  I see a publication that says that half of the houses in an area
+  have a value of \$215,000 or more. I think that this is incorrect.
+  Suppose that I take a random sample of forty homes and find that
+  fifteen houses have at least this value. Are my suspicions correct?
+  
+  
+\end{frame}
+
+
+\begin{frame}{Result}
+
+  We do not have sufficient evidence to reject $H_0$ at the 5\%
+  significance level assuming a normal approximation to the sample
+  proportion with forty samples.
+  
+\end{frame}
+
+
+\begin{frame}{Clicker Quiz}
+
+  \iftoggle{clicker}{%
+
+    \begin{eqnarray*}
+      \begin{array}{lrcl}
+        H_0: & \mu & = & 800 \\
+        H_a: & \mu & \neq & 800
+      \end{array}
+    \end{eqnarray*}
+
+    \begin{eqnarray*}
+      n & = & 30, \\
+      \bar{x} & = & 758,\\
+      \sigma & = & 118, \\
+      \alpha & = & 0.05.
+    \end{eqnarray*}
+
+    \vfill 
+
+    What is the $z$-statistic?
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: -1.960  & B: -1.950  & C: -0.065 & D: 1.960
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+  }
+
+\end{frame}
+
+\begin{frame}{Result}
+
+  We \textbf{do not} have sufficient evidence to reject $H_0$ at the
+  5\% significance level using a normal distribution with thirty
+  samples and a standard deviation of 118.
+  
+\end{frame}
+
+
+
+\begin{frame}{Clicker Quiz}
+
+  \iftoggle{clicker}{%
+
+    \begin{eqnarray*}
+      \begin{array}{lrcl}
+        H_0: & \mu & = & 800 \\
+        H_a: & \mu & \neq & 800
+      \end{array}
+    \end{eqnarray*}
+
+    \begin{eqnarray*}
+      n & = & 30, \\
+      \bar{x} & = & 758,\\
+      s & = & 118, \\
+      \alpha & = & 0.05.
+    \end{eqnarray*}
+
+    \vfill 
+
+    What is the $t$-statistic?
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: -1.960  & B: -1.950  & C: -0.065 & D: 1.960
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+  }
+
+\end{frame}
+
+\begin{frame}{Result}
+
+  We \textbf{do not} have sufficient evidence to reject $H_0$ at the
+  5\% significance level using a $t$-distribution with thirty samples
+  and a standard deviation of 118.
+  
+\end{frame}
+
+
+\begin{frame}{Example}
+
+  \begin{eqnarray*}
+    \begin{array}{lrcl}
+      H_0: & \mu & = & 40 \\
+      H_a: & \mu & > & 40
+    \end{array}
+  \end{eqnarray*}
+
+  \begin{eqnarray*}
+    n & = & 10, \\
+    z^* & = & 1.71.
+  \end{eqnarray*}
+
+  \vfill 
+
+  What is the $p$-value?
+
+  \note{%
+    $p=0.0436$
+  }
+
+  \vfill
+
+  
+\end{frame}
+
+
+% LocalWords:  Clarkson pausesection hideallsubsections

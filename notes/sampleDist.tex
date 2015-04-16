@@ -1,0 +1,315 @@
+
+\lecture{More Sample Distributions}{more-sample-distributions}
+\section{The Sample Distribution}
+
+\title{The Sample Distribution}
+\subtitle{The Central Limit Theorem}
+
+%\author{Kelly Black}
+%\institute{Clarkson University}
+\date{Feb 18, 20145}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[hideothersubsections,sectionstyle=show/hide]
+\end{frame}
+
+
+\subsection{Clicker Quiz}
+
+
+\iftoggle{clicker}{%
+  \begin{frame}
+    \frametitle{Clicker Quiz}
+
+    The mass of the contents of a product are normally distributed
+    with a mean of 0.35 kg and a standard deviation of 0.04 kg. What
+    is the probability that one sample will be less than 0.33 kg?
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: .31  & B: 0.34  & C: 0.50 & D: 0.69
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+  \end{frame}
+}
+
+
+\subsection{The Sample Mean}
+
+\iftoggle{clicker}{%
+  \begin{frame}{Flip a Coin}
+
+    Everybody: Flip a coin three times. Count the number of
+    Heads. Press the number associated with the count on your clicker.
+
+    \only<2->%
+    {
+      Do it again.
+    }
+  
+  \end{frame}
+}
+
+\begin{frame}{Coin Flip}
+
+What did we just do? 
+
+  \only<2->%
+  {
+    We just calculated a sample mean. Twice!
+  }
+
+  \only<3->%
+  { 
+
+    Each time we run these experiments we \textcolor{red}{can} get
+    different results.
+
+    The sample mean is a random variable.
+  }
+  
+\end{frame}
+
+\subsection{The Central Limit Theorem}
+
+\begin{frame}
+  \frametitle{Sample Mean}
+
+  We have a set of measurements:
+  \begin{eqnarray*}
+    x_1,~x_2,~x_3,\cdots,~x_n.
+  \end{eqnarray*}
+  Each measurement has a mean, $\mu$, and a standard deviation of
+  $\sigma$. We assume that they are all independent of one another.
+  
+  \only<2->
+  {
+    \begin{definition}
+      Given measurements the sample mean is 
+      \begin{eqnarray*}
+        \bar{x} & = & \frac{x_1+x_2+x_3+\cdots+x_n}{n}.
+      \end{eqnarray*}
+    \end{definition}
+  }
+
+  \only<3->
+  {
+    The sample mean is a random variable!
+  }
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Sample Mean}
+
+  We have a set of measurements:
+  \begin{eqnarray*}
+    x_1,~x_2,~x_3,\cdots,~x_n.
+  \end{eqnarray*}
+  
+  \begin{definition}
+    Given measurements the sample mean is 
+    \begin{eqnarray*}
+      \bar{x} & = & \frac{x_1+x_2+x_3+\cdots+x_n}{n}.
+    \end{eqnarray*}
+    The sample mean, $\bar{x}$,  has a mean of $\mu$, and it has a
+    standard deviation of $\frac{\sigma}{\sqrt{n}}$.
+  \end{definition}
+
+\end{frame}
+
+
+\begin{frame}
+  (central limit theorem example)
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Distribution of the Sample Mean}
+
+  We have a random variable, $X$, which has mean $\mu$ and standard
+  deviation $\sigma.$
+
+  \vfill
+
+  We have a collection of measurements:
+  \begin{eqnarray*}
+    x_1,~x_2,~x_3,\cdots,~x_n.
+  \end{eqnarray*}
+  Each measurement has a mean, $\mu$, and a standard deviation of
+  $\sigma$. We assume that they are all independent of one another.
+
+  \vfill
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Distribution of the Sample Mean}
+
+  We have a collection of measurements:
+  \begin{eqnarray*}
+    x_1,~x_2,~x_3,\cdots,~x_n.
+  \end{eqnarray*}
+
+  \vfill
+  
+  Given the measurements the sample mean is
+  \begin{eqnarray*}
+    \bar{x} & = & \frac{x_1+x_2+x_3+\cdots+x_n}{n}.
+  \end{eqnarray*}
+  The sample mean, $\bar{x}$,  has a mean of $\mu$, and it has a
+  standard deviation of $\frac{\sigma}{\sqrt{n}}$.
+
+  \vfill
+
+\end{frame}
+
+
+
+\subsection{Examples}
+
+\begin{frame}
+  \frametitle{Example}
+
+  The life time for a brand of batteries is normally distributed with
+  a mean of 19.8 hours and a standard deviation of 1.3 hours. What is
+  the probability that a sample size of six batteries will give a
+  sample mean that is more than 21.1 hours?
+
+  \vfill
+
+  \only<2->{%
+    First, organize the information: \\
+    \begin{tabular}{l|l}
+      Random variable & \action<3-|alert@3>{\color{red}Sample Mean} \\ 
+      $\mu=19.8$   & \action<3-|alert@3>{\color{red}$\mu=19.8$} \\
+      $\sigma=1.3$ & \action<3-|alert@3>{\color{red}$\sigma=\frac{1.3}{\sqrt{6}}$} \\
+                   & \action<3-|alert@3>{\color{red}$n=6$}
+    \end{tabular}
+  }
+
+  \vfill
+
+  \note{
+    \begin{itemize}
+    \item Ans: 0.0071
+    \item First organize the information.
+    \item Make a rough sketch.
+    \item Figure out the question that is asked.
+    \item Figure out how to answer the question.
+    \item Finally, carry out your plan.
+    \end{itemize}
+  }
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Example}
+
+  You want to estimate the start up costs for restaurants in an
+  area. If the mean start up costs are \$235,000 with a standard
+  deviation of \$45,000 what is the probability that a sample of
+  twenty restaurants will be between \$260,000 and \$205,000?
+
+  \vfill
+
+  \only<2->{%
+    First, organize the information: \\
+    \begin{tabular}{l|l}
+      Random variable & \action<3-|alert@3>{\color{red}Sample Mean} \\ 
+      $\mu=\$235,000$   & \action<3-|alert@3>{\color{red}$\mu=\$235,000$} \\
+      $\sigma=\$45,000$ & \action<3-|alert@3>{\color{red}$\sigma=\frac{\$45,000}{\sqrt{20}}$} \\
+                   & \action<3-|alert@3>{\color{red}$n=20$}
+    \end{tabular}
+  }
+
+  \vfill
+
+  \note{
+    \begin{itemize}
+    \item Ans: 0.9920
+    \item First organize the information.
+    \item Make a rough sketch.
+    \item Figure out the question that is asked.
+    \item Figure out how to answer the question.
+    \item Finally, carry out your plan.
+    \end{itemize}
+  }
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Example}
+
+  You want to estimate the start up costs for restaurants in an
+  area. If the mean start up costs are \$235,000 with a standard
+  deviation of \$45,000 how many restaurants should you poll so that
+  the probability to be within \$1,000 of the mean is eighty percent?
+
+  \vfill
+
+  \only<2->{%
+    Organize the information: \\
+    \begin{tabular}{l|l}
+      Random variable & \action<3-|alert@3>{\color{red}Sample Mean} \\ 
+      $\mu=\$235,000$   & \action<3-|alert@3>{\color{red}$\mu=\$235,000$} \\
+      $\sigma=\$45,000$ & \action<3-|alert@3>{\color{red}$\sigma=\frac{\$45,000}{\sqrt{N}}$} \\
+                   & \action<3-|alert@3>{\color{red}$n=?$}
+    \end{tabular}
+  }
+
+  \vfill
+
+  \note{
+    \begin{itemize}
+    \item $N=3318$
+    \item Note that we rounded up!
+    \item First organize the information.
+    \item Make a rough sketch.
+    \item Figure out the question that is asked.
+    \item Figure out how to answer the question.
+    \item Finally, carry out your plan.
+    \end{itemize}
+  }
+
+\end{frame}
+
+
+\iftoggle{clicker}{%
+  \begin{frame}
+    \frametitle{Clicker Quiz}
+
+    You want to estimate the start up costs for restaurants in an
+    area. The mean start up costs are \$235,000 with a standard
+    deviation of \$45,000. What is the probability that twenty samples
+    will give a sample mean greater than \$245,000?
+
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: 0.1611  & B: 0.4021  & C: 0.4121 & D: 0.9999
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+  \end{frame}
+}
+
+
+
+% LocalWords:  Clarkson pausesection hideallsubsections hideothersubsections
+% LocalWords:  sectionstyle

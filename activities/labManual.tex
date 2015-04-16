@@ -1,0 +1,131 @@
+\documentclass[12pt,twoside]{book}
+\usepackage{layout}
+%\usepackage{makeidx}
+\RequirePackage{verbatim}
+%\RequirePackage{alltt}
+\usepackage{ifpdf}
+\usepackage{etoolbox}
+\usepackage{mathtools}
+\usepackage{multicol}
+\usepackage{marginnote}
+
+\newtoggle{solutions}
+\toggletrue{solutions}
+\togglefalse{solutions}
+
+\ifpdf 
+   \pdfcompresslevel=9
+   \pdfoutput=1
+                                                                                            
+                       
+   \usepackage[pdftex]{graphicx}
+   \usepackage[pdftex]{geometry}
+   \usepackage[pdftex]{color}
+   \usepackage{hyperref}
+   \hypersetup{
+     pdftitle={Recitation Activities for the Introduction to Differential Equations},
+     pdfsubject={ODE},
+     pdfauthor={Kelly Black},
+     pdfkeywords={classroom activities},
+     anchorcolor = {red},
+     colorlinks = {true},
+     %pdfpagemode={FullScreen}
+   }
+\else
+   \usepackage{epsfig}
+   \usepackage{color}
+\fi
+\usepackage[table]{xcolor}
+
+
+\pagestyle{myheadings}
+
+%\setlength{\basicoddside}{\oddsidemargin}
+%\setlength{\basicevenside}{\evensidemargin}
+%\setlength{\basicwidth}{\textwidth}
+%\setlength{\basictop}{\topmargin}
+%\setlength{\basicheight}{\textheight}
+
+
+\input{header}
+\setcounter{activity}{0}
+
+\input{latexDefinitions}
+
+%\includeonly{laplace}
+
+\begin{document}
+
+
+\title{Recitation Activities \\ 
+  Introduction to Statistics
+  \iftoggle{solutions}{%
+    \\\textit{Solution Manual}
+  }
+}
+\author{Kelly Black\\Clarkson University\\Division of Mathematics and
+  Computer Science 
+  \vspace{5em}\\
+  With Assistance From \\
+  Khrystyna Dilai and Justin Foster \\
+  Clarkson University \\
+  \vspace{5em}
+}
+
+\maketitle
+
+\textit{\small Inside of front cover - (intentionally blank)
+  \tiny{well mostly blank....}}
+
+\clearpage
+
+\begin{center}
+  
+  \includegraphics{img/ccV3}
+
+  Recitation Activities for the Introduction to Statistics
+  by Kelly Black is licensed under a Creative Commons
+  Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+
+  Special thanks go to Khrystyna Dilai and Justin Foster who made the
+  first draft of many of the activities.
+
+  \url{http://creativecommons.org/licenses/by-nc-sa/3.0/ }
+
+\end{center}
+
+
+\tableofcontents
+
+%\clearpage
+
+\chapter{Probability}
+
+\include{ProbabilityIntroduction}      % 1, 2, 3 and 4
+\include{ProbabilityCounting}          % 5 and 6
+\include{DiscreteRandomVariables}      % 7 and 8
+\include{normalDistribution}           % 9 and 10
+
+
+\chapter{Descriptive Statistics}
+\include{experimentalDesign}           % 11 and 12
+\include{plotting}                     % 13 and 14
+\include{quantitativeDescriptions}     % 15 and 16
+
+\chapter{Inference}
+\include{sampling}             % 17 and 18
+\include{confidenceInterval}   % 19 and 20
+\include{confidenceIntervalII} % 21 and 22
+\include{hypothesisTesting}    % 23 and 24
+\include{hypothesisTestReview} % 25 and 26
+
+\chapter{Bivariate Data}
+\include{bivariateData}
+\include{predictionIntervals}
+\include{ANOVA}
+
+\appendix
+\chapter{Cumulative Distribution Tables}
+\include{appendixTables}
+
+\end{document}

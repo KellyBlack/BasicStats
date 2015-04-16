@@ -1,0 +1,369 @@
+
+\lecture{Binomial Random Variables}{binomial-random-variables}
+\section{Binomial Random Variables}
+
+\title{Binomial Random Variables}
+\subtitle{Addition When It Is Either One Or The Other}
+
+%\author{Kelly Black}
+%\institute{Clarkson University}
+\date{23 January 2015}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[hideothersubsections,sectionstyle=show/hide]
+\end{frame}
+
+
+\subsection{Clicker Quiz}
+
+
+\iftoggle{clicker}{%
+  \begin{frame}
+    \frametitle{Clicker Quiz}
+
+    You are going to flip a coin three times. What is the probability of
+    getting two tails?
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: 1/8 & B: 2/8 & C: 3/8 & D: 4/8
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+
+
+  \end{frame}
+}
+
+\begin{frame}{Turn It Around}
+
+ \begin{columns}
+    \column{.35\textwidth}
+
+    Flip a coin three times. How many ways to get two tails?
+
+    \column{.65\textwidth}
+
+    \uncover<2->{%
+
+      \includegraphics[width=7.5cm]{img/tailsAndCups}
+
+      Change the question: How many ways can I put the tails into three
+      cups?
+    }
+
+  \end{columns}
+  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Four flips}
+
+  You are going to flip a coin four times. What is the probability of
+  getting three tails?
+
+    \vfill
+
+  \only<2->{
+
+    \begin{picture}(180,180)
+      \put(0,90){\circle*{5}}
+      \put(0,90){\line(5,3){50}}
+      \put(0,90){\line(5,-3){50}}
+      \put(52,120){H}
+      \put(52,60){T}
+
+      \only<3->{
+        \put(60,130){\line(5,3){40}}
+        \put(60,130){\line(5,-2){40}}
+        \put(105,157.5){H}
+        \put(105,112.5){T}
+        \put(60,60){\line(5,2){40}}
+        \put(60,60){\line(5,-3){40}}
+        \put(105, 67.5){H}
+        \put(105, 22.5){T}
+      }
+
+      \only<4->{
+        \put(115,162.5){\line(5,1){40}}
+        \put(115,162.5){\line(5,-1){40}}
+        \put(157.5,168.75){H}
+        \put(157.5,146.25){T}
+        \put(115,117){\line(5,1){40}}
+        \put(115,117){\line(5,-1){40}}
+        \put(157.5,123.75){H}
+        \put(157.5,101.25){T}
+        \put(115,74){\line(5,1){40}}
+        \put(115,74){\line(5,-1){40}}
+        \put(157.5, 78.75){H}
+        \put(157.5, 56.25){T}
+        \put(115,26){\line(5,1){40}}
+        \put(115,26){\line(5,-1){40}}
+        \put(157.5, 33.75){H}
+        \put(157.5, 11.25){T}
+      }
+
+      \only<5>{
+        \put(165,173){\line(5,1){20}}
+        \put(165,173){\line(5,-1){20}}
+        \put(187,177){H}
+        \put(187,163){T}
+
+        \put(165,152){\line(5,1){20}}
+        \put(165,152){\line(5,-1){20}}
+        \put(187,156){H}
+        \put(187,142){T}
+
+        \put(165,128){\line(5,1){20}}
+        \put(165,128){\line(5,-1){20}}
+        \put(187,132){H}
+        \put(187,118){T}
+
+        \put(165,107){\line(5,1){20}}
+        \put(165,107){\line(5,-1){20}}
+        \put(187,111){H}
+        \put(187,97){T}
+
+        \put(165,85){\line(5,1){20}}
+        \put(165,85){\line(5,-1){20}}
+        \put(187,89){H}
+        \put(187,75){T}
+
+        \put(165,64){\line(5,1){20}}
+        \put(165,64){\line(5,-1){20}}
+        \put(187,68){H}
+        \put(187,54){T}
+
+        \put(165,37){\line(5,1){20}}
+        \put(165,37){\line(5,-1){20}}
+        \put(187,41){H}
+        \put(187,27){T}
+
+        \put(165,16){\line(5,1){20}}
+        \put(165,16){\line(5,-1){20}}
+        \put(187,20){H}
+        \put(187,6){T}
+
+      }
+
+      \only<6->{
+        \put(165,173){\line(5,1){20}}
+        \put(165,173){\line(5,-1){20}}
+        \put(187,177){H}
+        \put(187,163){T}
+
+        \put(165,152){\line(5,1){20}}
+        \put(165,152){\line(5,-1){20}}
+        \put(187,156){H}
+        \put(187,142){T}
+
+        \put(165,128){\line(5,1){20}}
+        \put(165,128){\line(5,-1){20}}
+        \put(187,132){H}
+        \put(187,118){T}
+
+        \put(165,107){\line(5,1){20}}
+        \put(165,107){\line(5,-1){20}}
+        \put(187,111){H}
+        \put(187,97){\textcolor{red}{T}}
+
+        \put(165,85){\line(5,1){20}}
+        \put(165,85){\line(5,-1){20}}
+        \put(187,89){H}
+        \put(187,75){T}
+
+        \put(165,64){\line(5,1){20}}
+        \put(165,64){\line(5,-1){20}}
+        \put(187,68){H}
+        \put(187,54){\textcolor{red}{T}}
+
+        \put(165,37){\line(5,1){20}}
+        \put(165,37){\line(5,-1){20}}
+        \put(187,41){H}
+        \put(187,27){\textcolor{red}{T}}
+
+        \put(165,16){\line(5,1){20}}
+        \put(165,16){\line(5,-1){20}}
+        \put(187,20){\textcolor{red}{H}}
+        \put(187,6){T}
+
+      }
+
+
+    \end{picture}
+
+  }
+
+
+\end{frame}
+
+
+\begin{frame}{Turn It Around}
+
+  \includegraphics[width=11cm,height=6cm]{img/binomialTree}
+  
+\end{frame}
+
+\subsection{Binomial Distribution}
+
+\begin{frame}{Binomial Distribution}
+
+  \begin{itemize}
+  \item I have $N$ experiments.
+  \item Each experiment has only two possible outcomes (Yes/No).
+  \item Each experiment has a probability $p$ of a ``yes'' outcome.
+  \item Each experiment is independent of the others.
+  \end{itemize}
+
+  \vfill
+
+  Question: What is the probability of $k$ ``yes'' outcomes?
+
+  \vfill
+
+  In general we have 
+  \begin{eqnarray*}
+    \underbrace{
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} \ldots
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm}}_{\mathrm{n~possible~outcomes}}
+    & \rightarrow & 
+    \underbrace{
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} \ldots
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm}}_{\mathrm{k~Yes}}
+    \bigg|
+    \underbrace{
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} \ldots
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm}}_{\mathrm{N-k~No}}
+  \end{eqnarray*}
+
+
+
+  
+\end{frame}
+
+\begin{frame}{Binomial Distribution}
+
+  In general we have 
+  \begin{eqnarray*}
+    \underbrace{
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} \ldots
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm}}_{\mathrm{n~possible~outcomes}}
+    & \rightarrow & 
+    \underbrace{
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} \ldots
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm}}_{\mathrm{k~Yes}}
+    \bigg|
+    \underbrace{
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm} \ldots
+      \rule{.3cm}{.2mm} \hspace{.05cm} 
+      \rule{.3cm}{.2mm} \hspace{.05cm}}_{\mathrm{N-k~No}}
+  \end{eqnarray*}
+
+  \vfill
+
+  The probability of this particular outcome is $p^k(1-p)^{N-k}$. 
+
+  \vfill
+
+  There are $\prescript{~}{n}{C}_k$ ways to get $k$ ``yes'' results.
+  
+  \vfill
+
+  \textbf{Binommial Distribution:}\\
+  {\color{red}
+    The probability of $k$ ``yes'' outcomes is 
+    $\prescript{~}{n}{C}_k \cdot p^k (1-p)^{N-k}$.} 
+
+  \vfill
+
+  
+\end{frame}
+
+
+
+\subsection{Examples}
+
+\begin{frame}
+  \frametitle{Example}
+
+  It is estimated that in a given monthly period 66\% of all stocks
+  will rise. I pick four stocks at random (with replacement). What is
+  the probability that exactly three of the stocks will rise in value?
+
+  \vfill
+
+  \uncover<2->{%
+    What is the probability that three or more of the stocks will rise
+    in value?
+  }
+
+  \vfill
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Example}
+
+  It is estimated that 2\% of the shirts made at a factory are not
+  suitable for sale. You choose 20 shirts at random (with
+  replacement). What is the probability that you find exactly three
+  unsuitable shirts?
+
+  \vfill
+
+\end{frame}
+
+\iftoggle{clicker}{%
+  \begin{frame}{Clicker Quiz}
+
+    A basketball player has a lifetime average of making 70\% of her
+    free throws. In a particular game she will attempt seven free
+    throws. What is the probability that she will make exactly five free
+    throws?
+
+    \vfill
+
+    \begin{tabular}{l@{\hspace{3em}}l@{\hspace{3em}}l@{\hspace{3em}}l}
+      A: .015 & B: .105 & C: .32 & D: .64
+    \end{tabular}
+
+    \vfill
+    \vfill
+    \vfill
+  
+  \end{frame}
+}
+
+
+% LocalWords:  Clarkson pausesection hideallsubsections
