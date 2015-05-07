@@ -230,11 +230,27 @@
 
 }
 
+\setbeamercolor{upper separation line head}{bg=red}
+\setbeamercolor{headline}{bg=red}
+\setbeamertemplate{headline}
+{%
+\begin{beamercolorbox}{section in head/foot}
+\insertsectionnavigationhorizontal{.75\textwidth}{}{}
+\hfill \insertpagenumber /\insertdocumentendpage
+\end{beamercolorbox}%
+}
+\setbeamercolor{section number projected}{bg=red,fg=black}
+\setbeamercolor{subsection number projected}{bg=red,fg=black}
+%\setbeamercolor{frametitle}{bg=lightgray,fg=black}
+
 \begin{document}
+
+
 
 \author{Kelly Black}
 \institute{University of Georgia}
-
+\subject{statistics}
+\keywords{statistics,inference,sampling,central limit theorem}
 
 
 \include{introduction}
