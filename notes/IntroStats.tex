@@ -230,7 +230,19 @@
 
 }
 
+
+\setbeamertemplate{headline}
+{%
+\begin{beamercolorbox}{section in head/foot}
+\insertsectionnavigationhorizontal{.75\textwidth}{}{}
+\hfill \insertpagenumber /\insertdocumentendpage
+\end{beamercolorbox}%
+}
+
+
 \begin{document}
+
+
 
 \author{Kelly Black}
 \institute{University of Georgia}
